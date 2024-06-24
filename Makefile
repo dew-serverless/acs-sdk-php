@@ -5,4 +5,7 @@ fetch-meta:
 build-json:
 	php build/build-json.php
 
-.PHONY: fetch-meta build-json
+build-clients:
+	php build/build-clients.php
+
+.PHONY: fetch-meta build-json build-clients

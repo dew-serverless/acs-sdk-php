@@ -25,10 +25,10 @@ namespace Dew\Acs\OpenApi;
  *   pattern?: string,
  *   properties?: array<string, mixed[]>,
  *   additionalProperties?: array<string, mixed>,
- *   items?: array<string, mixed[]>,
+ *   items?: array<string, mixed>,
  *   minItems?: int,
  *   maxItems?: int,
- *   example: mixed
+ *   example?: mixed
  * }
  * @see https://api.aliyun.com/openmeta/struct/Schema
  */

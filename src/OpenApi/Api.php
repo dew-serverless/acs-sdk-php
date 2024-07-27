@@ -21,7 +21,7 @@ use InvalidArgumentException;
  *   staticInfo?: array<string, mixed>,
  *   operationType?: string,
  *   consumes?: string[],
- *   produces?: stirng[],
+ *   produces?: string[],
  *   tags?: string[],
  *   parameters: mixed[][],
  *   responses: array<string, mixed[]>,
@@ -38,6 +38,7 @@ final class Api
      * @param  string[]  $schemes
      * @param  array<string, TSecurityRequirement>[]  $security
      * @param  string[]|null  $consumes
+     * @param  string[]|null  $produces
      * @param  \Dew\Acs\OpenApi\Parameter[]  $parameters
      * @param  \Dew\Acs\OpenApi\Response[]  $responses
      */
@@ -48,6 +49,7 @@ final class Api
         public readonly array $security,
         public readonly bool $deprecated,
         public readonly ?array $consumes,
+        public readonly ?array $produces,
         public readonly array $parameters,
         public readonly array $responses
     ) {
@@ -66,6 +68,7 @@ final class Api
             security: $api['security'],
             deprecated: $api['deprecated'] ?? false,
             consumes: $api['consumes'] ?? null,
+            produces: $api['produces'] ?? null,
             parameters: array_map(
                 fn (array $parameter): Parameter => Parameter::make($parameter),
                 $api['parameters']

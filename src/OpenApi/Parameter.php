@@ -16,6 +16,7 @@ final readonly class Parameter
         public ParameterLocation $in,
         public ?string $description,
         public ?bool $required,
+        public ?bool $allowEmptyValue,
         public ?bool $deprecated,
         public ?string $style,
         public Schema $schema
@@ -49,6 +50,7 @@ final readonly class Parameter
             in: ParameterLocation::from($location),
             description: $parameter['description'] ?? null,
             required: $parameter['required'] ?? null,
+            allowEmptyValue: $parameter['allowEmptyValue'] ?? null,
             deprecated: $parameter['deprecated'] ?? null,
             style: $parameter['style'] ?? null,
             schema: Schema::make($parameter['schema'])

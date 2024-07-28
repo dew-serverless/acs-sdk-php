@@ -49,7 +49,7 @@ final readonly class ApiDocs
 
     public function getNamespace(): string
     {
-        $namespace = ucwords($this->info->product, ' -');
+        $namespace = ucwords($this->info->product, '-');
 
         return str_replace('-', '', $namespace);
     }

@@ -7,12 +7,17 @@ namespace Dew\Acs;
 use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
 use Http\Client\Common\PluginClient;
+use Http\Client\Promise\HttpFulfilledPromise;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
+use Http\Promise\FulfilledPromise;
+use Http\Promise\Promise;
 use InvalidArgumentException;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
+use RuntimeException;
 
 /**
  * @phpstan-type TCredentials array{
@@ -65,6 +70,14 @@ abstract class AcsClient
      */
     private function execute(Api $api, array $arguments): mixed
     {
+        return $this->executeAsync($api, $arguments)->wait();
+    }
+
+    /**
+     * @param  mixed[]  $arguments
+     */
+    private function executeAsync(Api $api, array $arguments): Promise
+    {
         $request = $this->messageFactory->createRequest(
             'GET', $this->appendDefaultSchemeIfNeeded($this->endpoint)
         );
@@ -74,9 +87,18 @@ abstract class AcsClient
             new Plugins\SignRequest($this->docs, $api, $this->config, $arguments),
         ]);
 
-        $response = $client->sendRequest($request);
+        return (new FulfilledPromise($client->sendAsyncRequest($request)))
+            ->then(
+                function (HttpFulfilledPromise $promise) use ($api): Result {
+                    $response = $promise->wait();
 
-        return $this->resultProvider->make($response, $api);
+                    if (! $response instanceof ResponseInterface) {
+                        throw new RuntimeException('Could not process the response.');
+                    }
+
+                    return $this->resultProvider->make($response, $api);
+                }
+            );
     }
 
     private function appendDefaultSchemeIfNeeded(string $endpoint): string
@@ -96,6 +118,12 @@ abstract class AcsClient
     public function __call(string $method, array $arguments = []): mixed
     {
         $action = ucfirst($method);
+        $async = false;
+
+        if (str_ends_with($action, 'Async')) {
+            $action = substr($action, 0, -5);
+            $async = true;
+        }
 
         $argument = $arguments[0] ?? [];
 
@@ -105,6 +133,10 @@ abstract class AcsClient
             );
         }
 
-        return $this->execute($this->docs->getApi($action), $argument);
+        $api = $this->docs->getApi($action);
+
+        return $async
+            ? $this->executeAsync($api, $arguments)
+            : $this->execute($api, $argument);
     }
 }

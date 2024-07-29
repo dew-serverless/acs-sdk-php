@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+require_once __DIR__.'/../vendor/autoload.php';
+
+use Symfony\Component\VarExporter\VarExporter;
+
 $basePath = __DIR__.'/../data';
 
 $files = new RecursiveIteratorIterator(
@@ -18,7 +22,9 @@ foreach ($files as $file) {
         $contents = file_get_contents($file->getRealPath());
         $decoded = json_decode($contents, associative: true);
 
-        file_put_contents($phpPath, sprintf('<?php return %s;', var_export($decoded, return: true)), LOCK_EX);
+        $output = VarExporter::export($decoded);
+
+        file_put_contents($phpPath, sprintf('<?php return %s;', $output), LOCK_EX);
     }
 }
 

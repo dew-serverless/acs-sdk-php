@@ -7,5 +7,6 @@ build-json:
 
 build-clients:
 	php build/build-clients.php
+	php build/annotate-clients.php
 
 .PHONY: fetch-meta build-json build-clients

@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
+require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/ProductBuilder.php';
+
+use Dew\Acs\ApiDocsResolver;
 
 if (! file_exists(__DIR__.'/../data/products.json')) {
     throw new RuntimeException('Missing products meta file.');
@@ -16,7 +19,7 @@ foreach ($products as $product) {
     $builder = new ProductBuilder(
         basePath: __DIR__.'/../src',
         namespace: 'Dew\\Acs',
-        product: str_replace('-', '', ucwords($product['code']))
+        product: ApiDocsResolver::getNormalizedProductName($product['code'])
     );
 
     $builder->buildClient();

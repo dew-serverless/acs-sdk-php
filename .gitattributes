@@ -5,10 +5,13 @@
 *.php     text eol=lf diff=php
 
 # Development
-build     linguist-generated export-ignore
+/build    linguist-generated export-ignore
+/tests    export-ignore
 
 # Configuration
 .editorconfig          text eol=lf export-ignore
+.gitattributes         export-ignore
+.gitignore             export-ignore
 .php-cs-fixer.dist.php export-ignore
 phpstan.neon.dist      text eol=lf export-ignore
 phpunit.xml.dist       text eol=lf export-ignore

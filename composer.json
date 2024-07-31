@@ -35,5 +35,8 @@
             "name": "Li Zhineng",
             "email": "im@zhineng.li"
         }
-    ]
+    ],
+    "config": {
+        "sort-packages": true
+    }
 }

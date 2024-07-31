@@ -1,0 +1,14 @@
+# Auto detect text files and perform LF normalization
+*         text=auto
+
+# PHP files
+*.php     text eol=lf diff=php
+
+# Development
+build     linguist-generated export-ignore
+
+# Configuration
+.editorconfig          text eol=lf export-ignore
+.php-cs-fixer.dist.php export-ignore
+phpstan.neon.dist      text eol=lf export-ignore
+phpunit.xml.dist       text eol=lf export-ignore

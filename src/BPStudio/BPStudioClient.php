@@ -6,6 +6,54 @@ namespace Dew\Acs\BPStudio;
 
 use Dew\Acs\AcsClient;
 
+/**
+ * @method \Dew\Acs\Result getToken(array $arguments = []) {@deprecated 2021-09-31}
+ * @method \Http\Promise\Promise getTokenAsync($arguments = []) {@deprecated 2021-09-31}
+ * @method \Dew\Acs\Result getTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise getTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result listTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise listTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result valuateTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise valuateTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result createApplication(array $arguments = [])
+ * @method \Http\Promise\Promise createApplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteApplication(array $arguments = [])
+ * @method \Http\Promise\Promise deleteApplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result getApplication(array $arguments = [])
+ * @method \Http\Promise\Promise getApplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result listApplication(array $arguments = [])
+ * @method \Http\Promise\Promise listApplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result deployApplication(array $arguments = [])
+ * @method \Http\Promise\Promise deployApplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result releaseApplication(array $arguments = [])
+ * @method \Http\Promise\Promise releaseApplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result validateApplication(array $arguments = [])
+ * @method \Http\Promise\Promise validateApplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result valuateApplication(array $arguments = [])
+ * @method \Http\Promise\Promise valuateApplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result initAppFailOver(array $arguments = [])
+ * @method \Http\Promise\Promise initAppFailOverAsync($arguments = [])
+ * @method \Dew\Acs\Result getPotentialFailZones(array $arguments = [])
+ * @method \Http\Promise\Promise getPotentialFailZonesAsync($arguments = [])
+ * @method \Dew\Acs\Result getFoTaskStatus(array $arguments = [])
+ * @method \Http\Promise\Promise getFoTaskStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result appFailOver(array $arguments = [])
+ * @method \Http\Promise\Promise appFailOverAsync($arguments = [])
+ * @method \Dew\Acs\Result appFailBack(array $arguments = [])
+ * @method \Http\Promise\Promise appFailBackAsync($arguments = [])
+ * @method \Dew\Acs\Result listFoCreatedApps(array $arguments = [])
+ * @method \Http\Promise\Promise listFoCreatedAppsAsync($arguments = [])
+ * @method \Dew\Acs\Result executeOperationSync(array $arguments = [])
+ * @method \Http\Promise\Promise executeOperationSyncAsync($arguments = [])
+ * @method \Dew\Acs\Result getExecuteOperationResult(array $arguments = [])
+ * @method \Http\Promise\Promise getExecuteOperationResultAsync($arguments = [])
+ * @method \Dew\Acs\Result executeOperationASync(array $arguments = [])
+ * @method \Http\Promise\Promise executeOperationASyncAsync($arguments = [])
+ * @method \Dew\Acs\Result listTagResources(array $arguments = [])
+ * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
+ */
 final class BPStudioClient extends AcsClient
 {
     //

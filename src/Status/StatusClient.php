@@ -6,6 +6,10 @@ namespace Dew\Acs\Status;
 
 use Dew\Acs\AcsClient;
 
+/**
+ * @method \Dew\Acs\Result listEventInProgress(array $arguments = [])
+ * @method \Http\Promise\Promise listEventInProgressAsync($arguments = [])
+ */
 final class StatusClient extends AcsClient
 {
     //

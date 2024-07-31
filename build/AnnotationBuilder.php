@@ -24,16 +24,15 @@ final readonly class AnnotationBuilder
 
     public function annotate(): void
     {
-        $apis = $this->collectApis();
+        $incrementable = static::isVersionIncrementable($this->product['versions'][0]);
 
-        if ($apis === []) {
+        $docBlock = $incrementable
+            ? $this->docBlockForIncrementableVersion($this->product['versions'][0])
+            : $this->docBlockForSeparatedVersion();
+
+        if ($docBlock === '') {
             return;
         }
-
-        $docBlock = $this->buildDocBlock(
-            apis: $apis,
-            initialVersion: $this->product['versions'][0]
-        );
 
         if ($this->writeToClient($docBlock) === false) {
             throw new RuntimeException(
@@ -43,13 +42,14 @@ final readonly class AnnotationBuilder
     }
 
     /**
+     * @param  string[]  $docs  A list of API docs locations.
      * @return TCollectedApi
      */
-    private function collectApis(): array
+    private function collectApis(array $docs): array
     {
         $apis = [];
 
-        foreach ($this->docs as $path) {
+        foreach ($docs as $path) {
             if (! file_exists($path)) {
                 throw new InvalidArgumentException(sprintf(
                     'The docs path "%s" could not be found.', $path
@@ -74,10 +74,43 @@ final readonly class AnnotationBuilder
         return $apis;
     }
 
+    public static function isVersionIncrementable(string $version): bool
+    {
+        return preg_match('/\d{4}-\d{2}-\d{2}/', $version) === 1;
+    }
+
+    private function docBlockForIncrementableVersion(string $initialVersion): string
+    {
+        $apis = $this->collectApis($this->docs);
+        $phpDoc = $this->buildPhpDoc($apis, $initialVersion);
+
+        if ($phpDoc === '') {
+            return '';
+        }
+
+        return "/**\n".$phpDoc." */";
+    }
+
+    private function docBlockForSeparatedVersion(): string
+    {
+        $phpDoc = '';
+
+        foreach ($this->docs as $path) {
+            $apis = $this->collectApis([$path]);
+            $phpDoc .= $this->buildPhpDoc($apis);
+        }
+
+        if ($phpDoc === '') {
+            return '';
+        }
+
+        return "/**\n".$phpDoc." */";
+    }
+
     /**
      * @param  TCollectedApi  $apis
      */
-    private function buildDocBlock(array $apis, string $initialVersion): string
+    private function buildPhpDoc(array $apis, ?string $initialVersion = null): string
     {
         $contents = '';
 
@@ -103,7 +136,7 @@ final readonly class AnnotationBuilder
             );
         }
 
-        return "/**\n".$contents." */";
+        return $contents;
     }
 
     private function writeToClient(string $docBlock): bool

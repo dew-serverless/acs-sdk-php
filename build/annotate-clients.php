@@ -31,7 +31,10 @@ function getDocsPaths(array $product): array
     // version of the product appears at the top of the list. This helps
     // determine if APIs were introduced in later versions.
     $versions = $product['versions'];
-    sort($versions);
+
+    if (AnnotationBuilder::isVersionIncrementable($versions[0])) {
+        sort($versions);
+    }
 
     foreach ($versions as $version) {
         $filename = sprintf(__DIR__.'/../data/%s/%s/api-docs.php',

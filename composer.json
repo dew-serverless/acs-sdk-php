@@ -36,6 +36,17 @@
             "email": "im@zhineng.li"
         }
     ],
+    "scripts": {
+        "format": "php-cs-fixer fix",
+        "test": "phpunit",
+        "test:style": "php-cs-fixer fix --dry-run",
+        "test:static": "phpstan analyse",
+        "test:all": [
+            "@test",
+            "@test:style",
+            "@test:static"
+        ]
+    },
     "config": {
         "sort-packages": true
     }

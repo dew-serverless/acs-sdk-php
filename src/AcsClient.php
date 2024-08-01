@@ -47,6 +47,11 @@ abstract class AcsClient
 
     private readonly StreamFactoryInterface $streamFactory;
 
+    /**
+     * @var class-string<\Dew\Acs\AcsException>
+     */
+    private readonly string $exceptionClass;
+
     private readonly ResultProvider $resultProvider;
 
     /**
@@ -62,7 +67,27 @@ abstract class AcsClient
         $this->httpClient = $config['http_client'] ?? Psr18ClientDiscovery::find();
         $this->messageFactory = Psr17FactoryDiscovery::findRequestFactory();
         $this->streamFactory = Psr17FactoryDiscovery::findStreamFactory();
-        $this->resultProvider = new ResultProvider($this->docs);
+        $this->exceptionClass = $this->discoverExceptionClass();
+        $this->resultProvider = new ResultProvider($this->docs, $this->exceptionClass);
+    }
+
+    /**
+     * @return class-string<\Dew\Acs\AcsException>
+     */
+    private function discoverExceptionClass(): string
+    {
+        $clientClass = static::class;
+
+        if (str_ends_with($clientClass, 'Client')) {
+            $exceptionClass = substr($clientClass, 0, -6).'Exception';
+
+            if (class_exists($exceptionClass) &&
+                is_subclass_of($exceptionClass, AcsException::class)) {
+                return $exceptionClass;
+            }
+        }
+
+        return AcsException::class;
     }
 
     /**

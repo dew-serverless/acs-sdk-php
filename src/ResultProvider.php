@@ -17,8 +17,12 @@ final readonly class ResultProvider
 {
     private RefFinder $refFinder;
 
+    /**
+     * @param  class-string<\Dew\Acs\AcsException>  $exceptionClass
+     */
     public function __construct(
-        private ApiDocs $docs
+        private ApiDocs $docs,
+        private string $exceptionClass = AcsException::class
     ) {
         $this->refFinder = new RefFinder($this->docs);
     }
@@ -36,7 +40,7 @@ final readonly class ResultProvider
 
         if ($response->isError()) {
             /** @var \Dew\Acs\Result<TError> $result */
-            throw new AcsException($result);
+            throw new $this->exceptionClass($result);
         }
 
         return $result;

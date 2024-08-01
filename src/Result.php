@@ -27,13 +27,13 @@ final class Result implements ArrayAccess
 
     /**
      * @template TDefault
-     * @param  key-of<TData>  $name
+     * @param  key-of<TData>|string  $name
      * @param  TDefault  $default
      * @return value-of<TData>|TDefault
      */
     public function get($name, mixed $default = null): mixed
     {
-        return $this->data[$name] ?? $default;
+        return Arr::get($this->data, $name, $default);
     }
 
     public function offsetExists($offset): bool

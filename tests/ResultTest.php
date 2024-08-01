@@ -30,6 +30,12 @@ final class ResultTest extends TestCase
         $this->assertSame(false, $result->get('is_admin', false));
     }
 
+    public function test_get_dot_notation(): void
+    {
+        $result = new Result(['nested' => ['value' => 'foo']]);
+        $this->assertSame('foo', $result->get('nested.value'));
+    }
+
     public function test_get_decoded_data(): void
     {
         $result = new Result(['value' => 'foo']);

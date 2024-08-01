@@ -14,9 +14,10 @@ final class ApiDocsResolverTest extends TestCase
 {
     #[TestWith(['foo', 'Foo'])]
     #[TestWith(['Foo', 'Foo'])]
-    #[TestWith(['FOO', 'FOO'])]
+    #[TestWith(['FOO', 'Foo'])]
     #[TestWith(['foo-bar', 'FooBar'])]
     #[TestWith(['Foo-bar', 'FooBar'])]
+    #[TestWith(['FOO-BAR', 'FooBar'])]
     #[TestWith(['FooBar', 'FooBar'])]
     #[TestWith(['FooBAR', 'FooBAR'])]
     #[TestWith(['FOOBar', 'FOOBar'])]

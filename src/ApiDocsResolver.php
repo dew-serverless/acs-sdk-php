@@ -65,6 +65,10 @@ final class ApiDocsResolver
 
     public static function getNormalizedProductName(string $name): string
     {
+        if ($name === strtoupper($name)) {
+            $name = strtolower($name);
+        }
+
         return Str::studly($name);
     }
 

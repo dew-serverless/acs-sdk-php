@@ -25,9 +25,7 @@ final class ProductBuilder
             return $this;
         }
 
-        if (! is_dir($directory = dirname($filename))) {
-            mkdir($directory, 0755, recursive: true);
-        }
+        $this->prepareDirectory($filename);
 
         file_put_contents($filename, $this->getDefaultClientCode(), LOCK_EX);
 
@@ -51,5 +49,55 @@ final class ProductBuilder
         }
 
         PHP;
+    }
+
+    public function buildException(): self
+    {
+        return $this->buildExceptionIfMissing();
+    }
+
+    private function buildExceptionIfMissing(): self
+    {
+        $filename = sprintf('%s/%s/%sException.php',
+            $this->basePath, $this->product, $this->product
+        );
+
+        if (is_file($filename)) {
+            return $this;
+        }
+
+        $this->prepareDirectory($filename);
+
+        file_put_contents($filename, $this->getDefaultExceptionCode(), LOCK_EX);
+
+        return $this;
+    }
+
+    private function getDefaultExceptionCode(): string
+    {
+        return <<<PHP
+        <?php
+
+        declare(strict_types=1);
+
+        namespace $this->namespace\\$this->product;
+
+        use Dew\Acs\AcsException;
+
+        final class {$this->product}Exception extends AcsException
+        {
+            //
+        }
+
+        PHP;
+    }
+
+    private function prepareDirectory(string $filename): void
+    {
+        $directory = dirname($filename);
+
+        if (! is_dir($directory)) {
+            mkdir($directory, 0755, recursive: true);
+        }
     }
 }

@@ -23,6 +23,7 @@ foreach ($products as $product) {
     );
 
     $builder->buildClient();
+    $builder->buildException();
 }
 
 print "== Build completed.\n";

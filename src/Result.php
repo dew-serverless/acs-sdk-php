@@ -9,14 +9,15 @@ use Psr\Http\Message\ResponseInterface;
 use RuntimeException;
 
 /**
- * @implements ArrayAccess<int|string, mixed>
+ * @template TData of array
+ * @implements \ArrayAccess<key-of<TData>, value-of<TData>>
  */
 final class Result implements ArrayAccess
 {
     private ?ResponseInterface $response = null;
 
     /**
-     * @param  mixed[]  $data
+     * @param  TData  $data
      */
     public function __construct(
         private array $data = []
@@ -24,14 +25,33 @@ final class Result implements ArrayAccess
         //
     }
 
+    /**
+     * @param  key-of<TData>|string  $name
+     */
+    public function has($name): bool
+    {
+        return Arr::has($this->data, $name);
+    }
+
+    /**
+     * @template TDefault
+     * @param  key-of<TData>|string  $name
+     * @param  TDefault  $default
+     * @return value-of<TData>|TDefault
+     */
+    public function get($name, mixed $default = null): mixed
+    {
+        return Arr::get($this->data, $name, $default);
+    }
+
     public function offsetExists($offset): bool
     {
-        return isset($this->data[$offset]);
+        return $this->has($offset);
     }
 
     public function offsetGet($offset): mixed
     {
-        return $this->data[$offset] ?? null;
+        return $this->get($offset);
     }
 
     public function offsetSet($offset, $value): void
@@ -52,6 +72,9 @@ final class Result implements ArrayAccess
         return $this->data;
     }
 
+    /**
+     * @return self<TData>
+     */
     public function setResponse(ResponseInterface $response): self
     {
         $this->response = $response;
@@ -64,9 +87,14 @@ final class Result implements ArrayAccess
         return $this->response;
     }
 
-    public function __get(string $property): mixed
+    public function __isset(string $name): bool
     {
-        $value = $this->data[$property] ?? null;
+        return $this->has($name);
+    }
+
+    public function __get(string $name): mixed
+    {
+        $value = $this->get($name);
 
         if ($value === null) {
             return null;

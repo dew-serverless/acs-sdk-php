@@ -26,6 +26,14 @@ final class Result implements ArrayAccess
     }
 
     /**
+     * @param  key-of<TData>|string  $name
+     */
+    public function has($name): bool
+    {
+        return Arr::has($this->data, $name);
+    }
+
+    /**
      * @template TDefault
      * @param  key-of<TData>|string  $name
      * @param  TDefault  $default
@@ -38,7 +46,7 @@ final class Result implements ArrayAccess
 
     public function offsetExists($offset): bool
     {
-        return isset($this->data[$offset]);
+        return $this->has($offset);
     }
 
     public function offsetGet($offset): mixed
@@ -81,7 +89,7 @@ final class Result implements ArrayAccess
 
     public function __isset(string $name): bool
     {
-        return isset($this->data[$name]);
+        return $this->has($name);
     }
 
     public function __get(string $name): mixed

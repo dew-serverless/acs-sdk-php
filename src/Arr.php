@@ -10,6 +10,31 @@ namespace Dew\Acs;
 final class Arr
 {
     /**
+     * @template T of array
+     * @param  T  $array
+     * @param  key-of<T>  $key
+     */
+    public static function has(array $array, int|string $key): bool
+    {
+        if (array_key_exists($key, $array)) {
+            return true;
+        }
+
+        $result = $array;
+        $segments = explode('.', (string) $key);
+
+        foreach ($segments as $segment) {
+            if (is_array($result) && array_key_exists($segment, $result)) {
+                $result = $result[$segment];
+            } else {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
      * @template TKey of int|string
      * @template TValue
      * @template TDefault

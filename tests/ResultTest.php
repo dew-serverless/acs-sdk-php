@@ -42,6 +42,20 @@ final class ResultTest extends TestCase
         $this->assertSame(['value' => 'foo'], $result->getDecodedData());
     }
 
+    public function test_has(): void
+    {
+        $result = new Result(['value' => 'foo']);
+        $this->assertTrue($result->has('value'));
+        $this->assertFalse($result->has('foo'));
+    }
+
+    public function test_has_dot_notation(): void
+    {
+        $result = new Result(['entry' => ['title' => 'Hello, World!']]);
+        $this->assertTrue($result->has('entry.title'));
+        $this->assertFalse($result->has('entry.slug'));
+    }
+
     public function test_array_access(): void
     {
         $result = new Result(['value' => 'foo']);

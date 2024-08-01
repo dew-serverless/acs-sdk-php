@@ -10,6 +10,9 @@ use Dew\Acs\OpenApi\RefFinder;
 use Dew\Acs\OpenApi\Schema;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * @phpstan-import-type TError from \Dew\Acs\AcsException
+ */
 final readonly class ResultProvider
 {
     private RefFinder $refFinder;
@@ -20,29 +23,53 @@ final readonly class ResultProvider
         $this->refFinder = new RefFinder($this->docs);
     }
 
+    /**
+     * @throw \Dew\Acs\AcsException
+     * @return \Dew\Acs\Result<mixed[]>
+     */
     public function make(ResponseInterface $response, Api $api): Result
     {
-        $contentType = $response->getHeaderLine('Content-Type');
-        $contentType = explode(';', $contentType)[0];
+        $result = (new Result($this->decode($response, $api)))
+            ->setResponse($response);
 
-        $result = match ($contentType) {
-            'application/json' => $this->makeJsonResult($response),
-            'application/xml' => $this->makeXmlResult($response, $api),
-            default => new Result(),
-        };
+        $response = new Response($response);
 
-        return $result->setResponse($response);
+        if ($response->isError()) {
+            /** @var \Dew\Acs\Result<TError> $result */
+            throw new AcsException($result);
+        }
+
+        return $result;
     }
 
-    private function makeJsonResult(ResponseInterface $response): Result
+    /**
+     * @return mixed[]
+     */
+    private function decode(ResponseInterface $response, Api $api): array
+    {
+        $contentType = strtolower($response->getHeaderLine('Content-Type'));
+
+        switch (true) {
+            case str_contains($contentType, 'json'): return $this->makeJsonResult($response);
+            case str_contains($contentType, 'xml'): return $this->makeXmlResult($response, $api);
+            default: return [];
+        };
+    }
+
+    /**
+     * @return mixed[]
+     */
+    private function makeJsonResult(ResponseInterface $response): array
     {
         $encoder = new JsonEncoder();
-        $decoded = $encoder->decode((string) $response->getBody());
 
-        return new Result($decoded);
+        return $encoder->decode((string) $response->getBody());
     }
 
-    private function makeXmlResult(ResponseInterface $response, Api $api): Result
+    /**
+     * @return mixed[]
+     */
+    private function makeXmlResult(ResponseInterface $response, Api $api): array
     {
         $encoder = new XmlEncoder();
         $decoded = $encoder->decode((string) $response->getBody());
@@ -50,13 +77,13 @@ final readonly class ResultProvider
         $statusCode = (string) $response->getStatusCode();
 
         if (! isset($api->responses[$statusCode])) {
-            return new Result($decoded);
+            return $decoded;
         }
 
         $schema = $api->responses[$statusCode]->schema;
 
         if (! $schema instanceof Schema) {
-            return new Result($decoded);
+            return $decoded;
         }
 
         $formatter = new XmlFormatter();
@@ -65,8 +92,7 @@ final readonly class ResultProvider
 
             return is_array($schema) ? Schema::make($schema) : null;
         });
-        $formatted = $formatter->format($decoded, $schema);
 
-        return new Result($formatted);
+        return $formatter->format($decoded, $schema);
     }
 }

@@ -12,6 +12,24 @@ use PHPUnit\Framework\TestCase;
 #[CoversClass(Result::class)]
 final class ResultTest extends TestCase
 {
+    public function test_get(): void
+    {
+        $result = new Result(['value' => 'foo']);
+        $this->assertSame('foo', $result->get('value'));
+    }
+
+    public function test_get_index(): void
+    {
+        $result = new Result(['foo', 'bar']);
+        $this->assertSame('foo', $result->get(0));
+    }
+
+    public function test_get_default(): void
+    {
+        $result = new Result([]);
+        $this->assertSame(false, $result->get('is_admin', false));
+    }
+
     public function test_get_decoded_data(): void
     {
         $result = new Result(['value' => 'foo']);
@@ -50,6 +68,33 @@ final class ResultTest extends TestCase
         $result = new Result(['nested' => ['value' => 'foo']]);
         $this->assertIsObject($result->nested);
         $this->assertSame('foo', $result->nested->value);
+    }
+
+    public function test_property_get_list(): void
+    {
+        $result = new Result(['value' => ['foo', 'bar']]);
+        $this->assertIsArray($result->value);
+        $this->assertSame('foo', $result->value[0]);
+    }
+
+    public function test_property_get_list_empty(): void
+    {
+        $result = new Result(['value' => []]);
+        $this->assertIsArray($result->value);
+    }
+
+    public function test_property_get_list_nested(): void
+    {
+        $result = new Result(['nested' => ['value' => ['foo', 'bar']]]);
+        $this->assertIsObject($result->nested);
+        $this->assertSame(['foo', 'bar'], $result->nested->value);
+    }
+
+    public function test_property_isset(): void
+    {
+        $result = new Result(['value' => 'foo']);
+        $this->assertTrue(isset($result->value));
+        $this->assertFalse(isset($result->foo));
     }
 
     public function test_set_and_get_response(): void

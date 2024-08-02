@@ -15,6 +15,8 @@ use Psr\Http\Message\RequestInterface;
  */
 final class V4Signature implements SignsRequest, NeedsArguments
 {
+    public const VERSION = 'OSS4-HMAC-SHA256';
+
     /**
      * @var array<string, mixed>
      */

@@ -32,8 +32,8 @@ final class V4Signature implements SignsRequest
     private bool $includeAdditionalHeaders = false;
 
     public function __construct(
-        private readonly string $version,
-        private readonly string $product
+        public readonly string $version,
+        public readonly string $product
     ) {
         $this->configChecker = new ConfigChecker();
     }
@@ -50,15 +50,13 @@ final class V4Signature implements SignsRequest
         $datetime = new DateTimeImmutable('now', new DateTimeZone('UTC'));
 
         $stringToSign = $this->buildStringToSign(
-            $canonicalRequest = $this->buildCanonicalRequest($request),
+            $this->buildCanonicalRequest($request),
             $datetime, $scope = $this->buildScope($datetime, $config['region'])
         );
 
-        $signature = bin2hex(array_reduce(
-            [...explode('/', $scope), $stringToSign],
-            fn (string $key, string $data): string => hash_hmac('sha256', $data, $key, binary: true),
-            'aliyun_v4'.$config['credentials']['secret']
-        ));
+        $signature = $this->buildSignature(
+            $scope, $stringToSign, $config['credentials']['secret']
+        );
 
         if ($this->includeAdditionalHeaders) {
             return $request->withHeader('Authorization', sprintf(
@@ -246,5 +244,14 @@ final class V4Signature implements SignsRequest
     public function includeAdditionalHeaders(bool $include = true): void
     {
         $this->includeAdditionalHeaders = $include;
+    }
+
+    public function buildSignature(string $scope, string $stringToSign, string $secret): string
+    {
+        return bin2hex(array_reduce(
+            [...explode('/', $scope), $stringToSign],
+            fn (string $key, string $data): string => hash_hmac('sha256', $data, $key, binary: true),
+            'aliyun_v4'.$secret
+        ));
     }
 }

@@ -17,6 +17,7 @@ use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
+use Psr\Http\Message\UriFactoryInterface;
 use RuntimeException;
 
 /**
@@ -39,13 +40,15 @@ abstract class AcsClient
 
     private ?string $region = null;
 
-    private string $endpoint;
+    protected string $endpoint;
 
     private ClientInterface $httpClient;
 
-    private readonly RequestFactoryInterface $messageFactory;
+    protected readonly RequestFactoryInterface $requestFactory;
 
-    private readonly StreamFactoryInterface $streamFactory;
+    protected readonly StreamFactoryInterface $streamFactory;
+
+    protected readonly UriFactoryInterface $uriFactory;
 
     /**
      * @var class-string<\Dew\Acs\AcsException>
@@ -58,15 +61,16 @@ abstract class AcsClient
      * @param  TConfig  $config
      */
     public function __construct(
-        private array $config
+        protected array $config
     ) {
         $this->docs = ApiDocsResolver::make()
             ->resolve(basename(str_replace('\\', '/', static::class)), $config);
         $this->region = $config['region'];
         $this->endpoint = $config['endpoint'] ?? $this->docs->getEndpoint($this->region);
         $this->httpClient = $config['http_client'] ?? Psr18ClientDiscovery::find();
-        $this->messageFactory = Psr17FactoryDiscovery::findRequestFactory();
+        $this->requestFactory = Psr17FactoryDiscovery::findRequestFactory();
         $this->streamFactory = Psr17FactoryDiscovery::findStreamFactory();
+        $this->uriFactory = Psr17FactoryDiscovery::findUriFactory();
         $this->exceptionClass = $this->discoverExceptionClass();
         $this->resultProvider = new ResultProvider($this->docs, $this->exceptionClass);
     }
@@ -103,7 +107,7 @@ abstract class AcsClient
      */
     private function executeAsync(Api $api, array $arguments): Promise
     {
-        $request = $this->messageFactory->createRequest(
+        $request = $this->requestFactory->createRequest(
             'GET', $this->appendDefaultSchemeIfNeeded($this->endpoint)
         );
 

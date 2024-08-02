@@ -32,8 +32,8 @@ final class V4Signature implements SignsRequest
     private bool $includeAdditionalHeaders = false;
 
     public function __construct(
-        public readonly string $version,
-        public readonly string $product
+        private readonly string $version,
+        private readonly string $product
     ) {
         $this->configChecker = new ConfigChecker();
     }

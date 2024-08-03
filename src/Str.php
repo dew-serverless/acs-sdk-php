@@ -39,4 +39,11 @@ final class Str
 
         return str_replace(' ', '', $result);
     }
+
+    public static function is(string $mask, string $str): bool
+    {
+        $pattern = str_replace(preg_quote('*'), '.*', preg_quote($mask));
+
+        return preg_match("/^$pattern$/", $str) === 1;
+    }
 }

@@ -59,4 +59,30 @@ final class StrTest extends TestCase
     {
         $this->assertSame($expected, Str::studly($str));
     }
+
+    #[TestWith(['foo*', 'foobar', true])]
+    #[TestWith(['foo*', 'foo', true])]
+    #[TestWith(['foo*', 'bar', false])]
+    #[TestWith(['foo*', 'fo', false])]
+    #[TestWith(['*bar', 'bar', true])]
+    #[TestWith(['*bar', 'foobar', true])]
+    #[TestWith(['foo*baz', 'foobaz', true])]
+    #[TestWith(['foo*baz', 'foobarbaz', true])]
+    #[TestWith(['foo*baz', 'foobar', false])]
+    #[TestWith(['foo', 'foo', true])]
+    #[TestWith(['foo', 'bar', false])]
+    #[TestWith(['foo', 'fo', false])]
+    #[TestWith(['bar*', 'foobar', false])]
+    #[TestWith(['bar', 'foobarbaz', false])]
+    #[TestWith(['foo?', 'foo?', true])]
+    #[TestWith(['foo?', 'foo', false])]
+    #[TestWith(['*', 'bar', true])]
+    #[TestWith(['*', '', true])]
+    #[TestWith(['**', '', true])]
+    #[TestWith(['foo**baz', 'foobaz', true])]
+    #[TestWith(['foo**baz', 'foobarbaz', true])]
+    public function test_is(string $mask, string $str, bool $expected): void
+    {
+        $this->assertSame($expected, Str::is($mask, $str));
+    }
 }

@@ -99,7 +99,12 @@ final class ROAStyleBuilderTest extends TestCase
         $this->assertSame('/', $data->path);
     }
 
-    public function test_headers_resolution(): void
+    #[TestWith(['string', 'bar', 'bar'])]
+    #[TestWith(['integer', 10, '10'])]
+    #[TestWith(['number', 3.14, '3.14'])]
+    #[TestWith(['boolean', true, '?1'])]
+    #[TestWith(['boolean', false, '?0'])]
+    public function test_headers_resolution(string $type, mixed $value, string $expected): void
     {
         $docs = $this->makeApiDocs();
         $api = $this->makeApi([
@@ -107,13 +112,80 @@ final class ROAStyleBuilderTest extends TestCase
                 'name' => 'x-foo',
                 'in' => 'header',
                 'schema' => [
+                    'type' => $type,
+                ],
+            ]],
+        ]);
+        $builder = new ROAStyleBuilder($docs, $api);
+        $data = $builder->build(['x-foo' => $value]);
+        $this->assertSame(['x-foo' => $expected], $data->headers);
+    }
+
+    /**
+     * @param  array<string, mixed>  $arguments
+     * @param  array<string, mixed>  $expected
+     */
+    #[TestWith([['x-test-*' => ['x-test-foo' => 'bar']], ['x-test-foo' => 'bar']])]
+    #[TestWith([['x-test-*' => ['foo' => 'bar']], ['x-test-foo' => 'bar']])]
+    public function test_headers_resolution_wildcard(array $arguments, array $expected): void
+    {
+        $docs = $this->makeApiDocs();
+        $api = $this->makeApi([
+            'parameters' => [[
+                'name' => 'x-test-*',
+                'in' => 'header',
+                'schema' => [
+                    'type' => 'object',
+                    'additionalProperties' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ]],
+        ]);
+        $builder = new ROAStyleBuilder($docs, $api);
+        $data = $builder->build($arguments);
+        $this->assertSame($expected, $data->headers);
+    }
+
+    public function test_headers_resolution_name_contains_asterisk(): void
+    {
+        $docs = $this->makeApiDocs();
+        $api = $this->makeApi([
+            'parameters' => [[
+                'name' => 'x-test-*',
+                'in' => 'header',
+                'schema' => [
                     'type' => 'string',
                 ],
             ]],
         ]);
         $builder = new ROAStyleBuilder($docs, $api);
-        $data = $builder->build(['x-foo' => 'bar']);
-        $this->assertSame(['x-foo' => 'bar'], $data->headers);
+        $data = $builder->build(['x-test-*' => 'foo']);
+        $this->assertSame(['x-test-*' => 'foo'], $data->headers);
+    }
+
+    public function test_headers_resolution_wildcard_invalid(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The header value "x-test-invalid" must be a string.');
+        $docs = $this->makeApiDocs();
+        $api = $this->makeApi([
+            'parameters' => [[
+                'name' => 'x-test-*',
+                'in' => 'header',
+                'schema' => [
+                    'type' => 'object',
+                    'properties' => [
+                        'invalid' => [
+                            'type' => 'object',
+                            'properties' => [],
+                        ],
+                    ],
+                ],
+            ]],
+        ]);
+        $builder = new ROAStyleBuilder($docs, $api);
+        $builder->build(['x-test-*' => ['invalid' => []]]);
     }
 
     public function test_headers_resolution_body_json_style(): void

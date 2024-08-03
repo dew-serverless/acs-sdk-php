@@ -39,4 +39,31 @@ final class Str
 
         return str_replace(' ', '', $result);
     }
+
+    public static function is(string $mask, string $str): bool
+    {
+        $pattern = str_replace(preg_quote('*'), '.*', preg_quote($mask));
+
+        return preg_match("/^$pattern$/", $str) === 1;
+    }
+
+    public static function fill(string $mask, string ...$values): string
+    {
+        $size = count($values);
+
+        if ($size === 0) {
+            return $mask;
+        }
+
+        $result = '';
+        $j = 0;
+
+        for ($i = 0; $i < strlen($mask); $i++) {
+            $result .= $mask[$i] === '*' && $j < $size
+                ? $values[$j++]
+                : $mask[$i];
+        }
+
+        return $result;
+    }
 }

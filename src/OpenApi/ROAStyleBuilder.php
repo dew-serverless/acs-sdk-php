@@ -208,17 +208,17 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
      */
     private function getWildcardHeader(Parameter $parameter, array $headers): array
     {
-        $value = $this->getParameterRawValue($parameter, $headers);
+        $values = $this->getParameterRawValue($parameter, $headers);
 
-        if (! is_array($value)) {
+        if (! is_array($values)) {
             return [
-                $parameter->name => $this->toHeaderValue($parameter, $value),
+                $parameter->name => $this->toHeaderValue($parameter, $values),
             ];
         }
 
         $result = [];
 
-        foreach ($value as $name => $value) {
+        foreach ($values as $name => $value) {
             $normalized = Str::is($parameter->name, $name)
                 ? $name
                 : Str::fill($parameter->name, $name);

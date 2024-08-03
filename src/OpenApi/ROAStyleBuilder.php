@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Dew\Acs\OpenApi;
 
 use Dew\Acs\JsonEncoder;
+use Dew\Acs\Str;
 use Dew\Acs\XmlEncoder;
 use InvalidArgumentException;
 use Override;
@@ -98,7 +99,11 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
                     $host = $this->getParameterValue($parameter, $value);
                     break;
                 case ParameterLocation::HEADER:
-                    $headers[$parameter->name] = $this->getParameterValue($parameter, $value);
+                    if (str_contains($parameter->name, '*') && is_array($value)) {
+                        $headers = [...$headers, ...$this->getWildcardHeader($parameter, $value)];
+                    } else {
+                        $headers[$parameter->name] = $this->getHeaderValue($parameter, $value);
+                    }
                     break;
                 case ParameterLocation::PATH:
                     $value = $this->getParameterValue($parameter, $value);
@@ -164,11 +169,25 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
 
     private function getParameterValue(Parameter $parameter, mixed $value): string
     {
+        return $this->toStringValue(
+            $parameter, $this->getParameterRawValue($parameter, $value)
+        );
+    }
+
+    private function getHeaderValue(Parameter $parameter, mixed $value): string
+    {
+        return $this->toHeaderValue(
+            $parameter, $this->getParameterRawValue($parameter, $value)
+        );
+    }
+
+    private function getParameterRawValue(Parameter $parameter, mixed $value): mixed
+    {
         $value = $this->schemaReader->getProperty(
             $parameter->schema, $value, $parameter->name
         );
 
-        $casted = match ($parameter->style) {
+        return match ($parameter->style) {
             'xml' => is_array($value)
                 ? (new XmlEncoder())->encode($value)
                 : throw new InvalidArgumentException(
@@ -179,14 +198,69 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
                 : throw new InvalidArgumentException(
                     'Data should be an array when performing JSON encoding.'
                 ),
-            default => is_scalar($value) ? (string) $value : $value,
+            default => $value,
         };
+    }
 
-        if (! is_string($casted)) {
-            throw new InvalidArgumentException("The {$parameter->name} must be a string.");
+    /**
+     * @param  array<string, string>  $headers
+     * @return array<string, string>
+     */
+    private function getWildcardHeader(Parameter $parameter, array $headers): array
+    {
+        $value = $this->getParameterRawValue($parameter, $headers);
+
+        if (! is_array($value)) {
+            return [
+                $parameter->name => $this->toHeaderValue($parameter, $value),
+            ];
         }
 
-        return $casted;
+        $result = [];
+
+        foreach ($value as $name => $value) {
+            $normalized = Str::is($parameter->name, $name)
+                ? $name
+                : Str::fill($parameter->name, $name);
+
+            try {
+                $result[$normalized] = $this->toHeaderValue($parameter, $value);
+            } catch (InvalidArgumentException $e) {
+                throw new InvalidArgumentException(sprintf(
+                    'The header value "%s" must be a string.', $normalized
+                ));
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * @throws \InvalidArgumentException
+     */
+    private function toHeaderValue(Parameter $parameter, mixed $value): string
+    {
+        if (is_bool($value)) {
+            return $value ? '?1' : '?0';
+        }
+
+        return $this->toStringValue($parameter, $value);
+    }
+
+    /**
+     * @throws \InvalidArgumentException
+     */
+    private function toStringValue(Parameter $parameter, mixed $value): string
+    {
+        $value = is_scalar($value) ? (string) $value : $value;
+
+        if (! is_string($value)) {
+            throw new InvalidArgumentException(
+                "The {$parameter->name} must be a string."
+            );
+        }
+
+        return $value;
     }
 
     /**

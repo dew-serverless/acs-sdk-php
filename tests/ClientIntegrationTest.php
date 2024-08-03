@@ -6,6 +6,7 @@ namespace Dew\Acs\Tests;
 
 use Dew\Acs\AcsClient;
 use Dew\Acs\ApiDocsResolver;
+use Dew\Acs\Sts\StsClient;
 use Generator;
 use Http\Mock\Client;
 use InvalidArgumentException;
@@ -16,6 +17,7 @@ use RuntimeException;
 
 /**
  * @phpstan-import-type TProductInfo from \Dew\Acs\ApiDocsResolver
+ * @phpstan-import-type TConfig from \Dew\Acs\AcsClient
  */
 #[CoversClass(AcsClient::class)]
 final class ClientIntegrationTest extends TestCase
@@ -28,16 +30,17 @@ final class ClientIntegrationTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Could not find Foo API.');
-        $client = new $fqdn([
-            'credentials' => [
-                'key' => 'mykey',
-                'secret' => 'mysecret',
-            ],
-            'region' => 'cn-somewhere',
-            'endpoint' => 'example.com',
-            'http_client' => new Client(),
-        ]);
+        $client = new $fqdn($this->makeConfig());
         $client->__call('foo', []);
+    }
+
+    public function test_at_headers(): void
+    {
+        $httpClient = new Client();
+        $client = new StsClient($this->makeConfig(['http_client' => $httpClient]));
+        $client->getCallerIdentity(['@headers' => ['x-foo' => 'bar']]);
+        $request = $httpClient->getLastRequest();
+        $this->assertSame('bar', $request->getHeaderLine('x-foo'));
     }
 
     /**
@@ -60,5 +63,24 @@ final class ClientIntegrationTest extends TestCase
 
             yield $product['code'] => [$fqdn];
         }
+    }
+
+    /**
+     * @param  TConfig|array<string, mixed>  $config
+     * @return TConfig
+     */
+    private function makeConfig(array $config = []): array
+    {
+        /** @var TConfig */
+        return [
+            'credentials' => [
+                'key' => 'mykey',
+                'secret' => 'mysecret',
+            ],
+            'region' => 'cn-somewhere',
+            'endpoint' => 'example.com',
+            'http_client' => new Client(),
+            ...$config,
+        ];
     }
 }

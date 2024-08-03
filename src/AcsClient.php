@@ -6,6 +6,7 @@ namespace Dew\Acs;
 
 use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
+use Http\Client\Common\Plugin\HeaderSetPlugin;
 use Http\Client\Common\PluginClient;
 use Http\Client\Promise\HttpFulfilledPromise;
 use Http\Discovery\Psr17FactoryDiscovery;
@@ -113,6 +114,7 @@ abstract class AcsClient
 
         $client = new PluginClient($this->httpClient, [
             new Plugins\ConfigureAction($this->docs, $api, $this->streamFactory, $arguments),
+            new HeaderSetPlugin(is_array($arguments['@headers'] ?? null) ? $arguments['@headers'] : []),
             new Plugins\SignRequest($this->docs, $api, $this->config, $arguments),
         ]);
 

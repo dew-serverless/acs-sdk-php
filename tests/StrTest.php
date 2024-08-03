@@ -85,4 +85,20 @@ final class StrTest extends TestCase
     {
         $this->assertSame($expected, Str::is($mask, $str));
     }
+
+    /**
+     * @param  string[]  $values
+     */
+    #[TestWith(['foo*', ['bar'], 'foobar'])]
+    #[TestWith(['*bar', ['foo'], 'foobar'])]
+    #[TestWith(['f*o', ['o'], 'foo'])]
+    #[TestWith(['*, *!', ['Hello', 'World'], 'Hello, World!'])]
+    #[TestWith(['*', [], '*'])]
+    #[TestWith(['*', ['foo'], 'foo'])]
+    #[TestWith(['*', ['foo', 'bar'], 'foo'])]
+    #[TestWith(['**', [], '**'])]
+    public function test_fill(string $mask, array $values, string $expected): void
+    {
+        $this->assertSame($expected, Str::fill($mask, ...$values));
+    }
 }

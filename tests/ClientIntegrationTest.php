@@ -43,6 +43,15 @@ final class ClientIntegrationTest extends TestCase
         $this->assertSame('bar', $request->getHeaderLine('x-foo'));
     }
 
+    public function test_user_agent_header(): void
+    {
+        $httpClient = new Client();
+        $client = new StsClient($this->makeConfig(['http_client' => $httpClient]));
+        $client->getCallerIdentity();
+        $request = $httpClient->getLastRequest();
+        $this->assertStringMatchesFormat('DewAcsPHP/%s (%s; PHP %s)', $request->getHeaderLine('User-Agent'));
+    }
+
     /**
      * @return \Generator<string, class-string<\Dew\Acs\AcsClient>[]>
      */

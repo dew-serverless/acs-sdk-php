@@ -118,6 +118,7 @@ abstract class AcsClient
             new Plugins\ConfigureUserAgent(),
             new Plugins\ConfigureAction($this->docs, $api, $this->streamFactory, $arguments),
             new HeaderSetPlugin(is_array($arguments['@headers'] ?? null) ? $arguments['@headers'] : []),
+            new Plugins\ExecuteSigningHook($this),
             new Plugins\SignRequest($this->docs, $api, $this->config, $arguments),
         ]);
 

@@ -208,6 +208,25 @@ final class ROAStyleBuilderTest extends TestCase
         $this->assertSame('application/json', $data->headers['Content-Type']);
     }
 
+    public function test_headers_resolution_default_content_type(): void
+    {
+        $docs = $this->makeApiDocs();
+        $api = $this->makeApi([
+            'parameters' => [[
+                'name' => 'body',
+                'in' => 'body',
+                'schema' => [
+                    'type' => 'string',
+                    'format' => 'binary',
+                ],
+            ]],
+        ]);
+        $builder = new ROAStyleBuilder($docs, $api);
+        $data = $builder->build(['body' => 'foo']);
+        $this->assertArrayHasKey('Content-Type', $data->headers);
+        $this->assertSame('application/octet-stream', $data->headers['Content-Type']);
+    }
+
     public function test_headers_resolution_content_type_if_body_empty(): void
     {
         $docs = $this->makeApiDocs();

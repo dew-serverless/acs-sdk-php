@@ -114,7 +114,9 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
                     break;
                 case ParameterLocation::BODY:
                     $body = $this->getParameterValue($parameter, $value);
-                    $headers = $this->addContentTypeIfNeeded($headers, $parameter, $body);
+                    if ($body !== '') {
+                        $headers['Content-Type'] = $this->getContentType($parameter);
+                    }
                     break;
                 default:
                     throw new InvalidArgumentException(
@@ -263,26 +265,12 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
         return $value;
     }
 
-    /**
-     * @param  array<string, string>  $headers
-     * @return array<string, string>
-     */
-    private function addContentTypeIfNeeded(array $headers, Parameter $parameter, string $value): array
+    private function getContentType(Parameter $parameter): string
     {
-        if ($value === '') {
-            return $headers;
-        }
-
-        $contentType = match ($parameter->style) {
+        return match ($parameter->style) {
             'json' => 'application/json',
             'xml' => 'application/xml',
-            default => null,
+            default => 'application/octet-stream',
         };
-
-        if (is_string($contentType)) {
-            $headers['Content-Type'] = $contentType;
-        }
-
-        return $headers;
     }
 }

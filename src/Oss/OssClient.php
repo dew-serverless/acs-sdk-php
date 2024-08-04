@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Dew\Acs\Oss;
 
 use Dew\Acs\AcsClient;
+use Dew\Acs\WithSigngingHook;
+use Override;
+use Psr\Http\Message\RequestInterface;
 
 /**
  * @method \Dew\Acs\Result listBuckets(array $arguments = [])
@@ -308,7 +311,7 @@ use Dew\Acs\AcsClient;
  * @method \Dew\Acs\Result postVodPlaylist(array $arguments = [])
  * @method \Http\Promise\Promise postVodPlaylistAsync($arguments = [])
  */
-final class OssClient extends AcsClient
+final class OssClient extends AcsClient implements WithSigngingHook
 {
     public function urlToDownload(string $bucket, string $object, int $expires = 900): string
     {
@@ -351,5 +354,16 @@ final class OssClient extends AcsClient
         $request = $signer->signRequest($request, $this->config);
 
         return (string) $request->getUri();
+    }
+
+    #[Override]
+    public function handleSignging(RequestInterface $request): RequestInterface
+    {
+        if (! $request->hasHeader('Content-Length')
+            && ($request->getBody()->getSize() ?? 0) === 0) {
+            return $request->withHeader('Content-Length', '0');
+        }
+
+        return $request;
     }
 }

@@ -36,6 +36,15 @@ final class OssClientTest extends TestCase
         $this->assertStringContainsString('x-oss-additional-headers=host%3Bx-foo', $url);
     }
 
+    public function test_content_length_body_empty(): void
+    {
+        $httpClient = new Client();
+        $client = $this->makeClient(['http_client' => $httpClient]);
+        $client->putObject(['bucket' => 'mybucket', 'key' => 'greeting.txt']);
+        $request = $httpClient->getLastRequest();
+        $this->assertSame('0', $request->getHeaderLine('Content-Length'));
+    }
+
     /**
      * @param  TConfig|array<string, mixed>  $config
      */

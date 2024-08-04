@@ -273,15 +273,11 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
             return $headers;
         }
 
-        $contentType = match ($parameter->style) {
+        $headers['Content-Type'] = match ($parameter->style) {
             'json' => 'application/json',
             'xml' => 'application/xml',
-            default => null,
+            default => 'application/octet-stream',
         };
-
-        if (is_string($contentType)) {
-            $headers['Content-Type'] = $contentType;
-        }
 
         return $headers;
     }

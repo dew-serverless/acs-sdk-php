@@ -37,6 +37,8 @@ use RuntimeException;
  */
 abstract class AcsClient
 {
+    public const int MAJOR_VERSION = 0;
+
     private ApiDocs $docs;
 
     private ?string $region = null;
@@ -113,6 +115,7 @@ abstract class AcsClient
         );
 
         $client = new PluginClient($this->httpClient, [
+            new Plugins\ConfigureUserAgent(),
             new Plugins\ConfigureAction($this->docs, $api, $this->streamFactory, $arguments),
             new HeaderSetPlugin(is_array($arguments['@headers'] ?? null) ? $arguments['@headers'] : []),
             new Plugins\SignRequest($this->docs, $api, $this->config, $arguments),

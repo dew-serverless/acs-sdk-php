@@ -76,6 +76,7 @@ function main(): int
     }
 
     annoate(['code' => 'Tablestore', 'versions' => ['2020-12-09']]);
+    annoate(['code' => 'Ots', 'versions' => ['2016-06-20']]);
 
     echo '== Annotated successfully.'.PHP_EOL;
 

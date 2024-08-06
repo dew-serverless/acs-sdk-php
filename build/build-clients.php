@@ -42,6 +42,7 @@ function main(): void
 {
     buildFromProducts(__DIR__.'/../data/products.php');
     buildProduct('Tablestore');
+    buildProduct('Ots');
     print '== Build completed.'.PHP_EOL;
 }
 

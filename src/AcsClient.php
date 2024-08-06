@@ -77,6 +77,11 @@ abstract class AcsClient
         $this->resultProvider = new ResultProvider($this->docs, $this->exceptionClass);
     }
 
+    public function getEndpoint(): string
+    {
+        return $this->endpoint;
+    }
+
     protected function resolveApiDocs(): ApiDocs
     {
         $clientClass = basename(str_replace('\\', '/', static::class));

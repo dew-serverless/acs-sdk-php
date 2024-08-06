@@ -13,7 +13,7 @@ function getProducts(): array
     $filename = __DIR__.'/../data/products.php';
 
     if (! file_exists($filename)) {
-        throw new RuntimeException('Could not find products data.');
+        throw new RuntimeException('Could not find product data.');
     }
 
     return require $filename;
@@ -54,8 +54,12 @@ function getDocsPaths(array $product): array
     return $paths;
 }
 
-foreach (getProducts() as $product) {
-    printf("=> Annonate %s\n", $product['code']);
+/**
+ * @param  array{code: string, versions: string[]}  $product
+ */
+function annoate(array $product): void
+{
+    printf('=> Annonate %s'.PHP_EOL, $product['code']);
 
     $docs = getDocsPaths($product);
 
@@ -63,4 +67,22 @@ foreach (getProducts() as $product) {
     $annotationBuilder->annotate();
 }
 
-printf("== Annotated successfully.\n");
+function main(): int
+{
+    $products = getProducts();
+
+    foreach ($products as $product) {
+        annoate($product);
+    }
+
+    annoate(['code' => 'Tablestore', 'versions' => ['2020-12-09']]);
+
+    echo '== Annotated successfully.'.PHP_EOL;
+
+    return 0;
+}
+
+/**
+ * Main entry.
+ */
+main();

@@ -7,23 +7,45 @@ require_once __DIR__.'/ProductBuilder.php';
 
 use Dew\Acs\ApiDocsResolver;
 
-if (! file_exists(__DIR__.'/../data/products.json')) {
-    throw new RuntimeException('Missing products meta file.');
-}
-
-$products = require __DIR__.'/../data/products.php';
-
-foreach ($products as $product) {
-    printf("=> Build %s\n", strtolower($product['code']));
-
+function buildClient(string $product): void
+{
     $builder = new ProductBuilder(
         basePath: __DIR__.'/../src',
         namespace: 'Dew\\Acs',
-        product: ApiDocsResolver::getNormalizedProductName($product['code'])
+        product: ApiDocsResolver::getNormalizedProductName($product)
     );
 
     $builder->buildClient();
     $builder->buildException();
 }
 
-print "== Build completed.\n";
+function buildFromProducts(string $filename): void
+{
+    if (! file_exists($filename)) {
+        throw new InvalidArgumentException('The file does not exist.');
+    }
+
+    $products = require $filename;
+
+    foreach ($products as $product) {
+        buildProduct($product['code']);
+    }
+}
+
+function buildProduct(string $product): void
+{
+    printf('=> Build %s'.PHP_EOL, strtolower($product));
+    buildClient($product);
+}
+
+function main(): void
+{
+    buildFromProducts(__DIR__.'/../data/products.php');
+    buildProduct('Tablestore');
+    print '== Build completed.'.PHP_EOL;
+}
+
+/**
+ * Main entry.
+ */
+main();

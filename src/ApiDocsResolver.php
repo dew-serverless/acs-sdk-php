@@ -43,8 +43,8 @@ final class ApiDocsResolver
             throw new RuntimeException('The client class name is invalid.');
         }
 
-        $clientName = substr($clientClass, 0, -6);
-        $product = static::getProduct($clientName);
+        $name = substr($clientClass, 0, -6);
+        $product = $this->getProductFromNormalizedName($name);
         $version = $config['version'] ?? $product['defaultVersion'];
 
         if (! is_string($version)) {
@@ -59,7 +59,7 @@ final class ApiDocsResolver
         }
 
         return ApiDocs::make(
-            static::getProductDefinition($product, $version)
+            $this->getProductDefinition($product['code'], $version)
         );
     }
 
@@ -75,10 +75,16 @@ final class ApiDocsResolver
     /**
      * @return TProductInfo
      */
-    private static function getProduct(string $name): array
+    public function getProductFromNormalizedName(string $name): array
     {
         if (! isset(static::$products)) {
-            $products = require __DIR__.'/../data/products.php';
+            $filename = __DIR__.'/../data/products.php';
+
+            if (! file_exists($filename)) {
+                throw new RuntimeException('Missing product data.');
+            }
+
+            $products = require $filename;
 
             foreach ($products as $product) {
                 $key = static::getNormalizedProductName($product['code']);
@@ -87,23 +93,26 @@ final class ApiDocsResolver
             }
         }
 
-        return static::$products[$name]
-            ?? throw new InvalidArgumentException("Could not find product $name.");
+        if (! isset(static::$products[$name])) {
+            throw new InvalidArgumentException("Could not find product $name.");
+        }
+
+        return static::$products[$name];
     }
 
     /**
-     * @param  TProductInfo  $product
      * @return TApiDocs
      */
-    private function getProductDefinition(array $product, string $version): array
+    public function getProductDefinition(string $product, string $version): array
     {
-        $directory = strtolower($product['code']);
-        $filename = __DIR__."/../data/$directory/$version/api-docs.php";
+        $filename = sprintf(__DIR__.'/../data/%s/%s/api-docs.php',
+            strtolower($product), $version
+        );
 
         if (! file_exists($filename)) {
             throw new RuntimeException(sprintf(
                 'Could not find APIs for product %s with version %s.',
-                $product['code'], $version
+                $product, $version
             ));
         }
 

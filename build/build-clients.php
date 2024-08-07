@@ -27,7 +27,15 @@ function buildFromProducts(string $filename): void
 
     $products = require $filename;
 
+    if (! is_array($products)) {
+        throw new RuntimeException('The product data is invalid.');
+    }
+
     foreach ($products as $product) {
+        if (! isset($product['code']) || ! is_string($product['code'])) {
+            throw new RuntimeException('Missing product code.');
+        }
+
         buildProduct($product['code']);
     }
 }

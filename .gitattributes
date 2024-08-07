@@ -15,5 +15,6 @@ Makefile  export-ignore
 .github                export-ignore
 .gitignore             export-ignore
 .php-cs-fixer.dist.php export-ignore
+.protobuf              export-ignore
 phpstan.neon.dist      text eol=lf export-ignore
 phpunit.xml.dist       text eol=lf export-ignore

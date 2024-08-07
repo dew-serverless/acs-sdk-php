@@ -39,9 +39,9 @@ abstract class AcsClient
 {
     public const int MAJOR_VERSION = 0;
 
-    private ApiDocs $docs;
+    protected ApiDocs $docs;
 
-    private ?string $region = null;
+    protected string $region;
 
     protected string $endpoint;
 
@@ -66,16 +66,32 @@ abstract class AcsClient
     public function __construct(
         protected array $config
     ) {
-        $this->docs = ApiDocsResolver::make()
-            ->resolve(basename(str_replace('\\', '/', static::class)), $config);
+        $this->docs = $this->resolveApiDocs();
         $this->region = $config['region'];
-        $this->endpoint = $config['endpoint'] ?? $this->docs->getEndpoint($this->region);
+        $this->endpoint = $this->resolveEndpoint();
         $this->httpClient = $config['http_client'] ?? Psr18ClientDiscovery::find();
         $this->requestFactory = Psr17FactoryDiscovery::findRequestFactory();
         $this->streamFactory = Psr17FactoryDiscovery::findStreamFactory();
         $this->uriFactory = Psr17FactoryDiscovery::findUriFactory();
         $this->exceptionClass = $this->discoverExceptionClass();
         $this->resultProvider = new ResultProvider($this->docs, $this->exceptionClass);
+    }
+
+    public function getEndpoint(): string
+    {
+        return $this->endpoint;
+    }
+
+    protected function resolveApiDocs(): ApiDocs
+    {
+        $clientClass = basename(str_replace('\\', '/', static::class));
+
+        return ApiDocsResolver::make()->resolve($clientClass, $this->config);
+    }
+
+    protected function resolveEndpoint(): string
+    {
+        return $this->config['endpoint'] ?? $this->docs->getEndpoint($this->region);
     }
 
     /**

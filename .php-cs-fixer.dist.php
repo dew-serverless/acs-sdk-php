@@ -6,6 +6,10 @@ $finder = (new PhpCsFixer\Finder())
     ->in([
         __DIR__.'/src',
         __DIR__.'/tests',
+    ])
+    ->exclude([
+        'Tablestore/Messages',
+        'Tablestore/Metadata',
     ]);
 
 return (new PhpCsFixer\Config())

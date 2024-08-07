@@ -4,6 +4,9 @@
 # PHP files
 *.php     text eol=lf diff=php
 
+# Protobuf
+/src/Tablestore/Metadata/*.php  -text diff
+
 # Development
 /build    linguist-generated export-ignore
 /tests    export-ignore

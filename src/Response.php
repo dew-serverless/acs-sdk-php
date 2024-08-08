@@ -22,6 +22,11 @@ final readonly class Response
         return $this->response->getStatusCode();
     }
 
+    public function body(): string
+    {
+        return (string) $this->response->getBody();
+    }
+
     public function isInformational(): bool
     {
         return $this->status() >= 100 && $this->status() < 200;

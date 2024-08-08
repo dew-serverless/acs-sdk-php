@@ -4,21 +4,39 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tablestore;
 
-use InvalidArgumentException;
+use Dew\Acs\Plugins\ConfigureUserAgent;
+use Dew\Acs\Response;
+use Dew\Acs\Tablestore\Messages\Error;
+use Google\Protobuf\Internal\Message;
+use Http\Client\Common\PluginClient;
+use Http\Discovery\Psr17FactoryDiscovery;
+use Http\Discovery\Psr18ClientDiscovery;
+use Override;
+use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+use RuntimeException;
 
 /**
  * @phpstan-import-type TCredentials from \Dew\Acs\AcsClient
  * @phpstan-type TConfig array{
- *   instance?: string,
- *   region?: string,
- *   endpoint?: string,
  *   credentials: TCredentials,
+ *   region: string,
+ *   instance: string,
+ *   endpoint: string,
  *   http_client?: \Psr\Http\Client\ClientInterface
  * }
  */
-final class TablestoreInstance
+final class TablestoreInstance implements InteractsWithTablestore
 {
-    private string $endpoint;
+    use ManagesTable;
+
+    private ClientInterface $httpClient;
+
+    private RequestFactoryInterface $requestFactory;
+
+    private StreamFactoryInterface $streamFactory;
 
     /**
      * @param  TConfig  $config
@@ -26,32 +44,72 @@ final class TablestoreInstance
     public function __construct(
         private array $config
     ) {
-        $this->endpoint = $this->resolveEndpoint($this->config);
-    }
-
-    public function getEndpoint(): string
-    {
-        return $this->endpoint;
+        $this->httpClient = $config['http_client'] ?? Psr18ClientDiscovery::find();
+        $this->requestFactory = Psr17FactoryDiscovery::findRequestFactory();
+        $this->streamFactory = Psr17FactoryDiscovery::findStreamFactory();
     }
 
     /**
-     * @param  TConfig  $config
+     * @throws \Dew\Acs\Tablestore\InstanceException
      */
-    private function resolveEndpoint(array $config): string
+    #[Override]
+    public function send(string $uri, Message $message): string
     {
-        if (isset($config['endpoint'])) {
-            return $config['endpoint'];
+        $request = $this->requestFactory
+            ->createRequest('POST', $this->withEndpoint($uri))
+            ->withBody($this->streamFactory->createStream($message->serializeToString()));
+
+        $response = $this->makeClient()
+            ->sendAsyncRequest($request)
+            ->wait();
+
+        if (! $response instanceof ResponseInterface) {
+            throw new RuntimeException('Could not retrieve the HTTP response.');
         }
 
-        if (isset($config['instance']) && isset($config['region'])) {
-            return $this->makeDualStackEndpoint($config['instance'], $config['region']);
-        }
-
-        throw new InvalidArgumentException('Could not resolve the endpoint.');
+        return $this->handleResponse($response);
     }
 
-    private function makeDualStackEndpoint(string $instance, string $region): string
+    /**
+     * @throws \Dew\Acs\Tablestore\InstanceException
+     */
+    private function handleResponse(ResponseInterface $response): string
     {
-        return sprintf('%s.%s.tablestore.aliyuncs.com', $instance, $region);
+        $response = new Response($response);
+
+        if ($response->isError()) {
+            $this->handleErrorResponse($response);
+        }
+
+        return $response->body();
+    }
+
+    /**
+     * @throws \Dew\Acs\Tablestore\InstanceException
+     */
+    private function handleErrorResponse(Response $response): never
+    {
+        $error = new Error();
+        $error->mergeFromString($response->body());
+
+        throw (new InstanceException($error->getMessage(), $error->getCode()))
+            ->setResponse($response->getPsrResponse())
+            ->setError($error);
+    }
+
+    private function makeClient(): PluginClient
+    {
+        return new PluginClient($this->httpClient, [
+            new ConfigureUserAgent(),
+            new SignRequest($this->config),
+        ]);
+    }
+
+    private function withEndpoint(string $uri): string
+    {
+        return sprintf('%s/%s',
+            rtrim($this->config['endpoint'], '/'),
+            ltrim($uri, '/')
+        );
     }
 }

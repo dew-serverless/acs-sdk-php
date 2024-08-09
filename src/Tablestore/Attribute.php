@@ -104,7 +104,7 @@ final class Attribute
     /**
      * Get the attribute class by the given type.
      *
-     * @return class-string<\Dew\Acs\Tablestore\Cells\Cell>
+     * @return class-string<\Dew\Acs\Tablestore\Cells\Cell&\Dew\Acs\Tablestore\Cells\HasValue>
      */
     public static function classFromType(ValueType|int $type): string
     {

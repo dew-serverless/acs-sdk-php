@@ -21,8 +21,9 @@ trait IsAttribute
     protected ?Operation $operation = null;
 
     /**
-     * Set the timestamp of the cell.
+     * {@inheritDoc}
      */
+    #[Override]
     public function setTimestamp(DateTimeInterface|int $timestamp): self
     {
         // U: seconds since the Unix Epoch
@@ -35,8 +36,9 @@ trait IsAttribute
     }
 
     /**
-     * Get the timestamp of the cell.
+     * {@inheritDoc}
      */
+    #[Override]
     public function getTimestamp(): ?int
     {
         return $this->timestamp;
@@ -53,8 +55,9 @@ trait IsAttribute
     }
 
     /**
-     * Get the operation applied to the cell.
+     * {@inheritDoc}
      */
+    #[Override]
     public function getOperation(): ?Operation
     {
         return $this->operation;

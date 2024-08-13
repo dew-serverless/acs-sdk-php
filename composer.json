@@ -16,6 +16,7 @@
         "nyholm/psr7": "^1.0",
         "php-http/mock-client": "^1.0",
         "phpstan/phpstan": "^1.11",
+        "phpstan/phpstan-mockery": "^1.1",
         "phpunit/phpunit": "^11.2",
         "rector/rector": "^1.1",
         "symfony/var-exporter": "^7.1"

@@ -31,6 +31,7 @@ use RuntimeException;
 final class TablestoreInstance implements InteractsWithTablestore
 {
     use ManagesTable;
+    use ManagesDataOperation;
 
     private ClientInterface $httpClient;
 

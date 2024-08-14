@@ -7,6 +7,10 @@ namespace Dew\Acs\Ens;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result deleteStorageGateway(array $arguments = [])
+ * @method \Http\Promise\Promise deleteStorageGatewayAsync($arguments = [])
+ * @method \Dew\Acs\Result createStorageGateway(array $arguments = [])
+ * @method \Http\Promise\Promise createStorageGatewayAsync($arguments = [])
  * @method \Dew\Acs\Result runInstances(array $arguments = [])
  * @method \Http\Promise\Promise runInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result createInstance(array $arguments = [])
@@ -309,6 +313,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listObjectsAsync($arguments = [])
  * @method \Dew\Acs\Result deleteObject(array $arguments = [])
  * @method \Http\Promise\Promise deleteObjectAsync($arguments = [])
+ * @method \Dew\Acs\Result prepareUpload(array $arguments = [])
+ * @method \Http\Promise\Promise prepareUploadAsync($arguments = [])
  * @method \Dew\Acs\Result createFileSystem(array $arguments = [])
  * @method \Http\Promise\Promise createFileSystemAsync($arguments = [])
  * @method \Dew\Acs\Result describeFileSystems(array $arguments = [])
@@ -469,6 +475,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSDGDeploymentStatusAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceChargeType(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceChargeTypeAsync($arguments = [])
+ * @method \Dew\Acs\Result deployInstanceSDG(array $arguments = [])
+ * @method \Http\Promise\Promise deployInstanceSDGAsync($arguments = [])
+ * @method \Dew\Acs\Result unloadRegionSDG(array $arguments = [])
+ * @method \Http\Promise\Promise unloadRegionSDGAsync($arguments = [])
+ * @method \Dew\Acs\Result removeInstanceSDG(array $arguments = [])
+ * @method \Http\Promise\Promise removeInstanceSDGAsync($arguments = [])
+ * @method \Dew\Acs\Result preloadRegionSDG(array $arguments = [])
+ * @method \Http\Promise\Promise preloadRegionSDGAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSDG(array $arguments = [])
+ * @method \Http\Promise\Promise describeSDGAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

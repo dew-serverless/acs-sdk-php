@@ -9,6 +9,8 @@ use Dew\Acs\AcsClient;
 /**
  * @method \Dew\Acs\Result recognizeAllText(array $arguments = [])
  * @method \Http\Promise\Promise recognizeAllTextAsync($arguments = [])
+ * @method \Dew\Acs\Result recognizeGeneralStructure(array $arguments = [])
+ * @method \Http\Promise\Promise recognizeGeneralStructureAsync($arguments = [])
  * @method \Dew\Acs\Result recognizeAdvanced(array $arguments = [])
  * @method \Http\Promise\Promise recognizeAdvancedAsync($arguments = [])
  * @method \Dew\Acs\Result recognizeHandwriting(array $arguments = [])

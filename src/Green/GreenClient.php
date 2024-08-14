@@ -39,6 +39,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise urlAsyncModerationAsync($arguments = [])
  * @method \Dew\Acs\Result describeUrlModerationResult(array $arguments = [])
  * @method \Http\Promise\Promise describeUrlModerationResultAsync($arguments = [])
+ * @method \Dew\Acs\Result describeUploadToken(array $arguments = [])
+ * @method \Http\Promise\Promise describeUploadTokenAsync($arguments = [])
  */
 final class GreenClient extends AcsClient
 {

@@ -7,6 +7,8 @@ namespace Dew\Acs\Pvtz;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result describeUserServiceStatus(array $arguments = [])
+ * @method \Http\Promise\Promise describeUserServiceStatusAsync($arguments = [])
  * @method \Dew\Acs\Result setProxyPattern(array $arguments = [])
  * @method \Http\Promise\Promise setProxyPatternAsync($arguments = [])
  * @method \Dew\Acs\Result describeChangeLogs(array $arguments = [])
@@ -89,6 +91,22 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateSyncEcsHostTaskAsync($arguments = [])
  * @method \Dew\Acs\Result describeSyncEcsHostTask(array $arguments = [])
  * @method \Http\Promise\Promise describeSyncEcsHostTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result updateCustomLine(array $arguments = [])
+ * @method \Http\Promise\Promise updateCustomLineAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCustomLineInfo(array $arguments = [])
+ * @method \Http\Promise\Promise describeCustomLineInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteCustomLine(array $arguments = [])
+ * @method \Http\Promise\Promise deleteCustomLineAsync($arguments = [])
+ * @method \Dew\Acs\Result addCustomLine(array $arguments = [])
+ * @method \Http\Promise\Promise addCustomLineAsync($arguments = [])
+ * @method \Dew\Acs\Result searchCustomLines(array $arguments = [])
+ * @method \Http\Promise\Promise searchCustomLinesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCustomLines(array $arguments = [])
+ * @method \Http\Promise\Promise describeCustomLinesAsync($arguments = [])
+ * @method \Dew\Acs\Result changeZoneDnsGroup(array $arguments = [])
+ * @method \Http\Promise\Promise changeZoneDnsGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result describeZoneRecord(array $arguments = [])
+ * @method \Http\Promise\Promise describeZoneRecordAsync($arguments = [])
  */
 final class PvtzClient extends AcsClient
 {

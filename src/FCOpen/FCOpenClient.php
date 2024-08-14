@@ -135,10 +135,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise untagResourceAsync($arguments = [])
  * @method \Dew\Acs\Result listInstances(array $arguments = [])
  * @method \Http\Promise\Promise listInstancesAsync($arguments = [])
- * @method \Dew\Acs\Result claimGPUInstance(array $arguments = [])
- * @method \Http\Promise\Promise claimGPUInstanceAsync($arguments = [])
- * @method \Dew\Acs\Result releaseGPUInstance(array $arguments = [])
- * @method \Http\Promise\Promise releaseGPUInstanceAsync($arguments = [])
  */
 final class FCOpenClient extends AcsClient
 {

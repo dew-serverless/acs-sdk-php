@@ -579,6 +579,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise exportDataSourcesAsync($arguments = [])
  * @method \Dew\Acs\Result importDataSources(array $arguments = [])
  * @method \Http\Promise\Promise importDataSourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result updateClusterConfigs(array $arguments = [])
+ * @method \Http\Promise\Promise updateClusterConfigsAsync($arguments = [])
+ * @method \Dew\Acs\Result listClusterConfigs(array $arguments = [])
+ * @method \Http\Promise\Promise listClusterConfigsAsync($arguments = [])
+ * @method \Dew\Acs\Result listClusters(array $arguments = [])
+ * @method \Http\Promise\Promise listClustersAsync($arguments = [])
  * @method \Dew\Acs\Result setDataSourceShare(array $arguments = []) {@deprecated 2020-05-18}
  * @method \Http\Promise\Promise setDataSourceShareAsync($arguments = []) {@deprecated 2020-05-18}
  * @method \Dew\Acs\Result createConnection(array $arguments = []) {@deprecated 2020-05-18}

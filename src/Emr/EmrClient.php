@@ -77,8 +77,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result createScript(array $arguments = [])
+ * @method \Http\Promise\Promise createScriptAsync($arguments = [])
  * @method \Dew\Acs\Result listScripts(array $arguments = [])
  * @method \Http\Promise\Promise listScriptsAsync($arguments = [])
+ * @method \Dew\Acs\Result updateScript(array $arguments = [])
+ * @method \Http\Promise\Promise updateScriptAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteScript(array $arguments = [])
+ * @method \Http\Promise\Promise deleteScriptAsync($arguments = [])
  * @method \Dew\Acs\Result listDoctorHiveDatabases(array $arguments = [])
  * @method \Http\Promise\Promise listDoctorHiveDatabasesAsync($arguments = [])
  * @method \Dew\Acs\Result getDoctorHiveDatabase(array $arguments = [])
@@ -129,10 +135,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDoctorApplicationAsync($arguments = [])
  * @method \Dew\Acs\Result getDoctorHDFSUGI(array $arguments = [])
  * @method \Http\Promise\Promise getDoctorHDFSUGIAsync($arguments = [])
- * @method \Dew\Acs\Result listResourceHealthInspections(array $arguments = [])
- * @method \Http\Promise\Promise listResourceHealthInspectionsAsync($arguments = [])
- * @method \Dew\Acs\Result listInspectionHistory(array $arguments = [])
- * @method \Http\Promise\Promise listInspectionHistoryAsync($arguments = [])
  */
 final class EmrClient extends AcsClient
 {

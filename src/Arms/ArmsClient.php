@@ -53,6 +53,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryAppMetadataAsync($arguments = [])
  * @method \Dew\Acs\Result deleteAppList(array $arguments = [])
  * @method \Http\Promise\Promise deleteAppListAsync($arguments = [])
+ * @method \Dew\Acs\Result doInsightsAction(array $arguments = [])
+ * @method \Http\Promise\Promise doInsightsActionAsync($arguments = [])
  * @method \Dew\Acs\Result upload(array $arguments = [])
  * @method \Http\Promise\Promise uploadAsync($arguments = [])
  * @method \Dew\Acs\Result deleteSourceMap(array $arguments = [])
@@ -259,22 +261,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getCloudClusterAllUrlAsync($arguments = []) {@deprecated 2019-08-08}
  * @method \Dew\Acs\Result listPrometheusInstances(array $arguments = [])
  * @method \Http\Promise\Promise listPrometheusInstancesAsync($arguments = [])
- * @method \Dew\Acs\Result addPrometheusRemoteWrite(array $arguments = [])
- * @method \Http\Promise\Promise addPrometheusRemoteWriteAsync($arguments = [])
- * @method \Dew\Acs\Result updatePrometheusRemoteWrite(array $arguments = [])
- * @method \Http\Promise\Promise updatePrometheusRemoteWriteAsync($arguments = [])
- * @method \Dew\Acs\Result listPrometheusRemoteWrites(array $arguments = [])
- * @method \Http\Promise\Promise listPrometheusRemoteWritesAsync($arguments = [])
- * @method \Dew\Acs\Result getPrometheusRemoteWrite(array $arguments = [])
- * @method \Http\Promise\Promise getPrometheusRemoteWriteAsync($arguments = [])
- * @method \Dew\Acs\Result deletePrometheusRemoteWrite(array $arguments = [])
- * @method \Http\Promise\Promise deletePrometheusRemoteWriteAsync($arguments = [])
- * @method \Dew\Acs\Result installManagedPrometheus(array $arguments = [])
- * @method \Http\Promise\Promise installManagedPrometheusAsync($arguments = [])
- * @method \Dew\Acs\Result uninstallManagedPrometheus(array $arguments = [])
- * @method \Http\Promise\Promise uninstallManagedPrometheusAsync($arguments = [])
- * @method \Dew\Acs\Result getManagedPrometheusStatus(array $arguments = [])
- * @method \Http\Promise\Promise getManagedPrometheusStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result installManagedPrometheus(array $arguments = []) {@deprecated 2019-08-08}
+ * @method \Http\Promise\Promise installManagedPrometheusAsync($arguments = []) {@deprecated 2019-08-08}
+ * @method \Dew\Acs\Result uninstallManagedPrometheus(array $arguments = []) {@deprecated 2019-08-08}
+ * @method \Http\Promise\Promise uninstallManagedPrometheusAsync($arguments = []) {@deprecated 2019-08-08}
+ * @method \Dew\Acs\Result getManagedPrometheusStatus(array $arguments = []) {@deprecated 2019-08-08}
+ * @method \Http\Promise\Promise getManagedPrometheusStatusAsync($arguments = []) {@deprecated 2019-08-08}
  * @method \Dew\Acs\Result bindPrometheusGrafanaInstance(array $arguments = [])
  * @method \Http\Promise\Promise bindPrometheusGrafanaInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result addPrometheusIntegration(array $arguments = [])
@@ -499,6 +491,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise checkCommercialStatusAsync($arguments = [])
  * @method \Dew\Acs\Result queryCommercialUsage(array $arguments = [])
  * @method \Http\Promise\Promise queryCommercialUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result getRumOcuStatisticData(array $arguments = [])
+ * @method \Http\Promise\Promise getRumOcuStatisticDataAsync($arguments = [])
  */
 final class ArmsClient extends AcsClient
 {

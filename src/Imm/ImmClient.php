@@ -137,6 +137,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise detectImageBodiesAsync($arguments = [])
  * @method \Dew\Acs\Result detectImageCars(array $arguments = [])
  * @method \Http\Promise\Promise detectImageCarsAsync($arguments = [])
+ * @method \Dew\Acs\Result detectImageTexts(array $arguments = [])
+ * @method \Http\Promise\Promise detectImageTextsAsync($arguments = [])
  * @method \Dew\Acs\Result createMediaConvertTask(array $arguments = [])
  * @method \Http\Promise\Promise createMediaConvertTaskAsync($arguments = [])
  * @method \Dew\Acs\Result detectMediaMeta(array $arguments = [])
@@ -205,8 +207,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getBatchAsync($arguments = [])
  * @method \Dew\Acs\Result deleteBatch(array $arguments = [])
  * @method \Http\Promise\Promise deleteBatchAsync($arguments = [])
- * @method \Dew\Acs\Result detectImageTexts(array $arguments = [])
- * @method \Http\Promise\Promise detectImageTextsAsync($arguments = [])
  */
 final class ImmClient extends AcsClient
 {

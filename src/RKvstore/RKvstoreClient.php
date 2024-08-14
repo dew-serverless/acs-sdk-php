@@ -247,6 +247,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createParameterGroupAsync($arguments = [])
  * @method \Dew\Acs\Result describeParameterGroupTemplateList(array $arguments = [])
  * @method \Http\Promise\Promise describeParameterGroupTemplateListAsync($arguments = [])
+ * @method \Dew\Acs\Result describeActiveOperationTasks(array $arguments = [])
+ * @method \Http\Promise\Promise describeActiveOperationTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyActiveOperationTasks(array $arguments = [])
+ * @method \Http\Promise\Promise modifyActiveOperationTasksAsync($arguments = [])
  */
 final class RKvstoreClient extends AcsClient
 {

@@ -41,6 +41,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeScalingActivityDetailAsync($arguments = [])
  * @method \Dew\Acs\Result describeLimitation(array $arguments = [])
  * @method \Http\Promise\Promise describeLimitationAsync($arguments = [])
+ * @method \Dew\Acs\Result describeElasticStrength(array $arguments = [])
+ * @method \Http\Promise\Promise describeElasticStrengthAsync($arguments = [])
  * @method \Dew\Acs\Result verifyAuthentication(array $arguments = [])
  * @method \Http\Promise\Promise verifyAuthenticationAsync($arguments = [])
  * @method \Dew\Acs\Result suspendProcesses(array $arguments = [])

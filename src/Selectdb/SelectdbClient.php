@@ -61,6 +61,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDBClusterConfigAsync($arguments = [])
  * @method \Dew\Acs\Result describeDBClusterConfigChangeLogs(array $arguments = [])
  * @method \Http\Promise\Promise describeDBClusterConfigChangeLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAllDBInstanceClass(array $arguments = [])
+ * @method \Http\Promise\Promise describeAllDBInstanceClassAsync($arguments = [])
  */
 final class SelectdbClient extends AcsClient
 {

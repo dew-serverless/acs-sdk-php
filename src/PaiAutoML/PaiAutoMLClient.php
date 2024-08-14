@@ -35,6 +35,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listHpoTrialLogsAsync($arguments = [])
  * @method \Dew\Acs\Result listHpoTrialCommands(array $arguments = [])
  * @method \Http\Promise\Promise listHpoTrialCommandsAsync($arguments = [])
+ * @method \Dew\Acs\Result createAutofeExperiment(array $arguments = [])
+ * @method \Http\Promise\Promise createAutofeExperimentAsync($arguments = [])
+ * @method \Dew\Acs\Result getAutofeExperiment(array $arguments = [])
+ * @method \Http\Promise\Promise getAutofeExperimentAsync($arguments = [])
+ * @method \Dew\Acs\Result getServiceIdentityRole(array $arguments = [])
+ * @method \Http\Promise\Promise getServiceIdentityRoleAsync($arguments = [])
+ * @method \Dew\Acs\Result createServiceIdentityRole(array $arguments = [])
+ * @method \Http\Promise\Promise createServiceIdentityRoleAsync($arguments = [])
  */
 final class PaiAutoMLClient extends AcsClient
 {

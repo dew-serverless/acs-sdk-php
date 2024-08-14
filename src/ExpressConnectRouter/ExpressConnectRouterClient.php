@@ -63,8 +63,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise moveResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result tagResources(array $arguments = [])
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
- * @method \Dew\Acs\Result unTagResources(array $arguments = [])
- * @method \Http\Promise\Promise unTagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result untagResources(array $arguments = [])
+ * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
  */

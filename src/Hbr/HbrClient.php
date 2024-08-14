@@ -159,14 +159,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createTempFileUploadUrlAsync($arguments = [])
  * @method \Dew\Acs\Result getTempFileDownloadLink(array $arguments = [])
  * @method \Http\Promise\Promise getTempFileDownloadLinkAsync($arguments = [])
- * @method \Dew\Acs\Result attachNasFileSystem(array $arguments = [])
- * @method \Http\Promise\Promise attachNasFileSystemAsync($arguments = [])
  * @method \Dew\Acs\Result checkRole(array $arguments = [])
  * @method \Http\Promise\Promise checkRoleAsync($arguments = [])
  * @method \Dew\Acs\Result describeCrossAccounts(array $arguments = [])
  * @method \Http\Promise\Promise describeCrossAccountsAsync($arguments = [])
  * @method \Dew\Acs\Result deleteUdmEcsInstance(array $arguments = [])
  * @method \Http\Promise\Promise deleteUdmEcsInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteUdmDisk(array $arguments = [])
+ * @method \Http\Promise\Promise deleteUdmDiskAsync($arguments = [])
  */
 final class HbrClient extends AcsClient
 {

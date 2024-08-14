@@ -5,33 +5,6 @@
         'product' => 'saf',
         'version' => '2019-05-21',
     ],
-    'directories' => [
-        [
-            'id' => 181717,
-            'title' => '国内公共服务调用',
-            'type' => 'directory',
-            'children' => [
-                'ExecuteRequest',
-            ],
-        ],
-        [
-            'id' => 181718,
-            'title' => '海外公共服务调用',
-            'type' => 'directory',
-            'children' => [
-                'ExecuteRequestML',
-                'ExecuteRequestSG',
-            ],
-        ],
-        [
-            'id' => 181726,
-            'title' => '自定义事件服务调用',
-            'type' => 'directory',
-            'children' => [
-                'RequestDecision',
-            ],
-        ],
-    ],
     'components' => [
         'schemas' => [],
     ],
@@ -49,15 +22,7 @@
                     'AK' => [],
                 ],
             ],
-            'operationType' => 'read',
             'deprecated' => false,
-            'systemTags' => [
-                'operationType' => 'none',
-                'abilityTreeCode' => '48720',
-                'abilityTreeNodes' => [
-                    'FEATUREsaf7L0MVB',
-                ],
-            ],
             'parameters' => [
                 [
                     'name' => 'ServiceParameters',
@@ -65,7 +30,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'docRequired' => true,
                     ],
                 ],
                 [
@@ -74,33 +38,9 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'docRequired' => true,
                     ],
                 ],
             ],
-            'responses' => [
-                200 => [
-                    'schema' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'Code' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'Message' => [
-                                'type' => 'string',
-                            ],
-                            'Data' => [
-                                'type' => 'object',
-                            ],
-                            'RequestId' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'responseDemo' => '',
         ],
         'ExecuteRequestML' => [
             'methods' => [
@@ -115,15 +55,7 @@
                     'AK' => [],
                 ],
             ],
-            'operationType' => 'readAndWrite',
             'deprecated' => false,
-            'systemTags' => [
-                'operationType' => 'none',
-                'abilityTreeCode' => '48721',
-                'abilityTreeNodes' => [
-                    'FEATUREsaf6MRPQF',
-                ],
-            ],
             'parameters' => [
                 [
                     'name' => 'ServiceParameters',
@@ -131,7 +63,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'docRequired' => true,
                     ],
                 ],
                 [
@@ -140,7 +71,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'docRequired' => true,
                     ],
                 ],
                 [
@@ -149,33 +79,9 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'default' => 'en-us',
                     ],
                 ],
             ],
-            'responses' => [
-                200 => [
-                    'schema' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'Code' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'Message' => [
-                                'type' => 'string',
-                            ],
-                            'Data' => [
-                                'type' => 'object',
-                            ],
-                            'RequestId' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'responseDemo' => '',
         ],
         'ExecuteRequestSG' => [
             'methods' => [
@@ -190,15 +96,7 @@
                     'AK' => [],
                 ],
             ],
-            'operationType' => 'read',
             'deprecated' => false,
-            'systemTags' => [
-                'operationType' => 'none',
-                'abilityTreeCode' => '48722',
-                'abilityTreeNodes' => [
-                    'FEATUREsaf6MRPQF',
-                ],
-            ],
             'parameters' => [
                 [
                     'name' => 'ServiceParameters',
@@ -206,7 +104,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'docRequired' => true,
                     ],
                 ],
                 [
@@ -215,7 +112,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'docRequired' => true,
                     ],
                 ],
                 [
@@ -224,36 +120,11 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'default' => 'en-us',
                     ],
                 ],
             ],
-            'responses' => [
-                200 => [
-                    'schema' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'Code' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'Message' => [
-                                'type' => 'string',
-                            ],
-                            'Data' => [
-                                'type' => 'object',
-                            ],
-                            'RequestId' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'responseDemo' => '',
         ],
         'RequestDecision' => [
-            'summary' => '调用决策引擎接口',
             'methods' => [
                 'post',
             ],
@@ -267,13 +138,6 @@
                 ],
             ],
             'deprecated' => false,
-            'systemTags' => [
-                'operationType' => 'none',
-                'abilityTreeCode' => '114081',
-                'abilityTreeNodes' => [
-                    'FEATUREsaf6MRPQF',
-                ],
-            ],
             'parameters' => [
                 [
                     'name' => 'ServiceParameters',
@@ -287,30 +151,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                    ],
-                ],
-            ],
-            'responses' => [
-                200 => [
-                    'schema' => [
-                        'title' => 'Schema of Response',
-                        'type' => 'object',
-                        'properties' => [
-                            'RequestId' => [
-                                'title' => 'Id of the request',
-                                'type' => 'string',
-                            ],
-                            'Code' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                            ],
-                            'Message' => [
-                                'type' => 'string',
-                            ],
-                            'Data' => [
-                                'type' => 'object',
-                            ],
-                        ],
                     ],
                 ],
             ],

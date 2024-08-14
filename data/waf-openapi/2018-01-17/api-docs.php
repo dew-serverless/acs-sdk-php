@@ -5,7 +5,6 @@
         'product' => 'waf-openapi',
         'version' => '2018-01-17',
     ],
-    'directories' => [],
     'components' => [
         'schemas' => [],
     ],

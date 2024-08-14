@@ -12,6 +12,7 @@ use Dew\Acs\Tablestore\Cells\StringAttribute;
 use Dew\Acs\Tablestore\Cells\StringPrimaryKey;
 use Dew\Acs\Tablestore\HasConditions;
 use Dew\Acs\Tablestore\Messages\Filter;
+use Dew\Acs\Tablestore\Messages\ReturnType;
 use Dew\Acs\Tablestore\Messages\TimeRange;
 use Dew\Acs\Tablestore\PrimaryKey;
 use Dew\Acs\Tests\DataProviderHelper;
@@ -30,6 +31,38 @@ use PHPUnit\Framework\TestCase;
 #[CoversTrait(HasConditions::class)]
 final class BuilderTest extends TestCase
 {
+    public function test_return_type_primary_key(): void
+    {
+        $builder = new Builder();
+        $builder->returnPrimaryKey();
+        $this->assertSame(ReturnType::RT_PK, $builder->returned);
+        $builder->returnKey();
+        $this->assertSame(ReturnType::RT_PK, $builder->returned);
+    }
+
+    public function test_return_type_modified(): void
+    {
+        $builder = new Builder();
+        $builder->returnModified();
+        $this->assertSame(ReturnType::RT_AFTER_MODIFY, $builder->returned);
+        $this->assertSame([], $builder->selects);
+    }
+
+    public function test_return_type_modified_cells(): void
+    {
+        $builder = new Builder();
+        $builder->returnModified(['counter']);
+        $this->assertSame(ReturnType::RT_AFTER_MODIFY, $builder->returned);
+        $this->assertSame(['counter'], $builder->selects);
+    }
+
+    public function test_return_type_without_return(): void
+    {
+        $builder = new Builder();
+        $builder->withoutReturn();
+        $this->assertSame(ReturnType::RT_NONE, $builder->returned);
+    }
+
     public function test_where_key_filters_primary_keys(): void
     {
         $builder = new Builder();

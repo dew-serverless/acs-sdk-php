@@ -520,11 +520,25 @@ trait HasConditions
     }
 
     /**
-     * Return the response with modified rows only.
+     * Return the response with primary keys only.
      */
-    public function returnModified(): self
+    public function returnKey(): self
+    {
+        return $this->returnPrimaryKey();
+    }
+
+    /**
+     * Return the response with modified rows only.
+     *
+     * @param  string[]|null  $cells
+     */
+    public function returnModified(?array $cells = null): self
     {
         $this->returned = ReturnType::RT_AFTER_MODIFY;
+
+        if (is_array($cells)) {
+            $this->select($cells);
+        }
 
         return $this;
     }

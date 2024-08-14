@@ -94,9 +94,8 @@ function buildApiDocsFromChangeset(string $product, string $version, string $sty
             'product' => $product,
             'version' => $version,
         ],
-        'directories' => [],
         'components' => [
-            'schema' => [],
+            'schemas' => [],
         ],
         'apis' => [],
         'endpoints' => [],

@@ -13,12 +13,12 @@ use Override;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @phpstan-import-type TConfig from \Dew\Acs\Tablestore\TablestoreInstance
+ * @phpstan-import-type TNormalizedConfig from \Dew\Acs\Tablestore\TablestoreInstance
  */
 final class SignRequest implements Plugin
 {
     /**
-     * @param  TConfig  $config
+     * @param  TNormalizedConfig  $config
      */
     public function __construct(
         private array $config,

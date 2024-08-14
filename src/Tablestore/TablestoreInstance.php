@@ -22,16 +22,28 @@ use RuntimeException;
  * @phpstan-import-type TCredentials from \Dew\Acs\AcsClient
  * @phpstan-type TConfig array{
  *   credentials: TCredentials,
+ *   region?: string,
+ *   instance?: string,
+ *   endpoint?: string,
+ *   http_client?: \Psr\Http\Client\ClientInterface
+ * }
+ * @phpstan-type TNormalizedConfig TConfig&array{
  *   region: string,
  *   instance: string,
  *   endpoint: string,
- *   http_client?: \Psr\Http\Client\ClientInterface
  * }
  */
 final class TablestoreInstance implements InteractsWithTablestore
 {
     use ManagesTable;
     use ManagesDataOperation;
+
+    /**
+     * The normalized config.
+     *
+     * @var TNormalizedConfig
+     */
+    private array $config;
 
     private ClientInterface $httpClient;
 
@@ -42,9 +54,9 @@ final class TablestoreInstance implements InteractsWithTablestore
     /**
      * @param  TConfig  $config
      */
-    public function __construct(
-        private array $config
-    ) {
+    public function __construct(array $config)
+    {
+        $this->config = Config::normalize($config);
         $this->httpClient = $config['http_client'] ?? Psr18ClientDiscovery::find();
         $this->requestFactory = Psr17FactoryDiscovery::findRequestFactory();
         $this->streamFactory = Psr17FactoryDiscovery::findStreamFactory();

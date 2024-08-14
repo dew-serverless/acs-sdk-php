@@ -6,10 +6,11 @@ namespace Dew\Acs;
 
 use InvalidArgumentException;
 
-final class ConfigChecker
+class ConfigChecker
 {
     /**
      * @param  array<string, mixed>  $config
+     * @throws \InvalidArgumentException
      * @phpstan-assert array{
      *   credentials: array{
      *     key: string,
@@ -55,6 +56,7 @@ final class ConfigChecker
 
     /**
      * @param  array<string, mixed>  $config
+     * @throws \InvalidArgumentException
      * @phpstan-assert array{region: string} $config
      */
     public function ensureRegionExists(array $config): void

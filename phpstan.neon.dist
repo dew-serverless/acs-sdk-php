@@ -1,6 +1,12 @@
+includes:
+    - vendor/phpstan/phpstan-mockery/extension.neon
+
 parameters:
     paths:
         - src
+    excludePaths:
+        - src/Tablestore/Messages
+        - src/Tablestore/Metadata
     level: max
     treatPhpDocTypesAsCertain: false
     ignoreErrors:

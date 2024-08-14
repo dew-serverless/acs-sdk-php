@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__.'/ProductStripper.php';
+require_once __DIR__.'/ApiDocsStripper.php';
 
 use Symfony\Component\VarExporter\VarExporter;
 
@@ -159,7 +161,9 @@ function updateProductList(string $endpoint): void
         throw new RuntimeException('Could not parse product list.');
     }
 
-    $code = sprintf('<?php return %s;', VarExporter::export($decoded));
+    $stripped = ProductStripper::strip($decoded);
+
+    $code = sprintf('<?php return %s;', VarExporter::export($stripped));
 
     if (file_put_contents(__DIR__.'/../data/products.php', $code, LOCK_EX) === false) {
         throw new RuntimeException('Could not update product list.');
@@ -185,8 +189,9 @@ function buildFromProducts(): void
             printf('=> Processing %s %s'.PHP_EOL, $product['code'], $version);
 
             $docs = getApiDocs($product['code'], $version);
+            $stripped = ApiDocsStripper::strip($docs);
 
-            writeToPhp($product['code'], $version, $docs);
+            writeToPhp($product['code'], $version, $stripped);
         }
     }
 }

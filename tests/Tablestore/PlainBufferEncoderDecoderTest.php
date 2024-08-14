@@ -98,6 +98,14 @@ final class PlainBufferEncoderDecoderTest extends TestCase
         $this->assertSame(1000, $result['value'][0]->getTimestamp());
     }
 
+    public function test_dump(): void
+    {
+        $this->expectOutputString('     0 : 75 00 00 00                                     [u...]'.PHP_EOL);
+        $encoder = new PlainBufferEncoder(new PlainBufferWriter(), new StubCrc());
+        $encoder->writeHeader();
+        $encoder->dump();
+    }
+
     /**
      * @return \Generator<string, \Dew\Acs\Tablestore\Cells\Cell[]>
      */

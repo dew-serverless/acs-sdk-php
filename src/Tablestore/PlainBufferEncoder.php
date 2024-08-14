@@ -261,6 +261,14 @@ final class PlainBufferEncoder
     }
 
     /**
+     * Dump the buffer for debugging.
+     */
+    public function dump(): void
+    {
+        $this->buffer->dump();
+    }
+
+    /**
      * Get the row buffer.
      */
     public function getBuffer(): string

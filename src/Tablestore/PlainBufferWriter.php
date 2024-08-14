@@ -69,6 +69,14 @@ final class PlainBufferWriter
     }
 
     /**
+     * Dump the buffer for debugging.
+     */
+    public function dump(): void
+    {
+        (new HexDumper($this->getBuffer()))->dump();
+    }
+
+    /**
      * Get the buffer.
      */
     public function getBuffer(): string

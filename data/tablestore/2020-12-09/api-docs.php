@@ -5,59 +5,14 @@
         'product' => 'Tablestore',
         'version' => '2020-12-09',
     ],
-    'directories' => [],
     'components' => [
-        'schema' => [],
+        'schemas' => [],
     ],
     'apis' => [
-        'ChangeResourceGroup' => [
-            'consumes' => [
-                'application/json',
-            ],
-            'deprecated' => false,
+        'CreateInstance' => [
+            'path' => '/v2/openapi/createinstance',
             'methods' => [
                 'post',
-            ],
-            'parameters' => [
-                [
-                    'in' => 'body',
-                    'name' => 'body',
-                    'schema' => [
-                        'properties' => [
-                            'NewResourceGroupId' => [
-                                'required' => true,
-                                'title' => 'new resource group id',
-                                'type' => 'string',
-                            ],
-                            'ResourceId' => [
-                                'required' => true,
-                                'title' => 'resource id, aka ots instance name',
-                                'type' => 'string',
-                            ],
-                        ],
-                        'title' => 'A short description of struct',
-                        'type' => 'object',
-                    ],
-                    'style' => 'json',
-                ],
-            ],
-            'path' => '/v2/openapi/changeresourcegroup',
-            'produces' => [
-                'application/json',
-            ],
-            'responses' => [
-                200 => [
-                    'schema' => [
-                        'properties' => [
-                            'RequestId' => [
-                                'title' => 'Id of the request',
-                                'type' => 'string',
-                            ],
-                        ],
-                        'title' => 'Schema of Response',
-                        'type' => 'object',
-                    ],
-                ],
             ],
             'schemes' => [
                 'http',
@@ -68,368 +23,229 @@
                     'AK' => [],
                 ],
             ],
-            'summary' => '变更资源组',
-        ],
-        'CreateInstance' => [
             'consumes' => [
                 'application/json',
             ],
-            'deprecated' => false,
-            'methods' => [
-                'post',
+            'produces' => [
+                'application/json',
             ],
-            'operationType' => 'write',
+            'deprecated' => false,
             'parameters' => [
                 [
-                    'in' => 'body',
                     'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
+                        'type' => 'object',
+                        'required' => false,
                         'properties' => [
-                            'ClusterType' => [
-                                'example' => 'SSD vs HYBRID',
-                                'required' => true,
-                                'title' => 'cluster type',
+                            'InstanceName' => [
                                 'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ClusterType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'InstanceDescription' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ResourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Network' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'NetworkTypeACL' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'NetworkSourceACL' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'Policy' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 4000,
+                            ],
+                            'Tags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
                             ],
                             'DisableReplication' => [
-                                'title' => '是否开启实例的容灾状态',
                                 'type' => 'boolean',
-                            ],
-                            'InstanceDescription' => [
-                                'example' => '实例描述',
-                                'title' => 'instance description',
-                                'type' => 'string',
-                            ],
-                            'InstanceName' => [
-                                'example' => 'first-ins',
-                                'required' => true,
-                                'title' => 'instance name',
-                                'type' => 'string',
-                            ],
-                            'Network' => [
                                 'required' => false,
-                                'title' => '（已弃用）实例网络类型。NORMAL, VPC_CONSOLE。默认为NORMAL。',
-                                'type' => 'string',
-                            ],
-                            'NetworkSourceACL' => [
-                                'items' => [
-                                    'type' => 'string',
-                                ],
-                                'required' => false,
-                                'title' => '实例允许的网络来源列表。默认都允许。TRUST_PROXY: 控制台。',
-                                'type' => 'array',
-                            ],
-                            'NetworkTypeACL' => [
-                                'items' => [
-                                    'type' => 'string',
-                                ],
-                                'required' => false,
-                                'title' => '实例允许的网络类型列表。默认都允许。CLASSIC: 经典网；INTERNET: 公网；VPC：VPC网络。',
-                                'type' => 'array',
-                            ],
-                            'Policy' => [
-                                'maxLength' => 4000,
-                                'title' => '实例访问控制策略，JSON格式。配置语法见：https://help.aliyun.com/zh/ram/user-guide/policy-structure-and-syntax',
-                                'type' => 'string',
-                            ],
-                            'ResourceGroupId' => [
-                                'example' => 'rg-acfmxh4em5jnbcd',
-                                'title' => 'resource group id',
-                                'type' => 'string',
-                            ],
-                            'Tags' => [
-                                'items' => [
-                                    'properties' => [
-                                        'Key' => [
-                                            'required' => true,
-                                            'type' => 'string',
-                                        ],
-                                        'Value' => [
-                                            'required' => true,
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                    'type' => 'object',
-                                ],
-                                'title' => 'tag',
-                                'type' => 'array',
                             ],
                         ],
-                        'required' => false,
-                        'title' => 'request body',
-                        'type' => 'object',
-                    ],
-                    'style' => 'json',
-                ],
-            ],
-            'path' => '/v2/openapi/createinstance',
-            'produces' => [
-                'application/json',
-            ],
-            'responses' => [
-                200 => [
-                    'schema' => [
-                        'properties' => [
-                            'Code' => [
-                                'title' => '响应状态码',
-                                'type' => 'string',
-                            ],
-                            'Message' => [
-                                'title' => '响应消息描述',
-                                'type' => 'string',
-                            ],
-                            'RequestId' => [
-                                'title' => 'request id',
-                                'type' => 'string',
-                            ],
-                        ],
-                        'title' => 'Schema of Response',
-                        'type' => 'object',
                     ],
                 ],
             ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'summary' => '创建实例',
         ],
         'DeleteInstance' => [
-            'consumes' => [
-                'application/json',
-            ],
-            'deprecated' => false,
+            'path' => '/v2/openapi/deleteinstance',
             'methods' => [
                 'post',
             ],
-            'operationType' => 'write',
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
             'parameters' => [
                 [
-                    'in' => 'body',
                     'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
+                        'type' => 'object',
+                        'required' => false,
                         'properties' => [
                             'InstanceName' => [
+                                'type' => 'string',
                                 'required' => true,
-                                'title' => 'instance name',
-                                'type' => 'string',
                             ],
                         ],
-                        'required' => false,
-                        'title' => 'request body',
-                        'type' => 'object',
-                    ],
-                    'style' => 'json',
-                ],
-            ],
-            'path' => '/v2/openapi/deleteinstance',
-            'produces' => [
-                'application/json',
-            ],
-            'responses' => [
-                200 => [
-                    'schema' => [
-                        'properties' => [
-                            'RequestId' => [
-                                'title' => 'Id of the request',
-                                'type' => 'string',
-                            ],
-                        ],
-                        'title' => 'Schema of Response',
-                        'type' => 'object',
                     ],
                 ],
             ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'summary' => '删除实例',
-        ],
-        'DescribeRegions' => [
-            'deprecated' => false,
-            'methods' => [
-                'get',
-            ],
-            'parameters' => [],
-            'path' => '/region/DescribeRegions',
-            'responses' => [
-                200 => [
-                    'schema' => [
-                        'properties' => [
-                            'Regions' => [
-                                'items' => [
-                                    'properties' => [
-                                        'I18nKey' => [
-                                            'title' => 'region key',
-                                            'type' => 'string',
-                                        ],
-                                        'RegionId' => [
-                                            'title' => 'region id',
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                    'type' => 'object',
-                                ],
-                                'title' => 'region list',
-                                'type' => 'array',
-                            ],
-                            'requestId' => [
-                                'title' => 'Id of the request',
-                                'type' => 'string',
-                            ],
-                        ],
-                        'title' => 'Schema of Response',
-                        'type' => 'object',
-                    ],
-                ],
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'summary' => '获取用户可见region列表',
         ],
         'GetInstance' => [
-            'deprecated' => false,
+            'path' => '/v2/openapi/getinstance',
             'methods' => [
                 'get',
             ],
-            'operationType' => 'read',
-            'parameters' => [
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
                 [
-                    'in' => 'query',
-                    'name' => 'InstanceName',
-                    'schema' => [
-                        'required' => true,
-                        'type' => 'string',
-                    ],
+                    'AK' => [],
                 ],
             ],
-            'path' => '/v2/openapi/getinstance',
             'produces' => [
                 'application/json',
             ],
-            'responses' => [
-                200 => [
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceName',
+                    'in' => 'query',
                     'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateInstance' => [
+            'path' => '/v2/openapi/updateinstance',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
                         'properties' => [
+                            'InstanceName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
                             'AliasName' => [
                                 'type' => 'string',
-                            ],
-                            'CreateTime' => [
-                                'type' => 'string',
+                                'required' => false,
                             ],
                             'InstanceDescription' => [
                                 'type' => 'string',
-                            ],
-                            'InstanceName' => [
-                                'type' => 'string',
-                            ],
-                            'InstanceSpecification' => [
-                                'type' => 'string',
-                            ],
-                            'InstanceStatus' => [
-                                'type' => 'string',
+                                'required' => false,
                             ],
                             'Network' => [
                                 'type' => 'string',
-                            ],
-                            'NetworkSourceACL' => [
-                                'items' => [
-                                    'type' => 'string',
-                                ],
-                                'title' => '实例允许的网络来源列表。TRUST_PROXY: 控制台；',
-                                'type' => 'array',
+                                'required' => false,
                             ],
                             'NetworkTypeACL' => [
+                                'type' => 'array',
+                                'required' => false,
                                 'items' => [
                                     'type' => 'string',
+                                    'required' => false,
                                 ],
-                                'title' => '实例允许的网络类型列表。CLASSIC: 经典网；INTERNET: 公网；VPC：VPC网络。',
+                            ],
+                            'NetworkSourceACL' => [
                                 'type' => 'array',
-                            ],
-                            'PaymentType' => [
-                                'type' => 'string',
-                            ],
-                            'Policy' => [
-                                'title' => 'Instance policy 访问控制策略',
-                                'type' => 'string',
-                            ],
-                            'PolicyVersion' => [
-                                'format' => 'int64',
-                                'title' => 'Instance policy的版本',
-                                'type' => 'integer',
-                            ],
-                            'RegionId' => [
-                                'type' => 'string',
-                            ],
-                            'RequestId' => [
-                                'title' => 'Id of the request',
-                                'type' => 'string',
-                            ],
-                            'ResourceGroupId' => [
-                                'example' => 'rg-acfmxh4em5jncda',
-                                'title' => '资源组id',
-                                'type' => 'string',
-                            ],
-                            'SPInstanceId' => [
-                                'type' => 'string',
-                            ],
-                            'StorageType' => [
-                                'type' => 'string',
-                            ],
-                            'TableQuota' => [
-                                'format' => 'int32',
-                                'type' => 'integer',
-                            ],
-                            'Tags' => [
+                                'required' => false,
                                 'items' => [
-                                    'properties' => [
-                                        'Key' => [
-                                            'type' => 'string',
-                                        ],
-                                        'TagKey' => [
-                                            'type' => 'string',
-                                        ],
-                                        'TagValue' => [
-                                            'type' => 'string',
-                                        ],
-                                        'Value' => [
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                    'type' => 'object',
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
-                                'type' => 'array',
-                            ],
-                            'UserId' => [
-                                'type' => 'string',
-                            ],
-                            'VCUQuota' => [
-                                'format' => 'int32',
-                                'type' => 'integer',
                             ],
                         ],
-                        'title' => 'Schema of Response',
-                        'type' => 'object',
                     ],
                 ],
+            ],
+        ],
+        'ListInstances' => [
+            'path' => '/v2/openapi/listinstances',
+            'methods' => [
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -440,138 +256,71 @@
                     'AK' => [],
                 ],
             ],
-            'summary' => '获取实例',
-        ],
-        'ListInstances' => [
-            'deprecated' => false,
-            'methods' => [
-                'get',
-            ],
-            'operationType' => 'read',
-            'parameters' => [
-                [
-                    'in' => 'query',
-                    'name' => 'Status',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'in' => 'query',
-                    'name' => 'MaxResults',
-                    'schema' => [
-                        'format' => 'int32',
-                        'type' => 'integer',
-                    ],
-                ],
-                [
-                    'in' => 'query',
-                    'name' => 'NextToken',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'in' => 'query',
-                    'name' => 'InstanceName',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'in' => 'query',
-                    'name' => 'ResourceGroupId',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'in' => 'query',
-                    'name' => 'InstanceNameList',
-                    'schema' => [
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                        'type' => 'array',
-                    ],
-                    'style' => 'simple',
-                ],
-            ],
-            'path' => '/v2/openapi/listinstances',
             'produces' => [
                 'application/json',
             ],
-            'responses' => [
-                200 => [
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
                     'schema' => [
-                        'properties' => [
-                            'Instances' => [
-                                'items' => [
-                                    'properties' => [
-                                        'AliasName' => [
-                                            'type' => 'string',
-                                        ],
-                                        'CreateTime' => [
-                                            'type' => 'string',
-                                        ],
-                                        'InstanceDescription' => [
-                                            'type' => 'string',
-                                        ],
-                                        'InstanceName' => [
-                                            'title' => '实例名称，唯一键',
-                                            'type' => 'string',
-                                        ],
-                                        'InstanceSpecification' => [
-                                            'type' => 'string',
-                                        ],
-                                        'InstanceStatus' => [
-                                            'type' => 'string',
-                                        ],
-                                        'PaymentType' => [
-                                            'type' => 'string',
-                                        ],
-                                        'RegionId' => [
-                                            'type' => 'string',
-                                        ],
-                                        'ResourceGroupId' => [
-                                            'example' => 'rg-acfmxh4em5jnbcd',
-                                            'title' => '资源组id',
-                                            'type' => 'string',
-                                        ],
-                                        'SPInstanceId' => [
-                                            'type' => 'string',
-                                        ],
-                                        'StorageType' => [
-                                            'type' => 'string',
-                                        ],
-                                        'UserId' => [
-                                            'type' => 'string',
-                                        ],
-                                        'VCUQuota' => [
-                                            'format' => 'int32',
-                                            'type' => 'integer',
-                                        ],
-                                    ],
-                                    'type' => 'object',
-                                ],
-                                'type' => 'array',
-                            ],
-                            'NextToken' => [
-                                'type' => 'string',
-                            ],
-                            'RequestId' => [
-                                'title' => 'Id of the request',
-                                'type' => 'string',
-                            ],
-                            'TotalCount' => [
-                                'format' => 'int64',
-                                'type' => 'integer',
-                            ],
-                        ],
-                        'title' => 'Schema of Response',
-                        'type' => 'object',
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceNameList',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ChangeResourceGroup' => [
+            'path' => '/v2/openapi/changeresourcegroup',
+            'methods' => [
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -582,261 +331,236 @@
                     'AK' => [],
                 ],
             ],
-            'summary' => '列取实例',
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ResourceId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'NewResourceGroupId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
         'ListTagResources' => [
-            'deprecated' => false,
+            'path' => '/v2/openapi/listtagresources',
             'methods' => [
                 'get',
             ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
             'parameters' => [
                 [
-                    'in' => 'query',
                     'name' => 'MaxResults',
+                    'in' => 'query',
                     'schema' => [
-                        'format' => 'int32',
                         'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
                 [
-                    'in' => 'query',
                     'name' => 'ResourceType',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
-                    'in' => 'query',
                     'name' => 'ResourceIds',
+                    'in' => 'query',
+                    'style' => 'simple',
                     'schema' => [
+                        'type' => 'array',
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
+                            'required' => false,
                         ],
-                        'type' => 'array',
                     ],
-                    'style' => 'simple',
                 ],
                 [
-                    'in' => 'query',
                     'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'json',
                     'schema' => [
+                        'type' => 'array',
+                        'required' => false,
                         'items' => [
+                            'type' => 'object',
+                            'required' => false,
                             'properties' => [
                                 'Key' => [
                                     'type' => 'string',
+                                    'required' => false,
                                 ],
                                 'Value' => [
                                     'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
-                            'type' => 'object',
                         ],
-                        'type' => 'array',
                     ],
-                    'style' => 'json',
                 ],
                 [
-                    'in' => 'query',
                     'name' => 'NextToken',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
-            'path' => '/v2/openapi/listtagresources',
-            'responses' => [
-                200 => [
-                    'schema' => [
-                        'properties' => [
-                            'MaxResults' => [
-                                'format' => 'int32',
-                                'type' => 'integer',
-                            ],
-                            'NextToken' => [
-                                'type' => 'string',
-                            ],
-                            'TagResources' => [
-                                'items' => [
-                                    'properties' => [
-                                        'ResourceId' => [
-                                            'title' => '资源ID（名称）。',
-                                            'type' => 'string',
-                                        ],
-                                        'ResourceType' => [
-                                            'title' => '资源类型。如ALIYUN::OTS::INSTANCE, ALIYUN::VPC::VPC。',
-                                            'type' => 'string',
-                                        ],
-                                        'TagKey' => [
-                                            'title' => '标签键。',
-                                            'type' => 'string',
-                                        ],
-                                        'TagValue' => [
-                                            'title' => '标签值。',
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                    'title' => '标签对象。',
-                                    'type' => 'object',
-                                ],
-                                'title' => '标签列表。',
-                                'type' => 'array',
-                            ],
-                            'requestId' => [
-                                'title' => 'Id of the request',
-                                'type' => 'string',
-                            ],
-                        ],
-                        'title' => 'Schema of Response',
-                        'type' => 'object',
-                    ],
-                ],
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'summary' => '获取标签资源列表',
         ],
         'TagResources' => [
-            'consumes' => [
-                'application/json',
-            ],
-            'deprecated' => false,
+            'path' => '/v2/openapi/tagresources',
             'methods' => [
                 'post',
             ],
-            'operationType' => 'write',
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
             'parameters' => [
                 [
-                    'in' => 'body',
                     'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
+                        'type' => 'object',
+                        'required' => false,
                         'properties' => [
-                            'ResourceIds' => [
-                                'items' => [
-                                    'required' => true,
-                                    'type' => 'string',
-                                ],
-                                'required' => true,
-                                'title' => 'resource ids',
-                                'type' => 'array',
-                            ],
                             'ResourceType' => [
-                                'required' => true,
-                                'title' => 'resource type',
                                 'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ResourceIds' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
                             ],
                             'Tags' => [
+                                'type' => 'array',
+                                'required' => true,
                                 'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
                                     'properties' => [
                                         'Key' => [
-                                            'required' => true,
-                                            'title' => 'tag key',
                                             'type' => 'string',
+                                            'required' => true,
                                         ],
                                         'Value' => [
-                                            'required' => true,
-                                            'title' => 'tag value',
                                             'type' => 'string',
+                                            'required' => true,
                                         ],
                                     ],
-                                    'required' => true,
-                                    'type' => 'object',
                                 ],
-                                'required' => true,
-                                'title' => 'tags',
-                                'type' => 'array',
                             ],
                         ],
-                        'title' => 'A short description of struct',
-                        'type' => 'object',
-                    ],
-                    'style' => 'json',
-                ],
-            ],
-            'path' => '/v2/openapi/tagresources',
-            'produces' => [
-                'application/json',
-            ],
-            'responses' => [
-                200 => [
-                    'schema' => [
-                        'properties' => [
-                            'RequestId' => [
-                                'title' => 'Id of the request',
-                                'type' => 'string',
-                            ],
-                        ],
-                        'title' => 'Schema of Response',
-                        'type' => 'object',
                     ],
                 ],
             ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'summary' => '打资源标签',
         ],
         'UntagResources' => [
-            'deprecated' => false,
+            'path' => '/v2/openapi/untagresources',
             'methods' => [
                 'post',
             ],
-            'parameters' => [
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
                 [
-                    'in' => 'body',
-                    'name' => 'body',
-                    'schema' => [
-                        'properties' => [
-                            'All' => [
-                                'type' => 'boolean',
-                            ],
-                            'ResourceIds' => [
-                                'items' => [
-                                    'type' => 'string',
-                                ],
-                                'type' => 'array',
-                            ],
-                            'ResourceType' => [
-                                'type' => 'string',
-                            ],
-                            'TagKeys' => [
-                                'items' => [
-                                    'type' => 'string',
-                                ],
-                                'type' => 'array',
-                            ],
-                        ],
-                        'type' => 'object',
-                    ],
-                    'style' => 'json',
+                    'AK' => [],
                 ],
             ],
-            'path' => '/v2/openapi/untagresources',
-            'responses' => [
-                200 => [
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
+                        'type' => 'object',
+                        'required' => false,
                         'properties' => [
-                            'requestId' => [
-                                'title' => 'Id of the request',
+                            'ResourceType' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ResourceIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'TagKeys' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'All' => [
+                                'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
-                        'title' => 'Schema of Response',
-                        'type' => 'object',
                     ],
                 ],
+            ],
+        ],
+        'UpdateInstancePolicy' => [
+            'path' => '/v2/openapi/updateinstancepolicy',
+            'methods' => [
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -847,74 +571,44 @@
                     'AK' => [],
                 ],
             ],
-            'summary' => '删除资源标签',
-        ],
-        'UpdateInstance' => [
             'consumes' => [
                 'application/json',
             ],
-            'deprecated' => false,
-            'methods' => [
-                'post',
-            ],
-            'operationType' => 'write',
-            'parameters' => [
-                [
-                    'in' => 'body',
-                    'name' => 'body',
-                    'schema' => [
-                        'properties' => [
-                            'AliasName' => [
-                                'type' => 'string',
-                            ],
-                            'InstanceDescription' => [
-                                'type' => 'string',
-                            ],
-                            'InstanceName' => [
-                                'required' => true,
-                                'type' => 'string',
-                            ],
-                            'Network' => [
-                                'title' => '（已弃用）实例网络类型。NORMAL, VPC_CONSOLE。默认为NORMAL。',
-                                'type' => 'string',
-                            ],
-                            'NetworkSourceACL' => [
-                                'items' => [
-                                    'type' => 'string',
-                                ],
-                                'title' => '更新实例允许的网络来源列表，默认都允许。必须与TRUST_PROXY: 控制台；',
-                                'type' => 'array',
-                            ],
-                            'NetworkTypeACL' => [
-                                'items' => [
-                                    'title' => '',
-                                    'type' => 'string',
-                                ],
-                                'required' => false,
-                                'title' => '更新实例允许的网络类型列表。默认都允许。CLASSIC: 经典网；INTERNET: 公网；VPC：VPC网络。',
-                                'type' => 'array',
-                            ],
-                        ],
-                        'type' => 'object',
-                    ],
-                    'style' => 'json',
-                ],
-            ],
-            'path' => '/v2/openapi/updateinstance',
             'produces' => [
                 'application/json',
             ],
-            'responses' => [
-                200 => [
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
+                        'type' => 'object',
+                        'required' => false,
                         'properties' => [
-                            'RequestId' => [
+                            'InstanceName' => [
                                 'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Policy' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'PolicyVersion' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
                             ],
                         ],
-                        'type' => 'object',
                     ],
                 ],
+            ],
+        ],
+        'DeleteInstancePolicy' => [
+            'path' => '/v2/openapi/deleteinstancepolicy',
+            'methods' => [
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -925,8 +619,253 @@
                     'AK' => [],
                 ],
             ],
-            'summary' => '更新实例',
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'InstanceName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'PolicyVersion' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CheckInstancePolicy' => [
+            'path' => '/v2/openapi/checkinstancepolicy',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'InstanceName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Policy' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRegions' => [
+            'path' => '/region/DescribeRegions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateInstanceElasticVCUUpperLimit' => [
+            'path' => '/v2/openapi/updateinstanceelasticvcuupperlimit',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'InstanceName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ElasticVCUUpperLimit' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
-    'endpoints' => [],
+    'endpoints' => [
+        [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'tablestore.cn-qingdao.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'tablestore.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'tablestore.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'tablestore.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'tablestore.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'tablestore.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'tablestore.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'tablestore.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'tablestore.cn-guangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'tablestore.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'tablestore.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'tablestore.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'tablestore.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'tablestore.ap-southeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'tablestore.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'tablestore.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'tablestore.ap-southeast-6.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'tablestore.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'tablestore.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'tablestore.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'tablestore.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'tablestore.ap-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-east-1',
+            'endpoint' => 'tablestore.me-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'tablestore.cn-shanghai-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'tablestore.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'tablestore.me-central-1.aliyuncs.com',
+        ],
+    ],
 ];

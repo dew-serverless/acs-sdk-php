@@ -215,20 +215,6 @@ function main(): int
 
     buildFromProducts();
 
-    // @see https://github.com/aliyun/alibabacloud-sdk/blob/64968f246b2537b00109cc1452c3a641f2795739/tablestore-20201209/async/api-info.json
-    buildFromChangeset('Tablestore', '2020-12-09', 'ROA', [
-        'ChangeResourceGroup',
-        'CreateInstance',
-        'DeleteInstance',
-        'DescribeRegions',
-        'GetInstance',
-        'ListInstances',
-        'ListTagResources',
-        'TagResources',
-        'UntagResources',
-        'UpdateInstance',
-    ]);
-
     // @see https://github.com/aliyun/alibabacloud-sdk/blob/f41eec35b536eb2ee7eb1e2467eac88af904dd58/ots-20160620/async/api-info.json
     buildFromChangeset('Ots', '2016-06-20', 'RPC', [
         'BindInstance2Vpc',

@@ -6,16 +6,8 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\VarExporter\VarExporter;
 
-/**
- * @return string JSON string.
- */
-function getApiDocs(string $product, string $version): string
+function getContents(string $url): string
 {
-    $url = sprintf(
-        'https://api.aliyun.com/meta/v1/products/%s/versions/%s/api-docs.json',
-        $product, $version
-    );
-
     $stream = fopen($url, 'r');
 
     if ($stream === false) {
@@ -26,7 +18,7 @@ function getApiDocs(string $product, string $version): string
     fclose($stream);
 
     if ($contents === false) {
-        throw new RuntimeException('Could not retrieve the data: '.$url);
+        throw new RuntimeException('Could not retrieve content: '.$url);
     }
 
     return $contents;
@@ -35,27 +27,37 @@ function getApiDocs(string $product, string $version): string
 /**
  * @return mixed[]
  */
-function getLatestApiChanges(string $product, string $version, string $api): array
+function getApiDocs(string $product, string $version): array
 {
-    $uri = sprintf('https://api.aliyun.com/api/changeset/%s/%s/%s?page=1&pageSize=1',
-        $product, $version, $api
+    $contents = getContents(sprintf(
+        'https://api.aliyun.com/meta/v1/products/%s/versions/%s/api-docs.json',
+        $product, $version
+    ));
+
+    $decoded = json_decode(
+        $contents, associative: true, flags: JSON_THROW_ON_ERROR
     );
 
-    $handle = fopen($uri, 'r');
-
-    if ($handle === false) {
-        throw new RuntimeException("Could not get the $api API.");
+    if (! is_array($decoded)) {
+        throw new RuntimeException('The API docs is expected to be an array.');
     }
 
-    $contents = stream_get_contents($handle);
+    return $decoded;
+}
 
-    if ($contents === false) {
-        throw new RuntimeException("The $api API metadata is missing.");
-    }
+/**
+ * @return mixed[]
+ */
+function getLatestApiChanges(string $product, string $version, string $api): array
+{
+    $contents = getContents(sprintf(
+        'https://api.aliyun.com/api/changeset/%s/%s/%s?page=1&pageSize=1',
+        $product, $version, $api
+    ));
 
-    fclose($handle);
-
-    $decoded = json_decode($contents, associative: true, flags: JSON_THROW_ON_ERROR);
+    $decoded = json_decode(
+        $contents, associative: true, flags: JSON_THROW_ON_ERROR
+    );
 
     if (! is_array($decoded)) {
         throw new RuntimeException("Could not parse $api API metadata.");
@@ -124,22 +126,6 @@ function buildApiDocsFromChangeset(string $product, string $version, string $sty
     return $docs;
 }
 
-function writeToJson(string $product, string $version, string $contents): void
-{
-    $direcotry = getDirectory($product, $version);
-
-    if (! is_dir($direcotry)) {
-        mkdir($direcotry, 0755, recursive: true);
-    }
-
-    if (file_put_contents($direcotry.'/api-docs.json', $contents) === false) {
-        throw new RuntimeException(sprintf(
-            'Could not persist the API docs for %s with version %s.',
-            $product, $version
-        ));
-    }
-}
-
 /**
  * @param  mixed[]  $contents
  */
@@ -161,23 +147,34 @@ function writeToPhp(string $product, string $version, array $contents): void
     }
 }
 
+function updateProductList(string $endpoint): void
+{
+    $contents = getContents($endpoint);
+
+    $decoded = json_decode(
+        $contents, associative: true, flags: JSON_THROW_ON_ERROR
+    );
+
+    if (! is_array($decoded)) {
+        throw new RuntimeException('Could not parse product list.');
+    }
+
+    $code = sprintf('<?php return %s;', VarExporter::export($decoded));
+
+    if (file_put_contents(__DIR__.'/../data/products.php', $code, LOCK_EX) === false) {
+        throw new RuntimeException('Could not update product list.');
+    }
+}
+
 function buildFromProducts(): void
 {
-    $filename = __DIR__.'/../data/products.json';
+    $filename = __DIR__.'/../data/products.php';
 
     if (! file_exists($filename)) {
         throw new RuntimeException('Missing product data.');
     }
 
-    $contents = file_get_contents($filename);
-
-    if ($contents === false) {
-        throw new RuntimeException('Could not read product data.');
-    }
-
-    $products = json_decode(
-        $contents, associative: true, flags: JSON_THROW_ON_ERROR
-    );
+    $products = require $filename;
 
     if (! is_array($products)) {
         throw new RuntimeException('Product data is expected to be a list.');
@@ -187,9 +184,9 @@ function buildFromProducts(): void
         foreach ($product['versions'] as $version) {
             printf('=> Processing %s %s'.PHP_EOL, $product['code'], $version);
 
-            $contents = getApiDocs($product['code'], $version);
+            $docs = getApiDocs($product['code'], $version);
 
-            writeToJson($product['code'], $version, $contents);
+            writeToPhp($product['code'], $version, $docs);
         }
     }
 }
@@ -208,6 +205,9 @@ function buildFromChangeset(string $product, string $version, string $style, arr
 
 function main(): int
 {
+    echo '=> Updating product list'.PHP_EOL;
+    updateProductList('https://api.aliyun.com/meta/v1/products.json');
+
     buildFromProducts();
 
     // @see https://github.com/aliyun/alibabacloud-sdk/blob/64968f246b2537b00109cc1452c3a641f2795739/tablestore-20201209/async/api-info.json

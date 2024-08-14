@@ -16,6 +16,7 @@ use Dew\Acs\Tablestore\Messages\FilterType;
 use Dew\Acs\Tablestore\Messages\GetRowRequest;
 use Dew\Acs\Tablestore\Messages\ReturnType;
 use Dew\Acs\Tablestore\Messages\RowExistenceExpectation;
+use Dew\Acs\Tablestore\Messages\UpdateRowRequest;
 use Dew\Acs\Tablestore\PrimaryKey;
 use Generator;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
@@ -151,6 +152,28 @@ final class BasicHandlerTest extends TestCase
         $handler = new BasicHandler($mock);
         $builder = (new Builder())->setTable('testing')->setHandler($handler);
         $builder->whereKey('key', 'foo')->whereVersion(1234567891011)->maxVersions(2)->get();
+    }
+
+    public function test_update_row(): void
+    {
+        $mock = m::mock(InteractsWithTablestore::class);
+        $mock->expects()->send('/UpdateRow', m::on(function (UpdateRowRequest $request): bool {
+            return $request->getTableName() === 'testing'
+                && $request->hasRowChange()
+                && $request->hasCondition()
+                && $request->hasReturnContent();
+        }));
+        $handler = new BasicHandler($mock);
+        (new Builder())
+            ->setHandler($handler)
+            ->setTable('testing')
+            ->returnModified()
+            ->select(['counter'])
+            ->update([
+                PrimaryKey::string('key', 'foo'),
+                Attribute::string('value', 'bar'),
+                Attribute::increment('counter'),
+            ]);
     }
 
     public function test_to_read_tables_retrieves_all_tables_by_default(): void

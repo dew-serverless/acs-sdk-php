@@ -113,6 +113,7 @@ final class BasicHandler implements DataHandler
         $request->setTableName($builder->getTable());
         $request->setRowChange($builder->getBuffer());
         $request->setCondition($this->toCondition($builder));
+        $request->setReturnContent($this->toReturnContent($builder));
 
         $response = new UpdateRowResponse();
         $response->mergeFromString($this->send('/UpdateRow', $request));

@@ -94,9 +94,8 @@ function buildApiDocsFromChangeset(string $product, string $version, string $sty
             'product' => $product,
             'version' => $version,
         ],
-        'directories' => [],
         'components' => [
-            'schema' => [],
+            'schemas' => [],
         ],
         'apis' => [],
         'endpoints' => [],
@@ -125,7 +124,7 @@ function buildApiDocsFromChangeset(string $product, string $version, string $sty
         $docs['apis'] = [...$docs['apis'], ...$changeSet['data']['list'][0]['current']['apis']];
     }
 
-    return $docs;
+    return ApiDocsStripper::strip($docs);
 }
 
 /**
@@ -214,20 +213,6 @@ function main(): int
     updateProductList('https://api.aliyun.com/meta/v1/products.json');
 
     buildFromProducts();
-
-    // @see https://github.com/aliyun/alibabacloud-sdk/blob/64968f246b2537b00109cc1452c3a641f2795739/tablestore-20201209/async/api-info.json
-    buildFromChangeset('Tablestore', '2020-12-09', 'ROA', [
-        'ChangeResourceGroup',
-        'CreateInstance',
-        'DeleteInstance',
-        'DescribeRegions',
-        'GetInstance',
-        'ListInstances',
-        'ListTagResources',
-        'TagResources',
-        'UntagResources',
-        'UpdateInstance',
-    ]);
 
     // @see https://github.com/aliyun/alibabacloud-sdk/blob/f41eec35b536eb2ee7eb1e2467eac88af904dd58/ots-20160620/async/api-info.json
     buildFromChangeset('Ots', '2016-06-20', 'RPC', [

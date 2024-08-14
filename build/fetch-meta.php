@@ -124,7 +124,7 @@ function buildApiDocsFromChangeset(string $product, string $version, string $sty
         $docs['apis'] = [...$docs['apis'], ...$changeSet['data']['list'][0]['current']['apis']];
     }
 
-    return $docs;
+    return ApiDocsStripper::strip($docs);
 }
 
 /**

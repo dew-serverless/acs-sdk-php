@@ -413,6 +413,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceClusterListAsync($arguments = [])
  * @method \Dew\Acs\Result describeAppSecurities(array $arguments = [])
  * @method \Http\Promise\Promise describeAppSecuritiesAsync($arguments = [])
+ * @method \Dew\Acs\Result exportOAS(array $arguments = [])
+ * @method \Http\Promise\Promise exportOASAsync($arguments = [])
  */
 final class CloudAPIClient extends AcsClient
 {

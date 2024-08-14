@@ -9,6 +9,8 @@ use Dew\Acs\AcsClient;
 /**
  * @method \Dew\Acs\Result listQuotas(array $arguments = [])
  * @method \Http\Promise\Promise listQuotasAsync($arguments = [])
+ * @method \Dew\Acs\Result queryQuota(array $arguments = [])
+ * @method \Http\Promise\Promise queryQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result getQuota(array $arguments = [])
  * @method \Http\Promise\Promise getQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result updateQuota(array $arguments = [])

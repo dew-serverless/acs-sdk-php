@@ -339,6 +339,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise checkCdnDomainICPAsync($arguments = [])
  * @method \Dew\Acs\Result batchDescribeCdnIpInfo(array $arguments = [])
  * @method \Http\Promise\Promise batchDescribeCdnIpInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCdnFullDomainsBlockIPHistory(array $arguments = [])
+ * @method \Http\Promise\Promise describeCdnFullDomainsBlockIPHistoryAsync($arguments = [])
+ * @method \Dew\Acs\Result setCdnFullDomainsBlockIP(array $arguments = [])
+ * @method \Http\Promise\Promise setCdnFullDomainsBlockIPAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCdnFullDomainsBlockIPConfig(array $arguments = [])
+ * @method \Http\Promise\Promise describeCdnFullDomainsBlockIPConfigAsync($arguments = [])
  */
 final class CdnClient extends AcsClient
 {

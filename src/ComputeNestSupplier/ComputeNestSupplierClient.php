@@ -77,6 +77,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise restartServiceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result stopServiceInstance(array $arguments = [])
  * @method \Http\Promise\Promise stopServiceInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result removeServiceSharedAccounts(array $arguments = [])
+ * @method \Http\Promise\Promise removeServiceSharedAccountsAsync($arguments = [])
+ * @method \Dew\Acs\Result listServiceSharedAccounts(array $arguments = [])
+ * @method \Http\Promise\Promise listServiceSharedAccountsAsync($arguments = [])
+ * @method \Dew\Acs\Result approveServiceUsage(array $arguments = [])
+ * @method \Http\Promise\Promise approveServiceUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result rejectServiceUsage(array $arguments = [])
+ * @method \Http\Promise\Promise rejectServiceUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result createServiceUsage(array $arguments = [])
+ * @method \Http\Promise\Promise createServiceUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result listServiceCategories(array $arguments = [])
+ * @method \Http\Promise\Promise listServiceCategoriesAsync($arguments = [])
  */
 final class ComputeNestSupplierClient extends AcsClient
 {

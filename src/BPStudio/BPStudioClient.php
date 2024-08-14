@@ -33,8 +33,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise valuateApplicationAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
- * @method \Dew\Acs\Result initAppFailOver(array $arguments = [])
- * @method \Http\Promise\Promise initAppFailOverAsync($arguments = [])
  * @method \Dew\Acs\Result getPotentialFailZones(array $arguments = [])
  * @method \Http\Promise\Promise getPotentialFailZonesAsync($arguments = [])
  * @method \Dew\Acs\Result getFoTaskStatus(array $arguments = [])
@@ -53,6 +51,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise executeOperationASyncAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result initAppFailOver(array $arguments = [])
+ * @method \Http\Promise\Promise initAppFailOverAsync($arguments = [])
  */
 final class BPStudioClient extends AcsClient
 {

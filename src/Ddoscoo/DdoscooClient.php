@@ -69,6 +69,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise configL7UsKeepaliveAsync($arguments = [])
  * @method \Dew\Acs\Result describeL7UsKeepalive(array $arguments = [])
  * @method \Http\Promise\Promise describeL7UsKeepaliveAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyHeaders(array $arguments = [])
+ * @method \Http\Promise\Promise modifyHeadersAsync($arguments = [])
  * @method \Dew\Acs\Result createAsyncTask(array $arguments = [])
  * @method \Http\Promise\Promise createAsyncTaskAsync($arguments = [])
  * @method \Dew\Acs\Result deleteAsyncTask(array $arguments = [])
@@ -133,10 +135,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeUdpReflectAsync($arguments = [])
  * @method \Dew\Acs\Result configUdpReflect(array $arguments = [])
  * @method \Http\Promise\Promise configUdpReflectAsync($arguments = [])
- * @method \Dew\Acs\Result createWebCCRule(array $arguments = [])
- * @method \Http\Promise\Promise createWebCCRuleAsync($arguments = [])
- * @method \Dew\Acs\Result deleteWebCCRule(array $arguments = [])
- * @method \Http\Promise\Promise deleteWebCCRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result createWebCCRule(array $arguments = []) {@deprecated 2020-01-01}
+ * @method \Http\Promise\Promise createWebCCRuleAsync($arguments = []) {@deprecated 2020-01-01}
+ * @method \Dew\Acs\Result deleteWebCCRule(array $arguments = []) {@deprecated 2020-01-01}
+ * @method \Http\Promise\Promise deleteWebCCRuleAsync($arguments = []) {@deprecated 2020-01-01}
  * @method \Dew\Acs\Result deleteWebPreciseAccessRule(array $arguments = [])
  * @method \Http\Promise\Promise deleteWebPreciseAccessRuleAsync($arguments = [])
  * @method \Dew\Acs\Result modifyWebAIProtectSwitch(array $arguments = [])
@@ -153,8 +155,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise enableWebCCRuleAsync($arguments = [])
  * @method \Dew\Acs\Result disableWebCCRule(array $arguments = [])
  * @method \Http\Promise\Promise disableWebCCRuleAsync($arguments = [])
- * @method \Dew\Acs\Result modifyWebCCRule(array $arguments = [])
- * @method \Http\Promise\Promise modifyWebCCRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyWebCCRule(array $arguments = []) {@deprecated 2020-01-01}
+ * @method \Http\Promise\Promise modifyWebCCRuleAsync($arguments = []) {@deprecated 2020-01-01}
  * @method \Dew\Acs\Result modifyWebPreciseAccessSwitch(array $arguments = [])
  * @method \Http\Promise\Promise modifyWebPreciseAccessSwitchAsync($arguments = [])
  * @method \Dew\Acs\Result modifyWebPreciseAccessRule(array $arguments = [])
@@ -165,8 +167,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyWebAreaBlockAsync($arguments = [])
  * @method \Dew\Acs\Result describeWebCcProtectSwitch(array $arguments = [])
  * @method \Http\Promise\Promise describeWebCcProtectSwitchAsync($arguments = [])
- * @method \Dew\Acs\Result describeWebCCRules(array $arguments = [])
- * @method \Http\Promise\Promise describeWebCCRulesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeWebCCRules(array $arguments = []) {@deprecated 2020-01-01}
+ * @method \Http\Promise\Promise describeWebCCRulesAsync($arguments = []) {@deprecated 2020-01-01}
  * @method \Dew\Acs\Result describeWebPreciseAccessRule(array $arguments = [])
  * @method \Http\Promise\Promise describeWebPreciseAccessRuleAsync($arguments = [])
  * @method \Dew\Acs\Result describeWebAreaBlockConfigs(array $arguments = [])
@@ -247,6 +249,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDefenseCountStatisticsAsync($arguments = [])
  * @method \Dew\Acs\Result describeAttackAnalysisMaxQps(array $arguments = [])
  * @method \Http\Promise\Promise describeAttackAnalysisMaxQpsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDestinationPortEvent(array $arguments = [])
+ * @method \Http\Promise\Promise describeDestinationPortEventAsync($arguments = [])
  * @method \Dew\Acs\Result describePortFlowList(array $arguments = [])
  * @method \Http\Promise\Promise describePortFlowListAsync($arguments = [])
  * @method \Dew\Acs\Result describePortConnsList(array $arguments = [])

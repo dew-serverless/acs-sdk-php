@@ -7,6 +7,20 @@ namespace Dew\Acs\PaiRecService;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result deleteEngineConfig(array $arguments = [])
+ * @method \Http\Promise\Promise deleteEngineConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result updateEngineConfig(array $arguments = [])
+ * @method \Http\Promise\Promise updateEngineConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result listEngineConfigs(array $arguments = [])
+ * @method \Http\Promise\Promise listEngineConfigsAsync($arguments = [])
+ * @method \Dew\Acs\Result getEngineConfig(array $arguments = [])
+ * @method \Http\Promise\Promise getEngineConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result createEngineConfig(array $arguments = [])
+ * @method \Http\Promise\Promise createEngineConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result cloneEngineConfig(array $arguments = [])
+ * @method \Http\Promise\Promise cloneEngineConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result applyEngineConfig(array $arguments = [])
+ * @method \Http\Promise\Promise applyEngineConfigAsync($arguments = [])
  * @method \Dew\Acs\Result listInstances(array $arguments = [])
  * @method \Http\Promise\Promise listInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result getInstance(array $arguments = [])

@@ -7,6 +7,14 @@ namespace Dew\Acs\Ros;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result createAITask(array $arguments = [])
+ * @method \Http\Promise\Promise createAITaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getAITask(array $arguments = [])
+ * @method \Http\Promise\Promise getAITaskAsync($arguments = [])
+ * @method \Dew\Acs\Result listAITasks(array $arguments = [])
+ * @method \Http\Promise\Promise listAITasksAsync($arguments = [])
+ * @method \Dew\Acs\Result listAITaskEvents(array $arguments = [])
+ * @method \Http\Promise\Promise listAITaskEventsAsync($arguments = [])
  * @method \Dew\Acs\Result createStack(array $arguments = [])
  * @method \Http\Promise\Promise createStackAsync($arguments = [])
  * @method \Dew\Acs\Result deleteStack(array $arguments = [])

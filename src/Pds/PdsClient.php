@@ -221,10 +221,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDomainQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result groupUpdateName(array $arguments = [])
  * @method \Http\Promise\Promise groupUpdateNameAsync($arguments = [])
- * @method \Dew\Acs\Result innerSignIn(array $arguments = [])
- * @method \Http\Promise\Promise innerSignInAsync($arguments = [])
- * @method \Dew\Acs\Result selectDomain(array $arguments = [])
- * @method \Http\Promise\Promise selectDomainAsync($arguments = [])
  */
 final class PdsClient extends AcsClient
 {

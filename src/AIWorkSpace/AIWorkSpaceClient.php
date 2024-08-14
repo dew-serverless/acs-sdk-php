@@ -123,10 +123,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listProductsAsync($arguments = [])
  * @method \Dew\Acs\Result createProductOrders(array $arguments = [])
  * @method \Http\Promise\Promise createProductOrdersAsync($arguments = [])
- * @method \Dew\Acs\Result listServiceTemplates(array $arguments = [])
- * @method \Http\Promise\Promise listServiceTemplatesAsync($arguments = [])
- * @method \Dew\Acs\Result getServiceTemplate(array $arguments = [])
- * @method \Http\Promise\Promise getServiceTemplateAsync($arguments = [])
  */
 final class AIWorkSpaceClient extends AcsClient
 {

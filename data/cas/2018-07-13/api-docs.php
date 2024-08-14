@@ -5,7 +5,6 @@
         'product' => 'cas',
         'version' => '2018-07-13',
     ],
-    'directories' => [],
     'components' => [
         'schemas' => [],
     ],

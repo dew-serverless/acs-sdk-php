@@ -375,6 +375,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeComputeResourceUsageAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeApsResourceGroups(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeApsResourceGroupsAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describePerformanceViews(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describePerformanceViewsAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result createPerformanceView(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise createPerformanceViewAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result modifyPerformanceView(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise modifyPerformanceViewAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result deletePerformanceView(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise deletePerformanceViewAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describePerformanceViewAttribute(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describePerformanceViewAttributeAsync($arguments = []) {@since 2021-12-01}
  */
 final class AdbClient extends AcsClient
 {

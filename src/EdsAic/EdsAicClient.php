@@ -105,6 +105,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyPolicyGroupAsync($arguments = [])
  * @method \Dew\Acs\Result deletePolicyGroup(array $arguments = [])
  * @method \Http\Promise\Promise deletePolicyGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result describeTasks(array $arguments = [])
+ * @method \Http\Promise\Promise describeTasksAsync($arguments = [])
  */
 final class EdsAicClient extends AcsClient
 {

@@ -17,6 +17,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyPolicyContentAsync($arguments = [])
  * @method \Dew\Acs\Result listPolicy(array $arguments = [])
  * @method \Http\Promise\Promise listPolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result attachToPolicy(array $arguments = [])
+ * @method \Http\Promise\Promise attachToPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result detachFromPolicy(array $arguments = [])
  * @method \Http\Promise\Promise detachFromPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result listPolicyAttachment(array $arguments = [])

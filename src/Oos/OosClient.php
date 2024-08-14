@@ -165,6 +165,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result describeApplicationGroupBill(array $arguments = [])
  * @method \Http\Promise\Promise describeApplicationGroupBillAsync($arguments = [])
+ * @method \Dew\Acs\Result updateInstancePackageState(array $arguments = [])
+ * @method \Http\Promise\Promise updateInstancePackageStateAsync($arguments = [])
+ * @method \Dew\Acs\Result listInstancePackageStates(array $arguments = [])
+ * @method \Http\Promise\Promise listInstancePackageStatesAsync($arguments = [])
  */
 final class OosClient extends AcsClient
 {

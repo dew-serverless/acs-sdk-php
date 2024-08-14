@@ -62,4 +62,23 @@ final class Arr
 
         return $result;
     }
+
+    /**
+     * @template T of array
+     * @param  T  $array
+     * @param  key-of<T>[]  $keys
+     * @return T
+     */
+    public static function only(array $array, array $keys): array
+    {
+        $result = [];
+
+        foreach ($keys as $key) {
+            if (isset($array[$key])) {
+                $result[$key] = $array[$key];
+            }
+        }
+
+        return $result;
+    }
 }

@@ -75,7 +75,7 @@ final class Api
             ),
             responses: array_map(
                 fn (array $response): Response => Response::make($response),
-                $api['responses']
+                $api['responses'] ?? []
             ),
         );
     }

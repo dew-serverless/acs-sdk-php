@@ -7,6 +7,10 @@ namespace Dew\Acs\Csas;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result listNacUserCert(array $arguments = [])
+ * @method \Http\Promise\Promise listNacUserCertAsync($arguments = [])
+ * @method \Dew\Acs\Result updateNacUserCertStatus(array $arguments = [])
+ * @method \Http\Promise\Promise updateNacUserCertStatusAsync($arguments = [])
  * @method \Dew\Acs\Result listIdpConfigs(array $arguments = [])
  * @method \Http\Promise\Promise listIdpConfigsAsync($arguments = [])
  * @method \Dew\Acs\Result getIdpConfig(array $arguments = [])

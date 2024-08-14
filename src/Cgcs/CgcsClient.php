@@ -13,6 +13,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise releaseInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result listInstances(array $arguments = [])
  * @method \Http\Promise\Promise listInstancesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInstanceStatsInfo(array $arguments = [])
+ * @method \Http\Promise\Promise describeInstanceStatsInfoAsync($arguments = [])
  * @method \Dew\Acs\Result createApp(array $arguments = [])
  * @method \Http\Promise\Promise createAppAsync($arguments = [])
  * @method \Dew\Acs\Result modifyApp(array $arguments = [])

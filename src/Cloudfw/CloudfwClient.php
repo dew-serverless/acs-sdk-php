@@ -207,6 +207,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDefaultIPSConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDefaultIPSConfig(array $arguments = [])
  * @method \Http\Promise\Promise modifyDefaultIPSConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyObjectGroupOperation(array $arguments = [])
+ * @method \Http\Promise\Promise modifyObjectGroupOperationAsync($arguments = [])
+ * @method \Dew\Acs\Result createSlsLogDispatch(array $arguments = [])
+ * @method \Http\Promise\Promise createSlsLogDispatchAsync($arguments = [])
  */
 final class CloudfwClient extends AcsClient
 {

@@ -125,6 +125,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeParametersHistoryAsync($arguments = [])
  * @method \Dew\Acs\Result modifyParameters(array $arguments = [])
  * @method \Http\Promise\Promise modifyParametersAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSessionList(array $arguments = [])
+ * @method \Http\Promise\Promise describeSessionListAsync($arguments = [])
+ * @method \Dew\Acs\Result batchKillSessionList(array $arguments = [])
+ * @method \Http\Promise\Promise batchKillSessionListAsync($arguments = [])
  * @method \Dew\Acs\Result batchKillProcessList(array $arguments = [])
  * @method \Http\Promise\Promise batchKillProcessListAsync($arguments = [])
  * @method \Dew\Acs\Result describeProcessStatsComposition(array $arguments = [])
@@ -261,6 +265,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSlowSQLListAsync($arguments = [])
  * @method \Dew\Acs\Result describeSlowSQLHistoryList(array $arguments = [])
  * @method \Http\Promise\Promise describeSlowSQLHistoryListAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSQLTuningAdvices(array $arguments = [])
+ * @method \Http\Promise\Promise describeSQLTuningAdvicesAsync($arguments = [])
  */
 final class OceanBaseProClient extends AcsClient
 {

@@ -3,9 +3,6 @@ PROTOC ?= protoc
 fetch-meta:
 	php build/fetch-meta.php
 
-build-json:
-	php build/build-json.php
-
 build-clients:
 	php build/build-clients.php
 	php build/annotate-clients.php

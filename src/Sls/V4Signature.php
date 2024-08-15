@@ -39,8 +39,11 @@ final readonly class V4Signature implements SignsRequest
         $request = $request
             ->withHeader('X-Log-Date', $datetime->format('Ymd\THis\Z'))
             ->withHeader('X-Log-Content-Sha256', hash('sha256', $body))
-            ->withHeader('X-Log-Bodyrawsize', (string) strlen($body))
             ->withHeader('X-Log-Apiversion', '0.6.0');
+
+        if (! $request->hasHeader('X-Log-Bodyrawsize')) {
+            $request = $request->withHeader('X-Log-Bodyrawsize', (string) strlen($body));
+        }
 
         return $this->signer->signRequest($request, $config);
     }

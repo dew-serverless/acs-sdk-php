@@ -33,7 +33,10 @@ trait ManagesLogs
             ->withPath(sprintf('/logstores/%s/shards/lb', $arguments['logstore']))
         );
 
-        $request = (new V4Signature())->signRequest($request, $this->config);
+        $request = (new V4Signature())->signRequest(
+            (new LogHandler())->compress($request, $this->streamFactory),
+            $this->config
+        );
 
         /** @var \Psr\Http\Message\ResponseInterface */
         $response = $client->sendAsyncRequest($request)->wait();

@@ -44,12 +44,15 @@
     "scripts": {
         "format": "php-cs-fixer fix",
         "test": "phpunit",
+        "refactor": "rector",
         "test:style": "php-cs-fixer fix --dry-run",
         "test:static": "phpstan analyse",
+        "test:refactor": "rector --dry-run",
         "test:all": [
             "@test",
             "@test:style",
-            "@test:static"
+            "@test:static",
+            "@test:refactor"
         ]
     },
     "config": {

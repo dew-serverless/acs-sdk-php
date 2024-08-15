@@ -8,13 +8,11 @@ use Dew\Acs\Plugins\ConfigureUserAgent;
 use Dew\Acs\Result;
 use Http\Client\Common\PluginClient;
 
-/**
- * @phpstan-import-type TLogGroup from \Dew\Acs\Sls\LogHandler
- */
 trait ManagesLogs
 {
     /**
-     * @param  array{project: string, logstore: string}&TLogGroup  $arguments
+     * @param  array{project: string, logstore: string}  $arguments
+     * @return \Dew\Acs\Result<array{}>
      */
     public function putLogs(array $arguments): Result
     {
@@ -22,6 +20,7 @@ trait ManagesLogs
             new ConfigureUserAgent(),
         ]);
 
+        // @phpstan-ignore argument.type
         $group = LogHandler::toLogGroup($arguments);
 
         $request = $this->requestFactory
@@ -35,6 +34,8 @@ trait ManagesLogs
         );
 
         $request = (new V4Signature())->signRequest($request, $this->config);
+
+        /** @var \Psr\Http\Message\ResponseInterface */
         $response = $client->sendAsyncRequest($request)->wait();
 
         return (new Result())->setResponse($response);

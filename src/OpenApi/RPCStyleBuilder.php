@@ -37,7 +37,7 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
         $formData = [];
         $body = '';
 
-        foreach ($this->api->parameters as $index => $parameter) {
+        foreach ($this->api->parameters as $parameter) {
             $value = $arguments[$parameter->name] ?? null;
 
             if ($parameter->schema->required === true && $value === null) {

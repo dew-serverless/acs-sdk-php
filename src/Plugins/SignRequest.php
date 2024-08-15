@@ -14,7 +14,7 @@ use Http\Promise\Promise;
 use InvalidArgumentException;
 use Psr\Http\Message\RequestInterface;
 
-final class SignRequest implements Plugin
+final readonly class SignRequest implements Plugin
 {
     /**
      * @param  array<string, mixed>  $config

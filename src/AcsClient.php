@@ -45,7 +45,7 @@ abstract class AcsClient
 
     protected string $endpoint;
 
-    private ClientInterface $httpClient;
+    private readonly ClientInterface $httpClient;
 
     protected readonly RequestFactoryInterface $requestFactory;
 

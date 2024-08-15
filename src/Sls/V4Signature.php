@@ -14,7 +14,7 @@ use Psr\Http\Message\RequestInterface;
 /**
  * @mixin \Dew\Acs\Signatures\V4Signature
  */
-final class V4Signature implements SignsRequest
+final readonly class V4Signature implements SignsRequest
 {
     public function __construct(
         private BaseV4Signature $signer = new BaseV4Signature('SLS4-HMAC-SHA256', 'sls')

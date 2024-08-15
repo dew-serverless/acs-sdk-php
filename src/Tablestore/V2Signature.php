@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Dew\Acs\Tablestore;
 
 use Dew\Acs\Signatures\SignsRequest;
+use Override;
 use Psr\Http\Message\RequestInterface;
 
 final readonly class V2Signature implements SignsRequest
@@ -19,6 +20,7 @@ final readonly class V2Signature implements SignsRequest
     /**
      * @param  array<string, mixed>  $config
      */
+    #[Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
         $this->configChecker->ensureCredentialsExist($config);

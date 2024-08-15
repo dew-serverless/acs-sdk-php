@@ -22,7 +22,7 @@ final class SignRequest implements Plugin
      */
     public function __construct(
         private array $config,
-        private SignsRequest $signer = new V4Signature()
+        private readonly SignsRequest $signer = new V4Signature()
     ) {
         //
     }

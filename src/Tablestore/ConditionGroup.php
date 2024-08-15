@@ -19,7 +19,7 @@ final class ConditionGroup
     /**
      * The logical operators.
      */
-    public const SUPPORTED = [
+    public const array SUPPORTED = [
         'and',
         'or',
     ];

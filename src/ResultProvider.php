@@ -53,10 +53,10 @@ final readonly class ResultProvider
     {
         $contentType = strtolower($response->getHeaderLine('Content-Type'));
 
-        switch (true) {
-            case str_contains($contentType, 'json'): return $this->makeJsonResult($response);
-            case str_contains($contentType, 'xml'): return $this->makeXmlResult($response, $api);
-            default: return [];
+        return match (true) {
+            str_contains($contentType, 'json') => $this->makeJsonResult($response),
+            str_contains($contentType, 'xml') => $this->makeXmlResult($response, $api),
+            default => [],
         };
     }
 

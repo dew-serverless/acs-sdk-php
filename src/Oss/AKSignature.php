@@ -7,7 +7,7 @@ use Dew\Acs\Signatures\SignsRequest;
 use Override;
 use Psr\Http\Message\RequestInterface;
 
-final class AKSignature implements SignsRequest, NeedsArguments
+final readonly class AKSignature implements SignsRequest, NeedsArguments
 {
     public function __construct(
         private SignsRequest&NeedsArguments $signer = new V4Signature(),

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Dew\Acs;
 
 use ArrayAccess;
+use Override;
 use Psr\Http\Message\ResponseInterface;
 use RuntimeException;
 
@@ -20,7 +21,7 @@ final class Result implements ArrayAccess
      * @param  TData  $data
      */
     public function __construct(
-        private array $data = []
+        private readonly array $data = []
     ) {
         //
     }
@@ -44,21 +45,25 @@ final class Result implements ArrayAccess
         return Arr::get($this->data, $name, $default);
     }
 
+    #[Override]
     public function offsetExists($offset): bool
     {
         return $this->has($offset);
     }
 
+    #[Override]
     public function offsetGet($offset): mixed
     {
         return $this->get($offset);
     }
 
+    #[Override]
     public function offsetSet($offset, $value): void
     {
         throw new RuntimeException('Could not mutate the result.');
     }
 
+    #[Override]
     public function offsetUnset($offset): void
     {
         throw new RuntimeException('Could not mutate the result.');

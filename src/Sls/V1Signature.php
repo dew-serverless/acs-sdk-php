@@ -120,7 +120,7 @@ final readonly class V1Signature implements SignsRequest
         $delimiter = '';
 
         foreach ($query as $key => $value) {
-            $value = is_array($value) ? implode(',') : $value;
+            $value = is_array($value) ? implode(',', $value) : $value;
             $result .= $delimiter.$key.'='.$value;
             $delimiter = '&';
         }

@@ -227,7 +227,7 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
 
             try {
                 $result[$normalized] = $this->toHeaderValue($parameter, $value);
-            } catch (InvalidArgumentException $e) {
+            } catch (InvalidArgumentException) {
                 throw new InvalidArgumentException(sprintf(
                     'The header value "%s" must be a string.', $normalized
                 ));

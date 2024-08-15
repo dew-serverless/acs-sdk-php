@@ -103,20 +103,14 @@ final class SchemaReader
             throw new InvalidArgumentException('Could not cast enum to string.');
         }, $enum);
 
-        switch ($count = count($enum)) {
-            case 1:
-                $message = sprintf('The %s must be %s.', $attribute, $wrapped[0]);
-                break;
-            case 2:
-                $message = sprintf('The %s must be either %s or %s.', $attribute, ...$wrapped);
-                break;
-            default:
-                $message = sprintf('The %s must be either %s, or %s.', $attribute,
-                    implode(', ', array_slice($wrapped, 0, $count - 1)),
-                    $wrapped[$count - 1]
-                );
-                break;
-        }
+        $message = match ($count = count($enum)) {
+            1 => sprintf('The %s must be %s.', $attribute, $wrapped[0]),
+            2 => sprintf('The %s must be either %s or %s.', $attribute, ...$wrapped),
+            default => sprintf('The %s must be either %s, or %s.', $attribute,
+                implode(', ', array_slice($wrapped, 0, $count - 1)),
+                $wrapped[$count - 1]
+            ),
+        };
 
         return $message;
     }

@@ -133,7 +133,7 @@ final class V3Signature implements SignsRequest, NeedsApiContext
 
         foreach ($query as $key => $value) {
             $key = (string) $key;
-            $value = is_array($value) ? implode(',') : $value;
+            $value = is_array($value) ? implode(',', $value) : $value;
             $pair = rawurlencode($key).'='.rawurlencode($value);
             $result .= $delimiter.$pair;
             $delimiter = '&';

@@ -12,17 +12,17 @@ final class HexDumper
     /**
      * The code point indicates a space.
      */
-    private const FIRST_PRINTABLE_ASCII_CHARACTER_CODEPOINT = 32;
+    private const int FIRST_PRINTABLE_ASCII_CHARACTER_CODEPOINT = 32;
 
     /**
      * The code point indicates a ~ character.
      */
-    private const LAST_PRINTABLE_ASCII_CHARACTER_CODEPOINT = 126;
+    private const int LAST_PRINTABLE_ASCII_CHARACTER_CODEPOINT = 126;
 
     /**
      * The size of the ASCII table.
      */
-    private const ASCII_TABLE_SIZE = 256;
+    private const int ASCII_TABLE_SIZE = 256;
 
     /**
      * The ASCII table of original and printable character pairs.
@@ -47,7 +47,7 @@ final class HexDumper
      * Create a hex dumper instance.
      */
     public function __construct(
-        private string $buffer
+        private readonly string $buffer
     ) {
         //
     }

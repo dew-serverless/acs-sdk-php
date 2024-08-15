@@ -44,7 +44,7 @@ use Override;
  */
 final class OtsClient extends AcsClient
 {
-    public const DEFAULT_VERSION = '2016-06-20';
+    public const string DEFAULT_VERSION = '2016-06-20';
 
     #[Override]
     protected function resolveApiDocs(): ApiDocs

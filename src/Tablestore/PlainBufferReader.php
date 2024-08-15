@@ -23,7 +23,7 @@ final class PlainBufferReader
      * Create a reader instance.
      */
     public function __construct(
-        private string $buffer
+        private readonly string $buffer
     ) {
         $this->end = $this->size();
     }

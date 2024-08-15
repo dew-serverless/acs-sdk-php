@@ -157,12 +157,10 @@ final class BasicHandlerTest extends TestCase
     public function test_update_row(): void
     {
         $mock = m::mock(InteractsWithTablestore::class);
-        $mock->expects()->send('/UpdateRow', m::on(function (UpdateRowRequest $request): bool {
-            return $request->getTableName() === 'testing'
-                && $request->hasRowChange()
-                && $request->hasCondition()
-                && $request->hasReturnContent();
-        }));
+        $mock->expects()->send('/UpdateRow', m::on(fn (UpdateRowRequest $request): bool => $request->getTableName() === 'testing'
+            && $request->hasRowChange()
+            && $request->hasCondition()
+            && $request->hasReturnContent()));
         $handler = new BasicHandler($mock);
         (new Builder())
             ->setHandler($handler)

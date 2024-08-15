@@ -7,15 +7,13 @@ build-clients:
 	php build/build-clients.php
 	php build/annotate-clients.php
 
-build-tablestore-proto:
-	${PROTOC} --php_out=src -Iprotobuf/tablestore protobuf/tablestore/*.proto
+build-%-proto:
+	[ -d "protobuf/$*" ] || { echo "Could not find protobuf for $*"; exit 1; }
+	${PROTOC} --php_out=src -Iprotobuf/$* protobuf/$*/*.proto
 	# Fix path of generated PHP files
-	rm -rf src/Tablestore/{Messages,Metadata}
-	mv src/Dew/Acs/Tablestore/* src/Tablestore/
-	rm -r src/Dew/Acs/Tablestore/
+	PRODUCT=$(shell find ./src -type d -iname $* -maxdepth 1 -exec basename {} \;) && \
+		rm -rf src/$$PRODUCT/{Messages,Metadata} && \
+		mv src/Dew/Acs/$$PRODUCT/* src/$$PRODUCT/ && \
+		rm -rf src/Dew/
 
-clean-tablestore-proto:
-	rm -rf src/Tablestore/Protobuf
-
-.PHONY: fetch-meta build-json build-clients \
-	build-tablestore-proto clean-tablestore-proto
+.PHONY: fetch-meta build-clients

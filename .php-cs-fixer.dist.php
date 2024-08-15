@@ -10,6 +10,8 @@ $finder = (new PhpCsFixer\Finder())
     ->exclude([
         'Tablestore/Messages',
         'Tablestore/Metadata',
+        'Sls/Messages',
+        'Sls/Metadata',
     ]);
 
 return (new PhpCsFixer\Config())

@@ -45,7 +45,7 @@ abstract class AcsClient
 
     protected string $endpoint;
 
-    private readonly ClientInterface $httpClient;
+    protected readonly ClientInterface $httpClient;
 
     protected readonly RequestFactoryInterface $requestFactory;
 
@@ -152,7 +152,7 @@ abstract class AcsClient
             );
     }
 
-    private function appendDefaultSchemeIfNeeded(string $endpoint): string
+    protected function appendDefaultSchemeIfNeeded(string $endpoint): string
     {
         $parsed = parse_url($endpoint);
 

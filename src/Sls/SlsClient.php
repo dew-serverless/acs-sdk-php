@@ -344,5 +344,5 @@ use Dew\Acs\AcsClient;
  */
 final class SlsClient extends AcsClient
 {
-    //
+    use ManagesLogs;
 }

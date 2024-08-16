@@ -25,7 +25,7 @@ final class Deflate implements Compression
     #[Override]
     public static function threshold(): int
     {
-        return 512;
+        return 256;
     }
 
     /**

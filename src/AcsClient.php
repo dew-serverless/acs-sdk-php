@@ -6,6 +6,7 @@ namespace Dew\Acs;
 
 use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
+use Dew\Acs\Plugins\SignRequest;
 use Http\Client\Common\Plugin\HeaderSetPlugin;
 use Http\Client\Common\PluginClient;
 use Http\Client\Promise\HttpFulfilledPromise;
@@ -135,7 +136,7 @@ abstract class AcsClient
             new Plugins\ConfigureAction($this->docs, $api, $this->streamFactory, $arguments),
             new HeaderSetPlugin(is_array($arguments['@headers'] ?? null) ? $arguments['@headers'] : []),
             new Plugins\ExecuteSigningHook($this),
-            new Plugins\SignRequest($this->docs, $api, $this->config, $arguments),
+            SignRequest::withApiDocs($this->docs, $api, $this->config, $arguments),
         ]);
 
         return (new FulfilledPromise($client->sendAsyncRequest($request)))

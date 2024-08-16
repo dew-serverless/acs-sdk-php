@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Dew\Acs\Tests\Tablestore\Fixtures;
+namespace Dew\Acs\Signatures;
 
-use Dew\Acs\Signatures\SignsRequest;
 use Override;
 use Psr\Http\Message\RequestInterface;
 

@@ -11,7 +11,7 @@ trait ManagesLogs
 {
     /**
      * @param  array{project: string, logstore: string}  $arguments
-     * @return \Dew\Acs\Result<array{}>
+     * @return \Dew\Acs\Result<mixed[]>
      */
     public function putLogs(array $arguments): Result
     {
@@ -36,6 +36,6 @@ trait ManagesLogs
         /** @var \Psr\Http\Message\ResponseInterface */
         $response = $client->sendAsyncRequest($request)->wait();
 
-        return (new Result())->setResponse($response);
+        return $this->resultProvider->make($response);
     }
 }

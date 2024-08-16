@@ -55,9 +55,9 @@ abstract class AcsClient
     /**
      * @var class-string<\Dew\Acs\AcsException>
      */
-    private readonly string $exceptionClass;
+    protected readonly string $exceptionClass;
 
-    private readonly ResultProvider $resultProvider;
+    protected readonly ResultProvider $resultProvider;
 
     /**
      * @param  TConfig  $config

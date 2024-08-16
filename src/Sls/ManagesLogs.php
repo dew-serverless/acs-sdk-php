@@ -16,7 +16,7 @@ trait ManagesLogs
     public function putLogs(array $arguments): Result
     {
         // @phpstan-ignore argument.type
-        $group = LogHandler::toLogGroup($arguments);
+        $group = Protobuf::toLogGroup($arguments);
 
         $request = $this->requestFactory
             ->createRequest('POST', $this->appendDefaultSchemeIfNeeded($this->endpoint))

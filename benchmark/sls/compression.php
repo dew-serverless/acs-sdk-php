@@ -6,13 +6,13 @@ require_once __DIR__.'/../../vendor/autoload.php';
 
 use Dew\Acs\Sls\Compression;
 use Dew\Acs\Sls\Deflate;
-use Dew\Acs\Sls\LogHandler;
 use Dew\Acs\Sls\Messages\LogGroup;
+use Dew\Acs\Sls\Protobuf;
 use Dew\Acs\Sls\Zstd;
 
 function mockedSimpleLog(): LogGroup
 {
-    return LogHandler::toLogGroup([
+    return Protobuf::toLogGroup([
         'logs' => [[
             'time' => time(),
             'contents' => [
@@ -28,7 +28,7 @@ function mockedSimpleLog(): LogGroup
 
 function mockedUserLoginLog(): LogGroup
 {
-    return LogHandler::toLogGroup([
+    return Protobuf::toLogGroup([
         'logs' => [[
             'time' => time(),
             'contents' => [
@@ -48,7 +48,7 @@ function mockedUserLoginLog(): LogGroup
 
 function mockedNginxAccessLog(): LogGroup
 {
-    return LogHandler::toLogGroup([
+    return Protobuf::toLogGroup([
         'logs' => [[
             'time' => time(),
             'contents' => [

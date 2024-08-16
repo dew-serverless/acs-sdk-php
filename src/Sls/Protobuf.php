@@ -23,7 +23,7 @@ use Dew\Acs\Sls\Messages\LogTag;
  *   tags?: array<string, string>
  * }
  */
-final class LogHandler
+final class Protobuf
 {
     /**
      * @param  TLogGroup  $group

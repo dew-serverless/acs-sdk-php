@@ -17,10 +17,8 @@ use Http\Promise\Promise;
 use InvalidArgumentException;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\UriFactoryInterface;
-use RuntimeException;
 
 /**
  * @phpstan-type TCredentials array{
@@ -131,26 +129,41 @@ abstract class AcsClient
             'GET', $this->appendDefaultSchemeIfNeeded($this->endpoint)
         );
 
-        $client = new PluginClient($this->httpClient, [
+        $promise = $this->newDocsClient($api, $arguments)->sendAsyncRequest($request);
+
+        return (new FulfilledPromise($promise))->then(
+            function (HttpFulfilledPromise $promise) use ($api): Result {
+                /** @var \Psr\Http\Message\ResponseInterface */
+                $response = $promise->wait();
+
+                return $this->resultProvider->make($response, $api);
+            }
+        );
+    }
+
+    /**
+     * @param  mixed[]  $arguments
+     */
+    private function newDocsClient(Api $api, array $arguments): PluginClient
+    {
+        return new PluginClient($this->httpClient, [
             new Plugins\ConfigureUserAgent(),
             new Plugins\ConfigureAction($this->docs, $api, $this->streamFactory, $arguments),
             new HeaderSetPlugin(is_array($arguments['@headers'] ?? null) ? $arguments['@headers'] : []),
             new Plugins\ExecuteSigningHook($this),
             SignRequest::withApiDocs($this->docs, $api, $this->config, $arguments),
         ]);
+    }
 
-        return (new FulfilledPromise($client->sendAsyncRequest($request)))
-            ->then(
-                function (HttpFulfilledPromise $promise) use ($api): Result {
-                    $response = $promise->wait();
-
-                    if (! $response instanceof ResponseInterface) {
-                        throw new RuntimeException('Could not process the response.');
-                    }
-
-                    return $this->resultProvider->make($response, $api);
-                }
-            );
+    /**
+     * @param  \Http\Client\Common\Plugin[]  $appendMiddlewares
+     */
+    protected function newClient(array $appendMiddlewares = []): PluginClient
+    {
+        return new PluginClient($this->httpClient, [
+            new Plugins\ConfigureUserAgent(),
+            ...$appendMiddlewares,
+        ]);
     }
 
     protected function appendDefaultSchemeIfNeeded(string $endpoint): string

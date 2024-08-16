@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Sls;
 
-use Dew\Acs\Plugins\ConfigureUserAgent;
 use Dew\Acs\Plugins\SignRequest;
 use Dew\Acs\Result;
-use Http\Client\Common\PluginClient;
 
 trait ManagesLogs
 {
@@ -17,11 +15,6 @@ trait ManagesLogs
      */
     public function putLogs(array $arguments): Result
     {
-        $client = new PluginClient($this->httpClient, [
-            new ConfigureUserAgent(),
-            SignRequest::withSignature(new V4Signature(), $this->config),
-        ]);
-
         // @phpstan-ignore argument.type
         $group = LogHandler::toLogGroup($arguments);
 
@@ -35,10 +28,14 @@ trait ManagesLogs
             ->withPath(sprintf('/logstores/%s/shards/lb', $arguments['logstore']))
         );
 
+        $request = LogHandler::compress($request, $this->streamFactory);
+
+        $client = $this->newClient(appendMiddlewares: [
+            SignRequest::withSignature(new V4Signature(), $this->config),
+        ]);
+
         /** @var \Psr\Http\Message\ResponseInterface */
-        $response = $client->sendAsyncRequest(
-            (new LogHandler())->compress($request, $this->streamFactory)
-        )->wait();
+        $response = $client->sendAsyncRequest($request)->wait();
 
         return (new Result())->setResponse($response);
     }

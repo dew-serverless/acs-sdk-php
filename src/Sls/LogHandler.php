@@ -27,7 +27,7 @@ use Psr\Http\Message\StreamFactoryInterface;
  */
 final class LogHandler
 {
-    public function compress(RequestInterface $request, StreamFactoryInterface $factory): RequestInterface
+    public static function compress(RequestInterface $request, StreamFactoryInterface $factory): RequestInterface
     {
         $size = $request->getBody()->getSize() ?? 0;
 

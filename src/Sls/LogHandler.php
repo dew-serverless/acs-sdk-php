@@ -8,8 +8,6 @@ use Dew\Acs\Sls\Messages\Log;
 use Dew\Acs\Sls\Messages\LogContent;
 use Dew\Acs\Sls\Messages\LogGroup;
 use Dew\Acs\Sls\Messages\LogTag;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\StreamFactoryInterface;
 
 /**
  * @phpstan-type TLog array{
@@ -27,28 +25,6 @@ use Psr\Http\Message\StreamFactoryInterface;
  */
 final class LogHandler
 {
-    public static function compress(RequestInterface $request, StreamFactoryInterface $factory): RequestInterface
-    {
-        $size = $request->getBody()->getSize() ?? 0;
-
-        $compression = match (true) {
-            Zstd::supports() && $size > Zstd::threshold() => new Zstd(),
-            Deflate::supports() && $size > Deflate::threshold() => new Deflate(),
-            default => new Raw(),
-        };
-
-        $encoded = $compression->encode((string) $request->getBody());
-
-        if (strlen($encoded) >= $size) {
-            return $request;
-        }
-
-        return $request
-            ->withHeader('x-log-bodyrawsize', (string) $size)
-            ->withHeader('x-log-compresstype', $compression->format())
-            ->withBody($factory->createStream($encoded));
-    }
-
     /**
      * @param  TLogGroup  $group
      */

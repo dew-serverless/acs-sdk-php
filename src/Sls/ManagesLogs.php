@@ -28,9 +28,8 @@ trait ManagesLogs
             ->withPath(sprintf('/logstores/%s/shards/lb', $arguments['logstore']))
         );
 
-        $request = LogHandler::compress($request, $this->streamFactory);
-
         $client = $this->newClient(appendMiddlewares: [
+            new CompressData($this->streamFactory),
             SignRequest::withSignature(new V4Signature(), $this->config),
         ]);
 

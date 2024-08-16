@@ -37,12 +37,16 @@ final class LogHandler
             default => new Raw(),
         };
 
+        $encoded = $compression->encode((string) $request->getBody());
+
+        if (strlen($encoded) >= $size) {
+            return $request;
+        }
+
         return $request
             ->withHeader('x-log-bodyrawsize', (string) $size)
             ->withHeader('x-log-compresstype', $compression->format())
-            ->withBody($factory->createStream(
-                $compression->encode((string) $request->getBody())
-            ));
+            ->withBody($factory->createStream($encoded));
     }
 
     /**

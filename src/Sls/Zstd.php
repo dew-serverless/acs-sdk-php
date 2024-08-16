@@ -11,6 +11,8 @@ use function Zstd\uncompress;
 
 final class Zstd implements Compression
 {
+    public const int DEFAULT_COMPRESSION_LEVEL = 3;
+
     /**
      * {@inheritDoc}
      */
@@ -35,7 +37,7 @@ final class Zstd implements Compression
     #[Override]
     public function encode(string $data, ?int $level = null): string
     {
-        $level = is_int($level) ? $level : 3;
+        $level = is_int($level) ? $level : self::DEFAULT_COMPRESSION_LEVEL;
         $encoded = compress($data, $level);
 
         if ($encoded === false) {

@@ -32,6 +32,7 @@ final class LogHandler
         $size = $request->getBody()->getSize() ?? 0;
 
         $compression = match (true) {
+            Zstd::supports() && $size > Zstd::threshold() => new Zstd(),
             Deflate::supports() && $size > Deflate::threshold() => new Deflate(),
             default => new Raw(),
         };

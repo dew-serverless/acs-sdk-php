@@ -142,19 +142,29 @@ final class V4Signature implements SignsRequest
 
     public function buildCanonicalHeaders(RequestInterface $request): string
     {
-        $headers = $this->onlyIncludeSignedHeadersInCanonical
-            ? $this->buildSignedHeaders($request)
-            : array_keys($request->getHeaders());
-
-        sort($headers, SORT_STRING | SORT_FLAG_CASE);
-
         $result = [];
 
-        foreach ($headers as $name) {
+        foreach ($this->buildCanonicalHeaderNames($request) as $name) {
             $result[] = strtolower($name).':'.$request->getHeaderLine($name);
         }
 
         return implode("\n", $result)."\n";
+    }
+
+    /**
+     * @return string[]
+     */
+    public function buildCanonicalHeaderNames(RequestInterface $request): array
+    {
+        if ($this->onlyIncludeSignedHeadersInCanonical) {
+            return $this->buildSignedHeaders($request);
+        }
+
+        $headers = array_keys($request->getHeaders());
+
+        sort($headers, SORT_STRING | SORT_FLAG_CASE);
+
+        return $headers;
     }
 
     /**

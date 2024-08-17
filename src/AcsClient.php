@@ -129,6 +129,11 @@ abstract class AcsClient
         $promise = $this->newDocsClient($api, $arguments)
             ->sendAsyncRequest($this->newRequest('GET'));
 
+        return $this->handleResponse($promise, $api);
+    }
+
+    protected function handleResponse(Promise $promise, ?Api $api = null): Promise
+    {
         return (new FulfilledPromise($promise))->then(
             function (HttpFulfilledPromise $promise) use ($api): Result {
                 /** @var \Psr\Http\Message\ResponseInterface */
@@ -188,6 +193,14 @@ abstract class AcsClient
     public function __call(string $method, array $arguments = []): mixed
     {
         $action = ucfirst($method);
+
+        // Handles custom APIs not included in the metadata, which may involve
+        // complex logic. Implement the asynchronous method, and the "magic"
+        // will take care of the rest. Don't forget to add the annotation.
+        if (method_exists($this, $action.'Async')) {
+            return $this->{$action.'Async'}(...$arguments)->wait();
+        }
+
         $async = false;
 
         if (str_ends_with($action, 'Async')) {

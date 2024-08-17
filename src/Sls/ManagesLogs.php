@@ -5,15 +5,18 @@ declare(strict_types=1);
 namespace Dew\Acs\Sls;
 
 use Dew\Acs\Plugins\SignRequest;
-use Dew\Acs\Result;
+use Http\Promise\Promise;
 
+/**
+ * @method \Dew\Acs\Result putLogs(array $arguments)
+ */
 trait ManagesLogs
 {
     /**
      * @param  array{project: string, logstore: string, hash?: string}  $arguments
-     * @return \Dew\Acs\Result<mixed[]>
+     * @return \Http\Promise\Promise
      */
-    public function putLogs(array $arguments): Result
+    public function putLogsAsync(array $arguments): Promise
     {
         // @phpstan-ignore argument.type
         $group = Protobuf::toLogGroup($arguments);
@@ -37,10 +40,7 @@ trait ManagesLogs
             SignRequest::withSignature(new V4Signature(), $this->config),
         ]);
 
-        /** @var \Psr\Http\Message\ResponseInterface */
-        $response = $client->sendAsyncRequest($request)->wait();
-
-        return $this->resultProvider->make($response);
+        return $this->handleResponse($client->sendAsyncRequest($request));
     }
 
     /**

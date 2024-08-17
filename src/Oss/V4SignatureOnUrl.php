@@ -55,7 +55,7 @@ final class V4SignatureOnUrl implements SignsRequest, NeedsArguments
         );
         $query['x-oss-date'] = $now->format('Ymd\THis\Z');
         $query['x-oss-expires'] = $this->arguments['expires'];
-        $query['x-oss-additional-headers'] = $this->signer->buildAdditionalHeaders($request);
+        $query['x-oss-additional-headers'] = implode(';', $this->signer->buildAdditionalHeaders($request));
 
         if (isset($config['credentials']['token'])) {
             $query['x-oss-security-token'] = $config['credentials']['token'];

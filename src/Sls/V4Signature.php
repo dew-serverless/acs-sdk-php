@@ -19,12 +19,14 @@ final readonly class V4Signature implements SignsRequest
     public function __construct(
         private BaseV4Signature $signer = new BaseV4Signature('SLS4-HMAC-SHA256', 'sls')
     ) {
-        $this->signer->preserveHeaders([
+        $this->signer->signHeaders([
             'Content-Type',
             'Host',
             'X-Acs-*',
             'X-Log-*',
         ]);
+
+        $this->signer->onlyIncludeSignedHeadersInCanonical();
     }
 
     /**

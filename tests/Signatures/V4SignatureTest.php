@@ -99,35 +99,37 @@ final class V4SignatureTest extends TestCase
     }
 
     /**
-     * @param  array<int, string>  $preserved
+     * @param  array<int, string>  $signed
+     * @param  string[]  $expected
      */
-    #[TestWith([[], 'x-bar;x-baz;x-foo'])]
-    #[TestWith([['content-type'], 'x-bar;x-baz;x-foo'])]
-    #[TestWith([['x-foo'], 'x-bar;x-baz'])]
-    #[TestWith([['x-FoO'], 'x-bar;x-baz'])]
-    #[TestWith([['x-Foo'], 'x-bar;x-baz'])]
-    #[TestWith([['x-ba*'], 'x-foo'])]
-    public function test_build_additional_headers(array $preserved, string $expected): void
+    #[TestWith([[], ['x-bar', 'x-baz', 'x-foo']])]
+    #[TestWith([['content-type'], ['x-bar', 'x-baz', 'x-foo']])]
+    #[TestWith([['x-foo'], ['x-bar', 'x-baz']])]
+    #[TestWith([['x-FoO'], ['x-bar', 'x-baz']])]
+    #[TestWith([['x-Foo'], ['x-bar', 'x-baz']])]
+    #[TestWith([['x-ba*'], ['x-foo']])]
+    public function test_build_additional_headers(array $signed, array $expected): void
     {
         $signer = new V4Signature('TEST4-HMAC-SHA256', 'test');
-        $signer->preserveHeaders($preserved);
+        $signer->signHeaders($signed);
         $request = new Request('GET', '/', ['x-FoO' => 'one', 'x-bar' => 'two', 'x-baz' => 'three'], '');
         $this->assertSame($expected, $signer->buildAdditionalHeaders($request));
     }
 
     /**
-     * @param  array<int, string>  $preserved
+     * @param  array<int, string>  $signed
+     * @param  string[]  $expected
      */
-    #[TestWith([['x-foo'], 'x-foo'])]
-    #[TestWith([['x-FoO'], 'x-foo'])]
-    #[TestWith([['x-Foo'], 'x-foo'])]
-    #[TestWith([['x-ba*'], 'x-bar;x-baz'])]
-    #[TestWith([[], ''])]
-    #[TestWith([['content-type'], ''])]
-    public function test_build_signed_headers(array $preserved, string $expected): void
+    #[TestWith([['x-foo'], ['x-foo']])]
+    #[TestWith([['x-FoO'], ['x-foo']])]
+    #[TestWith([['x-Foo'], ['x-foo']])]
+    #[TestWith([['x-ba*'], ['x-bar', 'x-baz']])]
+    #[TestWith([[], []])]
+    #[TestWith([['content-type'], []])]
+    public function test_build_signed_headers(array $signed, array $expected): void
     {
         $signer = new V4Signature('TEST4-HMAC-SHA256', 'test');
-        $signer->preserveHeaders($preserved);
+        $signer->signHeaders($signed);
         $request = new Request('GET', '/', ['x-FoO' => 'one', 'x-bar' => 'two', 'x-baz' => 'three'], '');
         $this->assertSame($expected, $signer->buildSignedHeaders($request));
     }

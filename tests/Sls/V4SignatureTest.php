@@ -65,18 +65,35 @@ final class V4SignatureTest extends TestCase
 
     /**
      * @param  array<string, string>  $headers
+     * @param  string[]  $expected
      */
-    #[TestWith([['content-type' => 'application/json'], 'content-type'])]
-    #[TestWith([['host' => 'example.com'], 'host'])]
-    #[TestWith([['x-acs-foo' => 'bar'], 'x-acs-foo'])]
-    #[TestWith([['x-log-foo' => 'bar'], 'x-log-foo'])]
-    #[TestWith([['x-foo'], ''])]
-    #[TestWith([[], ''])]
-    public function test_signed_headers(array $headers, string $expected): void
+    #[TestWith([['content-type' => 'application/json'], ['content-type']])]
+    #[TestWith([['host' => 'example.com'], ['host']])]
+    #[TestWith([['x-acs-foo' => 'bar'], ['x-acs-foo']])]
+    #[TestWith([['x-log-foo' => 'bar'], ['x-log-foo']])]
+    #[TestWith([['x-foo'], []])]
+    #[TestWith([[], []])]
+    public function test_signed_headers(array $headers, array $expected): void
     {
         $request = new Request('GET', '/', $headers, '');
         $signer = new V4Signature();
         $this->assertSame($expected, $signer->buildSignedHeaders($request));
+    }
+
+    /**
+     * @param  array<string, string>  $headers
+     */
+    #[TestWith([['x-log-foo' => 'bar'], 'x-log-foo:bar'])]
+    #[TestWith([['x-acs-foo' => 'bar'], 'x-acs-foo:bar'])]
+    #[TestWith([['host' => 'example.com'], 'host:example.com'])]
+    #[TestWith([['content-type' => 'application/json'], 'content-type:application/json'])]
+    #[TestWith([['accept' => 'application/json'], ''])]
+    #[TestWith([['user-agent' => 'Awesome'], ''])]
+    public function test_canonical_headers_only_include_signed_headers(array $headers, string $expected): void
+    {
+        $request = new Request('GET', '/', $headers, '');
+        $signer = new V4Signature();
+        $this->assertSame($expected."\n", $signer->buildCanonicalHeaders($request));
     }
 
     public function test_signature_version(): void

@@ -17,7 +17,9 @@ final class V4Signature implements SignsRequest
     /**
      * @var string[]
      */
-    private array $preservedHeaders = [];
+    private array $signedHeaders = [];
+
+    private bool $onlyIncludeSignedHeadersInCanonical = false;
 
     /**
      * @var \Closure(\Psr\Http\Message\RequestInterface): string
@@ -62,7 +64,7 @@ final class V4Signature implements SignsRequest
             return $request->withHeader('Authorization', sprintf(
                 '%s Credential=%s/%s,AdditionalHeaders=%s,Signature=%s',
                 $this->version, $config['credentials']['key'], $scope,
-                $this->buildAdditionalHeaders($request), $signature
+                implode(';', $this->buildAdditionalHeaders($request)), $signature
             ));
         }
 
@@ -80,8 +82,8 @@ final class V4Signature implements SignsRequest
             $this->buildCanonicalQueryString($request),
             $this->buildCanonicalHeaders($request),
             $this->includeAdditionalHeaders
-                ? $this->buildAdditionalHeaders($request)
-                : $this->buildSignedHeaders($request),
+                ? implode(';', $this->buildAdditionalHeaders($request))
+                : implode(';', $this->buildSignedHeaders($request)),
             $this->buildHashedPayload($request),
         ]);
     }
@@ -140,19 +142,25 @@ final class V4Signature implements SignsRequest
 
     public function buildCanonicalHeaders(RequestInterface $request): string
     {
-        $headers = $request->getHeaders();
-        ksort($headers, SORT_STRING | SORT_FLAG_CASE);
+        $headers = $this->onlyIncludeSignedHeadersInCanonical
+            ? $this->buildSignedHeaders($request)
+            : array_keys($request->getHeaders());
+
+        sort($headers, SORT_STRING | SORT_FLAG_CASE);
 
         $result = [];
 
-        foreach ($headers as $name => $values) {
-            $result[] = strtolower($name).':'.implode(',', $values);
+        foreach ($headers as $name) {
+            $result[] = strtolower($name).':'.$request->getHeaderLine($name);
         }
 
         return implode("\n", $result)."\n";
     }
 
-    public function buildAdditionalHeaders(RequestInterface $request): string
+    /**
+     * @return string[]
+     */
+    public function buildAdditionalHeaders(RequestInterface $request): array
     {
         $headers = $request->getHeaders();
         $result = [];
@@ -160,17 +168,20 @@ final class V4Signature implements SignsRequest
         foreach ($headers as $name => $values) {
             $name = strtolower($name);
 
-            if (! $this->isPreservedHeader($name)) {
+            if (! $this->isSignedHeader($name)) {
                 $result[] = $name;
             }
         }
 
         sort($result);
 
-        return implode(';', $result);
+        return $result;
     }
 
-    public function buildSignedHeaders(RequestInterface $request): string
+    /**
+     * @return string[]
+     */
+    public function buildSignedHeaders(RequestInterface $request): array
     {
         $headers = $request->getHeaders();
         $result = [];
@@ -178,14 +189,14 @@ final class V4Signature implements SignsRequest
         foreach ($headers as $name => $values) {
             $name = strtolower($name);
 
-            if ($this->isPreservedHeader($name)) {
+            if ($this->isSignedHeader($name)) {
                 $result[] = $name;
             }
         }
 
         sort($result);
 
-        return implode(';', $result);
+        return $result;
     }
 
     public function buildHashedPayload(RequestInterface $request): string
@@ -212,18 +223,18 @@ final class V4Signature implements SignsRequest
         );
     }
 
-    public function isPreservedHeader(string $header): bool
+    public function isSignedHeader(string $header): bool
     {
         $header = strtolower($header);
 
-        foreach ($this->preservedHeaders as $preserved) {
-            if (str_ends_with($preserved, '*')) {
-                if (str_starts_with($header, substr($preserved, 0, -1))) {
+        foreach ($this->signedHeaders as $name) {
+            if (str_ends_with($name, '*')) {
+                if (str_starts_with($header, substr($name, 0, -1))) {
                     return true;
                 }
             }
 
-            if ($preserved === $header) {
+            if ($name === $header) {
                 return true;
             }
         }
@@ -234,11 +245,16 @@ final class V4Signature implements SignsRequest
     /**
      * @param  string[]  $headers
      */
-    public function preserveHeaders(array $headers): void
+    public function signHeaders(array $headers): void
     {
         $headers = array_map(fn (string $name): string => strtolower($name), $headers);
 
-        $this->preservedHeaders = [...$this->preservedHeaders, ...$headers];
+        $this->signedHeaders = [...$this->signedHeaders, ...$headers];
+    }
+
+    public function onlyIncludeSignedHeadersInCanonical(bool $only = true): void
+    {
+        $this->onlyIncludeSignedHeadersInCanonical = $only;
     }
 
     public function includeAdditionalHeaders(bool $include = true): void

@@ -47,16 +47,17 @@ final class V4SignatureTest extends TestCase
 
     /**
      * @param  array<string, string>  $headers
+     * @param  string[]  $expected
      */
-    #[TestWith([['content-md5' => ''], ''])]
-    #[TestWith([['content-type' => 'application/xml'], ''])]
-    #[TestWith([['x-oss-date' => '2024-01-01T00:00:00Z'], ''])]
-    #[TestWith([['x-foo' => 'bar'], 'x-foo'])]
-    public function test_additional_headers(array $headers, string $expected): void
+    #[TestWith([['content-md5' => ''], []])]
+    #[TestWith([['content-type' => 'application/xml'], []])]
+    #[TestWith([['x-oss-date' => '2024-01-01T00:00:00Z'], []])]
+    #[TestWith([['x-foo' => 'bar'], ['x-foo']])]
+    public function test_additional_headers(array $headers, array $expected): void
     {
         $request = new Request('GET', '/', $headers, '');
         $signer = new V4Signature();
-        $this->assertStringContainsString($expected, $signer->buildAdditionalHeaders($request));
+        $this->assertSame($expected, $signer->buildAdditionalHeaders($request));
     }
 
     /**

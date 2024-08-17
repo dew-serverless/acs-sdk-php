@@ -27,7 +27,7 @@ final class V4Signature implements SignsRequest, NeedsArguments
     ) {
         $this->signer->includeAdditionalHeaders();
 
-        $this->signer->preserveHeaders([
+        $this->signer->signHeaders([
             'Content-MD5',
             'Content-Type',
             'X-Oss-*',

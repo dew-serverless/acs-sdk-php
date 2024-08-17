@@ -22,25 +22,49 @@ class AcsException extends Exception
     protected $code;
 
     /**
-     * @param  \Dew\Acs\Result<TError>  $result
+     * @var \Dew\Acs\Result<TError>|null
      */
-    public function __construct(
-        public readonly Result $result
-    ) {
-        $this->message = $result->get('Message', 'Could not communicate with Alibaba Cloud.');
-        $this->code = $result->get('Code', 0);
+    protected ?Result $result = null;
+
+    public function __construct(string $message, int|string $code)
+    {
+        $this->message = $message;
+        $this->code = $code;
     }
 
     /**
-     * @return \Dew\Acs\Result<TError>
+     * @param  \Dew\Acs\Result<TError>  $result
      */
-    public function getResult(): Result
+    public static function makeFromResult(Result $result): self
+    {
+        $e = new self(
+            $result->get('Message', 'Could not communicate with Alibaba Cloud.'),
+            $result->get('Code', 0)
+        );
+
+        return $e->setResult($result);
+    }
+
+    /**
+     * @param  \Dew\Acs\Result<TError>  $result
+     */
+    public function setResult(Result $result): static
+    {
+        $this->result = $result;
+
+        return $this;
+    }
+
+    /**
+     * @return \Dew\Acs\Result<TError>|null
+     */
+    public function getResult(): ?Result
     {
         return $this->result;
     }
 
     public function getResponse(): ?ResponseInterface
     {
-        return $this->result->getResponse();
+        return $this->result?->getResponse();
     }
 }

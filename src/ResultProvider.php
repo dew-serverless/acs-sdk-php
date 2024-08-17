@@ -40,7 +40,7 @@ final readonly class ResultProvider
 
         if ($response->isError()) {
             /** @var \Dew\Acs\Result<TError> $result */
-            throw new $this->exceptionClass($result);
+            throw $this->exceptionClass::makeFromResult($result);
         }
 
         return $result;

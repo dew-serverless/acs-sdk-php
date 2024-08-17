@@ -4,15 +4,18 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tests\Sls;
 
+use Dew\Acs\Sls\ManagesLogs;
 use Dew\Acs\Sls\SlsClient;
 use Http\Mock\Client;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @phpstan-import-type TConfig from \Dew\Acs\AcsClient
  */
 #[CoversClass(SlsClient::class)]
+#[CoversTrait(ManagesLogs::class)]
 final class SlsClientTest extends TestCase
 {
     public function test_put_logs_load_balancing(): void

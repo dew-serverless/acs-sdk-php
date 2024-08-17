@@ -13,7 +13,8 @@ use Psr\Http\Message\StreamFactoryInterface;
 final readonly class CompressData implements Plugin
 {
     public function __construct(
-        private StreamFactoryInterface $factory
+        private StreamFactoryInterface $factory,
+        private ?Compression $compression = null
     ) {
         //
     }
@@ -27,11 +28,7 @@ final readonly class CompressData implements Plugin
     {
         $size = $request->getBody()->getSize() ?? 0;
 
-        $compression = match (true) {
-            Zstd::supports() && $size > Zstd::threshold() => new Zstd(),
-            Deflate::supports() && $size > Deflate::threshold() => new Deflate(),
-            default => new Raw(),
-        };
+        $compression = $this->compressor($size);
 
         $encoded = $compression->encode((string) $request->getBody());
 
@@ -46,5 +43,19 @@ final readonly class CompressData implements Plugin
             ->withHeader('x-log-bodyrawsize', (string) $size)
             ->withHeader('x-log-compresstype', $compression->format())
             ->withBody($this->factory->createStream($encoded)));
+    }
+
+    private function compressor(int $size = PHP_INT_MAX): Compression
+    {
+        return $this->compression ?? $this->discoverCompressor($size);
+    }
+
+    private function discoverCompressor(int $size = PHP_INT_MAX): Compression
+    {
+        return match (true) {
+            Zstd::supports() && $size > Zstd::threshold() => new Zstd(),
+            Deflate::supports() && $size > Deflate::threshold() => new Deflate(),
+            default => new Raw(),
+        };
     }
 }

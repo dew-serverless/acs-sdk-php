@@ -17,6 +17,7 @@ use Http\Promise\Promise;
 use InvalidArgumentException;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\UriFactoryInterface;
 
@@ -125,11 +126,8 @@ abstract class AcsClient
      */
     private function executeAsync(Api $api, array $arguments): Promise
     {
-        $request = $this->requestFactory->createRequest(
-            'GET', $this->appendDefaultSchemeIfNeeded($this->endpoint)
-        );
-
-        $promise = $this->newDocsClient($api, $arguments)->sendAsyncRequest($request);
+        $promise = $this->newDocsClient($api, $arguments)
+            ->sendAsyncRequest($this->newRequest('GET'));
 
         return (new FulfilledPromise($promise))->then(
             function (HttpFulfilledPromise $promise) use ($api): Result {
@@ -166,7 +164,14 @@ abstract class AcsClient
         ]);
     }
 
-    protected function appendDefaultSchemeIfNeeded(string $endpoint): string
+    protected function newRequest(string $method): RequestInterface
+    {
+        return $this->requestFactory->createRequest(
+            $method, $this->appendDefaultSchemeIfNeeded($this->endpoint)
+        );
+    }
+
+    private function appendDefaultSchemeIfNeeded(string $endpoint): string
     {
         $parsed = parse_url($endpoint);
 

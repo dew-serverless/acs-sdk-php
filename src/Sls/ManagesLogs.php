@@ -18,8 +18,7 @@ trait ManagesLogs
         // @phpstan-ignore argument.type
         $group = Protobuf::toLogGroup($arguments);
 
-        $request = $this->requestFactory
-            ->createRequest('POST', $this->appendDefaultSchemeIfNeeded($this->endpoint))
+        $request = $this->newRequest('POST')
             ->withHeader('Content-Type', 'application/x-protobuf')
             ->withBody($this->streamFactory->createStream($group->serializeToString()));
 

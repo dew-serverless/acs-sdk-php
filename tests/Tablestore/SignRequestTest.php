@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tests\Tablestore;
 
+use Dew\Acs\Signatures\NullSignature;
 use Dew\Acs\Tablestore\SignRequest;
-use Dew\Acs\Tests\Tablestore\Fixtures\NullSignature;
 use Http\Promise\FulfilledPromise;
 use Http\Promise\Promise;
 use Nyholm\Psr7\Request;

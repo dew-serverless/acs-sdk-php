@@ -22,6 +22,7 @@
         "symfony/var-exporter": "^7.1"
     },
     "suggest": {
+        "ext-zstd": "Allows Protobuf compression with zstd in SLS",
         "google/protobuf": "Required for Tablestore management."
     },
     "license": "MIT",

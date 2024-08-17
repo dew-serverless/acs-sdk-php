@@ -5,12 +5,17 @@
 *.php     text eol=lf diff=php
 
 # Protobuf
-/src/Tablestore/Metadata/*.php  -text diff
+protobuf  export-ignore
+/src/Tablestore/Metadata/*.php  -text diff linguist-generated
+/src/Tablestore/Messages/*.php  linguist-generated
+/src/Sls/Metadata/*.php  -text diff linguist-generated
+/src/Sls/Messages/*.php  linguist-generated
 
 # Development
-/build    linguist-generated export-ignore
-/tests    export-ignore
-Makefile  export-ignore
+/benchmark  export-ignore
+/build      export-ignore
+/tests      export-ignore
+Makefile    export-ignore
 
 # Configuration
 .editorconfig          text eol=lf export-ignore
@@ -18,6 +23,5 @@ Makefile  export-ignore
 .github                export-ignore
 .gitignore             export-ignore
 .php-cs-fixer.dist.php export-ignore
-.protobuf              export-ignore
 phpstan.neon.dist      text eol=lf export-ignore
 phpunit.xml.dist       text eol=lf export-ignore

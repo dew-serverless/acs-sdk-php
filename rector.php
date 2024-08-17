@@ -13,6 +13,8 @@ return RectorConfig::configure()
     ->withSkip([
         __DIR__.'/src/Tablestore/Messages',
         __DIR__.'/src/Tablestore/Metadata',
+        __DIR__.'/src/Sls/Messages',
+        __DIR__.'/src/Sls/Metadata',
         ClassPropertyAssignToConstructorPromotionRector::class => [
             __DIR__.'/src/Tablestore/InstanceException.php',
         ],

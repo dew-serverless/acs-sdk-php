@@ -28,10 +28,10 @@ final readonly class ResultProvider
     }
 
     /**
-     * @throw \Dew\Acs\AcsException
      * @return \Dew\Acs\Result<mixed[]>
+     * @throws \Dew\Acs\AcsException
      */
-    public function make(ResponseInterface $response, Api $api): Result
+    public function make(ResponseInterface $response, ?Api $api = null): Result
     {
         $result = (new Result($this->decode($response, $api)))
             ->setResponse($response);
@@ -40,7 +40,7 @@ final readonly class ResultProvider
 
         if ($response->isError()) {
             /** @var \Dew\Acs\Result<TError> $result */
-            throw new $this->exceptionClass($result);
+            throw $this->exceptionClass::makeFromResult($result);
         }
 
         return $result;
@@ -49,7 +49,7 @@ final readonly class ResultProvider
     /**
      * @return mixed[]
      */
-    private function decode(ResponseInterface $response, Api $api): array
+    private function decode(ResponseInterface $response, ?Api $api = null): array
     {
         $contentType = strtolower($response->getHeaderLine('Content-Type'));
 
@@ -73,14 +73,14 @@ final readonly class ResultProvider
     /**
      * @return mixed[]
      */
-    private function makeXmlResult(ResponseInterface $response, Api $api): array
+    private function makeXmlResult(ResponseInterface $response, ?Api $api = null): array
     {
         $encoder = new XmlEncoder();
         $decoded = $encoder->decode((string) $response->getBody());
 
         $statusCode = (string) $response->getStatusCode();
 
-        if (! isset($api->responses[$statusCode])) {
+        if (! $api instanceof Api || ! isset($api->responses[$statusCode])) {
             return $decoded;
         }
 

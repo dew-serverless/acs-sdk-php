@@ -7,6 +7,8 @@ parameters:
     excludePaths:
         - src/Tablestore/Messages
         - src/Tablestore/Metadata
+        - src/Sls/Messages
+        - src/Sls/Metadata
     level: max
     treatPhpDocTypesAsCertain: false
     ignoreErrors:

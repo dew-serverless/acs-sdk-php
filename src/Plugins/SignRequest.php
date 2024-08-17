@@ -8,6 +8,7 @@ use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
 use Dew\Acs\Signatures\NeedsApiContext;
 use Dew\Acs\Signatures\NeedsArguments;
+use Dew\Acs\Signatures\NullSignature;
 use Dew\Acs\Signatures\SignsRequest;
 use Http\Client\Common\Plugin;
 use Http\Promise\Promise;
@@ -18,15 +19,43 @@ final readonly class SignRequest implements Plugin
 {
     /**
      * @param  array<string, mixed>  $config
-     * @param  array<string, mixed>  $arguments
      */
-    public function __construct(
-        private ApiDocs $docs,
-        private Api $api,
-        private array $config,
-        private array $arguments
+    private function __construct(
+        private SignsRequest $signer,
+        private array $config
     ) {
         //
+    }
+
+    /**
+     * @param  array<string, mixed>  $config
+     * @param  array<string, mixed>  $arguments
+     */
+    public static function withApiDocs(ApiDocs $docs, Api $api, array $config, array $arguments): static
+    {
+        $auth = array_key_first($api->security[0] ?? []);
+
+        $signer = is_string($auth)
+            ? static::resolveSigner($docs->getNamespace(), $auth)
+            : new NullSignature();
+
+        if ($signer instanceof NeedsApiContext) {
+            $signer->setApiContext($docs, $api);
+        }
+
+        if ($signer instanceof NeedsArguments) {
+            $signer->setArguments($arguments);
+        }
+
+        return new static($signer, $config);
+    }
+
+    /**
+     * @param  array<string, mixed>  $config
+     */
+    public static function withSignature(SignsRequest $signer, $config): static
+    {
+        return new static($signer, $config);
     }
 
     /**
@@ -36,24 +65,16 @@ final readonly class SignRequest implements Plugin
     #[\Override]
     public function handleRequest(RequestInterface $request, callable $next, callable $first): Promise
     {
-        $auth = array_key_first($this->api->security[0] ?? []);
-
-        if (is_string($auth)) {
-            $signer = $this->configureSigner($this->makeSigner($auth));
-
-            $request = $signer->signRequest($request, $this->config);
-        }
+        $request = $this->signer->signRequest($request, $this->config);
 
         return $next($request);
     }
 
-    private function makeSigner(string $auth): SignsRequest
+    private static function resolveSigner(string $namespace, string $auth): SignsRequest
     {
-        $product = $this->docs->getNamespace();
-
         /** @var class-string<\Dew\Acs\Signatures\SignsRequest>[] */
         $candidates = [
-            "\\Dew\\Acs\\{$product}\\{$auth}Signature",
+            "\\Dew\\Acs\\{$namespace}\\{$auth}Signature",
             "\\Dew\\Acs\\Signatures\\{$auth}Signature",
         ];
 
@@ -64,18 +85,5 @@ final readonly class SignRequest implements Plugin
         }
 
         throw new InvalidArgumentException("Unsupported signature $auth.");
-    }
-
-    private function configureSigner(SignsRequest $signer): SignsRequest
-    {
-        if ($signer instanceof NeedsApiContext) {
-            $signer->setApiContext($this->docs, $this->api);
-        }
-
-        if ($signer instanceof NeedsArguments) {
-            $signer->setArguments($this->arguments);
-        }
-
-        return $signer;
     }
 }

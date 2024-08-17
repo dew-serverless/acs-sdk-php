@@ -6,6 +6,7 @@ namespace Dew\Acs;
 
 use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
+use Dew\Acs\Plugins\SignRequest;
 use Http\Client\Common\Plugin\HeaderSetPlugin;
 use Http\Client\Common\PluginClient;
 use Http\Client\Promise\HttpFulfilledPromise;
@@ -16,10 +17,9 @@ use Http\Promise\Promise;
 use InvalidArgumentException;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
-use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\UriFactoryInterface;
-use RuntimeException;
 
 /**
  * @phpstan-type TCredentials array{
@@ -45,7 +45,7 @@ abstract class AcsClient
 
     protected string $endpoint;
 
-    private readonly ClientInterface $httpClient;
+    protected readonly ClientInterface $httpClient;
 
     protected readonly RequestFactoryInterface $requestFactory;
 
@@ -56,9 +56,9 @@ abstract class AcsClient
     /**
      * @var class-string<\Dew\Acs\AcsException>
      */
-    private readonly string $exceptionClass;
+    protected readonly string $exceptionClass;
 
-    private readonly ResultProvider $resultProvider;
+    protected readonly ResultProvider $resultProvider;
 
     /**
      * @param  TConfig  $config
@@ -126,30 +126,54 @@ abstract class AcsClient
      */
     private function executeAsync(Api $api, array $arguments): Promise
     {
-        $request = $this->requestFactory->createRequest(
-            'GET', $this->appendDefaultSchemeIfNeeded($this->endpoint)
-        );
+        $promise = $this->newDocsClient($api, $arguments)
+            ->sendAsyncRequest($this->newRequest('GET'));
 
-        $client = new PluginClient($this->httpClient, [
+        return $this->handleResponse($promise, $api);
+    }
+
+    protected function handleResponse(Promise $promise, ?Api $api = null): Promise
+    {
+        return (new FulfilledPromise($promise))->then(
+            function (HttpFulfilledPromise $promise) use ($api): Result {
+                /** @var \Psr\Http\Message\ResponseInterface */
+                $response = $promise->wait();
+
+                return $this->resultProvider->make($response, $api);
+            }
+        );
+    }
+
+    /**
+     * @param  mixed[]  $arguments
+     */
+    private function newDocsClient(Api $api, array $arguments): PluginClient
+    {
+        return new PluginClient($this->httpClient, [
             new Plugins\ConfigureUserAgent(),
             new Plugins\ConfigureAction($this->docs, $api, $this->streamFactory, $arguments),
             new HeaderSetPlugin(is_array($arguments['@headers'] ?? null) ? $arguments['@headers'] : []),
             new Plugins\ExecuteSigningHook($this),
-            new Plugins\SignRequest($this->docs, $api, $this->config, $arguments),
+            SignRequest::withApiDocs($this->docs, $api, $this->config, $arguments),
         ]);
+    }
 
-        return (new FulfilledPromise($client->sendAsyncRequest($request)))
-            ->then(
-                function (HttpFulfilledPromise $promise) use ($api): Result {
-                    $response = $promise->wait();
+    /**
+     * @param  \Http\Client\Common\Plugin[]  $appendMiddlewares
+     */
+    protected function newClient(array $appendMiddlewares = []): PluginClient
+    {
+        return new PluginClient($this->httpClient, [
+            new Plugins\ConfigureUserAgent(),
+            ...$appendMiddlewares,
+        ]);
+    }
 
-                    if (! $response instanceof ResponseInterface) {
-                        throw new RuntimeException('Could not process the response.');
-                    }
-
-                    return $this->resultProvider->make($response, $api);
-                }
-            );
+    protected function newRequest(string $method): RequestInterface
+    {
+        return $this->requestFactory->createRequest(
+            $method, $this->appendDefaultSchemeIfNeeded($this->endpoint)
+        );
     }
 
     private function appendDefaultSchemeIfNeeded(string $endpoint): string
@@ -169,6 +193,14 @@ abstract class AcsClient
     public function __call(string $method, array $arguments = []): mixed
     {
         $action = ucfirst($method);
+
+        // Handles custom APIs not included in the metadata, which may involve
+        // complex logic. Implement the asynchronous method, and the "magic"
+        // will take care of the rest. Don't forget to add the annotation.
+        if (method_exists($this, $action.'Async')) {
+            return $this->{$action.'Async'}(...$arguments)->wait();
+        }
+
         $async = false;
 
         if (str_ends_with($action, 'Async')) {

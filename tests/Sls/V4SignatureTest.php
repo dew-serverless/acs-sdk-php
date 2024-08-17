@@ -31,12 +31,20 @@ final class V4SignatureTest extends TestCase
 
     #[TestWith(['', '0'])]
     #[TestWith(['abc', '3'])]
-    public function test_content_bodyrawsize_header(string $body, string $expected): void
+    public function test_bodyrawsize_header(string $body, string $expected): void
     {
         $signer = new V4Signature();
         $request = new Request('GET', '/', [], $body);
         $request = $signer->signRequest($request, $this->makeConfig());
         $this->assertSame($expected, $request->getHeaderLine('x-log-bodyrawsize'));
+    }
+
+    public function test_bodyrawsize_header_not_override_if_exists(): void
+    {
+        $signer = new V4Signature();
+        $request = new Request('GET', '/', ['x-log-bodyrawsize' => 4], 'abc');
+        $request = $signer->signRequest($request, $this->makeConfig());
+        $this->assertSame('4', $request->getHeaderLine('x-log-bodyrawsize'));
     }
 
     public function test_apiversion_header(): void

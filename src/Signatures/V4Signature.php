@@ -7,6 +7,7 @@ use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
 use Dew\Acs\ConfigChecker;
+use Dew\Acs\Str;
 use Override;
 use Psr\Http\Message\RequestInterface;
 
@@ -15,9 +16,14 @@ final class V4Signature implements SignsRequest
     private readonly ConfigChecker $configChecker;
 
     /**
+     * @var array<string, true>
+     */
+    private array $signedHeaderMap = [];
+
+    /**
      * @var string[]
      */
-    private array $signedHeaders = [];
+    private array $signedHeaderMasks = [];
 
     private bool $onlyIncludeSignedHeadersInCanonical = false;
 
@@ -237,14 +243,16 @@ final class V4Signature implements SignsRequest
     {
         $header = strtolower($header);
 
-        foreach ($this->signedHeaders as $name) {
-            if (str_ends_with($name, '*')) {
-                if (str_starts_with($header, substr($name, 0, -1))) {
-                    return true;
-                }
+        if (isset($this->signedHeaderMap[$header])) {
+            return true;
+        }
+
+        foreach ($this->signedHeaderMasks as $mask) {
+            if (Str::is($mask, $header)) {
+                return true;
             }
 
-            if ($name === $header) {
+            if ($header === $mask) {
                 return true;
             }
         }
@@ -257,9 +265,16 @@ final class V4Signature implements SignsRequest
      */
     public function signHeaders(array $headers): void
     {
-        $headers = array_map(fn (string $name): string => strtolower($name), $headers);
+        foreach ($headers as $name) {
+            $name = strtolower($name);
 
-        $this->signedHeaders = [...$this->signedHeaders, ...$headers];
+            if (str_contains($name, '*')) {
+                $this->signedHeaderMasks[] = $name;
+            } else {
+                $this->signedHeaderMap[$name] = true;
+            }
+        }
+
     }
 
     public function onlyIncludeSignedHeadersInCanonical(bool $only = true): void

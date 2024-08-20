@@ -6,9 +6,9 @@ namespace Dew\Acs\Sls;
 
 use Override;
 
-final class Deflate implements Compression
+final class Lz4 implements Compression
 {
-    public const int DEFAULT_COMPRESSION_LEVEL = 6;
+    public const int LZ4_FAST_COMPRESSION = 0;
 
     /**
      * {@inheritDoc}
@@ -16,7 +16,7 @@ final class Deflate implements Compression
     #[Override]
     public static function supports(): bool
     {
-        return extension_loaded('zlib');
+        return extension_loaded('lz4');
     }
 
     /**
@@ -34,8 +34,8 @@ final class Deflate implements Compression
     #[Override]
     public function encode(string $data, ?int $level = null): string
     {
-        $level = is_int($level) ? $level : self::DEFAULT_COMPRESSION_LEVEL;
-        $encoded = gzcompress($data, $level);
+        $level = is_int($level) ? $level : self::LZ4_FAST_COMPRESSION;
+        $encoded = lz4compress($data, $level);
 
         if ($encoded === false) {
             throw new CompressionException('Could not encode the data.');
@@ -50,7 +50,11 @@ final class Deflate implements Compression
     #[Override]
     public function decode(string $data, ?int $maxLength = null): string
     {
-        $decoded = gzuncompress($data, $maxLength ?? 0);
+        if ($maxLength === null) {
+            throw new CompressionException('Requires original data size.');
+        }
+
+        $decoded = lz4uncompress($data, $maxLength);
 
         if ($decoded === false) {
             throw new CompressionException('Could not decode the data.');
@@ -65,6 +69,6 @@ final class Deflate implements Compression
     #[Override]
     public function format(): string
     {
-        return 'deflate';
+        return 'lz4';
     }
 }

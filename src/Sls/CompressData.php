@@ -53,6 +53,7 @@ final readonly class CompressData implements Plugin
     private function discoverCompressor(int $size = PHP_INT_MAX): Compression
     {
         return match (true) {
+            Lz4::supports() && $size > Lz4::threshold() => new Lz4(),
             Zstd::supports() && $size > Zstd::threshold() => new Zstd(),
             Deflate::supports() && $size > Deflate::threshold() => new Deflate(),
             default => new Raw(),

@@ -39,7 +39,7 @@ final class Raw implements Compression
      * {@inheritDoc}
      */
     #[Override]
-    public function decode(string $data): string
+    public function decode(string $data, ?int $maxLength = null): string
     {
         return $data;
     }

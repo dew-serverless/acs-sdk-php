@@ -28,7 +28,7 @@ interface Compression
      *
      * @throws \Dew\Acs\Sls\CompressionException
      */
-    public function decode(string $data): string;
+    public function decode(string $data, ?int $maxLength = null): string;
 
     /**
      * The name of the compression algorithm.

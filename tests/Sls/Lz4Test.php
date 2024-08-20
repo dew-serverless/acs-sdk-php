@@ -7,9 +7,11 @@ namespace Dew\Acs\Tests\Sls;
 use Dew\Acs\Sls\CompressionException;
 use Dew\Acs\Sls\Lz4;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(Lz4::class)]
+#[RequiresPhpExtension('lz4')]
 final class Lz4Test extends TestCase
 {
     public function test_encode_and_decode(): void

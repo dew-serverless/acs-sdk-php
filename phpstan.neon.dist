@@ -22,3 +22,4 @@ parameters:
         -
             identifier: function.notFound
             path: src/Sls/Lz4.php
+            reportUnmatched: false

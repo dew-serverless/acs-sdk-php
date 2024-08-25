@@ -6,6 +6,7 @@ require_once __DIR__.'/../../vendor/autoload.php';
 
 use Dew\Acs\Sls\Compression;
 use Dew\Acs\Sls\Deflate;
+use Dew\Acs\Sls\Lz4;
 use Dew\Acs\Sls\Messages\LogGroup;
 use Dew\Acs\Sls\Protobuf;
 use Dew\Acs\Sls\Zstd;
@@ -83,11 +84,11 @@ function benchmark(callable $callback): float
     return ((int) (($elapsed / 10 ** 6) * 100)) / 100;
 }
 
-function benchmarkCompression(Compression $compression, string $data, int $maxLevel): void
+function benchmarkCompression(Compression $compression, string $data, int $maxLevel, int $minLevel = 1): void
 {
     $size = strlen($data);
 
-    for ($i = 1; $i <= $maxLevel; $i++) {
+    for ($i = $minLevel; $i <= $maxLevel; $i++) {
         $encoded = '';
         $elapsed = benchmark(function () use (&$encoded, $compression, $data, $i): void {
             $encoded = $compression->encode($data, level: $i);
@@ -110,6 +111,11 @@ function benchmarkZstd(string $data): void
     benchmarkCompression(new Zstd(), $data, maxLevel: 22);
 }
 
+function benchmarkLz4(string $data): void
+{
+    benchmarkCompression(new Lz4(), $data, maxLevel: 12, minLevel: 0);
+}
+
 function main(): void
 {
     $simple = mockedSimpleLog()->serializeToString();
@@ -117,24 +123,32 @@ function main(): void
     benchmarkDeflate($simple);
     echo PHP_EOL.'=> zstd: simple (protobuf)'.PHP_EOL;
     benchmarkZstd($simple);
+    echo PHP_EOL.'=> lz4: simple (protobuf)'.PHP_EOL;
+    benchmarkLz4($simple);
 
     $login = mockedUserLoginLog()->serializeToString();
     echo PHP_EOL.'=> deflate: user login (protobuf)'.PHP_EOL;
     benchmarkDeflate($login);
     echo PHP_EOL.'=> zstd: user login (protobuf)'.PHP_EOL;
     benchmarkZstd($login);
+    echo PHP_EOL.'=> lz4: user login (protobuf)'.PHP_EOL;
+    benchmarkLz4($login);
 
     $nginx = mockedNginxAccessLog()->serializeToString();
     echo PHP_EOL.'=> deflate: nginx (protobuf)'.PHP_EOL;
     benchmarkDeflate($nginx);
     echo PHP_EOL.'=> zstd: nginx (protobuf)'.PHP_EOL;
     benchmarkZstd($nginx);
+    echo PHP_EOL.'=> lz4: nginx (protobuf)'.PHP_EOL;
+    benchmarkLz4($nginx);
 
     $text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
     echo PHP_EOL.'=> deflate: lorem ipsum'.PHP_EOL;
     benchmarkDeflate($text);
     echo PHP_EOL.'=> zstd: lorem ipsum'.PHP_EOL;
     benchmarkZstd($text);
+    echo PHP_EOL.'=> lz4: lorem ipsum'.PHP_EOL;
+    benchmarkLz4($text);
 }
 
 main();

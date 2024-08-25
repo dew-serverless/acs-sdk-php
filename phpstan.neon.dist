@@ -19,3 +19,7 @@ parameters:
         -
             message: '#PHPDoc tag @param for parameter \$key with type key-of<T of array> is not subtype of native type int\|string.#'
             path: src/Arr.php
+        -
+            identifier: function.notFound
+            path: src/Sls/Lz4.php
+            reportUnmatched: false

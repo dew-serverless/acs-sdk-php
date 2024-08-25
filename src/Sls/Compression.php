@@ -33,5 +33,5 @@ interface Compression
     /**
      * The name of the compression algorithm.
      */
-    public function format(): string;
+    public static function format(): string;
 }

@@ -50,11 +50,7 @@ final class Lz4 implements Compression
     #[Override]
     public function decode(string $data, ?int $maxLength = null): string
     {
-        if ($maxLength === null) {
-            throw new CompressionException('Requires original data size.');
-        }
-
-        $decoded = lz4uncompress($data, $maxLength);
+        $decoded = lz4uncompress($data, $maxLength ?? 0);
 
         if ($decoded === false) {
             throw new CompressionException('Could not decode the data.');

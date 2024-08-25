@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tests\Sls;
 
-use Dew\Acs\Sls\CompressionException;
 use Dew\Acs\Sls\Lz4;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\RequiresPhpExtension;
@@ -25,11 +24,10 @@ final class Lz4Test extends TestCase
         $this->assertTrue($decoded === $data);
     }
 
-    public function test_decode_requires_original_data_size(): void
+    public function test_decode_without_original_data_size(): void
     {
-        $this->expectException(CompressionException::class);
-        $this->expectExceptionMessage('Requires original data size.');
         $lz4 = new Lz4();
-        $lz4->decode($lz4->encode(str_repeat('a', 64)));
+        $data = str_repeat('a', 64);
+        $this->assertSame($data, $lz4->decode($lz4->encode($data)));
     }
 }

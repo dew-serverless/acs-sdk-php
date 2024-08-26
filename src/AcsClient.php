@@ -147,6 +147,19 @@ abstract class AcsClient
     /**
      * @param  mixed[]  $arguments
      */
+    protected function newDocsStack(Api $api, array $arguments): DocsStack
+    {
+        return new DocsStack($this->docs, $api, $this->config, $arguments, $this->streamFactory);
+    }
+
+    protected function newStack(): GeneralStack
+    {
+        return new GeneralStack();
+    }
+
+    /**
+     * @param  mixed[]  $arguments
+     */
     private function newDocsClient(Api $api, array $arguments): PluginClient
     {
         return new PluginClient($this->httpClient, [
@@ -158,15 +171,9 @@ abstract class AcsClient
         ]);
     }
 
-    /**
-     * @param  \Http\Client\Common\Plugin[]  $appendMiddlewares
-     */
-    protected function newClient(array $appendMiddlewares = []): PluginClient
+    protected function newClient(HandlerStack $stack): PluginClient
     {
-        return new PluginClient($this->httpClient, [
-            new Plugins\ConfigureUserAgent(),
-            ...$appendMiddlewares,
-        ]);
+        return new PluginClient($this->httpClient, $stack->get());
     }
 
     protected function newRequest(string $method): RequestInterface

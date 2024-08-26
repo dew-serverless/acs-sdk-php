@@ -35,10 +35,10 @@ trait ManagesLogs
             ->withQuery($query)
         );
 
-        $client = $this->newClient(appendMiddlewares: [
-            new CompressData($this->streamFactory),
-            SignRequest::withSignature(new V4Signature(), $this->config),
-        ]);
+        $client = $this->newClient($this->newStack()
+            ->append(new CompressData($this->streamFactory))
+            ->append(SignRequest::withSignature(new V4Signature(), $this->config))
+        );
 
         return $this->handleResponse($client->sendAsyncRequest($request));
     }

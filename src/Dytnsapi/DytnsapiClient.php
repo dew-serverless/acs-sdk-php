@@ -9,6 +9,8 @@ use Dew\Acs\AcsClient;
 /**
  * @method \Dew\Acs\Result certNoTwoElementVerification(array $arguments = [])
  * @method \Http\Promise\Promise certNoTwoElementVerificationAsync($arguments = [])
+ * @method \Dew\Acs\Result certNoThreeElementVerification(array $arguments = [])
+ * @method \Http\Promise\Promise certNoThreeElementVerificationAsync($arguments = [])
  * @method \Dew\Acs\Result getUAIDApplyTokenSign(array $arguments = [])
  * @method \Http\Promise\Promise getUAIDApplyTokenSignAsync($arguments = [])
  * @method \Dew\Acs\Result uAIDVerification(array $arguments = [])

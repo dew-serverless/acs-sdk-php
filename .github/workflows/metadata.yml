@@ -57,3 +57,5 @@ jobs:
             --base main \
             --title "Update OpenAPI metadata $(date '+%Y%m%d')" \
             --body "Here are the API changes during the week, check the metadata and update with the latest Alibaba Cloud APIs."
+        env:
+          GH_TOKEN: ${{ github.token }}

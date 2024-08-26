@@ -56,4 +56,31 @@ trait ManagesLogs
 
         return [$path, $query];
     }
+
+    /**
+     * @param  mixed[]  $arguments
+     * @return \Http\Promise\Promise
+     */
+    public function getLogsV2Async(array $arguments): Promise
+    {
+        if (! isset($arguments['Accept-Encoding'])) {
+            foreach (DataCompression::priority() as $compression) {
+                $compression = $compression->toFqcn();
+                if ($compression::supports()) {
+                    $arguments['Accept-Encoding'] = $compression::format();
+                    break;
+                }
+            }
+        }
+
+        $api = $this->docs->getApi('GetLogsV2');
+
+        $stack = $this->newDocsStack($api, $arguments)
+            ->append(new DecodeCompressed(new DataCompressionFactory(), $this->streamFactory));
+
+        $promise = $this->newClient($stack)
+            ->sendAsyncRequest($this->newRequest('GET'));
+
+        return $this->handleResponse($promise, $api);
+    }
 }

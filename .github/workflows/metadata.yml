@@ -40,24 +40,32 @@ jobs:
 
       - name: Commit metadata changes
         run: |
-          git add data/products.php
-          git commit -m "update products"
-          git add .
-          git commit -m "update metadata"
+          if ! git diff --quiet data/products.php; then
+            git add data/products.php
+            git commit -m "update products"
+          fi
+          if ! git diff --quiet data/; then
+            git add .
+            git commit -m "update metadata"
+          fi
 
       - name: Build clients
         run: make build-clients
 
       - name: Commit updated clients
         run: |
-          git add .
-          git commit -m "build clients"
+          if ! git diff --quiet src/; then
+            git add .
+            git commit -m "build clients"
+          fi
 
       - name: Create a Pull Request
         run: |
-          gh pr create \
-            --base main \
-            --title "Update OpenAPI metadata $(date '+%Y%m%d')" \
-            --body "Here are the API changes during the week, check the metadata and update with the latest Alibaba Cloud APIs."
+          if ! git diff --quiet main..HEAD; then
+            gh pr create \
+              --base main \
+              --title "Update OpenAPI metadata $(date '+%Y%m%d')" \
+              --body "Here are the API changes during the week, check the metadata and update with the latest Alibaba Cloud APIs."
+          fi
         env:
           GH_TOKEN: ${{ github.token }}

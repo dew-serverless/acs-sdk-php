@@ -6,6 +6,7 @@ namespace Dew\Acs\Tests\Sls;
 
 use Dew\Acs\Sls\CompressData;
 use Dew\Acs\Sls\Compression;
+use Dew\Acs\Tests\Sls\Fixtures\StubSupportedCompression;
 use Http\Discovery\Psr17Factory;
 use Http\Promise\FulfilledPromise;
 use Http\Promise\Promise;
@@ -21,10 +22,7 @@ final class CompressDataTest extends TestCase
 {
     public function test_data_compression(): void
     {
-        $mock = m::mock(Compression::class);
-        $mock->shouldReceive('encode')->once()->andReturn('abc');
-        $mock->shouldReceive('format')->once()->andReturn('foo');
-        $plugin = new CompressData(new Psr17Factory(), $mock);
+        $plugin = new CompressData(new Psr17Factory(), new StubSupportedCompression());
         $request = new Request('POST', '/', [], 'abcxyz');
         /** @var \Psr\Http\Message\RequestInterface */
         $request = $plugin->handleRequest(
@@ -33,8 +31,8 @@ final class CompressDataTest extends TestCase
             fn (RequestInterface $request): Promise => new FulfilledPromise($request),
         )->wait();
         $this->assertSame('6', $request->getHeaderLine('x-log-bodyrawsize'));
-        $this->assertSame('foo', $request->getHeaderLine('x-log-compresstype'));
-        $this->assertSame('abc', (string) $request->getBody());
+        $this->assertSame('stub', $request->getHeaderLine('x-log-compresstype'));
+        $this->assertSame('abcxy', (string) $request->getBody());
     }
 
     #[TestWith(['abcd'])]

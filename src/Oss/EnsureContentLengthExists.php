@@ -2,23 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Dew\Acs\Plugins;
+namespace Dew\Acs\Oss;
 
-use Dew\Acs\AcsClient;
-use Dew\Acs\WithSigngingHook;
 use Http\Client\Common\Plugin;
 use Http\Promise\Promise;
 use Override;
 use Psr\Http\Message\RequestInterface;
 
-final readonly class ExecuteSigningHook implements Plugin
+final class EnsureContentLengthExists implements Plugin
 {
-    public function __construct(
-        private AcsClient $client
-    ) {
-        //
-    }
-
     /**
      * @param  callable(\Psr\Http\Message\RequestInterface): \Http\Promise\Promise  $next
      * @param  callable(\Psr\Http\Message\RequestInterface): \Http\Promise\Promise  $first
@@ -26,8 +18,9 @@ final readonly class ExecuteSigningHook implements Plugin
     #[Override]
     public function handleRequest(RequestInterface $request, callable $next, callable $first): Promise
     {
-        if ($this->client instanceof WithSigngingHook) {
-            $request = $this->client->handleSignging($request);
+        if (! $request->hasHeader('Content-Length')
+            && ($request->getBody()->getSize() ?? 0) === 0) {
+            $request = $request->withHeader('Content-Length', '0');
         }
 
         return $next($request);

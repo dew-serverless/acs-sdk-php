@@ -35,10 +35,10 @@ trait ManagesLogs
             ->withQuery($query)
         );
 
-        $client = $this->newClient(appendMiddlewares: [
-            new CompressData($this->streamFactory),
-            SignRequest::withSignature(new V4Signature(), $this->config),
-        ]);
+        $client = $this->newClient($this->newStack()
+            ->append(new CompressData($this->streamFactory))
+            ->append(SignRequest::withSignature(new V4Signature(), $this->config))
+        );
 
         return $this->handleResponse($client->sendAsyncRequest($request));
     }
@@ -55,5 +55,32 @@ trait ManagesLogs
         $query = is_string($hash) ? 'key='.$hash : '';
 
         return [$path, $query];
+    }
+
+    /**
+     * @param  mixed[]  $arguments
+     * @return \Http\Promise\Promise
+     */
+    public function getLogsV2Async(array $arguments): Promise
+    {
+        if (! isset($arguments['Accept-Encoding'])) {
+            foreach (DataCompression::priority() as $compression) {
+                $compression = $compression->toFqcn();
+                if ($compression::supports()) {
+                    $arguments['Accept-Encoding'] = $compression::format();
+                    break;
+                }
+            }
+        }
+
+        $api = $this->docs->getApi('GetLogsV2');
+
+        $stack = $this->newDocsStack($api, $arguments)
+            ->append(new DecodeCompressed(new DataCompressionFactory(), $this->streamFactory));
+
+        $promise = $this->newClient($stack)
+            ->sendAsyncRequest($this->newRequest('GET'));
+
+        return $this->handleResponse($promise, $api);
     }
 }

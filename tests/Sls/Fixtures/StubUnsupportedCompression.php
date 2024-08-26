@@ -2,54 +2,40 @@
 
 declare(strict_types=1);
 
-namespace Dew\Acs\Sls;
+namespace Dew\Acs\Tests\Sls\Fixtures;
 
+use Dew\Acs\Sls\Compression;
 use Override;
 
-final class Raw implements Compression
+final class StubUnsupportedCompression implements Compression
 {
-    /**
-     * {@inheritDoc}
-     */
     #[Override]
     public static function supports(): bool
     {
-        return true;
+        return false;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     #[Override]
     public static function threshold(): int
     {
         return 0;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     #[Override]
     public function encode(string $data, ?int $level = null): string
     {
         return $data;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     #[Override]
     public function decode(string $data, ?int $maxLength = null): string
     {
         return $data;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     #[Override]
     public static function format(): string
     {
-        return '';
+        return 'stub';
     }
 }

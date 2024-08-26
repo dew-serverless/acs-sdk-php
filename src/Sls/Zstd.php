@@ -66,7 +66,7 @@ final class Zstd implements Compression
      * {@inheritDoc}
      */
     #[Override]
-    public function format(): string
+    public static function format(): string
     {
         return 'zstd';
     }

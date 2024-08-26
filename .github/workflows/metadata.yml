@@ -61,11 +61,15 @@ jobs:
 
       - name: Create a Pull Request
         run: |
-          if ! git diff --quiet main..HEAD; then
+          if ! git diff --quiet $GITHUB_SHA..HEAD; then
+            NOW="$(date '+%Y%m%d')"
+            git branch update-metadata-$NOW
+            git push origin update-metadata-$NOW
             gh pr create \
               --base main \
-              --title "Update OpenAPI metadata $(date '+%Y%m%d')" \
+              --title "Update OpenAPI metadata $NOW" \
               --body "Here are the API changes during the week, check the metadata and update with the latest Alibaba Cloud APIs."
           fi
         env:
           GH_TOKEN: ${{ github.token }}
+          GITHUB_SHA: ${{ github.sha }}

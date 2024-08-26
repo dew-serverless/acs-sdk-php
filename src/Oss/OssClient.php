@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Dew\Acs\Oss;
 
 use Dew\Acs\AcsClient;
-use Dew\Acs\WithSigngingHook;
+use Dew\Acs\DocsStack;
+use Dew\Acs\OpenApi\Api;
 use Override;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * @method \Dew\Acs\Result listBuckets(array $arguments = [])
@@ -311,7 +311,7 @@ use Psr\Http\Message\RequestInterface;
  * @method \Dew\Acs\Result postVodPlaylist(array $arguments = [])
  * @method \Http\Promise\Promise postVodPlaylistAsync($arguments = [])
  */
-final class OssClient extends AcsClient implements WithSigngingHook
+final class OssClient extends AcsClient
 {
     public function urlToDownload(string $bucket, string $object, int $expires = 900): string
     {
@@ -356,14 +356,13 @@ final class OssClient extends AcsClient implements WithSigngingHook
         return (string) $request->getUri();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     #[Override]
-    public function handleSignging(RequestInterface $request): RequestInterface
+    protected function newDocsStack(Api $api, array $arguments): DocsStack
     {
-        if (! $request->hasHeader('Content-Length')
-            && ($request->getBody()->getSize() ?? 0) === 0) {
-            return $request->withHeader('Content-Length', '0');
-        }
-
-        return $request;
+        return parent::newDocsStack($api, $arguments)
+            ->signing(new EnsureContentLengthExists());
     }
 }

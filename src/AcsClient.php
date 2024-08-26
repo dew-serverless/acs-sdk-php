@@ -6,8 +6,6 @@ namespace Dew\Acs;
 
 use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
-use Dew\Acs\Plugins\SignRequest;
-use Http\Client\Common\Plugin\HeaderSetPlugin;
 use Http\Client\Common\PluginClient;
 use Http\Client\Promise\HttpFulfilledPromise;
 use Http\Discovery\Psr17FactoryDiscovery;
@@ -126,7 +124,9 @@ abstract class AcsClient
      */
     private function executeAsync(Api $api, array $arguments): Promise
     {
-        $promise = $this->newDocsClient($api, $arguments)
+        $stack = $this->newDocsStack($api, $arguments);
+
+        $promise = $this->newClient($stack)
             ->sendAsyncRequest($this->newRequest('GET'));
 
         return $this->handleResponse($promise, $api);
@@ -155,20 +155,6 @@ abstract class AcsClient
     protected function newStack(): GeneralStack
     {
         return new GeneralStack();
-    }
-
-    /**
-     * @param  mixed[]  $arguments
-     */
-    private function newDocsClient(Api $api, array $arguments): PluginClient
-    {
-        return new PluginClient($this->httpClient, [
-            new Plugins\ConfigureUserAgent(),
-            new Plugins\ConfigureAction($this->docs, $api, $this->streamFactory, $arguments),
-            new HeaderSetPlugin(is_array($arguments['@headers'] ?? null) ? $arguments['@headers'] : []),
-            new Plugins\ExecuteSigningHook($this),
-            SignRequest::withApiDocs($this->docs, $api, $this->config, $arguments),
-        ]);
     }
 
     protected function newClient(HandlerStack $stack): PluginClient

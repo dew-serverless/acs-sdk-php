@@ -68,6 +68,7 @@ jobs:
             git push origin update-metadata-$NOW
             gh pr create \
               --base main \
+              --head update-metadata-$NOW \
               --title "Update OpenAPI metadata $NOW" \
               --body "Here are the API changes during the week, check the metadata and update with the latest Alibaba Cloud APIs."
           fi

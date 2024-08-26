@@ -50,6 +50,20 @@
                     ],
                 ],
             ],
+            'AssignNodeSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'EnableAssignNode' => [
+                        'type' => 'boolean',
+                    ],
+                    'NodeNames' => [
+                        'type' => 'string',
+                    ],
+                    'AntiAffinityNodeNames' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'AssumeUserInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -920,6 +934,9 @@
                     'SpotSpec' => [
                         '$ref' => '#/components/schemas/SpotSpec',
                     ],
+                    'AssignNodeSpec' => [
+                        '$ref' => '#/components/schemas/AssignNodeSpec',
+                    ],
                 ],
             ],
             'Lifecycle' => [
@@ -1383,6 +1400,9 @@
                     'QuotaName' => [
                         'type' => 'string',
                     ],
+                    'Accessibility' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'TensorboardDataSourceSpec' => [
@@ -1670,6 +1690,10 @@
                                 '$ref' => '#/components/schemas/CredentialConfig',
                                 'required' => false,
                             ],
+                            'Accessibility' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -1748,6 +1772,10 @@
                             'Priority' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Accessibility' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -1984,6 +2012,14 @@
                 ],
                 [
                     'name' => 'ResourceQuotaName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Accessibility',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2715,6 +2751,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'Accessibility' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2850,6 +2890,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Accessibility',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -3074,6 +3122,14 @@
                 ],
                 [
                     'name' => 'QuotaId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Accessibility',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

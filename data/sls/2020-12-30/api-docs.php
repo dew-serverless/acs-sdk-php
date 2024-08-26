@@ -9096,6 +9096,7 @@
                     'in' => 'host',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -9103,6 +9104,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

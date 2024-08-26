@@ -191,6 +191,23 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SecurityPolicyId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RequestTimeout',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteNamespace' => [
@@ -437,6 +454,23 @@
                 ],
                 [
                     'name' => 'ListenerProtocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RequestTimeout',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityPolicyId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

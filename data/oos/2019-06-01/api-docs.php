@@ -601,7 +601,6 @@
             ],
         ],
         'DeleteExecutions' => [
-            'path' => '/DeleteExecutions',
             'methods' => [
                 'post',
                 'get',
@@ -631,6 +630,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Force',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

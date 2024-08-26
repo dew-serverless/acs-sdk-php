@@ -3254,6 +3254,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RuleClass',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeVpcFirewallDefaultIPSConfig' => [

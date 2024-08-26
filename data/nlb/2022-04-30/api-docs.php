@@ -2181,23 +2181,6 @@
                     ],
                 ],
                 [
-                    'name' => 'NextToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MaxResults',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [

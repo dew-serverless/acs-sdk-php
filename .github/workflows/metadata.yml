@@ -40,6 +40,8 @@ jobs:
 
       - name: Commit metadata changes
         run: |
+          git add data/products.php
+          git commit -m "update products"
           git add .
           git commit -m "update metadata"
 

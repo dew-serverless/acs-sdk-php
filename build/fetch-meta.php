@@ -8,6 +8,18 @@ require_once __DIR__.'/ApiDocsStripper.php';
 
 use Symfony\Component\VarExporter\VarExporter;
 
+function getEndpoint(): string
+{
+    $endpoint = getenv('ACS_ENDPOINT');
+
+    return is_string($endpoint) ? $endpoint : 'https://api.alibabacloud.com';
+}
+
+function withEndpoint(string $url): string
+{
+    return sprintf('%s/%s', rtrim(getEndpoint(), '/'), ltrim($url, '/'));
+}
+
 function getContents(string $url): string
 {
     $stream = fopen($url, 'r');
@@ -31,10 +43,9 @@ function getContents(string $url): string
  */
 function getApiDocs(string $product, string $version): array
 {
-    $contents = getContents(sprintf(
-        'https://api.aliyun.com/meta/v1/products/%s/versions/%s/api-docs.json',
-        $product, $version
-    ));
+    $contents = getContents(withEndpoint(sprintf(
+        '/meta/v1/products/%s/versions/%s/api-docs.json', $product, $version
+    )));
 
     $decoded = json_decode(
         $contents, associative: true, flags: JSON_THROW_ON_ERROR
@@ -52,10 +63,9 @@ function getApiDocs(string $product, string $version): array
  */
 function getLatestApiChanges(string $product, string $version, string $api): array
 {
-    $contents = getContents(sprintf(
-        'https://api.aliyun.com/api/changeset/%s/%s/%s?page=1&pageSize=1',
-        $product, $version, $api
-    ));
+    $contents = getContents(withEndpoint(sprintf(
+        '/api/changeset/%s/%s/%s?page=1&pageSize=1', $product, $version, $api
+    )));
 
     $decoded = json_decode(
         $contents, associative: true, flags: JSON_THROW_ON_ERROR
@@ -210,7 +220,7 @@ function buildFromChangeset(string $product, string $version, string $style, arr
 function main(): int
 {
     echo '=> Updating product list'.PHP_EOL;
-    updateProductList('https://api.aliyun.com/meta/v1/products.json');
+    updateProductList(withEndpoint('/meta/v1/products.json'));
 
     buildFromProducts();
 

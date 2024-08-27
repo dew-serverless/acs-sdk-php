@@ -57,6 +57,16 @@ jobs:
             git commit -m "build clients"
           fi
 
+      - name: Update badge
+        run: |
+          sed -i -E "s#^\[!\[OpenAPI metadata\]\(.*\)\]#\
+          [![OpenAPI metadata](https://img.shields.io/badge/OpenAPI-$(date '+%Y%m%d')-blue)]#" \
+            README.md
+          if ! git diff --quiet README.md; then
+            git add README.md
+            git commit -m "update badge"
+          fi
+
       - name: Create a Pull Request
         run: |
           if ! git diff --quiet $GITHUB_SHA..HEAD; then

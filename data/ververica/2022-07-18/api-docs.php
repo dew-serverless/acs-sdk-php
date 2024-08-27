@@ -1362,10 +1362,7 @@
                         ],
                     ],
                     'primaryKey' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/PrimaryKey',
-                        ],
+                        '$ref' => '#/components/schemas/PrimaryKey',
                     ],
                 ],
             ],

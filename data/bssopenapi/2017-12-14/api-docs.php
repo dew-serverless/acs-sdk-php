@@ -1265,6 +1265,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CommodityCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'QuerySavingsPlansDeductLog' => [
@@ -1683,6 +1691,14 @@
                 ],
                 [
                     'name' => 'Region',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SpnCommodityCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

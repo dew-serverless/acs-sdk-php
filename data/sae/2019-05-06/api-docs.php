@@ -6,7 +6,4409 @@
         'version' => '2019-05-06',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'AclConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'aclEntries' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/AclEntryConfig',
+                            'required' => true,
+                        ],
+                    ],
+                ],
+            ],
+            'AclEntryConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'entry' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'AppStackInstance' => [
+                'type' => 'object',
+                'properties' => [
+                    'StackId' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceName' => [
+                        'type' => 'string',
+                    ],
+                    'Parameters' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Endpoints' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                                'Protocol' => [
+                                    'type' => 'string',
+                                ],
+                                'Address' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'UpdateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'AppStackResource' => [
+                'type' => 'object',
+                'properties' => [
+                    'StackId' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceId' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceType' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceName' => [
+                        'type' => 'string',
+                    ],
+                    'ProductCode' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'AppStackTask' => [
+                'type' => 'object',
+                'properties' => [
+                    'StackId' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'TaskId' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'StartTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'EndTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Steps' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'string',
+                                ],
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                                'StartTime' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'EndTime' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'Status' => [
+                                    'type' => 'string',
+                                ],
+                                'Duration' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'Code' => [
+                                    'type' => 'string',
+                                ],
+                                'Message' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'Application' => [
+                'type' => 'object',
+                'properties' => [
+                    'applicationName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'applicationId' => [
+                        'type' => 'string',
+                    ],
+                    'namespaceID' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'namespaceName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'handler' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'tracingConfig' => [
+                        '$ref' => '#/components/schemas/TracingConfig',
+                        'required' => false,
+                    ],
+                    'instanceSoftConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'nasConfig' => [
+                        '$ref' => '#/components/schemas/NASConfig',
+                        'required' => false,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'codeSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'codeChecksum' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'caPort' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'internetAccess' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'layers' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                    'ossMountConfig' => [
+                        '$ref' => '#/components/schemas/OSSMountConfig',
+                        'required' => false,
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'layersArnV2' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                    'customRuntimeConfig' => [
+                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
+                        'required' => false,
+                    ],
+                    'logConfig' => [
+                        '$ref' => '#/components/schemas/LogConfig',
+                        'required' => false,
+                    ],
+                    'instanceLifecycleConfig' => [
+                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
+                        'required' => false,
+                    ],
+                    'scaleConfig' => [
+                        '$ref' => '#/components/schemas/ScaleConfig',
+                        'required' => false,
+                    ],
+                    'instanceType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'runtime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'command' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'imageConfig' => [
+                        '$ref' => '#/components/schemas/ImageConfig',
+                        'required' => false,
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'initializer' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'args' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'initializationTimeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'customDNS' => [
+                        '$ref' => '#/components/schemas/CustomDNS',
+                        'required' => false,
+                    ],
+                    'customHealthCheckConfig' => [
+                        '$ref' => '#/components/schemas/CustomHealthCheckConfig',
+                        'required' => false,
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                    'gpuMemorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'vpcConfig' => [
+                        '$ref' => '#/components/schemas/VPCConfig',
+                        'required' => false,
+                    ],
+                    'httpTriggerConfig' => [
+                        '$ref' => '#/components/schemas/HTTPTriggerConfig',
+                        'required' => false,
+                    ],
+                    'urlInternet' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'urlIntranet' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                    ],
+                    'namespace' => [
+                        'type' => 'string',
+                    ],
+                    'customDomainName' => [
+                        'type' => 'string',
+                    ],
+                    'version' => [
+                        '$ref' => '#/components/schemas/Version',
+                    ],
+                    'enableAppMetric' => [
+                        'type' => 'boolean',
+                    ],
+                    'enableArmsAdvanced' => [
+                        'type' => 'boolean',
+                    ],
+                    'slsConfig' => [
+                        '$ref' => '#/components/schemas/SLSConfig',
+                    ],
+                    'startupProbe' => [
+                        '$ref' => '#/components/schemas/Probe',
+                    ],
+                    'livenessProbe' => [
+                        '$ref' => '#/components/schemas/Probe',
+                    ],
+                    'customHostAlias' => [
+                        '$ref' => '#/components/schemas/CustomHostAlias',
+                    ],
+                ],
+            ],
+            'ApplicationStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'scaleConfig' => [
+                        '$ref' => '#/components/schemas/ScaleConfig',
+                    ],
+                    'instanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'ApplicationWithStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'application' => [
+                        '$ref' => '#/components/schemas/Application',
+                    ],
+                    'status' => [
+                        '$ref' => '#/components/schemas/ApplicationStatus',
+                    ],
+                ],
+            ],
+            'ArmsConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'appId' => [
+                        'type' => 'string',
+                    ],
+                    'licenseKey' => [
+                        'type' => 'string',
+                    ],
+                    'agentVersion' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'BuildPipeline' => [
+                'type' => 'object',
+                'properties' => [
+                    'BuildConfig' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'BeforeBuildCommand' => [
+                                'type' => 'string',
+                            ],
+                            'BuildType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'RunCommand' => [
+                                'type' => 'string',
+                            ],
+                            'WorkingDir' => [
+                                'type' => 'string',
+                            ],
+                            'DockerfilePath' => [
+                                'type' => 'string',
+                            ],
+                            'TomcatConfig' => [
+                                '$ref' => '#/components/schemas/TomcatConfig',
+                            ],
+                            'RuntimeType' => [
+                                'type' => 'string',
+                            ],
+                            'RuntimeVersion' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'CodeConfig' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'AccountId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'BranchName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Provider' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'RepoFullName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'RepoId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'CommitId' => [
+                                'type' => 'string',
+                            ],
+                            'CommitUrl' => [
+                                'type' => 'string',
+                            ],
+                            'OrganizationId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'DeployConfig' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'MinimumInstanceCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'MaximumInstanceCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'AlwaysAllocateCPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'UpdateApplicationInput' => [
+                                'type' => 'string',
+                            ],
+                            'UpdateTraffic' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'ApplicationId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ApplicationName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'Enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'TriggerConfig' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'BranchName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TagName' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'ImageConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Namespace' => [
+                                'type' => 'string',
+                            ],
+                            'Repository' => [
+                                'type' => 'string',
+                            ],
+                            'InstanceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                    'PackageConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'PackageType' => [
+                                'type' => 'string',
+                            ],
+                            'PackageUrl' => [
+                                'type' => 'string',
+                            ],
+                            'PackageVersion' => [
+                                'type' => 'string',
+                            ],
+                            'PackageName' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'BuildPipelineRun' => [
+                'type' => 'object',
+                'properties' => [
+                    'BuildConfig' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'BeforeBuildCommand' => [
+                                'type' => 'string',
+                            ],
+                            'BuildType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'RunCommand' => [
+                                'type' => 'string',
+                            ],
+                            'Trigger' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'BranchName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Type' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'TagName' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'WorkingDir' => [
+                                'type' => 'string',
+                            ],
+                            'DockerfilePath' => [
+                                'type' => 'string',
+                            ],
+                            'TomcatConfig' => [
+                                '$ref' => '#/components/schemas/TomcatConfig',
+                            ],
+                            'RuntimeType' => [
+                                'type' => 'string',
+                            ],
+                            'RuntimeVersion' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'CodeConfig' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AccountId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'BranchName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Provider' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'RepoFullName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'RepoId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'CommitId' => [
+                                'type' => 'string',
+                            ],
+                            'CommitUrl' => [
+                                'type' => 'string',
+                            ],
+                            'OrganizationId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'DeployConfig' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'MinimumInstanceCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'MaximumInstanceCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'AlwaysAllocateCPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'UpdateApplicationInput' => [
+                                'type' => 'string',
+                            ],
+                            'UpdateTraffic' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'VersionId' => [
+                        'type' => 'string',
+                    ],
+                    'PipelineId' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'PipelineRunId' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'StartTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'EndTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'WaitDuration' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'BuildDuration' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DeployDuration' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Steps' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'string',
+                                ],
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                                'StartTime' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'EndTime' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'Status' => [
+                                    'type' => 'string',
+                                ],
+                                'Description' => [
+                                    'type' => 'string',
+                                ],
+                                'Duration' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'Result' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'ImageConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Namespace' => [
+                                'type' => 'string',
+                            ],
+                            'Repository' => [
+                                'type' => 'string',
+                            ],
+                            'InstanceType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'PackageConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'PackageType' => [
+                                'type' => 'string',
+                            ],
+                            'PackageUrl' => [
+                                'type' => 'string',
+                            ],
+                            'PackageVersion' => [
+                                'type' => 'string',
+                            ],
+                            'PackageName' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'TriggerConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                            ],
+                            'BranchName' => [
+                                'type' => 'string',
+                            ],
+                            'TagName' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'BuildPipelineRunLogLine' => [
+                'type' => 'object',
+                'properties' => [
+                    'Offset' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Content' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'CertConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'certName' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'certificate' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 20480,
+                    ],
+                    'privateKey' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 4096,
+                    ],
+                ],
+            ],
+            'ChangeOrderStatus' => [
+                'type' => 'integer',
+                'format' => 'int64',
+            ],
+            'CoStatus' => [
+                'type' => 'string',
+            ],
+            'Container' => [
+                'type' => 'object',
+                'properties' => [
+                    'Args' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Command' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'EnvironmentVariables' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'Image' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'WebNASConfig' => [
+                        '$ref' => '#/components/schemas/WebNASConfig',
+                        'required' => false,
+                    ],
+                    'WebOSSConfig' => [
+                        '$ref' => '#/components/schemas/WebOSSConfig',
+                        'required' => false,
+                    ],
+                    'Port' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'RequestConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'RequestTimeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Resources' => [
+                        '$ref' => '#/components/schemas/ContainerResources',
+                        'required' => true,
+                    ],
+                    'StartupProbe' => [
+                        '$ref' => '#/components/schemas/StartupProbe',
+                        'required' => false,
+                    ],
+                    'SLSCollectConfigs' => [
+                        '$ref' => '#/components/schemas/SLSCollectConfigs',
+                    ],
+                    'MetricsCollectConfig' => [
+                        '$ref' => '#/components/schemas/MetricsCollectConfig',
+                    ],
+                ],
+            ],
+            'ContainerResources' => [
+                'type' => 'object',
+                'properties' => [
+                    'Cpu' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                    'Memory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'CreateApplicationInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'namespaceID' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'handler' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'code' => [
+                        '$ref' => '#/components/schemas/InputCodeLocation',
+                        'required' => false,
+                    ],
+                    'tracingConfig' => [
+                        '$ref' => '#/components/schemas/TracingConfig',
+                        'required' => false,
+                    ],
+                    'instanceSoftConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '200',
+                    ],
+                    'nasConfig' => [
+                        '$ref' => '#/components/schemas/NASConfig',
+                        'required' => false,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '512',
+                    ],
+                    'caPort' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'internetAccess' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'layers' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                    'ossMountConfig' => [
+                        '$ref' => '#/components/schemas/OSSMountConfig',
+                        'required' => false,
+                    ],
+                    'applicationName' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'customRuntimeConfig' => [
+                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
+                        'required' => false,
+                    ],
+                    'logConfig' => [
+                        '$ref' => '#/components/schemas/LogConfig',
+                        'required' => false,
+                    ],
+                    'instanceLifecycleConfig' => [
+                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
+                        'required' => false,
+                    ],
+                    'scaleConfig' => [
+                        '$ref' => '#/components/schemas/ScaleConfig',
+                        'required' => false,
+                    ],
+                    'instanceType' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 0,
+                        'maxLength' => 128,
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                        'minimum' => '0.05',
+                    ],
+                    'runtime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'command' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'imageConfig' => [
+                        '$ref' => '#/components/schemas/ImageConfig',
+                        'required' => false,
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '200',
+                    ],
+                    'initializer' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 0,
+                        'maxLength' => 128,
+                    ],
+                    'args' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'initializationTimeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '128',
+                    ],
+                    'customDNS' => [
+                        '$ref' => '#/components/schemas/CustomDNS',
+                        'required' => false,
+                    ],
+                    'customHealthCheckConfig' => [
+                        '$ref' => '#/components/schemas/CustomHealthCheckConfig',
+                        'required' => false,
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                    'gpuMemorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '128',
+                    ],
+                    'vpcConfig' => [
+                        '$ref' => '#/components/schemas/VPCConfig',
+                        'required' => false,
+                    ],
+                    'httpTriggerConfig' => [
+                        '$ref' => '#/components/schemas/HTTPTriggerConfig',
+                        'required' => false,
+                    ],
+                    'slsConfig' => [
+                        '$ref' => '#/components/schemas/SLSConfig',
+                        'required' => false,
+                    ],
+                    'startupProbe' => [
+                        '$ref' => '#/components/schemas/Probe',
+                        'required' => false,
+                    ],
+                    'livenessProbe' => [
+                        '$ref' => '#/components/schemas/Probe',
+                        'required' => false,
+                    ],
+                    'customHostAlias' => [
+                        '$ref' => '#/components/schemas/CustomHostAlias',
+                    ],
+                ],
+            ],
+            'CreateCustomDomainInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'keepFullPath' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'protocol' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'certConfig' => [
+                        '$ref' => '#/components/schemas/CertConfig',
+                        'required' => false,
+                    ],
+                    'domainName' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 256,
+                    ],
+                    'tlsConfig' => [
+                        '$ref' => '#/components/schemas/TLSConfig',
+                        'required' => false,
+                    ],
+                    'wafConfig' => [
+                        '$ref' => '#/components/schemas/WAFConfig',
+                        'required' => false,
+                    ],
+                    'applicationName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'namespaceID' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'CreateSlsIndexRequest' => [
+                'type' => 'object',
+                'properties' => [
+                    'project' => [
+                        'type' => 'string',
+                    ],
+                    'logstore' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'CreateSlsIndexResponse' => [
+                'type' => 'object',
+                'properties' => [
+                    'project' => [
+                        'type' => 'string',
+                    ],
+                    'logStore' => [
+                        'type' => 'string',
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'CreateSlsResourceResponse' => [
+                'type' => 'object',
+                'properties' => [
+                    'project' => [
+                        'type' => 'string',
+                    ],
+                    'logStore' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'CreateWebApplicationInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'ApplicationName' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 256,
+                    ],
+                    'RevisionConfig' => [
+                        '$ref' => '#/components/schemas/RevisionConfig',
+                        'required' => true,
+                    ],
+                    'WebNetworkConfig' => [
+                        '$ref' => '#/components/schemas/WebNetworkConfig',
+                        'required' => false,
+                    ],
+                    'WebScalingConfig' => [
+                        '$ref' => '#/components/schemas/WebScalingConfig',
+                        'required' => false,
+                    ],
+                    'WebTrafficConfig' => [
+                        '$ref' => '#/components/schemas/WebTrafficConfig',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'CreateWebCustomDomainInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'WebCertConfig' => [
+                        '$ref' => '#/components/schemas/WebCertConfig',
+                        'required' => false,
+                    ],
+                    'DefaultForwardingAppName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'DomainName' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 256,
+                    ],
+                    'Protocol' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'WebTLSConfig' => [
+                        '$ref' => '#/components/schemas/WebTLSConfig',
+                        'required' => false,
+                    ],
+                    'WebWAFConfig' => [
+                        '$ref' => '#/components/schemas/WebWAFConfig',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'CustomDNS' => [
+                'type' => 'object',
+                'properties' => [
+                    'searches' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                    'dnsOptions' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/DNSOption',
+                            'required' => false,
+                        ],
+                    ],
+                    'nameServers' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+            'CustomDomain' => [
+                'type' => 'object',
+                'properties' => [
+                    'accountId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'namespaceID' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'protocol' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'apiVersion' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'subdomainCount' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'certConfig' => [
+                        '$ref' => '#/components/schemas/CertConfig',
+                        'required' => false,
+                    ],
+                    'domainName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'keepFullPath' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'tlsConfig' => [
+                        '$ref' => '#/components/schemas/TLSConfig',
+                        'required' => false,
+                    ],
+                    'wafConfig' => [
+                        '$ref' => '#/components/schemas/WAFConfig',
+                        'required' => false,
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'routeConfig' => [
+                        '$ref' => '#/components/schemas/RouteConfig',
+                    ],
+                ],
+            ],
+            'CustomHealthCheckConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'periodSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'timeoutSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'successThreshold' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'failureThreshold' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'initialDelaySeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'httpGetUrl' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'CustomHostAlias' => [
+                'type' => 'object',
+                'properties' => [
+                    'hostAliases' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/HostAlias',
+                        ],
+                    ],
+                ],
+            ],
+            'CustomRuntimeConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'args' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                    'command' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+            'DNSOption' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 256,
+                    ],
+                    'value' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 256,
+                    ],
+                ],
+            ],
+            'DescribeInstanceLogsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'WebLogEntrys' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WebLogEntry',
+                        ],
+                    ],
+                ],
+            ],
+            'DescribeWebAppStaticsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'Length' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'WebAppStatics' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WebStaticsInfo',
+                        ],
+                    ],
+                ],
+            ],
+            'DescribeWebStaticsQueryOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'Length' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'WebStatics' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WebStaticsInfo',
+                        ],
+                    ],
+                ],
+            ],
+            'ExecAction' => [
+                'type' => 'object',
+                'properties' => [
+                    'command' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'ExternalErrorSAEWeb' => [
+                'type' => 'object',
+                'properties' => [
+                    'code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'errorCode' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'GRPCAction' => [
+                'type' => 'object',
+                'properties' => [
+                    'port' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'service' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'GetApplicationLogsInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'isTail' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'offset' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'backwardLine' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'startTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'endTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'forwardLine' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'versionID' => [
+                        'type' => 'string',
+                    ],
+                    'match' => [
+                        'type' => 'string',
+                    ],
+                    'packID' => [
+                        'type' => 'string',
+                    ],
+                    'packMeta' => [
+                        'type' => 'string',
+                    ],
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                    'timestamp' => [
+                        'type' => 'string',
+                    ],
+                    'instanceID' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'GetApplicationLogsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'nextOffset' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'logEntrys' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/LogEntry',
+                        ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'GetInstanceLogsInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'startTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'endTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'versionID' => [
+                        'type' => 'string',
+                    ],
+                    'isTail' => [
+                        'type' => 'boolean',
+                    ],
+                    'offset' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'backwardLine' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'forwardLine' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'match' => [
+                        'type' => 'string',
+                    ],
+                    'packID' => [
+                        'type' => 'string',
+                    ],
+                    'packMeta' => [
+                        'type' => 'string',
+                    ],
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                    'timestamp' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'GetInstanceLogsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'GetPerRequestLogsInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'startTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'endTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'requestID' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'errorType' => [
+                        'type' => 'string',
+                    ],
+                    'timestamp' => [
+                        'type' => 'string',
+                    ],
+                    'isColdStart' => [
+                        'type' => 'boolean',
+                    ],
+                    'instanceID' => [
+                        'type' => 'string',
+                    ],
+                    'forwardLine' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'GetPerRequestLogsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'GetQuotaOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'instanceLimit' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'instanceUsed' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'HTTPGetAction' => [
+                'type' => 'object',
+                'properties' => [
+                    'Host' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'HttpHeaders' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/HTTPHeader',
+                        ],
+                    ],
+                    'Path' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Port' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Scheme' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'HTTPHeader' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'value' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'HTTPTriggerConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'authType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'authConfig' => [
+                        'type' => 'any',
+                        'required' => false,
+                    ],
+                    'safeMode' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'disableURLInternet' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'aclConfig' => [
+                        '$ref' => '#/components/schemas/AclConfig',
+                    ],
+                ],
+            ],
+            'HostAlias' => [
+                'type' => 'object',
+                'properties' => [
+                    'ip' => [
+                        'type' => 'string',
+                    ],
+                    'hostnames' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'ImageConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'accelerationType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'image' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'instanceID' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'InputCodeLocation' => [
+                'type' => 'object',
+                'properties' => [
+                    'zipFile' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'ossObjectName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'ossBucketName' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 3,
+                        'maxLength' => 63,
+                    ],
+                ],
+            ],
+            'InstanceExecAuthorizationInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'options' => [
+                        '$ref' => '#/components/schemas/InstanceExecAuthorizationInputOptions',
+                    ],
+                ],
+            ],
+            'InstanceExecAuthorizationInputOptions' => [
+                'type' => 'object',
+                'properties' => [
+                    'stdin' => [
+                        'type' => 'boolean',
+                    ],
+                    'stderr' => [
+                        'type' => 'boolean',
+                    ],
+                    'stdout' => [
+                        'type' => 'boolean',
+                    ],
+                    'tty' => [
+                        'type' => 'boolean',
+                    ],
+                    'command' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'InstanceExecAuthorizationOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'accountId' => [
+                        'type' => 'string',
+                    ],
+                    'endpoint' => [
+                        'type' => 'string',
+                    ],
+                    'date' => [
+                        'type' => 'string',
+                    ],
+                    'authorization' => [
+                        'type' => 'string',
+                    ],
+                    'accessKeyId' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'InstanceInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'versionId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'instanceId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'imageUrl' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'InstanceLifecycleConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'preStop' => [
+                        '$ref' => '#/components/schemas/LifecycleHook',
+                        'required' => false,
+                    ],
+                    'preFreeze' => [
+                        '$ref' => '#/components/schemas/LifecycleHook',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'InstanceMetricInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'applicationID' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'instanceID' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'memoryLimitMB' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'cpuQuotaPercent' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'memoryUsageMB' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'cpuPercent' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'timestamp' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'Instances' => [
+                'type' => 'array',
+                'items' => [
+                    'type' => 'string',
+                ],
+            ],
+            'JaegerConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'endpoint' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'LifecycleHook' => [
+                'type' => 'object',
+                'properties' => [
+                    'handler' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 0,
+                        'maxLength' => 128,
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+            ],
+            'ListApplicationVersionsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'versions' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Version',
+                            'required' => false,
+                        ],
+                    ],
+                    'nextToken' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'direction' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ListApplicationsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'nextToken' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'applications' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Application',
+                            'required' => false,
+                        ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ListApplicationsWithStatusOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'nextToken' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'applications' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ApplicationWithStatus',
+                        ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ListCustomDomainOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'customDomains' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/CustomDomain',
+                            'required' => false,
+                        ],
+                    ],
+                    'nextToken' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ListInstancesMetricsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'metricsList' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/InstanceMetricInfo',
+                            'required' => false,
+                        ],
+                    ],
+                    'pageSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'pageNumber' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'totalCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ListInstancesOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'instances' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/InstanceInfo',
+                        ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'currentError' => [
+                        'type' => 'string',
+                    ],
+                    'versionStatus' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/VersionStatus',
+                        ],
+                    ],
+                ],
+            ],
+            'ListMetricsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'metrics' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'array',
+                            'required' => false,
+                            'items' => [
+                                '$ref' => '#/components/schemas/MetricInfo',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ListStaticsQueryResponse' => [
+                'type' => 'object',
+                'properties' => [
+                    'statics' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/StaticsInfo',
+                        ],
+                    ],
+                    'length' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'sort' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ListWebApplicationInstancesBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Data' => [
+                        '$ref' => '#/components/schemas/ListWebInstancesOutput',
+                        'required' => false,
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'ListWebApplicationRevisionsBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Data' => [
+                        '$ref' => '#/components/schemas/ListWebApplicationRevisionsOutput',
+                        'required' => false,
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'ListWebApplicationRevisionsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'NextToken' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Revisions' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Revision',
+                        ],
+                    ],
+                ],
+            ],
+            'ListWebApplicationsBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Data' => [
+                        '$ref' => '#/components/schemas/ListWebApplicationsOutput',
+                        'required' => false,
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'ListWebApplicationsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'NextToken' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'WebApplicationWithInstanceCount' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WebApplicationWithInstanceCount',
+                        ],
+                    ],
+                ],
+            ],
+            'ListWebCustomDomainBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Data' => [
+                        '$ref' => '#/components/schemas/ListWebCustomDomainOutput',
+                        'required' => false,
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'ListWebCustomDomainOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'NextToken' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'WebCustomDomains' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WebCustomDomain',
+                        ],
+                    ],
+                ],
+            ],
+            'ListWebInstancesOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'WebInstances' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WebInstanceInfo',
+                        ],
+                    ],
+                    'CurrentError' => [
+                        'type' => 'string',
+                    ],
+                    'WebVersionStatus' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/WebVersionStatus',
+                        ],
+                    ],
+                ],
+            ],
+            'LogConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'project' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 63,
+                    ],
+                    'enableRequestMetrics' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'enableInstanceMetrics' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'logstore' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 63,
+                    ],
+                    'logBeginRule' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'pushToUserSLS' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'LogEntry' => [
+                'type' => 'object',
+                'properties' => [
+                    'timestamp' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                    'qualifier' => [
+                        'type' => 'string',
+                    ],
+                    'versionID' => [
+                        'type' => 'string',
+                    ],
+                    'instanceID' => [
+                        'type' => 'string',
+                    ],
+                    'offset' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'packID' => [
+                        'type' => 'string',
+                    ],
+                    'packMeta' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'MetricInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'timestamp' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'value' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'Count' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'Sum' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'Average' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'Maximum' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'Minimum' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'MetricsCollectConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'LogstoreName' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 63,
+                    ],
+                    'ProjectName' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 63,
+                    ],
+                    'EnablePushToUserSLS' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'NASConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'mountPoints' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/NASMountConfig',
+                            'required' => false,
+                        ],
+                        'maxItems' => 5,
+                    ],
+                ],
+            ],
+            'NASMountConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'enableTLS' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'mountDir' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 64,
+                    ],
+                    'serverAddr' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                ],
+            ],
+            'OSSMountConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'mountPoints' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/OSSMountPoint',
+                            'required' => false,
+                        ],
+                        'maxItems' => 5,
+                    ],
+                ],
+            ],
+            'OSSMountPoint' => [
+                'type' => 'object',
+                'properties' => [
+                    'bucketName' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 3,
+                        'maxLength' => 64,
+                    ],
+                    'bucketPath' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                    'mountDir' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 2,
+                        'maxLength' => 64,
+                    ],
+                    'readOnly' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'PathConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'path' => [
+                        'type' => 'string',
+                    ],
+                    'applicationName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'PermissionAssistantApi' => [
+                'type' => 'object',
+                'properties' => [
+                    'id' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                    'createTime' => [
+                        'type' => 'string',
+                    ],
+                    'updateTime' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'PipelineStatus' => [
+                'type' => 'integer',
+                'format' => 'int64',
+            ],
+            'PolicyItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'key' => [
+                        'type' => 'string',
+                    ],
+                    'value' => [
+                        'type' => 'string',
+                    ],
+                    'operator' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'PriceEstimateFeature' => [
+                'type' => 'object',
+                'required' => true,
+                'properties' => [
+                    'RegionId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'EnvType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'AppType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'CpuStrategy' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'CpuCore' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                    'MemoryGiB' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                    'MinInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'MaxInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'InstanceQps' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'InternetOutboundGiB' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'HighLoadSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'HighLoadQps' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'HighLoadInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'LowLoadSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'LowLoadQps' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'LowLoadInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'NoneLoadSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'NoneLoadInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'PriceEstimateOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'TotalPrice' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'Apps' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'Feature' => [
+                                    '$ref' => '#/components/schemas/PriceEstimateFeature',
+                                ],
+                                'Usages' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'Id' => [
+                                                'type' => 'string',
+                                            ],
+                                            'Amount' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                            ],
+                                            'Unit' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Items' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'string',
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
+                                ],
+                                'Amount' => [
+                                    'type' => 'number',
+                                    'format' => 'float',
+                                ],
+                                'Unit' => [
+                                    'type' => 'string',
+                                ],
+                                'Count' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'Price' => [
+                                    'type' => 'number',
+                                    'format' => 'float',
+                                ],
+                                'Steps' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'Begin' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                            ],
+                                            'End' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                            ],
+                                            'Unit' => [
+                                                'type' => 'string',
+                                            ],
+                                            'Price' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                            ],
+                                            'RegionIds' => [
+                                                'type' => 'array',
+                                                'items' => [
+                                                    'type' => 'string',
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'Probe' => [
+                'type' => 'object',
+                'properties' => [
+                    'initialDelaySeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'timeoutSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'periodSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'failureThreshold' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'probeHandler' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'httpGet' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'path' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'port' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'httpHeaders' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'properties' => [
+                                                'name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'value' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'tcpSocket' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'port' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'ProbeHandler' => [
+                'type' => 'object',
+                'properties' => [
+                    'HttpGet' => [
+                        '$ref' => '#/components/schemas/HTTPGetAction',
+                        'required' => false,
+                    ],
+                    'TcpSocket' => [
+                        '$ref' => '#/components/schemas/TCPSocketAction',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'PublishApplicationVersionInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'description' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 256,
+                    ],
+                ],
+            ],
+            'PublishWebApplicationRevisionInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'Containers' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Container',
+                        ],
+                        'maxItems' => 1,
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 256,
+                    ],
+                    'EnableArmsMetrics' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'TakeEffect' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'Revision' => [
+                'type' => 'object',
+                'properties' => [
+                    'CreatedTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RevisionConfig' => [
+                        '$ref' => '#/components/schemas/RevisionConfig',
+                        'required' => false,
+                    ],
+                    'RevisionId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Weight' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'RevisionConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'Containers' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Container',
+                        ],
+                        'maxItems' => 1,
+                    ],
+                    'EnableArmsMetrics' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'WebNetworkConfig' => [
+                        '$ref' => '#/components/schemas/WebNetworkConfig',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'RouteConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'routes' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/PathConfig',
+                        ],
+                    ],
+                ],
+            ],
+            'RoutePolicy' => [
+                'type' => 'object',
+                'properties' => [
+                    'condition' => [
+                        'type' => 'string',
+                    ],
+                    'policyItems' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/PolicyItem',
+                        ],
+                    ],
+                ],
+            ],
+            'SLSCollectConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'LogPath' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'LogType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'LogstoreName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'LogtailName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'MachineGroup' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'ProjectName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'SLSCollectConfigs' => [
+                'type' => 'object',
+                'properties' => [
+                    'CollectConfigs' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/SLSCollectConfig',
+                        ],
+                    ],
+                ],
+            ],
+            'SLSConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'collectConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'logPath' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'projectName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'logstoreName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'logtailName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'logType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'ScaleConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'alwaysAllocateCPU' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'maximumInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'minimumInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SourceCodeAccount' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'AvatarUrl' => [
+                        'type' => 'string',
+                    ],
+                    'Organizations' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'string',
+                                ],
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                                'AvatarUrl' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'SourceCodeRepo' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'FullName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SourceCodeRepoBranch' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'CommitId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'StartupProbe' => [
+                'type' => 'object',
+                'properties' => [
+                    'FailureThreshold' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'InitialDelaySeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'PeriodSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'ProbeHandler' => [
+                        '$ref' => '#/components/schemas/ProbeHandler',
+                        'required' => false,
+                    ],
+                    'TimeoutSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'StaticsInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'memoryUsage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'cost' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'functionName' => [
+                        'type' => 'string',
+                    ],
+                    'gpuUsage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'instanceTrafficOut' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'serviceName' => [
+                        'type' => 'string',
+                    ],
+                    'invocations' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'idleCPUUsage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'activeCPUUsage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'invokeInternetOut' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'invokeCDNOut' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'diskUsage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'region' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'Submenu' => [
+                'type' => 'object',
+                'properties' => [
+                    'SubmenuType' => [
+                        'type' => 'string',
+                    ],
+                    'SubmenuDesc' => [
+                        'type' => 'string',
+                    ],
+                    'Submenus' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Submenu',
+                        ],
+                    ],
+                    'Items' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'ItemType' => [
+                                    'type' => 'string',
+                                ],
+                                'ItemDesc' => [
+                                    'type' => 'string',
+                                ],
+                                'DefaultSelected' => [
+                                    'type' => 'boolean',
+                                ],
+                                'RelatingItems' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'TCPSocketAction' => [
+                'type' => 'object',
+                'properties' => [
+                    'Host' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Port' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'TLSConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'cipherSuites' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                    'maxVersion' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'minVersion' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'TomcatConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'Version' => [
+                        'type' => 'string',
+                    ],
+                    'Port' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ContextPath' => [
+                        'type' => 'string',
+                    ],
+                    'MaxThreads' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'UriEncoding' => [
+                        'type' => 'string',
+                    ],
+                    'UseBodyEncodingForUri' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'TracingConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'params' => [
+                        'type' => 'any',
+                        'required' => false,
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'jaegerConfig' => [
+                        '$ref' => '#/components/schemas/JaegerConfig',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'TrafficConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'createdTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'additionalVersionWeight' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'number',
+                            'format' => 'float',
+                            'required' => false,
+                        ],
+                    ],
+                    'versionId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'routePolicy' => [
+                        '$ref' => '#/components/schemas/RoutePolicy',
+                    ],
+                    'resolvePolicy' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'UpdateApplicationInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'handler' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'code' => [
+                        '$ref' => '#/components/schemas/InputCodeLocation',
+                        'required' => false,
+                    ],
+                    'tracingConfig' => [
+                        '$ref' => '#/components/schemas/TracingConfig',
+                        'required' => false,
+                    ],
+                    'instanceSoftConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '200',
+                    ],
+                    'nasConfig' => [
+                        '$ref' => '#/components/schemas/NASConfig',
+                        'required' => false,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 256,
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '512',
+                    ],
+                    'caPort' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'internetAccess' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'layers' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                    'ossMountConfig' => [
+                        '$ref' => '#/components/schemas/OSSMountConfig',
+                        'required' => false,
+                    ],
+                    'customRuntimeConfig' => [
+                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
+                        'required' => false,
+                    ],
+                    'logConfig' => [
+                        '$ref' => '#/components/schemas/LogConfig',
+                        'required' => false,
+                    ],
+                    'instanceLifecycleConfig' => [
+                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
+                        'required' => false,
+                    ],
+                    'scaleConfig' => [
+                        '$ref' => '#/components/schemas/ScaleConfig',
+                        'required' => false,
+                    ],
+                    'instanceType' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 0,
+                        'maxLength' => 128,
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                        'minimum' => '0.05',
+                    ],
+                    'runtime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'command' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'imageConfig' => [
+                        '$ref' => '#/components/schemas/ImageConfig',
+                        'required' => false,
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '200',
+                    ],
+                    'initializer' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 0,
+                        'maxLength' => 128,
+                    ],
+                    'args' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'initializationTimeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '128',
+                    ],
+                    'customDNS' => [
+                        '$ref' => '#/components/schemas/CustomDNS',
+                        'required' => false,
+                    ],
+                    'customHealthCheckConfig' => [
+                        '$ref' => '#/components/schemas/CustomHealthCheckConfig',
+                        'required' => false,
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                    'gpuMemorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '128',
+                    ],
+                    'vpcConfig' => [
+                        '$ref' => '#/components/schemas/VPCConfig',
+                        'required' => false,
+                    ],
+                    'httpTriggerConfig' => [
+                        '$ref' => '#/components/schemas/HTTPTriggerConfig',
+                        'required' => false,
+                    ],
+                    'effectiveImmediately' => [
+                        'type' => 'boolean',
+                    ],
+                    'enableAppMetric' => [
+                        'type' => 'boolean',
+                    ],
+                    'slsConfig' => [
+                        '$ref' => '#/components/schemas/SLSConfig',
+                        'required' => false,
+                    ],
+                    'startupProbe' => [
+                        '$ref' => '#/components/schemas/Probe',
+                        'required' => false,
+                    ],
+                    'livenessProbe' => [
+                        '$ref' => '#/components/schemas/Probe',
+                        'required' => false,
+                    ],
+                    'customHostAlias' => [
+                        '$ref' => '#/components/schemas/CustomHostAlias',
+                    ],
+                ],
+            ],
+            'UpdateApplicationScaleConfigInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'alwaysAllocateCPU' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'maximumInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '-1',
+                        'maximum' => '5000',
+                    ],
+                    'minimumInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '5000',
+                    ],
+                ],
+            ],
+            'UpdateApplicationTrafficConfigInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'additionalVersionWeight' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'number',
+                            'format' => 'float',
+                            'required' => false,
+                        ],
+                    ],
+                    'versionId' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 10,
+                    ],
+                    'routePolicy' => [
+                        '$ref' => '#/components/schemas/RoutePolicy',
+                    ],
+                    'resolvePolicy' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'UpdateAttributesInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'versionID' => [
+                        'type' => 'string',
+                    ],
+                    'httpTriggerConfig' => [
+                        '$ref' => '#/components/schemas/HTTPTriggerConfig',
+                    ],
+                ],
+            ],
+            'UpdateCustomDomainInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'keepFullPath' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'protocol' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'certConfig' => [
+                        '$ref' => '#/components/schemas/CertConfig',
+                        'required' => false,
+                    ],
+                    'tlsConfig' => [
+                        '$ref' => '#/components/schemas/TLSConfig',
+                        'required' => false,
+                    ],
+                    'wafConfig' => [
+                        '$ref' => '#/components/schemas/WAFConfig',
+                        'required' => false,
+                    ],
+                    'applicationName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'applicationID' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'namespaceID' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'UpdateWebApplicationInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'Description' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 256,
+                    ],
+                    'WebNetworkConfig' => [
+                        '$ref' => '#/components/schemas/WebNetworkConfig',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'UpdateWebApplicationScalingConfigInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'MaximumInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'MinimumInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'UpdateWebApplicationTrafficConfigInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'WebAclConfig' => [
+                        '$ref' => '#/components/schemas/WebAclConfig',
+                        'required' => false,
+                    ],
+                    'AuthType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'DisableURLInternet' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'RevisionsTrafficWeight' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'number',
+                            'format' => 'float',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateWebCustomDomainInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'WebCertConfig' => [
+                        '$ref' => '#/components/schemas/WebCertConfig',
+                        'required' => false,
+                    ],
+                    'DefaultForwardingAppName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Protocol' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'WebTLSConfig' => [
+                        '$ref' => '#/components/schemas/WebTLSConfig',
+                        'required' => false,
+                    ],
+                    'WebWAFConfig' => [
+                        '$ref' => '#/components/schemas/WebWAFConfig',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'VPCConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'anytunnelViaENI' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'securityGroupId' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 50,
+                    ],
+                    'role' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 300,
+                    ],
+                    'vSwitchIds' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 10,
+                    ],
+                    'vpcId' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 50,
+                    ],
+                ],
+            ],
+            'Version' => [
+                'type' => 'object',
+                'properties' => [
+                    'createdTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'versionId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'image' => [
+                        'type' => 'string',
+                    ],
+                    'weight' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'VersionStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'errorMessage' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'WAFConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'enableWAF' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebAclConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'WebAclEntries' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WebAclEntryConfig',
+                            'required' => true,
+                        ],
+                    ],
+                ],
+            ],
+            'WebAclEntryConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'Entry' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'WebApplication' => [
+                'type' => 'object',
+                'properties' => [
+                    'ApplicationId' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'ApplicationName' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'CreatedTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 256,
+                    ],
+                    'LastModifiedTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'NamespaceId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RevisionConfig' => [
+                        '$ref' => '#/components/schemas/RevisionConfig',
+                        'required' => false,
+                    ],
+                    'InternetURL' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'IntranetURL' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'VpcId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'WebScalingConfig' => [
+                        '$ref' => '#/components/schemas/WebScalingConfig',
+                        'required' => false,
+                    ],
+                    'WebTrafficConfig' => [
+                        '$ref' => '#/components/schemas/WebTrafficConfig',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebApplicationBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Data' => [
+                        '$ref' => '#/components/schemas/WebApplication',
+                        'required' => false,
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebApplicationInstanceLogsBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Data' => [
+                        '$ref' => '#/components/schemas/DescribeInstanceLogsOutput',
+                        'required' => false,
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebApplicationResourceStaticsBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Data' => [
+                        '$ref' => '#/components/schemas/DescribeWebAppStaticsOutput',
+                        'required' => false,
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebApplicationRevisionBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Data' => [
+                        '$ref' => '#/components/schemas/Revision',
+                        'required' => false,
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebApplicationScalingConfigBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Data' => [
+                        '$ref' => '#/components/schemas/WebScalingConfig',
+                        'required' => false,
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebApplicationStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'InstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'WebScalingConfig' => [
+                        '$ref' => '#/components/schemas/WebScalingConfig',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebApplicationTrafficConfigBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Data' => [
+                        '$ref' => '#/components/schemas/WebTrafficConfig',
+                        'required' => false,
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebApplicationWithInstanceCount' => [
+                'type' => 'object',
+                'properties' => [
+                    'WebApplication' => [
+                        '$ref' => '#/components/schemas/WebApplication',
+                        'required' => false,
+                    ],
+                    'InstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'WebApplicationWithStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'WebApplication' => [
+                        '$ref' => '#/components/schemas/WebApplication',
+                        'required' => false,
+                    ],
+                    'Status' => [
+                        '$ref' => '#/components/schemas/WebApplicationStatus',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebCertConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'CertName' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'Certificate' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 20480,
+                    ],
+                    'PrivateKey' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 4096,
+                    ],
+                ],
+            ],
+            'WebCustomDomain' => [
+                'type' => 'object',
+                'properties' => [
+                    'AccountId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'WebCertConfig' => [
+                        '$ref' => '#/components/schemas/WebCertConfig',
+                        'required' => false,
+                    ],
+                    'CreatedTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'DefaultForwardingAppName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'DomainName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'LastModifiedTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'NamespaceId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Protocol' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'WebTLSConfig' => [
+                        '$ref' => '#/components/schemas/WebTLSConfig',
+                        'required' => false,
+                    ],
+                    'WebWAFConfig' => [
+                        '$ref' => '#/components/schemas/WebWAFConfig',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebCustomDomainBody' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'Data' => [
+                        '$ref' => '#/components/schemas/WebCustomDomain',
+                        'required' => false,
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebInstanceInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'InstanceId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'VersionId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'ImageUrl' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'WebLogEntry' => [
+                'type' => 'object',
+                'properties' => [
+                    'Message' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebNASConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'MountPoints' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WebNASMountPoint',
+                            'required' => false,
+                        ],
+                        'maxItems' => 5,
+                    ],
+                ],
+            ],
+            'WebNASMountPoint' => [
+                'type' => 'object',
+                'properties' => [
+                    'MountDir' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 64,
+                    ],
+                    'NasAddr' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                    'NasPath' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'WebNetworkConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'InternetAccess' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'SecurityGroupId' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 50,
+                    ],
+                    'VSwitchIds' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                        'maxItems' => 10,
+                    ],
+                ],
+            ],
+            'WebOSSConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'MountPoints' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WebOSSMountPoint',
+                            'required' => false,
+                        ],
+                        'maxItems' => 5,
+                    ],
+                ],
+            ],
+            'WebOSSMountPoint' => [
+                'type' => 'object',
+                'properties' => [
+                    'BucketName' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 3,
+                        'maxLength' => 64,
+                    ],
+                    'BucketPath' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                    'MountDir' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 2,
+                        'maxLength' => 64,
+                    ],
+                    'ReadOnly' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebScalingConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'MaximumInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'MinimumInstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebStaticsInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'CpuUsage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'Invocations' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'InternetTrafficOut' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'MemoryUsage' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebTLSConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'CipherSuites' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                    'MaxVersion' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'MinVersion' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'WebTrafficConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'WebAclConfig' => [
+                        '$ref' => '#/components/schemas/WebAclConfig',
+                        'required' => false,
+                    ],
+                    'AuthType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'DisableInternetURL' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'RevisionsTrafficWeight' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'number',
+                            'format' => 'float',
+                        ],
+                    ],
+                ],
+            ],
+            'WebVersionStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'ErrorMessage' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'WebWAFConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'EnableWAF' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'apis' => [
         'OpenSaeService' => [
@@ -188,6 +4590,23 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityPolicyId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RequestTimeout',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -437,6 +4856,23 @@
                 ],
                 [
                     'name' => 'ListenerProtocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RequestTimeout',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityPolicyId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

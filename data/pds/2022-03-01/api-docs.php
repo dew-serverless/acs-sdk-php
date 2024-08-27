@@ -7,108 +7,6 @@
     ],
     'components' => [
         'schemas' => [
-            'AIAssistantMessage' => [
-                'type' => 'object',
-                'properties' => [
-                    'session_id' => [
-                        'type' => 'string',
-                    ],
-                    'message_id' => [
-                        'type' => 'string',
-                    ],
-                    'user_id' => [
-                        'type' => 'string',
-                    ],
-                    'client_id' => [
-                        'type' => 'string',
-                    ],
-                    'created_at' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'updated_at' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'constraint' => [
-                        '$ref' => '#/components/schemas/AIAssistantChatConstraint',
-                    ],
-                    'scope' => [
-                        '$ref' => '#/components/schemas/AIAssistantChatScope',
-                    ],
-                    'score' => [
-                        'type' => 'number',
-                        'format' => 'double',
-                    ],
-                    'query' => [
-                        'type' => 'string',
-                    ],
-                    'references' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            '$ref' => '#/components/schemas/AIAssistantChatReference',
-                        ],
-                    ],
-                    'regenerate' => [
-                        'type' => 'boolean',
-                    ],
-                    'replied_at' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'reply' => [
-                        'type' => 'string',
-                    ],
-                    'reply_type' => [
-                        'type' => 'string',
-                    ],
-                    'tools' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/AIAssistantChatTool',
-                        ],
-                    ],
-                    'topic' => [
-                        'type' => 'string',
-                    ],
-                    'type' => [
-                        'type' => 'string',
-                    ],
-                    'files' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/AIAssistantMessageFileMeta',
-                        ],
-                    ],
-                ],
-            ],
-            'AIAssistantMessageFileMeta' => [
-                'type' => 'object',
-                'properties' => [
-                    'domain_id' => [
-                        'type' => 'string',
-                    ],
-                    'semantic_result' => [
-                        '$ref' => '#/components/schemas/SemanticResult',
-                    ],
-                    'revision_id' => [
-                        'type' => 'string',
-                    ],
-                    'file_id' => [
-                        'type' => 'string',
-                    ],
-                    'drive_id' => [
-                        'type' => 'string',
-                    ],
-                    'name' => [
-                        'type' => 'string',
-                    ],
-                    'category' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
             'AIAssistantSession' => [
                 'type' => 'object',
                 'properties' => [
@@ -2433,6 +2331,52 @@
                     ],
                 ],
             ],
+            'KnowledgeCategory' => [
+                'type' => 'object',
+                'properties' => [
+                    'knowledge_base_id' => [
+                        'type' => 'string',
+                    ],
+                    'knowledge_base_name' => [
+                        'type' => 'string',
+                    ],
+                    'parent_knowledge_category_id' => [
+                        'type' => 'string',
+                    ],
+                    'knowledge_category_id' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'keywords' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'owner' => [
+                        'type' => 'string',
+                    ],
+                    'owner_type' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'created_at' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updated_at' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
             'KnowledgeFile' => [
                 'type' => 'object',
                 'properties' => [
@@ -2484,6 +2428,15 @@
                         'type' => 'string',
                     ],
                     'file_name_path' => [
+                        'type' => 'string',
+                    ],
+                    'file_last_modifier_id' => [
+                        'type' => 'string',
+                    ],
+                    'file_last_modifier_type' => [
+                        'type' => 'string',
+                    ],
+                    'drive_name' => [
                         'type' => 'string',
                     ],
                 ],
@@ -10746,6 +10699,10 @@
                                 'format' => 'int64',
                                 'required' => false,
                             ],
+                            're_transcode' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'get_master_url' => [
                                 'type' => 'boolean',
                                 'required' => false,
@@ -11072,32 +11029,6 @@
                                             'type' => 'string',
                                             'required' => true,
                                         ],
-                                    ],
-                                ],
-                            ],
-                            'recursive' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'user_data' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'policy' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'first_product_name' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'mtee_code' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'provider' => [
-                                        'type' => 'string',
-                                        'required' => false,
                                     ],
                                 ],
                             ],

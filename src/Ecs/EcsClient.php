@@ -147,6 +147,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeElasticityAssuranceInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result modifyElasticityAssurance(array $arguments = [])
  * @method \Http\Promise\Promise modifyElasticityAssuranceAsync($arguments = [])
+ * @method \Dew\Acs\Result renewElasticityAssurances(array $arguments = [])
+ * @method \Http\Promise\Promise renewElasticityAssurancesAsync($arguments = [])
  * @method \Dew\Acs\Result createCapacityReservation(array $arguments = [])
  * @method \Http\Promise\Promise createCapacityReservationAsync($arguments = [])
  * @method \Dew\Acs\Result describeCapacityReservations(array $arguments = [])

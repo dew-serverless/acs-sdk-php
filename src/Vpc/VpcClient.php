@@ -419,8 +419,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyNatGatewaySpecAsync($arguments = [])
  * @method \Dew\Acs\Result describeNatGateways(array $arguments = [])
  * @method \Http\Promise\Promise describeNatGatewaysAsync($arguments = [])
- * @method \Dew\Acs\Result vpcDescribeVpcNatGatewayNetworkInterfaceQuota(array $arguments = [])
- * @method \Http\Promise\Promise vpcDescribeVpcNatGatewayNetworkInterfaceQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result getNatGatewayAttribute(array $arguments = [])
  * @method \Http\Promise\Promise getNatGatewayAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result listEnhanhcedNatGatewayAvailableZones(array $arguments = [])
@@ -433,6 +431,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise enableNatGatewayEcsMetricAsync($arguments = [])
  * @method \Dew\Acs\Result disableNatGatewayEcsMetric(array $arguments = [])
  * @method \Http\Promise\Promise disableNatGatewayEcsMetricAsync($arguments = [])
+ * @method \Dew\Acs\Result describeNatGatewayAssociateNetworkInterfaces(array $arguments = [])
+ * @method \Http\Promise\Promise describeNatGatewayAssociateNetworkInterfacesAsync($arguments = [])
+ * @method \Dew\Acs\Result vpcDescribeVpcNatGatewayNetworkInterfaceQuota(array $arguments = [])
+ * @method \Http\Promise\Promise vpcDescribeVpcNatGatewayNetworkInterfaceQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result createSnatEntry(array $arguments = [])
  * @method \Http\Promise\Promise createSnatEntryAsync($arguments = [])
  * @method \Dew\Acs\Result deleteSnatEntry(array $arguments = [])
@@ -773,6 +775,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise moveResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result listVpcPublishedRouteEntries(array $arguments = [])
+ * @method \Http\Promise\Promise listVpcPublishedRouteEntriesAsync($arguments = [])
+ * @method \Dew\Acs\Result publishVpcRouteEntries(array $arguments = [])
+ * @method \Http\Promise\Promise publishVpcRouteEntriesAsync($arguments = [])
+ * @method \Dew\Acs\Result withdrawVpcPublishedRouteEntries(array $arguments = [])
+ * @method \Http\Promise\Promise withdrawVpcPublishedRouteEntriesAsync($arguments = [])
  */
 final class VpcClient extends AcsClient
 {

@@ -954,6 +954,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Labels',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteService' => [

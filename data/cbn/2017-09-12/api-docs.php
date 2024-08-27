@@ -8549,7 +8549,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -8676,7 +8676,7 @@
                                 ],
                             ],
                         ],
-                        'maxItems' => 4,
+                        'maxItems' => 11,
                     ],
                 ],
             ],
@@ -9916,10 +9916,10 @@
                     'style' => 'repeatList',
                     'schema' => [
                         'type' => 'array',
-                        'required' => false,
+                        'required' => true,
                         'items' => [
                             'type' => 'string',
-                            'required' => false,
+                            'required' => true,
                         ],
                         'maxItems' => 1000,
                     ],
@@ -9991,7 +9991,7 @@
                         'required' => false,
                         'items' => [
                             'type' => 'string',
-                            'required' => false,
+                            'required' => true,
                         ],
                         'maxItems' => 1000,
                     ],

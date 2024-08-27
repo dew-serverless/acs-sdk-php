@@ -91,6 +91,14 @@
                     ],
                 ],
             ],
+            'Answer' => [
+                'type' => 'object',
+                'properties' => [
+                    'Content' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'App' => [
                 'type' => 'object',
                 'properties' => [
@@ -370,6 +378,58 @@
                     ],
                 ],
             ],
+            'ContextualFile' => [
+                'type' => 'object',
+                'properties' => [
+                    'OwnerId' => [
+                        'type' => 'string',
+                    ],
+                    'ProjectName' => [
+                        'type' => 'string',
+                    ],
+                    'DatasetName' => [
+                        'type' => 'string',
+                    ],
+                    'ObjectId' => [
+                        'type' => 'string',
+                    ],
+                    'URI' => [
+                        'type' => 'string',
+                    ],
+                    'OSSURI' => [
+                        'type' => 'string',
+                    ],
+                    'MediaType' => [
+                        'type' => 'string',
+                    ],
+                    'ContentType' => [
+                        'type' => 'string',
+                    ],
+                    'Elements' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Element',
+                        ],
+                    ],
+                ],
+            ],
+            'ContextualMessage' => [
+                'type' => 'object',
+                'properties' => [
+                    'Role' => [
+                        'type' => 'string',
+                    ],
+                    'Content' => [
+                        'type' => 'string',
+                    ],
+                    'Files' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ContextualFile',
+                        ],
+                    ],
+                ],
+            ],
             'CredentialConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -580,6 +640,22 @@
                             '$ref' => '#/components/schemas/ElementContent',
                         ],
                     ],
+                    'ObjectId' => [
+                        'type' => 'string',
+                    ],
+                    'ElementType' => [
+                        'type' => 'string',
+                    ],
+                    'SemanticSimilarity' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'ElementRelations' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ElementRelation',
+                        ],
+                    ],
                 ],
             ],
             'ElementContent' => [
@@ -600,6 +676,17 @@
                             'type' => 'integer',
                             'format' => 'int64',
                         ],
+                    ],
+                ],
+            ],
+            'ElementRelation' => [
+                'type' => 'object',
+                'properties' => [
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'ObjectId' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1114,6 +1201,30 @@
                         'type' => 'string',
                     ],
                     'ObjectStatus' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'FileSmartCluster' => [
+                'type' => 'object',
+                'properties' => [
+                    'SmartClusterId' => [
+                        'type' => 'string',
+                    ],
+                    'Similarity' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                ],
+            ],
+            'FunctionCall' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'Arguments' => [
                         'type' => 'string',
                     ],
                 ],
@@ -2469,6 +2580,17 @@
                     ],
                     'End' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'ToolCall' => [
+                'type' => 'object',
+                'properties' => [
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'Function' => [
+                        '$ref' => '#/components/schemas/FunctionCall',
                     ],
                 ],
             ],

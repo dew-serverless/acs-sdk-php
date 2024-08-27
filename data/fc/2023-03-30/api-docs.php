@@ -3308,6 +3308,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'fcVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'v3',
+                            'v2',
+                        ],
+                    ],
+                ],
             ],
         ],
         'InvokeFunction' => [
@@ -4193,6 +4205,7 @@
             'produces' => [
                 'application/json',
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'functionName',

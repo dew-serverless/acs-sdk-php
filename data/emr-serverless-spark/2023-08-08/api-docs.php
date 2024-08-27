@@ -448,6 +448,9 @@
                     'sparkSubmitClause' => [
                         'type' => 'string',
                     ],
+                    'fusion' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'TaskInstance' => [
@@ -568,6 +571,12 @@
                         ],
                     ],
                     'templateType' => [
+                        'type' => 'string',
+                    ],
+                    'fusion' => [
+                        'type' => 'boolean',
+                    ],
+                    'displaySparkVersion' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1360,6 +1369,14 @@
                             ],
                             'jobDriver' => [
                                 '$ref' => '#/components/schemas/JobDriver',
+                                'required' => false,
+                            ],
+                            'displayReleaseVersion' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'fusion' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],

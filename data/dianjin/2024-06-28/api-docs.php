@@ -1473,6 +1473,269 @@
                 ],
             ],
         ],
+        'RunLibraryChatGeneration' => [
+            'path' => '/{workspaceId}/api/run/library/chat/generation',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'docIdList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'enableFollowUp' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'enableMultiQuery' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'enableOpenQa' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'followUpLlm' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'libraryId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'llmType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'multiQueryLlm' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'query' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'queryCriteria' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'and' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'boost' => [
+                                                    'type' => 'number',
+                                                    'format' => 'float',
+                                                    'required' => false,
+                                                ],
+                                                'key' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'operator' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'value' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'or' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'boost' => [
+                                                    'type' => 'number',
+                                                    'format' => 'float',
+                                                    'required' => false,
+                                                ],
+                                                'key' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'operator' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'value' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'rerankType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'stream' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'subQueryList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'textSearchParameter' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'limit' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'searchAnalyzerType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'topK' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'vectorSearchParameter' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'limit' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'withDocumentReference' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetHistoryListByBizType' => [
+            'path' => '/{workspaceId}/api/history/list',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'bizType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'bizId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'RunChatResultGeneration' => [
             'path' => '/{workspaceId}/api/run/chat/generation',
             'methods' => [
@@ -1480,6 +1743,7 @@
             ],
             'schemes' => [
                 'https',
+                'sse',
             ],
             'security' => [
                 [

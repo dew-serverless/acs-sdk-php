@@ -7490,7 +7490,7 @@
         ],
         [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'mongodb.aliyuncs.com',
+            'endpoint' => 'mongodb.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',

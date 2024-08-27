@@ -2117,7 +2117,7 @@
         ],
         [
             'regionId' => 'cn-beijing',
-            'endpoint' => 'cloudauth.aliyuncs.com',
+            'endpoint' => 'cloudauth.cn-beijing.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-chengdu',
@@ -2133,7 +2133,7 @@
         ],
         [
             'regionId' => 'cn-qingdao',
-            'endpoint' => 'cloudauth.aliyuncs.com',
+            'endpoint' => 'cloudauth.cn-qingdao.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',

@@ -2257,6 +2257,36 @@
                                     ],
                                 ],
                             ],
+                            'SourceOSSParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'RoleName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'BucketName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Prefix' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'LoadMode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'LoadFormat' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Delimiter' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -4270,6 +4300,36 @@
                                         'required' => false,
                                     ],
                                     'SaslPassword' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'SourceOSSParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'RoleName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'BucketName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Prefix' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'LoadMode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'LoadFormat' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Delimiter' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],

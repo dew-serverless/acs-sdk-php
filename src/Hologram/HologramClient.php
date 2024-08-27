@@ -39,6 +39,22 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise enableHiveAccessAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result rebalanceHoloWarehouse(array $arguments = [])
+ * @method \Http\Promise\Promise rebalanceHoloWarehouseAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteHoloWarehouse(array $arguments = [])
+ * @method \Http\Promise\Promise deleteHoloWarehouseAsync($arguments = [])
+ * @method \Dew\Acs\Result resumeHoloWarehouse(array $arguments = [])
+ * @method \Http\Promise\Promise resumeHoloWarehouseAsync($arguments = [])
+ * @method \Dew\Acs\Result suspendHoloWarehouse(array $arguments = [])
+ * @method \Http\Promise\Promise suspendHoloWarehouseAsync($arguments = [])
+ * @method \Dew\Acs\Result renameHoloWarehouse(array $arguments = [])
+ * @method \Http\Promise\Promise renameHoloWarehouseAsync($arguments = [])
+ * @method \Dew\Acs\Result scaleHoloWarehouse(array $arguments = [])
+ * @method \Http\Promise\Promise scaleHoloWarehouseAsync($arguments = [])
+ * @method \Dew\Acs\Result createHoloWarehouse(array $arguments = [])
+ * @method \Http\Promise\Promise createHoloWarehouseAsync($arguments = [])
+ * @method \Dew\Acs\Result restartHoloWarehouse(array $arguments = [])
+ * @method \Http\Promise\Promise restartHoloWarehouseAsync($arguments = [])
  */
 final class HologramClient extends AcsClient
 {

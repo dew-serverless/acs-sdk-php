@@ -347,6 +347,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise setMessageCallbackAsync($arguments = [])
  * @method \Dew\Acs\Result getMessageCallback(array $arguments = [])
  * @method \Http\Promise\Promise getMessageCallbackAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVodDomainMax95BpsData(array $arguments = [])
+ * @method \Http\Promise\Promise describeVodDomainMax95BpsDataAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVodSSLCertificateList(array $arguments = [])
+ * @method \Http\Promise\Promise describeVodSSLCertificateListAsync($arguments = [])
+ * @method \Dew\Acs\Result setVodDomainSSLCertificate(array $arguments = [])
+ * @method \Http\Promise\Promise setVodDomainSSLCertificateAsync($arguments = [])
  */
 final class VodClient extends AcsClient
 {

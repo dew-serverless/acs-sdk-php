@@ -99,6 +99,14 @@
         'defaultVersion' => '2018-01-01',
     ],
     [
+        'code' => 'hsm',
+        'style' => 'RPC',
+        'versions' => [
+            '2023-11-13',
+        ],
+        'defaultVersion' => '2023-11-13',
+    ],
+    [
         'code' => 'ImageSearch',
         'style' => 'ROA',
         'versions' => [
@@ -211,6 +219,14 @@
             '2021-07-01',
         ],
         'defaultVersion' => '2021-07-01',
+    ],
+    [
+        'code' => 'hcs-mgw',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-06-26',
+        ],
+        'defaultVersion' => '2024-06-26',
     ],
     [
         'code' => 'hbr',
@@ -2127,6 +2143,14 @@
         'defaultVersion' => '2023-07-01',
     ],
     [
+        'code' => 'ContactCenterAI',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-06-03',
+        ],
+        'defaultVersion' => '2024-06-03',
+    ],
+    [
         'code' => 'AiContent',
         'style' => 'RPC',
         'versions' => [
@@ -2149,5 +2173,29 @@
             '2024-06-28',
         ],
         'defaultVersion' => '2024-06-28',
+    ],
+    [
+        'code' => 'TrafficFxOpen',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-08-15',
+        ],
+        'defaultVersion' => '2024-08-15',
+    ],
+    [
+        'code' => 'PolardbAI',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-08-20',
+        ],
+        'defaultVersion' => '2024-08-20',
+    ],
+    [
+        'code' => 'QuanMiaoLightApp',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-08-01',
+        ],
+        'defaultVersion' => '2024-08-01',
     ],
 ];

@@ -155,6 +155,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeOutlineBindingAsync($arguments = [])
  * @method \Dew\Acs\Result describeRecommendIndex(array $arguments = [])
  * @method \Http\Promise\Promise describeRecommendIndexAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSQLTuningAdvices(array $arguments = [])
+ * @method \Http\Promise\Promise describeSQLTuningAdvicesAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceSSL(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceSSLAsync($arguments = [])
  * @method \Dew\Acs\Result describeInstanceSSL(array $arguments = [])
@@ -265,8 +267,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSlowSQLListAsync($arguments = [])
  * @method \Dew\Acs\Result describeSlowSQLHistoryList(array $arguments = [])
  * @method \Http\Promise\Promise describeSlowSQLHistoryListAsync($arguments = [])
- * @method \Dew\Acs\Result describeSQLTuningAdvices(array $arguments = [])
- * @method \Http\Promise\Promise describeSQLTuningAdvicesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRestorableTenants(array $arguments = [])
+ * @method \Http\Promise\Promise describeRestorableTenantsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInstanceSummary(array $arguments = [])
+ * @method \Http\Promise\Promise describeInstanceSummaryAsync($arguments = [])
+ * @method \Dew\Acs\Result describeBackupEncryptedString(array $arguments = [])
+ * @method \Http\Promise\Promise describeBackupEncryptedStringAsync($arguments = [])
+ * @method \Dew\Acs\Result describeStandbyCreateMode(array $arguments = [])
+ * @method \Http\Promise\Promise describeStandbyCreateModeAsync($arguments = [])
  */
 final class OceanBaseProClient extends AcsClient
 {

@@ -876,6 +876,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'FilterAppCodeForBackend',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeApiGroup' => [

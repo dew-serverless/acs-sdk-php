@@ -265,6 +265,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteFunctionResourceAsync($arguments = [])
  * @method \Dew\Acs\Result updateFunctionResource(array $arguments = [])
  * @method \Http\Promise\Promise updateFunctionResourceAsync($arguments = [])
+ * @method \Dew\Acs\Result createAppGroupCredentials(array $arguments = [])
+ * @method \Http\Promise\Promise createAppGroupCredentialsAsync($arguments = [])
  */
 final class OpenSearchClient extends AcsClient
 {

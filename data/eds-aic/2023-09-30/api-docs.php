@@ -278,6 +278,8 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
                     ],
                 ],
                 [
@@ -285,6 +287,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -704,6 +714,20 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceGroupIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],
@@ -1191,6 +1215,15 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 100,
                     ],
                 ],
             ],
@@ -1693,7 +1726,22 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'minItems' => 1,
+                        'minItems' => 0,
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceIdList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'minItems' => 0,
                         'maxItems' => 100,
                     ],
                 ],
@@ -2404,6 +2452,21 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'NetRedirectPolicy',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'NetRedirect' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'ListPolicyGroups' => [
@@ -2543,6 +2606,21 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NetRedirectPolicy',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'NetRedirect' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

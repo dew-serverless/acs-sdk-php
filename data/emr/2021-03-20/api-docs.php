@@ -3230,6 +3230,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetCluster' => [
@@ -7484,10 +7492,6 @@
             'endpoint' => 'emr.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'emr.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'emr.ap-southeast-3.aliyuncs.com',
         ],
@@ -7506,10 +7510,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'emr.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'emr.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',

@@ -2310,7 +2310,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2318,7 +2318,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2424,7 +2424,7 @@
             ],
             'parameters' => [
                 [
-                    'name' => 'RegionId',
+                    'name' => 'InstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2432,7 +2432,7 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

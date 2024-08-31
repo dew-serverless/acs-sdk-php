@@ -582,6 +582,15 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetManagerInfoByAuthCode' => [

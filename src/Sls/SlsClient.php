@@ -341,6 +341,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createTicketAsync($arguments = [])
  * @method \Dew\Acs\Result refreshToken(array $arguments = [])
  * @method \Http\Promise\Promise refreshTokenAsync($arguments = [])
+ * @method \Dew\Acs\Result createMetricStore(array $arguments = [])
+ * @method \Http\Promise\Promise createMetricStoreAsync($arguments = [])
+ * @method \Dew\Acs\Result listMetricStores(array $arguments = [])
+ * @method \Http\Promise\Promise listMetricStoresAsync($arguments = [])
+ * @method \Dew\Acs\Result updateMetricStore(array $arguments = [])
+ * @method \Http\Promise\Promise updateMetricStoreAsync($arguments = [])
+ * @method \Dew\Acs\Result getMetricStore(array $arguments = [])
+ * @method \Http\Promise\Promise getMetricStoreAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteMetricStore(array $arguments = [])
+ * @method \Http\Promise\Promise deleteMetricStoreAsync($arguments = [])
  */
 final class SlsClient extends AcsClient
 {

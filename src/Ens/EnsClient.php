@@ -7,6 +7,10 @@ namespace Dew\Acs\Ens;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result deleteStorageVolume(array $arguments = [])
+ * @method \Http\Promise\Promise deleteStorageVolumeAsync($arguments = [])
+ * @method \Dew\Acs\Result createStorageVolume(array $arguments = [])
+ * @method \Http\Promise\Promise createStorageVolumeAsync($arguments = [])
  * @method \Dew\Acs\Result deleteStorageGateway(array $arguments = [])
  * @method \Http\Promise\Promise deleteStorageGatewayAsync($arguments = [])
  * @method \Dew\Acs\Result createStorageGateway(array $arguments = [])
@@ -485,6 +489,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise preloadRegionSDGAsync($arguments = [])
  * @method \Dew\Acs\Result describeSDG(array $arguments = [])
  * @method \Http\Promise\Promise describeSDGAsync($arguments = [])
+ * @method \Dew\Acs\Result describeStorageVolume(array $arguments = [])
+ * @method \Http\Promise\Promise describeStorageVolumeAsync($arguments = [])
+ * @method \Dew\Acs\Result describeStorageGateway(array $arguments = [])
+ * @method \Http\Promise\Promise describeStorageGatewayAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

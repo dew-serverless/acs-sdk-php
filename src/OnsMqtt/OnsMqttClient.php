@@ -25,6 +25,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise querySessionByClientIdAsync($arguments = [])
  * @method \Dew\Acs\Result batchQuerySessionByClientIds(array $arguments = [])
  * @method \Http\Promise\Promise batchQuerySessionByClientIdsAsync($arguments = [])
+ * @method \Dew\Acs\Result closeConnection(array $arguments = [])
+ * @method \Http\Promise\Promise closeConnectionAsync($arguments = [])
  * @method \Dew\Acs\Result getDeviceCredential(array $arguments = [])
  * @method \Http\Promise\Promise getDeviceCredentialAsync($arguments = [])
  * @method \Dew\Acs\Result refreshDeviceCredential(array $arguments = [])

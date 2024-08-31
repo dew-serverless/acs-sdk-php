@@ -217,8 +217,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeAlertSceneByEventAsync($arguments = [])
  * @method \Dew\Acs\Result deleteWhiteRuleList(array $arguments = [])
  * @method \Http\Promise\Promise deleteWhiteRuleListAsync($arguments = [])
- * @method \Dew\Acs\Result describeJobStatus(array $arguments = [])
- * @method \Http\Promise\Promise describeJobStatusAsync($arguments = [])
  */
 final class CloudSiemClient extends AcsClient
 {

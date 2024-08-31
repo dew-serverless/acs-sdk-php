@@ -31,8 +31,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise runEvaluationAsync($arguments = [])
  * @method \Dew\Acs\Result listEvaluationMetadata(array $arguments = [])
  * @method \Http\Promise\Promise listEvaluationMetadataAsync($arguments = [])
- * @method \Dew\Acs\Result listEvaluationScoreHistory(array $arguments = [])
- * @method \Http\Promise\Promise listEvaluationScoreHistoryAsync($arguments = [])
  * @method \Dew\Acs\Result listEvaluationMetricDetails(array $arguments = [])
  * @method \Http\Promise\Promise listEvaluationMetricDetailsAsync($arguments = [])
  * @method \Dew\Acs\Result listEvaluationResults(array $arguments = [])

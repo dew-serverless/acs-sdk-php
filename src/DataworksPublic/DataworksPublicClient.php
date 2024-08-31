@@ -43,6 +43,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise changeResourceManagerResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result listMeasureData(array $arguments = [])
  * @method \Http\Promise\Promise listMeasureDataAsync($arguments = [])
+ * @method \Dew\Acs\Result listTables(array $arguments = [])
+ * @method \Http\Promise\Promise listTablesAsync($arguments = [])
  * @method \Dew\Acs\Result getMetaDBInfo(array $arguments = [])
  * @method \Http\Promise\Promise getMetaDBInfoAsync($arguments = [])
  * @method \Dew\Acs\Result getMetaDBTableList(array $arguments = [])

@@ -161,6 +161,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInternetOpenIpAsync($arguments = [])
  * @method \Dew\Acs\Result describeInternetTrafficTrend(array $arguments = [])
  * @method \Http\Promise\Promise describeInternetTrafficTrendAsync($arguments = [])
+ * @method \Dew\Acs\Result describeUserBuyVersion(array $arguments = [])
+ * @method \Http\Promise\Promise describeUserBuyVersionAsync($arguments = [])
+ * @method \Dew\Acs\Result createSlsLogDispatch(array $arguments = [])
+ * @method \Http\Promise\Promise createSlsLogDispatchAsync($arguments = [])
  * @method \Dew\Acs\Result releasePostInstance(array $arguments = [])
  * @method \Http\Promise\Promise releasePostInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result describeAssetRiskList(array $arguments = [])
@@ -209,8 +213,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDefaultIPSConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyObjectGroupOperation(array $arguments = [])
  * @method \Http\Promise\Promise modifyObjectGroupOperationAsync($arguments = [])
- * @method \Dew\Acs\Result createSlsLogDispatch(array $arguments = [])
- * @method \Http\Promise\Promise createSlsLogDispatchAsync($arguments = [])
  */
 final class CloudfwClient extends AcsClient
 {

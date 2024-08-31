@@ -1,10 +1,11 @@
 ACS_ENDPOINT ?= https://api.alibabacloud.com
+ACS_PRODUCTS ?=
 PROTOC ?= protoc
 PROTO_SRC_DIR = protobuf
 PROTO_GEN_DIR = src
 
 fetch-meta:
-	ACS_ENDPOINT=$(ACS_ENDPOINT) php build/fetch-meta.php
+	ACS_ENDPOINT=$(ACS_ENDPOINT) ACS_PRODUCTS=$(ACS_PRODUCTS) php build/fetch-meta.php
 
 build-clients:
 	php build/build-clients.php

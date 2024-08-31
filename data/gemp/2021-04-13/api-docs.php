@@ -8112,6 +8112,16 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'pageNumber' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'pageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
                             'serviceGroupName' => [
                                 'type' => 'string',
                                 'required' => false,

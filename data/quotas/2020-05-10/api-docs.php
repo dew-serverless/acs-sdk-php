@@ -1927,10 +1927,6 @@
             'endpoint' => 'quotas.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'quotas.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-east-1',
             'endpoint' => 'quotas.aliyuncs.com',
         ],

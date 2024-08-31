@@ -51,6 +51,63 @@
                 ],
             ],
         ],
+        'CertNoThreeElementVerification' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AuthCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CertName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CertNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CertPicture',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Mask',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'GetUAIDApplyTokenSign' => [
             'methods' => [
                 'post',
@@ -1376,10 +1433,6 @@
         ],
         [
             'regionId' => 'eu-central-1',
-            'endpoint' => 'dytnsapi.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
             'endpoint' => 'dytnsapi.aliyuncs.com',
         ],
         [

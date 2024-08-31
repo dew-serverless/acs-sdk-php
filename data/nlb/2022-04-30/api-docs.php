@@ -1453,7 +1453,7 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'minimum' => '1',
+                        'minimum' => '10',
                         'maximum' => '3600',
                     ],
                 ],
@@ -1885,7 +1885,7 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'minimum' => '1',
+                        'minimum' => '10',
                         'maximum' => '3600',
                     ],
                 ],
@@ -2178,23 +2178,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NextToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MaxResults',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
                     ],
                 ],
                 [

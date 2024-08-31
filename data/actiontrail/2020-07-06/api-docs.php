@@ -1069,10 +1069,6 @@
             'endpoint' => 'actiontrail.me-east-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'actiontrail.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'actiontrail.cn-shanghai-finance-1.aliyuncs.com',
         ],

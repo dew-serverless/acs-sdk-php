@@ -1758,6 +1758,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'BindingType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetExternalSAMLIdentityProvider' => [

@@ -5789,6 +5789,7 @@
                             'ap-southeast-7',
                             'cn-wulanchabu',
                             'cn-zhengzhou-jva',
+                            'cn-wuhan-lr',
                         ],
                     ],
                 ],
@@ -6427,6 +6428,14 @@
                     'schema' => [
                         'type' => 'number',
                         'format' => 'double',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DtsRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

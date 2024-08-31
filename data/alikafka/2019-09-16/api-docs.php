@@ -3624,5 +3624,9 @@
             'regionId' => 'me-central-1',
             'endpoint' => 'alikafka.me-central-1.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'alikafka.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
     ],
 ];

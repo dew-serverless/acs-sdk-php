@@ -979,9 +979,417 @@
                 [
                     'name' => 'body',
                     'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
-                        '$ref' => '#/components/schemas/App',
+                        'type' => 'object',
                         'required' => false,
+                        'properties' => [
+                            'autoSwitch' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'networkType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'schema' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'tables' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                    ],
+                                    'indexes' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'filterFields' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                            'searchFields' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'routeField' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'routeFieldValues' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'secondRouteField' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ttlField' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'name' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'ttl' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'indexSortConfig' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'field' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'direction' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'name' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'schemas' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'tables' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                        'indexes' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'filterFields' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                                'searchFields' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'routeField' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'routeFieldValues' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                        'secondRouteField' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ttlField' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'ttl' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'indexSortConfig' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'field' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'direction' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'firstRanks' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'description' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'active' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'meta' => [
+                                            'type' => 'any',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'secondRanks' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'meta' => [
+                                            'type' => 'any',
+                                            'required' => false,
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'description' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'active' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'dataSources' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'tableName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'fields' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                        'plugins' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                        'keyField' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'schemaName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'parameters' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'summaries' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'meta' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'field' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'len' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                    ],
+                                                    'element' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'ellipsis' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'snippet' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'fetchFields' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'queryProcessors' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'domain' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'category' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'processors' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                        'indexes' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                        'active' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'cluster' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'maxTimeoutMS' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'maxQueryClauseLength' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'domain' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'name' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'category' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'functions' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -6829,6 +7237,55 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateAppGroupCredentials' => [
+            'path' => '/v4/openapi/app-groups/{appGroupIdentity}/credentials',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'dryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'appGroupIdentity',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

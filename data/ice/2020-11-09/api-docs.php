@@ -6,7 +6,105 @@
         'version' => '2020-11-09',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'AIAgentRuntimeConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'VoiceChat' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AgentUserId' => [
+                                'type' => 'string',
+                            ],
+                            'ChannelId' => [
+                                'type' => 'string',
+                            ],
+                            'AuthToken' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'AvatarChat3D' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AgentUserId' => [
+                                'type' => 'string',
+                            ],
+                            'ChannelId' => [
+                                'type' => 'string',
+                            ],
+                            'AuthToken' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'AIAgentTemplateConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'VoiceChat' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AppId' => [
+                                'type' => 'string',
+                            ],
+                            'VoiceId' => [
+                                'type' => 'string',
+                            ],
+                            'Greeting' => [
+                                'type' => 'string',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                            ],
+                            'GracefulShutdown' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'AvatarChat3D' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AppId' => [
+                                'type' => 'string',
+                            ],
+                            'VoiceId' => [
+                                'type' => 'string',
+                            ],
+                            'Greeting' => [
+                                'type' => 'string',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                            ],
+                            'GracefulShutdown' => [
+                                'type' => 'boolean',
+                            ],
+                            'AvatarId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'MessageChat' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AppId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'apis' => [
         'CreateUploadMedia' => [
@@ -461,6 +559,41 @@
                 ],
             ],
         ],
+        'ListSearchLib' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'CreateSearchIndex' => [
             'methods' => [
                 'post',
@@ -801,6 +934,47 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'SearchIndexJobRerun' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SearchLibName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MediaIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Task',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4713,8 +4887,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -7722,6 +7896,55 @@
             'parameters' => [
                 [
                     'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SubmitSportsHighlightsJob' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InputConfig',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OutputConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserData',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

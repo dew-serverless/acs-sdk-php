@@ -6479,10 +6479,6 @@
             'endpoint' => 'nas.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'nas.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-east-1',
             'endpoint' => 'nas.me-east-1.aliyuncs.com',
         ],

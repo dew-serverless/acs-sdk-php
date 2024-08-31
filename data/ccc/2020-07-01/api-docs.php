@@ -4228,6 +4228,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'FlashSmsVariables',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'MonitorCall' => [

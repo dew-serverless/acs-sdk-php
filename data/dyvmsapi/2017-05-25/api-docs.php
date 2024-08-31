@@ -3057,9 +3057,5 @@
             'regionId' => 'ap-southeast-2',
             'endpoint' => 'dyvmsapi.aliyuncs.com',
         ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'dyvmsapi.aliyuncs.com',
-        ],
     ],
 ];

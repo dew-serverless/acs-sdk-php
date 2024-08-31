@@ -8549,7 +8549,16 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Bandwidth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -8642,6 +8651,14 @@
                     ],
                 ],
                 [
+                    'name' => 'BandwidthGuaranteeMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TrafficQosQueues',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -8657,6 +8674,10 @@
                                     'required' => false,
                                 ],
                                 'RemainBandwidthPercent' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Bandwidth' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -8676,7 +8697,7 @@
                                 ],
                             ],
                         ],
-                        'maxItems' => 4,
+                        'maxItems' => 11,
                     ],
                 ],
             ],
@@ -8826,6 +8847,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Bandwidth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -9058,6 +9088,27 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EffectiveBandwidthFilter',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Gte' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'Lte' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -9916,10 +9967,10 @@
                     'style' => 'repeatList',
                     'schema' => [
                         'type' => 'array',
-                        'required' => false,
+                        'required' => true,
                         'items' => [
                             'type' => 'string',
-                            'required' => false,
+                            'required' => true,
                         ],
                         'maxItems' => 1000,
                     ],
@@ -9991,7 +10042,7 @@
                         'required' => false,
                         'items' => [
                             'type' => 'string',
-                            'required' => false,
+                            'required' => true,
                         ],
                         'maxItems' => 1000,
                     ],
@@ -11537,10 +11588,6 @@
         ],
         [
             'regionId' => 'me-east-1',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [

@@ -3214,6 +3214,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PlannedFlashingOffTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyDBNodesClass' => [
@@ -3299,6 +3307,14 @@
                 ],
                 [
                     'name' => 'SubCategory',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PlannedFlashingOffTime',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5515,6 +5531,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EnableGlobalDomainName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteGlobalDatabaseNetwork' => [
@@ -5690,7 +5714,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableGlobalDomainName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -7656,6 +7688,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'DBNodeId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDBClusterMonitor' => [
@@ -8409,10 +8449,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'polardb.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'polardb.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',

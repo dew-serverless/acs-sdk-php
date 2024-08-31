@@ -8534,10 +8534,6 @@
             'endpoint' => 'cs.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'cs.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-east-1',
             'endpoint' => 'cs.me-east-1.aliyuncs.com',
         ],

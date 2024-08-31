@@ -2991,6 +2991,33 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RelationalTableFilter',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'CollectionMetadataField' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TableField' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TableName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Condition' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'UpdateCollectionDataMetadata' => [
@@ -5488,7 +5515,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DataSourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -5694,7 +5729,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DataSourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -7273,7 +7316,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -7281,7 +7324,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -7529,6 +7572,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AccountType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Super',
+                            'Normal',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeAccounts' => [
@@ -7561,6 +7616,19 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AccountType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Super',
+                            'Normal',
+                            'All',
+                        ],
                     ],
                 ],
             ],
@@ -10991,7 +11059,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],

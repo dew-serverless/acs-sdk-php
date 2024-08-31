@@ -10888,9 +10888,5 @@
             'regionId' => 'ap-southeast-2',
             'endpoint' => 'aiccs.aliyuncs.com',
         ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'aiccs.aliyuncs.com',
-        ],
     ],
 ];

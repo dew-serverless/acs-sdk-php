@@ -1321,10 +1321,6 @@
             'endpoint' => 'rocketmq.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'rocketmq.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-east-1',
             'endpoint' => 'rocketmq.me-east-1.aliyuncs.com',
         ],

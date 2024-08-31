@@ -6,6 +6,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/ProductStripper.php';
 require_once __DIR__.'/ApiDocsStripper.php';
 
+use Dew\Acs\Arr;
 use Symfony\Component\VarExporter\VarExporter;
 
 function getEndpoint(): string
@@ -179,7 +180,10 @@ function updateProductList(string $endpoint): void
     }
 }
 
-function buildFromProducts(): void
+/**
+ * @param  string[]  $codes
+ */
+function buildFromProducts(array $codes = []): void
 {
     $filename = __DIR__.'/../data/products.php';
 
@@ -193,14 +197,21 @@ function buildFromProducts(): void
         throw new RuntimeException('Product data is expected to be a list.');
     }
 
+    /** @var array<string, string[]> */
+    $normalized = [];
     foreach ($products as $product) {
-        foreach ($product['versions'] as $version) {
-            printf('=> Processing %s %s'.PHP_EOL, $product['code'], $version);
+        $normalized[$product['code']] = $product['versions'];
+    }
 
-            $docs = getApiDocs($product['code'], $version);
+    $filtered = $codes === [] ? $normalized : Arr::only($normalized, $codes);
+    foreach ($filtered as $product => $versions) {
+        foreach ($versions as $version) {
+            printf('=> Processing %s %s'.PHP_EOL, $product, $version);
+
+            $docs = getApiDocs($product, $version);
             $stripped = ApiDocsStripper::strip($docs);
 
-            writeToPhp($product['code'], $version, $stripped);
+            writeToPhp($product, $version, $stripped);
         }
     }
 }
@@ -217,7 +228,7 @@ function buildFromChangeset(string $product, string $version, string $style, arr
     writeToPhp($product, $version, $docs);
 }
 
-function main(): int
+function fetchAll(): void
 {
     echo '=> Updating product list'.PHP_EOL;
     updateProductList(withEndpoint('/meta/v1/products.json'));
@@ -242,6 +253,22 @@ function main(): int
         'UnbindInstance2Vpc',
         'UpdateInstance',
     ]);
+}
+
+/**
+ * @param  string[]  $products
+ */
+function fetch(array $products): void
+{
+    buildFromProducts($products);
+}
+
+function main(): int
+{
+    $products = getenv('ACS_PRODUCTS') ?: '';
+    $products = $products === '' ? [] : (explode(',', $products) ?: []);
+
+    $products === [] ? fetchAll() : fetch($products);
 
     echo '== Process completed.'.PHP_EOL;
 

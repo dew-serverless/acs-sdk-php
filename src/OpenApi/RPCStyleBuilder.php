@@ -93,7 +93,7 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
         }
 
         return match ($parameter->style) {
-            'repeatList' => $this->encodeRepeatListStyle(
+            'repeatList', 'flat' => $this->encodeRepeatListStyle(
                 array_is_list($value) ? $this->shiftKey($value, 1) : $value,
                 $parameter->name
             ),

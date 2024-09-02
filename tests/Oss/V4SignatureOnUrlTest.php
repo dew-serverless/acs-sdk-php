@@ -59,8 +59,8 @@ final class V4SignatureOnUrlTest extends TestCase
         $this->assertStringContainsString('x-oss-security-token=mytoken', $uri);
     }
 
-    #[TestWith(['https://example.com?foo', 'foo='])]
-    #[TestWith(['https://example.com?foo=', 'foo='])]
+    #[TestWith(['https://example.com?foo', 'foo'])]
+    #[TestWith(['https://example.com?foo=', 'foo'])]
     #[TestWith(['https://example.com?foo=bar', 'foo=bar'])]
     public function test_sign_request_existing_query(string $uri, string $expected): void
     {

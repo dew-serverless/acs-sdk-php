@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Dew\Acs\OpenApi;
 
+use GuzzleHttp\Psr7\Query;
 use InvalidArgumentException;
 use Override;
 use RuntimeException;
@@ -69,7 +70,7 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
         if ($formData !== []) {
             $method = 'POST';
             $headers['Content-Type'] = 'application/x-www-form-urlencoded';
-            $body = http_build_query($formData);
+            $body = Query::build($formData, PHP_QUERY_RFC1738);
         }
 
         return new ApiData(
@@ -78,7 +79,7 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
             method: $method,
             path: '/',
             headers: $headers,
-            query: http_build_query($query, encoding_type: PHP_QUERY_RFC3986),
+            query: Query::build($query),
             body: $body
         );
     }

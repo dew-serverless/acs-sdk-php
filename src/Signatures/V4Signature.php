@@ -8,6 +8,7 @@ use DateTimeInterface;
 use DateTimeZone;
 use Dew\Acs\ConfigChecker;
 use Dew\Acs\Str;
+use GuzzleHttp\Psr7\Query;
 use Override;
 use Psr\Http\Message\RequestInterface;
 
@@ -123,13 +124,13 @@ final class V4Signature implements SignsRequest
 
     public function buildCanonicalQueryString(RequestInterface $request): string
     {
-        $query = [];
-        parse_str($request->getUri()->getQuery(), $query);
+        $query = Query::parse($request->getUri()->getQuery());
 
         $sorted = [];
         foreach ($query as $key => $value) {
             $key = rawurlencode((string) $key);
-            $value = rawurlencode(is_array($value) ? implode('&', $value) : $value);
+            $value = is_array($value) ? implode('&', $value) : $value;
+            $value = is_string($value) ? rawurlencode($value) : '';
             $sorted[$key] = $value;
         }
         ksort($sorted);

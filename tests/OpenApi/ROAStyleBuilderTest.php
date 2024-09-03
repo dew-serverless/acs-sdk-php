@@ -303,7 +303,7 @@ final class ROAStyleBuilderTest extends TestCase
         $api = $this->makeApi(['path' => '/?foo']);
         $builder = new ROAStyleBuilder($docs, $api);
         $data = $builder->build([]);
-        $this->assertSame('foo=', $data->query);
+        $this->assertSame('foo', $data->query);
     }
 
     public function test_query_resolution_nullable(): void

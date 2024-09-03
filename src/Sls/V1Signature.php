@@ -8,6 +8,7 @@ use DateTimeImmutable;
 use DateTimeZone;
 use Dew\Acs\ConfigChecker;
 use Dew\Acs\Signatures\SignsRequest;
+use GuzzleHttp\Psr7\Query;
 use Override;
 use Psr\Http\Message\RequestInterface;
 
@@ -112,8 +113,7 @@ final readonly class V1Signature implements SignsRequest
 
     public function getSortedQuery(RequestInterface $request): string
     {
-        $query = [];
-        parse_str($request->getUri()->getQuery(), $query);
+        $query = Query::parse($request->getUri()->getQuery());
         ksort($query);
 
         $result = '';

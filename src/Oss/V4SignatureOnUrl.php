@@ -9,6 +9,7 @@ use DateTimeZone;
 use Dew\Acs\ConfigChecker;
 use Dew\Acs\Signatures\NeedsArguments;
 use Dew\Acs\Signatures\SignsRequest;
+use GuzzleHttp\Psr7\Query;
 use Override;
 use Psr\Http\Message\RequestInterface;
 
@@ -47,7 +48,7 @@ final class V4SignatureOnUrl implements SignsRequest, NeedsArguments
 
         $now = new DateTimeImmutable('now', new DateTimeZone('UTC'));
 
-        $query = $this->getQuery($request->getUri()->getQuery());
+        $query = Query::parse($request->getUri()->getQuery());
         $query['x-oss-signature-version'] = $this->signer::VERSION;
         $query['x-oss-credential'] = sprintf('%s/%s',
             $config['credentials']['key'],
@@ -62,9 +63,7 @@ final class V4SignatureOnUrl implements SignsRequest, NeedsArguments
         }
 
         $request = $request->withUri(
-            $request->getUri()->withQuery(
-                http_build_query($query, encoding_type: PHP_QUERY_RFC3986)
-            )
+            $request->getUri()->withQuery(Query::build($query))
         );
 
         $stringToSign = $this->signer->buildStringToSign(
@@ -76,21 +75,8 @@ final class V4SignatureOnUrl implements SignsRequest, NeedsArguments
         );
 
         return $request = $request->withUri(
-            $request->getUri()->withQuery(
-                http_build_query($query, encoding_type: PHP_QUERY_RFC3986)
-            )
+            $request->getUri()->withQuery(Query::build($query))
         );
-    }
-
-    /**
-     * @return array<int|string, mixed[]|string>
-     */
-    private function getQuery(string $query): array
-    {
-        $result = [];
-        parse_str($query, $result);
-
-        return $result;
     }
 
     /**

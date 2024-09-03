@@ -90,14 +90,16 @@ final class RPCStyleBuilderTest extends TestCase
         $this->assertSame('page=1', $argument->query);
     }
 
-    public function test_query_resolution_repeat_list_style(): void
+    #[TestWith(['repeatList'], 'repeat list')]
+    #[TestWith(['flat'], 'flat')]
+    public function test_query_resolution_style(string $style): void
     {
         $docs = $this->makeApiDocs();
         $api = $this->makeApi([
             'parameters' => [[
                 'name' => 'tag',
                 'in' => 'query',
-                'style' => 'repeatList',
+                'style' => $style,
                 'schema' => [
                     'type' => 'array',
                     'items' => [

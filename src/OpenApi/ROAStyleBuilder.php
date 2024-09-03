@@ -7,6 +7,7 @@ namespace Dew\Acs\OpenApi;
 use Dew\Acs\JsonEncoder;
 use Dew\Acs\Str;
 use Dew\Acs\XmlEncoder;
+use GuzzleHttp\Psr7\Query;
 use InvalidArgumentException;
 use Override;
 use RuntimeException;
@@ -131,7 +132,7 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
             method: strtoupper($this->api->methods[0]),
             headers: $headers,
             path: $path,
-            query: http_build_query($query, encoding_type: PHP_QUERY_RFC3986),
+            query: Query::build($query),
             body: $body
         );
     }
@@ -147,7 +148,7 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
         $query = [];
 
         if (isset($parsed['query'])) {
-            parse_str($parsed['query'], $query);
+            $query = Query::parse($parsed['query']);
         }
 
         return [$path, $query];

@@ -9,6 +9,7 @@ use DateTimeZone;
 use Dew\Acs\ConfigChecker;
 use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
+use GuzzleHttp\Psr7\Query;
 use Override;
 use Psr\Http\Message\RequestInterface;
 use RuntimeException;
@@ -119,8 +120,7 @@ final class V3Signature implements SignsRequest, NeedsApiContext
 
     public function getCanonicalQueryString(RequestInterface $request): string
     {
-        $query = [];
-        parse_str($request->getUri()->getQuery(), $query);
+        $query = Query::parse($request->getUri()->getQuery());
 
         if ($query === []) {
             return '';
@@ -132,10 +132,10 @@ final class V3Signature implements SignsRequest, NeedsApiContext
         $delimiter = '';
 
         foreach ($query as $key => $value) {
-            $key = (string) $key;
+            $key = rawurlencode((string) $key);
             $value = is_array($value) ? implode(',', $value) : $value;
-            $pair = rawurlencode($key).'='.rawurlencode($value);
-            $result .= $delimiter.$pair;
+            $value = is_string($value) ? rawurlencode($value) : '';
+            $result .= $delimiter.$key.'='.$value;
             $delimiter = '&';
         }
 

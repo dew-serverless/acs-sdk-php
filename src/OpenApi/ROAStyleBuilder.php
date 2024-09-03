@@ -132,7 +132,7 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
             method: strtoupper($this->api->methods[0]),
             headers: $headers,
             path: $path,
-            query: Query::build($query, PHP_QUERY_RFC3986),
+            query: Query::build($query),
             body: $body
         );
     }

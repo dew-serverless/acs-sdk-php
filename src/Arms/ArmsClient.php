@@ -43,6 +43,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise searchTracesAsync($arguments = [])
  * @method \Dew\Acs\Result searchTracesByPage(array $arguments = [])
  * @method \Http\Promise\Promise searchTracesByPageAsync($arguments = [])
+ * @method \Dew\Acs\Result getAgentDownloadUrlV2(array $arguments = [])
+ * @method \Http\Promise\Promise getAgentDownloadUrlV2Async($arguments = [])
  * @method \Dew\Acs\Result getAgentDownloadUrl(array $arguments = [])
  * @method \Http\Promise\Promise getAgentDownloadUrlAsync($arguments = [])
  * @method \Dew\Acs\Result describeTraceLicenseKey(array $arguments = [])
@@ -189,8 +191,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createPrometheusMonitoringAsync($arguments = [])
  * @method \Dew\Acs\Result appendInstancesToPrometheusGlobalView(array $arguments = [])
  * @method \Http\Promise\Promise appendInstancesToPrometheusGlobalViewAsync($arguments = [])
- * @method \Dew\Acs\Result addPrometheusInstance(array $arguments = [])
- * @method \Http\Promise\Promise addPrometheusInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result addPrometheusInstance(array $arguments = []) {@deprecated 2019-08-08}
+ * @method \Http\Promise\Promise addPrometheusInstanceAsync($arguments = []) {@deprecated 2019-08-08}
  * @method \Dew\Acs\Result addPrometheusGlobalViewByAliClusterIds(array $arguments = [])
  * @method \Http\Promise\Promise addPrometheusGlobalViewByAliClusterIdsAsync($arguments = [])
  * @method \Dew\Acs\Result addPrometheusGlobalView(array $arguments = [])
@@ -255,8 +257,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listDashboardsByNameAsync($arguments = [])
  * @method \Dew\Acs\Result getAuthToken(array $arguments = [])
  * @method \Http\Promise\Promise getAuthTokenAsync($arguments = [])
- * @method \Dew\Acs\Result getClusterAllUrl(array $arguments = [])
- * @method \Http\Promise\Promise getClusterAllUrlAsync($arguments = [])
+ * @method \Dew\Acs\Result getClusterAllUrl(array $arguments = []) {@deprecated 2019-08-08}
+ * @method \Http\Promise\Promise getClusterAllUrlAsync($arguments = []) {@deprecated 2019-08-08}
  * @method \Dew\Acs\Result getCloudClusterAllUrl(array $arguments = []) {@deprecated 2019-08-08}
  * @method \Http\Promise\Promise getCloudClusterAllUrlAsync($arguments = []) {@deprecated 2019-08-08}
  * @method \Dew\Acs\Result listPrometheusInstances(array $arguments = [])

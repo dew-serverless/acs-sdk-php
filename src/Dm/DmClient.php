@@ -89,6 +89,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateUserAsync($arguments = [])
  * @method \Dew\Acs\Result getUser(array $arguments = [])
  * @method \Http\Promise\Promise getUserAsync($arguments = [])
+ * @method \Dew\Acs\Result createUserSuppression(array $arguments = [])
+ * @method \Http\Promise\Promise createUserSuppressionAsync($arguments = [])
  */
 final class DmClient extends AcsClient
 {

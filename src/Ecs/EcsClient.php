@@ -703,6 +703,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise exportSnapshotAsync($arguments = []) {@deprecated 2014-05-26}
  * @method \Dew\Acs\Result releasePublicIpAddress(array $arguments = [])
  * @method \Http\Promise\Promise releasePublicIpAddressAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDiskDefaultKMSKeyId(array $arguments = [])
+ * @method \Http\Promise\Promise describeDiskDefaultKMSKeyIdAsync($arguments = [])
+ * @method \Dew\Acs\Result resetDiskDefaultKMSKeyId(array $arguments = [])
+ * @method \Http\Promise\Promise resetDiskDefaultKMSKeyIdAsync($arguments = [])
+ * @method \Dew\Acs\Result disableDiskEncryptionByDefault(array $arguments = [])
+ * @method \Http\Promise\Promise disableDiskEncryptionByDefaultAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyDiskDefaultKMSKeyId(array $arguments = [])
+ * @method \Http\Promise\Promise modifyDiskDefaultKMSKeyIdAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDiskEncryptionByDefaultStatus(array $arguments = [])
+ * @method \Http\Promise\Promise describeDiskEncryptionByDefaultStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result enableDiskEncryptionByDefault(array $arguments = [])
+ * @method \Http\Promise\Promise enableDiskEncryptionByDefaultAsync($arguments = [])
  */
 final class EcsClient extends AcsClient
 {

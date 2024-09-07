@@ -13,6 +13,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise runCompletionMessageAsync($arguments = [])
  * @method \Dew\Acs\Result analyzeConversation(array $arguments = [])
  * @method \Http\Promise\Promise analyzeConversationAsync($arguments = [])
+ * @method \Dew\Acs\Result createConversationAnalysisTask(array $arguments = [])
+ * @method \Http\Promise\Promise createConversationAnalysisTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getTaskResult(array $arguments = [])
+ * @method \Http\Promise\Promise getTaskResultAsync($arguments = [])
  */
 final class ContactCenterAIClient extends AcsClient
 {

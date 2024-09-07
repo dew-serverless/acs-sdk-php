@@ -29,8 +29,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createFlowAsync($arguments = [])
  * @method \Dew\Acs\Result isvGetAppId(array $arguments = [])
  * @method \Http\Promise\Promise isvGetAppIdAsync($arguments = [])
- * @method \Dew\Acs\Result getPreValidatePhoneId(array $arguments = [])
- * @method \Http\Promise\Promise getPreValidatePhoneIdAsync($arguments = [])
  * @method \Dew\Acs\Result chatappBindWaba(array $arguments = [])
  * @method \Http\Promise\Promise chatappBindWabaAsync($arguments = [])
  * @method \Dew\Acs\Result getPermissionByCode(array $arguments = [])
@@ -129,6 +127,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise enableWhatsappROIMetricAsync($arguments = [])
  * @method \Dew\Acs\Result getChatappTemplateMetric(array $arguments = [])
  * @method \Http\Promise\Promise getChatappTemplateMetricAsync($arguments = [])
+ * @method \Dew\Acs\Result getPreValidatePhoneId(array $arguments = [])
+ * @method \Http\Promise\Promise getPreValidatePhoneIdAsync($arguments = [])
  */
 final class CamsClient extends AcsClient
 {

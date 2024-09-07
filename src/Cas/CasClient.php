@@ -79,14 +79,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise encryptAsync($arguments = []) {@since 2020-04-07}
  * @method \Dew\Acs\Result decrypt(array $arguments = []) {@since 2020-04-07}
  * @method \Http\Promise\Promise decryptAsync($arguments = []) {@since 2020-04-07}
- * @method \Dew\Acs\Result uploadPCACert(array $arguments = []) {@since 2020-04-07}
- * @method \Http\Promise\Promise uploadPCACertAsync($arguments = []) {@since 2020-04-07}
  * @method \Dew\Acs\Result deletePCACert(array $arguments = []) {@since 2020-04-07}
  * @method \Http\Promise\Promise deletePCACertAsync($arguments = []) {@since 2020-04-07}
- * @method \Dew\Acs\Result createWHClientCertificate(array $arguments = []) {@since 2020-04-07}
- * @method \Http\Promise\Promise createWHClientCertificateAsync($arguments = []) {@since 2020-04-07}
- * @method \Dew\Acs\Result revokeWHClientCertificate(array $arguments = []) {@since 2020-04-07}
- * @method \Http\Promise\Promise revokeWHClientCertificateAsync($arguments = []) {@since 2020-04-07}
  * @method \Dew\Acs\Result listCsr(array $arguments = []) {@since 2020-04-07}
  * @method \Http\Promise\Promise listCsrAsync($arguments = []) {@since 2020-04-07}
  * @method \Dew\Acs\Result createCsr(array $arguments = []) {@since 2020-04-07}

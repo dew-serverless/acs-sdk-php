@@ -93,6 +93,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeRouteEntryListAsync($arguments = [])
  * @method \Dew\Acs\Result describeRouteTableList(array $arguments = [])
  * @method \Http\Promise\Promise describeRouteTableListAsync($arguments = [])
+ * @method \Dew\Acs\Result listVpcPublishedRouteEntries(array $arguments = [])
+ * @method \Http\Promise\Promise listVpcPublishedRouteEntriesAsync($arguments = [])
+ * @method \Dew\Acs\Result publishVpcRouteEntries(array $arguments = [])
+ * @method \Http\Promise\Promise publishVpcRouteEntriesAsync($arguments = [])
+ * @method \Dew\Acs\Result withdrawVpcPublishedRouteEntries(array $arguments = [])
+ * @method \Http\Promise\Promise withdrawVpcPublishedRouteEntriesAsync($arguments = [])
  * @method \Dew\Acs\Result createVpcPrefixList(array $arguments = [])
  * @method \Http\Promise\Promise createVpcPrefixListAsync($arguments = [])
  * @method \Dew\Acs\Result retryVpcPrefixListAssociation(array $arguments = [])
@@ -775,12 +781,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise moveResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
- * @method \Dew\Acs\Result listVpcPublishedRouteEntries(array $arguments = [])
- * @method \Http\Promise\Promise listVpcPublishedRouteEntriesAsync($arguments = [])
- * @method \Dew\Acs\Result publishVpcRouteEntries(array $arguments = [])
- * @method \Http\Promise\Promise publishVpcRouteEntriesAsync($arguments = [])
- * @method \Dew\Acs\Result withdrawVpcPublishedRouteEntries(array $arguments = [])
- * @method \Http\Promise\Promise withdrawVpcPublishedRouteEntriesAsync($arguments = [])
  */
 final class VpcClient extends AcsClient
 {

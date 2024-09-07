@@ -537,10 +537,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listCheckItemAsync($arguments = [])
  * @method \Dew\Acs\Result startBaselineSecurityCheck(array $arguments = []) {@deprecated 2018-12-03}
  * @method \Http\Promise\Promise startBaselineSecurityCheckAsync($arguments = []) {@deprecated 2018-12-03}
- * @method \Dew\Acs\Result modifyRiskCheckStatus(array $arguments = []) {@deprecated 2018-12-03}
- * @method \Http\Promise\Promise modifyRiskCheckStatusAsync($arguments = []) {@deprecated 2018-12-03}
- * @method \Dew\Acs\Result modifyRiskSingleResultStatus(array $arguments = []) {@deprecated 2018-12-03}
- * @method \Http\Promise\Promise modifyRiskSingleResultStatusAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result modifySecurityCheckScheduleConfig(array $arguments = []) {@deprecated 2018-12-03}
  * @method \Http\Promise\Promise modifySecurityCheckScheduleConfigAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result describeRiskItemType(array $arguments = []) {@deprecated 2018-12-03}
@@ -1241,8 +1237,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeAffectedAssetsAsync($arguments = [])
  * @method \Dew\Acs\Result describeEventOnStage(array $arguments = [])
  * @method \Http\Promise\Promise describeEventOnStageAsync($arguments = [])
- * @method \Dew\Acs\Result describeIpTags(array $arguments = []) {@deprecated 2018-12-03}
- * @method \Http\Promise\Promise describeIpTagsAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result describeLatestScanTask(array $arguments = [])
  * @method \Http\Promise\Promise describeLatestScanTaskAsync($arguments = [])
  * @method \Dew\Acs\Result describeScanTaskStatistics(array $arguments = [])
@@ -1657,6 +1651,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeImageBuildRiskListAsync($arguments = [])
  * @method \Dew\Acs\Result describeImageBuildRiskByKey(array $arguments = [])
  * @method \Http\Promise\Promise describeImageBuildRiskByKeyAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCanTrySas(array $arguments = [])
+ * @method \Http\Promise\Promise describeCanTrySasAsync($arguments = [])
+ * @method \Dew\Acs\Result describeNeedAsyncQuery(array $arguments = [])
+ * @method \Http\Promise\Promise describeNeedAsyncQueryAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCheckWarningCount(array $arguments = [])
+ * @method \Http\Promise\Promise describeCheckWarningCountAsync($arguments = [])
+ * @method \Dew\Acs\Result getAccountLabel(array $arguments = [])
+ * @method \Http\Promise\Promise getAccountLabelAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInstanceVulStatistics(array $arguments = [])
+ * @method \Http\Promise\Promise describeInstanceVulStatisticsAsync($arguments = [])
  */
 final class SasClient extends AcsClient
 {

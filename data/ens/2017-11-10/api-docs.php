@@ -986,6 +986,15 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'SpotDuration',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateInstance' => [

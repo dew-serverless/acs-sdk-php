@@ -747,10 +747,6 @@
             'endpoint' => 'antiddos-openapi.ap-southeast-5.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'antiddos-openapi.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'antiddos.aliyuncs.com',
         ],

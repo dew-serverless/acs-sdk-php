@@ -1103,10 +1103,6 @@
             'endpoint' => 'hologram.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'hologram.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'hologram.cn-shanghai-finance-1.aliyuncs.com',
         ],

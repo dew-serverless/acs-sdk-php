@@ -910,6 +910,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AllowUserToGetCredentials',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetLoginPreference' => [

@@ -566,6 +566,14 @@
                     ],
                 ],
                 [
+                    'name' => 'DisableWriteWindows',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DBClusterClass',
                     'in' => 'query',
                     'schema' => [

@@ -1436,10 +1436,6 @@
             'endpoint' => 'dytnsapi.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'dytnsapi.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-east-1',
             'endpoint' => 'dytnsapi.aliyuncs.com',
         ],

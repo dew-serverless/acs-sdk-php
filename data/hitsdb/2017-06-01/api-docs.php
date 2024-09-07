@@ -799,10 +799,6 @@
             'endpoint' => 'hitsdb.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'hitsdb.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-north-2-gov-1',
             'endpoint' => 'hitsdb.cn-north-2-gov-1.aliyuncs.com',
         ],

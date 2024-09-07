@@ -4673,9 +4673,5 @@
             'regionId' => 'eu-central-1',
             'endpoint' => 'mts.eu-central-1.aliyuncs.com',
         ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'mts.ap-south-1.aliyuncs.com',
-        ],
     ],
 ];

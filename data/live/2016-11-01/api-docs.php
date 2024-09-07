@@ -10988,6 +10988,7 @@
                         'required' => false,
                         'items' => [
                             'type' => 'string',
+                            'required' => false,
                         ],
                         'maxItems' => 10,
                     ],
@@ -12353,6 +12354,7 @@
                         'required' => false,
                         'items' => [
                             'type' => 'string',
+                            'required' => false,
                         ],
                         'maxItems' => 10,
                     ],
@@ -14991,7 +14993,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -15088,7 +15090,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -21646,6 +21648,38 @@
                     'schema' => [
                         'type' => 'number',
                         'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateCasterResourceGroup' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'NewResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CasterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => true,
                     ],
                 ],

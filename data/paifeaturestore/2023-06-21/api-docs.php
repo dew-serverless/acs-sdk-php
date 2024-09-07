@@ -2516,6 +2516,11 @@
                                 'format' => 'int64',
                                 'required' => false,
                             ],
+                            'RealTimePartitionCountValue' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2644,6 +2649,11 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                            ],
+                            'LabelPriorityLevel' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
                             ],
                         ],
                     ],

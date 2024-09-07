@@ -6784,6 +6784,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IsCanary',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
     ],

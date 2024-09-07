@@ -2030,10 +2030,6 @@
             'endpoint' => 'ons.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'ons.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-east-1',
             'endpoint' => 'ons.me-east-1.aliyuncs.com',
         ],

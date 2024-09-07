@@ -1453,7 +1453,7 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'minimum' => '1',
+                        'minimum' => '10',
                         'maximum' => '3600',
                     ],
                 ],
@@ -1885,7 +1885,7 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'minimum' => '1',
+                        'minimum' => '10',
                         'maximum' => '3600',
                     ],
                 ],
@@ -4238,10 +4238,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'nlb.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'nlb.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',

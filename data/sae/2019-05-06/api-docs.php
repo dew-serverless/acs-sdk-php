@@ -401,6 +401,9 @@
                     'customHostAlias' => [
                         '$ref' => '#/components/schemas/CustomHostAlias',
                     ],
+                    'programmingLanguage' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'ApplicationStatus' => [
@@ -1123,8 +1126,14 @@
                         '$ref' => '#/components/schemas/Probe',
                         'required' => false,
                     ],
+                    'enableAppMetric' => [
+                        'type' => 'boolean',
+                    ],
                     'customHostAlias' => [
                         '$ref' => '#/components/schemas/CustomHostAlias',
+                    ],
+                    'programmingLanguage' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1266,6 +1275,9 @@
                     'WebWAFConfig' => [
                         '$ref' => '#/components/schemas/WebWAFConfig',
                         'required' => false,
+                    ],
+                    'RouteConfig' => [
+                        '$ref' => '#/components/schemas/RouteConfig',
                     ],
                 ],
             ],
@@ -3544,8 +3556,14 @@
                         '$ref' => '#/components/schemas/Probe',
                         'required' => false,
                     ],
+                    'namespaceID' => [
+                        'type' => 'string',
+                    ],
                     'customHostAlias' => [
                         '$ref' => '#/components/schemas/CustomHostAlias',
+                    ],
+                    'programmingLanguage' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -3725,6 +3743,9 @@
                     'WebWAFConfig' => [
                         '$ref' => '#/components/schemas/WebWAFConfig',
                         'required' => false,
+                    ],
+                    'RouteConfig' => [
+                        '$ref' => '#/components/schemas/RouteConfig',
                     ],
                 ],
             ],
@@ -4112,7 +4133,7 @@
             'WebCustomDomain' => [
                 'type' => 'object',
                 'properties' => [
-                    'AccountId' => [
+                    'accountId' => [
                         'type' => 'string',
                         'required' => false,
                     ],
@@ -4151,6 +4172,9 @@
                     'WebWAFConfig' => [
                         '$ref' => '#/components/schemas/WebWAFConfig',
                         'required' => false,
+                    ],
+                    'RouteConfig' => [
+                        '$ref' => '#/components/schemas/RouteConfig',
                     ],
                 ],
             ],
@@ -6035,6 +6059,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EnableNewArms',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteApplication' => [
@@ -6856,6 +6888,14 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableNewArms',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -8985,6 +9025,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EnableIdle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteApplicationScalingRule' => [
@@ -9152,6 +9200,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableIdle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -9988,7 +10044,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [

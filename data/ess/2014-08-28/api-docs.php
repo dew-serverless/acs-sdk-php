@@ -2078,6 +2078,14 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'InstanceRefreshTaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeScalingActivityDetail' => [

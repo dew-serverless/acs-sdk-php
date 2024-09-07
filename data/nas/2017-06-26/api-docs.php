@@ -49,6 +49,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -1757,6 +1758,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'FileSystemId',
@@ -2204,6 +2206,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'FileSystemIds',
@@ -2501,6 +2504,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'FileSystemId',
@@ -2699,6 +2703,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'FileSystemId',
@@ -2781,6 +2786,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'FileSystemId',
@@ -5944,6 +5950,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'FileSystemId',
@@ -5993,6 +6000,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'FileSystemId',
@@ -6042,6 +6050,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -6091,6 +6100,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -6132,6 +6142,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -6343,6 +6354,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -6477,10 +6489,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'nas.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'nas.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',

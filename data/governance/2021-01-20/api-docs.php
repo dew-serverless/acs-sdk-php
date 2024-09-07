@@ -732,6 +732,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AccountId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListEvaluationMetricDetails' => [

@@ -465,6 +465,73 @@
                     ],
                 ],
             ],
+            'IndexJsonKey' => [
+                'type' => 'object',
+                'properties' => [
+                    'chn' => [
+                        'type' => 'boolean',
+                    ],
+                    'caseSensitive' => [
+                        'type' => 'boolean',
+                    ],
+                    'token' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'alias' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'doc_value' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'IndexKey' => [
+                'type' => 'object',
+                'properties' => [
+                    'chn' => [
+                        'type' => 'boolean',
+                    ],
+                    'caseSensitive' => [
+                        'type' => 'boolean',
+                    ],
+                    'token' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'alias' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'doc_value' => [
+                        'type' => 'boolean',
+                    ],
+                    'index_all' => [
+                        'type' => 'boolean',
+                    ],
+                    'max_depth' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'json_keys' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/IndexJsonKey',
+                        ],
+                    ],
+                ],
+            ],
             'IngestProcessor' => [
                 'type' => 'object',
                 'properties' => [
@@ -534,14 +601,14 @@
                 'properties' => [
                     'Topic' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                     'Source' => [
                         'type' => 'string',
                     ],
                     'LogTags' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
                         'items' => [
                             '$ref' => '#/components/schemas/LogTag',
                         ],
@@ -551,6 +618,19 @@
                         'required' => true,
                         'items' => [
                             '$ref' => '#/components/schemas/LogItem',
+                        ],
+                    ],
+                ],
+            ],
+            'LogGroupList' => [
+                'type' => 'object',
+                'required' => true,
+                'properties' => [
+                    'logGroupList' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/LogGroup',
                         ],
                     ],
                 ],
@@ -1739,11 +1819,6 @@
             'index' => [
                 'type' => 'object',
                 'properties' => [
-                    'ttl' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
                     'max_text_len' => [
                         'type' => 'integer',
                         'format' => 'int32',
@@ -1793,39 +1868,11 @@
                     'keys' => [
                         'type' => 'object',
                         'additionalProperties' => [
-                            'type' => 'object',
-                            'properties' => [
-                                'chn' => [
-                                    'type' => 'boolean',
-                                ],
-                                'caseSensitive' => [
-                                    'type' => 'boolean',
-                                ],
-                                'token' => [
-                                    'type' => 'array',
-                                    'items' => [
-                                        'type' => 'string',
-                                    ],
-                                ],
-                                'alias' => [
-                                    'type' => 'string',
-                                ],
-                                'type' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'doc_value' => [
-                                    'type' => 'boolean',
-                                ],
-                            ],
+                            '$ref' => '#/components/schemas/IndexKey',
                         ],
                     ],
                     'log_reduce' => [
                         'type' => 'boolean',
-                    ],
-                    'lastModifyTime' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -2864,131 +2911,8 @@
                     'in' => 'body',
                     'style' => 'json',
                     'schema' => [
-                        'type' => 'object',
+                        '$ref' => '#/components/schemas/index',
                         'required' => false,
-                        'properties' => [
-                            'keys' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'additionalProperties' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'caseSensitive' => [
-                                            'type' => 'boolean',
-                                            'required' => false,
-                                        ],
-                                        'chn' => [
-                                            'type' => 'boolean',
-                                            'required' => false,
-                                        ],
-                                        'type' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'alias' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'token' => [
-                                            'type' => 'array',
-                                            'required' => false,
-                                            'items' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                        'doc_value' => [
-                                            'type' => 'boolean',
-                                            'required' => false,
-                                        ],
-                                        'vector_index' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                            'enum' => [
-                                                'high_recall',
-                                            ],
-                                        ],
-                                        'embedding' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                            'enum' => [
-                                                'word2vec',
-                                                'fastText',
-                                                'bert',
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'line' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'chn' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'caseSensitive' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'token' => [
-                                        'type' => 'array',
-                                        'required' => true,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                    'include_keys' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                    'exclude_keys' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'ttl' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'max_text_len' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'log_reduce' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'log_reduce_white_list' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'log_reduce_black_list' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
                     ],
                 ],
             ],
@@ -3293,132 +3217,8 @@
                     'in' => 'body',
                     'style' => 'json',
                     'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'keys' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'additionalProperties' => [
-                                    'type' => 'object',
-                                    'required' => true,
-                                    'properties' => [
-                                        'caseSensitive' => [
-                                            'type' => 'boolean',
-                                            'required' => false,
-                                        ],
-                                        'chn' => [
-                                            'type' => 'boolean',
-                                            'required' => false,
-                                        ],
-                                        'type' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'alias' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'token' => [
-                                            'type' => 'array',
-                                            'required' => true,
-                                            'items' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                        'doc_value' => [
-                                            'type' => 'boolean',
-                                            'required' => true,
-                                        ],
-                                        'vector_index' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                            'enum' => [
-                                                'high_recall',
-                                            ],
-                                        ],
-                                        'embedding' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                            'enum' => [
-                                                'word2vec',
-                                                'fastText',
-                                                'bert',
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'line' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'chn' => [
-                                        'type' => 'boolean',
-                                        'required' => true,
-                                    ],
-                                    'caseSensitive' => [
-                                        'type' => 'boolean',
-                                        'required' => true,
-                                    ],
-                                    'token' => [
-                                        'type' => 'array',
-                                        'required' => true,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                    'include_keys' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                    'exclude_keys' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'ttl' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => true,
-                            ],
-                            'max_text_len' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'log_reduce' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'log_reduce_white_list' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'log_reduce_black_list' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
+                        '$ref' => '#/components/schemas/index',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4317,6 +4117,227 @@
                 ],
             ],
         ],
+        'ListMetricStores' => [
+            'path' => '/metricstores',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+                [
+                    'name' => 'mode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+        ],
+        'CreateMetricStore' => [
+            'path' => '/metricstores',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ttl' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'shardCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'autoSplit' => [
+                                'type' => 'boolean',
+                            ],
+                            'maxSplitShard' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'mode' => [
+                                'type' => 'string',
+                            ],
+                            'metricType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteMetricStore' => [
+            'path' => '/metricstores/{name}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateMetricStore' => [
+            'path' => '/metricstores/{name}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'ttl' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'autoSplit' => [
+                                'type' => 'boolean',
+                            ],
+                            'maxSplitShard' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'mode' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'UpdateMetricStoreMeteringMode' => [
             'path' => '/metricstores/{metricStore}/meteringmode',
             'methods' => [
@@ -4369,6 +4390,43 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'GetMetricStore' => [
+            'path' => '/metricstores/{name}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -10071,50 +10129,6 @@
                 ],
             ],
         ],
-        'QueryMLServiceResults' => [
-            'path' => '/ml/service/{serviceName}/analysis',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'serviceName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'allowBuiltin',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/MLServiceAnalysisParam',
-                    ],
-                ],
-            ],
-        ],
         'TagResources' => [
             'path' => '/tag',
             'methods' => [
@@ -11020,6 +11034,144 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'PullLogs' => [
+            'path' => '/logstores/{logStore}/shards/{shardId}?type=log',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'logStore',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'shardId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                        'minimum' => '1',
+                        'maximum' => '1000',
+                    ],
+                ],
+                [
+                    'name' => 'end_cursor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'Accept-Encoding',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+        ],
+        'PutLogs' => [
+            'path' => '/logstores/{logstore}/shards/lb',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'logstore',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'x-log-compresstype',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'lz4',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/LogGroup',
                     ],
                 ],
             ],

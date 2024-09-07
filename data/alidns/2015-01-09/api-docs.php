@@ -2197,8 +2197,8 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '50',
+                        'minimum' => '0',
+                        'maximum' => '65535',
                     ],
                 ],
                 [
@@ -2399,8 +2399,8 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '50',
+                        'minimum' => '0',
+                        'maximum' => '65535',
                     ],
                 ],
                 [

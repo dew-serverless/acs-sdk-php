@@ -1145,6 +1145,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IdentityType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'MobileOnlineTime' => [

@@ -259,7 +259,23 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
-                        'maximum' => '100',
+                        'maximum' => '500',
+                    ],
+                ],
+                [
+                    'name' => 'Search',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WithoutMeteringData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

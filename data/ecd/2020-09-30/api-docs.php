@@ -2019,6 +2019,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AssignedInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyADConnectorDirectory' => [

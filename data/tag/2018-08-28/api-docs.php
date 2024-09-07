@@ -1723,10 +1723,6 @@
             'endpoint' => 'tag.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'tag.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-east-1',
             'endpoint' => 'tag.me-east-1.aliyuncs.com',
         ],

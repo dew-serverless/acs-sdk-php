@@ -536,6 +536,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'taskRelationJsonValue' => [
+                                'type' => 'string',
+                            ],
+                            'taskDefinitionJsonValue' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'CreateWorkflow' => [
@@ -712,6 +728,22 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'taskRelationJsonValue' => [
+                                'type' => 'string',
+                            ],
+                            'taskDefinitionJsonValue' => [
+                                'type' => 'string',
+                            ],
+                        ],
                     ],
                 ],
             ],

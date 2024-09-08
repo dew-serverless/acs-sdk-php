@@ -7564,7 +7564,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '100',
                     ],

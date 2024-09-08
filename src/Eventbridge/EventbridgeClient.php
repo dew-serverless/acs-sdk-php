@@ -93,12 +93,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listTargetsAsync($arguments = [])
  * @method \Dew\Acs\Result testEventPattern(array $arguments = [])
  * @method \Http\Promise\Promise testEventPatternAsync($arguments = [])
- * @method \Dew\Acs\Result eventCenterCheckEnabledOnDefaultBus(array $arguments = [])
- * @method \Http\Promise\Promise eventCenterCheckEnabledOnDefaultBusAsync($arguments = [])
- * @method \Dew\Acs\Result eventCenterDisableOnDefaultBus(array $arguments = [])
- * @method \Http\Promise\Promise eventCenterDisableOnDefaultBusAsync($arguments = [])
- * @method \Dew\Acs\Result eventCenterEnableOnDefaultBus(array $arguments = [])
- * @method \Http\Promise\Promise eventCenterEnableOnDefaultBusAsync($arguments = [])
  * @method \Dew\Acs\Result eventCenterQueryEvents(array $arguments = [])
  * @method \Http\Promise\Promise eventCenterQueryEventsAsync($arguments = [])
  */

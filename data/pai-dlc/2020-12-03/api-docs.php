@@ -710,6 +710,9 @@
                     'DisplayName' => [
                         'type' => 'string',
                     ],
+                    'UserVpc' => [
+                        'type' => 'string',
+                    ],
                     'UserId' => [
                         'type' => 'string',
                     ],
@@ -783,10 +786,22 @@
                             'type' => 'string',
                         ],
                     ],
+                    'NodeNames' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
                     'ThirdpartyLibDir' => [
                         'type' => 'string',
                     ],
                     'Envs' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'SystemEnvs' => [
                         'type' => 'object',
                         'additionalProperties' => [
                             'type' => 'string',
@@ -813,7 +828,14 @@
                     'GmtFinishTime' => [
                         'type' => 'string',
                     ],
+                    'GmtModifiedTime' => [
+                        'type' => 'string',
+                    ],
                     'Duration' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'JobMaxRunningTimeMinutes' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
@@ -823,7 +845,38 @@
                     'EnabledDebugger' => [
                         'type' => 'boolean',
                     ],
+                    'IsDeleted' => [
+                        'type' => 'boolean',
+                    ],
+                    'EnablePreemptibleJob' => [
+                        'type' => 'boolean',
+                    ],
                     'ResourceName' => [
+                        'type' => 'string',
+                    ],
+                    'WorkingDir' => [
+                        'type' => 'string',
+                    ],
+                    'UserScript' => [
+                        'type' => 'string',
+                    ],
+                    'RestartTimes' => [
+                        'type' => 'string',
+                    ],
+                    'RequestCPU' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'RequestMemory' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceQuotaName' => [
+                        'type' => 'string',
+                    ],
+                    'RequestGPU' => [
+                        'type' => 'string',
+                    ],
+                    'NodeCount' => [
                         'type' => 'string',
                     ],
                     'Priority' => [
@@ -838,6 +891,30 @@
                     ],
                     'ResourceType' => [
                         'type' => 'string',
+                    ],
+                    'Accessibility' => [
+                        'type' => 'string',
+                    ],
+                    'ClusterId' => [
+                        'type' => 'string',
+                    ],
+                    'TenantId' => [
+                        'type' => 'string',
+                    ],
+                    'StatusHistory' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/StatusTransitionItem',
+                        ],
+                    ],
+                    'ElasticSpec' => [
+                        '$ref' => '#/components/schemas/JobElasticSpec',
+                    ],
+                    'Pods' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/PodItem',
+                        ],
                     ],
                 ],
             ],

@@ -24,6 +24,13 @@
                     'AK' => [],
                 ],
             ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+                'application/octet-stream',
+            ],
             'deprecated' => false,
             'parameters' => [
                 [
@@ -50,35 +57,10 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'Stream' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'ModelCode' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'enum' => [
-                                    'tyxmTurbo',
-                                    'tyxmPlus',
-                                ],
-                            ],
-                            'TemplateIds' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                            ],
                             'Dialogue' => [
                                 'type' => 'object',
                                 'required' => true,
                                 'properties' => [
-                                    'SessionId' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
                                     'Sentences' => [
                                         'type' => 'array',
                                         'required' => false,
@@ -106,6 +88,10 @@
                                             ],
                                         ],
                                     ],
+                                    'SessionId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'Fields' => [
@@ -115,10 +101,6 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'Name' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
                                         'Code' => [
                                             'type' => 'string',
                                             'required' => false,
@@ -134,32 +116,36 @@
                                                 'type' => 'object',
                                                 'required' => false,
                                                 'properties' => [
-                                                    'EnumValue' => [
-                                                        'type' => 'string',
-                                                        'required' => true,
-                                                    ],
                                                     'Desc' => [
                                                         'type' => 'string',
                                                         'required' => false,
                                                     ],
+                                                    'EnumValue' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
                                                 ],
                                             ],
                                         ],
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
                                     ],
+                                ],
+                            ],
+                            'ModelCode' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'tyxmTurbo',
+                                    'tyxmPlus',
                                 ],
                             ],
                             'ServiceInspection' => [
                                 'type' => 'object',
                                 'required' => false,
                                 'properties' => [
-                                    'SceneIntroduction' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'InspectionIntroduction' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
                                     'InspectionContents' => [
                                         'type' => 'array',
                                         'required' => false,
@@ -167,17 +153,38 @@
                                             'type' => 'object',
                                             'required' => false,
                                             'properties' => [
-                                                'Title' => [
-                                                    'type' => 'string',
-                                                    'required' => true,
-                                                ],
                                                 'Content' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
+                                                'Title' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
                                             ],
                                         ],
                                     ],
+                                    'InspectionIntroduction' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SceneIntroduction' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'Stream' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'TemplateIds' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -199,6 +206,13 @@
                 [
                     'AK' => [],
                 ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+                'application/octet-stream',
             ],
             'deprecated' => false,
             'parameters' => [
@@ -226,18 +240,6 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'Stream' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'ModelCode' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'enum' => [
-                                    'tyxmTurbo',
-                                    'tyxmPlus',
-                                ],
-                            ],
                             'Messages' => [
                                 'type' => 'array',
                                 'required' => true,
@@ -245,6 +247,10 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
+                                        'Content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
                                         'Role' => [
                                             'type' => 'string',
                                             'required' => true,
@@ -255,12 +261,20 @@
                                                 'function',
                                             ],
                                         ],
-                                        'Content' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
                                     ],
                                 ],
+                            ],
+                            'ModelCode' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'tyxmTurbo',
+                                    'tyxmPlus',
+                                ],
+                            ],
+                            'Stream' => [
+                                'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -493,6 +507,258 @@
                                 'required' => true,
                             ],
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateConversationAnalysisTask' => [
+            'path' => '/{workspaceId}/ccai/app/{appId}/createConversationAnalysisTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'appId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'autoSplit' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'clientChannel' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'examples' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'output' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'sentences' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => true,
+                                            'properties' => [
+                                                'chatId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'role' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'text' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'fields' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'code' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'desc' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'enumValues' => [
+                                            'type' => 'array',
+                                            'required' => true,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => true,
+                                                'properties' => [
+                                                    'desc' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'enumValue' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'fileName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'modelCode' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'tyxmTurbo',
+                                    'tyxmPlus',
+                                ],
+                            ],
+                            'resultTypes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'summary',
+                                        'title',
+                                        'fields',
+                                        'keywords',
+                                        'service_inspection',
+                                        'question_solution',
+                                    ],
+                                ],
+                            ],
+                            'sceneName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'serviceChannel' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'serviceChannelKeywords' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'serviceInspection' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'inspectionContents' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => true,
+                                            'properties' => [
+                                                'content' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'title' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'inspectionIntroduction' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'sceneIntroduction' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'templateIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                            'voiceFileUrl' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetTaskResult' => [
+            'path' => '/ccai/app/getTaskResult',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'multipart/form-data',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

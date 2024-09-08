@@ -163,6 +163,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteGatewayIntranetLinkedVpcAsync($arguments = [])
  * @method \Dew\Acs\Result deleteGateway(array $arguments = [])
  * @method \Http\Promise\Promise deleteGatewayAsync($arguments = [])
+ * @method \Dew\Acs\Result reinstallTenantAddon(array $arguments = [])
+ * @method \Http\Promise\Promise reinstallTenantAddonAsync($arguments = [])
+ * @method \Dew\Acs\Result listTenantAddons(array $arguments = [])
+ * @method \Http\Promise\Promise listTenantAddonsAsync($arguments = [])
  */
 final class EasClient extends AcsClient
 {

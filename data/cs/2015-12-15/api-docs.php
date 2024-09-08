@@ -1190,6 +1190,10 @@
                                     'required' => false,
                                 ],
                             ],
+                            'load_balancer_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -8532,10 +8536,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'cs.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'cs.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',

@@ -7799,10 +7799,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'vod.me-central-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'vod.cn-beijing.aliyuncs.com',
         ],
@@ -7833,10 +7829,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'vod.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'vod.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',

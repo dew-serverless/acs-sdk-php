@@ -5243,7 +5243,7 @@
                 ],
             ],
         ],
-        'ChangeResourceGroup' => [
+        'DescribeApplicationGroupBill' => [
             'methods' => [
                 'post',
                 'get',
@@ -5268,7 +5268,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceId',
+                    'name' => 'ApplicationName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5276,7 +5276,15 @@
                     ],
                 ],
                 [
-                    'name' => 'NewResourceGroupId',
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BillingCycle',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5289,6 +5297,24 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'maximum' => '50',
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -5572,7 +5598,7 @@
                 ],
             ],
         ],
-        'DescribeApplicationGroupBill' => [
+        'ChangeResourceGroup' => [
             'methods' => [
                 'post',
                 'get',
@@ -5597,7 +5623,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ApplicationName',
+                    'name' => 'ResourceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5605,15 +5631,7 @@
                     ],
                 ],
                 [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'BillingCycle',
+                    'name' => 'NewResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5626,24 +5644,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MaxResults',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'maximum' => '50',
-                    ],
-                ],
-                [
-                    'name' => 'NextToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],

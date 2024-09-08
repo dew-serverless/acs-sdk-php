@@ -4621,6 +4621,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4628,6 +4629,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4761,6 +4763,10 @@
         [
             'regionId' => 'cn-shanghai',
             'endpoint' => 'eflo.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'eflo.cn-shenzhen.aliyuncs.com',
         ],
     ],
 ];

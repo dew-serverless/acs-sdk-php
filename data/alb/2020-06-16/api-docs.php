@@ -1404,7 +1404,7 @@
                             ],
                         ],
                         'minItems' => 1,
-                        'maxItems' => 2,
+                        'maxItems' => 1,
                     ],
                 ],
                 [
@@ -8251,10 +8251,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'alb.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'alb.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-2',

@@ -1230,10 +1230,6 @@
             'endpoint' => 'resourcesharing.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'resourcesharing.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-7',
             'endpoint' => 'resourcesharing.ap-southeast-7.aliyuncs.com',
         ],

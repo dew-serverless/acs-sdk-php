@@ -53,6 +53,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise quotaListExportPagedAsync($arguments = [])
  * @method \Dew\Acs\Result listCouponUsage(array $arguments = [])
  * @method \Http\Promise\Promise listCouponUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result issueCouponForCustomer(array $arguments = [])
+ * @method \Http\Promise\Promise issueCouponForCustomerAsync($arguments = [])
+ * @method \Dew\Acs\Result getCustomerOrders(array $arguments = [])
+ * @method \Http\Promise\Promise getCustomerOrdersAsync($arguments = [])
+ * @method \Dew\Acs\Result getCoupondeductProductCode(array $arguments = [])
+ * @method \Http\Promise\Promise getCoupondeductProductCodeAsync($arguments = [])
+ * @method \Dew\Acs\Result createCouponTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise createCouponTemplateAsync($arguments = [])
  */
 final class AgencyClient extends AcsClient
 {

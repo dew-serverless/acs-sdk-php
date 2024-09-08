@@ -3521,10 +3521,6 @@
             'endpoint' => 'ddosbgp.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'ddosbgp.ap-southeast-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-2',
             'endpoint' => 'ddosbgp.ap-southeast-1.aliyuncs.com',
         ],

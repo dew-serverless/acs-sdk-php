@@ -4228,6 +4228,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'FlashSmsVariables',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'MonitorCall' => [
@@ -7636,6 +7644,22 @@
                 ],
                 [
                     'name' => 'AccessChannelTypeList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReleaseInitiatorList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReleaseReasonList',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

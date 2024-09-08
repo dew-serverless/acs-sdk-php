@@ -215,6 +215,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeBackupsAsync($arguments = [])
  * @method \Dew\Acs\Result describeBackupDBs(array $arguments = [])
  * @method \Http\Promise\Promise describeBackupDBsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRestoreDBInstanceList(array $arguments = [])
+ * @method \Http\Promise\Promise describeRestoreDBInstanceListAsync($arguments = [])
  * @method \Dew\Acs\Result checkRecoveryCondition(array $arguments = [])
  * @method \Http\Promise\Promise checkRecoveryConditionAsync($arguments = [])
  * @method \Dew\Acs\Result transferClusterBackup(array $arguments = [])

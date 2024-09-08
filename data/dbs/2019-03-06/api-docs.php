@@ -2695,10 +2695,6 @@
             'endpoint' => 'dbs-api.cn-hangzhou.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'dbs-api.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'eu-west-1',
             'endpoint' => 'dbs-api.eu-west-1.aliyuncs.com',
         ],

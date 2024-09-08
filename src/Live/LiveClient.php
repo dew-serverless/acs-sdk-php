@@ -781,6 +781,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeToutiaoLivePublishAsync($arguments = [])
  * @method \Dew\Acs\Result describeDomainWithIntegrity(array $arguments = [])
  * @method \Http\Promise\Promise describeDomainWithIntegrityAsync($arguments = [])
+ * @method \Dew\Acs\Result updateCasterResourceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise updateCasterResourceGroupAsync($arguments = [])
  */
 final class LiveClient extends AcsClient
 {

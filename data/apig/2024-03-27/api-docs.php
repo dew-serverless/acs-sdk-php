@@ -7,6 +7,110 @@
     ],
     'components' => [
         'schemas' => [
+            'ApiRouteConflictInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'domainInfo' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'domainId' => [
+                                'type' => 'string',
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'conflicts' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'resourceType' => [
+                                    'type' => 'string',
+                                ],
+                                'resourceId' => [
+                                    'type' => 'string',
+                                ],
+                                'resourceName' => [
+                                    'type' => 'string',
+                                ],
+                                'environmentInfo' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'environmentId' => [
+                                            'type' => 'string',
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                                'details' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'level' => [
+                                                'type' => 'string',
+                                            ],
+                                            'conflictingMatch' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'operationInfo' => [
+                                                        'type' => 'object',
+                                                        'properties' => [
+                                                            'operationId' => [
+                                                                'type' => 'string',
+                                                            ],
+                                                            'name' => [
+                                                                'type' => 'string',
+                                                            ],
+                                                        ],
+                                                    ],
+                                                    'match' => [
+                                                        '$ref' => '#/components/schemas/HttpRouteMatch',
+                                                    ],
+                                                ],
+                                            ],
+                                            'detectedMatch' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'operationInfo' => [
+                                                        'type' => 'object',
+                                                        'properties' => [
+                                                            'operationId' => [
+                                                                'type' => 'string',
+                                                            ],
+                                                            'name' => [
+                                                                'type' => 'string',
+                                                            ],
+                                                        ],
+                                                    ],
+                                                    'match' => [
+                                                        '$ref' => '#/components/schemas/HttpRouteMatch',
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'routeInfo' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'routeId' => [
+                                            'type' => 'string',
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'Attachment' => [
                 'type' => 'object',
                 'properties' => [
@@ -27,6 +131,42 @@
                     ],
                     'gatewayId' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'Backend' => [
+                'type' => 'object',
+                'properties' => [
+                    'scene' => [
+                        'type' => 'string',
+                    ],
+                    'services' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'serviceId' => [
+                                    'type' => 'string',
+                                ],
+                                'name' => [
+                                    'type' => 'string',
+                                ],
+                                'protocol' => [
+                                    'type' => 'string',
+                                ],
+                                'port' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'weight' => [
+                                    'type' => 'number',
+                                    'format' => 'float',
+                                ],
+                                'version' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -124,6 +264,20 @@
                         'type' => 'string',
                     ],
                     'name' => [
+                        'type' => 'string',
+                    ],
+                    'vpcInfo' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'vpcId' => [
+                                'type' => 'string',
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'engineVersion' => [
                         'type' => 'string',
                     ],
                 ],
@@ -601,6 +755,39 @@
                             ],
                         ],
                     ],
+                    'ingressInfo' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'sourceId' => [
+                                'type' => 'string',
+                            ],
+                            'ingressClass' => [
+                                'type' => 'string',
+                            ],
+                            'watchNamespace' => [
+                                'type' => 'string',
+                            ],
+                            'environmentInfo' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'environmentId' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'k8sClusterInfo' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'clusterId' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'overrideIngressIp' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'HttpApiBackendMatchCondition' => [
@@ -662,6 +849,9 @@
                         'items' => [
                             '$ref' => '#/components/schemas/HttpApiApiInfo',
                         ],
+                    ],
+                    'type' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1157,6 +1347,99 @@
                     ],
                 ],
             ],
+            'HttpRoute' => [
+                'type' => 'object',
+                'properties' => [
+                    'routeId' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'deployStatus' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'match' => [
+                        '$ref' => '#/components/schemas/HttpRouteMatch',
+                    ],
+                    'backend' => [
+                        '$ref' => '#/components/schemas/Backend',
+                    ],
+                    'domainInfos' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'domainId' => [
+                                    'type' => 'string',
+                                ],
+                                'name' => [
+                                    'type' => 'string',
+                                ],
+                                'protocol' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'environmentInfo' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'environmentId' => [
+                                'type' => 'string',
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                            ],
+                            'alias' => [
+                                'type' => 'string',
+                            ],
+                            'gatewayInfo' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'gatewayId' => [
+                                        'type' => 'string',
+                                    ],
+                                    'name' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'subDomains' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'domainId' => [
+                                            'type' => 'string',
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                        ],
+                                        'protocol' => [
+                                            'type' => 'string',
+                                        ],
+                                        'networkType' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'createTimestamp' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updateTimestamp' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
             'HttpRouteMatch' => [
                 'type' => 'object',
                 'properties' => [
@@ -1429,6 +1712,73 @@
                     ],
                 ],
             ],
+            'Service' => [
+                'type' => 'object',
+                'properties' => [
+                    'serviceId' => [
+                        'type' => 'string',
+                    ],
+                    'sourceType' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'namespace' => [
+                        'type' => 'string',
+                    ],
+                    'addresses' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'ports' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'port' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'name' => [
+                                    'type' => 'string',
+                                ],
+                                'protocol' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'unhealthyEndpoints' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'healthCheck' => [
+                        '$ref' => '#/components/schemas/ServiceHealthCheck',
+                    ],
+                    'healthStatus' => [
+                        'type' => 'string',
+                    ],
+                    'qualifier' => [
+                        'type' => 'string',
+                    ],
+                    'createTimestamp' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updateTimestamp' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'protocol' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ServiceHealthCheck' => [
                 'type' => 'object',
                 'properties' => [
@@ -1627,11 +1977,41 @@
                             ],
                             'basePath' => [
                                 'type' => 'string',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'versionConfig' => [
                                 '$ref' => '#/components/schemas/HttpApiVersionConfig',
                                 'required' => false,
+                            ],
+                            'type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ingressConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'environmentId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'sourceId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ingressClass' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'watchNamespace' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'overrideIngressIp' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -1699,6 +2079,32 @@
                                 '$ref' => '#/components/schemas/HttpApiVersionConfig',
                                 'required' => false,
                             ],
+                            'ingressConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'environmentId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'sourceId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ingressClass' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'watchNamespace' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'overrideIngressIp' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -1765,14 +2171,6 @@
                     ],
                 ],
                 [
-                    'name' => 'publishedOnly',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'pageNumber',
                     'in' => 'query',
                     'schema' => [
@@ -1792,6 +2190,30 @@
                 ],
                 [
                     'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'types',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'gatewayId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3839,6 +4261,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'withVpcInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

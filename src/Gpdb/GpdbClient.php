@@ -363,6 +363,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeIMVInfosAsync($arguments = [])
  * @method \Dew\Acs\Result describeActiveSQLRecords(array $arguments = [])
  * @method \Http\Promise\Promise describeActiveSQLRecordsAsync($arguments = [])
+ * @method \Dew\Acs\Result rerank(array $arguments = [])
+ * @method \Http\Promise\Promise rerankAsync($arguments = [])
  */
 final class GpdbClient extends AcsClient
 {

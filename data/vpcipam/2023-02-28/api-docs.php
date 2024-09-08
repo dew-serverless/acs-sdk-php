@@ -115,11 +115,12 @@
                     'style' => 'repeatList',
                     'schema' => [
                         'type' => 'array',
-                        'required' => false,
+                        'required' => true,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
                         ],
+                        'minItems' => 1,
                         'maxItems' => 100,
                     ],
                 ],
@@ -1597,7 +1598,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],

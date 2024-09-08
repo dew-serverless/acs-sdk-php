@@ -97,6 +97,12 @@
                     'Content' => [
                         'type' => 'string',
                     ],
+                    'References' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ReferenceFile',
+                        ],
+                    ],
                 ],
             ],
             'App' => [
@@ -628,6 +634,20 @@
                     'TotalFileSize' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                ],
+            ],
+            'DatasetTaskStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'LastSucceededTime' => [
+                        'type' => 'string',
+                    ],
+                    'StartTime' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1803,6 +1823,23 @@
                     ],
                 ],
             ],
+            'ReferenceFile' => [
+                'type' => 'object',
+                'properties' => [
+                    'ProjectName' => [
+                        'type' => 'string',
+                    ],
+                    'DatasetName' => [
+                        'type' => 'string',
+                    ],
+                    'ObjectId' => [
+                        'type' => 'string',
+                    ],
+                    'URI' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'RegionType' => [
                 'type' => 'object',
                 'properties' => [
@@ -1965,6 +2002,59 @@
                         'items' => [
                             '$ref' => '#/components/schemas/SimpleQuery',
                         ],
+                    ],
+                ],
+            ],
+            'SmartCluster' => [
+                'type' => 'object',
+                'properties' => [
+                    'OwnerId' => [
+                        'type' => 'string',
+                    ],
+                    'ProjectName' => [
+                        'type' => 'string',
+                    ],
+                    'DatasetName' => [
+                        'type' => 'string',
+                    ],
+                    'ObjectType' => [
+                        'type' => 'string',
+                    ],
+                    'ObjectId' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'UpdateTime' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'ObjectStatus' => [
+                        'type' => 'string',
+                    ],
+                    'Rule' => [
+                        '$ref' => '#/components/schemas/SmartClusterRule',
+                    ],
+                ],
+            ],
+            'SmartClusterRule' => [
+                'type' => 'object',
+                'properties' => [
+                    'Keywords' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'Sensitivity' => [
+                        'type' => 'number',
+                        'format' => 'float',
                     ],
                 ],
             ],

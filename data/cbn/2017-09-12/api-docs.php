@@ -3364,6 +3364,23 @@
                     ],
                 ],
                 [
+                    'name' => 'AutoRenew',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoRenewDuration',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Tag',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -8536,6 +8553,15 @@
                     ],
                 ],
                 [
+                    'name' => 'Bandwidth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TrafficQosPolicyId',
                     'in' => 'query',
                     'schema' => [
@@ -8625,6 +8651,14 @@
                     ],
                 ],
                 [
+                    'name' => 'BandwidthGuaranteeMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TrafficQosQueues',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -8640,6 +8674,10 @@
                                     'required' => false,
                                 ],
                                 'RemainBandwidthPercent' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Bandwidth' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -8809,6 +8847,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Bandwidth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -9041,6 +9088,27 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EffectiveBandwidthFilter',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Gte' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'Lte' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -11520,10 +11588,6 @@
         ],
         [
             'regionId' => 'me-east-1',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [

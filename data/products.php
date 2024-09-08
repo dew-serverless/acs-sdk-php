@@ -299,6 +299,7 @@
         'style' => 'RPC',
         'versions' => [
             '2018-04-12',
+            '2024-07-30',
         ],
         'defaultVersion' => '2018-04-12',
     ],
@@ -1782,6 +1783,14 @@
         'defaultVersion' => '2021-09-01',
     ],
     [
+        'code' => 'wss',
+        'style' => 'RPC',
+        'versions' => [
+            '2021-12-21',
+        ],
+        'defaultVersion' => '2021-12-21',
+    ],
+    [
         'code' => 'Mns-open',
         'style' => 'RPC',
         'versions' => [
@@ -2103,14 +2112,6 @@
         'defaultVersion' => '2023-10-12',
     ],
     [
-        'code' => 'Devs',
-        'style' => 'RPC',
-        'versions' => [
-            '2023-07-14',
-        ],
-        'defaultVersion' => '2023-07-14',
-    ],
-    [
         'code' => 'SysOM',
         'style' => 'RPC',
         'versions' => [
@@ -2173,6 +2174,22 @@
             '2024-06-28',
         ],
         'defaultVersion' => '2024-06-28',
+    ],
+    [
+        'code' => 'TrafficFxOpen',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-08-15',
+        ],
+        'defaultVersion' => '2024-08-15',
+    ],
+    [
+        'code' => 'PolardbAI',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-08-20',
+        ],
+        'defaultVersion' => '2024-08-20',
     ],
     [
         'code' => 'QuanMiaoLightApp',

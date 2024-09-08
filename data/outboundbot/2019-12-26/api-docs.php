@@ -1894,7 +1894,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1911,7 +1911,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '-500',
                         'maximum' => '500',
                     ],
@@ -1922,7 +1922,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '0',
                         'maximum' => '100',
                     ],
@@ -1962,6 +1962,22 @@
                 ],
                 [
                     'name' => 'Engine',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NlsServiceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AliCustomizedVoice',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

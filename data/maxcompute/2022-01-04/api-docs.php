@@ -264,8 +264,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -614,8 +614,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -1872,10 +1872,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'maxcompute.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'maxcompute.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',

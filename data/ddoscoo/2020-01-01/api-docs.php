@@ -972,7 +972,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1226,14 +1226,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
                 [
                     'name' => 'Domain',
                     'in' => 'formData',
@@ -7462,6 +7454,15 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'ProxyEnable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeletePort' => [
@@ -7597,6 +7598,15 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'ProxyEnable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribePort' => [
@@ -7650,7 +7660,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -7659,7 +7669,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],
@@ -7850,7 +7860,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [

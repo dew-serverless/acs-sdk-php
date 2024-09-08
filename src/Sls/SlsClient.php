@@ -77,8 +77,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getLogsV2Async($arguments = [])
  * @method \Dew\Acs\Result getLogStoreMeteringMode(array $arguments = [])
  * @method \Http\Promise\Promise getLogStoreMeteringModeAsync($arguments = [])
+ * @method \Dew\Acs\Result listMetricStores(array $arguments = [])
+ * @method \Http\Promise\Promise listMetricStoresAsync($arguments = [])
+ * @method \Dew\Acs\Result createMetricStore(array $arguments = [])
+ * @method \Http\Promise\Promise createMetricStoreAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteMetricStore(array $arguments = [])
+ * @method \Http\Promise\Promise deleteMetricStoreAsync($arguments = [])
+ * @method \Dew\Acs\Result updateMetricStore(array $arguments = [])
+ * @method \Http\Promise\Promise updateMetricStoreAsync($arguments = [])
  * @method \Dew\Acs\Result updateMetricStoreMeteringMode(array $arguments = [])
  * @method \Http\Promise\Promise updateMetricStoreMeteringModeAsync($arguments = [])
+ * @method \Dew\Acs\Result getMetricStore(array $arguments = [])
+ * @method \Http\Promise\Promise getMetricStoreAsync($arguments = [])
  * @method \Dew\Acs\Result getMetricStoreMeteringMode(array $arguments = [])
  * @method \Http\Promise\Promise getMetricStoreMeteringModeAsync($arguments = [])
  * @method \Dew\Acs\Result createStoreView(array $arguments = [])
@@ -303,8 +313,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listAnnotationDataSetsAsync($arguments = [])
  * @method \Dew\Acs\Result getMLServiceResults(array $arguments = [])
  * @method \Http\Promise\Promise getMLServiceResultsAsync($arguments = [])
- * @method \Dew\Acs\Result queryMLServiceResults(array $arguments = []) {@deprecated 2020-12-30}
- * @method \Http\Promise\Promise queryMLServiceResultsAsync($arguments = []) {@deprecated 2020-12-30}
  * @method \Dew\Acs\Result tagResources(array $arguments = [])
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result untagResources(array $arguments = [])
@@ -341,6 +349,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createTicketAsync($arguments = [])
  * @method \Dew\Acs\Result refreshToken(array $arguments = [])
  * @method \Http\Promise\Promise refreshTokenAsync($arguments = [])
+ * @method \Dew\Acs\Result pullLogs(array $arguments = [])
+ * @method \Http\Promise\Promise pullLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result putLogs(array $arguments = [])
+ * @method \Http\Promise\Promise putLogsAsync($arguments = [])
  */
 final class SlsClient extends AcsClient
 {

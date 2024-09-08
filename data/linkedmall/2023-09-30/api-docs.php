@@ -465,6 +465,29 @@
                     ],
                 ],
             ],
+            'LimitRule' => [
+                'type' => 'object',
+                'properties' => [
+                    'ruleType' => [
+                        'type' => 'string',
+                    ],
+                    'limitNum' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'beginTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'endTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'condcase' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'LogisticsDetail' => [
                 'type' => 'object',
                 'properties' => [
@@ -1025,6 +1048,12 @@
                     'lmItemId' => [
                         'type' => 'string',
                     ],
+                    'limitRules' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/LimitRule',
+                        ],
+                    ],
                 ],
             ],
             'ProductDTO' => [
@@ -1187,6 +1216,12 @@
                     ],
                     'lmItemId' => [
                         'type' => 'string',
+                    ],
+                    'limitRules' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/LimitRule',
+                        ],
                     ],
                 ],
             ],

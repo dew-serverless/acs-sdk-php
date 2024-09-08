@@ -690,6 +690,24 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'tags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
                             'quota' => [
                                 'type' => 'object',
                                 'required' => false,

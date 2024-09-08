@@ -9799,7 +9799,7 @@
                                         ],
                                         'revision_id' => [
                                             'type' => 'string',
-                                            'required' => false,
+                                            'required' => true,
                                         ],
                                     ],
                                 ],

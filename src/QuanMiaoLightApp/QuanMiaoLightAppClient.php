@@ -13,6 +13,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise runMarketingInformationWritingAsync($arguments = [])
  * @method \Dew\Acs\Result runStyleWriting(array $arguments = [])
  * @method \Http\Promise\Promise runStyleWritingAsync($arguments = [])
+ * @method \Dew\Acs\Result runVideoAnalysis(array $arguments = [])
+ * @method \Http\Promise\Promise runVideoAnalysisAsync($arguments = [])
+ * @method \Dew\Acs\Result runScriptContinue(array $arguments = [])
+ * @method \Http\Promise\Promise runScriptContinueAsync($arguments = [])
+ * @method \Dew\Acs\Result runScriptPlanning(array $arguments = [])
+ * @method \Http\Promise\Promise runScriptPlanningAsync($arguments = [])
  */
 final class QuanMiaoLightAppClient extends AcsClient
 {

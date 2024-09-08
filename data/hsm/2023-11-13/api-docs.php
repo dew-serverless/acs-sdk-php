@@ -66,7 +66,7 @@
     'endpoints' => [
         [
             'regionId' => 'cn-beijing',
-            'endpoint' => 'hsm.aliyuncs.com',
+            'endpoint' => 'hsm.cn-beijing.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',

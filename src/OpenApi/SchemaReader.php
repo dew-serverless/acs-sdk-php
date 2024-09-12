@@ -267,6 +267,11 @@ final class SchemaReader
         return $result;
     }
 
+    public function getAnyProperty(Schema $schema, mixed $value, string $attribute): mixed
+    {
+        return $value;
+    }
+
     private function checkIfDeprecated(Schema $schema, string $attribute): void
     {
         if ($schema->deprecated === true) {

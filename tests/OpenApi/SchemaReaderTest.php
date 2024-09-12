@@ -336,6 +336,14 @@ final class SchemaReaderTest extends TestCase
         );
     }
 
+    public function test_get_any_property(): void
+    {
+        $reader = new SchemaReader();
+        $schema = Schema::make([]);
+        $this->assertSame('foo', $reader->getAnyProperty($schema, 'foo', 'value'));
+        $this->assertSame(1024, $reader->getAnyProperty($schema, 1024, 'value'));
+    }
+
     public function test_missing_schema_finder(): void
     {
         $this->expectException(RuntimeException::class);
@@ -359,6 +367,21 @@ final class SchemaReaderTest extends TestCase
 
         $schema = Schema::make(['type' => 'object', 'properties' => ['value' => ['type' => 'string']]]);
         $this->assertSame(['value' => 'foo'], $reader->getProperty($schema, ['value' => 'foo'], 'value'));
+    }
+
+    public function test_get_property_any_type(): void
+    {
+        $reader = new SchemaReader();
+        $schema = Schema::make(['type' => 'any']);
+        $this->assertSame('foo', $reader->getProperty($schema, 'foo', 'value'));
+        $this->assertSame(1024, $reader->getProperty($schema, 1024, 'value'));
+
+        $schema = Schema::make(['type' => 'array', 'items' => ['type' => 'any']]);
+        $this->assertSame(['foo', 1024], $reader->getProperty($schema, ['foo', 1024], 'value'));
+
+        $schema = Schema::make(['type' => 'object', 'properties' => ['value' => ['type' => 'any']]]);
+        $this->assertSame(['value' => 'foo'], $reader->getProperty($schema, ['value' => 'foo'], 'value'));
+        $this->assertSame(['value' => 1024], $reader->getProperty($schema, ['value' => 1024], 'value'));
     }
 
     /**

@@ -87,6 +87,12 @@ final class SchemaReader
             );
         }
 
+        if ($schema->pattern && ! preg_match("/{$schema->pattern}/", $value)) {
+            throw new InvalidArgumentException(sprintf(
+                'The value must match the pattern "%s"', $schema->pattern
+            ));
+        }
+
         return $value;
     }
 

@@ -84,6 +84,16 @@ final class SchemaReaderTest extends TestCase
         $reader->getStringProperty($schema, 'invalid', 'value');
     }
 
+    public function test_get_string_property_pattern(): void
+    {
+        $schema = Schema::make(['pattern' => '^\\d{4}$']);
+        $reader = new SchemaReader();
+        $this->assertSame('2024', $reader->getStringProperty($schema, '2024', 'value'));
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The value must match the pattern "^\\d{4}$"');
+        $reader->getStringProperty($schema, '202412', 'value');
+    }
+
     public function test_get_integer_property_int32(): void
     {
         $reader = new SchemaReader();

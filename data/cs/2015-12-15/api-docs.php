@@ -741,7 +741,7 @@
                             ],
                             'vpcid' => [
                                 'type' => 'string',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'pod_vswitch_ids' => [
                                 'type' => 'array',
@@ -968,7 +968,7 @@
                             ],
                             'vswitch_ids' => [
                                 'type' => 'array',
-                                'required' => true,
+                                'required' => false,
                                 'items' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -1097,7 +1097,16 @@
                             ],
                             'zone_id' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
+                            ],
+                            'zone_ids' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                             'profile' => [
                                 'type' => 'string',
@@ -1162,6 +1171,15 @@
                                 'required' => false,
                             ],
                             'period' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'auto_renew' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'auto_renew_period' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,

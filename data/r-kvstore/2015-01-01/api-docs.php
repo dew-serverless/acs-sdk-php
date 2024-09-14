@@ -1034,6 +1034,26 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AutoRenew',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoRenewPeriod',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                        ],
+                    ],
+                ],
             ],
         ],
         'MigrateToOtherZone' => [

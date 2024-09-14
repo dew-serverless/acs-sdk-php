@@ -1218,7 +1218,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'maxLength' => 3011,
+                        'maxLength' => 30,
                     ],
                 ],
                 [
@@ -1227,7 +1227,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'maxLength' => 10011,
+                        'maxLength' => 100,
                     ],
                 ],
                 [
@@ -1342,7 +1342,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'maxLength' => 100111,
+                        'maxLength' => 100,
                     ],
                 ],
                 [

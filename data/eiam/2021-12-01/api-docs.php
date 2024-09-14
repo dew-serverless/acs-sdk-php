@@ -3741,6 +3741,40 @@
                 ],
             ],
         ],
+        'DeleteOrganizationalUnitChildren' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'OrganizationalUnitId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+            ],
+        ],
         'UpdateOrganizationalUnit' => [
             'methods' => [
                 'post',

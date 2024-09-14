@@ -5221,6 +5221,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'VpcConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateInstantSiteMonitor' => [

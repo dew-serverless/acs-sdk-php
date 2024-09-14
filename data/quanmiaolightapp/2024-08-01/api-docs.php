@@ -9,6 +9,70 @@
         'schemas' => [],
     ],
     'apis' => [
+        'RunMarketingInformationWriting' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/runMarketingInformationWriting',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/octet-stream',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'modelId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'writingType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'customPrompt',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sourceMaterial',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'RunMarketingInformationExtract' => [
             'path' => '/{workspaceId}/quanmiao/lightapp/runMarketingInformationExtract',
             'methods' => [
@@ -74,70 +138,6 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'RunMarketingInformationWriting' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/runMarketingInformationWriting',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-                'sse',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/octet-stream',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'modelId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'writingType',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'customPrompt',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'sourceMaterial',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -216,6 +216,160 @@
                             'type' => 'string',
                             'required' => false,
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'RunScriptPlanning' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/runScriptPlanning',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/octet-stream',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'scriptName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 5000,
+                    ],
+                ],
+                [
+                    'name' => 'scriptTypeKeyword',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 5000,
+                    ],
+                ],
+                [
+                    'name' => 'scriptSummary',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 5000,
+                    ],
+                ],
+                [
+                    'name' => 'scriptShotCount',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '10',
+                    ],
+                ],
+                [
+                    'name' => 'dialogueInScene',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'plotConflict',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'additionalNote',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 5000,
+                    ],
+                ],
+            ],
+        ],
+        'RunScriptContinue' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/runScriptContinue',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/octet-stream',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'scriptTypeKeyword',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 5000,
+                    ],
+                ],
+                [
+                    'name' => 'scriptSummary',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 5000,
+                    ],
+                ],
+                [
+                    'name' => 'userProvidedContent',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 5000,
                     ],
                 ],
             ],
@@ -329,14 +483,13 @@
                 ],
             ],
         ],
-        'RunScriptContinue' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/runScriptContinue',
+        'ListHotTopicSummaries' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/listHotTopicSummaries',
             'methods' => [
                 'post',
             ],
             'schemes' => [
                 'https',
-                'sse',
             ],
             'security' => [
                 [
@@ -347,7 +500,7 @@
                 'application/json',
             ],
             'produces' => [
-                'application/octet-stream',
+                'application/json',
             ],
             'deprecated' => false,
             'parameters' => [
@@ -360,125 +513,47 @@
                     ],
                 ],
                 [
-                    'name' => 'scriptTypeKeyword',
+                    'name' => 'category',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'maxLength' => 5000,
                     ],
                 ],
                 [
-                    'name' => 'scriptSummary',
+                    'name' => 'hotTopic',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'maxLength' => 5000,
                     ],
                 ],
                 [
-                    'name' => 'userProvidedContent',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'maxLength' => 5000,
-                    ],
-                ],
-            ],
-        ],
-        'RunScriptPlanning' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/runScriptPlanning',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-                'sse',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/octet-stream',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'scriptName',
+                    'name' => 'hotTopicVersion',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'maxLength' => 5000,
                     ],
                 ],
                 [
-                    'name' => 'scriptTypeKeyword',
+                    'name' => 'nextToken',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'maxLength' => 5000,
                     ],
                 ],
                 [
-                    'name' => 'scriptSummary',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'maxLength' => 5000,
-                    ],
-                ],
-                [
-                    'name' => 'scriptShotCount',
+                    'name' => 'maxResults',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '10',
-                    ],
-                ],
-                [
-                    'name' => 'dialogueInScene',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'plotConflict',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'additionalNote',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'maxLength' => 5000,
+                        'minimum' => '0',
+                        'exclusiveMinimum' => true,
+                        'maximum' => '1000',
                     ],
                 ],
             ],

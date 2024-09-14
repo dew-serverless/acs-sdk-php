@@ -103,6 +103,14 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'LanguageHints' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
                                 ],
                             ],
                             'Parameters' => [

@@ -1007,6 +1007,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AllowedPrefixesMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateExpressConnectRouter' => [
@@ -1577,6 +1585,14 @@
                 ],
                 [
                     'name' => 'ClientToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AllowedPrefixesMode',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

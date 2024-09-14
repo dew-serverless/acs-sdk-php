@@ -11291,7 +11291,7 @@
                         'type' => 'string',
                         'required' => true,
                         'minLength' => 2,
-                        'maxLength' => 128,
+                        'maxLength' => 64,
                         'pattern' => '^([^\\x00-\\xff]|[\\w.,;/@\\n-])+$',
                     ],
                 ],

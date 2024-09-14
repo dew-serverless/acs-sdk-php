@@ -1378,6 +1378,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'Reason',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteService' => [

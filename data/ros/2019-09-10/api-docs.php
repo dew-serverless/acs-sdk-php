@@ -4134,6 +4134,14 @@
                         'maxItems' => 1,
                     ],
                 ],
+                [
+                    'name' => 'StackArn',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteStackGroup' => [

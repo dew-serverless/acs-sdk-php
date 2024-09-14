@@ -1944,6 +1944,10 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'suggestedRetailPrice' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'SkuQueryParam' => [

@@ -1501,6 +1501,18 @@
                     ],
                 ],
                 [
+                    'name' => 'TransitRouterVPCAttachmentOptions',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'Tag',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -1630,6 +1642,18 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TransitRouterVPCAttachmentOptions',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
                 [
@@ -3191,6 +3215,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EnabledIpv6',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListGrantVSwitchesToCen' => [
@@ -3260,6 +3292,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnabledIpv6',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -3360,23 +3400,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AutoRenew',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AutoRenewDuration',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -7937,6 +7960,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'AddressFamily' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'SrcPortRange' => [
                                     'type' => 'array',
                                     'required' => false,
@@ -8085,6 +8112,10 @@
                                     'maxItems' => 2,
                                 ],
                                 'TrafficMatchRuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AddressFamily' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -8249,6 +8280,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'AddressFamily' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 50,
@@ -8307,6 +8342,10 @@
                                     'maxItems' => 2,
                                 ],
                                 'TrafficMatchRuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AddressFamily' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],

@@ -4634,6 +4634,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IdleTimeout',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteNamespace' => [
@@ -4900,6 +4909,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IdleTimeout',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -6016,6 +6034,14 @@
                     ],
                 ],
                 [
+                    'name' => 'Dotnet',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'EnableEbpf',
                     'in' => 'query',
                     'schema' => [
@@ -6818,6 +6844,14 @@
                 ],
                 [
                     'name' => 'PythonModules',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Dotnet',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

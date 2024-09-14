@@ -610,24 +610,6 @@
                         'maximum' => '1',
                     ],
                 ],
-                [
-                    'name' => 'AutoUnbindOfflineEsl',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AutoUnbindDays',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '7',
-                    ],
-                ],
             ],
         ],
         'DeleteStore' => [
@@ -751,25 +733,6 @@
                         'required' => false,
                         'minimum' => '0',
                         'maximum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'AutoUnbindOfflineEsl',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AutoUnbindDays',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '7',
-                        'maximum' => '36500',
                     ],
                 ],
             ],

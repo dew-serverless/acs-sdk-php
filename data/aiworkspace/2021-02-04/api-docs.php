@@ -168,7 +168,7 @@
                     'Labels' => [
                         'type' => 'array',
                         'items' => [
-                            'type' => 'object',
+                            '$ref' => '#/components/schemas/ExperimentLabel',
                         ],
                     ],
                     'UserId' => [
@@ -182,6 +182,15 @@
                     ],
                     'GmtModifiedTime' => [
                         'type' => 'string',
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                    ],
+                    'Accessibility' => [
+                        'type' => 'string',
+                    ],
+                    'LatestRun' => [
+                        '$ref' => '#/components/schemas/Run',
                     ],
                 ],
             ],
@@ -400,6 +409,122 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+            ],
+            'Run' => [
+                'type' => 'object',
+                'properties' => [
+                    'Accessibility' => [
+                        'type' => 'string',
+                    ],
+                    'SourceId' => [
+                        'type' => 'string',
+                    ],
+                    'SourceType' => [
+                        'type' => 'string',
+                    ],
+                    'WorkspaceId' => [
+                        'type' => 'string',
+                    ],
+                    'Params' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/RunParam',
+                        ],
+                    ],
+                    'Labels' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/RunLabel',
+                        ],
+                    ],
+                    'GmtModifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Metrics' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/RunMetric',
+                        ],
+                    ],
+                    'OwnerId' => [
+                        'type' => 'string',
+                    ],
+                    'ExperimentId' => [
+                        'type' => 'string',
+                    ],
+                    'UserId' => [
+                        'type' => 'string',
+                    ],
+                    'RunId' => [
+                        'type' => 'string',
+                    ],
+                    'GmtCreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'RunLabel' => [
+                'type' => 'object',
+                'properties' => [
+                    'Value' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'RunId' => [
+                        'type' => 'string',
+                    ],
+                    'GmtCreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'Key' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'RunMetric' => [
+                'type' => 'object',
+                'properties' => [
+                    'Value' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                    'Step' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Timestamp' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Key' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'RunParam' => [
+                'type' => 'object',
+                'properties' => [
+                    'Value' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'Key' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -831,6 +956,14 @@
                 ],
                 [
                     'name' => 'Accessibility',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ImageUri',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

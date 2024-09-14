@@ -232,6 +232,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -265,6 +266,14 @@
                             ],
                         ],
                         'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'AddressIpVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -362,6 +371,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'deprecated' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AddressIpVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -547,6 +565,14 @@
                 ],
                 [
                     'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AddressIpVersion',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1322,6 +1348,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'Ipv6Address' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 10,
@@ -1391,6 +1421,14 @@
                 ],
                 [
                     'name' => 'PolicyDocument',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AddressIpVersion',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1472,6 +1510,14 @@
                 ],
                 [
                     'name' => 'PolicyDocument',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AddressIpVersion',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1611,6 +1657,14 @@
                 ],
                 [
                     'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AddressIpVersion',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2180,6 +2234,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Ipv6Address',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

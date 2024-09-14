@@ -19300,210 +19300,6 @@
                 ],
             ],
         ],
-        'ListRtcMPUEventSubRecord' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SubId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StartTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EndTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateRtcMPUEventSub' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ChannelIds',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CallbackUrl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeRtcMPUEventSub' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateRtcMPUEventSub' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ChannelIds',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CallbackUrl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteRtcMPUEventSub' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'CreateEventSub' => [
             'methods' => [
                 'post',
@@ -19777,6 +19573,210 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateRtcMPUEventSub' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CallbackUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateRtcMPUEventSub' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CallbackUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteRtcMPUEventSub' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRtcMPUEventSub' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListRtcMPUEventSubRecord' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SubId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => true,
                     ],
                 ],
@@ -21696,19 +21696,11 @@
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-shanghai',
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shenzhen',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
@@ -21720,28 +21712,8 @@
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-northeast-2-pop',
             'endpoint' => 'live.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'live.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'live.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-finance-1',
-            'endpoint' => 'live.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing-finance-pop',
@@ -21753,10 +21725,6 @@
         ],
         [
             'regionId' => 'cn-beijing-nu16-b01',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
@@ -21773,10 +21741,6 @@
         ],
         [
             'regionId' => 'cn-hangzhou-bj-b01',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-finance',
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
@@ -21800,15 +21764,7 @@
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-hongkong-finance-pop',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
@@ -21832,19 +21788,11 @@
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-shanghai-inner',
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai-internal-test-1',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-finance-1',
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
@@ -21864,10 +21812,6 @@
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-yushanfang',
             'endpoint' => 'live.aliyuncs.com',
         ],
@@ -21880,10 +21824,6 @@
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'live.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-zhangjiakou-na62-a01',
             'endpoint' => 'live.aliyuncs.com',
         ],
@@ -21892,15 +21832,7 @@
             'endpoint' => 'live.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'live.ap-southeast-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'eu-west-1-oxs',
-            'endpoint' => 'live.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'me-east-1',
             'endpoint' => 'live.ap-southeast-1.aliyuncs.com',
         ],
         [
@@ -21908,12 +21840,16 @@
             'endpoint' => 'live.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-east-1',
+            'regionId' => 'me-central-1',
+            'endpoint' => 'live.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
             'endpoint' => 'live.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'live.ap-southeast-1.aliyuncs.com',
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'live.eu-central-1.aliyuncs.com',
         ],
     ],
 ];

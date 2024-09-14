@@ -11112,6 +11112,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -11119,6 +11120,7 @@
                     'in' => 'header',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -11172,6 +11174,7 @@
                     'in' => 'body',
                     'schema' => [
                         '$ref' => '#/components/schemas/LogGroup',
+                        'required' => false,
                     ],
                 ],
             ],

@@ -9094,7 +9094,7 @@
                         'properties' => [
                             'drive_id' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                         ],
                     ],
@@ -9782,7 +9782,7 @@
                                     ],
                                     'revision_id' => [
                                         'type' => 'string',
-                                        'required' => false,
+                                        'required' => true,
                                     ],
                                 ],
                             ],

@@ -21131,6 +21131,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'SourceDestCheck',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'AssignPrivateIpAddresses' => [

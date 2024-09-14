@@ -451,6 +451,10 @@
                     'fusion' => [
                         'type' => 'boolean',
                     ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
                 ],
             ],
             'TaskInstance' => [
@@ -995,6 +999,14 @@
                 ],
                 [
                     'name' => 'releaseType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'workspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

@@ -1546,6 +1546,11 @@
                                 'format' => 'int32',
                                 'required' => false,
                             ],
+                            'MaxIdleAppInstanceAmount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
                             'ScalingStep' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
@@ -2275,8 +2280,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -2328,6 +2333,11 @@
                                 'required' => false,
                             ],
                             'MaxScalingAmount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'MaxIdleAppInstanceAmount' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                                 'required' => false,

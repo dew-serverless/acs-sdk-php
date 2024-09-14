@@ -2459,6 +2459,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AccessModes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListTagsForPrivateAccessApplication' => [
@@ -2625,6 +2633,8 @@
                             'All',
                             'TCP',
                             'UDP',
+                            'HTTP',
+                            'HTTPS',
                         ],
                     ],
                 ],
@@ -2651,6 +2661,30 @@
                             'type' => 'string',
                             'required' => false,
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'BrowserAccessStatus',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'L7ProxyDomainAutomaticPrefix',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'L7ProxyDomainCustom',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2761,6 +2795,8 @@
                             'All',
                             'TCP',
                             'UDP',
+                            'HTTP',
+                            'HTTPS',
                         ],
                     ],
                 ],
@@ -2791,6 +2827,30 @@
                 ],
                 [
                     'name' => 'ModifyType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'L7ProxyDomainAutomaticPrefix',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'L7ProxyDomainCustom',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'L7ProxyDomainPrivate',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

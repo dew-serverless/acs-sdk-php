@@ -1011,6 +1011,11 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'ALL',
+                            'LATEST',
+                            'NONE',
+                        ],
                     ],
                 ],
             ],

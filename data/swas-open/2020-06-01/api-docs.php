@@ -5841,10 +5841,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'swas.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-5',
             'endpoint' => 'swas.ap-southeast-5.aliyuncs.com',
         ],

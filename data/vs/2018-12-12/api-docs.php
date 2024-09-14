@@ -589,6 +589,18 @@
                         'maxLength' => 255,
                     ],
                 ],
+                [
+                    'name' => 'KeyType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'adb',
+                            'ssh',
+                        ],
+                    ],
+                ],
             ],
         ],
         'ListPublicKeys' => [
@@ -641,6 +653,18 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'KeyType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'ssh',
+                            'adb',
+                        ],
                     ],
                 ],
             ],

@@ -239,8 +239,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyEnsEipAddressAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result describeEnsEipAddresses(array $arguments = [])
  * @method \Http\Promise\Promise describeEnsEipAddressesAsync($arguments = [])
- * @method \Dew\Acs\Result describeEipAddresses(array $arguments = [])
- * @method \Http\Promise\Promise describeEipAddressesAsync($arguments = [])
  * @method \Dew\Acs\Result createEipInstance(array $arguments = [])
  * @method \Http\Promise\Promise createEipInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result createNatGateway(array $arguments = [])
@@ -379,8 +377,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise restartDeviceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result resetDeviceInstance(array $arguments = [])
  * @method \Http\Promise\Promise resetDeviceInstanceAsync($arguments = [])
- * @method \Dew\Acs\Result describeApplicationResourceSummary(array $arguments = [])
- * @method \Http\Promise\Promise describeApplicationResourceSummaryAsync($arguments = [])
  * @method \Dew\Acs\Result distApplicationData(array $arguments = [])
  * @method \Http\Promise\Promise distApplicationDataAsync($arguments = [])
  * @method \Dew\Acs\Result createApplication(array $arguments = [])
@@ -493,6 +489,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeStorageVolumeAsync($arguments = [])
  * @method \Dew\Acs\Result describeStorageGateway(array $arguments = [])
  * @method \Http\Promise\Promise describeStorageGatewayAsync($arguments = [])
+ * @method \Dew\Acs\Result unassociateHaVip(array $arguments = [])
+ * @method \Http\Promise\Promise unassociateHaVipAsync($arguments = [])
+ * @method \Dew\Acs\Result associateHaVip(array $arguments = [])
+ * @method \Http\Promise\Promise associateHaVipAsync($arguments = [])
+ * @method \Dew\Acs\Result describeHaVips(array $arguments = [])
+ * @method \Http\Promise\Promise describeHaVipsAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyHaVipAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise modifyHaVipAttributeAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

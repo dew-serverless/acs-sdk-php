@@ -207,8 +207,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise clearMajorProtectionBlackIpAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeMajorProtectionBlackIps(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeMajorProtectionBlackIpsAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result deleteApisecAbnormal(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise deleteApisecAbnormalAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeApisecAssetTrend(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeApisecAssetTrendAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeApisecAbnormalDomainStatistic(array $arguments = []) {@since 2021-10-01}
@@ -217,8 +215,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeApisecEventDomainStatisticAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeApisecSensitiveDomainStatistic(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeApisecSensitiveDomainStatisticAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result deleteApisecEvent(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise deleteApisecEventAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeApisecLogDeliveries(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeApisecLogDeliveriesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeApisecSlsLogStores(array $arguments = []) {@since 2021-10-01}

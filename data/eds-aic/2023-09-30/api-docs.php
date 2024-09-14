@@ -996,7 +996,7 @@
                             'required' => false,
                         ],
                         'minItems' => 1,
-                        'maxItems' => 50,
+                        'maxItems' => 500,
                     ],
                 ],
                 [

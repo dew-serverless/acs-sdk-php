@@ -51,6 +51,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyInstanceTemporaryCapacityAsync($arguments = [])
  * @method \Dew\Acs\Result switchoverInstance(array $arguments = [])
  * @method \Http\Promise\Promise switchoverInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result removeStandbyInstance(array $arguments = [])
+ * @method \Http\Promise\Promise removeStandbyInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteInstances(array $arguments = [])
  * @method \Http\Promise\Promise deleteInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result describeTenantReadableScn(array $arguments = [])

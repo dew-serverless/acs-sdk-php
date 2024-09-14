@@ -809,6 +809,14 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'DataLoader' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'Mount',
+                                    'Download',
+                                ],
+                            ],
                         ],
                     ],
                 ],

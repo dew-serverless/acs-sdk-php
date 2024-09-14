@@ -512,14 +512,6 @@
                         ],
                     ],
                 ],
-                [
-                    'name' => 'JobScheduler',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
         'GetJob' => [

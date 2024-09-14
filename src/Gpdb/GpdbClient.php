@@ -85,6 +85,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createVectorIndexAsync($arguments = [])
  * @method \Dew\Acs\Result deleteVectorIndex(array $arguments = [])
  * @method \Http\Promise\Promise deleteVectorIndexAsync($arguments = [])
+ * @method \Dew\Acs\Result rerank(array $arguments = [])
+ * @method \Http\Promise\Promise rerankAsync($arguments = [])
  * @method \Dew\Acs\Result listStreamingDataSources(array $arguments = [])
  * @method \Http\Promise\Promise listStreamingDataSourcesAsync($arguments = [])
  * @method \Dew\Acs\Result deleteStreamingDataSource(array $arguments = [])
@@ -363,8 +365,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeIMVInfosAsync($arguments = [])
  * @method \Dew\Acs\Result describeActiveSQLRecords(array $arguments = [])
  * @method \Http\Promise\Promise describeActiveSQLRecordsAsync($arguments = [])
- * @method \Dew\Acs\Result rerank(array $arguments = [])
- * @method \Http\Promise\Promise rerankAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyDBInstancePayType(array $arguments = [])
+ * @method \Http\Promise\Promise modifyDBInstancePayTypeAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteAccount(array $arguments = [])
+ * @method \Http\Promise\Promise deleteAccountAsync($arguments = [])
+ * @method \Dew\Acs\Result getAccount(array $arguments = [])
+ * @method \Http\Promise\Promise getAccountAsync($arguments = [])
  */
 final class GpdbClient extends AcsClient
 {

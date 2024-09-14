@@ -2389,6 +2389,354 @@
                 ],
             ],
         ],
+        'CreateJob' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'JobName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'JobSpec',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'CommandLine' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'RunasUser' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RunasUserPassword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Priority' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'StdoutPath' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'StderrPath' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'JobQueue' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ArrayRequest' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Variables' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PostCmdLine' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'WallTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Resources' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Nodes' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'Cores' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'Memory' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Gpus' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListJobs' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'JobFilter',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Users' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'Queues' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'Nodes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'JobName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'JobStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CreateTimeStart' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CreateTimeEnd' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SortBy' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'ExecuteOrder' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SubmitOrder' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'PendOrder' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetJobLog' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'LogType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Size',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Offset',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetJob' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StopJobs' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'JobIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ListCommonLogs' => [
             'methods' => [
                 'post',
@@ -2556,56 +2904,6 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteJobs' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'JobSpec',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'object',
-                            'properties' => [
-                                'JobId' => [
-                                    'type' => 'string',
-                                ],
-                                'TaskSpec' => [
-                                    'type' => 'array',
-                                    'items' => [
-                                        'type' => 'object',
-                                        'properties' => [
-                                            'TaskName' => [
-                                                'type' => 'string',
-                                            ],
-                                            'ArrayIndex' => [
-                                                'type' => 'array',
-                                                'items' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int32',
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
                     ],
                 ],
             ],

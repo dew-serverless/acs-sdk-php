@@ -7974,6 +7974,15 @@
                     ],
                 ],
                 [
+                    'name' => 'SwimVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'AcceptLanguage',
                     'in' => 'query',
                     'schema' => [
@@ -8319,6 +8328,10 @@
                                         ],
                                     ],
                                 ],
+                            ],
+                            'Condition' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -17967,6 +17980,64 @@
                 ],
             ],
         ],
+        'ChangeResourceGroup' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'UpdateNacosGrayConfig' => [
             'methods' => [
                 'get',
@@ -18190,10 +18261,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'mse.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'mse.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',

@@ -2746,6 +2746,9 @@
                         'required' => false,
                         'maxLength' => 50,
                     ],
+                    'role' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'Version' => [
@@ -3042,6 +3045,7 @@
             'produces' => [
                 'application/json',
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'functionName',
@@ -4993,6 +4997,7 @@
             'produces' => [
                 'application/json',
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'ResourceType',

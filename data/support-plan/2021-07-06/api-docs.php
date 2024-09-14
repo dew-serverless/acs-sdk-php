@@ -137,7 +137,7 @@
             'parameters' => [
                 [
                     'name' => 'OpenGroupId',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -326,7 +326,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ImportantDescription',
+                    'name' => 'UrgentDescription',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -334,7 +334,15 @@
                     ],
                 ],
                 [
-                    'name' => 'IsImportant',
+                    'name' => 'IsUrgent',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Overview',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -342,31 +350,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ProductTypeName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CustomerUserId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CustomerRealName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TaskTitle',
+                    'name' => 'ProductCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -374,7 +358,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ProductType',
+                    'name' => 'CreateUserId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -399,53 +383,11 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'CallerParentId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'OrderId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'OpenGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RequestId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CallerType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CallerUid',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -484,7 +426,8 @@
                     'name' => 'PageSize',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -492,7 +435,16 @@
                     'name' => 'PageNo',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IsUrgent',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

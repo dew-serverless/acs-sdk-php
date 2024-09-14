@@ -491,6 +491,13 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'DBA',
+                            'ADMIN',
+                            'USER',
+                            'SECURITY_ADMIN',
+                            'STRUCT_READ_ONLY',
+                        ],
                     ],
                 ],
                 [

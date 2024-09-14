@@ -155,6 +155,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createOrganizationalUnitAsync($arguments = [])
  * @method \Dew\Acs\Result deleteOrganizationalUnit(array $arguments = [])
  * @method \Http\Promise\Promise deleteOrganizationalUnitAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteOrganizationalUnitChildren(array $arguments = [])
+ * @method \Http\Promise\Promise deleteOrganizationalUnitChildrenAsync($arguments = [])
  * @method \Dew\Acs\Result updateOrganizationalUnit(array $arguments = [])
  * @method \Http\Promise\Promise updateOrganizationalUnitAsync($arguments = [])
  * @method \Dew\Acs\Result updateOrganizationalUnitDescription(array $arguments = [])

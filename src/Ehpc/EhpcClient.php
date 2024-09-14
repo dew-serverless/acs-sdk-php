@@ -329,6 +329,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getQueueAsync($arguments = []) {@since 2024-07-30}
  * @method \Dew\Acs\Result deleteQueues(array $arguments = []) {@since 2024-07-30}
  * @method \Http\Promise\Promise deleteQueuesAsync($arguments = []) {@since 2024-07-30}
+ * @method \Dew\Acs\Result createJob(array $arguments = []) {@since 2024-07-30}
+ * @method \Http\Promise\Promise createJobAsync($arguments = []) {@since 2024-07-30}
+ * @method \Dew\Acs\Result getJob(array $arguments = []) {@since 2024-07-30}
+ * @method \Http\Promise\Promise getJobAsync($arguments = []) {@since 2024-07-30}
  * @method \Dew\Acs\Result listCommonLogs(array $arguments = []) {@since 2024-07-30}
  * @method \Http\Promise\Promise listCommonLogsAsync($arguments = []) {@since 2024-07-30}
  * @method \Dew\Acs\Result getCommonLogDetail(array $arguments = []) {@since 2024-07-30}

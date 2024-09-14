@@ -463,6 +463,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getApplicationInstanceListAsync($arguments = [])
  * @method \Dew\Acs\Result cloneSentinelRuleFromAhas(array $arguments = [])
  * @method \Http\Promise\Promise cloneSentinelRuleFromAhasAsync($arguments = [])
+ * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result updateNacosGrayConfig(array $arguments = [])
  * @method \Http\Promise\Promise updateNacosGrayConfigAsync($arguments = [])
  */

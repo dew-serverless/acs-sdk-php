@@ -41,6 +41,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listAccessTokensAsync($arguments = [])
  * @method \Dew\Acs\Result deleteAccessToken(array $arguments = [])
  * @method \Http\Promise\Promise deleteAccessTokenAsync($arguments = [])
+ * @method \Dew\Acs\Result createCrossZoneMigrationJob(array $arguments = [])
+ * @method \Http\Promise\Promise createCrossZoneMigrationJobAsync($arguments = [])
  */
 final class SmcClient extends AcsClient
 {

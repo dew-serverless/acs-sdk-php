@@ -13,8 +13,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result getQuota(array $arguments = [])
  * @method \Http\Promise\Promise getQuotaAsync($arguments = [])
- * @method \Dew\Acs\Result updateQuota(array $arguments = [])
- * @method \Http\Promise\Promise updateQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result listQuotasPlans(array $arguments = [])
  * @method \Http\Promise\Promise listQuotasPlansAsync($arguments = [])
  * @method \Dew\Acs\Result createQuotaPlan(array $arguments = [])
@@ -79,6 +77,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise killJobsAsync($arguments = [])
  * @method \Dew\Acs\Result getJobResourceUsage(array $arguments = [])
  * @method \Http\Promise\Promise getJobResourceUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result updateQuota(array $arguments = [])
+ * @method \Http\Promise\Promise updateQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result getTableInfo(array $arguments = [])
  * @method \Http\Promise\Promise getTableInfoAsync($arguments = [])
  */

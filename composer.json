@@ -1,5 +1,5 @@
 {
-    "name": "dew/acs-sdk-php",
+    "name": "dew-serverless/acs-sdk-php",
     "description": "Unofficial Alibaba Cloud PHP SDK.",
     "type": "library",
     "require": {

@@ -19,6 +19,16 @@ signing, sparing you from the complexities of signature calculations.
 
 ## Quickstart
 
+### Install
+
+The SDK can be installed using _Composer_ with the following command:
+
+```bash
+composer require dew-serverless/acs-sdk-php
+```
+
+### Usage
+
 Clients follow the naming convention of `<Product>Client`. For example, with
 VPC, let's create a new network for our awesome project:
 

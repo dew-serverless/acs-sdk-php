@@ -11,13 +11,17 @@ final class PlainBufferDecoder
 {
     /**
      * The code instructs keep parsing.
+     *
+     * @var int
      */
-    protected const int INSTRUCTOR_CONTINUE = 0;
+    protected const INSTRUCTOR_CONTINUE = 0;
 
     /**
      * The code instructs stop parsing.
+     *
+     * @var int
      */
-    protected const int INSTRUCTOR_STOP = 1;
+    protected const INSTRUCTOR_STOP = 1;
 
     /**
      * The pasring instructor.

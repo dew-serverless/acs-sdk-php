@@ -11,18 +11,24 @@ final class HexDumper
 {
     /**
      * The code point indicates a space.
+     *
+     * @var int
      */
-    private const int FIRST_PRINTABLE_ASCII_CHARACTER_CODEPOINT = 32;
+    private const FIRST_PRINTABLE_ASCII_CHARACTER_CODEPOINT = 32;
 
     /**
      * The code point indicates a ~ character.
+     *
+     * @var int
      */
-    private const int LAST_PRINTABLE_ASCII_CHARACTER_CODEPOINT = 126;
+    private const LAST_PRINTABLE_ASCII_CHARACTER_CODEPOINT = 126;
 
     /**
      * The size of the ASCII table.
+     *
+     * @var int
      */
-    private const int ASCII_TABLE_SIZE = 256;
+    private const ASCII_TABLE_SIZE = 256;
 
     /**
      * The ASCII table of original and printable character pairs.

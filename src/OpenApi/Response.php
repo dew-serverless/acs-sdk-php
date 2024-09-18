@@ -11,6 +11,7 @@ namespace Dew\Acs\OpenApi;
  *   headers?: array<string, mixed>,
  *   schema?: TSchema
  * }
+ *
  * @see https://api.aliyun.com/openmeta/struct/Response
  */
 final readonly class Response

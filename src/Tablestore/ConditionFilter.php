@@ -13,6 +13,7 @@ use Dew\Acs\Tablestore\Messages\Filter;
  *   logical: string,
  *   negative?: bool
  * }
+ *
  * @see https://www.alibabacloud.com/help/en/tablestore/developer-reference/filter-1
  */
 final class ConditionFilter

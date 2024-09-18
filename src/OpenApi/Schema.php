@@ -30,6 +30,7 @@ namespace Dew\Acs\OpenApi;
  *   maxItems?: int,
  *   example?: mixed
  * }
+ *
  * @see https://api.aliyun.com/openmeta/struct/Schema
  */
 final readonly class Schema

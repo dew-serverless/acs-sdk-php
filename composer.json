@@ -3,7 +3,7 @@
     "description": "Unofficial Alibaba Cloud PHP SDK.",
     "type": "library",
     "require": {
-        "php": "^8.3",
+        "php": "^8.2",
         "guzzlehttp/psr7": "^2.7",
         "php-http/client-common": "^2.7",
         "php-http/discovery": "^1.0",

@@ -8,7 +8,10 @@ use Override;
 
 final class Lz4 implements Compression
 {
-    public const int LZ4_FAST_COMPRESSION = 0;
+    /**
+     * @var int
+     */
+    public const LZ4_FAST_COMPRESSION = 0;
 
     /**
      * {@inheritDoc}

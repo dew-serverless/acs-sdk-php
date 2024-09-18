@@ -8,7 +8,10 @@ use Override;
 
 final class Deflate implements Compression
 {
-    public const int DEFAULT_COMPRESSION_LEVEL = 6;
+    /**
+     * @var int
+     */
+    public const DEFAULT_COMPRESSION_LEVEL = 6;
 
     /**
      * {@inheritDoc}

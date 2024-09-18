@@ -11,7 +11,10 @@ use function Zstd\uncompress;
 
 final class Zstd implements Compression
 {
-    public const int DEFAULT_COMPRESSION_LEVEL = 3;
+    /**
+     * @var int
+     */
+    public const DEFAULT_COMPRESSION_LEVEL = 3;
 
     /**
      * {@inheritDoc}

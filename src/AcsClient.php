@@ -35,7 +35,10 @@ use Psr\Http\Message\UriFactoryInterface;
  */
 abstract class AcsClient
 {
-    public const int MAJOR_VERSION = 0;
+    /**
+     * @var int
+     */
+    public const MAJOR_VERSION = 0;
 
     protected ApiDocs $docs;
 

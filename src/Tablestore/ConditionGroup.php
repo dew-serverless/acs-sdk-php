@@ -18,8 +18,10 @@ final class ConditionGroup
 
     /**
      * The logical operators.
+     *
+     * @var string[]
      */
-    public const array SUPPORTED = [
+    public const SUPPORTED = [
         'and',
         'or',
     ];

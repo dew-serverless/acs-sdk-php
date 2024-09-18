@@ -27,5 +27,8 @@ return (new PhpCsFixer\Config())
             'imports_order' => ['class', 'function', 'const'],
             'sort_algorithm' => 'alpha',
         ],
+        'phpdoc_separation' => [
+            'skip_unlisted_annotations' => true,
+        ],
     ])
     ->setFinder($finder);

@@ -16,6 +16,7 @@ use InvalidArgumentException;
  *   components: array<string, mixed[]>,
  *   endpoints: mixed[][]
  * }
+ *
  * @see https://api.aliyun.com/openmeta/struct/ApiDocs
  */
 final readonly class ApiDocs

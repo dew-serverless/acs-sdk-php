@@ -20,6 +20,7 @@ use Psr\Http\Message\RequestInterface;
  *   expires: int
  * }
  * @mixin \Dew\Acs\Oss\V4Signature
+ *
  * @see https://www.alibabacloud.com/help/en/oss/developer-reference/add-signatures-to-urls
  */
 final class V4SignatureOnUrl implements SignsRequest, NeedsArguments

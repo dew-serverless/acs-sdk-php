@@ -18,6 +18,7 @@ final class SlsException extends AcsException
 {
     /**
      * @param  \Dew\Acs\Result<TError>  $result
+     *
      * @see https://help.aliyun.com/zh/sls/developer-reference/api-sls-2020-12-30-appendix-error-codes
      */
     #[Override]

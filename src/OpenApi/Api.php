@@ -27,6 +27,7 @@ use InvalidArgumentException;
  *   responses: array<string, mixed[]>,
  *   errorCodes?: array<string, TErrorCode[]>
  * }
+ *
  * @see https://api.aliyun.com/openmeta/struct/api
  */
 final class Api

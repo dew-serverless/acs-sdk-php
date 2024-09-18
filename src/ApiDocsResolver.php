@@ -20,6 +20,7 @@ use RuntimeException;
  *   defaultVersion: string,
  *   versions: string[]
  * }
+ *
  * @see https://api.aliyun.com/openmeta/api/GetProductList
  */
 final class ApiDocsResolver

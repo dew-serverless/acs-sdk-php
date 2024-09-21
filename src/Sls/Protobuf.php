@@ -8,19 +8,24 @@ use Dew\Acs\Sls\Messages\Log;
 use Dew\Acs\Sls\Messages\LogContent;
 use Dew\Acs\Sls\Messages\LogGroup;
 use Dew\Acs\Sls\Messages\LogTag;
+use InvalidArgumentException;
 
 /**
- * @phpstan-type TLog array{
- *   time: positive-int,
- *   contents: array<string, string>,
- *   time_ns?: positive-int
+ * @phpstan-type TLogContent array{
+ *   Key: string,
+ *   Value: string
+ * }
+ * @phpstan-type TLogItem array{
+ *   Time: positive-int,
+ *   Contents: TLogContent[],
+ *   TimeNs?: positive-int
  * }
  * @phpstan-type TLogGroup array{
- *   logs: TLog[],
- *   topic?: string,
- *   source?: string,
- *   machine?: string,
- *   tags?: array<string, string>
+ *   Topic?: string,
+ *   Source?: string,
+ *   LogTags?: array<string, string>,
+ *   Logs: TLogItem[],
+ *   MachineUuid?: string,
  * }
  */
 final class Protobuf
@@ -30,25 +35,20 @@ final class Protobuf
      */
     public static function toLogGroup(array $group): LogGroup
     {
-        $message = (new LogGroup())
-            ->setLogs(array_map(fn (array $log): Log => static::toLog($log), $group['logs']));
+        $message = new LogGroup();
 
-        if (isset($group['topic'])) {
-            $message->setTopic($group['topic']);
+        if (isset($group['Topic'])) {
+            $message->setTopic($group['Topic']);
         }
 
-        if (isset($group['source'])) {
-            $message->setSource($group['source']);
+        if (isset($group['Source'])) {
+            $message->setSource($group['Source']);
         }
 
-        if (isset($group['machine'])) {
-            $message->setMachineUuid($group['machine']);
-        }
-
-        if (isset($group['tags'])) {
+        if (isset($group['LogTags'])) {
             $tags = [];
 
-            foreach ($group['tags'] as $key => $value) {
+            foreach ($group['LogTags'] as $key => $value) {
                 $tags[] = (new LogTag())
                     ->setKey($key)
                     ->setValue($value);
@@ -57,31 +57,70 @@ final class Protobuf
             $message->setTags($tags);
         }
 
+        if (isset($group['Logs'])) {
+            $logs = [];
+
+            foreach ($group['Logs'] as $log) {
+                $logs[] = static::toLogItem($log);
+            }
+
+            $message->setLogs($logs);
+        }
+
+        if (isset($group['MachineUuid'])) {
+            $message->setMachineUuid($group['MachineUuid']);
+        }
+
         return $message;
     }
 
     /**
-     * @param  TLog  $log
+     * @param  TLogItem  $log
      */
-    public static function toLog(array $log): Log
+    public static function toLogItem(array $log): Log
     {
         $message = new Log();
-        $message->setTime($log['time']);
 
-        $contents = [];
-
-        foreach ($log['contents'] as $key => $value) {
-            $contents[] = (new LogContent())
-                ->setKey($key)
-                ->setValue($value);
+        if (isset($log['Time'])) {
+            $message->setTime($log['Time']);
         }
 
-        $message->setContents($contents);
+        if (isset($log['Contents'])) {
+            $contents = [];
 
-        if (isset($log['time_ns'])) {
-            $message->setTimeNs($log['time_ns']);
+            foreach ($log['Contents'] as $content) {
+                $contents[] = static::toLogContent($content);
+            }
+
+            $message->setContents($contents);
+        }
+
+        if (isset($log['TimeNs'])) {
+            $message->setTimeNs($log['TimeNs']);
         }
 
         return $message;
+    }
+
+    /**
+     * @param  TLogContent  $content
+     */
+    public static function toLogContent(array $content): LogContent
+    {
+        if (! isset($content['Key'])) {
+            throw new InvalidArgumentException(
+                'The log content should have a "Key" field.'
+            );
+        }
+
+        if (! isset($content['Value'])) {
+            throw new InvalidArgumentException(
+                'The log content should have a "Value" field.'
+            );
+        }
+
+        return (new LogContent())
+            ->setKey($content['Key'])
+            ->setValue($content['Value']);
     }
 }

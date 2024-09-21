@@ -19,7 +19,7 @@ trait ManagesLogs
     public function putLogsAsync(array $arguments): Promise
     {
         // @phpstan-ignore argument.type
-        $group = Protobuf::toLogGroup($arguments);
+        $group = Protobuf::toLogGroup($arguments['body'] ?? []);
 
         $request = $this->newRequest('POST')
             ->withHeader('Content-Type', 'application/x-protobuf')

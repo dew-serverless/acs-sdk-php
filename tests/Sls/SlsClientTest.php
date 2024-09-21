@@ -22,11 +22,7 @@ final class SlsClientTest extends TestCase
     {
         $mock = new Client();
         $client = $this->makeClient(['http_client' => $mock]);
-        $client->putLogs([
-            'project' => 'testing',
-            'logstore' => 'default',
-            'logs' => [['time' => time(), 'contents' => ['message' => 'foo']]],
-        ]);
+        $client->putLogs(['project' => 'testing', 'logstore' => 'default']);
         $this->assertSame('/logstores/default/shards/lb', $mock->getLastRequest()->getUri()->getPath());
     }
 
@@ -37,7 +33,6 @@ final class SlsClientTest extends TestCase
         $client->putLogs([
             'project' => 'testing',
             'logstore' => 'default',
-            'logs' => [['time' => time(), 'contents' => ['message' => 'foo']]],
             'hash' => '00000000000000000000000000000000',
         ]);
         $uri = $mock->getLastRequest()->getUri();

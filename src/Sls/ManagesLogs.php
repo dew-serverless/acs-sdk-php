@@ -41,7 +41,7 @@ trait ManagesLogs
         );
 
         $compression = isset($arguments['x-log-compresstype'])
-            ? new (DataCompression::from($arguments['x-log-compresstype'])->toFqcn())
+            ? DataCompression::make($arguments['x-log-compresstype'])
             : null;
 
         $client = $this->newClient($this->newStack()

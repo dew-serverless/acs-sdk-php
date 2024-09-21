@@ -13,7 +13,12 @@ use Http\Promise\Promise;
 trait ManagesLogs
 {
     /**
-     * @param  array{project: string, logstore: string, hash?: string}  $arguments
+     * @param  array{
+     *   project: string,
+     *   logstore: string,
+     *   x-log-compresstype?: string,
+     *   hash?: string,
+     * }  $arguments
      * @return \Http\Promise\Promise
      */
     public function putLogsAsync(array $arguments): Promise
@@ -35,8 +40,12 @@ trait ManagesLogs
             ->withQuery($query)
         );
 
+        $compression = isset($arguments['x-log-compresstype'])
+            ? new (DataCompression::from($arguments['x-log-compresstype'])->toFqcn())
+            : null;
+
         $client = $this->newClient($this->newStack()
-            ->append(new CompressData($this->streamFactory))
+            ->append(new CompressData($this->streamFactory, $compression))
             ->append(SignRequest::withSignature(new V4Signature(), $this->config))
         );
 

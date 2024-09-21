@@ -920,6 +920,9 @@
                     'requestId' => [
                         'type' => 'string',
                     ],
+                    'orderClosedReason' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'Product' => [

@@ -23,16 +23,7 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'GetShareRateData' => [
             'methods' => [
@@ -49,14 +40,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -129,16 +112,7 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'GetConsumerStatus' => [
             'methods' => [
@@ -154,16 +128,7 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'GetTokenList' => [
             'methods' => [
@@ -178,16 +143,7 @@
                     'AK' => [],
                 ],
             ],
-            'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'AddConsumer' => [
             'methods' => [
@@ -204,14 +160,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'BusinessType',
                     'in' => 'query',
@@ -300,16 +248,7 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'GetAllPlatformTypes' => [
             'methods' => [
@@ -325,16 +264,7 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'GetAllRegions' => [
             'methods' => [
@@ -350,16 +280,7 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'GetAllMarkets' => [
             'methods' => [
@@ -375,16 +296,7 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'GetBalanceBandwidthData' => [
             'methods' => [
@@ -401,14 +313,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'DataInterval',
                     'in' => 'query',
@@ -444,14 +348,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'DataInterval',
                     'in' => 'query',
                     'schema' => [
@@ -486,14 +382,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'Page',
                     'in' => 'query',
                     'schema' => [
@@ -525,16 +413,7 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'GetExpenseSummary' => [
             'methods' => [
@@ -550,14 +429,6 @@
                 ],
             ],
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'StartDate',
                     'in' => 'query',
@@ -630,16 +501,7 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'GetTrafficData' => [
             'methods' => [
@@ -656,14 +518,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -738,14 +592,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -819,14 +665,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -874,14 +712,6 @@
                 ],
             ],
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'Name',
                     'in' => 'query',
@@ -955,14 +785,6 @@
             ],
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'ResourceId',
                     'in' => 'query',
                     'schema' => [
@@ -987,14 +809,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'ResourceId',
                     'in' => 'query',
@@ -1021,14 +835,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'ResourceId',
                     'in' => 'query',
                     'schema' => [
@@ -1053,14 +859,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'Page',
                     'in' => 'query',
@@ -1094,14 +892,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'Name',
                     'in' => 'query',
@@ -1184,14 +974,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'BusinessType',
                     'in' => 'query',
                     'schema' => [
@@ -1262,14 +1044,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -1294,14 +1068,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -1328,14 +1094,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -1360,14 +1118,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -1442,14 +1192,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -1523,14 +1265,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -1602,16 +1336,7 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'GetDomains' => [
             'methods' => [
@@ -1628,14 +1353,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'Page',
                     'in' => 'query',
@@ -1677,14 +1394,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',

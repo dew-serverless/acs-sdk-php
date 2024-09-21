@@ -284,6 +284,19 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
             ],
         ],
         'ApplyFileUploadLease' => [
@@ -560,6 +573,57 @@
                     ],
                 ],
                 [
+                    'name' => 'DataSource',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'CredentialId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CredentialKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Database' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Endpoint' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'IsPrivateLink' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'Region' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SubPath' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SubType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Table' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'SinkType',
                     'in' => 'query',
                     'schema' => [
@@ -598,20 +662,20 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Name' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Type' => [
-                                    'type' => 'string',
+                                'IsRecall' => [
+                                    'type' => 'boolean',
                                     'required' => false,
                                 ],
                                 'IsSearch' => [
                                     'type' => 'boolean',
                                     'required' => false,
                                 ],
-                                'IsRecall' => [
-                                    'type' => 'boolean',
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
@@ -961,6 +1025,19 @@
                             'additionalProperties' => [
                                 'type' => 'string',
                             ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Images',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
                         ],
                     ],
                 ],

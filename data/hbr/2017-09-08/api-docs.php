@@ -1371,6 +1371,10 @@
                                     ],
                                     'maxItems' => 99,
                                 ],
+                                'VaultId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'KeepLatestSnapshots' => [
                                     'type' => 'integer',
                                     'format' => 'int64',

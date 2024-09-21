@@ -662,14 +662,6 @@
                         'required' => false,
                     ],
                 ],
-                [
-                    'name' => 'SignatureVersion',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
         'DeleteSchedule' => [

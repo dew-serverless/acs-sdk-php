@@ -1180,6 +1180,10 @@
                                     ],
                                 ],
                             ],
+                            'IdPEntityId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -3675,7 +3679,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'maxLength' => 64,
+                        'maxLength' => 128,
                     ],
                 ],
                 [
@@ -3813,7 +3817,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'maxLength' => 64,
+                        'maxLength' => 128,
                     ],
                 ],
             ],

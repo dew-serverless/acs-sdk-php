@@ -2313,10 +2313,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'enum' => [
-                            'media',
-                            'government',
-                        ],
+                        'enum' => [],
                     ],
                 ],
                 [

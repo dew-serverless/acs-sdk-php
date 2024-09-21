@@ -3162,6 +3162,14 @@
                     ],
                 ],
                 [
+                    'name' => 'IsDisplayLocalCurrency',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'PageNum',
                     'in' => 'query',
                     'schema' => [
@@ -3346,6 +3354,14 @@
                 ],
                 [
                     'name' => 'IsHideZeroCharge',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IsDisplayLocalCurrency',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',

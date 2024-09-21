@@ -4063,6 +4063,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'BackendServiceTraceRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetRumExceptionStack' => [

@@ -507,6 +507,10 @@
                                             'required' => false,
                                         ],
                                     ],
+                                    'EnableExternalIpAddress' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                         ],
@@ -782,6 +786,26 @@
                                 'items' => [
                                     'type' => 'string',
                                     'required' => false,
+                                ],
+                            ],
+                            'Status' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'Pending',
+                                        'Initing',
+                                        'Succeed',
+                                        'Failed',
+                                        'Running',
+                                        'Exception',
+                                        'Retrying',
+                                        'Expired',
+                                        'Deleting',
+                                        'Deleted',
+                                    ],
                                 ],
                             ],
                             'TimeCreatedBefore' => [

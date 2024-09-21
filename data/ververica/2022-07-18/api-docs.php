@@ -433,6 +433,9 @@
                     'namespace' => [
                         'type' => 'string',
                     ],
+                    'quota' => [
+                        '$ref' => '#/components/schemas/ResourceQuota',
+                    ],
                 ],
             ],
             'DraftDeployParams' => [
@@ -567,6 +570,36 @@
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+            ],
+            'Event' => [
+                'type' => 'object',
+                'properties' => [
+                    'eventId' => [
+                        'type' => 'string',
+                    ],
+                    'namespace' => [
+                        'type' => 'string',
+                    ],
+                    'workspace' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'eventName' => [
+                        'type' => 'string',
+                    ],
+                    'deploymentId' => [
+                        'type' => 'string',
+                    ],
+                    'jobId' => [
+                        'type' => 'string',
+                    ],
+                    'message' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -895,6 +928,9 @@
                             '$ref' => '#/components/schemas/LocalVariable',
                         ],
                     ],
+                    'jobId' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'JobStatus' => [
@@ -1174,6 +1210,38 @@
                     ],
                 ],
             ],
+            'PeriodicSchedulingPolicy' => [
+                'type' => 'object',
+                'properties' => [
+                    'onlyOnceTriggerTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'onlyOnceTriggerTimeIsExpired' => [
+                        'type' => 'boolean',
+                    ],
+                    'periodicTriggerTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'periodicSchedulingLevel' => [
+                        'type' => 'string',
+                    ],
+                    'periodicSchedulingValues' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int32',
+                        ],
+                    ],
+                    'isFinished' => [
+                        'type' => 'boolean',
+                    ],
+                    'resourceSetting' => [
+                        '$ref' => '#/components/schemas/BriefResourceSetting',
+                    ],
+                ],
+            ],
             'PrimaryKey' => [
                 'type' => 'object',
                 'properties' => [
@@ -1266,6 +1334,29 @@
                     ],
                 ],
             ],
+            'ResourceQuota' => [
+                'type' => 'object',
+                'properties' => [
+                    'limit' => [
+                        '$ref' => '#/components/schemas/ResourceSpec',
+                    ],
+                    'used' => [
+                        '$ref' => '#/components/schemas/ResourceSpec',
+                    ],
+                ],
+            ],
+            'ResourceSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'memory' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Savepoint' => [
                 'type' => 'object',
                 'properties' => [
@@ -1346,6 +1437,152 @@
                     ],
                 ],
             ],
+            'ScheduledPlan' => [
+                'type' => 'object',
+                'properties' => [
+                    'workspace' => [
+                        'type' => 'string',
+                    ],
+                    'namespace' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'string',
+                    ],
+                    'creator' => [
+                        'type' => 'string',
+                    ],
+                    'creatorName' => [
+                        'type' => 'string',
+                    ],
+                    'modifier' => [
+                        'type' => 'string',
+                    ],
+                    'modifierName' => [
+                        'type' => 'string',
+                    ],
+                    'modifiedAt' => [
+                        'type' => 'string',
+                    ],
+                    'scheduledPlanId' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'deploymentId' => [
+                        'type' => 'string',
+                    ],
+                    'updatedByUser' => [
+                        'type' => 'boolean',
+                    ],
+                    'origin' => [
+                        'type' => 'string',
+                    ],
+                    'periodicSchedulingPolicies' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/PeriodicSchedulingPolicy',
+                        ],
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ScheduledPlanAppliedInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'workspace' => [
+                        'type' => 'string',
+                    ],
+                    'namespace' => [
+                        'type' => 'string',
+                    ],
+                    'modifier' => [
+                        'type' => 'string',
+                    ],
+                    'modifierName' => [
+                        'type' => 'string',
+                    ],
+                    'modifiedAt' => [
+                        'type' => 'string',
+                    ],
+                    'scheduledPlanId' => [
+                        'type' => 'string',
+                    ],
+                    'scheduledPlanName' => [
+                        'type' => 'string',
+                    ],
+                    'deploymentId' => [
+                        'type' => 'string',
+                    ],
+                    'expectedState' => [
+                        'type' => 'string',
+                    ],
+                    'statusState' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ScheduledPlanExecutedInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'workspace' => [
+                        'type' => 'string',
+                    ],
+                    'namespace' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'string',
+                    ],
+                    'creator' => [
+                        'type' => 'string',
+                    ],
+                    'creatorName' => [
+                        'type' => 'string',
+                    ],
+                    'modifier' => [
+                        'type' => 'string',
+                    ],
+                    'modifierName' => [
+                        'type' => 'string',
+                    ],
+                    'modifiedAt' => [
+                        'type' => 'string',
+                    ],
+                    'jobResourceUpgradingId' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'origin' => [
+                        'type' => 'string',
+                    ],
+                    'deploymentId' => [
+                        'type' => 'string',
+                    ],
+                    'originJobId' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        '$ref' => '#/components/schemas/ScheduledPlanExecutedStatus',
+                    ],
+                ],
+            ],
+            'ScheduledPlanExecutedStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'statusState' => [
+                        'type' => 'string',
+                    ],
+                    'restartType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Schema' => [
                 'type' => 'object',
                 'properties' => [
@@ -1363,6 +1600,120 @@
                     ],
                     'primaryKey' => [
                         '$ref' => '#/components/schemas/PrimaryKey',
+                    ],
+                ],
+            ],
+            'SessionCluster' => [
+                'type' => 'object',
+                'properties' => [
+                    'workspace' => [
+                        'type' => 'string',
+                    ],
+                    'namespace' => [
+                        'type' => 'string',
+                    ],
+                    'creator' => [
+                        'type' => 'string',
+                    ],
+                    'creatorName' => [
+                        'type' => 'string',
+                    ],
+                    'modifier' => [
+                        'type' => 'string',
+                    ],
+                    'modifierName' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'modifiedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'sessionClusterId' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'deploymentTargetName' => [
+                        'type' => 'string',
+                    ],
+                    'engineVersion' => [
+                        'type' => 'string',
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                    ],
+                    'basicResourceSetting' => [
+                        '$ref' => '#/components/schemas/BasicResourceSetting',
+                    ],
+                    'flinkConf' => [
+                        'type' => 'object',
+                    ],
+                    'logging' => [
+                        '$ref' => '#/components/schemas/Logging',
+                    ],
+                    'status' => [
+                        '$ref' => '#/components/schemas/SessionClusterStatus',
+                    ],
+                ],
+            ],
+            'SessionClusterFailureInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                    'reason' => [
+                        'type' => 'string',
+                    ],
+                    'failedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'SessionClusterRunningInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'startedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'lastUpdateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'referenceDeploymentIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'SessionClusterStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'currentSessionClusterStatus' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'STOPPED',
+                            'STARTING',
+                            'RUNNING',
+                            'UPDATING',
+                            'STOPPING',
+                            'FAILED',
+                        ],
+                    ],
+                    'failure' => [
+                        '$ref' => '#/components/schemas/SessionClusterFailureInfo',
+                    ],
+                    'running' => [
+                        '$ref' => '#/components/schemas/SessionClusterRunningInfo',
                     ],
                 ],
             ],
@@ -1754,6 +2105,53 @@
         ],
     ],
     'apis' => [
+        'CreateFolder' => [
+            'path' => '/api/v2/namespaces/{namespace}/folder',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/Folder',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'UpdateFolder' => [
             'path' => '/api/v2/namespaces/{namespace}/folder/{folderId}',
             'methods' => [
@@ -1809,6 +2207,53 @@
                 ],
             ],
         ],
+        'DeleteFolder' => [
+            'path' => '/api/v2/namespaces/{namespace}/folder/{folderId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'folderId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'GetFolder' => [
             'path' => '/api/v2/namespaces/{namespace}/folder',
             'methods' => [
@@ -1856,8 +2301,8 @@
                 ],
             ],
         ],
-        'CreateFolder' => [
-            'path' => '/api/v2/namespaces/{namespace}/folder',
+        'CreateDeploymentDraft' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts',
             'methods' => [
                 'post',
             ],
@@ -1897,16 +2342,16 @@
                     'name' => 'body',
                     'in' => 'body',
                     'schema' => [
-                        '$ref' => '#/components/schemas/Folder',
-                        'required' => false,
+                        '$ref' => '#/components/schemas/DeploymentDraft',
+                        'required' => true,
                     ],
                 ],
             ],
         ],
-        'DeleteFolder' => [
-            'path' => '/api/v2/namespaces/{namespace}/folder/{folderId}',
+        'UpdateDeploymentDraft' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/{deploymentDraftId}',
             'methods' => [
-                'delete',
+                'patch',
             ],
             'schemes' => [
                 'https',
@@ -1941,10 +2386,18 @@
                     ],
                 ],
                 [
-                    'name' => 'folderId',
+                    'name' => 'deploymentDraftId',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/DeploymentDraft',
                         'required' => true,
                     ],
                 ],
@@ -1997,10 +2450,10 @@
                 ],
             ],
         ],
-        'GetDeploymentDraftLock' => [
-            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/getLock',
+        'GetDeploymentDraft' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/{deploymentDraftId}',
             'methods' => [
-                'post',
+                'get',
             ],
             'schemes' => [
                 'https',
@@ -2036,133 +2489,7 @@
                 ],
                 [
                     'name' => 'deploymentDraftId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GetDeployDeploymentDraftResult' => [
-            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/tickets/{ticketId}/async-deploy',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspace',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
                     'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ticketId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeployDeploymentDraftAsync' => [
-            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/async-deploy',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspace',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/DraftDeployParams',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ListEngineVersionMetadata' => [
-            'path' => '/api/v2/engine-version-meta.json',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspace',
-                    'in' => 'header',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -2230,10 +2557,10 @@
                 ],
             ],
         ],
-        'GetDeploymentDraft' => [
-            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/{deploymentDraftId}',
+        'GetDeploymentDraftLock' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/getLock',
             'methods' => [
-                'get',
+                'post',
             ],
             'schemes' => [
                 'https',
@@ -2269,7 +2596,7 @@
                 ],
                 [
                     'name' => 'deploymentDraftId',
-                    'in' => 'path',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -2277,63 +2604,8 @@
                 ],
             ],
         ],
-        'UpdateDeploymentDraft' => [
-            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/{deploymentDraftId}',
-            'methods' => [
-                'patch',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspace',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'deploymentDraftId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/DeploymentDraft',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateDeploymentDraft' => [
-            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts',
+        'DeployDeploymentDraftAsync' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/async-deploy',
             'methods' => [
                 'post',
             ],
@@ -2373,7 +2645,54 @@
                     'name' => 'body',
                     'in' => 'body',
                     'schema' => [
-                        '$ref' => '#/components/schemas/DeploymentDraft',
+                        '$ref' => '#/components/schemas/DraftDeployParams',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDeployDeploymentDraftResult' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-drafts/tickets/{ticketId}/async-deploy',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ticketId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => true,
                     ],
                 ],
@@ -3040,6 +3359,69 @@
                 ],
             ],
         ],
+        'CreateSavepoint' => [
+            'path' => '/api/v2/namespaces/{namespace}/savepoints',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'deploymentId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'nativeFormat' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetSavepoint' => [
             'path' => '/api/v2/namespaces/{namespace}/savepoints/{savepointId}',
             'methods' => [
@@ -3136,69 +3518,6 @@
                 ],
             ],
         ],
-        'CreateSavepoint' => [
-            'path' => '/api/v2/namespaces/{namespace}/savepoints',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspace',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'deploymentId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'description' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'nativeFormat' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'ListSavepoints' => [
             'path' => '/api/v2/namespaces/{namespace}/savepoints',
             'methods' => [
@@ -3276,6 +3595,54 @@
                 ],
             ],
         ],
+        'CreateDeployment' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployments',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/Deployment',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'UpdateDeployment' => [
             'path' => '/api/v2/namespaces/{namespace}/deployments/{deploymentId}',
             'methods' => [
@@ -3332,10 +3699,10 @@
                 ],
             ],
         ],
-        'DeleteDeployment' => [
+        'GetDeployment' => [
             'path' => '/api/v2/namespaces/{namespace}/deployments/{deploymentId}',
             'methods' => [
-                'delete',
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -3501,10 +3868,10 @@
                 ],
             ],
         ],
-        'GetDeployment' => [
+        'DeleteDeployment' => [
             'path' => '/api/v2/namespaces/{namespace}/deployments/{deploymentId}',
             'methods' => [
-                'get',
+                'delete',
             ],
             'schemes' => [
                 'http',
@@ -3549,61 +3916,12 @@
                 ],
             ],
         ],
-        'CreateDeployment' => [
-            'path' => '/api/v2/namespaces/{namespace}/deployments',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspace',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/Deployment',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ListDeploymentTargets' => [
-            'path' => '/api/v2/namespaces/{namespace}/deployment-targets',
+        'GetEvents' => [
+            'path' => '/api/v2/namespaces/{namespace}/events',
             'methods' => [
                 'get',
             ],
             'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -3654,6 +3972,295 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'deploymentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetJob' => [
+            'path' => '/api/v2/namespaces/{namespace}/jobs/{jobId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'jobId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListJobs' => [
+            'path' => '/api/v2/namespaces/{namespace}/jobs',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'pageIndex',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'deploymentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'sortName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'gmt_create',
+                            'job_id',
+                            'status',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'StartJobWithParams' => [
+            'path' => '/api/v2/namespaces/{namespace}/jobs:start',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/JobStartParameters',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StopJob' => [
+            'path' => '/api/v2/namespaces/{namespace}/jobs/{jobId}:stop',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'jobId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/StopJobRequestBody',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteJob' => [
+            'path' => '/api/v2/namespaces/{namespace}/jobs/{jobId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'jobId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -3799,109 +4406,6 @@
                 ],
             ],
         ],
-        'StopJob' => [
-            'path' => '/api/v2/namespaces/{namespace}/jobs/{jobId}:stop',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspace',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'jobId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/StopJobRequestBody',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'StartJobWithParams' => [
-            'path' => '/api/v2/namespaces/{namespace}/jobs:start',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspace',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/JobStartParameters',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'StartJob' => [
             'path' => '/api/v2/namespaces/{namespace}/jobs',
             'methods' => [
@@ -3950,13 +4454,12 @@
                 ],
             ],
         ],
-        'GetJob' => [
-            'path' => '/api/v2/namespaces/{namespace}/jobs/{jobId}',
+        'CreateScheduledPlan' => [
+            'path' => '/api/v2/namespaces/{namespace}/scheduled-plans',
             'methods' => [
-                'get',
+                'post',
             ],
             'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -3989,22 +4492,76 @@
                     ],
                 ],
                 [
-                    'name' => 'jobId',
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ScheduledPlan',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateScheduledPlan' => [
+            'path' => '/api/v2/namespaces/{namespace}/scheduled-plans/{scheduledPlanId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'scheduledPlanId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ScheduledPlan',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
-        'DeleteJob' => [
-            'path' => '/api/v2/namespaces/{namespace}/jobs/{jobId}',
+        'DeleteScheduledPlan' => [
+            'path' => '/api/v2/namespaces/{namespace}/scheduled-plans/{scheduledPlanId}',
             'methods' => [
                 'delete',
             ],
             'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -4037,7 +4594,7 @@
                     ],
                 ],
                 [
-                    'name' => 'jobId',
+                    'name' => 'scheduledPlanId',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
@@ -4046,13 +4603,12 @@
                 ],
             ],
         ],
-        'ListJobs' => [
-            'path' => '/api/v2/namespaces/{namespace}/jobs',
+        'ListScheduledPlan' => [
+            'path' => '/api/v2/namespaces/{namespace}/scheduled-plans',
             'methods' => [
                 'get',
             ],
             'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -4082,16 +4638,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'pageIndex',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
                     ],
                 ],
                 [
@@ -4106,6 +4652,204 @@
                     ],
                 ],
                 [
+                    'name' => 'pageIndex',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'deploymentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ApplyScheduledPlan' => [
+            'path' => '/api/v2/namespaces/{namespace}/scheduled-plans/{scheduledPlanId}:apply',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'scheduledPlanId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StopApplyScheduledPlan' => [
+            'path' => '/api/v2/namespaces/{namespace}/scheduled-plans/{scheduledPlanId}:stop',
+            'methods' => [
+                'patch',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'scheduledPlanId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetAppliedScheduledPlan' => [
+            'path' => '/api/v2/namespaces/{namespace}/scheduled-plans:getExecutedScheduledPlan',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'deploymentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListScheduledPlanExecutedHistory' => [
+            'path' => '/api/v2/namespaces/{namespace}/job-resource-upgradings',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
                     'name' => 'deploymentId',
                     'in' => 'query',
                     'schema' => [
@@ -4114,16 +4858,561 @@
                     ],
                 ],
                 [
-                    'name' => 'sortName',
+                    'name' => 'origin',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
                         'enum' => [
-                            'gmt_create',
-                            'job_id',
-                            'status',
+                            'SCHEDULED_PLAN',
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateSessionCluster' => [
+            'path' => '/api/v2/namespaces/{namespace}/sessionclusters',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/SessionCluster',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateSessionCluster' => [
+            'path' => '/api/v2/namespaces/{namespace}/sessionclusters/{sessionClusterName}',
+            'methods' => [
+                'patch',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'sessionClusterName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/SessionCluster',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSessionCluster' => [
+            'path' => '/api/v2/namespaces/{namespace}/sessionclusters/{sessionClusterName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'sessionClusterName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetSessionCluster' => [
+            'path' => '/api/v2/namespaces/{namespace}/sessionclusters/{sessionClusterName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'sessionClusterName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListSessionClusters' => [
+            'path' => '/api/v2/namespaces/{namespace}/sessionclusters',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StartSessionCluster' => [
+            'path' => '/api/v2/namespaces/{namespace}/sessionclusters/{sessionClusterName}:start',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'sessionClusterName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StopSessionCluster' => [
+            'path' => '/api/v2/namespaces/{namespace}/sessionclusters/{sessionClusterName}:stop',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'sessionClusterName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateDeploymentTarget' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-targets',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'deploymentTargetName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ResourceSpec',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateDeploymentTarget' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-targets/{deploymentTargetName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'deploymentTargetName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ResourceSpec',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteDeploymentTarget' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-targets/{deploymentTargetName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'deploymentTargetName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListDeploymentTargets' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployment-targets',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'pageIndex',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
                     ],
                 ],
             ],
@@ -4132,6 +5421,54 @@
             'path' => '/gateway/v2/namespaces/{namespace}/members',
             'methods' => [
                 'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/Member',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateMember' => [
+            'path' => '/gateway/v2/namespaces/{namespace}/members',
+            'methods' => [
+                'put',
             ],
             'schemes' => [
                 'http',
@@ -4333,10 +5670,10 @@
                 ],
             ],
         ],
-        'UpdateMember' => [
-            'path' => '/gateway/v2/namespaces/{namespace}/members',
+        'CreateVariable' => [
+            'path' => '/api/v2/namespaces/{namespace}/variables',
             'methods' => [
-                'put',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -4375,8 +5712,56 @@
                     'name' => 'body',
                     'in' => 'body',
                     'schema' => [
-                        '$ref' => '#/components/schemas/Member',
-                        'required' => false,
+                        '$ref' => '#/components/schemas/Variable',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteVariable' => [
+            'path' => '/api/v2/namespaces/{namespace}/variables/{name}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -4442,10 +5827,10 @@
                 ],
             ],
         ],
-        'DeleteVariable' => [
-            'path' => '/api/v2/namespaces/{namespace}/variables/{name}',
+        'ListEngineVersionMetadata' => [
+            'path' => '/api/v2/engine-version-meta.json',
             'methods' => [
-                'delete',
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -4469,70 +5854,6 @@
                     'in' => 'header',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateVariable' => [
-            'path' => '/api/v2/namespaces/{namespace}/variables',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspace',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/Variable',
                         'required' => true,
                     ],
                 ],

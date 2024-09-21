@@ -21056,21 +21056,6 @@
                     ],
                 ],
                 [
-                    'name' => 'EnhancedNetwork',
-                    'in' => 'query',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'EnableSriov' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
                     'name' => 'NetworkInterfaceTrafficConfig',
                     'in' => 'query',
                     'style' => 'flat',
@@ -21126,6 +21111,21 @@
                             'UdpTimeout' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'EnhancedNetwork',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'EnableSriov' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],

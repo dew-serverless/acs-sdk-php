@@ -903,10 +903,6 @@
             'endpoint' => 'mns-open.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'mns-open.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-east-1',
             'endpoint' => 'mns-open.me-east-1.aliyuncs.com',
         ],

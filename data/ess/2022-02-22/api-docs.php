@@ -2505,14 +2505,6 @@
                         'required' => false,
                     ],
                 ],
-                [
-                    'name' => 'Format',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
         'CreateScalingConfiguration' => [
@@ -6786,14 +6778,6 @@
                 ],
                 [
                     'name' => 'RegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Format',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

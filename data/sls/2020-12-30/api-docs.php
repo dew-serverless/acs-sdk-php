@@ -4078,6 +4078,147 @@
                 ],
             ],
         ],
+        'PullLogs' => [
+            'path' => '/logstores/{logStore}/shards/{shardId}?type=log',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'logStore',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'shardId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'cursor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'count',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                        'minimum' => '1',
+                        'maximum' => '1000',
+                    ],
+                ],
+                [
+                    'name' => 'end_cursor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Accept-Encoding',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'PutLogs' => [
+            'path' => '/logstores/{logstore}/shards/lb',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'logstore',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'x-log-compresstype',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'lz4',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/LogGroup',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'GetLogStoreMeteringMode' => [
             'path' => '/logstores/{logstore}/meteringmode',
             'methods' => [
@@ -4150,6 +4291,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4158,6 +4300,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4165,6 +4308,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4172,6 +4316,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4209,6 +4354,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
+                        'required' => false,
                         'properties' => [
                             'name' => [
                                 'type' => 'string',
@@ -4226,16 +4372,20 @@
                             ],
                             'autoSplit' => [
                                 'type' => 'boolean',
+                                'required' => false,
                             ],
                             'maxSplitShard' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'required' => false,
                             ],
                             'mode' => [
                                 'type' => 'string',
+                                'required' => false,
                             ],
                             'metricType' => [
                                 'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -4318,20 +4468,25 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
+                        'required' => false,
                         'properties' => [
                             'ttl' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'required' => false,
                             ],
                             'autoSplit' => [
                                 'type' => 'boolean',
+                                'required' => false,
                             ],
                             'maxSplitShard' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'required' => false,
                             ],
                             'mode' => [
                                 'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -11033,147 +11188,6 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'PullLogs' => [
-            'path' => '/logstores/{logStore}/shards/{shardId}?type=log',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [],
-            'produces' => [],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'project',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'logStore',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'shardId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'cursor',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'count',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                        'minimum' => '1',
-                        'maximum' => '1000',
-                    ],
-                ],
-                [
-                    'name' => 'end_cursor',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'query',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Accept-Encoding',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'PutLogs' => [
-            'path' => '/logstores/{logstore}/shards/lb',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [],
-            'produces' => [],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'project',
-                    'in' => 'host',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'logstore',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'x-log-compresstype',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'lz4',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/LogGroup',
                         'required' => false,
                     ],
                 ],

@@ -6753,6 +6753,20 @@
                         'maxItems' => 32,
                     ],
                 ],
+                [
+                    'name' => 'DestinationRegionIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 32,
+                    ],
+                ],
             ],
         ],
         'DeleteCenRouteMap' => [
@@ -7142,6 +7156,20 @@
                         'items' => [
                             'type' => 'integer',
                             'format' => 'int64',
+                            'required' => false,
+                        ],
+                        'maxItems' => 32,
+                    ],
+                ],
+                [
+                    'name' => 'DestinationRegionIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
                             'required' => false,
                         ],
                         'maxItems' => 32,

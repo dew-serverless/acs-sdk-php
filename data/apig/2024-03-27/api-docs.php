@@ -295,108 +295,6 @@
                     ],
                 ],
             ],
-            'GatewayRouteBackend' => [
-                'type' => 'object',
-                'properties' => [
-                    'type' => [
-                        'type' => 'string',
-                    ],
-                    'services' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'object',
-                            'properties' => [
-                                'gatewayServiceId' => [
-                                    'type' => 'string',
-                                ],
-                                'name' => [
-                                    'type' => 'string',
-                                ],
-                                'protocol' => [
-                                    'type' => 'string',
-                                ],
-                                'port' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                ],
-                                'weight' => [
-                                    'type' => 'number',
-                                    'format' => 'float',
-                                ],
-                                'version' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'GatewayRouteBackendConfig' => [
-                'type' => 'object',
-                'properties' => [
-                    'type' => [
-                        'type' => 'string',
-                    ],
-                    'services' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'object',
-                            'properties' => [
-                                'gatewayServiceId' => [
-                                    'type' => 'string',
-                                ],
-                                'sourceType' => [
-                                    'type' => 'string',
-                                ],
-                                'protocol' => [
-                                    'type' => 'string',
-                                ],
-                                'port' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                ],
-                                'weight' => [
-                                    'type' => 'number',
-                                    'format' => 'float',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'GatewayRouteDomainConfig' => [
-                'type' => 'object',
-                'properties' => [
-                    'domainIds' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                ],
-            ],
-            'GatewayRouteDomainInfo' => [
-                'type' => 'object',
-                'properties' => [
-                    'domains' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'object',
-                            'properties' => [
-                                'domainId' => [
-                                    'type' => 'string',
-                                ],
-                                'protocol' => [
-                                    'type' => 'string',
-                                ],
-                                'name' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
             'HttpApiApiInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -2074,6 +1972,45 @@
                 ],
             ],
         ],
+        'GetHttpApiOperation' => [
+            'path' => '/v1/http-apis/{httpApiId}/operations/{operationId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'httpApiId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'operationId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'UpdateHttpApiOperation' => [
             'path' => '/v1/http-apis/{httpApiId}/operations/{operationId}',
             'methods' => [
@@ -2124,45 +2061,6 @@
                                 'required' => false,
                             ],
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'GetHttpApiOperation' => [
-            'path' => '/v1/http-apis/{httpApiId}/operations/{operationId}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'httpApiId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'operationId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],

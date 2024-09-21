@@ -157,6 +157,13 @@
                     'display_name' => [
                         'type' => 'string',
                     ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'last_login_time' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'Activity' => [
@@ -3208,6 +3215,33 @@
                     'domain_id' => [
                         'type' => 'string',
                     ],
+                    'default_sbox_drive_id' => [
+                        'type' => 'string',
+                    ],
+                    'user_data' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'pin_setup' => [
+                        'type' => 'boolean',
+                    ],
+                    'need_rp_verify' => [
+                        'type' => 'boolean',
+                    ],
+                    'state' => [
+                        'type' => 'string',
+                    ],
+                    'exist_link' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/LinkInfo',
+                        ],
+                    ],
+                    'need_link' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'UncompressConfigResponse' => [
@@ -4455,7 +4489,7 @@
                         'properties' => [
                             'user_id' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                         ],
                     ],
@@ -4534,6 +4568,9 @@
             'security' => [
                 [
                     'BearerToken' => [],
+                ],
+                [
+                    'AK' => [],
                 ],
             ],
             'consumes' => [
@@ -8216,11 +8253,11 @@
                         'properties' => [
                             'drive_id' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'file_id' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                         ],
                     ],
@@ -8269,11 +8306,11 @@
                         'properties' => [
                             'manage_resource_type' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'manage_resource_id' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'marker' => [
                                 'type' => 'string',

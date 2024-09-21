@@ -3808,14 +3808,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'DBClusterId',
                     'in' => 'query',
                     'schema' => [
@@ -4404,7 +4396,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [

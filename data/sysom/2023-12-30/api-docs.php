@@ -56,6 +56,14 @@
                                     ],
                                 ],
                             ],
+                            'autoCreateRole' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'autoInstallAgent' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

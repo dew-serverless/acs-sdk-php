@@ -3657,14 +3657,6 @@
                         'required' => false,
                     ],
                 ],
-                [
-                    'name' => 'Format',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
     ],

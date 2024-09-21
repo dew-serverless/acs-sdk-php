@@ -455,6 +455,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listWaitingChatsAsync($arguments = [])
  * @method \Dew\Acs\Result getChatMediaUrl(array $arguments = [])
  * @method \Http\Promise\Promise getChatMediaUrlAsync($arguments = [])
+ * @method \Dew\Acs\Result updateChatRoutingProfile(array $arguments = [])
+ * @method \Http\Promise\Promise updateChatRoutingProfileAsync($arguments = [])
+ * @method \Dew\Acs\Result getChatRoutingProfile(array $arguments = [])
+ * @method \Http\Promise\Promise getChatRoutingProfileAsync($arguments = [])
  */
 final class CccClient extends AcsClient
 {

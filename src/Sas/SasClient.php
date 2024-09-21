@@ -1655,12 +1655,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCanTrySasAsync($arguments = [])
  * @method \Dew\Acs\Result describeNeedAsyncQuery(array $arguments = [])
  * @method \Http\Promise\Promise describeNeedAsyncQueryAsync($arguments = [])
+ * @method \Dew\Acs\Result listPrivateK8s(array $arguments = [])
+ * @method \Http\Promise\Promise listPrivateK8sAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyAttestor(array $arguments = [])
+ * @method \Http\Promise\Promise modifyAttestorAsync($arguments = [])
  * @method \Dew\Acs\Result describeCheckWarningCount(array $arguments = [])
  * @method \Http\Promise\Promise describeCheckWarningCountAsync($arguments = [])
  * @method \Dew\Acs\Result getAccountLabel(array $arguments = [])
  * @method \Http\Promise\Promise getAccountLabelAsync($arguments = [])
+ * @method \Dew\Acs\Result batchCreateMaliciousNote(array $arguments = [])
+ * @method \Http\Promise\Promise batchCreateMaliciousNoteAsync($arguments = [])
  * @method \Dew\Acs\Result describeInstanceVulStatistics(array $arguments = [])
  * @method \Http\Promise\Promise describeInstanceVulStatisticsAsync($arguments = [])
+ * @method \Dew\Acs\Result setImageBuildRiskStatus(array $arguments = [])
+ * @method \Http\Promise\Promise setImageBuildRiskStatusAsync($arguments = [])
  */
 final class SasClient extends AcsClient
 {

@@ -1347,6 +1347,14 @@
         'defaultVersion' => '2020-03-20',
     ],
     [
+        'code' => 'PaiStudio',
+        'style' => 'RPC',
+        'versions' => [
+            '2022-01-12',
+        ],
+        'defaultVersion' => '2022-01-12',
+    ],
+    [
         'code' => 'PAIFlow',
         'style' => 'RPC',
         'versions' => [
@@ -2078,6 +2086,14 @@
             '2023-09-14',
         ],
         'defaultVersion' => '2023-09-14',
+    ],
+    [
+        'code' => 'BDRC',
+        'style' => 'RPC',
+        'versions' => [
+            '2023-08-08',
+        ],
+        'defaultVersion' => '2023-08-08',
     ],
     [
         'code' => 'eds-aic',

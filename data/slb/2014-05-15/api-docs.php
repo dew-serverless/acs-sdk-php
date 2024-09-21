@@ -7356,11 +7356,11 @@
     'endpoints' => [
         [
             'regionId' => 'cn-qingdao',
-            'endpoint' => 'slb.aliyuncs.com',
+            'endpoint' => 'slb.cn-qingdao.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
-            'endpoint' => 'slb.aliyuncs.com',
+            'endpoint' => 'slb.cn-beijing.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-zhangjiakou',
@@ -7380,11 +7380,11 @@
         ],
         [
             'regionId' => 'cn-shanghai',
-            'endpoint' => 'slb.aliyuncs.com',
+            'endpoint' => 'slb.cn-shanghai.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shenzhen',
-            'endpoint' => 'slb.aliyuncs.com',
+            'endpoint' => 'slb.cn-shenzhen.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-heyuan',
@@ -7400,7 +7400,7 @@
         ],
         [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'slb.aliyuncs.com',
+            'endpoint' => 'slb.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',
@@ -7408,7 +7408,7 @@
         ],
         [
             'regionId' => 'ap-southeast-1',
-            'endpoint' => 'slb.aliyuncs.com',
+            'endpoint' => 'slb.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-2',
@@ -7428,11 +7428,11 @@
         ],
         [
             'regionId' => 'us-east-1',
-            'endpoint' => 'slb.aliyuncs.com',
+            'endpoint' => 'slb.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',
-            'endpoint' => 'slb.aliyuncs.com',
+            'endpoint' => 'slb.us-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',

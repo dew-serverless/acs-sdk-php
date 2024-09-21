@@ -26,30 +26,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Signature',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Timestamp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SignatureNonce',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'CallerIdNumber',
                     'in' => 'query',
                     'schema' => [
@@ -268,30 +244,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'Signature',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Timestamp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SignatureNonce',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
                 [
                     'name' => 'CalledNumber',
                     'in' => 'query',

@@ -180,14 +180,6 @@
                         'required' => true,
                     ],
                 ],
-                [
-                    'name' => 'Format',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
         'UAIDVerification' => [

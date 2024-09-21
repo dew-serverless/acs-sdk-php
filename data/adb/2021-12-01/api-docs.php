@@ -1302,6 +1302,18 @@
                     ],
                 ],
                 [
+                    'name' => 'ProductForm',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'IntegrationForm',
+                            'LegacyForm',
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'ReservedNodeSize',
                     'in' => 'query',
                     'schema' => [

@@ -75,6 +75,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getCursorTimeAsync($arguments = [])
  * @method \Dew\Acs\Result getLogsV2(array $arguments = [])
  * @method \Http\Promise\Promise getLogsV2Async($arguments = [])
+ * @method \Dew\Acs\Result pullLogs(array $arguments = [])
+ * @method \Http\Promise\Promise pullLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result putLogs(array $arguments = [])
+ * @method \Http\Promise\Promise putLogsAsync($arguments = [])
  * @method \Dew\Acs\Result getLogStoreMeteringMode(array $arguments = [])
  * @method \Http\Promise\Promise getLogStoreMeteringModeAsync($arguments = [])
  * @method \Dew\Acs\Result listMetricStores(array $arguments = [])
@@ -349,10 +353,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createTicketAsync($arguments = [])
  * @method \Dew\Acs\Result refreshToken(array $arguments = [])
  * @method \Http\Promise\Promise refreshTokenAsync($arguments = [])
- * @method \Dew\Acs\Result pullLogs(array $arguments = [])
- * @method \Http\Promise\Promise pullLogsAsync($arguments = [])
- * @method \Dew\Acs\Result putLogs(array $arguments = [])
- * @method \Http\Promise\Promise putLogsAsync($arguments = [])
  */
 final class SlsClient extends AcsClient
 {

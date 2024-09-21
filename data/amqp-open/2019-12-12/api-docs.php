@@ -1595,10 +1595,6 @@
             'endpoint' => 'amqp-open.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'amqp-open.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'amqp-open.cn-shanghai-finance-1.aliyuncs.com',
         ],

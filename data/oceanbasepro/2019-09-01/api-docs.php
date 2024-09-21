@@ -670,18 +670,6 @@
                         'required' => false,
                     ],
                 ],
-                [
-                    'name' => 'MaxConnectionLimit',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            '5000',
-                            '50000',
-                        ],
-                    ],
-                ],
             ],
         ],
         'DescribeInstances' => [

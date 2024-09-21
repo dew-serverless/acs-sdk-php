@@ -674,6 +674,38 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'catalog',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'database',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'table',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetInstance' => [
@@ -954,8 +986,8 @@
                 'put',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -1075,6 +1107,18 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'catalog' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'database' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'tag' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
                                     'saroConfig' => [
@@ -1101,6 +1145,10 @@
                                         'required' => false,
                                     ],
                                 ],
+                            ],
+                            'extend' => [
+                                'type' => 'object',
+                                'required' => false,
                             ],
                             'description' => [
                                 'type' => 'string',
@@ -1442,6 +1490,18 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'catalog' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'database' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'tag' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
                                     'saroConfig' => [
@@ -1556,6 +1616,10 @@
                             'generation' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'tag' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -2050,6 +2114,30 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'catalog',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'database',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'table',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -2951,8 +3039,8 @@
                 'put',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -3051,6 +3139,18 @@
                                         'required' => false,
                                     ],
                                     'bucket' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'catalog' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'database' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'tag' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
@@ -3239,6 +3339,18 @@
                                         'required' => false,
                                     ],
                                     'bucket' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'catalog' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'database' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'tag' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
@@ -3451,8 +3563,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -5425,6 +5537,18 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'catalog' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'database' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'tag' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
                                 ],
@@ -5666,6 +5790,18 @@
                                                 'required' => false,
                                             ],
                                             'bucket' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'catalog' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'database' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'tag' => [
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],

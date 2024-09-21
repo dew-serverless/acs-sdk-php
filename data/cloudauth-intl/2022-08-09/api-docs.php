@@ -240,6 +240,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ShowGuidePage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CheckResult' => [

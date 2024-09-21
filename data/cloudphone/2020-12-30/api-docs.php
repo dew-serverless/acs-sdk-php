@@ -1092,14 +1092,6 @@
                     ],
                 ],
                 [
-                    'name' => 'Format',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'OssBucket',
                     'in' => 'query',
                     'schema' => [

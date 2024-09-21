@@ -1450,6 +1450,10 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'hsm.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'hsm.aliyuncs.com',
         ],
@@ -1499,10 +1503,6 @@
         ],
         [
             'regionId' => 'me-central-1',
-            'endpoint' => 'hsm.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
             'endpoint' => 'hsm.aliyuncs.com',
         ],
     ],

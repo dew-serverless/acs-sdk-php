@@ -11,6 +11,10 @@ use Dew\Acs\Sls\Messages\LogTag;
 use InvalidArgumentException;
 
 /**
+ * @phpstan-type TLogTag array{
+ *   Key: string,
+ *   Value: string
+ * }
  * @phpstan-type TLogContent array{
  *   Key: string,
  *   Value: string
@@ -23,7 +27,7 @@ use InvalidArgumentException;
  * @phpstan-type TLogGroup array{
  *   Topic?: string,
  *   Source?: string,
- *   LogTags?: array<string, string>,
+ *   LogTags?: TLogTag[],
  *   Logs: TLogItem[],
  *   MachineUuid?: string,
  * }
@@ -48,10 +52,8 @@ final class Protobuf
         if (isset($group['LogTags'])) {
             $tags = [];
 
-            foreach ($group['LogTags'] as $key => $value) {
-                $tags[] = (new LogTag())
-                    ->setKey($key)
-                    ->setValue($value);
+            foreach ($group['LogTags'] as $tag) {
+                $tags[] = static::toLogTag($tag);
             }
 
             $message->setTags($tags);
@@ -122,5 +124,27 @@ final class Protobuf
         return (new LogContent())
             ->setKey($content['Key'])
             ->setValue($content['Value']);
+    }
+
+    /**
+     * @param  TLogTag  $tag
+     */
+    public static function toLogTag(array $tag): LogTag
+    {
+        if (! isset($tag['Key'])) {
+            throw new InvalidArgumentException(
+                'The log tag should have a "Key" field.'
+            );
+        }
+
+        if (! isset($tag['Value'])) {
+            throw new InvalidArgumentException(
+                'The log tag should have a "Value" field.'
+            );
+        }
+
+        return (new LogTag())
+            ->setKey($tag['Key'])
+            ->setValue($tag['Value']);
     }
 }

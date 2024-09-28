@@ -566,14 +566,6 @@
                     ],
                 ],
                 [
-                    'name' => 'DisableWriteWindows',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'DBClusterClass',
                     'in' => 'query',
                     'schema' => [
@@ -591,6 +583,14 @@
                 ],
                 [
                     'name' => 'DbNodeStorageType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DisableWriteWindows',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

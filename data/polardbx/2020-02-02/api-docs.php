@@ -478,6 +478,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DbVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDBInstanceSSL' => [
@@ -1396,11 +1404,19 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
                     'name' => 'ParamLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EngineVersion',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

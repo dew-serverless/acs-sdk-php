@@ -10564,7 +10564,7 @@
         ],
         [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'ess.aliyuncs.com',
+            'endpoint' => 'ess.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',
@@ -10601,10 +10601,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'ess.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'ess.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',

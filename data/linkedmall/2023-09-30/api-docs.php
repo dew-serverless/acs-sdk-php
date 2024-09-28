@@ -1951,6 +1951,10 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'discountRetailPrice' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'SkuQueryParam' => [

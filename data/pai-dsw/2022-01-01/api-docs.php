@@ -246,6 +246,7 @@
                                         ],
                                         'OptionType' => [
                                             'type' => 'string',
+                                            'deprecated' => true,
                                             'required' => false,
                                         ],
                                     ],
@@ -447,8 +448,8 @@
                 'delete',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -540,6 +541,7 @@
                                         ],
                                         'OptionType' => [
                                             'type' => 'string',
+                                            'deprecated' => true,
                                             'required' => false,
                                         ],
                                     ],
@@ -703,13 +705,19 @@
                 'put',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
                     'AK' => [],
                 ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
             ],
             'deprecated' => false,
             'parameters' => [

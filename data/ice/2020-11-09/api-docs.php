@@ -90,6 +90,126 @@
                     ],
                 ],
             ],
+            'AppInfoDTO' => [
+                'type' => 'object',
+                'properties' => [
+                    'AppName' => [
+                        'type' => 'string',
+                    ],
+                    'AppType' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'ItemId' => [
+                        'type' => 'string',
+                    ],
+                    'Platforms' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'ItemId' => [
+                                    'type' => 'string',
+                                ],
+                                'LicenseItemIds' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                                'PkgName' => [
+                                    'type' => 'string',
+                                ],
+                                'PkgSignature' => [
+                                    'type' => 'string',
+                                ],
+                                'PlatformType' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'Type' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'UserId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'LicenseInstanceAppDTO' => [
+                'type' => 'object',
+                'properties' => [
+                    'AppId' => [
+                        'type' => 'string',
+                    ],
+                    'BeginOn' => [
+                        'type' => 'string',
+                    ],
+                    'ContractNo' => [
+                        'type' => 'string',
+                    ],
+                    'CreationTime' => [
+                        'type' => 'string',
+                    ],
+                    'ExpiredOn' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'ItemId' => [
+                        'type' => 'string',
+                    ],
+                    'LicenseConfigs' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'BusinessType' => [
+                                    'type' => 'string',
+                                ],
+                                'FeatureIds' => [
+                                    'type' => 'string',
+                                ],
+                                'SdkId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'SdkName' => [
+                                    'type' => 'string',
+                                ],
+                                'Subscription' => [
+                                    'type' => 'string',
+                                ],
+                                'SubscriptionImp' => [
+                                    'type' => 'string',
+                                ],
+                                'SubscriptionPkg' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'ModificationTime' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'UserId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
         ],
     ],
     'apis' => [
@@ -9893,6 +10013,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeAIAgentInstance' => [
@@ -10210,16 +10338,16 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'VoiceId' => [
-                                'type' => 'string',
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                             'Greeting' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'EnableVoiceInterrupt' => [
-                                'type' => 'boolean',
+                            'VoiceId' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -10283,16 +10411,16 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'VoiceId' => [
-                                'type' => 'string',
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                             'Greeting' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'EnableVoiceInterrupt' => [
-                                'type' => 'boolean',
+                            'VoiceId' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],

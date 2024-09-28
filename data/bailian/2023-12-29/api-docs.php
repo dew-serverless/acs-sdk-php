@@ -1153,13 +1153,21 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'IndexId' => [
-                                'type' => 'string',
-                                'required' => true,
+                            'Fields' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                             'Filed' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'IndexId' => [
+                                'type' => 'string',
+                                'required' => true,
                             ],
                             'PageNum' => [
                                 'type' => 'integer',
@@ -1170,14 +1178,6 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                                 'required' => false,
-                            ],
-                            'Fields' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                             ],
                         ],
                     ],
@@ -1801,6 +1801,10 @@
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'bailian.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'bailian.ap-southeast-1.aliyuncs.com',
         ],
     ],
 ];

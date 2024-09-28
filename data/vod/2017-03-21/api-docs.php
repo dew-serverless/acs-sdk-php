@@ -6,7 +6,128 @@
         'version' => '2017-03-21',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'AppInfoDTO' => [
+                'type' => 'object',
+                'properties' => [
+                    'ItemId' => [
+                        'type' => 'string',
+                    ],
+                    'AppName' => [
+                        'type' => 'string',
+                    ],
+                    'UserId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'AppType' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'Platforms' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Type' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'PlatformType' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'PkgName' => [
+                                    'type' => 'string',
+                                ],
+                                'PkgSignature' => [
+                                    'type' => 'string',
+                                ],
+                                'ItemId' => [
+                                    'type' => 'string',
+                                ],
+                                'LicenseItemIds' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'LicenseInstanceAppDTO' => [
+                'type' => 'object',
+                'properties' => [
+                    'ItemId' => [
+                        'type' => 'string',
+                    ],
+                    'UserId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'BeginOn' => [
+                        'type' => 'string',
+                    ],
+                    'ExpiredOn' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'ContractNo' => [
+                        'type' => 'string',
+                    ],
+                    'CreationTime' => [
+                        'type' => 'string',
+                    ],
+                    'ModificationTime' => [
+                        'type' => 'string',
+                    ],
+                    'AppId' => [
+                        'type' => 'string',
+                    ],
+                    'LicenseConfigs' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'SubscriptionImp' => [
+                                    'type' => 'string',
+                                ],
+                                'SubscriptionPkg' => [
+                                    'type' => 'string',
+                                ],
+                                'SdkId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'BusinessType' => [
+                                    'type' => 'string',
+                                ],
+                                'SdkName' => [
+                                    'type' => 'string',
+                                ],
+                                'Subscription' => [
+                                    'type' => 'string',
+                                ],
+                                'FeatureIds' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'apis' => [
         'CreateUploadVideo' => [
@@ -7590,6 +7711,56 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ChangeResourceGroup' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

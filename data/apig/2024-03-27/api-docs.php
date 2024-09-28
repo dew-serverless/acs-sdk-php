@@ -364,138 +364,6 @@
                                         ],
                                     ],
                                 ],
-                                'dnsConfigs' => [
-                                    'type' => 'array',
-                                    'items' => [
-                                        'type' => 'object',
-                                        'properties' => [
-                                            'dnsList' => [
-                                                'type' => 'array',
-                                                'items' => [
-                                                    'type' => 'string',
-                                                ],
-                                            ],
-                                            'weight' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                            ],
-                                            'match' => [
-                                                '$ref' => '#/components/schemas/HttpApiBackendMatchConditions',
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                                'vipConfigs' => [
-                                    'type' => 'array',
-                                    'items' => [
-                                        'type' => 'object',
-                                        'properties' => [
-                                            'endpoints' => [
-                                                'type' => 'array',
-                                                'items' => [
-                                                    'type' => 'string',
-                                                ],
-                                            ],
-                                            'weight' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                            ],
-                                            'match' => [
-                                                '$ref' => '#/components/schemas/HttpApiBackendMatchConditions',
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                                'cloudProductConfig' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'cloudProductType' => [
-                                            'type' => 'string',
-                                        ],
-                                        'functionConfigs' => [
-                                            'type' => 'array',
-                                            'items' => [
-                                                'type' => 'object',
-                                                'properties' => [
-                                                    'gatewayServiceId' => [
-                                                        'type' => 'string',
-                                                    ],
-                                                    'name' => [
-                                                        'type' => 'string',
-                                                    ],
-                                                    'qualifier' => [
-                                                        'type' => 'string',
-                                                    ],
-                                                    'weight' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                    ],
-                                                    'match' => [
-                                                        '$ref' => '#/components/schemas/HttpApiBackendMatchConditions',
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                        'containerServiceConfigs' => [
-                                            'type' => 'array',
-                                            'items' => [
-                                                'type' => 'object',
-                                                'properties' => [
-                                                    'gatewayServiceId' => [
-                                                        'type' => 'string',
-                                                    ],
-                                                    'namespace' => [
-                                                        'type' => 'string',
-                                                    ],
-                                                    'name' => [
-                                                        'type' => 'string',
-                                                    ],
-                                                    'port' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                    ],
-                                                    'protocol' => [
-                                                        'type' => 'string',
-                                                    ],
-                                                    'weight' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                    ],
-                                                    'match' => [
-                                                        '$ref' => '#/components/schemas/HttpApiBackendMatchConditions',
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                        'mseNacosConfigs' => [
-                                            'type' => 'array',
-                                            'items' => [
-                                                'type' => 'object',
-                                                'properties' => [
-                                                    'gatewayServiceId' => [
-                                                        'type' => 'string',
-                                                    ],
-                                                    'name' => [
-                                                        'type' => 'string',
-                                                    ],
-                                                    'namespace' => [
-                                                        'type' => 'string',
-                                                    ],
-                                                    'groupName' => [
-                                                        'type' => 'string',
-                                                    ],
-                                                    'weight' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                    ],
-                                                    'match' => [
-                                                        '$ref' => '#/components/schemas/HttpApiBackendMatchConditions',
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
                                 'customDomains' => [
                                     'type' => 'array',
                                     'items' => [
@@ -519,8 +387,28 @@
                                         ],
                                     ],
                                 ],
-                                'publishStatus' => [
+                                'deployStatus' => [
                                     'type' => 'string',
+                                ],
+                                'subDomains' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'domainId' => [
+                                                'type' => 'string',
+                                            ],
+                                            'name' => [
+                                                'type' => 'string',
+                                            ],
+                                            'protocol' => [
+                                                'type' => 'string',
+                                            ],
+                                            'networkType' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],
@@ -2740,11 +2628,11 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
-                            'certIndentifier' => [
+                            'certIdentifier' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'caCertIndentifier' => [
+                            'caCertIdentifier' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

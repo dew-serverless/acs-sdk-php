@@ -2855,6 +2855,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Kubeconfig',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RemoveClusterFromServiceMesh' => [

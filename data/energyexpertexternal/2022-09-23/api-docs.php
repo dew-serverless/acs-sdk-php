@@ -1477,6 +1477,424 @@
                 ],
             ],
         ],
+        'BatchSaveInstructionStatus' => [
+            'path' => '/api/v1/carbon/hvac/batchSaveInstructionStatus',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'factoryId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'pKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'statusList' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'SetRunningPlan' => [
+            'path' => '/api/v1/carbon/hvac/setRunningPlan',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'factoryId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'systemId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'pKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'seasonMode' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'dateType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'startTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'endTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'statisticsTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'workingStartTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'workingEndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'earliestStartupTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'latestShutdownTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'minTem' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'maxTem' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'maxCarbonDioxide' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'controlType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'EditUnfavorableAreaDevices' => [
+            'path' => '/api/v1/carbon/hvac/editUnfavorableAreaDevices',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'factoryId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'systemId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'hvacDeviceConfigVOList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'deviceName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'deviceId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'deviceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'isForbidden' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'isUnfavorableArea' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'buildingId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'floorId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'fenceId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'EditProhibitedDevices' => [
+            'path' => '/api/v1/carbon/hvac/editProhibitedDevices',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'factoryId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'systemId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'hvacDeviceConfigVOList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'deviceName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'deviceId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'deviceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'isForbidden' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'isUnfavorableArea' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'buildingId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'floorId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'fenceId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'BatchUpdateSystemRunningPlan' => [
+            'path' => '/api/v1/carbon/hvac/batchUpdateSystemRunningPlan',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'factoryId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'systemId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'seasonMode' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'dateType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'startTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'endTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'workingStartTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'workingEndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'earliestStartupTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'latestShutdownTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'minTem' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'maxTem' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'maxCarbonDioxide' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'controlType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'PushDeviceData' => [
             'path' => '/api/v1/data/increment/push',
             'methods' => [
@@ -1681,6 +2099,14 @@
                 ],
                 [
                     'name' => 'folderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dataType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

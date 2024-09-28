@@ -13075,6 +13075,9 @@
                 [
                     'AK' => [],
                 ],
+                [
+                    'BearerToken' => [],
+                ],
             ],
             'deprecated' => false,
             'parameters' => [
@@ -13116,6 +13119,9 @@
             'security' => [
                 [
                     'AK' => [],
+                ],
+                [
+                    'BearerToken' => [],
                 ],
             ],
             'deprecated' => false,

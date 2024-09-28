@@ -3101,7 +3101,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -3109,7 +3109,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -3608,6 +3608,11 @@
                                         'format' => 'int64',
                                         'required' => false,
                                     ],
+                                    'MaxRunningTimeInMinutes' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'TrainingJobDescription' => [
@@ -3665,27 +3670,8 @@
                                 ],
                             ],
                             'Settings' => [
-                                'type' => 'object',
+                                '$ref' => '#/components/schemas/JobSettings',
                                 'required' => false,
-                                'properties' => [
-                                    'Priority' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'EnableErrorMonitoringInAIMaster' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'ErrorMonitoringArgs' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'AIMasterType' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                ],
                             ],
                             'ExperimentConfig' => [
                                 'type' => 'object',
@@ -3711,6 +3697,11 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                            ],
+                            'Priority' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
                             ],
                         ],
                     ],

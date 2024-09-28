@@ -77,8 +77,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise killJobsAsync($arguments = [])
  * @method \Dew\Acs\Result getJobResourceUsage(array $arguments = [])
  * @method \Http\Promise\Promise getJobResourceUsageAsync($arguments = [])
- * @method \Dew\Acs\Result updateQuota(array $arguments = [])
- * @method \Http\Promise\Promise updateQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result getTableInfo(array $arguments = [])
  * @method \Http\Promise\Promise getTableInfoAsync($arguments = [])
  */

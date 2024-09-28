@@ -63,8 +63,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyPolicyAdvancedConfigAsync($arguments = [])
  * @method \Dew\Acs\Result describePolicyPriorUsed(array $arguments = [])
  * @method \Http\Promise\Promise describePolicyPriorUsedAsync($arguments = [])
- * @method \Dew\Acs\Result describeDomainResolve(array $arguments = [])
- * @method \Http\Promise\Promise describeDomainResolveAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDomainResolve(array $arguments = []) {@deprecated 2017-12-07}
+ * @method \Http\Promise\Promise describeDomainResolveAsync($arguments = []) {@deprecated 2017-12-07}
  * @method \Dew\Acs\Result describeControlPolicy(array $arguments = [])
  * @method \Http\Promise\Promise describeControlPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result modifyControlPolicyPosition(array $arguments = [])

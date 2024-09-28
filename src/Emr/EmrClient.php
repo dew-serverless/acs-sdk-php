@@ -135,6 +135,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDoctorApplicationAsync($arguments = [])
  * @method \Dew\Acs\Result getDoctorHDFSUGI(array $arguments = [])
  * @method \Http\Promise\Promise getDoctorHDFSUGIAsync($arguments = [])
+ * @method \Dew\Acs\Result getClusterCloneMeta(array $arguments = [])
+ * @method \Http\Promise\Promise getClusterCloneMetaAsync($arguments = [])
  */
 final class EmrClient extends AcsClient
 {

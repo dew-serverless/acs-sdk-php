@@ -17,6 +17,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getInstanceRecordConfigAsync($arguments = [])
  * @method \Dew\Acs\Result setInstanceRecordConfig(array $arguments = [])
  * @method \Http\Promise\Promise setInstanceRecordConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result listTerminalCommands(array $arguments = [])
+ * @method \Http\Promise\Promise listTerminalCommandsAsync($arguments = [])
  */
 final class EcsWorkbenchClient extends AcsClient
 {

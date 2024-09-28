@@ -25,6 +25,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise filterUsersAsync($arguments = [])
  * @method \Dew\Acs\Result getManagerInfoByAuthCode(array $arguments = [])
  * @method \Http\Promise\Promise getManagerInfoByAuthCodeAsync($arguments = [])
+ * @method \Dew\Acs\Result batchSetDesktopManager(array $arguments = [])
+ * @method \Http\Promise\Promise batchSetDesktopManagerAsync($arguments = [])
  * @method \Dew\Acs\Result createProperty(array $arguments = [])
  * @method \Http\Promise\Promise createPropertyAsync($arguments = [])
  * @method \Dew\Acs\Result removeProperty(array $arguments = [])

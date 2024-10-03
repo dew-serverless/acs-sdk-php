@@ -220,11 +220,11 @@
             'ConsumeProcessor' => [
                 'type' => 'object',
                 'properties' => [
-                    'processorId' => [
+                    'processorName' => [
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'processorName' => [
+                    'displayName' => [
                         'type' => 'string',
                         'required' => true,
                     ],
@@ -535,11 +535,11 @@
             'IngestProcessor' => [
                 'type' => 'object',
                 'properties' => [
-                    'processorId' => [
+                    'processorName' => [
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'processorName' => [
+                    'displayName' => [
                         'type' => 'string',
                         'required' => true,
                     ],

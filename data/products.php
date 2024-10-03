@@ -2144,6 +2144,14 @@
         'defaultVersion' => '2024-01-11',
     ],
     [
+        'code' => 'OssSddp',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-02-22',
+        ],
+        'defaultVersion' => '2024-02-22',
+    ],
+    [
         'code' => 'APIG',
         'style' => 'RPC',
         'versions' => [

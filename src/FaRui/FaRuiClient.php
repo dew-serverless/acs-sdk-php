@@ -13,8 +13,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createTextFileAsync($arguments = [])
  * @method \Dew\Acs\Result runContractRuleGeneration(array $arguments = [])
  * @method \Http\Promise\Promise runContractRuleGenerationAsync($arguments = [])
- * @method \Dew\Acs\Result runContractResultGeneration(array $arguments = [])
- * @method \Http\Promise\Promise runContractResultGenerationAsync($arguments = [])
  */
 final class FaRuiClient extends AcsClient
 {

@@ -117,6 +117,51 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'DocMetadata',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'BusinessViewId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'BusinessViewName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'MetaCellInfoDTOList' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'FieldCode' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'FieldName' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteDoc' => [
@@ -279,6 +324,51 @@
                             'type' => 'integer',
                             'format' => 'int64',
                             'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DocMetadata',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'BusinessViewId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'BusinessViewName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'MetaCellInfoDTOList' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'FieldCode' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'FieldName' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],

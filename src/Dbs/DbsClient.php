@@ -79,14 +79,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result initializeDbsServiceLinkedRole(array $arguments = [])
  * @method \Http\Promise\Promise initializeDbsServiceLinkedRoleAsync($arguments = [])
- * @method \Dew\Acs\Result deleteSandboxInstance(array $arguments = []) {@since 2021-01-01}
- * @method \Http\Promise\Promise deleteSandboxInstanceAsync($arguments = []) {@since 2021-01-01}
- * @method \Dew\Acs\Result describeSandboxBackupSets(array $arguments = []) {@since 2021-01-01}
- * @method \Http\Promise\Promise describeSandboxBackupSetsAsync($arguments = []) {@since 2021-01-01}
- * @method \Dew\Acs\Result describeSandboxInstances(array $arguments = []) {@since 2021-01-01}
- * @method \Http\Promise\Promise describeSandboxInstancesAsync($arguments = []) {@since 2021-01-01}
- * @method \Dew\Acs\Result describeSandboxRecoveryTime(array $arguments = []) {@since 2021-01-01}
- * @method \Http\Promise\Promise describeSandboxRecoveryTimeAsync($arguments = []) {@since 2021-01-01}
  * @method \Dew\Acs\Result describeDownloadBackupSetStorageInfo(array $arguments = []) {@since 2021-01-01}
  * @method \Http\Promise\Promise describeDownloadBackupSetStorageInfoAsync($arguments = []) {@since 2021-01-01}
  * @method \Dew\Acs\Result describeDownloadSupport(array $arguments = []) {@since 2021-01-01}
@@ -105,6 +97,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createAdvancedPolicyAsync($arguments = []) {@since 2021-01-01}
  * @method \Dew\Acs\Result modifyBackupPolicy(array $arguments = []) {@since 2021-01-01}
  * @method \Http\Promise\Promise modifyBackupPolicyAsync($arguments = []) {@since 2021-01-01}
+ * @method \Dew\Acs\Result deleteSandboxInstance(array $arguments = []) {@since 2021-01-01}
+ * @method \Http\Promise\Promise deleteSandboxInstanceAsync($arguments = []) {@since 2021-01-01}
+ * @method \Dew\Acs\Result describeSandboxRecoveryTime(array $arguments = []) {@since 2021-01-01}
+ * @method \Http\Promise\Promise describeSandboxRecoveryTimeAsync($arguments = []) {@since 2021-01-01}
+ * @method \Dew\Acs\Result describeSandboxInstances(array $arguments = []) {@since 2021-01-01}
+ * @method \Http\Promise\Promise describeSandboxInstancesAsync($arguments = []) {@since 2021-01-01}
+ * @method \Dew\Acs\Result describeSandboxBackupSets(array $arguments = []) {@since 2021-01-01}
+ * @method \Http\Promise\Promise describeSandboxBackupSetsAsync($arguments = []) {@since 2021-01-01}
  */
 final class DbsClient extends AcsClient
 {

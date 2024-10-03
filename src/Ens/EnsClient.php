@@ -497,6 +497,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeHaVipsAsync($arguments = [])
  * @method \Dew\Acs\Result modifyHaVipAttribute(array $arguments = [])
  * @method \Http\Promise\Promise modifyHaVipAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result describeLoadBalancerListeners(array $arguments = [])
+ * @method \Http\Promise\Promise describeLoadBalancerListenersAsync($arguments = [])
+ * @method \Dew\Acs\Result attachNetworkInterface(array $arguments = [])
+ * @method \Http\Promise\Promise attachNetworkInterfaceAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSecondaryPublicIpAddresses(array $arguments = [])
+ * @method \Http\Promise\Promise describeSecondaryPublicIpAddressesAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyNetworkInterfaceAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise modifyNetworkInterfaceAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result detachNetworkInterface(array $arguments = [])
+ * @method \Http\Promise\Promise detachNetworkInterfaceAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

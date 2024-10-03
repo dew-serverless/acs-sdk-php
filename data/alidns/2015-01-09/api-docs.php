@@ -7805,6 +7805,13 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Remark',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
             ],
         ],
         'RemovePdnsAppKey' => [

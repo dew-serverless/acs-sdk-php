@@ -253,6 +253,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeConfigurationPriceAsync($arguments = [])
  * @method \Dew\Acs\Result updateApplicationVswitches(array $arguments = [])
  * @method \Http\Promise\Promise updateApplicationVswitchesAsync($arguments = [])
+ * @method \Dew\Acs\Result downgradeApplicationApmService(array $arguments = [])
+ * @method \Http\Promise\Promise downgradeApplicationApmServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result upgradeApplicationApmService(array $arguments = [])
+ * @method \Http\Promise\Promise upgradeApplicationApmServiceAsync($arguments = [])
  */
 final class SaeClient extends AcsClient
 {

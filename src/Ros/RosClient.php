@@ -123,6 +123,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listStackGroupOperationsAsync($arguments = [])
  * @method \Dew\Acs\Result listStackGroupOperationResults(array $arguments = [])
  * @method \Http\Promise\Promise listStackGroupOperationResultsAsync($arguments = [])
+ * @method \Dew\Acs\Result importStacksToStackGroup(array $arguments = [])
+ * @method \Http\Promise\Promise importStacksToStackGroupAsync($arguments = [])
  * @method \Dew\Acs\Result updateStackTemplateByResources(array $arguments = [])
  * @method \Http\Promise\Promise updateStackTemplateByResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result getStackDriftDetectionStatus(array $arguments = [])

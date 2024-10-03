@@ -1736,6 +1736,134 @@
                 ],
             ],
         ],
+        'RecognizeIntention' => [
+            'path' => '/{workspaceId}/api/recog/intent',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'analysis' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'bizType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'conversation' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'globalIntentionList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'description' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'intention' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'intentionCode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'hierarchicalIntentionList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'description' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'intention' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'intentionCode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'intentionList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'description' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'intention' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'intentionCode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'opType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'recommend' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreateFinReportSummaryTask' => [
             'path' => '/{workspaceId}/api/task/summary',
             'methods' => [

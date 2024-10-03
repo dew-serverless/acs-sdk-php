@@ -1313,6 +1313,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TenantIsolationType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ConfigInstanceRemark' => [

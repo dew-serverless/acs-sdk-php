@@ -2059,6 +2059,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'ExtendContent',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateConfigRule' => [
@@ -2287,6 +2295,14 @@
                 ],
                 [
                     'name' => 'ConfigRuleName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExtendContent',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -3265,6 +3281,14 @@
                 ],
                 [
                     'name' => 'AccountIdsScope',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExtendContent',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

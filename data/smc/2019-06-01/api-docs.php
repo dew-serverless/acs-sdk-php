@@ -128,6 +128,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'WorkgroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifySourceServerAttribute' => [
@@ -552,6 +560,101 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Disks',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'System' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Size' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'LVM' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'Part' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'SizeBytes' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'Block' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'Path' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Data' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Size' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'LVM' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'DiskId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Part' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'SizeBytes' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => false,
+                                                    ],
+                                                    'Block' => [
+                                                        'type' => 'boolean',
+                                                        'required' => false,
+                                                    ],
+                                                    'Path' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

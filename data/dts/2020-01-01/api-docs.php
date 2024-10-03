@@ -5263,7 +5263,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -5303,6 +5303,20 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                    ],
+                ],
+                [
+                    'name' => 'DtsInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'SynchronizationDirection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
                 [

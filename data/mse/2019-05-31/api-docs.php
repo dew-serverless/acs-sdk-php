@@ -14637,6 +14637,10 @@
                                 'format' => 'int32',
                                 'required' => false,
                             ],
+                            'WithRematchRoute' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

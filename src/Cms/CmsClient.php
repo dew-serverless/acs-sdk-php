@@ -333,6 +333,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise batchExportAsync($arguments = [])
  * @method \Dew\Acs\Result openCmsService(array $arguments = []) {@deprecated 2019-01-01}
  * @method \Http\Promise\Promise openCmsServiceAsync($arguments = []) {@deprecated 2019-01-01}
+ * @method \Dew\Acs\Result describeSyntheticProbeList(array $arguments = [])
+ * @method \Http\Promise\Promise describeSyntheticProbeListAsync($arguments = [])
  */
 final class CmsClient extends AcsClient
 {

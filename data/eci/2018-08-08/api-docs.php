@@ -3563,6 +3563,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'OsType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteImageCache' => [

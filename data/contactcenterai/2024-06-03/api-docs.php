@@ -328,6 +328,24 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
+                            'categoryTags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'tagDesc' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'tagName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
                             'dialogue' => [
                                 'type' => 'object',
                                 'required' => true,
@@ -463,6 +481,13 @@
                                         'keywords',
                                         'service_inspection',
                                         'question_solution',
+                                        'questions_and_answer',
+                                        'user_profile',
+                                        'category_tag',
+                                        'emotion_detection',
+                                        'satisfaction',
+                                        'actions',
+                                        'service_finish',
                                     ],
                                 ],
                             ],
@@ -505,6 +530,24 @@
                             'stream' => [
                                 'type' => 'boolean',
                                 'required' => true,
+                            ],
+                            'userProfiles' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],

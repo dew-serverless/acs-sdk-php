@@ -21,6 +21,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise runVideoAnalysisAsync($arguments = [])
  * @method \Dew\Acs\Result listHotTopicSummaries(array $arguments = [])
  * @method \Http\Promise\Promise listHotTopicSummariesAsync($arguments = [])
+ * @method \Dew\Acs\Result generateBroadcastNews(array $arguments = [])
+ * @method \Http\Promise\Promise generateBroadcastNewsAsync($arguments = [])
+ * @method \Dew\Acs\Result runCommentGeneration(array $arguments = [])
+ * @method \Http\Promise\Promise runCommentGenerationAsync($arguments = [])
  */
 final class QuanMiaoLightAppClient extends AcsClient
 {

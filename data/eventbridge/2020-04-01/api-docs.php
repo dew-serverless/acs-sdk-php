@@ -1301,6 +1301,17 @@
                                         ],
                                     ],
                                 ],
+                                'ConcurrentConfig' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Concurrency' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -1427,6 +1438,17 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                        ],
+                                    ],
+                                ],
+                                'ConcurrentConfig' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Concurrency' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
                                         ],
                                     ],
                                 ],

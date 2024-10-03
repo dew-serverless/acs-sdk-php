@@ -1890,6 +1890,22 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CrontabJobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyDBClusterStorageSpace' => [
@@ -2969,6 +2985,14 @@
                 ],
                 [
                     'name' => 'EncryptNewTables',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableAutomaticRotation',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

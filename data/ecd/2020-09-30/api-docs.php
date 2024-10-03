@@ -364,6 +364,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Duration',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeRenewalPrice' => [
@@ -2602,6 +2611,63 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DesktopAttachment',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ImageId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SystemDiskCategory' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SystemDiskSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'SystemDiskPerLevel' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DataDiskSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'DataDiskCategory' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DataDiskPerLevel' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DefaultLanguage' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DesktopType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TimerGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDesktopInfo' => [
@@ -3084,6 +3150,44 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OrderBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Scope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DesktopTypeIdList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],

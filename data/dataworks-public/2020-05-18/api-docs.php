@@ -5767,7 +5767,7 @@
                 ],
                 [
                     'name' => 'TaskContent',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,

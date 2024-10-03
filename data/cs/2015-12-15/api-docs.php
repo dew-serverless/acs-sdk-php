@@ -2688,6 +2688,10 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'pre_user_data' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'tee_config' => [
@@ -3382,6 +3386,10 @@
                                     ],
                                     'cms_enabled' => [
                                         'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'pre_user_data' => [
+                                        'type' => 'string',
                                         'required' => false,
                                     ],
                                 ],
@@ -4647,7 +4655,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -4655,7 +4663,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],

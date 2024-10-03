@@ -2447,7 +2447,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'SourceIp',
@@ -6657,7 +6657,16 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [],
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
         ],
         'CreateSlsLogDispatch' => [
             'methods' => [
@@ -7601,6 +7610,14 @@
                 ],
                 [
                     'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegionNo',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

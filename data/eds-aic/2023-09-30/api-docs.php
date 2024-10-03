@@ -41,6 +41,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'BizRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'SpecIds',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -737,6 +745,22 @@
                             'required' => false,
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceGroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2462,6 +2486,14 @@
                     ],
                 ],
                 [
+                    'name' => 'LockResolution',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'NetRedirectPolicy',
                     'in' => 'formData',
                     'style' => 'json',
@@ -2614,6 +2646,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LockResolution',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

@@ -251,6 +251,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeActiveOperationTasksAsync($arguments = [])
  * @method \Dew\Acs\Result modifyActiveOperationTasks(array $arguments = [])
  * @method \Http\Promise\Promise modifyActiveOperationTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInstanceBandwidth(array $arguments = [])
+ * @method \Http\Promise\Promise modifyInstanceBandwidthAsync($arguments = [])
  */
 final class RKvstoreClient extends AcsClient
 {

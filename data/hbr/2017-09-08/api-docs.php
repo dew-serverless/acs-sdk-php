@@ -1318,6 +1318,7 @@
                                         'TRANSITION',
                                         'REPLICATION',
                                         'SECURITY',
+                                        'TAG',
                                     ],
                                 ],
                                 'Schedule' => [
@@ -1379,6 +1380,50 @@
                                     'type' => 'integer',
                                     'format' => 'int64',
                                     'required' => false,
+                                ],
+                                'DataSourceFilters' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'SourceType' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'DataSourceIds' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'TagFilters' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Key' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Operator' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],
@@ -1530,6 +1575,50 @@
                                     'type' => 'integer',
                                     'format' => 'int64',
                                     'required' => false,
+                                ],
+                                'DataSourceFilters' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'SourceType' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'DataSourceIds' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'TagFilters' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Key' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Operator' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],

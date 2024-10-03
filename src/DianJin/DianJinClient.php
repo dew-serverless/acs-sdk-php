@@ -47,6 +47,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise runLibraryChatGenerationAsync($arguments = [])
  * @method \Dew\Acs\Result getHistoryListByBizType(array $arguments = [])
  * @method \Http\Promise\Promise getHistoryListByBizTypeAsync($arguments = [])
+ * @method \Dew\Acs\Result recognizeIntention(array $arguments = [])
+ * @method \Http\Promise\Promise recognizeIntentionAsync($arguments = [])
  * @method \Dew\Acs\Result createFinReportSummaryTask(array $arguments = [])
  * @method \Http\Promise\Promise createFinReportSummaryTaskAsync($arguments = [])
  * @method \Dew\Acs\Result getTaskStatus(array $arguments = [])

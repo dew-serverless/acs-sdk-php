@@ -11,6 +11,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeProjectAsync($arguments = [])
  * @method \Dew\Acs\Result listProjects(array $arguments = [])
  * @method \Http\Promise\Promise listProjectsAsync($arguments = [])
+ * @method \Dew\Acs\Result listWorkflowDirectories(array $arguments = [])
+ * @method \Http\Promise\Promise listWorkflowDirectoriesAsync($arguments = [])
  * @method \Dew\Acs\Result runWorkflow(array $arguments = [])
  * @method \Http\Promise\Promise runWorkflowAsync($arguments = [])
  * @method \Dew\Acs\Result listWorkflows(array $arguments = [])
@@ -27,6 +29,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listWorkflowInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result describeWorkflowInstance(array $arguments = [])
  * @method \Http\Promise\Promise describeWorkflowInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result operateWorkflowInstance(array $arguments = [])
+ * @method \Http\Promise\Promise operateWorkflowInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result describeManualTask(array $arguments = [])
  * @method \Http\Promise\Promise describeManualTaskAsync($arguments = [])
  * @method \Dew\Acs\Result listManualTasks(array $arguments = [])
@@ -43,6 +47,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeTaskInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result listTaskInstances(array $arguments = [])
  * @method \Http\Promise\Promise listTaskInstancesAsync($arguments = [])
+ * @method \Dew\Acs\Result listResourceGroups(array $arguments = [])
+ * @method \Http\Promise\Promise listResourceGroupsAsync($arguments = [])
+ * @method \Dew\Acs\Result listAlertGroups(array $arguments = [])
+ * @method \Http\Promise\Promise listAlertGroupsAsync($arguments = [])
  */
 final class EmrStudioClient extends AcsClient
 {

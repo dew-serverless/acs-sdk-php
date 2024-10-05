@@ -6657,10 +6657,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'nas.cn-qingdao.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'nas.cn-beijing.aliyuncs.com',
         ],
@@ -6747,10 +6743,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'nas.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'nas.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',

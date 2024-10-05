@@ -3651,10 +3651,6 @@
             'endpoint' => 'schedulerx.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'schedulerx.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'schedulerx.aliyuncs.com',
         ],
@@ -3740,6 +3736,10 @@
         ],
         [
             'regionId' => 'ap-southeast-7',
+            'endpoint' => 'schedulerx.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-qingdao',
             'endpoint' => 'schedulerx.aliyuncs.com',
         ],
     ],

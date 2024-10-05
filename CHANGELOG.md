@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2024-10-05
+
+### Changed
+
+- Update metadata from metadata repository instead of retrieving and building
+  from scratch via Alibaba Cloud Openmeta
+  https://github.com/dew-serverless/acs-sdk-php/pull/59
+
 ## [0.3.0] - 2024-09-21
 
 ### Added
@@ -29,7 +37,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release.
 
-[unreleased]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.3.0...HEAD
+[unreleased]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/dew-serverless/acs-sdk-php/releases/tag/v0.1.0

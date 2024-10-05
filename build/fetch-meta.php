@@ -16,7 +16,7 @@ function basePath(): string
         throw new RuntimeException('Missing ACS_BUILD_DIR environment variable.');
     }
 
-    return $path;
+    return rtrim($path, '/');
 }
 
 function metadataPath(string $language = 'zh_cn'): string

@@ -2223,4 +2223,12 @@
         ],
         'defaultVersion' => '2024-08-01',
     ],
+    [
+        'code' => 'NonStandardOpen',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-09-22',
+        ],
+        'defaultVersion' => '2024-09-22',
+    ],
 ];

@@ -243,7 +243,7 @@ function buildFromChangeset(string $product, string $version, string $style, arr
 
 function main(): int
 {
-    $catalogPath = joinPath(metadataPath(), 'product.php');
+    $catalogPath = joinPath(metadataPath(), 'products.php');
 
     echo '=> Updating product list'.PHP_EOL;
     updateProductList($catalogPath);

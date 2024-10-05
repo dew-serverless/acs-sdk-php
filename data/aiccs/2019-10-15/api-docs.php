@@ -10777,10 +10777,6 @@
             'endpoint' => 'aiccs.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'aiccs.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-qingdao-nebula',
             'endpoint' => 'aiccs.aliyuncs.com',
         ],
@@ -10886,6 +10882,10 @@
         ],
         [
             'regionId' => 'ap-southeast-2',
+            'endpoint' => 'aiccs.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-qingdao',
             'endpoint' => 'aiccs.aliyuncs.com',
         ],
     ],

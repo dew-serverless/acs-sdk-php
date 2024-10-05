@@ -19,9 +19,9 @@ function basePath(): string
     return $path;
 }
 
-function metadataPath(): string
+function metadataPath(string $language = 'zh_cn'): string
 {
-    return joinPath(basePath(), 'en_us');
+    return joinPath(basePath(), $language);
 }
 
 function joinPath(string ...$paths): string

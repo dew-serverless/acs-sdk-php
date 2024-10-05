@@ -142,6 +142,13 @@ final class ApiDocsStripper
 
         if (isset($result['properties']) && is_array($result['properties'])) {
             foreach ($result['properties'] as $name => $property) {
+                // The property schema is expected to be an array. However, we
+                // have encountered a malformed schema definition that is a
+                // string. The check is to avoid these malformed schemas.
+                if (! is_array($property)) {
+                    continue;
+                }
+
                 $result['properties'][$name] = static::stripSchema($property);
             }
         }

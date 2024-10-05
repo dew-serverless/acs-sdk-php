@@ -1,11 +1,15 @@
 ACS_ENDPOINT ?= https://api.alibabacloud.com
-ACS_PRODUCTS ?=
+ACS_METADATA_URL ?= https://github.com/dew-serverless/acs-metadata/releases/latest/download/php.tar.gz
+ACS_BUILD_DIR ?= tmp/
 PROTOC ?= protoc
 PROTO_SRC_DIR = protobuf
 PROTO_GEN_DIR = src
 
 fetch-meta:
-	ACS_ENDPOINT=$(ACS_ENDPOINT) ACS_PRODUCTS=$(ACS_PRODUCTS) php build/fetch-meta.php
+	mkdir -p $(ACS_BUILD_DIR)
+	curl -sL $(ACS_METADATA_URL) | tar -xzvC $(ACS_BUILD_DIR)
+	ACS_ENDPOINT=$(ACS_ENDPOINT) ACS_BUILD_DIR=$(ACS_BUILD_DIR) php build/fetch-meta.php
+	rm -rf $(ACS_BUILD_DIR)
 
 build-clients:
 	php build/build-clients.php

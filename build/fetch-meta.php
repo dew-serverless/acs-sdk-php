@@ -6,8 +6,28 @@ require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/ProductStripper.php';
 require_once __DIR__.'/ApiDocsStripper.php';
 
-use Dew\Acs\Arr;
 use Symfony\Component\VarExporter\VarExporter;
+
+function basePath(): string
+{
+    $path = getenv('ACS_BUILD_DIR');
+
+    if (! is_string($path)) {
+        throw new RuntimeException('Missing ACS_BUILD_DIR environment variable.');
+    }
+
+    return rtrim($path, '/');
+}
+
+function metadataPath(string $language = 'zh_cn'): string
+{
+    return joinPath(basePath(), $language);
+}
+
+function joinPath(string ...$paths): string
+{
+    return implode(DIRECTORY_SEPARATOR, $paths);
+}
 
 function getEndpoint(): string
 {
@@ -39,24 +59,33 @@ function getContents(string $url): string
     return $contents;
 }
 
+function getRequire(string $filename): mixed
+{
+    if (! file_exists($filename)) {
+        throw new InvalidArgumentException(
+            "The filename $filename does not exist."
+        );
+    }
+
+    return require $filename;
+}
+
 /**
  * @return mixed[]
  */
 function getApiDocs(string $product, string $version): array
 {
-    $contents = getContents(withEndpoint(sprintf(
-        '/meta/v1/products/%s/versions/%s/api-docs.json', $product, $version
-    )));
-
-    $decoded = json_decode(
-        $contents, associative: true, flags: JSON_THROW_ON_ERROR
+    $filename = joinPath(
+        metadataPath(), strtolower($product), $version, 'api-docs.php'
     );
 
-    if (! is_array($decoded)) {
+    $contents = getRequire($filename);
+
+    if (! is_array($contents)) {
         throw new RuntimeException('The API docs is expected to be an array.');
     }
 
-    return $decoded;
+    return $contents;
 }
 
 /**
@@ -143,7 +172,9 @@ function buildApiDocsFromChangeset(string $product, string $version, string $sty
  */
 function writeToPhp(string $product, string $version, array $contents): void
 {
-    $direcotry = getDirectory($product, $version);
+    $direcotry = joinPath(
+        __DIR__, '..', 'data', strtolower($product), $version
+    );
 
     if (! is_dir($direcotry)) {
         mkdir($direcotry, 0755, recursive: true);
@@ -151,7 +182,9 @@ function writeToPhp(string $product, string $version, array $contents): void
 
     $code = sprintf('<?php return %s;', VarExporter::export($contents));
 
-    if (file_put_contents($direcotry.'/api-docs.php', $code) === false) {
+    $filename = joinPath($direcotry, 'api-docs.php');
+
+    if (file_put_contents($filename, $code) === false) {
         throw new RuntimeException(sprintf(
             'Could not persist the API docs for %s with version %s.',
             $product, $version
@@ -159,19 +192,15 @@ function writeToPhp(string $product, string $version, array $contents): void
     }
 }
 
-function updateProductList(string $endpoint): void
+function updateProductList(string $filename): void
 {
-    $contents = getContents($endpoint);
+    $contents = getRequire($filename);
 
-    $decoded = json_decode(
-        $contents, associative: true, flags: JSON_THROW_ON_ERROR
-    );
-
-    if (! is_array($decoded)) {
+    if (! is_array($contents)) {
         throw new RuntimeException('Could not parse product list.');
     }
 
-    $stripped = ProductStripper::strip($decoded);
+    $stripped = ProductStripper::strip($contents);
 
     $code = sprintf('<?php return %s;', VarExporter::export($stripped));
 
@@ -180,38 +209,22 @@ function updateProductList(string $endpoint): void
     }
 }
 
-/**
- * @param  string[]  $codes
- */
-function buildFromProducts(array $codes = []): void
+function updateApis(string $filename): void
 {
-    $filename = __DIR__.'/../data/products.php';
-
-    if (! file_exists($filename)) {
-        throw new RuntimeException('Missing product data.');
-    }
-
-    $products = require $filename;
+    $products = getRequire($filename);
 
     if (! is_array($products)) {
         throw new RuntimeException('Product data is expected to be a list.');
     }
 
-    /** @var array<string, string[]> */
-    $normalized = [];
     foreach ($products as $product) {
-        $normalized[$product['code']] = $product['versions'];
-    }
+        foreach ($product['versions'] as $version) {
+            printf('=> Processing %s %s'.PHP_EOL, $product['code'], $version);
 
-    $filtered = $codes === [] ? $normalized : Arr::only($normalized, $codes);
-    foreach ($filtered as $product => $versions) {
-        foreach ($versions as $version) {
-            printf('=> Processing %s %s'.PHP_EOL, $product, $version);
-
-            $docs = getApiDocs($product, $version);
+            $docs = getApiDocs($product['code'], $version);
             $stripped = ApiDocsStripper::strip($docs);
 
-            writeToPhp($product, $version, $stripped);
+            writeToPhp($product['code'], $version, $stripped);
         }
     }
 }
@@ -228,12 +241,14 @@ function buildFromChangeset(string $product, string $version, string $style, arr
     writeToPhp($product, $version, $docs);
 }
 
-function fetchAll(): void
+function main(): int
 {
-    echo '=> Updating product list'.PHP_EOL;
-    updateProductList(withEndpoint('/meta/v1/products.json'));
+    $catalogPath = joinPath(metadataPath(), 'products.php');
 
-    buildFromProducts();
+    echo '=> Updating product list'.PHP_EOL;
+    updateProductList($catalogPath);
+
+    updateApis($catalogPath);
 
     // @see https://github.com/aliyun/alibabacloud-sdk/blob/f41eec35b536eb2ee7eb1e2467eac88af904dd58/ots-20160620/async/api-info.json
     buildFromChangeset('Ots', '2016-06-20', 'RPC', [
@@ -253,22 +268,6 @@ function fetchAll(): void
         'UnbindInstance2Vpc',
         'UpdateInstance',
     ]);
-}
-
-/**
- * @param  string[]  $products
- */
-function fetch(array $products): void
-{
-    buildFromProducts($products);
-}
-
-function main(): int
-{
-    $products = getenv('ACS_PRODUCTS') ?: '';
-    $products = $products === '' ? [] : (explode(',', $products) ?: []);
-
-    $products === [] ? fetchAll() : fetch($products);
 
     echo '== Process completed.'.PHP_EOL;
 

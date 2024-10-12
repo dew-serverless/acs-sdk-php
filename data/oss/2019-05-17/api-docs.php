@@ -1929,6 +1929,10 @@
                     'ResoreInfo' => [
                         'type' => 'string',
                     ],
+                    'TransitionTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
                 ],
             ],
             'ObjectVersion' => [
@@ -1959,6 +1963,13 @@
                     ],
                     'Owner' => [
                         '$ref' => '#/components/schemas/Owner',
+                    ],
+                    'RestoreInfo' => [
+                        'type' => 'string',
+                    ],
+                    'TransitionTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
                     ],
                 ],
             ],
@@ -9769,6 +9780,7 @@
             'produces' => [
                 'application/xml',
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'bucket',

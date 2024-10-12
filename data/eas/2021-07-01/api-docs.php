@@ -2998,6 +2998,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Role',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListGroups' => [
@@ -4430,7 +4438,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -4438,7 +4446,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -4572,14 +4580,14 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
-                        'required' => false,
+                        'required' => true,
                         'items' => [
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
                                 'Entry' => [
                                     'type' => 'string',
-                                    'required' => false,
+                                    'required' => true,
                                 ],
                                 'Comment' => [
                                     'type' => 'string',
@@ -4647,6 +4655,14 @@
                             'Replicas' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'ChargeType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AutoRenewal' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],

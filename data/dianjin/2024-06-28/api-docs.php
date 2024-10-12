@@ -1736,6 +1736,107 @@
                 ],
             ],
         ],
+        'GetTaskResult' => [
+            'path' => '/{workspaceId}/api/task/result',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreatePdfTranslateTask' => [
+            'path' => '/{workspaceId}/api/task/pdfTranslate',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'docId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'knowledge' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'libraryId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'modelId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'translateTo' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'RecognizeIntention' => [
             'path' => '/{workspaceId}/api/recog/intent',
             'methods' => [

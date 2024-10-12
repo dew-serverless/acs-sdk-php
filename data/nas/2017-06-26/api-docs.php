@@ -415,14 +415,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'enum' => [
-                            'all',
-                            'standard',
-                            'extreme',
-                            'cpfs',
-                            'dcpfs',
-                            'bmcpfs',
-                        ],
+                        'enum' => [],
                     ],
                 ],
                 [

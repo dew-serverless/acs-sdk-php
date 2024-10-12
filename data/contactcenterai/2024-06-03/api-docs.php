@@ -775,6 +775,266 @@
                 ],
             ],
         ],
+        'CreateTask' => [
+            'path' => '/{workspaceId}/ccai/app/{appId}/createTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'appId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'dialogue' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'sentences' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'role' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                    'enum' => [
+                                                        'agent',
+                                                        'user',
+                                                        'system',
+                                                    ],
+                                                ],
+                                                'text' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'sessionId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'examples' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'output' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'sentences' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => true,
+                                            'properties' => [
+                                                'role' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'text' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'fields' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'code' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'desc' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'enumValues' => [
+                                            'type' => 'array',
+                                            'required' => true,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => true,
+                                                'properties' => [
+                                                    'desc' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'enumValue' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'modelCode' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'tyxmTurbo',
+                                    'tyxmPlus',
+                                ],
+                            ],
+                            'resultTypes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'summary',
+                                        'title',
+                                        'fields',
+                                        'keywords',
+                                        'service_inspection',
+                                        'question_solution',
+                                    ],
+                                ],
+                            ],
+                            'serviceInspection' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'inspectionContents' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => true,
+                                            'properties' => [
+                                                'content' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'title' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'inspectionIntroduction' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'sceneIntroduction' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'taskType' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'audio',
+                                    'text',
+                                ],
+                            ],
+                            'templateIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                            'transcription' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'autoSplit' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'clientChannel' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'fileName' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'serviceChannel' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'serviceChannelKeywords' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'voiceFileUrl' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetTaskResult' => [
             'path' => '/ccai/app/getTaskResult',
             'methods' => [

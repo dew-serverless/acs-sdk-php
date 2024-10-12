@@ -43,39 +43,11 @@
             'AIAgentTemplateConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'VoiceChat' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'VoiceId' => [
-                                'type' => 'string',
-                            ],
-                            'Greeting' => [
-                                'type' => 'string',
-                            ],
-                            'Volume' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                            ],
-                            'EnableVoiceInterrupt' => [
-                                'type' => 'boolean',
-                            ],
-                            'GracefulShutdown' => [
-                                'type' => 'boolean',
-                            ],
-                        ],
-                    ],
                     'AvatarChat3D' => [
                         'type' => 'object',
                         'properties' => [
-                            'VoiceId' => [
+                            'AvatarId' => [
                                 'type' => 'string',
-                            ],
-                            'Greeting' => [
-                                'type' => 'string',
-                            ],
-                            'Volume' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
                             ],
                             'EnableVoiceInterrupt' => [
                                 'type' => 'boolean',
@@ -83,8 +55,36 @@
                             'GracefulShutdown' => [
                                 'type' => 'boolean',
                             ],
-                            'AvatarId' => [
+                            'Greeting' => [
                                 'type' => 'string',
+                            ],
+                            'VoiceId' => [
+                                'type' => 'string',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                    'VoiceChat' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                            ],
+                            'GracefulShutdown' => [
+                                'type' => 'boolean',
+                            ],
+                            'Greeting' => [
+                                'type' => 'string',
+                            ],
+                            'VoiceId' => [
+                                'type' => 'string',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
                             ],
                         ],
                     ],
@@ -10275,184 +10275,6 @@
                 ],
             ],
         ],
-        'StartRtcRobotInstance' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'RobotId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ChannelId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'UserId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'UserData',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AuthToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Config',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'EnableVoiceInterrupt' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'Greeting' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'VoiceId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'StopRtcRobotInstance' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateRtcRobotInstance' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Config',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'EnableVoiceInterrupt' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'Greeting' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'VoiceId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DescribeRtcRobotInstance' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'SubmitSmarttagJob' => [
             'methods' => [
                 'post',
@@ -12094,6 +11916,184 @@
                 ],
                 [
                     'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StopRtcRobotInstance' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StartRtcRobotInstance' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RobotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AuthToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Config',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'Greeting' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VoiceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateRtcRobotInstance' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Config',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'Greeting' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VoiceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRtcRobotInstance' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

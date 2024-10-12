@@ -83,6 +83,14 @@
                     ],
                 ],
                 [
+                    'name' => 'SecondaryZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ChargeType',
                     'in' => 'query',
                     'schema' => [
@@ -275,6 +283,26 @@
                     ],
                 ],
                 [
+                    'name' => 'ReplicaCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'SlaveReplicaCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+                [
                     'name' => 'ReadOnlyCount',
                     'in' => 'query',
                     'schema' => [
@@ -283,6 +311,16 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '5',
+                    ],
+                ],
+                [
+                    'name' => 'SlaveReadOnlyCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
                     ],
                 ],
                 [
@@ -298,14 +336,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SecondaryZoneId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -389,15 +419,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SlaveReadOnlyCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -1177,6 +1198,14 @@
                     ],
                 ],
                 [
+                    'name' => 'SecondaryZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ChargeType',
                     'in' => 'query',
                     'schema' => [
@@ -1369,6 +1398,26 @@
                     ],
                 ],
                 [
+                    'name' => 'ReplicaCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'SlaveReplicaCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+                [
                     'name' => 'ReadOnlyCount',
                     'in' => 'query',
                     'schema' => [
@@ -1377,6 +1426,15 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '5',
+                    ],
+                ],
+                [
+                    'name' => 'SlaveReadOnlyCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1405,14 +1463,6 @@
                             'tair_essd',
                             'tair_rdb',
                         ],
-                    ],
-                ],
-                [
-                    'name' => 'SecondaryZoneId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [
@@ -1480,15 +1530,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SlaveReadOnlyCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],

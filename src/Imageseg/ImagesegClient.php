@@ -33,8 +33,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise segmentHDSkyAsync($arguments = [])
  * @method \Dew\Acs\Result segmentHead(array $arguments = [])
  * @method \Http\Promise\Promise segmentHeadAsync($arguments = [])
- * @method \Dew\Acs\Result segmentScene(array $arguments = [])
- * @method \Http\Promise\Promise segmentSceneAsync($arguments = [])
  * @method \Dew\Acs\Result segmentSkin(array $arguments = [])
  * @method \Http\Promise\Promise segmentSkinAsync($arguments = [])
  * @method \Dew\Acs\Result segmentSky(array $arguments = [])

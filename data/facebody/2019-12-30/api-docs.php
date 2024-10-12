@@ -843,48 +843,6 @@
                 ],
             ],
         ],
-        'FaceFilter' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ImageURL',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceType',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Strength',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'FaceMakeup' => [
             'methods' => [
                 'post',
@@ -1952,49 +1910,6 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'RetouchBody' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ImageURL',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SlimDegree',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'LengthenDegree',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
                         'required' => true,
                     ],
                 ],

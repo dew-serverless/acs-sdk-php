@@ -3866,6 +3866,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'sortName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'gmt_create',
+                            'gmt_modified',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteDeployment' => [

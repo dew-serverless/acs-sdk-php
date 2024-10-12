@@ -843,6 +843,7 @@
                                     'ecs',
                                     'clb4',
                                     'clb7',
+                                    'nlb',
                                 ],
                             ],
                             'ResourceInstanceId' => [

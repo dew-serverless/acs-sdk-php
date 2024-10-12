@@ -433,32 +433,6 @@
                 ],
             ],
         ],
-        'SegmentScene' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ImageURL',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'SegmentSkin' => [
             'methods' => [
                 'post',

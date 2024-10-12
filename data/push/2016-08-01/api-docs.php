@@ -448,6 +448,24 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'HarmonyExtensionPush' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'HarmonyExtensionExtraData' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HarmonyBadgeAddNum' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'HarmonyBadgeSetNum' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 100,
@@ -1310,6 +1328,40 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HarmonyExtensionPush',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HarmonyExtensionExtraData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HarmonyBadgeAddNum',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HarmonyBadgeSetNum',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],

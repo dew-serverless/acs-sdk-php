@@ -1960,14 +1960,6 @@
         'defaultVersion' => '2022-08-28',
     ],
     [
-        'code' => 'es-serverless',
-        'style' => 'RPC',
-        'versions' => [
-            '2022-08-22',
-        ],
-        'defaultVersion' => '2022-08-22',
-    ],
-    [
         'code' => 'ResourceCenter',
         'style' => 'RPC',
         'versions' => [
@@ -2038,6 +2030,14 @@
             '2023-12-29',
         ],
         'defaultVersion' => '2023-12-29',
+    ],
+    [
+        'code' => 'dataphin-public',
+        'style' => 'RPC',
+        'versions' => [
+            '2023-06-30',
+        ],
+        'defaultVersion' => '2023-06-30',
     ],
     [
         'code' => 'PaiFeatureStore',
@@ -2224,11 +2224,19 @@
         'defaultVersion' => '2024-08-01',
     ],
     [
-        'code' => 'NonStandardOpen',
+        'code' => 'ESA',
         'style' => 'RPC',
         'versions' => [
-            '2024-09-22',
+            '2024-09-10',
         ],
-        'defaultVersion' => '2024-09-22',
+        'defaultVersion' => '2024-09-10',
+    ],
+    [
+        'code' => 'SuperappNlp',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-09-30',
+        ],
+        'defaultVersion' => '2024-09-30',
     ],
 ];

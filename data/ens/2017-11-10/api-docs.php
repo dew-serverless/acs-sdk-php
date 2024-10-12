@@ -384,220 +384,6 @@
         ],
     ],
     'apis' => [
-        'DeleteStorageVolume' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'VolumeId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateStorageVolume' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'GatewayId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StorageId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'IsEnable',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            '0',
-                            '1',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'IsAuth',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            '0',
-                            '1',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'AuthProtocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'CHAP',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'AuthUser',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AuthPassword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'VolumeName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Description',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteStorageGateway' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'GatewayId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateStorageGateway' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'OrderDetails',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => true,
-                            'properties' => [
-                                'EnsRegionId' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'GatewayType' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'VpcId' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'GatewayName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Description' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'RunInstances' => [
             'methods' => [
                 'get',
@@ -2140,734 +1926,6 @@
                 ],
             ],
         ],
-        'DeleteDisk' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'DiskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ResetDisk' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'DiskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SnapshotId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ResizeDisk' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'DiskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NewSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateDisk' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceChargeType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'PostPaid',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Category',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Size',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SnapshotId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Encrypted',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'KMSKeyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DiskName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Tag',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 20,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDisks' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DiskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DiskName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Category',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DiskChargeType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnsRegionIds',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DiskIds',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'OrderByParams',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DiskType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SnapshotId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'AttachDisk' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'DiskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DeleteWithInstance',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DetachDisk' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'DiskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCloudDiskAvailableResourceInfo' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-        'DescribeCloudDiskTypes' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ReInitDisk' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'DiskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ImageId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ModifySnapshotAttribute' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SnapshotId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SnapshotName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Description',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeSnapshots' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DiskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SnapshotId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteSnapshot' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SnapshotId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateSnapshot' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'DiskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SnapshotName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Description',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CopySnapshot' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SnapshotId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DestinationRegionIds',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => true,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'DestinationSnapshotName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DestinationSnapshotDescription',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'CreateImage' => [
             'methods' => [
                 'post',
@@ -3505,574 +2563,7 @@
                 ],
             ],
         ],
-        'RevokeSecurityGroupEgress' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'IpProtocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'tcp',
-                            'udp',
-                            'icmp',
-                            'gre',
-                            'all',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'PortRange',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SecurityGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Policy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'accept',
-                            'drop',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Priority',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'DestCidrIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SourcePortRange',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'RevokeSecurityGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'IpProtocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'tcp',
-                            'udp',
-                            'icmp',
-                            'gre',
-                            'all',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'PortRange',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SecurityGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Policy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'accept',
-                            'drop',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Priority',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'SourceCidrIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SourcePortRange',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateSecurityGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'SecurityGroupName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Description',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'AuthorizeSecurityGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'IpProtocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'tcp',
-                            'udp',
-                            'icmp',
-                            'gre',
-                            'all',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'PortRange',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SecurityGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Policy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'accept',
-                            'drop',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Priority',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'SourceCidrIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SourcePortRange',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'JoinSecurityGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'SecurityGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'NetworkInterfaceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'AuthorizeSecurityGroupEgress' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'IpProtocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'tcp',
-                            'udp',
-                            'icmp',
-                            'gre',
-                            'all',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'PortRange',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SecurityGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Policy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'accept',
-                            'drop',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Priority',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'DestCidrIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SourcePortRange',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'LeaveSecurityGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'SecurityGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'NetworkInterfaceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeSecurityGroups' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'SecurityGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '50',
-                    ],
-                ],
-                [
-                    'name' => 'SecurityGroupName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteSecurityGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'SecurityGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeSecurityGroupAttribute' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'SecurityGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ModifySecurityGroupAttribute' => [
+        'CreateDisk' => [
             'methods' => [
                 'get',
                 'post',
@@ -4089,7 +2580,18 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'SecurityGroupId',
+                    'name' => 'InstanceChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'PostPaid',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4097,7 +2599,731 @@
                     ],
                 ],
                 [
-                    'name' => 'SecurityGroupName',
+                    'name' => 'Category',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Size',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SnapshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Encrypted',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'KMSKeyId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DiskName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteDisk' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'DiskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'AttachDisk' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'DiskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DeleteWithInstance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DetachDisk' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'DiskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ResizeDisk' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DiskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NewSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeDisks' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DiskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DiskName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Category',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DiskChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DiskIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OrderByParams',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DiskType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SnapshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ReInitDisk' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'DiskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ImageId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ResetDisk' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DiskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SnapshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeDiskIopsList' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DiskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSnapshot' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DiskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SnapshotName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSnapshot' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SnapshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifySnapshotAttribute' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SnapshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SnapshotName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSnapshots' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DiskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SnapshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CopySnapshot' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SnapshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DestinationRegionIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => true,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DestinationSnapshotName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DestinationSnapshotDescription',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateNetwork' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CidrBlock',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NetworkName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4114,6 +3340,571 @@
                         'required' => false,
                         'minLength' => 2,
                         'maxLength' => 256,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
+            ],
+        ],
+        'CreateClassicNetwork' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CidrBlock',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NetworkName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteNetwork' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NetworkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyNetworkAttribute' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NetworkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NetworkName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 2,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 2,
+                        'maxLength' => 256,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeNetworkInterfaces' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NetworkInterfaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NetworkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VSwitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PrimaryIpAddress',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Primary',
+                            'Secondary',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NetworkInterfaceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'Ipv6Address',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeNetworkAttribute' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NetworkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeNetworks' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NetworkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NetworkName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateEnsRouteEntry' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RouteTableId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DestinationCidrBlock',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NextHopType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Instance',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NextHopId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RouteEntryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 2,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 2,
+                        'maxLength' => 256,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteEnsRouteEntry' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RouteEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEnsRouteEntryList' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RouteTableId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RouteEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DestinationCidrBlock',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RouteEntryType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'System',
+                            'Custom',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NextHopType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Instance',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NextHopId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RouteEntryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'maximum' => '100',
                     ],
                 ],
             ],
@@ -4347,7 +4138,7 @@
                 ],
             ],
         ],
-        'CreateClassicNetwork' => [
+        'CreateSecurityGroup' => [
             'methods' => [
                 'post',
                 'get',
@@ -4361,26 +4152,9 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CidrBlock',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NetworkName',
+                    'name' => 'SecurityGroupName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4397,7 +4171,7 @@
                 ],
             ],
         ],
-        'DescribeNetworkInterfaces' => [
+        'DeleteSecurityGroup' => [
             'methods' => [
                 'post',
                 'get',
@@ -4411,14 +4185,38 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'NetworkInterfaceId',
+                    'name' => 'SecurityGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'JoinSecurityGroup' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'SecurityGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
                 [
@@ -4430,7 +4228,40 @@
                     ],
                 ],
                 [
-                    'name' => 'NetworkId',
+                    'name' => 'NetworkInterfaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'LeaveSecurityGroup' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'SecurityGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4438,21 +4269,76 @@
                     ],
                 ],
                 [
-                    'name' => 'VSwitchId',
+                    'name' => 'NetworkInterfaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifySecurityGroupAttribute' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SecurityGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
                 [
-                    'name' => 'EnsRegionId',
+                    'name' => 'SecurityGroupName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'minLength' => 2,
+                        'maxLength' => 128,
                     ],
                 ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 2,
+                        'maxLength' => 256,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSecurityGroups' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
                 [
                     'name' => 'SecurityGroupId',
                     'in' => 'query',
@@ -4462,79 +4348,127 @@
                     ],
                 ],
                 [
-                    'name' => 'PrimaryIpAddress',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'Primary',
-                            'Secondary',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'NetworkInterfaceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'maxLength' => 128,
-                    ],
-                ],
-                [
-                    'name' => 'Status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'PageNumber',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
+                        'minimum' => '1',
                     ],
                 ],
                 [
                     'name' => 'PageSize',
                     'in' => 'query',
                     'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '50',
+                    ],
+                ],
+                [
+                    'name' => 'SecurityGroupName',
+                    'in' => 'query',
+                    'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AuthorizeSecurityGroup' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'IpProtocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'tcp',
+                            'udp',
+                            'icmp',
+                            'gre',
+                            'all',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PortRange',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Policy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'accept',
+                            'drop',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Priority',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
                         'maximum' => '100',
                     ],
                 ],
                 [
-                    'name' => 'Ipv6Address',
+                    'name' => 'SourceCidrIp',
                     'in' => 'query',
-                    'style' => 'simple',
                     'schema' => [
-                        'type' => 'array',
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourcePortRange',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 100,
                     ],
                 ],
             ],
         ],
-        'DescribeEnsRouteEntryList' => [
+        'RevokeSecurityGroup' => [
             'methods' => [
-                'get',
                 'post',
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -4545,10 +4479,24 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'RouteTableId',
+                    'name' => 'IpProtocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'tcp',
+                            'udp',
+                            'icmp',
+                            'gre',
+                            'all',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PortRange',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4556,108 +4504,55 @@
                     ],
                 ],
                 [
-                    'name' => 'RouteEntryId',
+                    'name' => 'SecurityGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
-                    'name' => 'DestinationCidrBlock',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RouteEntryType',
+                    'name' => 'Policy',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
                         'enum' => [
-                            'System',
-                            'Custom',
+                            'accept',
+                            'drop',
                         ],
                     ],
                 ],
                 [
-                    'name' => 'NextHopType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'Instance',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'NextHopId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RouteEntryName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
+                    'name' => 'Priority',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
+                        'minimum' => '1',
                         'maximum' => '100',
                     ],
                 ],
-            ],
-        ],
-        'DeleteEnsRouteEntry' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
                 [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'RouteEntryId',
+                    'name' => 'SourceCidrIp',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'SourcePortRange',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
-        'CreateEnsRouteEntry' => [
+        'AuthorizeSecurityGroupEgress' => [
             'methods' => [
                 'post',
                 'get',
@@ -4671,10 +4566,24 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'RouteTableId',
+                    'name' => 'IpProtocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'tcp',
+                            'udp',
+                            'icmp',
+                            'gre',
+                            'all',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PortRange',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4682,7 +4591,7 @@
                     ],
                 ],
                 [
-                    'name' => 'DestinationCidrBlock',
+                    'name' => 'SecurityGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4690,136 +4599,137 @@
                     ],
                 ],
                 [
-                    'name' => 'NextHopType',
+                    'name' => 'Policy',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
                         'enum' => [
-                            'Instance',
+                            'accept',
+                            'drop',
                         ],
                     ],
                 ],
                 [
-                    'name' => 'NextHopId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RouteEntryName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'minLength' => 2,
-                        'maxLength' => 128,
-                    ],
-                ],
-                [
-                    'name' => 'Description',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'minLength' => 2,
-                        'maxLength' => 256,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteNetwork' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NetworkId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeNetworks' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NetworkId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'NetworkName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
+                    'name' => 'Priority',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
                     ],
                 ],
                 [
-                    'name' => 'PageSize',
+                    'name' => 'DestCidrIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourcePortRange',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'RevokeSecurityGroupEgress' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'IpProtocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'tcp',
+                            'udp',
+                            'icmp',
+                            'gre',
+                            'all',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PortRange',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Policy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'accept',
+                            'drop',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Priority',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'DestCidrIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourcePortRange',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
         ],
-        'ModifyNetworkAttribute' => [
+        'DescribeSecurityGroupAttribute' => [
             'methods' => [
-                'get',
                 'post',
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -4830,56 +4740,9 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'NetworkId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NetworkName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'minLength' => 2,
-                        'maxLength' => 128,
-                    ],
-                ],
-                [
-                    'name' => 'Description',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'minLength' => 2,
-                        'maxLength' => 256,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeNetworkAttribute' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NetworkId',
+                    'name' => 'SecurityGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4888,7 +4751,7 @@
                 ],
             ],
         ],
-        'CreateNetwork' => [
+        'CreateEipInstance' => [
             'methods' => [
                 'get',
                 'post',
@@ -4913,21 +4776,58 @@
                     ],
                 ],
                 [
-                    'name' => 'CidrBlock',
+                    'name' => 'Bandwidth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '5',
+                        'maximum' => '10000',
+                    ],
+                ],
+                [
+                    'name' => 'InstanceChargeType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'enum' => [
+                            'PostPaid',
+                        ],
                     ],
                 ],
                 [
-                    'name' => 'NetworkName',
+                    'name' => 'InternetChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            '95BandwidthByMonth',
+                            'FlowoutByDay',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Name',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'minLength' => 2,
-                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Isp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'cmcc',
+                            'unicom',
+                            'telecom',
+                        ],
                     ],
                 ],
                 [
@@ -4936,8 +4836,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'minLength' => 2,
-                        'maxLength' => 256,
                     ],
                 ],
                 [
@@ -4966,8 +4864,246 @@
                 ],
             ],
         ],
-        'DescribeElbAvailableResourceInfo' => [
+        'AssociateEnsEipAddress' => [
             'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AllocationId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'SlbInstance',
+                            'EnsInstance',
+                            'NatSlbInstance',
+                            'Nat',
+                            'NetworkInterface',
+                            'HaVip',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Standby',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UnAssociateEnsEipAddress' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AllocationId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyEnsEipAddressAttribute' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AllocationId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 2,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 2,
+                        'maxLength' => 256,
+                    ],
+                ],
+                [
+                    'name' => 'Bandwidth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '10000',
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEnsEipAddresses' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AllocationId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EipAddress',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AssociatedInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AssociatedInstanceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'SlbInstance',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EipName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Standby',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'CreateNatGateway' => [
+            'methods' => [
+                'post',
                 'get',
             ],
             'schemes' => [
@@ -4980,9 +5116,105 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [],
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NetworkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'VSwitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'enat.default',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
+            ],
         ],
-        'DescribeLoadBalancerSpec' => [
+        'DeleteNatGateway' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NatGatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeNatGateways' => [
             'methods' => [
                 'get',
             ],
@@ -4998,11 +5230,665 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'LoadBalancerSpec',
+                    'name' => 'EnsRegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NatGatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NetworkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VSwitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateForwardEntry' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NatGatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ExternalIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ExternalPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InternalIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InternalPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ForwardEntryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'IpProtocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'TCP',
+                            'UDP',
+                            'Any',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HealthCheckPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '65535',
+                    ],
+                ],
+                [
+                    'name' => 'StandbyExternalIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteForwardEntry' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ForwardEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyForwardEntry' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ForwardEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ForwardEntryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'HealthCheckPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '65535',
+                    ],
+                ],
+            ],
+        ],
+        'DescribeForwardTableEntries' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NatGatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ForwardEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExternalIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InternalIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ForwardEntryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpProtocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSnatEntry' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NatGatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SnatIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceVSwitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceCIDR',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SnatEntryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceNetworkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StandbySnatIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IdleTimeout',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '86400',
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSnatEntry' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SnatEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSnatTableEntries' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NatGatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SnatEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SnatIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceCIDR',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SnatEntryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSnatAttribute' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SnatEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'AddSnatIpForSnatEntry' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SnatEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SnatIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSnatIpForSnatEntry' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SnatEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SnatIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StartSnatIpForSnatEntry' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SnatEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SnatIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StopSnatIpForSnatEntry' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SnatEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SnatIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -7177,6 +8063,52 @@
                 ],
             ],
         ],
+        'DescribeLoadBalancerListeners' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'LoadBalancerId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
         'AddBackendServers' => [
             'methods' => [
                 'get',
@@ -7381,10 +8313,162 @@
                 ],
             ],
         ],
-        'AssociateEnsEipAddress' => [
+        'DescribeLoadBalancerListenMonitor' => [
             'methods' => [
                 'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'LoadBalancerId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'VPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Proto',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeServerLoadBalancerMonitor' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'LoadBalancerId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeServerLoadBalancerListenMonitor' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'LoadBalancerId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'VPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Proto',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AttachNetworkInterface' => [
+            'methods' => [
                 'post',
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -7397,14 +8481,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'AllocationId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
                 [
                     'name' => 'InstanceId',
                     'in' => 'query',
@@ -7414,35 +8490,19 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceType',
+                    'name' => 'NetworkInterfaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'SlbInstance',
-                            'EnsInstance',
-                            'NatSlbInstance',
-                            'Nat',
-                            'NetworkInterface',
-                            'HaVip',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Standby',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
         ],
-        'UnAssociateEnsEipAddress' => [
+        'DetachNetworkInterface' => [
             'methods' => [
-                'get',
                 'post',
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -7456,7 +8516,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'AllocationId',
+                    'name' => 'NetworkInterfaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7465,10 +8525,10 @@
                 ],
             ],
         ],
-        'ModifyEnsEipAddressAttribute' => [
+        'ModifyNetworkInterfaceAttribute' => [
             'methods' => [
-                'get',
                 'post',
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -7482,7 +8542,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'AllocationId',
+                    'name' => 'NetworkInterfaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7490,12 +8550,12 @@
                     ],
                 ],
                 [
-                    'name' => 'Name',
+                    'name' => 'NetworkInterfaceName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'minLength' => 2,
+                        'minLength' => 1,
                         'maxLength' => 128,
                     ],
                 ],
@@ -7505,24 +8565,13 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'minLength' => 2,
+                        'minLength' => 1,
                         'maxLength' => 256,
-                    ],
-                ],
-                [
-                    'name' => 'Bandwidth',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '10000',
                     ],
                 ],
             ],
         ],
-        'DescribeEnsEipAddresses' => [
+        'DescribeSecondaryPublicIpAddresses' => [
             'methods' => [
                 'get',
                 'post',
@@ -7539,41 +8588,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'AllocationId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EipAddress',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AssociatedInstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AssociatedInstanceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'SlbInstance',
-                        ],
-                    ],
-                ],
-                [
                     'name' => 'EnsRegionId',
                     'in' => 'query',
                     'schema' => [
@@ -7582,7 +8596,7 @@
                     ],
                 ],
                 [
-                    'name' => 'EipName',
+                    'name' => 'SecondaryPublicIpId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7590,7 +8604,15 @@
                     ],
                 ],
                 [
-                    'name' => 'Standby',
+                    'name' => 'SecondaryPublicIpAddress',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Isp',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7618,7 +8640,7 @@
                 ],
             ],
         ],
-        'CreateEipInstance' => [
+        'ModifyHaVipAttribute' => [
             'methods' => [
                 'get',
                 'post',
@@ -7635,118 +8657,13 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'EnsRegionId',
+                    'name' => 'HaVipId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                 ],
-                [
-                    'name' => 'Bandwidth',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '5',
-                        'maximum' => '10000',
-                    ],
-                ],
-                [
-                    'name' => 'InstanceChargeType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'PostPaid',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'InternetChargeType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            '95BandwidthByMonth',
-                            'FlowoutByDay',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Isp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'cmcc',
-                            'unicom',
-                            'telecom',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Description',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Tag',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 20,
-                    ],
-                ],
-            ],
-        ],
-        'CreateNatGateway' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
                 [
                     'name' => 'Name',
                     'in' => 'query',
@@ -7757,24 +8674,129 @@
                         'maxLength' => 128,
                     ],
                 ],
+            ],
+        ],
+        'DescribeHaVips' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
                 [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
+                    'AK' => [],
                 ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
                 [
                     'name' => 'NetworkId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
                     'name' => 'VSwitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HaVipId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HaVipAddress',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Creating',
+                            'Available',
+                            'InUse',
+                            'Deleting',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AssociateHaVip' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'HaVipId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7788,112 +8810,14 @@
                         'type' => 'string',
                         'required' => false,
                         'enum' => [
-                            'enat.default',
+                            'EnsInstance',
+                            'NetworkInterface',
                         ],
                     ],
                 ],
-                [
-                    'name' => 'Tag',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 20,
-                    ],
-                ],
             ],
         ],
-        'DescribeNatGateways' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'NatGatewayId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'NetworkId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'VSwitchId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteNatGateway' => [
+        'UnassociateHaVip' => [
             'methods' => [
                 'get',
                 'post',
@@ -7910,33 +8834,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'NatGatewayId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateSnatEntry' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NatGatewayId',
+                    'name' => 'HaVipId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7944,689 +8842,11 @@
                     ],
                 ],
                 [
-                    'name' => 'SnatIp',
+                    'name' => 'InstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SourceVSwitchId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SourceCIDR',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SnatEntryName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SourceNetworkId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StandbySnatIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IdleTimeout',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '86400',
-                    ],
-                ],
-            ],
-        ],
-        'DescribeSnatAttribute' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SnatEntryId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeSnatTableEntries' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NatGatewayId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SnatEntryId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SnatIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SourceCIDR',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SnatEntryName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'maxLength' => 128,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteSnatEntry' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SnatEntryId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'StartSnatIpForSnatEntry' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SnatEntryId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SnatIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteSnatIpForSnatEntry' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SnatEntryId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SnatIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'AddSnatIpForSnatEntry' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SnatEntryId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SnatIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'StopSnatIpForSnatEntry' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SnatEntryId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SnatIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateForwardEntry' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NatGatewayId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ExternalIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ExternalPort',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InternalIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InternalPort',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ForwardEntryName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'maxLength' => 128,
-                    ],
-                ],
-                [
-                    'name' => 'IpProtocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'TCP',
-                            'UDP',
-                            'Any',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'HealthCheckPort',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '65535',
-                    ],
-                ],
-                [
-                    'name' => 'StandbyExternalIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeForwardTableEntries' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NatGatewayId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ForwardEntryId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ExternalIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InternalIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ForwardEntryName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IpProtocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ModifyForwardEntry' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ForwardEntryId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ForwardEntryName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'maxLength' => 128,
-                    ],
-                ],
-                [
-                    'name' => 'HealthCheckPort',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '0',
-                        'maximum' => '65535',
-                    ],
-                ],
-            ],
-        ],
-        'DeleteForwardEntry' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ForwardEntryId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UnassociateNetworkAcl' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NetworkAclId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Resource',
-                    'in' => 'query',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ResourceType' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'enum' => [
-                                        'Network',
-                                    ],
-                                ],
-                                'ResourceId' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                            ],
-                        ],
-                        'minItems' => 1,
-                        'maxItems' => 30,
-                    ],
-                ],
-            ],
-        ],
-        'AccosicateNetworkAcl' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NetworkAclId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Resource',
-                    'in' => 'query',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ResourceType' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'enum' => [
-                                        'Network',
-                                    ],
-                                ],
-                                'ResourceId' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                            ],
-                        ],
-                        'minItems' => 1,
-                        'maxItems' => 30,
                     ],
                 ],
             ],
@@ -8657,32 +8877,6 @@
                 ],
                 [
                     'name' => 'Description',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteNetworkAclEntry' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NetworkAclEntryId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -8770,6 +8964,114 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AccosicateNetworkAcl' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NetworkAclId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Resource',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ResourceType' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'Network',
+                                    ],
+                                ],
+                                'ResourceId' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 30,
+                    ],
+                ],
+            ],
+        ],
+        'UnassociateNetworkAcl' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NetworkAclId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Resource',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ResourceType' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'Network',
+                                    ],
+                                ],
+                                'ResourceId' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 30,
                     ],
                 ],
             ],
@@ -8884,7 +9186,7 @@
                 ],
             ],
         ],
-        'AssignPrivateIpAddresses' => [
+        'DeleteNetworkAclEntry' => [
             'methods' => [
                 'get',
                 'post',
@@ -8901,15 +9203,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'NetworkInterfaceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'VSwitchId',
+                    'name' => 'NetworkAclEntryId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -8918,9 +9212,8 @@
                 ],
             ],
         ],
-        'UnassignPrivateIpAddresses' => [
+        'CreateFileSystem' => [
             'methods' => [
-                'post',
                 'get',
             ],
             'schemes' => [
@@ -8935,29 +9228,63 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'NetworkInterfaceId',
+                    'name' => 'OrderDetails',
                     'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PrivateIpAddress',
-                    'in' => 'query',
-                    'style' => 'flat',
+                    'style' => 'json',
                     'schema' => [
                         'type' => 'array',
                         'required' => true,
                         'items' => [
-                            'type' => 'string',
-                            'required' => false,
+                            'type' => 'object',
+                            'required' => true,
+                            'properties' => [
+                                'OrderType' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'ChargeType' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'FileSystemName' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'EnsRegionId' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'StorgeType' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'capacity',
+                                        'performance',
+                                    ],
+                                ],
+                                'ProtocolType' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'nfs',
+                                        'smb',
+                                    ],
+                                ],
+                                'NetworkId' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'MountTargetDomain' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
                         ],
                     ],
                 ],
             ],
         ],
-        'GetOssUsageData' => [
+        'DeleteFileSystem' => [
             'methods' => [
                 'get',
             ],
@@ -8973,7 +9300,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'StartTime',
+                    'name' => 'EnsRegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -8981,60 +9308,19 @@
                     ],
                 ],
                 [
-                    'name' => 'EndTime',
+                    'name' => 'FileSystemId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                 ],
-                [
-                    'name' => 'Bucket',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Period',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
-        'GetOssStorageAndAccByBuckets' => [
+        'ModifyFileSystem' => [
             'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'BucketList',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListBuckets' => [
-            'methods' => [
-                'get',
                 'post',
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -9048,7 +9334,64 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Prefix',
+                    'name' => 'FileSystemId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeFileSystems' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileSystemId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileSystemName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9059,16 +9402,177 @@
                     'name' => 'PageNumber',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
                     ],
                 ],
                 [
                     'name' => 'PageSize',
                     'in' => 'query',
                     'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'CreateMountTarget' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'FileSystemId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NetWorkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MountTargetName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteMountTarget' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'FileSystemId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MountTargetName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeMountTargets' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FileSystemId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MountTargetName',
+                    'in' => 'query',
+                    'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
                     ],
                 ],
             ],
@@ -9191,7 +9695,134 @@
                 ],
             ],
         ],
-        'GetBucketLifecycle' => [
+        'PutBucketAcl' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'BucketName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BucketAcl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetBucketAcl' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'BucketName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'PrepareUpload' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'BucketName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteObject' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ObjectKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BucketName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListObjects' => [
             'methods' => [
                 'get',
                 'post',
@@ -9216,7 +9847,48 @@
                     ],
                 ],
                 [
-                    'name' => 'RuleId',
+                    'name' => 'EncodingType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Marker',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxKeys',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Prefix',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ContinuationToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartAfter',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9334,66 +10006,7 @@
                 ],
             ],
         ],
-        'PutBucketAcl' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'BucketName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'BucketAcl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GetBucketAcl' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'BucketName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListObjects' => [
+        'GetBucketLifecycle' => [
             'methods' => [
                 'get',
                 'post',
@@ -9418,30 +10031,31 @@
                     ],
                 ],
                 [
-                    'name' => 'EncodingType',
+                    'name' => 'RuleId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
                     ],
                 ],
+            ],
+        ],
+        'ListBuckets' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
                 [
-                    'name' => 'Marker',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
+                    'AK' => [],
                 ],
-                [
-                    'name' => 'MaxKeys',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
                 [
                     'name' => 'Prefix',
                     'in' => 'query',
@@ -9451,7 +10065,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ContinuationToken',
+                    'name' => 'PageNumber',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9459,7 +10073,7 @@
                     ],
                 ],
                 [
-                    'name' => 'StartAfter',
+                    'name' => 'PageSize',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9468,9 +10082,8 @@
                 ],
             ],
         ],
-        'DeleteObject' => [
+        'GetOssUsageData' => [
             'methods' => [
-                'post',
                 'get',
             ],
             'schemes' => [
@@ -9485,7 +10098,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'ObjectKey',
+                    'name' => 'StartTime',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9493,18 +10106,33 @@
                     ],
                 ],
                 [
-                    'name' => 'BucketName',
+                    'name' => 'EndTime',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Bucket',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Period',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
-        'PrepareUpload' => [
+        'GetOssStorageAndAccByBuckets' => [
             'methods' => [
-                'post',
                 'get',
             ],
             'schemes' => [
@@ -9519,15 +10147,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'BucketName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ClientIp',
+                    'name' => 'BucketList',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9536,8 +10156,75 @@
                 ],
             ],
         ],
-        'CreateFileSystem' => [
+        'DescribeStorageGateway' => [
             'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GatewayType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VpcId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateStorageGateway' => [
+            'methods' => [
+                'post',
                 'get',
             ],
             'schemes' => [
@@ -9562,45 +10249,25 @@
                             'type' => 'object',
                             'required' => true,
                             'properties' => [
-                                'OrderType' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'ChargeType' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'FileSystemName' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
                                 'EnsRegionId' => [
                                     'type' => 'string',
                                     'required' => true,
                                 ],
-                                'StorgeType' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'enum' => [
-                                        'capacity',
-                                        'performance',
-                                    ],
-                                ],
-                                'ProtocolType' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'enum' => [
-                                        'nfs',
-                                        'smb',
-                                    ],
-                                ],
-                                'NetworkId' => [
+                                'GatewayType' => [
                                     'type' => 'string',
                                     'required' => true,
                                 ],
-                                'MountTargetDomain' => [
+                                'VpcId' => [
                                     'type' => 'string',
                                     'required' => true,
+                                ],
+                                'GatewayName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Description' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -9608,70 +10275,7 @@
                 ],
             ],
         ],
-        'DescribeFileSystems' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FileSystemId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FileSystemName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-            ],
-        ],
-        'ModifyFileSystem' => [
+        'DeleteStorageGateway' => [
             'methods' => [
                 'post',
                 'get',
@@ -9688,7 +10292,118 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'FileSystemId',
+                    'name' => 'GatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeStorageVolume' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VolumeId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StorageId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IsEnable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateStorageVolume' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StorageId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9701,6 +10416,65 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'IsEnable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'IsAuth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AuthProtocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CHAP',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AuthUser',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AuthPassword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VolumeName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -9708,45 +10482,12 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],
         ],
-        'DeleteFileSystem' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'FileSystemId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateMountTarget' => [
+        'DeleteStorageVolume' => [
             'methods' => [
                 'post',
                 'get',
@@ -9763,31 +10504,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'FileSystemId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NetWorkId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MountTargetName',
+                    'name' => 'VolumeId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9796,7 +10513,7 @@
                 ],
             ],
         ],
-        'DescribeMountTargets' => [
+        'AssignPrivateIpAddresses' => [
             'methods' => [
                 'get',
                 'post',
@@ -9813,7 +10530,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'EnsRegionId',
+                    'name' => 'NetworkInterfaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9821,45 +10538,16 @@
                     ],
                 ],
                 [
-                    'name' => 'FileSystemId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MountTargetName',
+                    'name' => 'VSwitchId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
                     ],
                 ],
             ],
         ],
-        'DeleteMountTarget' => [
+        'UnassignPrivateIpAddresses' => [
             'methods' => [
                 'post',
                 'get',
@@ -9876,7 +10564,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'FileSystemId',
+                    'name' => 'NetworkInterfaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9884,19 +10572,16 @@
                     ],
                 ],
                 [
-                    'name' => 'EnsRegionId',
+                    'name' => 'PrivateIpAddress',
                     'in' => 'query',
+                    'style' => 'flat',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'array',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MountTargetName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],
@@ -11831,6 +12516,250 @@
                 ],
             ],
         ],
+        'DescribeEnsRegions' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEnsRegionIdResource' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'OrderByParams',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'Isp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeReservedResource' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [],
+        ],
+        'DescribePrePaidInstanceStock' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SystemDiskSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                        'minimum' => '20',
+                    ],
+                ],
+                [
+                    'name' => 'DataDiskSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceSpec',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeLoadBalancerSpec' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'LoadBalancerSpec',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeElbAvailableResourceInfo' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'DescribeCloudDiskTypes' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EnsRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeCloudDiskAvailableResourceInfo' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
         'UntagResources' => [
             'methods' => [
                 'post',
@@ -12415,74 +13344,6 @@
                 ],
             ],
         ],
-        'DescribePrePaidInstanceStock' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SystemDiskSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                        'minimum' => '20',
-                    ],
-                ],
-                [
-                    'name' => 'DataDiskSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceSpec',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeReservedResource' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [],
-        ],
         'CreateEnsService' => [
             'methods' => [
                 'post',
@@ -12640,100 +13501,6 @@
                 ],
                 [
                     'name' => 'NetDistrictCode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeEnsRegionIdResource' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'StartTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EndTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'OrderByParams',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'Isp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeEnsRegions' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'EnsRegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -13962,581 +14729,6 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '100',
-                    ],
-                ],
-            ],
-        ],
-        'DescribeStorageVolume' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'VolumeId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'GatewayId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StorageId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IsEnable',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeStorageGateway' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'GatewayId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'GatewayType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'VpcId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UnassociateHaVip' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'HaVipId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'AssociateHaVip' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'HaVipId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'EnsInstance',
-                            'NetworkInterface',
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DescribeHaVips' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NetworkId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'VSwitchId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HaVipId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HaVipAddress',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'Creating',
-                            'Available',
-                            'InUse',
-                            'Deleting',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ModifyHaVipAttribute' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'HaVipId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'minLength' => 1,
-                        'maxLength' => 128,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeLoadBalancerListeners' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'LoadBalancerId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-            ],
-        ],
-        'AttachNetworkInterface' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NetworkInterfaceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeSecondaryPublicIpAddresses' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'EnsRegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SecondaryPublicIpId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SecondaryPublicIpAddress',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Isp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'maximum' => '100',
-                    ],
-                ],
-            ],
-        ],
-        'ModifyNetworkInterfaceAttribute' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NetworkInterfaceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NetworkInterfaceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'minLength' => 1,
-                        'maxLength' => 128,
-                    ],
-                ],
-                [
-                    'name' => 'Description',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'minLength' => 1,
-                        'maxLength' => 256,
-                    ],
-                ],
-            ],
-        ],
-        'DetachNetworkInterface' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NetworkInterfaceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],

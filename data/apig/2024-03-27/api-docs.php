@@ -446,6 +446,9 @@
                             ],
                         ],
                     ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'HttpApiBackendMatchCondition' => [

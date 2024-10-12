@@ -2706,5 +2706,9 @@
             'regionId' => 'cn-qingdao',
             'endpoint' => 'dbs-api.cn-hangzhou.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'dbs-api.cn-wulanchabu.aliyuncs.com',
+        ],
     ],
 ];

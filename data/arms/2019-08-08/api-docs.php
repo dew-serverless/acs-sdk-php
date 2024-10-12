@@ -1504,6 +1504,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SpanID',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetMultipleTrace' => [

@@ -6093,6 +6093,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EnableCpuBurst',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteApplication' => [
@@ -6927,6 +6935,14 @@
                 ],
                 [
                     'name' => 'EnableNewArms',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableCpuBurst',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
@@ -11822,6 +11838,53 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetApplication' => [
+            'path' => '/pop/v1/sam/app/getApplication',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/x-www-form-urlencoded',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NamespaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

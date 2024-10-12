@@ -26,24 +26,12 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
+                    'name' => 'ResourceType',
+                    'in' => 'formData',
                     'schema' => [
-                        'type' => 'object',
+                        'type' => 'string',
                         'required' => false,
-                        'properties' => [
-                            'ResourceType' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'enum' => [
-                                    'ACS::ECS::Instance',
-                                    'ACS::OSS::Bucket',
-                                    'ACS::NAS::FileSystem',
-                                    'ACS::OTS::Instance',
-                                ],
-                            ],
-                        ],
+                        'enum' => [],
                     ],
                 ],
             ],
@@ -65,18 +53,11 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
+                    'name' => 'ResourceArn',
+                    'in' => 'formData',
                     'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'ResourceArn' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -98,23 +79,16 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
+                    'name' => 'ProductType',
+                    'in' => 'formData',
                     'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'ProductType' => [
-                                'type' => 'string',
-                                'required' => true,
-                                'enum' => [
-                                    'ecs',
-                                    'oss',
-                                    'nas',
-                                    'ots',
-                                ],
-                            ],
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'ecs',
+                            'oss',
+                            'nas',
+                            'ots',
                         ],
                     ],
                 ],
@@ -137,18 +111,11 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
+                    'name' => 'ResourceArn',
+                    'in' => 'formData',
                     'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'ResourceArn' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -170,23 +137,16 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
+                    'name' => 'ProductType',
+                    'in' => 'formData',
                     'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'ProductType' => [
-                                'type' => 'string',
-                                'required' => true,
-                                'enum' => [
-                                    'ecs',
-                                    'oss',
-                                    'nas',
-                                    'ots',
-                                ],
-                            ],
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'ecs',
+                            'oss',
+                            'nas',
+                            'ots',
                         ],
                     ],
                 ],
@@ -209,22 +169,19 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
+                    'name' => 'ResourceArn',
+                    'in' => 'formData',
                     'schema' => [
-                        'type' => 'object',
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RuleId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
-                        'properties' => [
-                            'ResourceArn' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'RuleId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
                     ],
                 ],
             ],

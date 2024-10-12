@@ -127,6 +127,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'maxLength' => 256000,
                     ],
                 ],
                 [

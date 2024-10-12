@@ -3255,6 +3255,21 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SecurityOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ConfidentialComputingMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteScalingConfiguration' => [
@@ -4125,6 +4140,21 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ConfidentialComputingMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

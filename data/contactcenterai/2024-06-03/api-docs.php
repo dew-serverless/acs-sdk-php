@@ -554,10 +554,10 @@
                 ],
             ],
         ],
-        'CreateConversationAnalysisTask' => [
-            'path' => '/{workspaceId}/ccai/app/{appId}/createConversationAnalysisTask',
+        'GetTaskResult' => [
+            'path' => '/ccai/app/getTaskResult',
             'methods' => [
-                'post',
+                'get',
             ],
             'schemes' => [
                 'https',
@@ -568,7 +568,7 @@
                 ],
             ],
             'consumes' => [
-                'application/json',
+                'multipart/form-data',
             ],
             'produces' => [
                 'application/json',
@@ -576,201 +576,11 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
+                    'name' => 'taskId',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'appId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'autoSplit' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'clientChannel' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'examples' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'output' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'sentences' => [
-                                        'type' => 'array',
-                                        'required' => true,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => true,
-                                            'properties' => [
-                                                'chatId' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'role' => [
-                                                    'type' => 'string',
-                                                    'required' => true,
-                                                ],
-                                                'text' => [
-                                                    'type' => 'string',
-                                                    'required' => true,
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'fields' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => true,
-                                    'properties' => [
-                                        'code' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'desc' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'enumValues' => [
-                                            'type' => 'array',
-                                            'required' => true,
-                                            'items' => [
-                                                'type' => 'object',
-                                                'required' => true,
-                                                'properties' => [
-                                                    'desc' => [
-                                                        'type' => 'string',
-                                                        'required' => true,
-                                                    ],
-                                                    'enumValue' => [
-                                                        'type' => 'string',
-                                                        'required' => true,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                        'name' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'fileName' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'modelCode' => [
-                                'type' => 'string',
-                                'required' => true,
-                                'enum' => [
-                                    'tyxmTurbo',
-                                    'tyxmPlus',
-                                ],
-                            ],
-                            'resultTypes' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'enum' => [
-                                        'summary',
-                                        'title',
-                                        'fields',
-                                        'keywords',
-                                        'service_inspection',
-                                        'question_solution',
-                                    ],
-                                ],
-                            ],
-                            'sceneName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'serviceChannel' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'serviceChannelKeywords' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'serviceInspection' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'inspectionContents' => [
-                                        'type' => 'array',
-                                        'required' => true,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => true,
-                                            'properties' => [
-                                                'content' => [
-                                                    'type' => 'string',
-                                                    'required' => true,
-                                                ],
-                                                'title' => [
-                                                    'type' => 'string',
-                                                    'required' => true,
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                    'inspectionIntroduction' => [
-                                        'type' => 'string',
-                                        'required' => true,
-                                    ],
-                                    'sceneIntroduction' => [
-                                        'type' => 'string',
-                                        'required' => true,
-                                    ],
-                                ],
-                            ],
-                            'templateIds' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                            ],
-                            'voiceFileUrl' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
                     ],
                 ],
             ],
@@ -1031,37 +841,6 @@
                                 ],
                             ],
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'GetTaskResult' => [
-            'path' => '/ccai/app/getTaskResult',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'multipart/form-data',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'taskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],

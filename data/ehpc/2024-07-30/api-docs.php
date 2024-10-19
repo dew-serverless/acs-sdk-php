@@ -176,6 +176,9 @@
                                 'DeleteWithInstance' => [
                                     'type' => 'boolean',
                                 ],
+                                'MountDir' => [
+                                    'type' => 'string',
+                                ],
                             ],
                         ],
                     ],

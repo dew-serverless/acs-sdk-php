@@ -10,30 +10,44 @@
             'AIAgentRuntimeConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'VoiceChat' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'AgentUserId' => [
-                                'type' => 'string',
-                            ],
-                            'ChannelId' => [
-                                'type' => 'string',
-                            ],
-                            'AuthToken' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
                     'AvatarChat3D' => [
                         'type' => 'object',
                         'properties' => [
                             'AgentUserId' => [
                                 'type' => 'string',
                             ],
+                            'AuthToken' => [
+                                'type' => 'string',
+                            ],
                             'ChannelId' => [
                                 'type' => 'string',
                             ],
+                        ],
+                    ],
+                    'VisionChat' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AgentUserId' => [
+                                'type' => 'string',
+                            ],
                             'AuthToken' => [
+                                'type' => 'string',
+                            ],
+                            'ChannelId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'VoiceChat' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AgentUserId' => [
+                                'type' => 'string',
+                            ],
+                            'AuthToken' => [
+                                'type' => 'string',
+                            ],
+                            'ChannelId' => [
                                 'type' => 'string',
                             ],
                         ],
@@ -46,8 +60,40 @@
                     'AvatarChat3D' => [
                         'type' => 'object',
                         'properties' => [
+                            'AsrMaxSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
                             'AvatarId' => [
                                 'type' => 'string',
+                            ],
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                            ],
+                            'GracefulShutdown' => [
+                                'type' => 'boolean',
+                            ],
+                            'Greeting' => [
+                                'type' => 'string',
+                            ],
+                            'VoiceId' => [
+                                'type' => 'string',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                    'VisionChat' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AsrMaxSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'EnableIntelligentSegment' => [
+                                'type' => 'boolean',
                             ],
                             'EnableVoiceInterrupt' => [
                                 'type' => 'boolean',
@@ -70,6 +116,10 @@
                     'VoiceChat' => [
                         'type' => 'object',
                         'properties' => [
+                            'AsrMaxSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
                             'EnableVoiceInterrupt' => [
                                 'type' => 'boolean',
                             ],
@@ -1466,6 +1516,14 @@
                 ],
                 [
                     'name' => 'MediaId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MatchingMode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

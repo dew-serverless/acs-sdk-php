@@ -1187,6 +1187,42 @@
                 ],
             ],
         ],
+        'DescribeInstanceSummary' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PageSize',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeTenantReadableScn' => [
             'methods' => [
                 'post',
@@ -5264,6 +5300,32 @@
                                                             ],
                                                         ],
                                                     ],
+                                                    'ObkvPartitionConfig' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PartitionType' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                                'enum' => [
+                                                                    'KEY',
+                                                                    'RANGE',
+                                                                    'NONE',
+                                                                ],
+                                                            ],
+                                                            'VirtualColumn' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionSize' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int32',
+                                                                'required' => false,
+                                                                'minimum' => '1',
+                                                                'maximum' => '1024',
+                                                            ],
+                                                        ],
+                                                    ],
                                                 ],
                                             ],
                                         ],
@@ -6022,6 +6084,32 @@
                                 'format' => 'int32',
                                 'required' => false,
                             ],
+                            'HbaseObjCheckMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'ALL',
+                                    'NEWEST',
+                                ],
+                            ],
+                            'HbaseObjMigMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'ALL',
+                                    'NEWEST',
+                                ],
+                            ],
+                            'IndexDDLConcurrencyLimit' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'MaxConcurrentIndexDDLs' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -6069,6 +6157,7 @@
                                         'ROLLBACK',
                                         'DDL',
                                         'ROW',
+                                        'PUT',
                                     ],
                                 ],
                             ],
@@ -6150,6 +6239,7 @@
                                         'ROLLBACK',
                                         'DDL',
                                         'ROW',
+                                        'PUT',
                                     ],
                                 ],
                             ],
@@ -7750,6 +7840,28 @@
                                                     ],
                                                 ],
                                             ],
+                                            'ObkvPartitionConfig' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'PartitionType' => [
+                                                        'type' => 'string',
+                                                        'enum' => [
+                                                            'KEY',
+                                                            'RANGE',
+                                                            'NONE',
+                                                        ],
+                                                    ],
+                                                    'VirtualColumn' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'PartitionSize' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'minimum' => '1',
+                                                        'maximum' => '1024',
+                                                    ],
+                                                ],
+                                            ],
                                         ],
                                     ],
                                 ],
@@ -8041,6 +8153,16 @@
                                 'required' => false,
                             ],
                             'ThrottleIOPS' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'MaxConcurrentIndexDDLs' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'IndexDDLConcurrencyLimit' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                                 'required' => false,
@@ -8416,6 +8538,96 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRestorableTenants' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'IsRemote',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SetId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RestoreMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'from_backup_set',
+                            'from_time_point',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Method',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'logical',
+                            'physical',
+                            'native_logical',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'IsOnline',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RestoreObjectType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'cluster',
+                            'tenant',
+                            'database',
+                            'table',
+                            'serverless',
+                        ],
                     ],
                 ],
             ],
@@ -9053,132 +9265,6 @@
                 ],
                 [
                     'name' => 'PageSize',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeRestorableTenants' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'IsRemote',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SetId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RestoreMode',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'from_backup_set',
-                            'from_time_point',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Method',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'logical',
-                            'physical',
-                            'native_logical',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'IsOnline',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RestoreObjectType',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'cluster',
-                            'tenant',
-                            'database',
-                            'table',
-                            'serverless',
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DescribeInstanceSummary' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'PageSize',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'integer',

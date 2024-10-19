@@ -1065,6 +1065,10 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
+                            'AutoPause' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'MaxCapacity' => [
                                 'type' => 'number',
                                 'format' => 'double',
@@ -1073,10 +1077,6 @@
                             'MinCapacity' => [
                                 'type' => 'number',
                                 'format' => 'double',
-                                'required' => false,
-                            ],
-                            'AutoPause' => [
-                                'type' => 'boolean',
                                 'required' => false,
                             ],
                             'SwitchForce' => [
@@ -1096,6 +1096,14 @@
                 ],
                 [
                     'name' => 'Port',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BpeEnabled',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1693,6 +1701,10 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
+                            'AutoPause' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'MaxCapacity' => [
                                 'type' => 'number',
                                 'format' => 'double',
@@ -1701,10 +1713,6 @@
                             'MinCapacity' => [
                                 'type' => 'number',
                                 'format' => 'double',
-                                'required' => false,
-                            ],
-                            'AutoPause' => [
-                                'type' => 'boolean',
                                 'required' => false,
                             ],
                             'SwitchForce' => [
@@ -4861,30 +4869,17 @@
                             'type' => 'object',
                             'required' => true,
                             'properties' => [
-                                'Type' => [
+                                'Address' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Database' => [
                                     'type' => 'string',
                                     'required' => true,
                                 ],
                                 'Mask' => [
                                     'type' => 'string',
                                     'required' => false,
-                                ],
-                                'Database' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'PriorityId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => true,
-                                ],
-                                'Address' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'User' => [
-                                    'type' => 'string',
-                                    'required' => true,
                                 ],
                                 'Method' => [
                                     'type' => 'string',
@@ -4893,6 +4888,19 @@
                                 'Option' => [
                                     'type' => 'string',
                                     'required' => false,
+                                ],
+                                'PriorityId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => true,
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'User' => [
+                                    'type' => 'string',
+                                    'required' => true,
                                 ],
                             ],
                         ],
@@ -6112,6 +6120,14 @@
                     ],
                 ],
                 [
+                    'name' => 'BpeEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'BurstingEnabled',
                     'in' => 'query',
                     'schema' => [
@@ -6274,13 +6290,13 @@
                                     'type' => 'string',
                                     'required' => true,
                                 ],
-                                'zoneId' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
                                 'vswitchId' => [
                                     'type' => 'string',
                                     'required' => false,
+                                ],
+                                'zoneId' => [
+                                    'type' => 'string',
+                                    'required' => true,
                                 ],
                             ],
                         ],
@@ -7248,6 +7264,33 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DBProxyNodes',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'cpuCores' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'nodeCounts' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'zoneId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'UpgradeDBProxyInstanceKernelVersion' => [
@@ -7388,6 +7431,56 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DBProxyNodes',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'cpuCores' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'nodeCounts' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'zoneId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MigrateAZ',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'dbProxyEndpointId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'destVSwitchId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'ModifyDBProxyEndpoint' => [
@@ -7504,6 +7597,30 @@
                 ],
                 [
                     'name' => 'DBProxyEngineType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VSwitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EffectiveTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EffectiveSpecificTime',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11489,6 +11606,43 @@
                     ],
                 ],
                 [
+                    'name' => 'ServerlessConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AutoPause' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'MaxCapacity' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'MinCapacity' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'SwitchForce' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'BpeEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'IoAccelerationEnabled',
                     'in' => 'query',
                     'schema' => [
@@ -14812,16 +14966,7 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'RegionID' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'maxItems' => 10,
-                                ],
-                                'ZoneID' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'VpcID' => [
+                                'DBInstanceDescription' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -14830,37 +14975,21 @@
                                     'format' => 'int64',
                                     'required' => false,
                                 ],
-                                'SecurityIPList' => [
+                                'DBInstanceStorageType' => [
                                     'type' => 'string',
                                     'required' => false,
-                                ],
-                                'VSwitchID' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ZoneIDSlave1' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ZoneIDSlave2' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'DtsInstanceClass' => [
-                                    'type' => 'string',
-                                    'required' => true,
                                 ],
                                 'DbInstanceClass' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'PayType' => [
+                                'DtsConflict' => [
                                     'type' => 'string',
-                                    'required' => false,
+                                    'required' => true,
                                 ],
-                                'DBInstanceDescription' => [
+                                'DtsInstanceClass' => [
                                     'type' => 'string',
-                                    'required' => false,
+                                    'required' => true,
                                 ],
                                 'Engine' => [
                                     'type' => 'string',
@@ -14870,11 +14999,36 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'DtsConflict' => [
+                                'PayType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RegionID' => [
                                     'type' => 'string',
                                     'required' => true,
+                                    'maxItems' => 10,
                                 ],
-                                'DBInstanceStorageType' => [
+                                'SecurityIPList' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'VSwitchID' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'VpcID' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ZoneID' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ZoneIDSlave1' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ZoneIDSlave2' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -14986,23 +15140,7 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'RegionID' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'ZoneID' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'VpcID' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'VSwitchID' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'SecurityIPList' => [
+                                'DBInstanceDescription' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -15011,25 +15149,21 @@
                                     'format' => 'int64',
                                     'required' => false,
                                 ],
-                                'ZoneIDSlave1' => [
+                                'DBInstanceStorageType' => [
                                     'type' => 'string',
                                     'required' => false,
-                                ],
-                                'ZoneIDSlave2' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'DtsInstanceClass' => [
-                                    'type' => 'string',
-                                    'required' => true,
                                 ],
                                 'DbInstanceClass' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'DBInstanceDescription' => [
+                                'DtsConflict' => [
                                     'type' => 'string',
-                                    'required' => false,
+                                    'required' => true,
+                                ],
+                                'DtsInstanceClass' => [
+                                    'type' => 'string',
+                                    'required' => true,
                                 ],
                                 'Engine' => [
                                     'type' => 'string',
@@ -15039,11 +15173,31 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'DtsConflict' => [
+                                'RegionID' => [
                                     'type' => 'string',
                                     'required' => true,
                                 ],
-                                'DBInstanceStorageType' => [
+                                'SecurityIPList' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'VSwitchID' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'VpcID' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'ZoneID' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ZoneIDSlave1' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ZoneIDSlave2' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],

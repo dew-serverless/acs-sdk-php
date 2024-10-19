@@ -1212,6 +1212,30 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'maintenance_window' => [
+                                '$ref' => '#/components/schemas/maintenance_window',
+                                'required' => false,
+                            ],
+                            'operation_policy' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'cluster_auto_upgrade' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'enabled' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'channel' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -6672,35 +6696,19 @@
                     'AK' => [],
                 ],
             ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'workflow_type' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'service' => [
+                            'wgs_fastq_second_filename' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'mapping_oss_region' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_fastq_first_filename' => [
+                            'wgs_vcf_out_filename' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -6712,35 +6720,19 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'mapping_fastq_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_reference_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                             'mapping_is_mark_dup' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'mapping_bam_out_path' => [
+                            'mapping_fastq_path' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mapping_oss_region' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
                             'mapping_bam_out_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_oss_region' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_fastq_first_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_fastq_second_filename' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -6752,7 +6744,23 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'service' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'wgs_oss_region' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mapping_reference_path' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                             'wgs_reference_path' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mapping_bam_out_path' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -6760,7 +6768,15 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'wgs_vcf_out_filename' => [
+                            'wgs_fastq_first_filename' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'workflow_type' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'mapping_fastq_first_filename' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -6768,140 +6784,6 @@
                     ],
                 ],
             ],
-        ],
-        'RemoveWorkflow' => [
-            'path' => '/gs/workflow/{workflowName}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'workflowName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CancelWorkflow' => [
-            'path' => '/gs/workflow/{workflowName}',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'workflowName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'action' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DescirbeWorkflow' => [
-            'path' => '/gs/workflow/{workflowName}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'workflowName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeWorkflows' => [
-            'path' => '/gs/workflows',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [],
         ],
         'DeletePolicyInstance' => [
             'path' => '/clusters/{cluster_id}/policies/{policy_name}',

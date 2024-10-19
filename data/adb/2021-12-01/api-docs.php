@@ -2033,6 +2033,14 @@
                     ],
                 ],
                 [
+                    'name' => 'AutoStopInterval',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'SpecName',
                     'in' => 'query',
                     'schema' => [
@@ -2260,6 +2268,14 @@
                     ],
                 ],
                 [
+                    'name' => 'AutoStopInterval',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'SpecName',
                     'in' => 'query',
                     'schema' => [
@@ -2287,6 +2303,14 @@
                 ],
                 [
                     'name' => 'TargetResourceGroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4133,7 +4157,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -6128,48 +6152,6 @@
                 [
                     'name' => 'DBClusterId',
                     'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'RenameSparkTemplateFile' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Id',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                        'minimum' => '0',
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DBClusterId',
-                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,

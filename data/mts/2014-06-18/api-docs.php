@@ -2665,6 +2665,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'PersonName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UnregisterCustomFace' => [

@@ -1015,6 +1015,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Description',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateExpressConnectRouter' => [
@@ -1698,6 +1706,14 @@
                 ],
                 [
                     'name' => 'ClientToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

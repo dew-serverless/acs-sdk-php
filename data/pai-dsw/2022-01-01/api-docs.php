@@ -789,6 +789,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Token',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListInstances' => [
@@ -1053,6 +1061,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Token',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateInstanceLabels' => [
@@ -1210,6 +1226,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Token',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetInstanceMetrics' => [
@@ -1355,8 +1379,8 @@
                 'delete',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -1660,8 +1684,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -1712,8 +1736,8 @@
                 'delete',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -1738,8 +1762,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [

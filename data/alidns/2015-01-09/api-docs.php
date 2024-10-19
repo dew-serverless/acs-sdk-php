@@ -11607,6 +11607,13 @@
                     ],
                 ],
                 [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
                     'name' => 'StartDate',
                     'in' => 'query',
                     'schema' => [

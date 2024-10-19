@@ -4410,6 +4410,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ResourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListAclPolicy' => [

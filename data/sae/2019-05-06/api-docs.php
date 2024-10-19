@@ -1840,6 +1840,10 @@
                         'type' => 'string',
                         'required' => false,
                     ],
+                    'registryConfig' => [
+                        '$ref' => '#/components/schemas/RegistryConfig',
+                        'required' => false,
+                    ],
                 ],
             ],
             'InputCodeLocation' => [
@@ -2911,6 +2915,42 @@
                     'TakeEffect' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'RegistryAuthConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'userName' => [
+                        'type' => 'string',
+                    ],
+                    'password' => [
+                        'type' => 'string',
+                    ],
+                    'role' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'RegistryCertConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'insecure' => [
+                        'type' => 'boolean',
+                    ],
+                    'rootCaCertBase64' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'RegistryConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'authConfig' => [
+                        '$ref' => '#/components/schemas/RegistryAuthConfig',
+                    ],
+                    'certConfig' => [
+                        '$ref' => '#/components/schemas/RegistryCertConfig',
                     ],
                 ],
             ],
@@ -8205,6 +8245,53 @@
                 ],
             ],
         ],
+        'GetApplication' => [
+            'path' => '/pop/v1/sam/app/getApplication',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/x-www-form-urlencoded',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NamespaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeApplicationConfig' => [
             'path' => '/pop/v1/sam/app/describeApplicationConfig',
             'methods' => [
@@ -11838,53 +11925,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GetApplication' => [
-            'path' => '/pop/v1/sam/app/getApplication',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/x-www-form-urlencoded',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AppName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'NamespaceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],

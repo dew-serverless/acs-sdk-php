@@ -4129,6 +4129,24 @@
                                     'required' => false,
                                     'maxLength' => 100,
                                 ],
+                                'Comments' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Text' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Username' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
                                 'Content' => [
                                     'type' => 'string',
                                     'required' => true,

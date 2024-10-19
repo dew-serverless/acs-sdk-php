@@ -7,47 +7,6 @@
     ],
     'components' => [
         'schemas' => [
-            'AIAssistantSession' => [
-                'type' => 'object',
-                'properties' => [
-                    'client_id' => [
-                        'type' => 'string',
-                    ],
-                    'expired_at' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'domain_id' => [
-                        'type' => 'string',
-                    ],
-                    'custom_labels' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'name' => [
-                        'type' => 'string',
-                    ],
-                    'session_id' => [
-                        'type' => 'string',
-                    ],
-                    'status' => [
-                        'type' => 'string',
-                    ],
-                    'updated_at' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'user_id' => [
-                        'type' => 'string',
-                    ],
-                    'created_at' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                ],
-            ],
             'AccountAccessTokenResponse' => [
                 'type' => 'object',
                 'properties' => [
@@ -2070,6 +2029,77 @@
                     ],
                     'creator' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'HotDriveFile' => [
+                'type' => 'object',
+                'properties' => [
+                    'drive_id' => [
+                        'type' => 'string',
+                    ],
+                    'file_id' => [
+                        'type' => 'string',
+                    ],
+                    'revision_id' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'category' => [
+                        'type' => 'string',
+                    ],
+                    'action_count' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'count_at' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'action_list' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'HotKnowledgeBaseFile' => [
+                'type' => 'object',
+                'properties' => [
+                    'drive_id' => [
+                        'type' => 'string',
+                    ],
+                    'file_id' => [
+                        'type' => 'string',
+                    ],
+                    'revision_id' => [
+                        'type' => 'string',
+                    ],
+                    'knowledge_base_id' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'category' => [
+                        'type' => 'string',
+                    ],
+                    'action_count' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'count_at' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'action_list' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],

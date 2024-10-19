@@ -9,48 +9,8 @@
         'schemas' => [],
     ],
     'apis' => [
-        'PushMonitor' => [
-            'path' => '/api/monitor/push/{apiKey}',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-                'http',
-            ],
-            'security' => [
-                [
-                    'Anonymous' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'apiKey',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateEscalationPlan' => [
-            'path' => '/escalationPlan/create',
+        'CreateIntegrationConfig' => [
+            'path' => '/integrationConfig/create',
             'methods' => [
                 'post',
             ],
@@ -79,169 +39,10 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'escalationPlanName' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'escalationPlanDescription' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'escalationPlanScopeObjects' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => true,
-                                    'properties' => [
-                                        'scopeObjectId' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => true,
-                                        ],
-                                        'scope' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'escalationPlanRules' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => true,
-                                    'properties' => [
-                                        'escalationPlanConditions' => [
-                                            'type' => 'array',
-                                            'required' => true,
-                                            'items' => [
-                                                'type' => 'object',
-                                                'required' => true,
-                                                'properties' => [
-                                                    'level' => [
-                                                        'type' => 'string',
-                                                        'required' => true,
-                                                    ],
-                                                    'effection' => [
-                                                        'type' => 'string',
-                                                        'required' => true,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                        'escalationPlanStrategies' => [
-                                            'type' => 'array',
-                                            'required' => true,
-                                            'items' => [
-                                                'type' => 'object',
-                                                'required' => true,
-                                                'properties' => [
-                                                    'noticeTime' => [
-                                                        'type' => 'string',
-                                                        'required' => true,
-                                                    ],
-                                                    'noticeObjects' => [
-                                                        'type' => 'array',
-                                                        'required' => true,
-                                                        'items' => [
-                                                            'type' => 'integer',
-                                                            'format' => 'int64',
-                                                            'required' => false,
-                                                        ],
-                                                    ],
-                                                    'noticeChannels' => [
-                                                        'type' => 'array',
-                                                        'required' => true,
-                                                        'items' => [
-                                                            'type' => 'string',
-                                                            'required' => true,
-                                                        ],
-                                                    ],
-                                                    'enableWebhook' => [
-                                                        'type' => 'boolean',
-                                                        'required' => true,
-                                                    ],
-                                                    'serviceGroupIds' => [
-                                                        'type' => 'array',
-                                                        'required' => false,
-                                                        'items' => [
-                                                            'type' => 'integer',
-                                                            'format' => 'int64',
-                                                            'required' => false,
-                                                        ],
-                                                    ],
-                                                    'escalationPlanType' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
-                                                    'noticeRoleList' => [
-                                                        'type' => 'array',
-                                                        'required' => false,
-                                                        'items' => [
-                                                            'type' => 'integer',
-                                                            'format' => 'int64',
-                                                            'required' => false,
-                                                        ],
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                        'escalationPlanType' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'isGlobal' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DeleteEscalationPlan' => [
-            'path' => '/escalationPlan/delete',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'escalationPlanId' => [
+                            'monitorSourceId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'clientToken' => [
                                 'type' => 'string',
@@ -252,8 +53,8 @@
                 ],
             ],
         ],
-        'DisableEscalationPlan' => [
-            'path' => '/escalationPlan/disable',
+        'DisableIntegrationConfig' => [
+            'path' => '/integrationConfig/disable',
             'methods' => [
                 'post',
             ],
@@ -282,10 +83,10 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'escalationPlanId' => [
+                            'integrationConfigId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'clientToken' => [
                                 'type' => 'string',
@@ -296,8 +97,8 @@
                 ],
             ],
         ],
-        'EnableEscalationPlan' => [
-            'path' => '/escalationPlan/enable',
+        'EnableIntegrationConfig' => [
+            'path' => '/integrationConfig/enable',
             'methods' => [
                 'post',
             ],
@@ -326,10 +127,10 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'escalationPlanId' => [
+                            'integrationConfigId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'clientToken' => [
                                 'type' => 'string',
@@ -340,8 +141,8 @@
                 ],
             ],
         ],
-        'GetEscalationPlan' => [
-            'path' => '/escalationPlan/detail',
+        'GetIntegrationConfig' => [
+            'path' => '/integrationConfig/detail',
             'methods' => [
                 'post',
             ],
@@ -370,10 +171,10 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'escalationPlanId' => [
+                            'integrationConfigId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'clientToken' => [
                                 'type' => 'string',
@@ -384,8 +185,8 @@
                 ],
             ],
         ],
-        'ListEscalationPlans' => [
-            'path' => '/escalationPlan/list',
+        'ListIntegrationConfigs' => [
+            'path' => '/integrationConfig/list',
             'methods' => [
                 'post',
             ],
@@ -414,16 +215,52 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'escalationPlanName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'serviceName' => [
+                            'monitorSourceName' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
                             'clientToken' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListIntegrationConfigTimelines' => [
+            'path' => '/integrationConfig/timeline',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'integrationConfigId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
                                 'required' => false,
                             ],
                             'pageNumber' => [
@@ -436,19 +273,17 @@
                                 'format' => 'int64',
                                 'required' => false,
                             ],
-                            'isGlobal' => [
-                                'type' => 'boolean',
-                            ],
-                            'status' => [
+                            'clientToken' => [
                                 'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'UpdateEscalationPlan' => [
-            'path' => '/escalationPlan/update',
+        'ConfirmIntegrationConfig' => [
+            'path' => '/integrationConfig/confirm',
             'methods' => [
                 'post',
             ],
@@ -477,144 +312,13 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'escalationPlanId' => [
+                            'integrationConfigId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'escalationPlanName' => [
-                                'type' => 'string',
                                 'required' => false,
-                            ],
-                            'escalationPlanDescription' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'escalationPlanScopeObjects' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'id' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => true,
-                                        ],
-                                        'scopeObjectId' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => true,
-                                        ],
-                                        'scope' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'escalationPlanRules' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'id' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                        'escalationPlanType' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'escalationPlanConditions' => [
-                                            'type' => 'array',
-                                            'required' => false,
-                                            'items' => [
-                                                'type' => 'object',
-                                                'required' => false,
-                                                'properties' => [
-                                                    'level' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
-                                                    'effection' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                        'escalationPlanStrategies' => [
-                                            'type' => 'array',
-                                            'required' => false,
-                                            'items' => [
-                                                'type' => 'object',
-                                                'required' => false,
-                                                'properties' => [
-                                                    'noticeTime' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int64',
-                                                        'required' => false,
-                                                    ],
-                                                    'noticeObjects' => [
-                                                        'type' => 'array',
-                                                        'required' => false,
-                                                        'items' => [
-                                                            'type' => 'integer',
-                                                            'format' => 'int64',
-                                                            'required' => false,
-                                                        ],
-                                                    ],
-                                                    'noticeChannels' => [
-                                                        'type' => 'array',
-                                                        'required' => false,
-                                                        'items' => [
-                                                            'type' => 'string',
-                                                            'required' => false,
-                                                        ],
-                                                    ],
-                                                    'serviceGroupIds' => [
-                                                        'type' => 'array',
-                                                        'required' => false,
-                                                        'items' => [
-                                                            'type' => 'integer',
-                                                            'format' => 'int64',
-                                                            'required' => false,
-                                                        ],
-                                                    ],
-                                                    'enableWebhook' => [
-                                                        'type' => 'boolean',
-                                                        'required' => false,
-                                                    ],
-                                                    'escalationPlanType' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
-                                                    'noticeRoleList' => [
-                                                        'type' => 'array',
-                                                        'required' => false,
-                                                        'items' => [
-                                                            'type' => 'integer',
-                                                            'format' => 'int64',
-                                                            'required' => false,
-                                                        ],
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
                             ],
                             'clientToken' => [
                                 'type' => 'string',
-                                'required' => false,
-                            ],
-                            'isGlobal' => [
-                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],
@@ -622,8 +326,8 @@
                 ],
             ],
         ],
-        'GetIncidentListByIdList' => [
-            'path' => '/incident/getIncidentListByIdList',
+        'DeleteIntegrationConfig' => [
+            'path' => '/integrationConfig/delete',
             'methods' => [
                 'post',
             ],
@@ -652,26 +356,22 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
+                            'integrationConfigId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
                             'clientToken' => [
                                 'type' => 'string',
                                 'required' => false,
-                            ],
-                            'incidentIdList' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'DeleteIncident' => [
-            'path' => '/incident/delete',
+        'UpdateIntegrationConfig' => [
+            'path' => '/integrationConfig/update',
             'methods' => [
                 'post',
             ],
@@ -700,13 +400,17 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'clientToken' => [
+                            'integrationConfigId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'accessKey' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'incidentId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
+                            'clientToken' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -714,8 +418,8 @@
                 ],
             ],
         ],
-        'CreateIncident' => [
-            'path' => '/incident/manualSave',
+        'RefreshIntegrationConfigKey' => [
+            'path' => '/integrationConfig/refreshKey',
             'methods' => [
                 'post',
             ],
@@ -744,90 +448,7 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'incidentLevel' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'relatedServiceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'effect' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'incidentTitle' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'assignUserId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'incidentDescription' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'channels' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'serviceGroupId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DeliverIncident' => [
-            'path' => '/incident/deliver',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'incidentId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'assignUserId' => [
+                            'integrationConfigId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,
@@ -841,52 +462,8 @@
                 ],
             ],
         ],
-        'GetIncident' => [
-            'path' => '/incident/detail',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'incidentId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetIncidentStatistics' => [
-            'path' => '/incident/count',
+        'GetUserGuideStatus' => [
+            'path' => '/user/guide/status',
             'methods' => [
                 'post',
             ],
@@ -924,318 +501,8 @@
                 ],
             ],
         ],
-        'FinishIncident' => [
-            'path' => '/incident/finish',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Body',
-                    'in' => 'body',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'incidentIds' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                            ],
-                            'incidentFinishReason' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'incidentFinishReasonDescription' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'incidentFinishSolution' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'incidentFinishSolutionDescription' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateIncident' => [
-            'path' => '/incident/update',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'incidentId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'incidentLevel' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'effect' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'incidentTitle' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'RespondIncident' => [
-            'path' => '/incident/response',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Body',
-                    'in' => 'body',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'incidentIds' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListIncidents' => [
-            'path' => '/incident/list',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'incidentLevel' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'pageNumber' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'pageSize' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'effect' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'relationServiceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'incidentStatus' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'me' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'createStartTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'createEndTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'ruleName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListIncidentDetailTimelines' => [
-            'path' => '/incident/detail/timeline',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'incidentId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'pageNumber' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'pageSize' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'idSort' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListIncidentTimelines' => [
-            'path' => '/incident/timeline',
+        'UpdateUserGuideStatus' => [
+            'path' => '/user/update/guide/status',
             'methods' => [
                 'post',
             ],
@@ -1268,14 +535,8 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'pageNumber' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'pageSize' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
+                            'guideAction' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -1336,9 +597,11 @@
                             ],
                             'roleIdList' => [
                                 'type' => 'array',
+                                'required' => false,
                                 'items' => [
                                     'type' => 'integer',
                                     'format' => 'int64',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -1562,9 +825,11 @@
                             ],
                             'roleIdList' => [
                                 'type' => 'array',
+                                'required' => false,
                                 'items' => [
                                     'type' => 'integer',
                                     'format' => 'int64',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -1572,8 +837,8 @@
                 ],
             ],
         ],
-        'CreateService' => [
-            'path' => '/services/save',
+        'ListUserSerivceGroups' => [
+            'path' => '/user/preview/detail',
             'methods' => [
                 'post',
             ],
@@ -1602,109 +867,7 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'serviceDescription' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'serviceName' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'escalationPlanId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                            ],
-                            'serviceGroupIdList' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DeleteService' => [
-            'path' => '/services/delete',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'serviceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetService' => [
-            'path' => '/services/detail',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'serviceId' => [
+                            'userId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => true,
@@ -1718,8 +881,8 @@
                 ],
             ],
         ],
-        'ListServices' => [
-            'path' => '/services/list',
+        'ListServiceGroupMonitorSourceTemplates' => [
+            'path' => '/services/group/listServiceGroupMonitorSourceTemplates',
             'methods' => [
                 'post',
             ],
@@ -1748,21 +911,73 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'serviceName' => [
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'requestId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'serviceGroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListDataReportForServiceGroup' => [
+            'path' => '/statistics/listDataReportForServiceGroup',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'startTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'endTime' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
                             'pageNumber' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'pageSize' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
-                                'required' => true,
+                                'required' => false,
                             ],
-                            'clientToken' => [
+                            'serviceGroupName' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -1771,8 +986,8 @@
                 ],
             ],
         ],
-        'UpdateService' => [
-            'path' => '/services/update',
+        'CheckWebhook' => [
+            'path' => '/services/check/webhook',
             'methods' => [
                 'post',
             ],
@@ -1801,15 +1016,54 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'serviceDescription' => [
+                            'clientToken' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'serviceName' => [
+                            'webhook' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'serviceId' => [
+                            'webhookType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'EnableServiceGroupWebhook' => [
+            'path' => '/services/group/enableWebhook',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceGroupId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,
@@ -1817,17 +1071,6 @@
                             'clientToken' => [
                                 'type' => 'string',
                                 'required' => false,
-                            ],
-                            'escalationPlanId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                            ],
-                            'serviceGroupIdList' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                ],
                             ],
                         ],
                     ],
@@ -2005,12 +1248,15 @@
                                                 ],
                                                 'schedulingObjectType' => [
                                                     'type' => 'string',
+                                                    'required' => false,
                                                 ],
                                                 'schedulingUserIdList' => [
                                                     'type' => 'array',
+                                                    'required' => false,
                                                     'items' => [
                                                         'type' => 'integer',
                                                         'format' => 'int64',
+                                                        'required' => false,
                                                     ],
                                                 ],
                                             ],
@@ -2075,12 +1321,15 @@
                                                 ],
                                                 'schedulingObjectType' => [
                                                     'type' => 'string',
+                                                    'required' => false,
                                                 ],
                                                 'schedulingUserIdList' => [
                                                     'type' => 'array',
+                                                    'required' => false,
                                                     'items' => [
                                                         'type' => 'integer',
                                                         'format' => 'int64',
+                                                        'required' => false,
                                                     ],
                                                 ],
                                             ],
@@ -2121,12 +1370,15 @@
                                                 ],
                                                 'schedulingObjectType' => [
                                                     'type' => 'string',
+                                                    'required' => false,
                                                 ],
                                                 'schedulingUserIdList' => [
                                                     'type' => 'array',
+                                                    'required' => false,
                                                     'items' => [
                                                         'type' => 'integer',
                                                         'format' => 'int64',
+                                                        'required' => false,
                                                     ],
                                                 ],
                                             ],
@@ -2756,6 +2008,639 @@
                 ],
             ],
         ],
+        'DisableServiceGroupWebhook' => [
+            'path' => '/services/group/disableWebhook',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceGroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateServiceGroupSpecialDayScheduling' => [
+            'path' => '/services/group/scheduling/updateSpecialDayScheduling',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceGroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'schedulingDate' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'schedulingSpecialDays' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'schedulingStartTime' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'schedulingEndTime' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'schedulingUserId' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => true,
+                                        ],
+                                        'schedulingOrder' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'schedulingObjectType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'schedulingUserIdList' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateServiceGroupScheduling' => [
+            'path' => '/services/group/scheduling/update',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceGroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'schedulingWay' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'fastScheduling' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'singleDuration' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'dutyPlan' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'singleDurationUnit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'schedulingUsers' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'schedulingUserId' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingOrder' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingObjectType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingUserIdList' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'id' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'fineScheduling' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'period' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'periodUnit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'shiftType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'schedulingFineShifts' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'schedulingStartTime' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingEndTime' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingOrder' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'shiftName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'skipOneDay' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingUserId' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'cycleOrder' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingObjectType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingUserIdList' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'schedulingTemplateFineShifts' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'schedulingStartTime' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingEndTime' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingOrder' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingUserId' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'shiftName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'skipOneDay' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingObjectType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingUserIdList' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'id' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateService' => [
+            'path' => '/services/save',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceDescription' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'serviceName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'escalationPlanId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'serviceGroupIdList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteService' => [
+            'path' => '/services/delete',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetService' => [
+            'path' => '/services/detail',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListServices' => [
+            'path' => '/services/list',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'pageNumber' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'pageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateService' => [
+            'path' => '/services/update',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceDescription' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'serviceName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'serviceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'escalationPlanId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'serviceGroupIdList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreateRouteRule' => [
             'path' => '/routeRule/save',
             'methods' => [
@@ -3345,6 +3230,7 @@
                                         ],
                                         'problemLevel' => [
                                             'type' => 'string',
+                                            'required' => false,
                                         ],
                                     ],
                                 ],
@@ -3367,59 +3253,74 @@
                             ],
                             'problemLevelGroup' => [
                                 'type' => 'object',
+                                'required' => false,
                                 'additionalProperties' => [
                                     'type' => 'object',
                                     'properties' => [
                                         'childRuleRelation' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
+                                            'required' => false,
                                         ],
                                         'matchCount' => [
                                             'type' => 'integer',
                                             'format' => 'int64',
+                                            'required' => false,
                                         ],
                                         'timeWindow' => [
                                             'type' => 'integer',
                                             'format' => 'int64',
+                                            'required' => false,
                                         ],
                                         'timeWindowUnit' => [
                                             'type' => 'string',
+                                            'required' => false,
                                         ],
                                         'enableUpgrade' => [
                                             'type' => 'boolean',
+                                            'required' => false,
                                         ],
                                         'upgradeTimeWindow' => [
                                             'type' => 'integer',
                                             'format' => 'int64',
+                                            'required' => false,
                                         ],
                                         'upgradeTimeWindowUnit' => [
                                             'type' => 'string',
+                                            'required' => false,
                                         ],
                                     ],
                                 ],
                             ],
                             'coverageProblemLevels' => [
                                 'type' => 'array',
+                                'required' => false,
                                 'items' => [
                                     'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                             'problemEffectionServices' => [
                                 'type' => 'array',
+                                'required' => false,
                                 'items' => [
                                     'type' => 'integer',
                                     'format' => 'int64',
+                                    'required' => false,
                                 ],
                             ],
                             'convergenceFields' => [
                                 'type' => 'array',
+                                'required' => false,
                                 'items' => [
                                     'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                             'convergenceType' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -3487,156 +3388,6 @@
                                         ],
                                     ],
                                 ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'CreateRichText' => [
-            'path' => '/rich/create',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'instanceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'instanceType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'richText' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetRichText' => [
-            'path' => '/rich/detail',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'richTextId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'instanceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'instanceType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateRichText' => [
-            'path' => '/rich/update',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'richTextId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'instanceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'instanceType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'richText' => [
-                                'type' => 'string',
-                                'required' => false,
                             ],
                         ],
                     ],
@@ -4110,6 +3861,7 @@
                             ],
                             'notFilterScopeObjectDeleted' => [
                                 'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -4222,14 +3974,943 @@
                             ],
                             'notFilterScopeObjectDeleted' => [
                                 'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'CreateIntegrationConfig' => [
-            'path' => '/integrationConfig/create',
+        'CreateIncidentSubtotal' => [
+            'path' => '/incident/save/subtotal',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'incidentId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListIncidentSubtotals' => [
+            'path' => '/incident/list/subtotal',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'incidentId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetIncidentListByIdList' => [
+            'path' => '/incident/getIncidentListByIdList',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'incidentIdList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteIncident' => [
+            'path' => '/incident/delete',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'incidentId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateIncident' => [
+            'path' => '/incident/manualSave',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'incidentLevel' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'relatedServiceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'effect' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'incidentTitle' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'assignUserId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'incidentDescription' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'channels' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'serviceGroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeliverIncident' => [
+            'path' => '/incident/deliver',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'incidentId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'assignUserId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetIncident' => [
+            'path' => '/incident/detail',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'incidentId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetIncidentStatistics' => [
+            'path' => '/incident/count',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'FinishIncident' => [
+            'path' => '/incident/finish',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Body',
+                    'in' => 'body',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'incidentIds' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                            'incidentFinishReason' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'incidentFinishReasonDescription' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'incidentFinishSolution' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'incidentFinishSolutionDescription' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateIncident' => [
+            'path' => '/incident/update',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'incidentId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'incidentLevel' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'effect' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'incidentTitle' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'RespondIncident' => [
+            'path' => '/incident/response',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Body',
+                    'in' => 'body',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'incidentIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListIncidents' => [
+            'path' => '/incident/list',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'incidentLevel' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'pageNumber' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'pageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'effect' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'relationServiceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'incidentStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'me' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'createStartTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'createEndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ruleName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListIncidentDetailTimelines' => [
+            'path' => '/incident/detail/timeline',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'incidentId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'pageNumber' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'pageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'idSort' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListIncidentTimelines' => [
+            'path' => '/incident/timeline',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'pageNumber' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'pageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetIncidentSubtotalCount' => [
+            'path' => '/incident/subtotal/count',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'incidentIds' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetSimilarIncidentStatistics' => [
+            'path' => '/incident/similarIncident/statistics',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'incidentId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'incidentTitle' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'createTime' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'relatedServiceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'events' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListTrendForSourceEvent' => [
+            'path' => '/events/querySourceEventTrend',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'requestId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'instanceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'instanceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'startTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'endTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'timeUnit' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListSourceEventsForMonitorSource' => [
+            'path' => '/events/queryLastestEvents',
             'methods' => [
                 'post',
             ],
@@ -4263,17 +4944,13 @@
                                 'format' => 'int64',
                                 'required' => false,
                             ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                         ],
                     ],
                 ],
             ],
         ],
-        'DisableIntegrationConfig' => [
-            'path' => '/integrationConfig/disable',
+        'ListSourceEvents' => [
+            'path' => '/events/listOriginalEvent',
             'methods' => [
                 'post',
             ],
@@ -4302,7 +4979,24 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'integrationConfigId' => [
+                            'instanceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'instanceType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'startRowKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'stopRowKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'pageSize' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,
@@ -4311,47 +5005,16 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'EnableIntegrationConfig' => [
-            'path' => '/integrationConfig/enable',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'integrationConfigId' => [
+                            'pageNumber' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,
                             ],
-                            'clientToken' => [
+                            'startTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'endTime' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -4360,8 +5023,8 @@
                 ],
             ],
         ],
-        'GetIntegrationConfig' => [
-            'path' => '/integrationConfig/detail',
+        'ListAlerts' => [
+            'path' => '/alerts/list',
             'methods' => [
                 'post',
             ],
@@ -4390,96 +5053,17 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'integrationConfigId' => [
+                            'alertLevel' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'relatedServiceId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,
                             ],
-                            'clientToken' => [
+                            'alertName' => [
                                 'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListIntegrationConfigs' => [
-            'path' => '/integrationConfig/list',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'monitorSourceName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListIntegrationConfigTimelines' => [
-            'path' => '/integrationConfig/timeline',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'integrationConfigId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
                                 'required' => false,
                             ],
                             'pageNumber' => [
@@ -4492,7 +5076,23 @@
                                 'format' => 'int64',
                                 'required' => false,
                             ],
-                            'clientToken' => [
+                            'alertSourceName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'startTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'endTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ruleName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'monitorSourceId' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -4501,8 +5101,8 @@
                 ],
             ],
         ],
-        'ConfirmIntegrationConfig' => [
-            'path' => '/integrationConfig/confirm',
+        'GetEvent' => [
+            'path' => '/events/getLastTimeEvent',
             'methods' => [
                 'post',
             ],
@@ -4531,22 +5131,79 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'integrationConfigId' => [
+                            'monitorSourceId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'DeleteIntegrationConfig' => [
-            'path' => '/integrationConfig/delete',
+        'GeneratePictureUploadSign' => [
+            'path' => '/rich/oss/generatePostPolicy',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'instanceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'instanceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'files' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'fileName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'fileType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'fileSize' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListProblemDetailOperations' => [
+            'path' => '/problem/detail/operations',
             'methods' => [
                 'post',
             ],
@@ -4575,22 +5232,36 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'integrationConfigId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
                             'clientToken' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'pageNumber' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'pageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'createTimeSort' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'problemId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'UpdateIntegrationConfig' => [
-            'path' => '/integrationConfig/update',
+        'UpdateProblemImprovement' => [
+            'path' => '/problem/improvement/update',
             'methods' => [
                 'post',
             ],
@@ -4619,16 +5290,73 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'integrationConfigId' => [
+                            'problemId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,
                             ],
-                            'accessKey' => [
+                            'problemReason' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'recentActivity' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'injectionMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'recoveryMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'discoverSource' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'userReport' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'monitorSourceName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'relationChanges' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'dutyUserId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'replayDutyUserId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'dutyDepartmentName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'dutyDepartmentId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'remark' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
                             'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'customProblemReason' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -4637,8 +5365,8 @@
                 ],
             ],
         ],
-        'RefreshIntegrationConfigKey' => [
-            'path' => '/integrationConfig/refreshKey',
+        'ListSubscriptionServiceGroups' => [
+            'path' => '/problem/serviceGroup/list',
             'methods' => [
                 'post',
             ],
@@ -4667,10 +5395,14 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'integrationConfigId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
+                            'serviceIds' => [
+                                'type' => 'array',
                                 'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
                             ],
                             'clientToken' => [
                                 'type' => 'string',
@@ -5264,8 +5996,8 @@
                 ],
             ],
         ],
-        'ListProblemDetailOperations' => [
-            'path' => '/problem/detail/operations',
+        'GenerateProblemPictureUploadSign' => [
+            'path' => '/problem/process/oss/generatePostPolicy',
             'methods' => [
                 'post',
             ],
@@ -5294,28 +6026,23 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'clientToken' => [
+                            'fileName' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'pageNumber' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'pageSize' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'createTimeSort' => [
+                            'fileType' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'fileSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
                                 'required' => false,
                             ],
                             'problemId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
-                                'required' => true,
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -5759,6 +6486,261 @@
                 ],
             ],
         ],
+        'GenerateProblemPictureLink' => [
+            'path' => '/problem/process/oss/getPresignedLink',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'keys' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'problemId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateProblemEffectionService' => [
+            'path' => '/problem/process/effectionService/update',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'level' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'status' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'picUrl' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'problemId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'effectionServiceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteProblemEffectionService' => [
+            'path' => '/problem/process/effectionService/delete',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'effectionServiceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'problemId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateProblemMeasure' => [
+            'path' => '/problem/improvement/measure/update',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'type' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'content' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'checkStandard' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'checkUserId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'directorId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'stalkerId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'planFinishTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'measureId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'status' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'problemId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'DeleteProblem' => [
             'path' => '/problem/delete',
             'methods' => [
@@ -6160,358 +7142,6 @@
                 ],
             ],
         ],
-        'GenerateProblemPictureUploadSign' => [
-            'path' => '/problem/process/oss/generatePostPolicy',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'fileName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'fileType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'fileSize' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'problemId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateProblemMeasure' => [
-            'path' => '/problem/improvement/measure/update',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'type' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'content' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'checkStandard' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'checkUserId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'directorId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'stalkerId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'planFinishTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'measureId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'status' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'problemId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateProblemEffectionService' => [
-            'path' => '/problem/process/effectionService/update',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'serviceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'level' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'status' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'description' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'picUrl' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'problemId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'effectionServiceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GenerateProblemPictureLink' => [
-            'path' => '/problem/process/oss/getPresignedLink',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'keys' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'problemId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DeleteProblemEffectionService' => [
-            'path' => '/problem/process/effectionService/delete',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'effectionServiceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'problemId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DisableServiceGroupWebhook' => [
-            'path' => '/services/group/disableWebhook',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'serviceGroupId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'RemoveProblemServiceGroup' => [
             'path' => '/problem/removeServiceGroup',
             'methods' => [
@@ -6630,8 +7260,8 @@
                 ],
             ],
         ],
-        'ListMonitorSources' => [
-            'path' => '/monitorSource/list',
+        'GetResourceStatistics' => [
+            'path' => '/config/resource/count',
             'methods' => [
                 'post',
             ],
@@ -6660,529 +7290,6 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListIncidentSubtotals' => [
-            'path' => '/incident/list/subtotal',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'incidentId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'EnableServiceGroupWebhook' => [
-            'path' => '/services/group/enableWebhook',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'serviceGroupId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListAlerts' => [
-            'path' => '/alerts/list',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'alertLevel' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'relatedServiceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'alertName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'pageNumber' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'pageSize' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'alertSourceName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'startTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'endTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'ruleName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'monitorSourceId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListSubscriptionServiceGroups' => [
-            'path' => '/problem/serviceGroup/list',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'serviceIds' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateProblemImprovement' => [
-            'path' => '/problem/improvement/update',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'problemId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'problemReason' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'recentActivity' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'injectionMode' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'recoveryMode' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'discoverSource' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'userReport' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'monitorSourceName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'relationChanges' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'dutyUserId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'replayDutyUserId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'dutyDepartmentName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'dutyDepartmentId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'remark' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'customProblemReason' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListDictionaries' => [
-            'path' => '/dict/list',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListSourceEvents' => [
-            'path' => '/events/listOriginalEvent',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'instanceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'instanceType' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'startRowKey' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'stopRowKey' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'pageSize' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'pageNumber' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'startTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'endTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListUserSerivceGroups' => [
-            'path' => '/user/preview/detail',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'userId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'CreateIncidentSubtotal' => [
-            'path' => '/incident/save/subtotal',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'incidentId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'description' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                             'clientToken' => [
                                 'type' => 'string',
                                 'required' => false,
@@ -7231,91 +7338,8 @@
                 ],
             ],
         ],
-        'GetEvent' => [
-            'path' => '/events/getLastTimeEvent',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'monitorSourceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateUserGuideStatus' => [
-            'path' => '/user/update/guide/status',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'guideAction' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListEscalationPlanServices' => [
-            'path' => '/escalationPlan/services',
+        'ListDictionaries' => [
+            'path' => '/dict/list',
             'methods' => [
                 'post',
             ],
@@ -7353,8 +7377,8 @@
                 ],
             ],
         ],
-        'CheckWebhook' => [
-            'path' => '/services/check/webhook',
+        'ListMonitorSources' => [
+            'path' => '/monitorSource/list',
             'methods' => [
                 'post',
             ],
@@ -7383,606 +7407,6 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'webhook' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'webhookType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetUserGuideStatus' => [
-            'path' => '/user/guide/status',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetResourceStatistics' => [
-            'path' => '/config/resource/count',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListIncidentDetailEscalationPlans' => [
-            'path' => '/incident/detail/escalation',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'incidentId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateServiceGroupScheduling' => [
-            'path' => '/services/group/scheduling/update',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'serviceGroupId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'schedulingWay' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'fastScheduling' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'singleDuration' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'dutyPlan' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'singleDurationUnit' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'schedulingUsers' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'schedulingUserId' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int64',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingOrder' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int32',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingObjectType' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingUserIdList' => [
-                                                    'type' => 'array',
-                                                    'required' => false,
-                                                    'items' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int64',
-                                                        'required' => false,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                    'id' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'fineScheduling' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'period' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'periodUnit' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'shiftType' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'schedulingFineShifts' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'schedulingStartTime' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingEndTime' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingOrder' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int64',
-                                                    'required' => false,
-                                                ],
-                                                'shiftName' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'skipOneDay' => [
-                                                    'type' => 'boolean',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingUserId' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int64',
-                                                    'required' => false,
-                                                ],
-                                                'cycleOrder' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int32',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingObjectType' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingUserIdList' => [
-                                                    'type' => 'array',
-                                                    'required' => false,
-                                                    'items' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int64',
-                                                        'required' => false,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                    'schedulingTemplateFineShifts' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'schedulingStartTime' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingEndTime' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingOrder' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int32',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingUserId' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int64',
-                                                    'required' => false,
-                                                ],
-                                                'shiftName' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'skipOneDay' => [
-                                                    'type' => 'boolean',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingObjectType' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingUserIdList' => [
-                                                    'type' => 'array',
-                                                    'required' => false,
-                                                    'items' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int64',
-                                                        'required' => false,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                    'id' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateServiceGroupSpecialDayScheduling' => [
-            'path' => '/services/group/scheduling/updateSpecialDayScheduling',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'serviceGroupId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'schedulingDate' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'schedulingSpecialDays' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => true,
-                                    'properties' => [
-                                        'schedulingStartTime' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'schedulingEndTime' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'schedulingUserId' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => true,
-                                        ],
-                                        'schedulingOrder' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'schedulingObjectType' => [
-                                            'type' => 'string',
-                                        ],
-                                        'schedulingUserIdList' => [
-                                            'type' => 'array',
-                                            'items' => [
-                                                'type' => 'integer',
-                                                'format' => 'int64',
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetTenantApplication' => [
-            'path' => '/mobileApp/detail',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetSimilarIncidentStatistics' => [
-            'path' => '/incident/similarIncident/statistics',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'incidentId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'incidentTitle' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'createTime' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'relatedServiceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'events' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetIncidentSubtotalCount' => [
-            'path' => '/incident/subtotal/count',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'incidentIds' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                            ],
                             'clientToken' => [
                                 'type' => 'string',
                                 'required' => false,
@@ -8035,8 +7459,87 @@
                 ],
             ],
         ],
-        'GetHomePageGuidance' => [
-            'path' => '/guidance/detail',
+        'GetTenantApplication' => [
+            'path' => '/mobileApp/detail',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'PushMonitor' => [
+            'path' => '/api/monitor/push/{apiKey}',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'http',
+            ],
+            'security' => [
+                [
+                    'Anonymous' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'apiKey',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListEscalationPlanServices' => [
+            'path' => '/escalationPlan/services',
             'methods' => [
                 'post',
             ],
@@ -8074,8 +7577,8 @@
                 ],
             ],
         ],
-        'ListDataReportForServiceGroup' => [
-            'path' => '/statistics/listDataReportForServiceGroup',
+        'CreateEscalationPlan' => [
+            'path' => '/escalationPlan/create',
             'methods' => [
                 'post',
             ],
@@ -8104,11 +7607,350 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'startTime' => [
+                            'escalationPlanName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'escalationPlanDescription' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'escalationPlanScopeObjects' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'scopeObjectId' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => true,
+                                        ],
+                                        'scope' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'escalationPlanRules' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'escalationPlanConditions' => [
+                                            'type' => 'array',
+                                            'required' => true,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => true,
+                                                'properties' => [
+                                                    'level' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'effection' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'escalationPlanStrategies' => [
+                                            'type' => 'array',
+                                            'required' => true,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => true,
+                                                'properties' => [
+                                                    'noticeTime' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'noticeObjects' => [
+                                                        'type' => 'array',
+                                                        'required' => true,
+                                                        'items' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'noticeChannels' => [
+                                                        'type' => 'array',
+                                                        'required' => true,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => true,
+                                                        ],
+                                                    ],
+                                                    'enableWebhook' => [
+                                                        'type' => 'boolean',
+                                                        'required' => true,
+                                                    ],
+                                                    'serviceGroupIds' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'escalationPlanType' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'noticeRoleList' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'escalationPlanType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'clientToken' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'endTime' => [
+                            'isGlobal' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteEscalationPlan' => [
+            'path' => '/escalationPlan/delete',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'escalationPlanId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DisableEscalationPlan' => [
+            'path' => '/escalationPlan/disable',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'escalationPlanId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'EnableEscalationPlan' => [
+            'path' => '/escalationPlan/enable',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'escalationPlanId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetEscalationPlan' => [
+            'path' => '/escalationPlan/detail',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'escalationPlanId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListEscalationPlans' => [
+            'path' => '/escalationPlan/list',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'escalationPlanName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'serviceName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -8122,7 +7964,419 @@
                                 'format' => 'int64',
                                 'required' => false,
                             ],
-                            'serviceGroupName' => [
+                            'isGlobal' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'status' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateEscalationPlan' => [
+            'path' => '/escalationPlan/update',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'escalationPlanId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'escalationPlanName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'escalationPlanDescription' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'escalationPlanScopeObjects' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'id' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => true,
+                                        ],
+                                        'scopeObjectId' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => true,
+                                        ],
+                                        'scope' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'escalationPlanRules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'id' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'escalationPlanType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'escalationPlanConditions' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'level' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'effection' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'escalationPlanStrategies' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'noticeTime' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => false,
+                                                    ],
+                                                    'noticeObjects' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'noticeChannels' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'serviceGroupIds' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'enableWebhook' => [
+                                                        'type' => 'boolean',
+                                                        'required' => false,
+                                                    ],
+                                                    'escalationPlanType' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'noticeRoleList' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'isGlobal' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateRichText' => [
+            'path' => '/rich/create',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'instanceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'instanceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'richText' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetRichText' => [
+            'path' => '/rich/detail',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'richTextId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'instanceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'instanceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateRichText' => [
+            'path' => '/rich/update',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'richTextId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'instanceId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'instanceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'richText' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListIncidentDetailEscalationPlans' => [
+            'path' => '/incident/detail/escalation',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'incidentId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetHomePageGuidance' => [
+            'path' => '/guidance/detail',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'clientToken' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -8171,46 +8425,6 @@
                             ],
                             'endTime' => [
                                 'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListSourceEventsForMonitorSource' => [
-            'path' => '/events/queryLastestEvents',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'monitorSourceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
                                 'required' => false,
                             ],
                         ],
@@ -8318,67 +8532,6 @@
                 ],
             ],
         ],
-        'ListTrendForSourceEvent' => [
-            'path' => '/events/querySourceEventTrend',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'requestId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'instanceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'instanceType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'startTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'endTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'timeUnit' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'GeneratePictureLink' => [
             'path' => '/rich/oss/getPictureLink',
             'methods' => [
@@ -8418,115 +8571,6 @@
                                 ],
                             ],
                             'problemId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GeneratePictureUploadSign' => [
-            'path' => '/rich/oss/generatePostPolicy',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'instanceId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'instanceType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'files' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'fileName' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'fileType' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'fileSize' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListServiceGroupMonitorSourceTemplates' => [
-            'path' => '/services/group/listServiceGroupMonitorSourceTemplates',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'requestId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'serviceGroupId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,

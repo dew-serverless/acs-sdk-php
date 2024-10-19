@@ -255,6 +255,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryDomainSpecialBizInfoByDomainAsync($arguments = [])
  * @method \Dew\Acs\Result queryDomainSpecialBizDetail(array $arguments = [])
  * @method \Http\Promise\Promise queryDomainSpecialBizDetailAsync($arguments = [])
+ * @method \Dew\Acs\Result saveBatchTaskForTransferOutByAuthorizationCode(array $arguments = [])
+ * @method \Http\Promise\Promise saveBatchTaskForTransferOutByAuthorizationCodeAsync($arguments = [])
+ * @method \Dew\Acs\Result saveSingleTaskForTransferOutByAuthorizationCode(array $arguments = [])
+ * @method \Http\Promise\Promise saveSingleTaskForTransferOutByAuthorizationCodeAsync($arguments = [])
  */
 final class DomainClient extends AcsClient
 {

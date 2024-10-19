@@ -163,6 +163,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listAgentAsync($arguments = [])
  * @method \Dew\Acs\Result generateUserAccessToken(array $arguments = [])
  * @method \Http\Promise\Promise generateUserAccessTokenAsync($arguments = [])
+ * @method \Dew\Acs\Result listTongyiConversationLogs(array $arguments = [])
+ * @method \Http\Promise\Promise listTongyiConversationLogsAsync($arguments = [])
  * @method \Dew\Acs\Result listTongyiChatHistorys(array $arguments = [])
  * @method \Http\Promise\Promise listTongyiChatHistorysAsync($arguments = [])
  * @method \Dew\Acs\Result getBotSessionData(array $arguments = [])

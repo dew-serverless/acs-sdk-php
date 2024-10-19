@@ -455,8 +455,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listPrivateRegistryListAsync($arguments = [])
  * @method \Dew\Acs\Result describeCountNotScannedImage(array $arguments = [])
  * @method \Http\Promise\Promise describeCountNotScannedImageAsync($arguments = [])
- * @method \Dew\Acs\Result describeImageScanAuthorization(array $arguments = [])
- * @method \Http\Promise\Promise describeImageScanAuthorizationAsync($arguments = [])
+ * @method \Dew\Acs\Result describeImageScanAuthorization(array $arguments = []) {@deprecated 2018-12-03}
+ * @method \Http\Promise\Promise describeImageScanAuthorizationAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result getImageScanNumInPeriod(array $arguments = [])
  * @method \Http\Promise\Promise getImageScanNumInPeriodAsync($arguments = [])
  * @method \Dew\Acs\Result setRegistryScanDayNum(array $arguments = [])
@@ -751,8 +751,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSecurityEventOperationStatusAsync($arguments = [])
  * @method \Dew\Acs\Result describeSimilarEventScenarios(array $arguments = [])
  * @method \Http\Promise\Promise describeSimilarEventScenariosAsync($arguments = [])
- * @method \Dew\Acs\Result describeUserLayoutAuthorization(array $arguments = [])
- * @method \Http\Promise\Promise describeUserLayoutAuthorizationAsync($arguments = [])
+ * @method \Dew\Acs\Result describeUserLayoutAuthorization(array $arguments = []) {@deprecated 2018-12-03}
+ * @method \Http\Promise\Promise describeUserLayoutAuthorizationAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result describeSecurityStatInfo(array $arguments = [])
  * @method \Http\Promise\Promise describeSecurityStatInfoAsync($arguments = [])
  * @method \Dew\Acs\Result describeLoginBaseConfigs(array $arguments = [])

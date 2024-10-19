@@ -11,6 +11,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listReleaseVersionsAsync($arguments = [])
  * @method \Dew\Acs\Result listInstanceTypes(array $arguments = [])
  * @method \Http\Promise\Promise listInstanceTypesAsync($arguments = [])
+ * @method \Dew\Acs\Result runCluster(array $arguments = [])
+ * @method \Http\Promise\Promise runClusterAsync($arguments = [])
  * @method \Dew\Acs\Result createCluster(array $arguments = [])
  * @method \Http\Promise\Promise createClusterAsync($arguments = [])
  * @method \Dew\Acs\Result getCluster(array $arguments = [])
@@ -19,6 +21,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listClustersAsync($arguments = [])
  * @method \Dew\Acs\Result deleteCluster(array $arguments = [])
  * @method \Http\Promise\Promise deleteClusterAsync($arguments = [])
+ * @method \Dew\Acs\Result getClusterCloneMeta(array $arguments = [])
+ * @method \Http\Promise\Promise getClusterCloneMetaAsync($arguments = [])
  * @method \Dew\Acs\Result createApiTemplate(array $arguments = [])
  * @method \Http\Promise\Promise createApiTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result updateApiTemplate(array $arguments = [])
@@ -135,8 +139,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDoctorApplicationAsync($arguments = [])
  * @method \Dew\Acs\Result getDoctorHDFSUGI(array $arguments = [])
  * @method \Http\Promise\Promise getDoctorHDFSUGIAsync($arguments = [])
- * @method \Dew\Acs\Result getClusterCloneMeta(array $arguments = [])
- * @method \Http\Promise\Promise getClusterCloneMetaAsync($arguments = [])
  */
 final class EmrClient extends AcsClient
 {

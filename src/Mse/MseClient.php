@@ -455,6 +455,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateGatewayIsolationRuleAsync($arguments = [])
  * @method \Dew\Acs\Result listGatewayIsolationRule(array $arguments = [])
  * @method \Http\Promise\Promise listGatewayIsolationRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result initializeServiceLinkRole(array $arguments = [])
+ * @method \Http\Promise\Promise initializeServiceLinkRoleAsync($arguments = [])
  * @method \Dew\Acs\Result queryNamespace(array $arguments = [])
  * @method \Http\Promise\Promise queryNamespaceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteNamespace(array $arguments = [])

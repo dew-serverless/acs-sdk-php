@@ -131,6 +131,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeGreyTagRouteAsync($arguments = [])
  * @method \Dew\Acs\Result listGreyTagRoute(array $arguments = [])
  * @method \Http\Promise\Promise listGreyTagRouteAsync($arguments = [])
+ * @method \Dew\Acs\Result getApplication(array $arguments = [])
+ * @method \Http\Promise\Promise getApplicationAsync($arguments = [])
  * @method \Dew\Acs\Result describeApplicationConfig(array $arguments = [])
  * @method \Http\Promise\Promise describeApplicationConfigAsync($arguments = [])
  * @method \Dew\Acs\Result describeRegions(array $arguments = [])
@@ -257,8 +259,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise downgradeApplicationApmServiceAsync($arguments = [])
  * @method \Dew\Acs\Result upgradeApplicationApmService(array $arguments = [])
  * @method \Http\Promise\Promise upgradeApplicationApmServiceAsync($arguments = [])
- * @method \Dew\Acs\Result getApplication(array $arguments = [])
- * @method \Http\Promise\Promise getApplicationAsync($arguments = [])
  */
 final class SaeClient extends AcsClient
 {

@@ -357,8 +357,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise killSparkAppAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result createOssSubDirectory(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise createOssSubDirectoryAsync($arguments = []) {@since 2021-12-01}
- * @method \Dew\Acs\Result renameSparkTemplateFile(array $arguments = []) {@since 2021-12-01}
- * @method \Http\Promise\Promise renameSparkTemplateFileAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeAdbMySqlColumns(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeAdbMySqlColumnsAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeAdbMySqlTables(array $arguments = []) {@since 2021-12-01}

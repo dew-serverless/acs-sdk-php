@@ -649,12 +649,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyVRouterAttributeAsync($arguments = []) {@deprecated 2014-05-26}
  * @method \Dew\Acs\Result describeRouterInterfaces(array $arguments = []) {@deprecated 2014-05-26}
  * @method \Http\Promise\Promise describeRouterInterfacesAsync($arguments = []) {@deprecated 2014-05-26}
- * @method \Dew\Acs\Result eipNotifyPaid(array $arguments = []) {@deprecated 2014-05-26}
- * @method \Http\Promise\Promise eipNotifyPaidAsync($arguments = []) {@deprecated 2014-05-26}
- * @method \Dew\Acs\Result eipFillProduct(array $arguments = []) {@deprecated 2014-05-26}
- * @method \Http\Promise\Promise eipFillProductAsync($arguments = []) {@deprecated 2014-05-26}
- * @method \Dew\Acs\Result eipFillParams(array $arguments = []) {@deprecated 2014-05-26}
- * @method \Http\Promise\Promise eipFillParamsAsync($arguments = []) {@deprecated 2014-05-26}
  * @method \Dew\Acs\Result unassociateEipAddress(array $arguments = []) {@deprecated 2014-05-26}
  * @method \Http\Promise\Promise unassociateEipAddressAsync($arguments = []) {@deprecated 2014-05-26}
  * @method \Dew\Acs\Result allocateEipAddress(array $arguments = []) {@deprecated 2014-05-26}

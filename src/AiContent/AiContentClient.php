@@ -21,6 +21,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise personalizedtxt2imgQueryModelTrainJobListAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result personalizedtxt2imgQueryModelTrainStatus(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise personalizedtxt2imgQueryModelTrainStatusAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result aliyunConsoleOpenApiQueryAliyunConsoleServiceList(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise aliyunConsoleOpenApiQueryAliyunConsoleServiceListAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result personalizedTextToImageAddInferenceJob(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise personalizedTextToImageAddInferenceJobAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result personalizedTextToImageQueryImageAsset(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise personalizedTextToImageQueryImageAssetAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result personalizedTextToImageQueryPreModelInferenceJobInfo(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise personalizedTextToImageQueryPreModelInferenceJobInfoAsync($arguments = []) {@since 20240611}
  */
 final class AiContentClient extends AcsClient
 {

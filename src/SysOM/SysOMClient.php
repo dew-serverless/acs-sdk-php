@@ -15,6 +15,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDiagnosisResultAsync($arguments = [])
  * @method \Dew\Acs\Result generateCopilotResponse(array $arguments = [])
  * @method \Http\Promise\Promise generateCopilotResponseAsync($arguments = [])
+ * @method \Dew\Acs\Result getAbnormalEventsCount(array $arguments = [])
+ * @method \Http\Promise\Promise getAbnormalEventsCountAsync($arguments = [])
+ * @method \Dew\Acs\Result getHealthPercentage(array $arguments = [])
+ * @method \Http\Promise\Promise getHealthPercentageAsync($arguments = [])
  */
 final class SysOMClient extends AcsClient
 {

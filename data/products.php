@@ -2168,6 +2168,14 @@
         'defaultVersion' => '2023-07-01',
     ],
     [
+        'code' => 'Gwlb',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-04-15',
+        ],
+        'defaultVersion' => '2024-04-15',
+    ],
+    [
         'code' => 'ContactCenterAI',
         'style' => 'RPC',
         'versions' => [
@@ -2238,5 +2246,13 @@
             '2024-09-30',
         ],
         'defaultVersion' => '2024-09-30',
+    ],
+    [
+        'code' => 'EduInterpreting',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-08-28',
+        ],
+        'defaultVersion' => '2024-08-28',
     ],
 ];

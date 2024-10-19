@@ -604,6 +604,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'MinuteSimple',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDBInstanceViaEndpoint' => [

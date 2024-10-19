@@ -1736,6 +1736,369 @@
                 ],
             ],
         ],
+        'CreateAnnualDocSummaryTask' => [
+            'path' => '/{workspaceId}/api/task/summary/doc/annual',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'anaYears' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => true,
+                                ],
+                            ],
+                            'docInfos' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'docId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'docYear' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                        'endPage' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'libraryId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'startPage' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'enableTable' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'instruction' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'modelId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetQualityCheckTaskResult' => [
+            'path' => '/{workspaceId}/api/qualitycheck/task/query',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateQualityCheckTask' => [
+            'path' => '/{workspaceId}/api/qualitycheck/task/submit',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'conversationList' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'callType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'customerId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'customerName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'customerServiceId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'customerServiceName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'dialogueList' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'begin' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'beginTime' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'content' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'customerId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'customerServiceId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'customerServiceType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'end' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'role' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'type' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'gmtService' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'gmtService' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'metaData' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'qualityGroup' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'requestId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'type' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateDocsSummaryTask' => [
+            'path' => '/{workspaceId}/api/task/summary/docs',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'docInfos' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'docId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'endPage' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'libraryId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'startPage' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'enableTable' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'instruction' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'modelId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetTaskResult' => [
             'path' => '/{workspaceId}/api/task/result',
             'methods' => [

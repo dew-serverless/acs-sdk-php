@@ -218,6 +218,9 @@
                     'certIdentifier' => [
                         'type' => 'string',
                     ],
+                    'resourceGroupId' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'EnvironmentInfo' => [
@@ -254,6 +257,9 @@
                     'updateTimestamp' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'resourceGroupId' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -447,6 +453,9 @@
                         ],
                     ],
                     'type' => [
+                        'type' => 'string',
+                    ],
+                    'resourceGroupId' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1343,6 +1352,12 @@
                         'format' => 'int64',
                     ],
                     'protocol' => [
+                        'type' => 'string',
+                    ],
+                    'gatewayId' => [
+                        'type' => 'string',
+                    ],
+                    'resourceGroupId' => [
                         'type' => 'string',
                     ],
                 ],

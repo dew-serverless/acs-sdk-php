@@ -2362,6 +2362,14 @@
                     ],
                 ],
                 [
+                    'name' => 'EnableJumboFrame',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ClientToken',
                     'in' => 'formData',
                     'schema' => [

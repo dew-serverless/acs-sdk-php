@@ -7,14 +7,18 @@ namespace Dew\Acs\EmrServerlessSpark;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result stopSessionCluster(array $arguments = [])
+ * @method \Http\Promise\Promise stopSessionClusterAsync($arguments = [])
+ * @method \Dew\Acs\Result startSessionCluster(array $arguments = [])
+ * @method \Http\Promise\Promise startSessionClusterAsync($arguments = [])
+ * @method \Dew\Acs\Result listSessionClusters(array $arguments = [])
+ * @method \Http\Promise\Promise listSessionClustersAsync($arguments = [])
  * @method \Dew\Acs\Result terminateSqlStatement(array $arguments = [])
  * @method \Http\Promise\Promise terminateSqlStatementAsync($arguments = [])
  * @method \Dew\Acs\Result createSqlStatement(array $arguments = [])
  * @method \Http\Promise\Promise createSqlStatementAsync($arguments = [])
  * @method \Dew\Acs\Result getSqlStatement(array $arguments = [])
  * @method \Http\Promise\Promise getSqlStatementAsync($arguments = [])
- * @method \Dew\Acs\Result listSessionClusters(array $arguments = [])
- * @method \Http\Promise\Promise listSessionClustersAsync($arguments = [])
  * @method \Dew\Acs\Result listWorkspaces(array $arguments = [])
  * @method \Http\Promise\Promise listWorkspacesAsync($arguments = [])
  * @method \Dew\Acs\Result listWorkspaceQueues(array $arguments = [])

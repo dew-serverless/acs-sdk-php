@@ -317,6 +317,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise rollbackDcdnStagingConfigAsync($arguments = [])
  * @method \Dew\Acs\Result describeDcdnStagingIp(array $arguments = [])
  * @method \Http\Promise\Promise describeDcdnStagingIpAsync($arguments = [])
+ * @method \Dew\Acs\Result getDcdnKvDetail(array $arguments = [])
+ * @method \Http\Promise\Promise getDcdnKvDetailAsync($arguments = [])
  * @method \Dew\Acs\Result batchPutDcdnKv(array $arguments = [])
  * @method \Http\Promise\Promise batchPutDcdnKvAsync($arguments = [])
  * @method \Dew\Acs\Result describeDcdnKvNamespace(array $arguments = [])

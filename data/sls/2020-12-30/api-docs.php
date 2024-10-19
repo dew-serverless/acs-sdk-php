@@ -702,6 +702,9 @@
                             'region' => [
                                 'type' => 'string',
                             ],
+                            'telemetryType' => [
+                                'type' => 'string',
+                            ],
                         ],
                     ],
                     'createTime' => [
@@ -3167,10 +3170,6 @@
                                 'format' => 'int32',
                                 'required' => false,
                             ],
-                            'processorId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                         ],
                     ],
                 ],
@@ -3755,7 +3754,7 @@
             ],
         ],
         'GetContextLogs' => [
-            'path' => '/logstores/{logstore}',
+            'path' => '/logstores/{logstore}?type=context_log',
             'methods' => [
                 'get',
             ],
@@ -3790,17 +3789,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'context_log',
-                        ],
                     ],
                 ],
                 [
@@ -7242,7 +7230,7 @@
                             ],
                             'topic' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'displayName' => [
                                 'type' => 'string',

@@ -635,6 +635,7 @@
                                     'ecs',
                                     'clb4',
                                     'clb7',
+                                    'nlb',
                                 ],
                             ],
                             'ResourceInstanceId' => [
@@ -6189,6 +6190,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

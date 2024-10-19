@@ -25,6 +25,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceSourcesAsync($arguments = [])
  * @method \Dew\Acs\Result describeParentInstance(array $arguments = [])
  * @method \Http\Promise\Promise describeParentInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result scanOssObjectV1(array $arguments = [])
+ * @method \Http\Promise\Promise scanOssObjectV1Async($arguments = [])
  * @method \Dew\Acs\Result createScanTask(array $arguments = [])
  * @method \Http\Promise\Promise createScanTaskAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDefaultLevel(array $arguments = [])
@@ -103,8 +105,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise stopMaskingProcessAsync($arguments = [])
  * @method \Dew\Acs\Result manualTriggerMaskingProcess(array $arguments = [])
  * @method \Http\Promise\Promise manualTriggerMaskingProcessAsync($arguments = [])
- * @method \Dew\Acs\Result scanOssObjectV1(array $arguments = [])
- * @method \Http\Promise\Promise scanOssObjectV1Async($arguments = [])
+ * @method \Dew\Acs\Result describeIdentifyTaskStatus(array $arguments = [])
+ * @method \Http\Promise\Promise describeIdentifyTaskStatusAsync($arguments = [])
  */
 final class SddpClient extends AcsClient
 {

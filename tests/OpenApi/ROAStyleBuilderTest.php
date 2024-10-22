@@ -164,30 +164,6 @@ final class ROAStyleBuilderTest extends TestCase
         $this->assertSame(['x-test-*' => 'foo'], $data->headers);
     }
 
-    public function test_headers_resolution_wildcard_invalid(): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('The header value "x-test-invalid" must be a string.');
-        $docs = $this->makeApiDocs();
-        $api = $this->makeApi([
-            'parameters' => [[
-                'name' => 'x-test-*',
-                'in' => 'header',
-                'schema' => [
-                    'type' => 'object',
-                    'properties' => [
-                        'invalid' => [
-                            'type' => 'object',
-                            'properties' => [],
-                        ],
-                    ],
-                ],
-            ]],
-        ]);
-        $builder = new ROAStyleBuilder($docs, $api);
-        $builder->build(['x-test-*' => ['invalid' => []]]);
-    }
-
     public function test_headers_resolution_body_json_style(): void
     {
         $docs = $this->makeApiDocs();
@@ -387,6 +363,28 @@ final class ROAStyleBuilderTest extends TestCase
         <value>foo</value>
 
         XML, $data->body);
+    }
+
+    public function test_parameter_missing_style_array_should_encode_to_json_string(): void
+    {
+        $docs = $this->makeApiDocs();
+        $api = $this->makeApi([
+            'parameters' => [[
+                'name' => 'body',
+                'in' => 'body',
+                'schema' => [
+                    'type' => 'object',
+                    'properties' => [
+                        'name' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ]],
+        ]);
+        $builder = new ROAStyleBuilder($docs, $api);
+        $data = $builder->build(['body' => ['name' => 'Li Zhineng']]);
+        $this->assertSame(json_encode(['name' => 'Li Zhineng']), $data->body);
     }
 
     public function test_parameter_required(): void

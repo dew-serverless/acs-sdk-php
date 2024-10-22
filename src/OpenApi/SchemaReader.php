@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Dew\Acs\OpenApi;
 
+use BackedEnum;
 use Closure;
 use InvalidArgumentException;
 use RuntimeException;
@@ -28,6 +29,10 @@ final class SchemaReader
 
         if (! method_exists($this, $method)) {
             throw new RuntimeException("Unsupported data type {$schema->type}.");
+        }
+
+        if ($value instanceof BackedEnum) {
+            $value = $value->value;
         }
 
         $this->validateValueType($schema->type, $value, $attribute);

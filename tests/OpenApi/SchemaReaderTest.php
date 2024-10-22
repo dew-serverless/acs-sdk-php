@@ -394,6 +394,25 @@ final class SchemaReaderTest extends TestCase
         $this->assertSame(['value' => 1024], $reader->getProperty($schema, ['value' => 1024], 'value'));
     }
 
+    public function test_get_property_enum(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The value must be a string.');
+        $reader = new SchemaReader();
+        $schema = Schema::make(['type' => 'string']);
+        $reader->getProperty($schema, StubEnum::Foo, 'value');
+    }
+
+    public function test_get_property_backed_enum(): void
+    {
+        $reader = new SchemaReader();
+        $schema = Schema::make(['type' => 'string']);
+        $this->assertSame('bar', $reader->getProperty($schema, StubStringEnum::Foo, 'value'));
+
+        $schema = Schema::make(['type' => 'integer']);
+        $this->assertSame(0, $reader->getProperty($schema, StubIntEnum::Zero, 'value'));
+    }
+
     /**
      * @param  TSchema  $schema
      */
@@ -484,4 +503,19 @@ final class SchemaReaderTest extends TestCase
         $reader = new SchemaReader();
         $reader->{$method}($schema, $value, 'value');
     }
+}
+
+enum StubEnum
+{
+    case Foo;
+}
+
+enum StubStringEnum: string
+{
+    case Foo = 'bar';
+}
+
+enum StubIntEnum: int
+{
+    case Zero = 0;
 }

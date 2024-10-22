@@ -255,7 +255,11 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
      */
     private function toStringValue(Parameter $parameter, mixed $value): string
     {
-        $value = is_scalar($value) ? (string) $value : $value;
+        $value = match (true) {
+            is_scalar($value) => (string) $value,
+            is_array($value) => (new JsonEncoder())->encode($value),
+            default => $value,
+        };
 
         if (! is_string($value)) {
             throw new InvalidArgumentException(

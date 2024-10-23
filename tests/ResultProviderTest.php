@@ -7,6 +7,7 @@ namespace Dew\Acs\Tests;
 use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
 use Dew\Acs\ResultProvider;
+use Dew\Acs\Tests\Fixtures\StubException;
 use Nyholm\Psr7\Response;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -71,6 +72,18 @@ final class ResultProviderTest extends TestCase
         $provider = new ResultProvider($this->makeApiDocs());
         $result = $provider->make($response, $api);
         $this->assertSame(['value' => 10], $result->getDecodedData());
+    }
+
+    public function test_make_exception(): void
+    {
+        $this->expectException(StubException::class);
+        $this->expectExceptionMessage('Something went wrong!');
+        $docs = $this->makeApiDocs();
+        $api = $this->makeApi();
+        $error = ['Code' => 'InternalError', 'Message' => 'Something went wrong!'];
+        $response = new Response(500, ['Content-Type' => 'application/json'], json_encode($error));
+        $provider = new ResultProvider($this->makeApiDocs(), StubException::class);
+        $provider->make($response, $api);
     }
 
     private function makeApiDocs(): ApiDocs

@@ -26,7 +26,7 @@ class AcsException extends Exception
      */
     protected ?Result $result = null;
 
-    public function __construct(string $message, int|string $code)
+    final public function __construct(string $message, int|string $code)
     {
         $this->message = $message;
         $this->code = $code;
@@ -35,9 +35,9 @@ class AcsException extends Exception
     /**
      * @param  \Dew\Acs\Result<TError>  $result
      */
-    public static function makeFromResult(Result $result): self
+    public static function makeFromResult(Result $result): static
     {
-        $e = new self(
+        $e = new static(
             $result->get('Message', 'Could not communicate with Alibaba Cloud.'),
             $result->get('Code', 0)
         );

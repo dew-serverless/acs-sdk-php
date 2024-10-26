@@ -4242,7 +4242,6 @@
         'ModifyDefenseRule' => [
             'methods' => [
                 'post',
-                'get',
             ],
             'schemes' => [
                 'http',
@@ -4281,14 +4280,14 @@
                 ],
                 [
                     'name' => 'Rules',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4296,7 +4295,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

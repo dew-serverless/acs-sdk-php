@@ -2106,7 +2106,7 @@
                     ],
                 ],
                 [
-                    'name' => 'dataType',
+                    'name' => 'analysisType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

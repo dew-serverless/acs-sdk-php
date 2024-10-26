@@ -11940,6 +11940,10 @@
             'endpoint' => 'sae.cn-zhangjiakou.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'sae.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'sae.cn-hangzhou.aliyuncs.com',
         ],
@@ -11966,6 +11970,10 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'sae.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'sae.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',

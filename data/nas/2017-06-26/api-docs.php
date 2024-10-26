@@ -4134,6 +4134,24 @@
                         'maxLength' => 64,
                     ],
                 ],
+                [
+                    'name' => 'Quota',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'FileCountLimit' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'SizeLimit' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteFileset' => [
@@ -4294,6 +4312,7 @@
                                         'FsetIds',
                                         'FileSystemPath',
                                         'Description',
+                                        'QuotaExists',
                                     ],
                                 ],
                                 'Value' => [

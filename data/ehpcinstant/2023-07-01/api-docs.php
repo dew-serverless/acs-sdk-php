@@ -26,6 +26,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'ImageType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Name',
                     'in' => 'query',
                     'schema' => [
@@ -247,6 +255,14 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'ImageType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ImageId',
                     'in' => 'query',
@@ -944,8 +960,16 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'ehpcinstant.cn-guangzhou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'ehpcinstant.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'ehpcinstant.cn-shenzhen.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-heyuan',

@@ -7,6 +7,48 @@
     ],
     'components' => [
         'schemas' => [
+            'AkSkIdentityConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'generateMode' => [
+                        'type' => 'string',
+                    ],
+                    'ak' => [
+                        'type' => 'string',
+                    ],
+                    'sk' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ApiKeyIdentityConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'generateMode' => [
+                        'type' => 'string',
+                    ],
+                    'apikey' => [
+                        'type' => 'string',
+                    ],
+                    'apikeySource' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'source' => [
+                                'type' => 'string',
+                            ],
+                            'value' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'ApiRouteConflictInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -130,6 +172,20 @@
                         'type' => 'string',
                     ],
                     'gatewayId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'AuthorizationResourceInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceId' => [
+                        'type' => 'string',
+                    ],
+                    'parentResourceId' => [
+                        'type' => 'string',
+                    ],
+                    'environmentId' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1169,6 +1225,49 @@
                     ],
                 ],
             ],
+            'JwtIdentityConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'secretType' => [
+                        'type' => 'string',
+                    ],
+                    'jwks' => [
+                        'type' => 'string',
+                    ],
+                    'jwtTokenConfig' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'position' => [
+                                'type' => 'string',
+                            ],
+                            'key' => [
+                                'type' => 'string',
+                            ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'pass' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'jwtPayloadConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'payloadKeyName' => [
+                                'type' => 'string',
+                            ],
+                            'payloadKeyValue' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'PolicyClassInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -1358,6 +1457,9 @@
                         'type' => 'string',
                     ],
                     'resourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'groupName' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1795,6 +1897,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'withAuthPolicyInEnvironmentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withConsumerInfoById',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteHttpApi' => [
@@ -2044,6 +2162,30 @@
                 ],
                 [
                     'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withConsumerInEnvironmentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withConsumerInfoById',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consumerAuthorizationRuleId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

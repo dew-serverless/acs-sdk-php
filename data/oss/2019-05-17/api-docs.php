@@ -1926,7 +1926,7 @@
                     'Owner' => [
                         '$ref' => '#/components/schemas/Owner',
                     ],
-                    'ResoreInfo' => [
+                    'RestoreInfo' => [
                         'type' => 'string',
                     ],
                     'TransitionTime' => [

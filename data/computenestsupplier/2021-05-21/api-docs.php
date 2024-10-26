@@ -648,6 +648,25 @@
                                     ],
                                     'maxItems' => 10,
                                 ],
+                                'Softwares' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Version' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 10,
+                                ],
                             ],
                         ],
                         'maxItems' => 5,
@@ -831,6 +850,26 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ComplianceMetadata',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'CompliancePacks' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'maxItems' => 10,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'RegisterService' => [
@@ -990,6 +1029,25 @@
                                                 'required' => false,
                                             ],
                                             'Url' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 10,
+                                ],
+                                'Softwares' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Version' => [
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
@@ -1251,6 +1309,26 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ComplianceMetadata',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'CompliancePacks' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'maxItems' => 10,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -1579,7 +1657,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1614,6 +1692,22 @@
                 ],
                 [
                     'name' => 'SharedAccountType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

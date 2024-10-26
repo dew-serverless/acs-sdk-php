@@ -2863,6 +2863,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DiscoveryOnly',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RemoveClusterFromServiceMesh' => [

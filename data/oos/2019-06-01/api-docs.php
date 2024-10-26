@@ -5775,8 +5775,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-fuzhou',
-            'endpoint' => 'oos.cn-fuzhou.aliyuncs.com',
+            'regionId' => 'cn-zhengzhou-jva',
+            'endpoint' => 'oos.cn-zhengzhou-jva.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-qingdao',
@@ -5809,6 +5809,10 @@
         [
             'regionId' => 'cn-nanjing',
             'endpoint' => 'oos.cn-nanjing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'oos.cn-fuzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shenzhen',
@@ -5897,6 +5901,10 @@
         [
             'regionId' => 'me-central-1',
             'endpoint' => 'oos.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'oos.cn-wuhan-lr.aliyuncs.com',
         ],
     ],
 ];

@@ -16225,6 +16225,14 @@
                     ],
                 ],
                 [
+                    'name' => 'PrivateLinkEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'EipBindMode',
                     'in' => 'query',
                     'schema' => [
@@ -16255,6 +16263,25 @@
                             ],
                         ],
                         'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'AccessMode',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ModeValue' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TunnelType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -16732,7 +16759,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -16855,7 +16882,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -16905,7 +16932,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -21364,6 +21391,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'CustomerGatewayId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'Role' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -21607,6 +21638,10 @@
                                         'required' => false,
                                     ],
                                 ],
+                            ],
+                            'CustomerGatewayId' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -22929,7 +22964,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -23065,6 +23100,135 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TunnelOptionsSpecification',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'CustomerGatewayId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EnableDpd' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'EnableNatTraversal' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'RemoteCaCertificate' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'TunnelIndex' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'TunnelBgpConfig' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'LocalAsn' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'LocalBgpIp' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'TunnelCidr' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'TunnelIkeConfig' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'IkeAuthAlg' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IkeEncAlg' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IkeLifetime' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'IkeMode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IkePfs' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IkeVersion' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'LocalId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Psk' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'RemoteId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'TunnelIpsecConfig' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'IpsecAuthAlg' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IpsecEncAlg' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IpsecLifetime' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'IpsecPfs' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'EnableTunnelsBgp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -23419,6 +23583,139 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TunnelOptionsSpecification',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'TunnelId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CustomerGatewayId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'TunnelIndex' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'EnableDpd' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'EnableNatTraversal' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'RemoteCaCertificate' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'TunnelBgpConfig' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'LocalAsn' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'LocalBgpIp' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'TunnelCidr' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'TunnelIkeConfig' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'IkeAuthAlg' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IkeEncAlg' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IkeLifetime' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'IkeMode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IkePfs' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IkeVersion' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'LocalId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Psk' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'RemoteId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'TunnelIpsecConfig' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'IpsecAuthAlg' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IpsecEncAlg' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'IpsecLifetime' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'IpsecPfs' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'EnableTunnelsBgp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

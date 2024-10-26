@@ -729,6 +729,57 @@
                     ],
                 ],
             ],
+            'BaseFileListInheritPermissionResponse' => [
+                'type' => 'object',
+                'properties' => [
+                    'member' => [
+                        '$ref' => '#/components/schemas/FilePermissionMember',
+                    ],
+                    'file_id' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'BaseFileUserPermissionResponse' => [
+                'type' => 'object',
+                'properties' => [
+                    'domain_id' => [
+                        'type' => 'string',
+                    ],
+                    'identity' => [
+                        '$ref' => '#/components/schemas/Identity',
+                    ],
+                    'role_id' => [
+                        'type' => 'string',
+                    ],
+                    'drive_id' => [
+                        'type' => 'string',
+                    ],
+                    'file_id' => [
+                        'type' => 'string',
+                    ],
+                    'file_full_path' => [
+                        'type' => 'string',
+                    ],
+                    'creator' => [
+                        'type' => 'string',
+                    ],
+                    'created_at' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'expire_time' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'disinherit_sub_group' => [
+                        'type' => 'boolean',
+                    ],
+                    'can_access' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
             'BaseGroupResponse' => [
                 'type' => 'object',
                 'properties' => [

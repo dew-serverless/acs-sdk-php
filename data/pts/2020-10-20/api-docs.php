@@ -735,13 +735,213 @@
                         'type' => 'object',
                         'required' => true,
                         'properties' => [
-                            'SceneId' => [
-                                'type' => 'string',
+                            'AdvanceSetting' => [
+                                'type' => 'object',
                                 'required' => false,
+                                'properties' => [
+                                    'ConnectionTimeoutInSecond' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'DomainBindingList' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Domain' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Ips' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'LogRate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'SuccessCode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
                             ],
-                            'SceneName' => [
-                                'type' => 'string',
+                            'FileParameterList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'FileName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'FileOssAddress' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'GlobalParameterList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'ParamName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ParamValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'LoadConfig' => [
+                                'type' => 'object',
                                 'required' => true,
+                                'properties' => [
+                                    'AgentCount' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'ApiLoadConfigList' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'ApiId' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'RpsBegin' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => true,
+                                                ],
+                                                'RpsLimit' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'AutoStep' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'Configuration' => [
+                                        'type' => 'object',
+                                        'required' => true,
+                                        'properties' => [
+                                            'AllConcurrencyBegin' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'AllConcurrencyLimit' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'AllRpsBegin' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'AllRpsLimit' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Increment' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'KeepTime' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'MaxRunningTime' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => true,
+                                    ],
+                                    'RelationLoadConfigList' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'ConcurrencyBegin' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => true,
+                                                ],
+                                                'ConcurrencyLimit' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => true,
+                                                ],
+                                                'RelationId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'TestMode' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'VpcLoadConfig' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'RegionId' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                            'SecurityGroupId' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                            'VSwitchId' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                            'VpcId' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                        ],
+                                    ],
+                                ],
                             ],
                             'RelationList' => [
                                 'type' => 'array',
@@ -750,14 +950,6 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'RelationName' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'RelationId' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
                                         'ApiList' => [
                                             'type' => 'array',
                                             'required' => true,
@@ -765,21 +957,53 @@
                                                 'type' => 'object',
                                                 'required' => false,
                                                 'properties' => [
+                                                    'ApiId' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
                                                     'ApiName' => [
                                                         'type' => 'string',
                                                         'required' => true,
                                                     ],
-                                                    'Url' => [
-                                                        'type' => 'string',
-                                                        'required' => true,
-                                                    ],
-                                                    'Method' => [
-                                                        'type' => 'string',
-                                                        'required' => true,
-                                                    ],
-                                                    'ApiId' => [
-                                                        'type' => 'string',
+                                                    'Body' => [
+                                                        'type' => 'object',
                                                         'required' => false,
+                                                        'properties' => [
+                                                            'BodyValue' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'ContentType' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                    'CheckPointList' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'object',
+                                                            'required' => false,
+                                                            'properties' => [
+                                                                'CheckPoint' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                                'CheckType' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                                'ExpectValue' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                                'Operator' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                        ],
                                                     ],
                                                     'ExportList' => [
                                                         'type' => 'array',
@@ -788,7 +1012,7 @@
                                                             'type' => 'object',
                                                             'required' => false,
                                                             'properties' => [
-                                                                'ExportType' => [
+                                                                'Count' => [
                                                                     'type' => 'string',
                                                                     'required' => false,
                                                                 ],
@@ -796,7 +1020,7 @@
                                                                     'type' => 'string',
                                                                     'required' => false,
                                                                 ],
-                                                                'Count' => [
+                                                                'ExportType' => [
                                                                     'type' => 'string',
                                                                     'required' => false,
                                                                 ],
@@ -825,54 +1049,22 @@
                                                             ],
                                                         ],
                                                     ],
-                                                    'CheckPointList' => [
-                                                        'type' => 'array',
-                                                        'required' => false,
-                                                        'items' => [
-                                                            'type' => 'object',
-                                                            'required' => false,
-                                                            'properties' => [
-                                                                'Operator' => [
-                                                                    'type' => 'string',
-                                                                    'required' => false,
-                                                                ],
-                                                                'ExpectValue' => [
-                                                                    'type' => 'string',
-                                                                    'required' => false,
-                                                                ],
-                                                                'CheckType' => [
-                                                                    'type' => 'string',
-                                                                    'required' => false,
-                                                                ],
-                                                                'CheckPoint' => [
-                                                                    'type' => 'string',
-                                                                    'required' => false,
-                                                                ],
-                                                            ],
-                                                        ],
+                                                    'Method' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'RedirectCountLimit' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => true,
                                                     ],
                                                     'TimeoutInSecond' => [
                                                         'type' => 'integer',
                                                         'format' => 'int32',
                                                         'required' => false,
                                                     ],
-                                                    'Body' => [
-                                                        'type' => 'object',
-                                                        'required' => false,
-                                                        'properties' => [
-                                                            'ContentType' => [
-                                                                'type' => 'string',
-                                                                'required' => false,
-                                                            ],
-                                                            'BodyValue' => [
-                                                                'type' => 'string',
-                                                                'required' => false,
-                                                            ],
-                                                        ],
-                                                    ],
-                                                    'RedirectCountLimit' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
+                                                    'Url' => [
+                                                        'type' => 'string',
                                                         'required' => true,
                                                     ],
                                                 ],
@@ -885,14 +1077,6 @@
                                                 'type' => 'object',
                                                 'required' => false,
                                                 'properties' => [
-                                                    'FileName' => [
-                                                        'type' => 'string',
-                                                        'required' => true,
-                                                    ],
-                                                    'FileParamName' => [
-                                                        'type' => 'string',
-                                                        'required' => true,
-                                                    ],
                                                     'BaseFile' => [
                                                         'type' => 'boolean',
                                                         'required' => false,
@@ -901,219 +1085,35 @@
                                                         'type' => 'boolean',
                                                         'required' => false,
                                                     ],
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'LoadConfig' => [
-                                'type' => 'object',
-                                'required' => true,
-                                'properties' => [
-                                    'TestMode' => [
-                                        'type' => 'string',
-                                        'required' => true,
-                                    ],
-                                    'Configuration' => [
-                                        'type' => 'object',
-                                        'required' => true,
-                                        'properties' => [
-                                            'AllRpsBegin' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                            ],
-                                            'AllRpsLimit' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                            ],
-                                            'AllConcurrencyBegin' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                            ],
-                                            'AllConcurrencyLimit' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                    'MaxRunningTime' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => true,
-                                    ],
-                                    'AutoStep' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'AgentCount' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'Increment' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'KeepTime' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'ApiLoadConfigList' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'ApiId' => [
-                                                    'type' => 'string',
-                                                    'required' => true,
-                                                ],
-                                                'RpsLimit' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int32',
-                                                    'required' => true,
-                                                ],
-                                                'RpsBegin' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int32',
-                                                    'required' => true,
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                    'VpcLoadConfig' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'VpcId' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                            ],
-                                            'VSwitchId' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                            ],
-                                            'SecurityGroupId' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                            ],
-                                            'RegionId' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                            ],
-                                        ],
-                                    ],
-                                    'RelationLoadConfigList' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'RelationId' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'ConcurrencyLimit' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int32',
-                                                    'required' => true,
-                                                ],
-                                                'ConcurrencyBegin' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int32',
-                                                    'required' => true,
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'AdvanceSetting' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'LogRate' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'DomainBindingList' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'Domain' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'Ips' => [
-                                                    'type' => 'array',
-                                                    'required' => false,
-                                                    'items' => [
+                                                    'FileName' => [
                                                         'type' => 'string',
-                                                        'required' => false,
+                                                        'required' => true,
+                                                    ],
+                                                    'FileParamName' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
                                                     ],
                                                 ],
                                             ],
                                         ],
-                                    ],
-                                    'ConnectionTimeoutInSecond' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'SuccessCode' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'GlobalParameterList' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'ParamName' => [
+                                        'RelationId' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
-                                        'ParamValue' => [
+                                        'RelationName' => [
                                             'type' => 'string',
-                                            'required' => false,
+                                            'required' => true,
                                         ],
                                     ],
                                 ],
                             ],
-                            'FileParameterList' => [
-                                'type' => 'array',
+                            'SceneId' => [
+                                'type' => 'string',
                                 'required' => false,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'FileName' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'FileOssAddress' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
+                            ],
+                            'SceneName' => [
+                                'type' => 'string',
+                                'required' => true,
                             ],
                         ],
                     ],
@@ -2022,108 +2022,18 @@
                         'type' => 'object',
                         'required' => true,
                         'properties' => [
-                            'SceneName' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'EnvironmentId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'JmeterPluginLabel' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'maxLength' => 32,
-                                'pattern' => '^[A-Z0-9]+$',
-                            ],
-                            'TestFile' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'FileList' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'FileName' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'FileOssAddress' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'Md5' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'FileId' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                        'SplitCsv' => [
-                                            'type' => 'boolean',
-                                            'required' => false,
-                                        ],
-                                        'FileSize' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                        'Tags' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'JMeterProperties' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'Name' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Value' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'RampUp' => [
+                            'AgentCount' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Steps' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'Concurrency' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                                 'required' => false,
                             ],
-                            'Duration' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => true,
-                            ],
-                            'SceneId' => [
+                            'ConstantThroughputTimerType' => [
                                 'type' => 'string',
-                                'required' => false,
-                            ],
-                            'IsVpcTest' => [
-                                'type' => 'boolean',
                                 'required' => false,
                             ],
                             'DnsCacheConfig' => [
@@ -2151,52 +2061,99 @@
                                     ],
                                 ],
                             ],
-                            'AgentCount' => [
+                            'Duration' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                                 'required' => true,
                             ],
-                            'RegionId' => [
+                            'EnvironmentId' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'VpcId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'SecurityGroupId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'VSwitchId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'SyncTimerType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'ConstantThroughputTimerType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Mode' => [
-                                'type' => 'string',
+                            'FileList' => [
+                                'type' => 'array',
                                 'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'FileId' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'FileName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'FileOssAddress' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'FileSize' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'Md5' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'SplitCsv' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'Tags' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
                             ],
-                            'StartRps' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
+                            'IsVpcTest' => [
+                                'type' => 'boolean',
                                 'required' => false,
+                            ],
+                            'JMeterProperties' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'JmeterPluginLabel' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 32,
+                                'pattern' => '^[A-Z0-9]+$',
                             ],
                             'MaxRps' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                                 'required' => false,
                             ],
-                            'StartConcurrency' => [
+                            'Mode' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'RampUp' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'RegionId' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                             'RegionalCondition' => [
@@ -2206,17 +2163,60 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'Region' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
                                         'Amount' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
                                             'required' => false,
                                         ],
+                                        'Region' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
+                            ],
+                            'SceneId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SceneName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'SecurityGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'StartConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'StartRps' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Steps' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'SyncTimerType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TestFile' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'VSwitchId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VpcId' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -2407,6 +2407,12 @@
                                 'minItems' => 0,
                                 'maxItems' => 80,
                             ],
+                            'JmeterPluginLabel' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 32,
+                                'pattern' => '^[A-Z0-9]+$',
+                            ],
                             'Properties' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -2414,6 +2420,11 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
+                                        'Description' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'maxLength' => 1024,
+                                        ],
                                         'Name' => [
                                             'type' => 'string',
                                             'required' => false,
@@ -2426,19 +2437,8 @@
                                             'minLength' => 1,
                                             'maxLength' => 1024,
                                         ],
-                                        'Description' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                            'maxLength' => 1024,
-                                        ],
                                     ],
                                 ],
-                            ],
-                            'JmeterPluginLabel' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'maxLength' => 32,
-                                'pattern' => '^[A-Z0-9]+$',
                             ],
                         ],
                     ],

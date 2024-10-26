@@ -61,6 +61,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryMobilesCardSupportAsync($arguments = [])
  * @method \Dew\Acs\Result getCardSmsLink(array $arguments = [])
  * @method \Http\Promise\Promise getCardSmsLinkAsync($arguments = [])
+ * @method \Dew\Acs\Result getCardSmsDetails(array $arguments = [])
+ * @method \Http\Promise\Promise getCardSmsDetailsAsync($arguments = [])
  * @method \Dew\Acs\Result queryCardSmsTemplateReport(array $arguments = [])
  * @method \Http\Promise\Promise queryCardSmsTemplateReportAsync($arguments = [])
  * @method \Dew\Acs\Result sendCardSms(array $arguments = [])

@@ -7498,6 +7498,49 @@
                 ],
             ],
         ],
+        'ModifyActiveOperationTasks' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Ids',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SwitchTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ImmediateStart',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeActiveOperationTasks' => [
             'methods' => [
                 'post',
@@ -7613,13 +7656,11 @@
                 ],
             ],
         ],
-        'ModifyActiveOperationTasks' => [
+        'SwitchInstanceZoneFailOver' => [
             'methods' => [
                 'post',
-                'get',
             ],
             'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -7630,7 +7671,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Ids',
+                    'name' => 'InstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7638,7 +7679,7 @@
                     ],
                 ],
                 [
-                    'name' => 'SwitchTime',
+                    'name' => 'TargetZoneId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7646,11 +7687,99 @@
                     ],
                 ],
                 [
-                    'name' => 'ImmediateStart',
+                    'name' => 'SiteFaultTime',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '5',
+                            '10',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'MasterNodeShutDownFailOver' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'FailMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Safe',
+                            'UnSafe',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DBNodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ProxyInstanceIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ProxyFaultMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Specify',
+                            'Random',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DBFaultMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Specify',
+                            'Random',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Category',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

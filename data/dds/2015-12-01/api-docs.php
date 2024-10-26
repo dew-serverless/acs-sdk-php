@@ -1651,6 +1651,21 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'SwitchMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '1',
+                        'enum' => [
+                            '0',
+                            '1',
+                        ],
+                    ],
+                ],
             ],
         ],
         'UpgradeDBInstanceKernelVersion' => [
@@ -1675,6 +1690,20 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SwitchMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 0,
+                        'maxLength' => 1,
+                        'enum' => [
+                            '0',
+                            '1',
+                        ],
                     ],
                 ],
             ],

@@ -293,6 +293,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createServiceLinkedRoleAsync($arguments = [])
  * @method \Dew\Acs\Result describeDasConfig(array $arguments = [])
  * @method \Http\Promise\Promise describeDasConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result describeActivationCodes(array $arguments = [])
+ * @method \Http\Promise\Promise describeActivationCodesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeLicenseOrderDetails(array $arguments = [])
+ * @method \Http\Promise\Promise describeLicenseOrderDetailsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeLicenseOrders(array $arguments = [])
+ * @method \Http\Promise\Promise describeLicenseOrdersAsync($arguments = [])
+ * @method \Dew\Acs\Result createOrGetVirtualLicenseOrder(array $arguments = [])
+ * @method \Http\Promise\Promise createOrGetVirtualLicenseOrderAsync($arguments = [])
+ * @method \Dew\Acs\Result createActivationCode(array $arguments = [])
+ * @method \Http\Promise\Promise createActivationCodeAsync($arguments = [])
+ * @method \Dew\Acs\Result describeActivationCodeDetails(array $arguments = [])
+ * @method \Http\Promise\Promise describeActivationCodeDetailsAsync($arguments = [])
  */
 final class PolardbClient extends AcsClient
 {

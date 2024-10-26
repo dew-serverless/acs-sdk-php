@@ -1234,6 +1234,59 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'NodeInstanceTypeFamily',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'Cpu',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                ],
+                [
+                    'name' => 'Gpu',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                ],
+                [
+                    'name' => 'Memory',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+                [
+                    'name' => 'GpuMemory',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+                [
+                    'name' => 'SortType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'OrderBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
             ],
         ],
         'GetResourcePrice' => [
@@ -1408,7 +1461,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1664,6 +1717,18 @@
                                 'format' => 'int32',
                                 'required' => false,
                                 'minimum' => '60',
+                            ],
+                            'OfficeSiteId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VSwitchIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                             'DomainRules' => [
                                 'type' => 'array',
@@ -1941,6 +2006,14 @@
                 ],
                 [
                     'name' => 'NodeInstanceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OfficeSiteId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2489,6 +2562,25 @@
                             'required' => false,
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'UserMeta',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AdDomain' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -3162,40 +3254,6 @@
                     'schema' => [
                         'type' => 'string',
                         'format' => 'iso8601',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CancelOtaTask' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppInstanceGroupId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'TaskId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
                         'required' => true,
                     ],
                 ],

@@ -209,6 +209,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise addTraficMatchRuleToTrafficMarkingPolicyAsync($arguments = []) {@deprecated 2017-09-12}
  * @method \Dew\Acs\Result addTrafficMatchRuleToTrafficMarkingPolicy(array $arguments = [])
  * @method \Http\Promise\Promise addTrafficMatchRuleToTrafficMarkingPolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyTrafficMatchRuleToTrafficMarkingPolicy(array $arguments = [])
+ * @method \Http\Promise\Promise modifyTrafficMatchRuleToTrafficMarkingPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result createTrafficMarkingPolicy(array $arguments = [])
  * @method \Http\Promise\Promise createTrafficMarkingPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result deleteTrafficMarkingPolicy(array $arguments = [])

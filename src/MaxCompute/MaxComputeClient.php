@@ -63,6 +63,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getPackageAsync($arguments = [])
  * @method \Dew\Acs\Result listTables(array $arguments = [])
  * @method \Http\Promise\Promise listTablesAsync($arguments = [])
+ * @method \Dew\Acs\Result getTableInfo(array $arguments = [])
+ * @method \Http\Promise\Promise getTableInfoAsync($arguments = [])
  * @method \Dew\Acs\Result listFunctions(array $arguments = [])
  * @method \Http\Promise\Promise listFunctionsAsync($arguments = [])
  * @method \Dew\Acs\Result listResources(array $arguments = [])
@@ -77,8 +79,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise killJobsAsync($arguments = [])
  * @method \Dew\Acs\Result getJobResourceUsage(array $arguments = [])
  * @method \Http\Promise\Promise getJobResourceUsageAsync($arguments = [])
- * @method \Dew\Acs\Result getTableInfo(array $arguments = [])
- * @method \Http\Promise\Promise getTableInfoAsync($arguments = [])
  */
 final class MaxComputeClient extends AcsClient
 {

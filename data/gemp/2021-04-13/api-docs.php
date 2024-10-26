@@ -1173,228 +1173,6 @@
                 ],
             ],
         ],
-        'CreateServiceGroupScheduling' => [
-            'path' => '/services/group/scheduling/save',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'serviceGroupId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'schedulingWay' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'fastScheduling' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'singleDuration' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'dutyPlan' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'singleDurationUnit' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'schedulingUsers' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'schedulingUserId' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int64',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingOrder' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int64',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingObjectType' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingUserIdList' => [
-                                                    'type' => 'array',
-                                                    'required' => false,
-                                                    'items' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int64',
-                                                        'required' => false,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'fineScheduling' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'period' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'periodUnit' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'shiftType' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'schedulingFineShifts' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'schedulingStartTime' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingEndTime' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingOrder' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int32',
-                                                    'required' => false,
-                                                ],
-                                                'skipOneDay' => [
-                                                    'type' => 'boolean',
-                                                    'required' => false,
-                                                ],
-                                                'cycleOrder' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int32',
-                                                    'required' => false,
-                                                ],
-                                                'shiftName' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingUserId' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int64',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingObjectType' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingUserIdList' => [
-                                                    'type' => 'array',
-                                                    'required' => false,
-                                                    'items' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int64',
-                                                        'required' => false,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                    'schedulingTemplateFineShifts' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'schedulingStartTime' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingEndTime' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingOrder' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int64',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingUserId' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int64',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingUserName' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'skipOneDay' => [
-                                                    'type' => 'boolean',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingObjectType' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingUserIdList' => [
-                                                    'type' => 'array',
-                                                    'required' => false,
-                                                    'items' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int64',
-                                                        'required' => false,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'DeleteServiceGroup' => [
             'path' => '/services/group/delete',
             'methods' => [
@@ -1527,297 +1305,6 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'serviceGroupId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetServiceGroupPersonScheduling' => [
-            'path' => '/services/group/scheduling/user/getScheduling',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'userId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'serviceGroupId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'startTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'endTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetServiceGroupScheduling' => [
-            'path' => '/services/group/scheduling/detail',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'serviceGroupId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetServiceGroupSchedulingPreview' => [
-            'path' => '/services/group/scheduling/preview',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'serviceGroupId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'schedulingWay' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'fastScheduling' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'singleDuration' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'dutyPlan' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'singleDurationUnit' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'schedulingUsers' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'schedulingUserId' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int64',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingOrder' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int32',
-                                                    'required' => false,
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'fineScheduling' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'period' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                    'periodUnit' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'shiftType' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'schedulingFineShifts' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'schedulingStartTime' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingEndTime' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'schedulingOrder' => [
-                                                    'type' => 'integer',
-                                                    'format' => 'int64',
-                                                    'required' => false,
-                                                ],
-                                                'shiftName' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'endTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'startTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetServiceGroupSpecialPersonScheduling' => [
-            'path' => '/services/group/scheduling/getUserScheduling',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'userId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
                             'serviceGroupId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
@@ -2042,6 +1529,519 @@
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetServiceGroupSpecialPersonScheduling' => [
+            'path' => '/services/group/scheduling/getUserScheduling',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'userId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'serviceGroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetServiceGroupSchedulingPreview' => [
+            'path' => '/services/group/scheduling/preview',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceGroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'schedulingWay' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'fastScheduling' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'singleDuration' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'dutyPlan' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'singleDurationUnit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'schedulingUsers' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'schedulingUserId' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingOrder' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'fineScheduling' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'period' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'periodUnit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'shiftType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'schedulingFineShifts' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'schedulingStartTime' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingEndTime' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingOrder' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'shiftName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'endTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'startTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetServiceGroupPersonScheduling' => [
+            'path' => '/services/group/scheduling/user/getScheduling',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'userId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'serviceGroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'startTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'endTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateServiceGroupScheduling' => [
+            'path' => '/services/group/scheduling/save',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceGroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'schedulingWay' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'fastScheduling' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'singleDuration' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'dutyPlan' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'singleDurationUnit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'schedulingUsers' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'schedulingUserId' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingOrder' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingObjectType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingUserIdList' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'fineScheduling' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'period' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'periodUnit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'shiftType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'schedulingFineShifts' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'schedulingStartTime' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingEndTime' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingOrder' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'skipOneDay' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'cycleOrder' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'shiftName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingUserId' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingObjectType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingUserIdList' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'schedulingTemplateFineShifts' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'schedulingStartTime' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingEndTime' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingOrder' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingUserId' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingUserName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'skipOneDay' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingObjectType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'schedulingUserIdList' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetServiceGroupScheduling' => [
+            'path' => '/services/group/scheduling/detail',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'serviceGroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
                             ],
                             'clientToken' => [
                                 'type' => 'string',

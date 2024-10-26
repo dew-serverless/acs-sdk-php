@@ -29,7 +29,6 @@
             'produces' => [
                 'application/json',
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'appId',
@@ -135,7 +134,6 @@
             'produces' => [
                 'application/json',
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'WorkspaceId',
@@ -199,7 +197,6 @@
             'produces' => [
                 'application/json',
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'appId',

@@ -207,6 +207,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateInstance' => [
@@ -445,6 +453,14 @@
                         'required' => true,
                         'minimum' => '1',
                         'maximum' => '200',
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

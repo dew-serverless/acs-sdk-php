@@ -415,6 +415,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyActiveOperationTasksAsync($arguments = [])
  * @method \Dew\Acs\Result describeActiveOperationTasks(array $arguments = [])
  * @method \Http\Promise\Promise describeActiveOperationTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelActiveOperationTasks(array $arguments = [])
+ * @method \Http\Promise\Promise cancelActiveOperationTasksAsync($arguments = [])
  * @method \Dew\Acs\Result deleteUserBackupFile(array $arguments = [])
  * @method \Http\Promise\Promise deleteUserBackupFileAsync($arguments = [])
  * @method \Dew\Acs\Result updateUserBackupFile(array $arguments = [])

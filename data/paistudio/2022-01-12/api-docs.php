@@ -2295,7 +2295,7 @@
             'produces' => [
                 'application/json',
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'ResourceGroupID',
@@ -2373,7 +2373,7 @@
             'produces' => [
                 'application/json',
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'ResourceGroupID',
@@ -2583,7 +2583,7 @@
             'produces' => [
                 'application/json',
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'ResourceGroupID',
@@ -5251,10 +5251,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'pai.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'pai.cn-shanghai-finance-1.aliyuncs.com',
         ],
     ],
 ];

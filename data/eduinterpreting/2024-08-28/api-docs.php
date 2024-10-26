@@ -130,5 +130,10 @@
             ],
         ],
     ],
-    'endpoints' => [],
+    'endpoints' => [
+        [
+            'regionId' => 'public',
+            'endpoint' => 'eduinterpreting.aliyuncs.com',
+        ],
+    ],
 ];

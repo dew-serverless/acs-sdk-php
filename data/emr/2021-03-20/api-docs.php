@@ -4788,6 +4788,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ScalingPolicyType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetAutoScalingActivity' => [

@@ -308,6 +308,14 @@
                     ],
                 ],
                 [
+                    'name' => 'KeyPairId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ClientToken',
                     'in' => 'query',
                     'schema' => [

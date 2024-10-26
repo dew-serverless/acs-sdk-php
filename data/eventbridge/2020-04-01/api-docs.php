@@ -6574,40 +6574,44 @@
                                                     ],
                                                 ],
                                                 'NestedFilters' => [
-                                                    'type' => 'object',
+                                                    'type' => 'array',
                                                     'required' => false,
-                                                    'properties' => [
-                                                        'Column' => [
-                                                            'type' => 'string',
-                                                            'required' => false,
-                                                        ],
-                                                        'Op' => [
-                                                            'type' => 'string',
-                                                            'required' => false,
-                                                            'enum' => [
-                                                                '=',
-                                                                '!=',
-                                                                '>',
-                                                                '>=',
-                                                                '<',
-                                                                '<=',
-                                                                'exists',
-                                                                'does-not-exist',
-                                                                'starts-with',
-                                                                'does-not-start-with',
-                                                                'contains',
-                                                                'does-not-contain',
-                                                                'in',
-                                                                'not-in',
-                                                                'text-match',
-                                                            ],
-                                                        ],
-                                                        'Values' => [
-                                                            'type' => 'array',
-                                                            'required' => false,
-                                                            'items' => [
+                                                    'items' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'Column' => [
                                                                 'type' => 'string',
                                                                 'required' => false,
+                                                            ],
+                                                            'Op' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                                'enum' => [
+                                                                    '=',
+                                                                    '!=',
+                                                                    '>',
+                                                                    '>=',
+                                                                    '<',
+                                                                    '<=',
+                                                                    'exists',
+                                                                    'does-not-exist',
+                                                                    'starts-with',
+                                                                    'does-not-start-with',
+                                                                    'contains',
+                                                                    'does-not-contain',
+                                                                    'in',
+                                                                    'not-in',
+                                                                    'text-match',
+                                                                ],
+                                                            ],
+                                                            'Values' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
                                                             ],
                                                         ],
                                                     ],

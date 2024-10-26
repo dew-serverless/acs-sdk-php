@@ -1917,6 +1917,14 @@
                                     ],
                                 ],
                             ],
+                            'vswitch_ids' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -6682,109 +6690,6 @@
                 ],
             ],
         ],
-        'StartWorkflow' => [
-            'path' => '/gs/workflow',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'wgs_fastq_second_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_vcf_out_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_fastq_second_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_bucket_name' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_is_mark_dup' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_fastq_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_oss_region' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_bam_out_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_bucket_name' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_fastq_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'service' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_oss_region' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_reference_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_reference_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_bam_out_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_vcf_out_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_fastq_first_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'workflow_type' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'mapping_fastq_first_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'DeletePolicyInstance' => [
             'path' => '/clusters/{cluster_id}/policies/{policy_name}',
             'methods' => [
@@ -7912,6 +7817,109 @@
                             ],
                             'disable' => [
                                 'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'StartWorkflow' => [
+            'path' => '/gs/workflow',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'wgs_fastq_second_filename' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'wgs_vcf_out_filename' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mapping_fastq_second_filename' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mapping_bucket_name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mapping_is_mark_dup' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mapping_fastq_path' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mapping_oss_region' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mapping_bam_out_filename' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'wgs_bucket_name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'wgs_fastq_path' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'service' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'wgs_oss_region' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mapping_reference_path' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'wgs_reference_path' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mapping_bam_out_path' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'wgs_vcf_out_path' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'wgs_fastq_first_filename' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'workflow_type' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'mapping_fastq_first_filename' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],

@@ -55,6 +55,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getVccAsync($arguments = [])
  * @method \Dew\Acs\Result listVccs(array $arguments = [])
  * @method \Http\Promise\Promise listVccsAsync($arguments = [])
+ * @method \Dew\Acs\Result listVccFlowInfos(array $arguments = [])
+ * @method \Http\Promise\Promise listVccFlowInfosAsync($arguments = [])
  * @method \Dew\Acs\Result createVccGrantRule(array $arguments = [])
  * @method \Http\Promise\Promise createVccGrantRuleAsync($arguments = [])
  * @method \Dew\Acs\Result deleteVccGrantRule(array $arguments = [])

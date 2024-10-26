@@ -7,6 +7,18 @@ namespace Dew\Acs\CloudAPI;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result dissociateInstanceWithPrivateDNS(array $arguments = [])
+ * @method \Http\Promise\Promise dissociateInstanceWithPrivateDNSAsync($arguments = [])
+ * @method \Dew\Acs\Result deletePrivateDNS(array $arguments = [])
+ * @method \Http\Promise\Promise deletePrivateDNSAsync($arguments = [])
+ * @method \Dew\Acs\Result associateInstanceWithPrivateDNS(array $arguments = [])
+ * @method \Http\Promise\Promise associateInstanceWithPrivateDNSAsync($arguments = [])
+ * @method \Dew\Acs\Result createPrivateDNS(array $arguments = [])
+ * @method \Http\Promise\Promise createPrivateDNSAsync($arguments = [])
+ * @method \Dew\Acs\Result listPrivateDNS(array $arguments = [])
+ * @method \Http\Promise\Promise listPrivateDNSAsync($arguments = [])
+ * @method \Dew\Acs\Result updatePrivateDNS(array $arguments = [])
+ * @method \Http\Promise\Promise updatePrivateDNSAsync($arguments = [])
  * @method \Dew\Acs\Result createInstance(array $arguments = [])
  * @method \Http\Promise\Promise createInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteInstance(array $arguments = [])

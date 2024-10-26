@@ -99,8 +99,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getOtaTaskByTaskIdAsync($arguments = [])
  * @method \Dew\Acs\Result approveOtaTask(array $arguments = [])
  * @method \Http\Promise\Promise approveOtaTaskAsync($arguments = [])
- * @method \Dew\Acs\Result cancelOtaTask(array $arguments = [])
- * @method \Http\Promise\Promise cancelOtaTaskAsync($arguments = [])
  * @method \Dew\Acs\Result listTenantConfig(array $arguments = [])
  * @method \Http\Promise\Promise listTenantConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyTenantConfig(array $arguments = [])

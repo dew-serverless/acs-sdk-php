@@ -65,6 +65,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeBinaryLogListAsync($arguments = [])
  * @method \Dew\Acs\Result updateBackupPolicy(array $arguments = [])
  * @method \Http\Promise\Promise updateBackupPolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result describeOpenBackupSet(array $arguments = [])
+ * @method \Http\Promise\Promise describeOpenBackupSetAsync($arguments = [])
  * @method \Dew\Acs\Result updateDBInstanceTDE(array $arguments = [])
  * @method \Http\Promise\Promise updateDBInstanceTDEAsync($arguments = [])
  * @method \Dew\Acs\Result modifySecurityIps(array $arguments = [])

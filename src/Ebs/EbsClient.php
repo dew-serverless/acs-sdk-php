@@ -121,6 +121,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryDedicatedBlockStorageClusterDiskThroughputStatusAsync($arguments = [])
  * @method \Dew\Acs\Result setDedicatedBlockStorageClusterDiskThroughput(array $arguments = [])
  * @method \Http\Promise\Promise setDedicatedBlockStorageClusterDiskThroughputAsync($arguments = [])
+ * @method \Dew\Acs\Result listReports(array $arguments = [])
+ * @method \Http\Promise\Promise listReportsAsync($arguments = [])
+ * @method \Dew\Acs\Result getReport(array $arguments = [])
+ * @method \Http\Promise\Promise getReportAsync($arguments = [])
  */
 final class EbsClient extends AcsClient
 {

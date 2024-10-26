@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2024-10-26
+
+### Added
+
+- Retrieve the underlying value from the backed enum when resolving
+  the schema value
+  https://github.com/dew-serverless/acs-sdk-php/pull/63
+
+### Changed
+
+- Encode array value to JSON string when schema misses style specification
+  https://github.com/dew-serverless/acs-sdk-php/pull/64
+
+### Fixed
+
+- Respect product exception when something goes wrong
+  https://github.com/dew-serverless/acs-sdk-php/pull/65
+
 ## [0.4.0] - 2024-10-05
 
 ### Changed
@@ -37,7 +55,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release.
 
-[unreleased]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.4.0...HEAD
+[unreleased]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.1.0...v0.2.0

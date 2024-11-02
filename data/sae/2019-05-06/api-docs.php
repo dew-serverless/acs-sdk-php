@@ -923,6 +923,9 @@
                     'MetricsCollectConfig' => [
                         '$ref' => '#/components/schemas/MetricsCollectConfig',
                     ],
+                    'ImageRegistryConfig' => [
+                        '$ref' => '#/components/schemas/ImageRegistryConfig',
+                    ],
                 ],
             ],
             'ContainerResources' => [
@@ -1843,6 +1846,17 @@
                     'registryConfig' => [
                         '$ref' => '#/components/schemas/RegistryConfig',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'ImageRegistryConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'AuthConfig' => [
+                        '$ref' => '#/components/schemas/RegistryAuthenticationConfig',
+                    ],
+                    'CertConfig' => [
+                        '$ref' => '#/components/schemas/RegistryCertificateConfig',
                     ],
                 ],
             ],
@@ -2932,6 +2946,17 @@
                     ],
                 ],
             ],
+            'RegistryAuthenticationConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'UserName' => [
+                        'type' => 'string',
+                    ],
+                    'Password' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'RegistryCertConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -2939,6 +2964,17 @@
                         'type' => 'boolean',
                     ],
                     'rootCaCertBase64' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'RegistryCertificateConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'Insecure' => [
+                        'type' => 'boolean',
+                    ],
+                    'CertBase64' => [
                         'type' => 'string',
                     ],
                 ],
@@ -4683,6 +4719,46 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EnableXForwardedFor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableXForwardedForClientSrcPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableXForwardedForProto',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableXForwardedForSlbId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableXForwardedForSlbPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteNamespace' => [
@@ -4958,6 +5034,46 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableXForwardedFor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableXForwardedForClientSrcPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableXForwardedForProto',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableXForwardedForSlbId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableXForwardedForSlbPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

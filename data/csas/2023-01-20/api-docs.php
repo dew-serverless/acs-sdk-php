@@ -4589,6 +4589,35 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CsvControl',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Method' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'lossless_row_shift_embed',
+                                    'lossy_number_embed',
+                                ],
+                            ],
+                            'EmbedColumn' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'EmbedPrecision' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'CreateWmEmbedTask' => [
@@ -4810,6 +4839,35 @@
                                         ],
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CsvControl',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Method' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'lossless_row_shift_embed',
+                                    'lossy_number_embed',
+                                ],
+                            ],
+                            'EmbedColumn' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'EmbedPrecision' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
                             ],
                         ],
                     ],

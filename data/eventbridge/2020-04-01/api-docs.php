@@ -2114,6 +2114,10 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'BodyDataType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'SourceDTSParameters' => [
@@ -3035,6 +3039,42 @@
                                         ],
                                     ],
                                     'RoleName' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'ContentType' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'ContentSchema' => [
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [

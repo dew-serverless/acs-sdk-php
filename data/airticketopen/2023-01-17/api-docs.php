@@ -1387,8 +1387,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -1485,9 +1485,17 @@
                                                 'format' => 'int64',
                                                 'required' => false,
                                             ],
+                                            'departure_time_str' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                             'arrive_time' => [
                                                 'type' => 'integer',
                                                 'format' => 'int64',
+                                                'required' => false,
+                                            ],
+                                            'arrive_time_str' => [
+                                                'type' => 'string',
                                                 'required' => false,
                                             ],
                                             'departure_terminal' => [

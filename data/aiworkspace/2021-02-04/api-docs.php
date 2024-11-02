@@ -3639,15 +3639,15 @@
                         'properties' => [
                             'Property' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'DataSourceType' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'Uri' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'Labels' => [
                                 'type' => 'array',
@@ -3714,7 +3714,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -3722,7 +3722,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],

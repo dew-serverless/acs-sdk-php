@@ -19239,6 +19239,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'IsAliCdn' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],
@@ -19559,6 +19563,10 @@
                             'properties' => [
                                 'URL' => [
                                     'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'IsAliCdn' => [
+                                    'type' => 'boolean',
                                     'required' => false,
                                 ],
                             ],
@@ -20680,7 +20688,7 @@
                 ],
             ],
         ],
-        'AddLiveAISubtitle' => [
+        'DeleteLiveAIProduceRules' => [
             'methods' => [
                 'post',
                 'get',
@@ -20696,23 +20704,153 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RulesId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SuffixName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Domain',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'App',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeLiveAIProduceRules' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Domain',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'App',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SuffixName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RulesId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateLiveAIProduceRules' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Domain',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'App',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Suffix',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'SubtitleName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'SrcLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DstLanguage',
+                    'name' => 'StudioName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -20720,45 +20858,7 @@
                     ],
                 ],
                 [
-                    'name' => 'FontColor',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FontName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'BgColor',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PositionNormalized',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'number',
-                            'format' => 'float',
-                            'required' => false,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'ShowSourceLan',
+                    'name' => 'IsLazy',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
@@ -20766,52 +20866,23 @@
                     ],
                 ],
                 [
-                    'name' => 'MaxLines',
+                    'name' => 'RulesId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'WordPerLine',
+                    'name' => 'LiveTemplate',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'FontSizeNormalized',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'BorderWidthNormalized',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'BgWidthNormalized',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CopyFrom',
+                    'name' => 'SubtitleId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -20826,8 +20897,41 @@
                         'required' => false,
                     ],
                 ],
+            ],
+        ],
+        'AddLiveAIProduceRules' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
                 [
-                    'name' => 'Width',
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Domain',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'App',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Suffix',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -20835,10 +20939,132 @@
                     ],
                 ],
                 [
-                    'name' => 'Height',
+                    'name' => 'SubtitleName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StudioName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IsLazy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LiveTemplate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteLiveAISubtitle' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'SubtitleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SubtitleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeLiveAISubtitle' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'SubtitleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SubtitleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IsDefault',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -21008,7 +21234,7 @@
                 ],
             ],
         ],
-        'DescribeLiveAISubtitle' => [
+        'AddLiveAISubtitle' => [
             'methods' => [
                 'post',
                 'get',
@@ -21024,64 +21250,7 @@
             ],
             'parameters' => [
                 [
-                    'name' => 'SubtitleId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'SubtitleName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IsDefault',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteLiveAISubtitle' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'SubtitleId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -21089,32 +21258,7 @@
                     ],
                 ],
                 [
-                    'name' => 'SubtitleName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'AddLiveAIProduceRules' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Domain',
+                    'name' => 'SrcLanguage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -21122,39 +21266,53 @@
                     ],
                 ],
                 [
-                    'name' => 'App',
+                    'name' => 'DstLanguage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FontColor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FontName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BgColor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PositionNormalized',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
                         'required' => true,
+                        'items' => [
+                            'type' => 'number',
+                            'format' => 'float',
+                            'required' => false,
+                        ],
                     ],
                 ],
                 [
-                    'name' => 'Suffix',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SubtitleName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StudioName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IsLazy',
+                    'name' => 'ShowSourceLan',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
@@ -21162,104 +21320,52 @@
                     ],
                 ],
                 [
-                    'name' => 'LiveTemplate',
+                    'name' => 'MaxLines',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WordPerLine',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => true,
                     ],
                 ],
                 [
-                    'name' => 'Description',
+                    'name' => 'FontSizeNormalized',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateLiveAIProduceRules' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Domain',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
+                        'type' => 'number',
+                        'format' => 'float',
                         'required' => true,
                     ],
                 ],
                 [
-                    'name' => 'App',
+                    'name' => 'BorderWidthNormalized',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Suffix',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
+                        'type' => 'number',
+                        'format' => 'float',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'SubtitleName',
+                    'name' => 'BgWidthNormalized',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'number',
+                        'format' => 'float',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'StudioName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IsLazy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RulesId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'LiveTemplate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SubtitleId',
+                    'name' => 'CopyFrom',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -21274,25 +21380,8 @@
                         'required' => false,
                     ],
                 ],
-            ],
-        ],
-        'DescribeLiveAIProduceRules' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
                 [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Domain',
+                    'name' => 'Width',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -21300,92 +21389,11 @@
                     ],
                 ],
                 [
-                    'name' => 'App',
+                    'name' => 'Height',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SuffixName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RulesId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteLiveAIProduceRules' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'RulesId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SuffixName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Domain',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'App',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],

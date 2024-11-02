@@ -353,6 +353,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createTicketAsync($arguments = [])
  * @method \Dew\Acs\Result refreshToken(array $arguments = [])
  * @method \Http\Promise\Promise refreshTokenAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRegions(array $arguments = [])
+ * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  */
 final class SlsClient extends AcsClient
 {

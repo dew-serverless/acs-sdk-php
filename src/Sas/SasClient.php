@@ -159,12 +159,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifySasContainerWebDefenseRuleAsync($arguments = [])
  * @method \Dew\Acs\Result getSasContainerWebDefenseRuleApplication(array $arguments = [])
  * @method \Http\Promise\Promise getSasContainerWebDefenseRuleApplicationAsync($arguments = [])
- * @method \Dew\Acs\Result uninstallRaspAttach(array $arguments = [])
- * @method \Http\Promise\Promise uninstallRaspAttachAsync($arguments = [])
- * @method \Dew\Acs\Result describeAttachRecords(array $arguments = [])
- * @method \Http\Promise\Promise describeAttachRecordsAsync($arguments = [])
- * @method \Dew\Acs\Result installRaspAttach(array $arguments = [])
- * @method \Http\Promise\Promise installRaspAttachAsync($arguments = [])
  * @method \Dew\Acs\Result modifyClusterCnnfStatusUserConfirm(array $arguments = [])
  * @method \Http\Promise\Promise modifyClusterCnnfStatusUserConfirmAsync($arguments = [])
  * @method \Dew\Acs\Result getInterceptionSummary(array $arguments = [])
@@ -329,8 +323,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listAssetRefreshTaskConfigAsync($arguments = [])
  * @method \Dew\Acs\Result changeAssetRefreshTaskConfig(array $arguments = [])
  * @method \Http\Promise\Promise changeAssetRefreshTaskConfigAsync($arguments = [])
- * @method \Dew\Acs\Result getClientInstallationStatistic(array $arguments = []) {@deprecated 2018-12-03}
- * @method \Http\Promise\Promise getClientInstallationStatisticAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result listCloudVendorRegions(array $arguments = [])
  * @method \Http\Promise\Promise listCloudVendorRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result addCloudVendorAccountAK(array $arguments = [])

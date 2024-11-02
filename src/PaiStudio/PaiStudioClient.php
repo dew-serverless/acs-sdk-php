@@ -105,6 +105,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result listNodes(array $arguments = [])
  * @method \Http\Promise\Promise listNodesAsync($arguments = [])
+ * @method \Dew\Acs\Result listQuotaWorkloads(array $arguments = [])
+ * @method \Http\Promise\Promise listQuotaWorkloadsAsync($arguments = [])
  */
 final class PaiStudioClient extends AcsClient
 {

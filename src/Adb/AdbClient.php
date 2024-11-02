@@ -229,6 +229,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeTableAccessCountAsync($arguments = [])
  * @method \Dew\Acs\Result describeSqlPattern(array $arguments = [])
  * @method \Http\Promise\Promise describeSqlPatternAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteBackups(array $arguments = [])
+ * @method \Http\Promise\Promise deleteBackupsAsync($arguments = [])
  * @method \Dew\Acs\Result describeDBClusterShardNumber(array $arguments = [])
  * @method \Http\Promise\Promise describeDBClusterShardNumberAsync($arguments = [])
  * @method \Dew\Acs\Result deleteProcessInstance(array $arguments = []) {@since 2021-12-01}

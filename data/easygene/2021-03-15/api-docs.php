@@ -180,6 +180,9 @@
                 [
                     'AK' => [],
                 ],
+                [
+                    'BearerToken' => [],
+                ],
             ],
             'deprecated' => false,
             'parameters' => [

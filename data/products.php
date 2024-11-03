@@ -30,8 +30,9 @@
         'style' => 'RPC',
         'versions' => [
             '2020-05-18',
+            '2024-05-18',
         ],
-        'defaultVersion' => '2020-05-18',
+        'defaultVersion' => '2024-05-18',
     ],
     [
         'code' => 'Dypnsapi',

@@ -11181,6 +11181,36 @@
                 ],
             ],
         ],
+        'DescribeRegions' => [
+            'path' => '/regions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

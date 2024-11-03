@@ -1121,7 +1121,7 @@
                 ],
                 [
                     'name' => 'Content',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1343,7 +1343,7 @@
                 ],
                 [
                     'name' => 'Content',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

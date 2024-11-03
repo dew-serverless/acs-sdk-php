@@ -87,8 +87,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise rejectServiceUsageAsync($arguments = [])
  * @method \Dew\Acs\Result createServiceUsage(array $arguments = [])
  * @method \Http\Promise\Promise createServiceUsageAsync($arguments = [])
- * @method \Dew\Acs\Result listServiceCategories(array $arguments = [])
- * @method \Http\Promise\Promise listServiceCategoriesAsync($arguments = [])
  * @method \Dew\Acs\Result launchService(array $arguments = [])
  * @method \Http\Promise\Promise launchServiceAsync($arguments = [])
  * @method \Dew\Acs\Result preLaunchService(array $arguments = [])

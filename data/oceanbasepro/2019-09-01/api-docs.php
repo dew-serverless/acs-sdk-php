@@ -2397,6 +2397,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyTenantUserDescription' => [
@@ -3598,6 +3606,14 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DynamicSql',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

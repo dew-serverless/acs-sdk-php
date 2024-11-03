@@ -432,6 +432,20 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'InstanceIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'DescribeModificationPrice' => [
@@ -3055,6 +3069,24 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],

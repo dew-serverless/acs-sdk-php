@@ -9,32 +9,6 @@
         'schemas' => [],
     ],
     'apis' => [
-        'VerifyCaptcha' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'CaptchaVerifyParam',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'VerifyIntelligentCaptcha' => [
             'methods' => [
                 'post',
@@ -62,6 +36,32 @@
                 [
                     'name' => 'SceneId',
                     'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'VerifyCaptcha' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CaptchaVerifyParam',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

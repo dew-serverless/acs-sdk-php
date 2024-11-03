@@ -5210,6 +5210,191 @@
                 ],
             ],
         ],
+        'ListQuotaWorkloads' => [
+            'path' => '/api/v1/quotas/{QuotaId}/workloads',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'QuotaId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkloadType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkloadIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BeforeWorkloadId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'asc',
+                            'desc',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ShowOwn',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SubQuotaIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NodeName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkloadCreatedTimeRange',
+                    'in' => 'query',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/TimeRangeFilter',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkloadStatuses',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GmtPositionModifiedTimeRange',
+                    'in' => 'query',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/TimeRangeFilter',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GmtEnqueuedTimeRange',
+                    'in' => 'query',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/TimeRangeFilter',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GmtDequeuedTimeRange',
+                    'in' => 'query',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/TimeRangeFilter',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

@@ -7498,49 +7498,6 @@
                 ],
             ],
         ],
-        'ModifyActiveOperationTasks' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Ids',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SwitchTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ImmediateStart',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'DescribeActiveOperationTasks' => [
             'methods' => [
                 'post',
@@ -7652,6 +7609,75 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyActiveOperationTasks' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Ids',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SwitchTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ImmediateStart',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CancelActiveOperationTasks' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Ids',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

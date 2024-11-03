@@ -1695,6 +1695,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'DesktopId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SendTokenCode' => [

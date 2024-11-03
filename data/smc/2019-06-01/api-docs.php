@@ -659,6 +659,116 @@
                 ],
             ],
         ],
+        'CreateCrossZoneMigrationJob' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetVSwitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetInstanceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoPay',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Disk',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'DiskId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Category' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PerformanceLevel' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 101,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'ModifyReplicationJobAttribute' => [
             'methods' => [
                 'post',
@@ -1199,6 +1309,257 @@
                 ],
             ],
         ],
+        'CreateWorkgroup' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AssociateSourceServers' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkgroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceId',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
+        'DisassociateSourceServers' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkgroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceId',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeWorkgroups' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkgroupId',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'maximum' => '50',
+                    ],
+                ],
+            ],
+        ],
+        'ModifyWorkgroupAttribute' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkgroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteWorkgroup' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkgroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'TagResources' => [
             'methods' => [
                 'post',
@@ -1539,116 +1900,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateCrossZoneMigrationJob' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'RegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TargetVSwitchId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TargetZoneId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TargetInstanceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AutoPay',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Disk',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'DiskId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Category' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'PerformanceLevel' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 101,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],

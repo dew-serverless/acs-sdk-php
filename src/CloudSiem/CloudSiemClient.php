@@ -13,8 +13,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise addUserAsync($arguments = [])
  * @method \Dew\Acs\Result deleteUser(array $arguments = [])
  * @method \Http\Promise\Promise deleteUserAsync($arguments = [])
- * @method \Dew\Acs\Result batchJobSubmit(array $arguments = [])
- * @method \Http\Promise\Promise batchJobSubmitAsync($arguments = [])
  * @method \Dew\Acs\Result listAccountsByLog(array $arguments = [])
  * @method \Http\Promise\Promise listAccountsByLogAsync($arguments = [])
  * @method \Dew\Acs\Result describeUserBuyStatus(array $arguments = [])

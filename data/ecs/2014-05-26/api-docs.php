@@ -24496,6 +24496,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Launcher',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteCommand' => [

@@ -7810,6 +7810,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ResetAccountPassword' => [
@@ -10562,6 +10570,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

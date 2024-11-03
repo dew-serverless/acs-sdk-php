@@ -729,7 +729,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 5,
+                        'maxItems' => 30,
                     ],
                 ],
                 [
@@ -1289,7 +1289,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 5,
+                        'maxItems' => 30,
                     ],
                 ],
                 [
@@ -1562,7 +1562,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 5,
+                        'maxItems' => 30,
                     ],
                 ],
                 [
@@ -2127,7 +2127,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 5,
+                        'maxItems' => 30,
                     ],
                 ],
                 [
@@ -2828,7 +2828,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 5,
+                        'maxItems' => 30,
                     ],
                 ],
                 [
@@ -3112,7 +3112,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 5,
+                        'maxItems' => 30,
                     ],
                 ],
                 [

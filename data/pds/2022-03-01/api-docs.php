@@ -9900,7 +9900,7 @@
                                     ],
                                     'revision_id' => [
                                         'type' => 'string',
-                                        'required' => true,
+                                        'required' => false,
                                     ],
                                 ],
                             ],
@@ -9917,7 +9917,7 @@
                                         ],
                                         'revision_id' => [
                                             'type' => 'string',
-                                            'required' => true,
+                                            'required' => false,
                                         ],
                                     ],
                                 ],

@@ -4308,6 +4308,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DBClusterId',
                     'in' => 'query',
                     'schema' => [
@@ -4805,7 +4813,7 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'minimum' => '30',
+                        'minimum' => '10',
                         'maximum' => '100',
                     ],
                 ],
@@ -6527,6 +6535,46 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteBackups' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BackupIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

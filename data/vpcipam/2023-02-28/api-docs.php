@@ -1516,6 +1516,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IpamPoolAllocationDescription',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpamPoolAllocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteIpamPoolAllocation' => [
@@ -1543,27 +1559,11 @@
                     ],
                 ],
                 [
-                    'name' => 'IpamPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'IpamPoolAllocationId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Cidr',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [
@@ -1580,6 +1580,70 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateIpamPoolAllocation' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpamPoolAllocationDescription',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpamPoolAllocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpamPoolAllocationId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -1639,6 +1703,14 @@
                     ],
                 ],
                 [
+                    'name' => 'IpamPoolAllocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'NextToken',
                     'in' => 'query',
                     'schema' => [
@@ -1653,6 +1725,180 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListIpamResourceDiscoveries' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpamResourceDiscoveryIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'IpamResourceDiscoveryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'ListIpamDiscoveredResource' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'IpamResourceDiscoveryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
                     ],
                 ],
             ],
@@ -1972,6 +2218,106 @@
         [
             'regionId' => 'ap-southeast-6',
             'endpoint' => 'vpcipam.ap-southeast-6.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'vpcipam.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'vpcipam.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'vpcipam.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'vpcipam.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'vpcipam.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'vpcipam.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-nanjing',
+            'endpoint' => 'vpcipam.cn-nanjing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'vpcipam.cn-fuzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'vpcipam.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'vpcipam.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'vpcipam.cn-guangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'vpcipam.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'vpcipam.ap-southeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'vpcipam.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'vpcipam.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'vpcipam.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'vpcipam.ap-northeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'vpcipam.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'vpcipam.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-east-1',
+            'endpoint' => 'vpcipam.me-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'vpcipam.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'vpcipam.cn-hangzhou-finance.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'vpcipam.cn-shanghai-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'vpcipam.cn-shenzhen-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'vpcipam.cn-beijing-finance-1.aliyuncs.com',
         ],
     ],
 ];

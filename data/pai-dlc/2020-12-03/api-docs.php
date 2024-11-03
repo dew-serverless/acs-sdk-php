@@ -978,6 +978,9 @@
                             'OnSucceed',
                         ],
                     ],
+                    'DisableEcsStockCheck' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'JobSpec' => [

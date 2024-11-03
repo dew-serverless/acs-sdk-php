@@ -7243,6 +7243,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EngineVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'TransferClusterBackup' => [

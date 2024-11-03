@@ -3231,22 +3231,6 @@
                 ],
             ],
         ],
-        'ListServiceCategories' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
         'LaunchService' => [
             'methods' => [
                 'post',

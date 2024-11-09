@@ -2209,6 +2209,14 @@
         'defaultVersion' => '2024-06-28',
     ],
     [
+        'code' => 'IQS',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-11-11',
+        ],
+        'defaultVersion' => '2024-11-11',
+    ],
+    [
         'code' => 'TrafficFxOpen',
         'style' => 'RPC',
         'versions' => [

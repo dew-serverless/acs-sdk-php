@@ -525,6 +525,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceBandwidthDetailAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceBootConfiguration(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceBootConfigurationAsync($arguments = [])
+ * @method \Dew\Acs\Result describeEnsRouteTables(array $arguments = [])
+ * @method \Http\Promise\Promise describeEnsRouteTablesAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

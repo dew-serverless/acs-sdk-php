@@ -23,6 +23,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteFileAsync($arguments = [])
  * @method \Dew\Acs\Result describeFile(array $arguments = [])
  * @method \Http\Promise\Promise describeFileAsync($arguments = [])
+ * @method \Dew\Acs\Result updateFileTag(array $arguments = [])
+ * @method \Http\Promise\Promise updateFileTagAsync($arguments = [])
  * @method \Dew\Acs\Result createIndex(array $arguments = [])
  * @method \Http\Promise\Promise createIndexAsync($arguments = [])
  * @method \Dew\Acs\Result getIndexJobStatus(array $arguments = [])

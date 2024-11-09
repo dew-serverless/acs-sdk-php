@@ -37,6 +37,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise grantRoleToUsersAsync($arguments = [])
  * @method \Dew\Acs\Result addMembers(array $arguments = [])
  * @method \Http\Promise\Promise addMembersAsync($arguments = [])
+ * @method \Dew\Acs\Result listLogContents(array $arguments = [])
+ * @method \Http\Promise\Promise listLogContentsAsync($arguments = [])
  */
 final class EmrServerlessSparkClient extends AcsClient
 {

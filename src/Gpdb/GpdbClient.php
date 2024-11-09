@@ -373,6 +373,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getAccountAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBInstanceNetworkType(array $arguments = [])
  * @method \Http\Promise\Promise modifyDBInstanceNetworkTypeAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteRemoteADBDataSource(array $arguments = [])
+ * @method \Http\Promise\Promise deleteRemoteADBDataSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result createRemoteADBDataSource(array $arguments = [])
+ * @method \Http\Promise\Promise createRemoteADBDataSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result listRemoteADBDataSources(array $arguments = [])
+ * @method \Http\Promise\Promise listRemoteADBDataSourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyRemoteADBDataSource(array $arguments = [])
+ * @method \Http\Promise\Promise modifyRemoteADBDataSourceAsync($arguments = [])
  */
 final class GpdbClient extends AcsClient
 {

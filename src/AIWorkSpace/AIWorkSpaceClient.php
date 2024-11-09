@@ -131,6 +131,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteCodeSourceAsync($arguments = [])
  * @method \Dew\Acs\Result publishCodeSource(array $arguments = [])
  * @method \Http\Promise\Promise publishCodeSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result updateCodeSource(array $arguments = [])
+ * @method \Http\Promise\Promise updateCodeSourceAsync($arguments = [])
  * @method \Dew\Acs\Result getCodeSource(array $arguments = [])
  * @method \Http\Promise\Promise getCodeSourceAsync($arguments = [])
  * @method \Dew\Acs\Result listCodeSources(array $arguments = [])

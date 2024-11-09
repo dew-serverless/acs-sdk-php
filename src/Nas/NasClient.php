@@ -233,8 +233,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteLDAPConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyLDAPConfig(array $arguments = [])
  * @method \Http\Promise\Promise modifyLDAPConfigAsync($arguments = [])
- * @method \Dew\Acs\Result describeFileSystemStatistics(array $arguments = [])
- * @method \Http\Promise\Promise describeFileSystemStatisticsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeFileSystemStatistics(array $arguments = []) {@deprecated 2017-06-26}
+ * @method \Http\Promise\Promise describeFileSystemStatisticsAsync($arguments = []) {@deprecated 2017-06-26}
  * @method \Dew\Acs\Result describeStoragePackages(array $arguments = [])
  * @method \Http\Promise\Promise describeStoragePackagesAsync($arguments = [])
  */

@@ -103,6 +103,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createPlaybookAsync($arguments = [])
  * @method \Dew\Acs\Result describeComponentsJs(array $arguments = [])
  * @method \Http\Promise\Promise describeComponentsJsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeProcessTaskCount(array $arguments = [])
+ * @method \Http\Promise\Promise describeProcessTaskCountAsync($arguments = [])
  * @method \Dew\Acs\Result describeProcessTasks(array $arguments = [])
  * @method \Http\Promise\Promise describeProcessTasksAsync($arguments = [])
  * @method \Dew\Acs\Result triggerProcessTask(array $arguments = [])

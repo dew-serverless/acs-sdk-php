@@ -117,6 +117,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listEnvironmentsAsync($arguments = [])
  * @method \Dew\Acs\Result deleteEnvironment(array $arguments = [])
  * @method \Http\Promise\Promise deleteEnvironmentAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAddonMetrics(array $arguments = [])
+ * @method \Http\Promise\Promise describeAddonMetricsAsync($arguments = [])
  * @method \Dew\Acs\Result installEnvironmentFeature(array $arguments = [])
  * @method \Http\Promise\Promise installEnvironmentFeatureAsync($arguments = [])
  * @method \Dew\Acs\Result describeEnvironmentFeature(array $arguments = [])

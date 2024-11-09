@@ -9962,6 +9962,48 @@
                 '5XX' => [],
             ],
         ],
+        'CleanRestoredObject' => [
+            'path' => '/{key}?cleanRestoredObject',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'key',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [],
+            ],
+        ],
         'SelectObject' => [
             'path' => '/{key}',
             'methods' => [

@@ -231,6 +231,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeBackupTasksAsync($arguments = [])
  * @method \Dew\Acs\Result describeInstanceRecoverTime(array $arguments = [])
  * @method \Http\Promise\Promise describeInstanceRecoverTimeAsync($arguments = [])
+ * @method \Dew\Acs\Result describeActiveOperationTask(array $arguments = [])
+ * @method \Http\Promise\Promise describeActiveOperationTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result describeActiveOperationTaskRegion(array $arguments = [])
+ * @method \Http\Promise\Promise describeActiveOperationTaskRegionAsync($arguments = [])
+ * @method \Dew\Acs\Result describeActiveOperationMaintenanceConfig(array $arguments = [])
+ * @method \Http\Promise\Promise describeActiveOperationMaintenanceConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result checkServiceLinkedRole(array $arguments = [])
+ * @method \Http\Promise\Promise checkServiceLinkedRoleAsync($arguments = [])
  */
 final class DdsClient extends AcsClient
 {

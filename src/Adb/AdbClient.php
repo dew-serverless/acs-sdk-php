@@ -295,8 +295,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deletePerformanceViewAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result existRunningSQLEngine(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise existRunningSQLEngineAsync($arguments = []) {@since 2021-12-01}
- * @method \Dew\Acs\Result getSparkDefinitions(array $arguments = []) {@since 2021-12-01}
- * @method \Http\Promise\Promise getSparkDefinitionsAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result preloadSparkAppMetrics(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise preloadSparkAppMetricsAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result getSparkAppMetrics(array $arguments = []) {@since 2021-12-01}

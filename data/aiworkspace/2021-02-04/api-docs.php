@@ -2340,6 +2340,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Labels',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListPermissions' => [
@@ -4183,6 +4192,76 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateCodeSource' => [
+            'path' => '/api/v1/codesources/{CodeSourceId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CodeSourceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'DisplayName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CodeRepo' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CodeBranch' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CodeCommit' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CodeRepoUserName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CodeRepoAccessToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'MountPath' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

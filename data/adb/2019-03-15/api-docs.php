@@ -6585,6 +6585,7 @@
                 'get',
             ],
             'schemes' => [
+                'http',
                 'https',
             ],
             'security' => [

@@ -423,6 +423,9 @@
                                             'match' => [
                                                 '$ref' => '#/components/schemas/HttpApiBackendMatchConditions',
                                             ],
+                                            'serviceId' => [
+                                                'type' => 'string',
+                                            ],
                                         ],
                                     ],
                                 ],
@@ -544,6 +547,69 @@
                         'items' => [
                             '$ref' => '#/components/schemas/HttpApiBackendMatchCondition',
                         ],
+                    ],
+                ],
+            ],
+            'HttpApiDeployConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'customDomainIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'environmentId' => [
+                        'type' => 'string',
+                    ],
+                    'backendScene' => [
+                        'type' => 'string',
+                    ],
+                    'serviceConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'serviceId' => [
+                                    'type' => 'string',
+                                ],
+                                'weight' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'modelNamePattern' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'policyConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'type' => [
+                                    'type' => 'string',
+                                ],
+                                'enable' => [
+                                    'type' => 'boolean',
+                                ],
+                                'fallbackConfig' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'serviceIds' => [
+                                            'type' => 'array',
+                                            'items' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'autoDeploy' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],
@@ -2419,6 +2485,160 @@
                 ],
             ],
         ],
+        'CreateEnvironment' => [
+            'path' => '/v1/environments',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'alias' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'gatewayId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetEnvironment' => [
+            'path' => '/v1/environments/{environmentId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'environmentId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'withVpcInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withStatistics',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateEnvironment' => [
+            'path' => '/v1/environments/{environmentId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'alias' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'environmentId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteEnvironment' => [
+            'path' => '/v1/environments/{environmentId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'environmentId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'ListEnvironments' => [
             'path' => '/v1/environments',
             'methods' => [
@@ -2486,242 +2706,6 @@
                 ],
             ],
         ],
-        'UpdateEnvironment' => [
-            'path' => '/v1/environments/{environmentId}',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'alias' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'description' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'environmentId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GetEnvironment' => [
-            'path' => '/v1/environments/{environmentId}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'environmentId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'withVpcInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateEnvironment' => [
-            'path' => '/v1/environments',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'name' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'alias' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'description' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'gatewayId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateDomain' => [
-            'path' => '/v1/domains/{domainId}',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'protocol' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'forceHttps' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'certIndentifier' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'caCertIndentifier' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'http2Option' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'tlsMax' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'tlsMin' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'domainId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ListDomains' => [
-            'path' => '/v1/domains',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'nameLike',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'gatewayId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'GetDomain' => [
             'path' => '/v1/domains/{domainId}',
             'methods' => [
@@ -2743,6 +2727,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'withStatistics',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2813,10 +2805,10 @@
                 ],
             ],
         ],
-        'DeleteEnvironment' => [
-            'path' => '/v1/environments/{environmentId}',
+        'ListDomains' => [
+            'path' => '/v1/domains',
             'methods' => [
-                'delete',
+                'get',
             ],
             'schemes' => [
                 'https',
@@ -2829,11 +2821,37 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'environmentId',
-                    'in' => 'path',
+                    'name' => 'nameLike',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'gatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2853,6 +2871,70 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'domainId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateDomain' => [
+            'path' => '/v1/domains/{domainId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'protocol' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'forceHttps' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'certIndentifier' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'caCertIndentifier' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'http2Option' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'tlsMax' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'tlsMin' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
                 [
                     'name' => 'domainId',
                     'in' => 'path',

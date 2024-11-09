@@ -4440,7 +4440,6 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
                     ],
@@ -4543,7 +4542,6 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
                     ],
@@ -5694,7 +5692,6 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
                     ],
@@ -7943,7 +7940,6 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
                     ],
@@ -8017,7 +8013,6 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
                     ],
@@ -8054,7 +8049,6 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
                     ],

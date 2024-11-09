@@ -260,6 +260,8 @@ use Override;
  * @method \Http\Promise\Promise getObjectMetaAsync($arguments = [])
  * @method \Dew\Acs\Result restoreObject(array $arguments = [])
  * @method \Http\Promise\Promise restoreObjectAsync($arguments = [])
+ * @method \Dew\Acs\Result cleanRestoredObject(array $arguments = [])
+ * @method \Http\Promise\Promise cleanRestoredObjectAsync($arguments = [])
  * @method \Dew\Acs\Result selectObject(array $arguments = [])
  * @method \Http\Promise\Promise selectObjectAsync($arguments = [])
  * @method \Dew\Acs\Result createSelectObjectMeta(array $arguments = [])

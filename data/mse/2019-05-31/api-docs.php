@@ -1448,6 +1448,42 @@
                     ],
                 ],
                 [
+                    'name' => 'ExtGrayRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'GrayRuleType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'Tags',
+                                        'Beta',
+                                    ],
+                                ],
+                                'GrayRuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'GrayRule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'GrayRulePriority' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'AcceptLanguage',
                     'in' => 'query',
                     'schema' => [
@@ -18177,7 +18213,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RequestPars',
+                    'name' => 'AppName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -18185,7 +18221,24 @@
                     ],
                 ],
                 [
-                    'name' => 'AppName',
+                    'name' => 'GrayRuleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GrayRulePriority',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OpType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

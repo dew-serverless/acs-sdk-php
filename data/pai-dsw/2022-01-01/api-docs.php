@@ -1328,7 +1328,7 @@
                         'properties' => [
                             'SnapshotName' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'SnapshotDescription' => [
                                 'type' => 'string',
@@ -1336,7 +1336,7 @@
                             ],
                             'ImageUrl' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'Labels' => [
                                 'type' => 'array',

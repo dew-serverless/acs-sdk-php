@@ -868,6 +868,10 @@
                                     'format' => 'int32',
                                     'required' => false,
                                 ],
+                                'SourceDestCheck' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 10,
@@ -20723,6 +20727,14 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'SourceDestCheck',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

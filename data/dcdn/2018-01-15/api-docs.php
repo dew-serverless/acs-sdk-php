@@ -1180,6 +1180,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'QueryHashkey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDcdnRefreshQuota' => [

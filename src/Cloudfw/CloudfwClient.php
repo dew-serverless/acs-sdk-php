@@ -213,6 +213,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDefaultIPSConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyObjectGroupOperation(array $arguments = [])
  * @method \Http\Promise\Promise modifyObjectGroupOperationAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAssetStatistic(array $arguments = [])
+ * @method \Http\Promise\Promise describeAssetStatisticAsync($arguments = [])
  */
 final class CloudfwClient extends AcsClient
 {

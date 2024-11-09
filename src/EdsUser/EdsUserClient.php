@@ -59,6 +59,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise syncAllEduInfoAsync($arguments = [])
  * @method \Dew\Acs\Result querySyncStatusByAliUid(array $arguments = [])
  * @method \Http\Promise\Promise querySyncStatusByAliUidAsync($arguments = [])
+ * @method \Dew\Acs\Result changeUserPassword(array $arguments = [])
+ * @method \Http\Promise\Promise changeUserPasswordAsync($arguments = [])
  */
 final class EdsUserClient extends AcsClient
 {

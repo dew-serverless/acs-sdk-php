@@ -71,6 +71,27 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'customLimitation',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'inputExample',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'outputExample',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
             ],
         ],
         'RunMarketingInformationExtract' => [

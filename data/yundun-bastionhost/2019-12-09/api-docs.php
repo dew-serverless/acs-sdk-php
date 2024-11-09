@@ -6351,6 +6351,50 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'OperationMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Sso',
+                            'WebToken',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LoginAttribute',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'SID',
+                            'SERVICENAME',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DatabaseSchema',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SsoClient',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'ssh',
+                            'sftp',
+                        ],
+                    ],
+                ],
             ],
         ],
         'RenewAssetOperationToken' => [
@@ -8246,7 +8290,11 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                            '0',
+                        ],
                     ],
                 ],
                 [
@@ -8254,7 +8302,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -8262,7 +8310,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -8304,6 +8360,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

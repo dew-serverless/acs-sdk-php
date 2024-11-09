@@ -10484,6 +10484,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeExposedInstanceList' => [
@@ -19280,8 +19288,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -19759,8 +19767,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -24709,8 +24717,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -28094,8 +28102,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -34077,8 +34085,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [

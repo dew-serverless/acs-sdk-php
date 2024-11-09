@@ -6250,6 +6250,10 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'hbr.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-qingdao',
             'endpoint' => 'hbr.cn-qingdao.aliyuncs.com',
         ],
@@ -6266,10 +6270,6 @@
             'endpoint' => 'hbr.cn-huhehaote.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'hbr.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'hbr.cn-hangzhou.aliyuncs.com',
         ],
@@ -6280,6 +6280,10 @@
         [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'hbr.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'hbr.cn-heyuan.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-chengdu',
@@ -6338,10 +6342,6 @@
             'endpoint' => 'hbr.me-east-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'hbr.cn-hangzhou-finance.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'hbr.cn-shanghai-finance-1.aliyuncs.com',
         ],
@@ -6352,6 +6352,10 @@
         [
             'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'hbr.cn-beijing-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'hbr.me-central-1.aliyuncs.com',
         ],
     ],
 ];

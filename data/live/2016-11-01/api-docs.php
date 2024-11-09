@@ -20980,6 +20980,434 @@
                 ],
             ],
         ],
+        'DeleteLiveAIStudio' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'StudioId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyLiveAIStudio' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'StudioName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Width',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Height',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BackgroundType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'VOD',
+                            'LIVE',
+                            'PIC',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'BackgroundResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'BackgroundResourceUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'MediaType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'VOD',
+                            'LIVE',
+                            'PIC',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MediaResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'MediaResourceUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'MediaLayout',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'PositionX' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'PositionY' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'HeightNormalized' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MattingType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'green',
+                            'blue',
+                            'complex',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MattingLayout',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'PositionX' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'PositionY' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'HeightNormalized' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateLiveAIStudio' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'StudioName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Width',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Height',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BackgroundType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'VOD',
+                            'LIVE',
+                            'PIC',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'BackgroundResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'BackgroundResourceUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'MediaType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'VOD',
+                            'LIVE',
+                            'PIC',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MediaResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'MediaResourceUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'MediaLayout',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'PositionX' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'PositionY' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'HeightNormalized' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MattingType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'green',
+                            'blue',
+                            'complex',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MattingLayout',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'PositionX' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'PositionY' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'HeightNormalized' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DescribeLiveAIStudio' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'StudioId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StudioName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DeleteLiveAISubtitle' => [
             'methods' => [
                 'post',

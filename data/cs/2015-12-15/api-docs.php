@@ -1416,6 +1416,95 @@
                 ],
             ],
         ],
+        'DescribeClustersForRegion' => [
+            'path' => '/regions/{region_id}/clusters',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'cluster_type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'page_number',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'profile',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'cluster_spec',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'region_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'DescribeClusterDetail' => [
             'path' => '/clusters/{ClusterId}',
             'methods' => [
@@ -2778,6 +2867,14 @@
                             ],
                             'interconnect_mode' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'host_network' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'intranet' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],
@@ -6403,6 +6500,63 @@
                 ],
             ],
         ],
+        'DescribeEventsForRegion' => [
+            'path' => '/regions/{region_id}/events',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'page_size',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'page_number',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'region_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'DescribeEvents' => [
             'path' => '/events',
             'methods' => [
@@ -7817,109 +7971,6 @@
                             ],
                             'disable' => [
                                 'type' => 'boolean',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'StartWorkflow' => [
-            'path' => '/gs/workflow',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'wgs_fastq_second_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_vcf_out_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_fastq_second_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_bucket_name' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_is_mark_dup' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_fastq_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_oss_region' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_bam_out_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_bucket_name' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_fastq_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'service' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_oss_region' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_reference_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_reference_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'mapping_bam_out_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_vcf_out_path' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'wgs_fastq_first_filename' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'workflow_type' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'mapping_fastq_first_filename' => [
-                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],

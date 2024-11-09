@@ -442,6 +442,14 @@
                     ],
                 ],
                 [
+                    'name' => 'ResourceProduct',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [

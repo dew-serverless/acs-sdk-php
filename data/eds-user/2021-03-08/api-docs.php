@@ -292,6 +292,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'LogoutSession',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UnlockUsers' => [
@@ -1276,6 +1284,40 @@
             ],
             'deprecated' => false,
             'parameters' => [],
+        ],
+        'ChangeUserPassword' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EndUserId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NewPassword',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
         ],
     ],
     'endpoints' => [

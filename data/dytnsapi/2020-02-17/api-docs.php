@@ -643,6 +643,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'AuthCode',

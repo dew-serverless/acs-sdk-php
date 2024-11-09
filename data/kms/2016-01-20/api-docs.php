@@ -860,7 +860,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -873,6 +873,14 @@
                 ],
                 [
                     'name' => 'DeletionProtectionDescription',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'KeyId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

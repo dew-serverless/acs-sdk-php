@@ -418,6 +418,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'OpenEniJumboFrame',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteCluster' => [

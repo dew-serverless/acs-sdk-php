@@ -3750,6 +3750,7 @@
                         'required' => false,
                         'enum' => [
                             'Instance',
+                            'HaVip',
                         ],
                     ],
                 ],
@@ -3869,6 +3870,7 @@
                         'required' => false,
                         'enum' => [
                             'Instance',
+                            'HaVip',
                         ],
                     ],
                 ],
@@ -10908,7 +10910,7 @@
                         'format' => 'int32',
                         'required' => true,
                         'minimum' => '1',
-                        'maximum' => '5',
+                        'maximum' => '20',
                     ],
                 ],
             ],
@@ -11756,6 +11758,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnvironmentVar',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -14952,6 +14962,66 @@
                 ],
                 [
                     'name' => 'DiskSet',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEnsRouteTables' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RouteTableId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NetworkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

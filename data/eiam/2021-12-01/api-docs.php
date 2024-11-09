@@ -4836,6 +4836,19 @@
                         'maxLength' => 32,
                     ],
                 ],
+                [
+                    'name' => 'EffectiveAuthenticationSourceIds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
             ],
         ],
         'SetPasswordComplexityConfiguration' => [

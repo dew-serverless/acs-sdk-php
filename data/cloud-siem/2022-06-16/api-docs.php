@@ -2042,6 +2042,32 @@
                     ],
                 ],
                 [
+                    'name' => 'EntityUuid',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CurrentPage',
                     'in' => 'formData',
                     'schema' => [
@@ -2812,6 +2838,14 @@
                     ],
                 ],
                 [
+                    'name' => 'EntityUuid',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CurrentPage',
                     'in' => 'formData',
                     'schema' => [
@@ -2923,6 +2957,14 @@
                 ],
                 [
                     'name' => 'AssetId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EntityUuid',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -3133,6 +3175,22 @@
                 ],
                 [
                     'name' => 'AssetType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AssetName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AssetUuid',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -3382,6 +3440,24 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],

@@ -450,6 +450,60 @@
                 ],
             ],
         ],
+        'UpdateFileTag' => [
+            'path' => '/{WorkspaceId}/datacenter/file/{FileId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FileId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 10,
+                    ],
+                ],
+            ],
+        ],
         'CreateIndex' => [
             'path' => '/{WorkspaceId}/index/create',
             'methods' => [
@@ -696,6 +750,45 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'metaExtractColumns',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Desc' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EnableLlm' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'EnableSearch' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

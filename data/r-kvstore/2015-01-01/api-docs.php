@@ -786,7 +786,38 @@
                     ],
                 ],
                 [
+                    'name' => 'ReplicaCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'SlaveReplicaCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+                [
                     'name' => 'ReadOnlyCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '9',
+                    ],
+                ],
+                [
+                    'name' => 'SlaveReadOnlyCount',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -802,17 +833,6 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SlaveReadOnlyCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '0',
-                        'maximum' => '9',
                     ],
                 ],
                 [
@@ -5787,7 +5807,39 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ParamReplMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ParamSemisyncReplTimeout',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ParamNoLooseSentinelEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ParamSentinelCompatEnable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

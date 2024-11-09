@@ -57,12 +57,123 @@
             'AIAgentTemplateConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'AvatarChat3D' => [
+                    'VoiceChat' => [
                         'type' => 'object',
                         'properties' => [
+                            'Greeting' => [
+                                'type' => 'string',
+                            ],
+                            'UserOnlineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'UserOfflineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'BailianAppParams' => [
+                                'type' => 'string',
+                            ],
                             'AsrMaxSilence' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                            ],
+                            'VoiceprintId' => [
+                                'type' => 'string',
+                            ],
+                            'VoiceId' => [
+                                'type' => 'string',
+                            ],
+                            'UseVoiceprint' => [
+                                'type' => 'boolean',
+                            ],
+                            'GracefulShutdown' => [
+                                'type' => 'boolean',
+                            ],
+                            'EnablePushToTalk' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'VisionChat' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Greeting' => [
+                                'type' => 'string',
+                            ],
+                            'UserOnlineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'UserOfflineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'EnableIntelligentSegment' => [
+                                'type' => 'boolean',
+                            ],
+                            'BailianAppParams' => [
+                                'type' => 'string',
+                            ],
+                            'AsrMaxSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                            ],
+                            'VoiceprintId' => [
+                                'type' => 'string',
+                            ],
+                            'VoiceId' => [
+                                'type' => 'string',
+                            ],
+                            'UseVoiceprint' => [
+                                'type' => 'boolean',
+                            ],
+                            'GracefulShutdown' => [
+                                'type' => 'boolean',
+                            ],
+                            'EnablePushToTalk' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'AvatarChat3D' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Greeting' => [
+                                'type' => 'string',
+                            ],
+                            'UserOnlineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'UserOfflineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'BailianAppParams' => [
+                                'type' => 'string',
+                            ],
+                            'AsrMaxSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
                             ],
                             'AvatarId' => [
                                 'type' => 'string',
@@ -70,71 +181,20 @@
                             'EnableVoiceInterrupt' => [
                                 'type' => 'boolean',
                             ],
-                            'GracefulShutdown' => [
-                                'type' => 'boolean',
-                            ],
-                            'Greeting' => [
+                            'VoiceprintId' => [
                                 'type' => 'string',
                             ],
                             'VoiceId' => [
                                 'type' => 'string',
                             ],
-                            'Volume' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                            ],
-                        ],
-                    ],
-                    'VisionChat' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'AsrMaxSilence' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'EnableIntelligentSegment' => [
-                                'type' => 'boolean',
-                            ],
-                            'EnableVoiceInterrupt' => [
+                            'UseVoiceprint' => [
                                 'type' => 'boolean',
                             ],
                             'GracefulShutdown' => [
                                 'type' => 'boolean',
                             ],
-                            'Greeting' => [
-                                'type' => 'string',
-                            ],
-                            'VoiceId' => [
-                                'type' => 'string',
-                            ],
-                            'Volume' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                            ],
-                        ],
-                    ],
-                    'VoiceChat' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'AsrMaxSilence' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'EnableVoiceInterrupt' => [
+                            'EnablePushToTalk' => [
                                 'type' => 'boolean',
-                            ],
-                            'GracefulShutdown' => [
-                                'type' => 'boolean',
-                            ],
-                            'Greeting' => [
-                                'type' => 'string',
-                            ],
-                            'VoiceId' => [
-                                'type' => 'string',
-                            ],
-                            'Volume' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
                             ],
                         ],
                     ],
@@ -10601,6 +10661,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ModelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'QueryIProductionJob' => [
@@ -12080,6 +12148,29 @@
                             ],
                             'VoiceId' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AsrMaxSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'UserOnlineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'UserOfflineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'VoiceprintId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'UseVoiceprint' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],

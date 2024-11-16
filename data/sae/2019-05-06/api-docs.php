@@ -2808,6 +2808,68 @@
                             ],
                         ],
                     ],
+                    'PostPayItems' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'string',
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
+                                ],
+                                'Amount' => [
+                                    'type' => 'number',
+                                    'format' => 'float',
+                                ],
+                                'Unit' => [
+                                    'type' => 'string',
+                                ],
+                                'Count' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'Price' => [
+                                    'type' => 'number',
+                                    'format' => 'float',
+                                ],
+                                'Steps' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'Begin' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                            ],
+                                            'End' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                            ],
+                                            'Unit' => [
+                                                'type' => 'string',
+                                            ],
+                                            'Price' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                            ],
+                                            'RegionIds' => [
+                                                'type' => 'array',
+                                                'items' => [
+                                                    'type' => 'string',
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'PostPayTotalPrice' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
                 ],
             ],
             'Probe' => [
@@ -12063,6 +12125,10 @@
         ],
     ],
     'endpoints' => [
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'sae.cn-heyuan.aliyuncs.com	',
+        ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'sae.cn-beijing.aliyuncs.com',

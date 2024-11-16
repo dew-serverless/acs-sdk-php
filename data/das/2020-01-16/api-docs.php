@@ -5000,8 +5000,8 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
-                            'CoolDownTime' => [
-                                'type' => 'string',
+                            'Upgrade' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                             'CpuUsageUpperThreshold' => [
@@ -5016,21 +5016,6 @@
                                     '90',
                                 ],
                             ],
-                            'Downgrade' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'MaxReadOnlyNodes' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                                'minimum' => '1',
-                                'maximum' => '15',
-                            ],
-                            'MaxSpec' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                             'MemUsageUpperThreshold' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
@@ -5043,11 +5028,26 @@
                                     '90',
                                 ],
                             ],
+                            'MaxSpec' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'MaxReadOnlyNodes' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '1',
+                                'maximum' => '15',
+                            ],
                             'ObservationWindowSize' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'Upgrade' => [
+                            'CoolDownTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Downgrade' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
@@ -5063,6 +5063,10 @@
                         'required' => false,
                         'properties' => [
                             'Apply' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'Upgrade' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
@@ -5085,10 +5089,6 @@
                                 'minimum' => '20',
                                 'maximum' => '32000',
                             ],
-                            'Upgrade' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
                         ],
                     ],
                 ],
@@ -5104,13 +5104,9 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
-                            'BandwidthUsageLowerThreshold' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
+                            'Upgrade' => [
+                                'type' => 'boolean',
                                 'required' => false,
-                                'minimum' => '10',
-                                'maximum' => '70',
-                                'enum' => [],
                             ],
                             'BandwidthUsageUpperThreshold' => [
                                 'type' => 'integer',
@@ -5119,10 +5115,6 @@
                                 'minimum' => '50',
                                 'maximum' => '95',
                                 'enum' => [],
-                            ],
-                            'Downgrade' => [
-                                'type' => 'boolean',
-                                'required' => false,
                             ],
                             'ObservationWindowSize' => [
                                 'type' => 'string',
@@ -5135,9 +5127,17 @@
                                     '30m',
                                 ],
                             ],
-                            'Upgrade' => [
+                            'Downgrade' => [
                                 'type' => 'boolean',
                                 'required' => false,
+                            ],
+                            'BandwidthUsageLowerThreshold' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '10',
+                                'maximum' => '70',
+                                'enum' => [],
                             ],
                         ],
                     ],
@@ -5154,37 +5154,9 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
-                            'Downgrade' => [
+                            'Upgrade' => [
                                 'type' => 'boolean',
                                 'required' => false,
-                            ],
-                            'DowngradeObservationWindowSize' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'enum' => [
-                                    '1h',
-                                    '2h',
-                                    '3h',
-                                    '1d',
-                                    '7d',
-                                ],
-                            ],
-                            'MaxShards' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                                'minimum' => '2',
-                                'maximum' => '64',
-                            ],
-                            'MemUsageLowerThreshold' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                                'enum' => [
-                                    '10',
-                                    '20',
-                                    '30',
-                                ],
                             ],
                             'MemUsageUpperThreshold' => [
                                 'type' => 'integer',
@@ -5198,16 +5170,12 @@
                                     '90',
                                 ],
                             ],
-                            'MinShards' => [
+                            'MaxShards' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                                 'required' => false,
                                 'minimum' => '2',
                                 'maximum' => '64',
-                            ],
-                            'Upgrade' => [
-                                'type' => 'boolean',
-                                'required' => false,
                             ],
                             'UpgradeObservationWindowSize' => [
                                 'type' => 'string',
@@ -5217,6 +5185,38 @@
                                     '10m',
                                     '15m',
                                     '30m',
+                                ],
+                            ],
+                            'Downgrade' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'MemUsageLowerThreshold' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'enum' => [
+                                    '10',
+                                    '20',
+                                    '30',
+                                ],
+                            ],
+                            'MinShards' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '2',
+                                'maximum' => '64',
+                            ],
+                            'DowngradeObservationWindowSize' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    '1h',
+                                    '2h',
+                                    '3h',
+                                    '1d',
+                                    '7d',
                                 ],
                             ],
                         ],
@@ -5234,6 +5234,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'Enable' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'CpuUsageUpperThreshold' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
@@ -5244,7 +5248,7 @@
                                     '90',
                                 ],
                             ],
-                            'DowngradeObservationWindowSize' => [
+                            'UpgradeObservationWindowSize' => [
                                 'type' => 'string',
                                 'required' => false,
                                 'enum' => [
@@ -5256,11 +5260,7 @@
                                     '30m',
                                 ],
                             ],
-                            'Enable' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'UpgradeObservationWindowSize' => [
+                            'DowngradeObservationWindowSize' => [
                                 'type' => 'string',
                                 'required' => false,
                                 'enum' => [

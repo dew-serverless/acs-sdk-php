@@ -2145,10 +2145,6 @@
             'endpoint' => 'ram.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'ram.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'ram.aliyuncs.com',
         ],

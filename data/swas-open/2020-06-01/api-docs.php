@@ -5877,10 +5877,6 @@
             'endpoint' => 'swas.eu-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'swas.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'swas.cn-beijing.aliyuncs.com',
         ],

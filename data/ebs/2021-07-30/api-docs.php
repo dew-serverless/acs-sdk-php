@@ -4044,10 +4044,6 @@
             'endpoint' => 'ebs.eu-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'ebs.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-central-1',
             'endpoint' => 'ebs.me-central-1.aliyuncs.com',
         ],

@@ -1461,10 +1461,6 @@
             'endpoint' => 'hitsdb.cn-huhehaote.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'hitsdb.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'hitsdb.ap-southeast-3.aliyuncs.com',
         ],

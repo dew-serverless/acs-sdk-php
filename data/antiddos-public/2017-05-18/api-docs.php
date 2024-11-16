@@ -703,10 +703,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'antiddos-openapi.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'antiddos.aliyuncs.com',
         ],

@@ -1381,6 +1381,10 @@
                                     'format' => 'int64',
                                     'required' => false,
                                 ],
+                                'Immutable' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
                                 'DataSourceFilters' => [
                                     'type' => 'array',
                                     'required' => false,
@@ -1620,6 +1624,10 @@
                                         ],
                                     ],
                                 ],
+                                'Immutable' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'minItems' => 1,
@@ -1807,6 +1815,10 @@
                                                 ],
                                                 'InventoryCleanupPolicy' => [
                                                     'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'IgnoreArchiveObject' => [
+                                                    'type' => 'boolean',
                                                     'required' => false,
                                                 ],
                                             ],
@@ -2088,6 +2100,10 @@
                                     ],
                                     'InventoryCleanupPolicy' => [
                                         'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'IgnoreArchiveObject' => [
+                                        'type' => 'boolean',
                                         'required' => false,
                                     ],
                                 ],

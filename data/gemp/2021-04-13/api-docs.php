@@ -8608,13 +8608,16 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
+                        'required' => false,
                         'properties' => [
                             'integrationConfigId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'required' => false,
                             ],
                             'clientToken' => [
                                 'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -8649,9 +8652,11 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
+                        'required' => false,
                         'properties' => [
                             'monitorSourceId' => [
                                 'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -8709,6 +8714,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
+                        'required' => false,
                         'properties' => [
                             'tenantRamId' => [
                                 'type' => 'integer',

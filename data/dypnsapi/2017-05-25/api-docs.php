@@ -1176,10 +1176,6 @@
             'endpoint' => 'dypnsapi.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'dypnsapi.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'dypnsapi.aliyuncs.com',
         ],

@@ -488,6 +488,8 @@
                                         'satisfaction',
                                         'actions',
                                         'service_finish',
+                                        'label_classification',
+                                        'analysis_image',
                                     ],
                                 ],
                             ],
@@ -547,6 +549,14 @@
                                             'required' => false,
                                         ],
                                     ],
+                                ],
+                            ],
+                            'timeConstraintList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],

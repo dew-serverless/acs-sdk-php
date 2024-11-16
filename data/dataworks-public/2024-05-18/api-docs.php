@@ -5339,6 +5339,659 @@
                 ],
             ],
         ],
+        'ListAlertRules' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Owner',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaskIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Types',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Receiver',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'GetAlertRule' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateAlertRule' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Owner',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Enabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TriggerCondition',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Extension' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Error' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'StreamTaskIds' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                            'AutoRerunAlert' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Timeout' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'TimeoutInMinutes' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'UnFinished' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'UnFinishedTime' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'CycleUnfinished' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'CycleAndTime' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'CycleId' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int32',
+                                                            'required' => false,
+                                                        ],
+                                                        'Time' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'InstanceErrorCount' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Count' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'InstanceErrorPercentage' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Percentage' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'InstanceTransferFluctuate' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Trend' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Percentage' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Target' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Ids' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'AllowTasks' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Notification',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'SilenceStartTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SilenceEndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'IntervalInMinutes' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Maximum' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Channels' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'Receivers' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'ReceiverType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ReceiverValues' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                        'Extension' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteAlertRule' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateAlertRule' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Owner',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Enabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TriggerCondition',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Extension' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Error' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'StreamTaskIds' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                            'AutoRerunAlert' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Timeout' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'TimeoutInMinutes' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'UnFinished' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'UnFinishedTime' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'CycleUnfinished' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'CycleAndTime' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'CycleId' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int32',
+                                                            'required' => false,
+                                                        ],
+                                                        'Time' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'InstanceErrorCount' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Count' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'InstanceErrorPercentage' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Percentage' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'InstanceTransferFluctuate' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Trend' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Percentage' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Target' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Ids' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'AllowTasks' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Notification',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'SilenceStartTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SilenceEndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'IntervalInMinutes' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Maximum' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Channels' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'Receivers' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'ReceiverType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ReceiverValues' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                        'Extension' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'DeleteTask' => [
             'methods' => [
                 'post',

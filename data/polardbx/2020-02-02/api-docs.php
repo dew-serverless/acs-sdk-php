@@ -408,6 +408,8 @@
                             'cn-zhangjiakou',
                             'us-west-1',
                             'cn-hangzhou',
+                            'ap-northeast-1',
+                            'cn-zhengzhou-jva',
                         ],
                     ],
                 ],

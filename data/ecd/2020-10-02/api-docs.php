@@ -1161,6 +1161,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeOfficeSites' => [

@@ -2930,6 +2930,10 @@
             'endpoint' => 'ehpc.cn-huhehaote.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'ehpc.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'ehpc.cn-hangzhou.aliyuncs.com',
         ],
@@ -2940,6 +2944,14 @@
         [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'ehpc.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'ehpc.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'ehpc.cn-chengdu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
@@ -2954,28 +2966,12 @@
             'endpoint' => 'ehpc.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'ehpc.ap-southeast-2.aliyuncs.com',
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'ehpc.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'ehpc.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'ehpc.cn-heyuan.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'ehpc.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'ehpc.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'ehpc.ap-southeast-5.aliyuncs.com',
         ],
     ],
 ];

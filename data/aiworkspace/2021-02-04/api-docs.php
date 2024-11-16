@@ -4127,6 +4127,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'CodeCommit' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

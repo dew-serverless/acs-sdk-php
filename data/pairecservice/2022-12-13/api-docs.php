@@ -4777,6 +4777,42 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'WorkspaceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VpcId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SwitchId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SecurityGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DefaultRoute' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DatasetId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DatasetType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DatasetUri' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DatasetMountPath' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -4998,6 +5034,42 @@
                                 'required' => false,
                             ],
                             'FeatureStoreProjectId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'WorkspaceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VpcId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SwitchId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SecurityGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DefaultRoute' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DatasetId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DatasetType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DatasetUri' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DatasetMountPath' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

@@ -983,6 +983,70 @@
                 ],
             ],
         ],
+        'DescribeAppRecordStatus' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyAppRecordStatus' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'CreateAppRecordTemplate' => [
             'methods' => [
                 'post',
@@ -1099,53 +1163,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteAppRecordTemplate' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Template',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'TemplateId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
                     ],
                 ],
             ],
@@ -1274,6 +1291,53 @@
                 ],
             ],
         ],
+        'DeleteAppRecordTemplate' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Template',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'TemplateId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'DescribeAppRecordTemplates' => [
             'methods' => [
                 'get',
@@ -1340,70 +1404,6 @@
                                 'required' => false,
                             ],
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'DescribeAppRecordStatus' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ModifyAppRecordStatus' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],
@@ -1488,740 +1488,6 @@
                             'required' => false,
                         ],
                         'minItems' => 1,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudRecord' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ChannelId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'TemplateId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'minLength' => 1,
-                        'maxLength' => 128,
-                    ],
-                ],
-                [
-                    'name' => 'TaskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'minLength' => 1,
-                        'maxLength' => 55,
-                        'pattern' => '^[0-9a-zA-Z_-]+$',
-                    ],
-                ],
-                [
-                    'name' => 'Panes',
-                    'in' => 'query',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'SourceType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                    'enum' => [
-                                        'video',
-                                        'camera',
-                                        'screen',
-                                    ],
-                                ],
-                                'PaneId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'maximum' => '15',
-                                ],
-                                'Source' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'PaneCropMode' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '1',
-                                        '2',
-                                        '3',
-                                    ],
-                                ],
-                                'Images' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'Url' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                                'minLength' => 1,
-                                                'maxLength' => 1024,
-                                            ],
-                                            'Alpha' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
-                                            ],
-                                            'PaneImageCropMode' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'enum' => [
-                                                    '1',
-                                                    '2',
-                                                    '3',
-                                                ],
-                                            ],
-                                            'X' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Y' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Width' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Height' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Layer' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '100',
-                                            ],
-                                        ],
-                                    ],
-                                    'maxItems' => 3,
-                                ],
-                                'Texts' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'Texture' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                                'minLength' => 1,
-                                                'maxLength' => 128,
-                                            ],
-                                            'FontSize' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '72',
-                                            ],
-                                            'Alpha' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
-                                            ],
-                                            'FontColor' => [
-                                                'type' => 'object',
-                                                'required' => false,
-                                                'properties' => [
-                                                    'R' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'G' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'B' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                ],
-                                            ],
-                                            'Font' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '9',
-                                            ],
-                                            'X' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
-                                            ],
-                                            'Y' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
-                                            ],
-                                            'Layer' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '100',
-                                            ],
-                                            'HasBox' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'BoxColor' => [
-                                                'type' => 'object',
-                                                'required' => false,
-                                                'properties' => [
-                                                    'R' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'G' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'B' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                ],
-                                            ],
-                                            'BoxAlpha' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
-                                            ],
-                                            'BoxBorderw' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '1',
-                                                'maximum' => '10',
-                                            ],
-                                        ],
-                                    ],
-                                    'maxItems' => 3,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 16,
-                    ],
-                ],
-                [
-                    'name' => 'Images',
-                    'in' => 'query',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Url' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 1024,
-                                ],
-                                'Alpha' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'ImageCropMode' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '1',
-                                        '2',
-                                        '3',
-                                    ],
-                                ],
-                                'X' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
-                                'Y' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
-                                'Width' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
-                                'Height' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
-                                'Layer' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '100',
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 3,
-                    ],
-                ],
-                [
-                    'name' => 'Backgrounds',
-                    'in' => 'query',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Url' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 1024,
-                                ],
-                                'Alpha' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'BackgroundCropMode' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '1',
-                                        '2',
-                                        '3',
-                                    ],
-                                ],
-                                'X' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
-                                'Y' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
-                                'Width' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
-                                'Height' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
-                                'Layer' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '100',
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 3,
-                    ],
-                ],
-                [
-                    'name' => 'Texts',
-                    'in' => 'query',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Texture' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 128,
-                                ],
-                                'FontSize' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '72',
-                                ],
-                                'Alpha' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'FontColor' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'R' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'B' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                    ],
-                                ],
-                                'Font' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '9',
-                                ],
-                                'X' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'Y' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'Layer' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '100',
-                                ],
-                                'HasBox' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'BoxColor' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'R' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'B' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                    ],
-                                ],
-                                'BoxAlpha' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'BoxBorderw' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '1',
-                                    'maximum' => '10',
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 3,
-                    ],
-                ],
-                [
-                    'name' => 'ClockWidgets',
-                    'in' => 'query',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Zone' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '-12',
-                                    'maximum' => '12',
-                                    'exclusiveMaximum' => true,
-                                ],
-                                'FontSize' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '72',
-                                ],
-                                'Alpha' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'FontColor' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'R' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'B' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                    ],
-                                ],
-                                'Font' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '9',
-                                ],
-                                'X' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'Y' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'Layer' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '100',
-                                ],
-                                'HasBox' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'BoxColor' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'R' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'B' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                    ],
-                                ],
-                                'BoxAlpha' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'BoxBorderw' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '1',
-                                    'maximum' => '10',
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 3,
                     ],
                 ],
             ],
@@ -3043,6 +2309,740 @@
                 ],
             ],
         ],
+        'UpdateCloudRecord' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 55,
+                        'pattern' => '^[0-9a-zA-Z_-]+$',
+                    ],
+                ],
+                [
+                    'name' => 'Panes',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'SourceType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'video',
+                                        'camera',
+                                        'screen',
+                                    ],
+                                ],
+                                'PaneId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'maximum' => '15',
+                                ],
+                                'Source' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PaneCropMode' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '1',
+                                        '2',
+                                        '3',
+                                    ],
+                                ],
+                                'Images' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Url' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                                'minLength' => 1,
+                                                'maxLength' => 1024,
+                                            ],
+                                            'Alpha' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '1',
+                                            ],
+                                            'PaneImageCropMode' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'enum' => [
+                                                    '1',
+                                                    '2',
+                                                    '3',
+                                                ],
+                                            ],
+                                            'X' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
+                                                'maximum' => '1',
+                                            ],
+                                            'Y' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
+                                                'maximum' => '1',
+                                            ],
+                                            'Width' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
+                                                'maximum' => '1',
+                                            ],
+                                            'Height' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
+                                                'maximum' => '1',
+                                            ],
+                                            'Layer' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '100',
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 3,
+                                ],
+                                'Texts' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Texture' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                                'minLength' => 1,
+                                                'maxLength' => 128,
+                                            ],
+                                            'FontSize' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '72',
+                                            ],
+                                            'Alpha' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '1',
+                                            ],
+                                            'FontColor' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'R' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'G' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'B' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                ],
+                                            ],
+                                            'Font' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '9',
+                                            ],
+                                            'X' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'maximum' => '1',
+                                            ],
+                                            'Y' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'maximum' => '1',
+                                            ],
+                                            'Layer' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '100',
+                                            ],
+                                            'HasBox' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'BoxColor' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'R' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'G' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'B' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                ],
+                                            ],
+                                            'BoxAlpha' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '1',
+                                            ],
+                                            'BoxBorderw' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'minimum' => '1',
+                                                'maximum' => '10',
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 3,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 16,
+                    ],
+                ],
+                [
+                    'name' => 'Images',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Url' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 1024,
+                                ],
+                                'Alpha' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
+                                ],
+                                'ImageCropMode' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '1',
+                                        '2',
+                                        '3',
+                                    ],
+                                ],
+                                'X' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'exclusiveMinimum' => true,
+                                    'maximum' => '1',
+                                ],
+                                'Y' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'exclusiveMinimum' => true,
+                                    'maximum' => '1',
+                                ],
+                                'Width' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'exclusiveMinimum' => true,
+                                    'maximum' => '1',
+                                ],
+                                'Height' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'exclusiveMinimum' => true,
+                                    'maximum' => '1',
+                                ],
+                                'Layer' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '100',
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 3,
+                    ],
+                ],
+                [
+                    'name' => 'Backgrounds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Url' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 1024,
+                                ],
+                                'Alpha' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
+                                ],
+                                'BackgroundCropMode' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '1',
+                                        '2',
+                                        '3',
+                                    ],
+                                ],
+                                'X' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'exclusiveMinimum' => true,
+                                    'maximum' => '1',
+                                ],
+                                'Y' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'exclusiveMinimum' => true,
+                                    'maximum' => '1',
+                                ],
+                                'Width' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'exclusiveMinimum' => true,
+                                    'maximum' => '1',
+                                ],
+                                'Height' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'exclusiveMinimum' => true,
+                                    'maximum' => '1',
+                                ],
+                                'Layer' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '100',
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 3,
+                    ],
+                ],
+                [
+                    'name' => 'Texts',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Texture' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 128,
+                                ],
+                                'FontSize' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '72',
+                                ],
+                                'Alpha' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
+                                ],
+                                'FontColor' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'R' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'B' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                    ],
+                                ],
+                                'Font' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '9',
+                                ],
+                                'X' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
+                                ],
+                                'Y' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
+                                ],
+                                'Layer' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '100',
+                                ],
+                                'HasBox' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'BoxColor' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'R' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'B' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                    ],
+                                ],
+                                'BoxAlpha' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
+                                ],
+                                'BoxBorderw' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '1',
+                                    'maximum' => '10',
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 3,
+                    ],
+                ],
+                [
+                    'name' => 'ClockWidgets',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Zone' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '-12',
+                                    'maximum' => '12',
+                                    'exclusiveMaximum' => true,
+                                ],
+                                'FontSize' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '72',
+                                ],
+                                'Alpha' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
+                                ],
+                                'FontColor' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'R' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'B' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                    ],
+                                ],
+                                'Font' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '9',
+                                ],
+                                'X' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
+                                ],
+                                'Y' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
+                                ],
+                                'Layer' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '100',
+                                ],
+                                'HasBox' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'BoxColor' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'R' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'B' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                    ],
+                                ],
+                                'BoxAlpha' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
+                                ],
+                                'BoxBorderw' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '1',
+                                    'maximum' => '10',
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 3,
+                    ],
+                ],
+            ],
+        ],
         'StopCloudRecord' => [
             'methods' => [
                 'post',
@@ -3082,6 +3082,156 @@
                         'minLength' => 1,
                         'maxLength' => 55,
                         'pattern' => '^[0-9a-zA-Z_-]+$',
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAppLiveStreamStatus' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyAppLiveStreamStatus' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateAppStreamingOutTemplate' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StreamingOutTemplate',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'LayoutIds' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'pattern' => '^\\d+$',
+                                ],
+                                'minItems' => 1,
+                                'maxItems' => 16,
+                            ],
+                            'MediaEncode' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                                'enum' => [
+                                    '1',
+                                    '54',
+                                    '53',
+                                    '52',
+                                    '10',
+                                    '20',
+                                    '22',
+                                    '23',
+                                    '30',
+                                    '31',
+                                    '24',
+                                    '25',
+                                    '26',
+                                    '27',
+                                    '28',
+                                    '32',
+                                    '33',
+                                    '34',
+                                    '35',
+                                    '36',
+                                    '37',
+                                    '38',
+                                    '39',
+                                    '40',
+                                    '41',
+                                    '42',
+                                    '43',
+                                    '0',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -3216,92 +3366,6 @@
                 ],
             ],
         ],
-        'CreateAppStreamingOutTemplate' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StreamingOutTemplate',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'Name' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'LayoutIds' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                    'pattern' => '^\\d+$',
-                                ],
-                                'minItems' => 1,
-                                'maxItems' => 16,
-                            ],
-                            'MediaEncode' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => true,
-                                'enum' => [
-                                    '1',
-                                    '54',
-                                    '53',
-                                    '52',
-                                    '10',
-                                    '20',
-                                    '22',
-                                    '23',
-                                    '30',
-                                    '31',
-                                    '24',
-                                    '25',
-                                    '26',
-                                    '27',
-                                    '28',
-                                    '32',
-                                    '33',
-                                    '34',
-                                    '35',
-                                    '36',
-                                    '37',
-                                    '38',
-                                    '39',
-                                    '40',
-                                    '41',
-                                    '42',
-                                    '43',
-                                    '0',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'DescribeAppStreamingOutTemplates' => [
             'methods' => [
                 'get',
@@ -3361,70 +3425,6 @@
                                 'required' => false,
                             ],
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'DescribeAppLiveStreamStatus' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ModifyAppLiveStreamStatus' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],

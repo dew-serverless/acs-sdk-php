@@ -1033,10 +1033,6 @@
             'endpoint' => 'actiontrail.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'actiontrail.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'actiontrail.ap-southeast-3.aliyuncs.com',
         ],

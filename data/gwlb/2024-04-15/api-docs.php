@@ -945,7 +945,6 @@
                                     'type' => 'integer',
                                     'format' => 'int32',
                                     'required' => false,
-                                    'enum' => [],
                                 ],
                                 'ServerId' => [
                                     'type' => 'string',

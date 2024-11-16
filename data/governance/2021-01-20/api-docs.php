@@ -682,6 +682,19 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'MetricIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
             ],
         ],
         'ListEvaluationMetadata' => [

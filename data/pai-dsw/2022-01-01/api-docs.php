@@ -104,7 +104,7 @@
                     'ContainerName' => [
                         'type' => 'string',
                     ],
-                    'Port' => [
+                    'ForwardPort' => [
                         'type' => 'string',
                     ],
                     'NatGatewayId' => [
@@ -115,6 +115,18 @@
                     ],
                     'SSHPublicKey' => [
                         'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'ExternalPort' => [
+                        'type' => 'string',
+                    ],
+                    'AccessType' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -127,7 +139,7 @@
                     'ContainerName' => [
                         'type' => 'string',
                     ],
-                    'Port' => [
+                    'ForwardPort' => [
                         'type' => 'string',
                     ],
                     'NatGatewayId' => [
@@ -170,6 +182,18 @@
                                     ],
                                 ],
                             ],
+                        ],
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'ExternalPort' => [
+                        'type' => 'string',
+                    ],
+                    'AccessType' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
                         ],
                     ],
                 ],

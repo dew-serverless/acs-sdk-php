@@ -55,6 +55,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyScheduledScalingRuleAsync($arguments = [])
  * @method \Dew\Acs\Result getAutoScalingConfiguration(array $arguments = [])
  * @method \Http\Promise\Promise getAutoScalingConfigurationAsync($arguments = [])
+ * @method \Dew\Acs\Result getKafkaClientIp(array $arguments = [])
+ * @method \Http\Promise\Promise getKafkaClientIpAsync($arguments = [])
  * @method \Dew\Acs\Result getTopicSubscribeStatus(array $arguments = [])
  * @method \Http\Promise\Promise getTopicSubscribeStatusAsync($arguments = [])
  * @method \Dew\Acs\Result createTopic(array $arguments = [])

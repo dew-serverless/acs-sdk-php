@@ -63,8 +63,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getTaskGroupAsync($arguments = [])
  * @method \Dew\Acs\Result getUser(array $arguments = [])
  * @method \Http\Promise\Promise getUserAsync($arguments = [])
- * @method \Dew\Acs\Result getVideoMergeTask(array $arguments = [])
- * @method \Http\Promise\Promise getVideoMergeTaskAsync($arguments = [])
  * @method \Dew\Acs\Result listApps(array $arguments = [])
  * @method \Http\Promise\Promise listAppsAsync($arguments = [])
  * @method \Dew\Acs\Result listDepartments(array $arguments = [])

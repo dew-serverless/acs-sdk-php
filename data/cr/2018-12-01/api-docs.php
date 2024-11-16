@@ -5846,10 +5846,6 @@
             'endpoint' => 'cr.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'cr.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'cr.ap-southeast-3.aliyuncs.com',
         ],

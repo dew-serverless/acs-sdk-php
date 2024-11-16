@@ -1153,6 +1153,10 @@
                                 'type' => 'string',
                                 'required' => true,
                             ],
+                            'useUrlResult' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -1736,6 +1740,105 @@
                 ],
             ],
         ],
+        'InvokePlugin' => [
+            'path' => '/{workspaceId}/api/plugin/invoke',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'params' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'pluginId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'RebuildTask' => [
+            'path' => '/{workspaceId}/api/task/rebuild',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'taskIds' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreateAnnualDocSummaryTask' => [
             'path' => '/{workspaceId}/api/task/summary/doc/annual',
             'methods' => [
@@ -2268,6 +2371,10 @@
                                             'type' => 'string',
                                             'required' => false,
                                         ],
+                                        'intentionScript' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
                             ],
@@ -2287,6 +2394,10 @@
                                             'required' => false,
                                         ],
                                         'intentionCode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'intentionScript' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
@@ -2312,6 +2423,10 @@
                                             'type' => 'string',
                                             'required' => false,
                                         ],
+                                        'intentionScript' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
                             ],
@@ -2321,6 +2436,10 @@
                             ],
                             'recommend' => [
                                 'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'intentionDomainCode' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -2640,55 +2759,6 @@
                                         ],
                                     ],
                                 ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'InvokePlugin' => [
-            'path' => '/{workspaceId}/api/plugin/invoke',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'params' => [
-                                'type' => 'object',
-                                'required' => false,
-                            ],
-                            'pluginId' => [
-                                'type' => 'string',
-                                'required' => false,
                             ],
                         ],
                     ],

@@ -845,10 +845,7 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'enum' => [
-                            '1',
-                            '2',
-                        ],
+                        'enum' => [],
                     ],
                 ],
                 [
@@ -977,6 +974,18 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BurstingEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'true',
+                            'false',
+                        ],
                     ],
                 ],
             ],

@@ -338,6 +338,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'Lang',
@@ -438,6 +439,22 @@
                 ],
                 [
                     'name' => 'NewResourceTag',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OutStatistic',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SensitiveStatus',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7851,6 +7868,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'SourceIp',

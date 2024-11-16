@@ -19,6 +19,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise compareFaceVerifyAsync($arguments = [])
  * @method \Dew\Acs\Result livenessFaceVerify(array $arguments = [])
  * @method \Http\Promise\Promise livenessFaceVerifyAsync($arguments = [])
+ * @method \Dew\Acs\Result describeFaceGuardRisk(array $arguments = [])
+ * @method \Http\Promise\Promise describeFaceGuardRiskAsync($arguments = [])
  * @method \Dew\Acs\Result deleteFaceVerifyResult(array $arguments = [])
  * @method \Http\Promise\Promise deleteFaceVerifyResultAsync($arguments = [])
  * @method \Dew\Acs\Result removeWhiteListSetting(array $arguments = [])

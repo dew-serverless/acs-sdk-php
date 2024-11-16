@@ -3725,10 +3725,6 @@
             'endpoint' => 'resourcemanager.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'resourcemanager.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'resourcemanager.aliyuncs.com',
         ],

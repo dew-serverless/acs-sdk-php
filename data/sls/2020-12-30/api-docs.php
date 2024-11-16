@@ -3696,6 +3696,92 @@
                 ],
             ],
         ],
+        'UpdateLogStoreEncryption' => [
+            'path' => '/logstores/{logstore}/encryption',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'logstore',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'enable' => [
+                                'type' => 'boolean',
+                                'required' => true,
+                            ],
+                            'encryptType' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'default',
+                                    'm4',
+                                    'sm4_ecb',
+                                    'sm4_cbc',
+                                    'sm4_gcm',
+                                    'aes_ecb',
+                                    'aes_cbc',
+                                    'aes_cfb',
+                                    'aes_ofb',
+                                    'aes_gcm',
+                                ],
+                            ],
+                            'userCmkInfo' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'keyId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'roleArn' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'regionId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetCursor' => [
             'path' => '/logstores/{logstore}/shards/{shardId}?type=cursor',
             'methods' => [

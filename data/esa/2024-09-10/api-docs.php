@@ -148,6 +148,13 @@
                                             'format' => 'int64',
                                         ],
                                     ],
+                                    'CustomRules' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],
@@ -1451,6 +1458,32 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'AuthConf' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'AuthType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'AccessKey' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'SecretKey' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Version' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Region' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -2721,10 +2754,12 @@
                                     'format' => 'int32',
                                     'required' => true,
                                     'minimum' => '1',
-                                    'maximum' => '10',
+                                    'maximum' => '100',
                                 ],
                             ],
                         ],
+                        'minItems' => 1,
+                        'maxItems' => 10,
                     ],
                 ],
             ],
@@ -4723,6 +4758,15 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Phase',
                     'in' => 'query',
                     'schema' => [
@@ -5095,6 +5139,15 @@
                     ],
                 ],
                 [
+                    'name' => 'ProtectionLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Language',
                     'in' => 'query',
                     'schema' => [
@@ -5112,11 +5165,6 @@
                         'properties' => [
                             'IdNameLike' => [
                                 'type' => 'string',
-                                'required' => false,
-                            ],
-                            'ProtectionLevel' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
                                 'required' => false,
                             ],
                             'ProtectionLevels' => [
@@ -5453,91 +5501,6 @@
                                 ],
                             ],
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'TransformMatchToExpression' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Phase',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Match',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/WafRuleMatch',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'TransformExpressionToMatch' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Phase',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Expression',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -6480,21 +6443,6 @@
                     ],
                 ],
             ],
-        ],
-        'DescribeIPRangeList' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
         ],
         'DeleteEdgeContainerAppVersion' => [
             'methods' => [

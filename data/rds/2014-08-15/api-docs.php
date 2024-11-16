@@ -1103,14 +1103,6 @@
                     ],
                 ],
                 [
-                    'name' => 'BpeEnabled',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'BurstingEnabled',
                     'in' => 'query',
                     'schema' => [
@@ -6121,14 +6113,6 @@
                 ],
                 [
                     'name' => 'Port',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'BpeEnabled',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11614,43 +11598,6 @@
                     ],
                 ],
                 [
-                    'name' => 'ServerlessConfig',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'AutoPause' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'MaxCapacity' => [
-                                'type' => 'number',
-                                'format' => 'double',
-                                'required' => false,
-                            ],
-                            'MinCapacity' => [
-                                'type' => 'number',
-                                'format' => 'double',
-                                'required' => false,
-                            ],
-                            'SwitchForce' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'BpeEnabled',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'IoAccelerationEnabled',
                     'in' => 'query',
                     'schema' => [
@@ -14080,6 +14027,14 @@
                 ],
                 [
                     'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -19888,10 +19843,6 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'rds.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'rds.ap-southeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',

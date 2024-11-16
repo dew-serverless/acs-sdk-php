@@ -7,6 +7,8 @@ namespace Dew\Acs\Cams;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result triggerChatFlow(array $arguments = [])
+ * @method \Http\Promise\Promise triggerChatFlowAsync($arguments = [])
  * @method \Dew\Acs\Result publishFlow(array $arguments = [])
  * @method \Http\Promise\Promise publishFlowAsync($arguments = [])
  * @method \Dew\Acs\Result updateFlowJSONAsset(array $arguments = [])

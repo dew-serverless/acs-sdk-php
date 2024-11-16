@@ -13099,6 +13099,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ExportImage' => [
@@ -22380,6 +22388,23 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -33384,7 +33409,7 @@
         ],
         [
             'regionId' => 'cn-hangzhou',
-            'endpoint' => 'ecs-cn-hangzhou.aliyuncs.com',
+            'endpoint' => 'ecs.cn-hangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
@@ -33429,10 +33454,6 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'ecs.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'ecs.ap-southeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',

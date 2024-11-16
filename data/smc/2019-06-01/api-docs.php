@@ -1348,6 +1348,27 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'AssociateSourceServers' => [
@@ -1490,6 +1511,26 @@
                         'format' => 'int32',
                         'required' => false,
                         'maximum' => '50',
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
                     ],
                 ],
             ],

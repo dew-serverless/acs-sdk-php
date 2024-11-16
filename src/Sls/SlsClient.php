@@ -65,6 +65,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listShardsAsync($arguments = [])
  * @method \Dew\Acs\Result getLogs(array $arguments = [])
  * @method \Http\Promise\Promise getLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result updateLogStoreEncryption(array $arguments = [])
+ * @method \Http\Promise\Promise updateLogStoreEncryptionAsync($arguments = [])
  * @method \Dew\Acs\Result getCursor(array $arguments = [])
  * @method \Http\Promise\Promise getCursorAsync($arguments = [])
  * @method \Dew\Acs\Result getContextLogs(array $arguments = [])

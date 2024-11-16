@@ -93,6 +93,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDeviceStatusDetailAsync($arguments = []) {@since ssp_1.0}
  * @method \Dew\Acs\Result setDeviceSetting(array $arguments = []) {@since ssp_1.0}
  * @method \Http\Promise\Promise setDeviceSettingAsync($arguments = []) {@since ssp_1.0}
+ * @method \Dew\Acs\Result getJiangSuTelecomData(array $arguments = []) {@since ssp_1.0}
+ * @method \Http\Promise\Promise getJiangSuTelecomDataAsync($arguments = []) {@since ssp_1.0}
  * @method \Dew\Acs\Result scgSearch(array $arguments = []) {@since ssp_1.0}
  * @method \Http\Promise\Promise scgSearchAsync($arguments = []) {@since ssp_1.0}
  * @method \Dew\Acs\Result addAndRemoveFavoriteContent(array $arguments = []) {@since ssp_1.0}

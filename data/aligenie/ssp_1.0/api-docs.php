@@ -1641,6 +1641,37 @@
                 ],
             ],
         ],
+        'GetJiangSuTelecomData' => [
+            'path' => '/v1.0/ssp/GetJiangSuTelecomData',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AliGenie_Auth_SPI' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Date',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'ScgSearch' => [
             'path' => '/v1.0/ssp/scgSearch',
             'methods' => [

@@ -3695,10 +3695,6 @@
             'endpoint' => 'schedulerx.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'schedulerx.aliyuncs.com',
-        ],
-        [
             'regionId' => 'us-east-1',
             'endpoint' => 'schedulerx.aliyuncs.com',
         ],

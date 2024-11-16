@@ -2441,6 +2441,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'OpAction',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeTraffic' => [
@@ -3455,6 +3464,7 @@
                             'ip_count',
                             'standard_assets_flow_cn',
                             'standard_assets_flow_ov',
+                            'monthly_summary',
                         ],
                     ],
                 ],
@@ -3518,10 +3528,6 @@
         ],
         [
             'regionId' => 'ap-northeast-1',
-            'endpoint' => 'ddosbgp.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
             'endpoint' => 'ddosbgp.ap-southeast-1.aliyuncs.com',
         ],
         [

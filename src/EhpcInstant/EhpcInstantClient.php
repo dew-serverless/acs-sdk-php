@@ -31,6 +31,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeJobMetricDataAsync($arguments = [])
  * @method \Dew\Acs\Result describeJobMetricLast(array $arguments = [])
  * @method \Http\Promise\Promise describeJobMetricLastAsync($arguments = [])
+ * @method \Dew\Acs\Result tagResources(array $arguments = [])
+ * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result listTagResources(array $arguments = [])
+ * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result unTagResources(array $arguments = [])
+ * @method \Http\Promise\Promise unTagResourcesAsync($arguments = [])
  */
 final class EhpcInstantClient extends AcsClient
 {

@@ -187,6 +187,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise suspendInstanceRefreshAsync($arguments = []) {@since 2022-02-22}
  * @method \Dew\Acs\Result resumeInstanceRefresh(array $arguments = []) {@since 2022-02-22}
  * @method \Http\Promise\Promise resumeInstanceRefreshAsync($arguments = []) {@since 2022-02-22}
+ * @method \Dew\Acs\Result createDiagnoseReport(array $arguments = []) {@since 2022-02-22}
+ * @method \Http\Promise\Promise createDiagnoseReportAsync($arguments = []) {@since 2022-02-22}
+ * @method \Dew\Acs\Result describeDiagnoseReports(array $arguments = []) {@since 2022-02-22}
+ * @method \Http\Promise\Promise describeDiagnoseReportsAsync($arguments = []) {@since 2022-02-22}
+ * @method \Dew\Acs\Result describeScalingGroupDiagnoseDetails(array $arguments = []) {@since 2022-02-22}
+ * @method \Http\Promise\Promise describeScalingGroupDiagnoseDetailsAsync($arguments = []) {@since 2022-02-22}
  * @method \Dew\Acs\Result describeAlertConfiguration(array $arguments = []) {@since 2022-02-22}
  * @method \Http\Promise\Promise describeAlertConfigurationAsync($arguments = []) {@since 2022-02-22}
  * @method \Dew\Acs\Result modifyAlertConfiguration(array $arguments = []) {@since 2022-02-22}

@@ -1650,6 +1650,14 @@
                                     'required' => false,
                                 ],
                             ],
+                            'sceneTagList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                         ],
                     ],
                 ],

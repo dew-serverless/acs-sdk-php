@@ -47,6 +47,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise runLibraryChatGenerationAsync($arguments = [])
  * @method \Dew\Acs\Result getHistoryListByBizType(array $arguments = [])
  * @method \Http\Promise\Promise getHistoryListByBizTypeAsync($arguments = [])
+ * @method \Dew\Acs\Result invokePlugin(array $arguments = [])
+ * @method \Http\Promise\Promise invokePluginAsync($arguments = [])
+ * @method \Dew\Acs\Result rebuildTask(array $arguments = [])
+ * @method \Http\Promise\Promise rebuildTaskAsync($arguments = [])
  * @method \Dew\Acs\Result createAnnualDocSummaryTask(array $arguments = [])
  * @method \Http\Promise\Promise createAnnualDocSummaryTaskAsync($arguments = [])
  * @method \Dew\Acs\Result getQualityCheckTaskResult(array $arguments = [])
@@ -71,8 +75,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise evictTaskAsync($arguments = [])
  * @method \Dew\Acs\Result runChatResultGeneration(array $arguments = [])
  * @method \Http\Promise\Promise runChatResultGenerationAsync($arguments = [])
- * @method \Dew\Acs\Result invokePlugin(array $arguments = [])
- * @method \Http\Promise\Promise invokePluginAsync($arguments = [])
  */
 final class DianJinClient extends AcsClient
 {

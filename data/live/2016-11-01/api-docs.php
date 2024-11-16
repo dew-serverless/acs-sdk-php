@@ -19256,6 +19256,14 @@
                     ],
                 ],
                 [
+                    'name' => 'MaxIdleTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'SingleSubParams',
                     'in' => 'query',
                     'style' => 'json',

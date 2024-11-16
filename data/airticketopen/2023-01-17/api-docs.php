@@ -1678,6 +1678,103 @@
                 ],
             ],
         ],
+        'CollectFlightLowestPrice' => [
+            'path' => '/airticket/v1/data-collect/flight-lowest-price',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'accessTokenAuth' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'lowestPriceFlightList',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'request_id' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'departure_city' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'arrival_city' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'trip_type' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => true,
+                                ],
+                                'departure_date' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'return_date' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'flight_number_info' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'departure_flight_number' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'return_flight_number' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'suez_total_price' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                ],
+                                'market_total_price' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'x-acs-airticket-access-token',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'x-acs-airticket-language',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'AccountFlowList' => [
             'path' => '/airticket/v1/account/flow-list',
             'methods' => [

@@ -215,8 +215,8 @@
                                     'format' => 'int32',
                                 ],
                                 'weight' => [
-                                    'type' => 'number',
-                                    'format' => 'float',
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                 ],
                                 'version' => [
                                     'type' => 'string',
@@ -594,7 +594,7 @@
                                 'enable' => [
                                     'type' => 'boolean',
                                 ],
-                                'fallbackConfig' => [
+                                'aiFallbackConfig' => [
                                     'type' => 'object',
                                     'properties' => [
                                         'serviceIds' => [

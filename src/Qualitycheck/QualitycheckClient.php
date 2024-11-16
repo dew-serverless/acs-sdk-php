@@ -181,6 +181,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listUsersAsync($arguments = [])
  * @method \Dew\Acs\Result updateUser(array $arguments = [])
  * @method \Http\Promise\Promise updateUserAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteCheckTypeToScheme(array $arguments = [])
+ * @method \Http\Promise\Promise deleteCheckTypeToSchemeAsync($arguments = [])
  */
 final class QualitycheckClient extends AcsClient
 {

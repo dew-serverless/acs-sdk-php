@@ -1518,7 +1518,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1852,77 +1852,6 @@
                 ],
             ],
         ],
-        'SetAdbSecure' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceIds',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 50,
-                    ],
-                ],
-                [
-                    'name' => 'Status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GetAdbSecure' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceIds',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 50,
-                    ],
-                ],
-            ],
-        ],
         'CreateKeyPair' => [
             'methods' => [
                 'post',
@@ -2231,7 +2160,21 @@
                     'style' => 'repeatList',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'SourceAppList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
@@ -2393,6 +2336,20 @@
                     ],
                 ],
                 [
+                    'name' => 'StatusList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
                     'name' => 'StartTime',
                     'in' => 'query',
                     'schema' => [
@@ -2527,6 +2484,30 @@
                         'required' => false,
                         'properties' => [
                             'NetRedirect' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CustomProxy' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ProxyType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'HostAddr' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Port' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ProxyUserName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ProxyPassword' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -2691,6 +2672,30 @@
                         'required' => false,
                         'properties' => [
                             'NetRedirect' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CustomProxy' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ProxyType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'HostAddr' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Port' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ProxyUserName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ProxyPassword' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

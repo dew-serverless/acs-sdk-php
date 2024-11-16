@@ -6201,6 +6201,24 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'StartActualTimeFilter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndActualTimeFilter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SaveAfterAnswerDelayPlayback' => [

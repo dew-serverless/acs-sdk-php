@@ -169,8 +169,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDisposeStrategyPlaybookAsync($arguments = [])
  * @method \Dew\Acs\Result listOperation(array $arguments = [])
  * @method \Http\Promise\Promise listOperationAsync($arguments = [])
- * @method \Dew\Acs\Result doSelfDelegate(array $arguments = [])
- * @method \Http\Promise\Promise doSelfDelegateAsync($arguments = [])
  * @method \Dew\Acs\Result restoreCapacity(array $arguments = [])
  * @method \Http\Promise\Promise restoreCapacityAsync($arguments = [])
  * @method \Dew\Acs\Result getCapacity(array $arguments = [])

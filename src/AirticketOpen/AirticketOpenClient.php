@@ -49,6 +49,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise changeDetailListOfOrderNumAsync($arguments = [])
  * @method \Dew\Acs\Result flightChangeOfOrder(array $arguments = [])
  * @method \Http\Promise\Promise flightChangeOfOrderAsync($arguments = [])
+ * @method \Dew\Acs\Result collectFlightLowestPrice(array $arguments = [])
+ * @method \Http\Promise\Promise collectFlightLowestPriceAsync($arguments = [])
  * @method \Dew\Acs\Result accountFlowList(array $arguments = [])
  * @method \Http\Promise\Promise accountFlowListAsync($arguments = [])
  * @method \Dew\Acs\Result fileUpload(array $arguments = [])

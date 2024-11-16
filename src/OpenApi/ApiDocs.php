@@ -67,7 +67,7 @@ final readonly class ApiDocs
     {
         foreach ($this->endpoints as $endpoint) {
             if ($endpoint['regionId'] === $regionId) {
-                return $endpoint['endpoint'];
+                return trim($endpoint['endpoint']);
             }
         }
 

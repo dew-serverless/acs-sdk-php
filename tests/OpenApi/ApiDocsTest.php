@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Dew\Acs\Tests\OpenApi;
 
 use Dew\Acs\OpenApi\ApiDocs;
+use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
-use InvalidArgumentException;
 
 #[CoversClass(ApiDocs::class)]
 final class ApiDocsTest extends TestCase

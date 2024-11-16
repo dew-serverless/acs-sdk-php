@@ -302,7 +302,7 @@
             '2018-04-12',
             '2024-07-30',
         ],
-        'defaultVersion' => '2018-04-12',
+        'defaultVersion' => '2024-07-30',
     ],
     [
         'code' => 'elasticsearch',
@@ -2151,6 +2151,14 @@
             '2024-02-22',
         ],
         'defaultVersion' => '2024-02-22',
+    ],
+    [
+        'code' => 'DataAnalysisGBI',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-08-23',
+        ],
+        'defaultVersion' => '2024-08-23',
     ],
     [
         'code' => 'APIG',

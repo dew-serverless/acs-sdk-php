@@ -461,6 +461,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getChatRoutingProfileAsync($arguments = [])
  * @method \Dew\Acs\Result getIvrTrackingSummary(array $arguments = [])
  * @method \Http\Promise\Promise getIvrTrackingSummaryAsync($arguments = [])
+ * @method \Dew\Acs\Result importContactFlow(array $arguments = [])
+ * @method \Http\Promise\Promise importContactFlowAsync($arguments = [])
+ * @method \Dew\Acs\Result exportContactFlow(array $arguments = [])
+ * @method \Http\Promise\Promise exportContactFlowAsync($arguments = [])
  */
 final class CccClient extends AcsClient
 {

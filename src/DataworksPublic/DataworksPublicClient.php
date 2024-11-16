@@ -749,6 +749,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listDIJobMetricsAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result listDIJobEvents(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise listDIJobEventsAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result listAlertRules(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise listAlertRulesAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result getAlertRule(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise getAlertRuleAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result updateAlertRule(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise updateAlertRuleAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result deleteAlertRule(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise deleteAlertRuleAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result createAlertRule(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise createAlertRuleAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result deleteTask(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise deleteTaskAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result getTask(array $arguments = []) {@since 2024-05-18}

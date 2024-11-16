@@ -9,6 +9,8 @@ use Dew\Acs\AcsClient;
 /**
  * @method \Dew\Acs\Result genericSearch(array $arguments = [])
  * @method \Http\Promise\Promise genericSearchAsync($arguments = [])
+ * @method \Dew\Acs\Result aiSearch(array $arguments = [])
+ * @method \Http\Promise\Promise aiSearchAsync($arguments = [])
  */
 final class IqsClient extends AcsClient
 {

@@ -273,6 +273,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyNetworkInterfaceAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result describeSecondaryPublicIpAddresses(array $arguments = [])
  * @method \Http\Promise\Promise describeSecondaryPublicIpAddressesAsync($arguments = [])
+ * @method \Dew\Acs\Result createHaVip(array $arguments = [])
+ * @method \Http\Promise\Promise createHaVipAsync($arguments = [])
  * @method \Dew\Acs\Result modifyHaVipAttribute(array $arguments = [])
  * @method \Http\Promise\Promise modifyHaVipAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result describeHaVips(array $arguments = [])
@@ -527,6 +529,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyInstanceBootConfigurationAsync($arguments = [])
  * @method \Dew\Acs\Result describeEnsRouteTables(array $arguments = [])
  * @method \Http\Promise\Promise describeEnsRouteTablesAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteHaVips(array $arguments = [])
+ * @method \Http\Promise\Promise deleteHaVipsAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

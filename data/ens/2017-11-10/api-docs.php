@@ -2027,6 +2027,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 30,
                     ],
                 ],
                 [
@@ -3200,7 +3201,7 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'SnapshotId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3208,7 +3209,23 @@
                     ],
                 ],
                 [
-                    'name' => 'SnapshotId',
+                    'name' => 'EnsRegionIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SnapshotName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -8463,6 +8480,98 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateNetworkInterface' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'VSwitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityGroupIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 5,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 256,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteNetworkInterfaces' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NetworkInterfaceIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 10,
                     ],
                 ],
             ],

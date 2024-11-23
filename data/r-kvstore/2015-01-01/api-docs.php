@@ -1561,6 +1561,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ConnectionStringPrefix',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateInstances' => [

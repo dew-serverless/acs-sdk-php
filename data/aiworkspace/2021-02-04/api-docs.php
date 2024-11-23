@@ -3800,7 +3800,7 @@
                     ],
                 ],
                 [
-                    'name' => 'LableValues',
+                    'name' => 'LabelValues',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3809,14 +3809,6 @@
                 ],
                 [
                     'name' => 'Properties',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DataSourcesTypes',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

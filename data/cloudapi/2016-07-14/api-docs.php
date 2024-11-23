@@ -1146,6 +1146,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CustomAppCodeConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeApiGroup' => [
@@ -8120,6 +8128,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'CreateSlr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteLogConfig' => [
@@ -11453,104 +11469,88 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'apigateway.cn-qingdao.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'apigateway.cn-beijing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'apigateway.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'apigateway.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'apigateway.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'apigateway.cn-hangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'apigateway.cn-shanghai.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'apigateway.cn-shenzhen.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'apigateway.cn-heyuan.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'apigateway.cn-guangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'apigateway.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'apigateway.cn-hongkong.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'apigateway.ap-northeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'apigateway.ap-northeast-2.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'apigateway.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'apigateway.ap-southeast-2.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'apigateway.ap-southeast-3.aliyuncs.com',
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'apigateway.cn-heyuan-acdr-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-5',
             'endpoint' => 'apigateway.ap-southeast-5.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-6',
-            'endpoint' => 'apigateway.ap-southeast-6.aliyuncs.com',
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'apigateway.ap-southeast-7.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'apigateway.us-east-1.aliyuncs.com',
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'apigateway.cn-hangzhou.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'apigateway.us-west-1.aliyuncs.com',
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'apigateway.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'apigateway.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'apigateway.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'apigateway.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'apigateway.cn-chengdu.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',
             'endpoint' => 'apigateway.eu-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'apigateway.eu-central-1.aliyuncs.com',
+            'regionId' => 'cn-north-2-gov-1',
+            'endpoint' => 'apigateway.cn-north-2-gov-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'apigateway.ap-southeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-east-1',
+            'endpoint' => 'apigateway.me-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'apigateway.ap-northeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-south-1',
             'endpoint' => 'apigateway.ap-south-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'me-east-1',
-            'endpoint' => 'apigateway.me-east-1.aliyuncs.com',
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'apigateway.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'apigateway.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'apigateway.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'apigateway.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'apigateway.cn-beijing-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'apigateway.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou-finance',
@@ -11561,24 +11561,48 @@
             'endpoint' => 'apigateway.cn-shanghai-finance-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'apigateway.cn-qingdao.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'apigateway.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shenzhen-finance-1',
             'endpoint' => 'apigateway.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'apigateway.ap-southeast-7.aliyuncs.com',
+            'regionId' => 'cn-shanghai-inner',
+            'endpoint' => 'apigateway.cn-shanghai-inner.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-finance-1',
-            'endpoint' => 'apigateway.cn-beijing-finance-1.aliyuncs.com',
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'apigateway.cn-guangzhou.aliyuncs.com',
         ],
         [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'apigateway.me-central-1.aliyuncs.com',
+            'regionId' => 'us-west-1',
+            'endpoint' => 'apigateway.us-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-heyuan-acdr-1',
-            'endpoint' => 'apigateway.cn-heyuan-acdr-1.aliyuncs.com',
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'apigateway.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'apigateway.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'apigateway.ap-southeast-6.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'apigateway.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'apigateway.cn-beijing.aliyuncs.com',
         ],
     ],
 ];

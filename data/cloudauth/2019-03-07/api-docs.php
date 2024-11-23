@@ -1760,7 +1760,7 @@
             'parameters' => [
                 [
                     'name' => 'ParamType',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1768,7 +1768,7 @@
                 ],
                 [
                     'name' => 'Mobile',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1793,7 +1793,7 @@
             'parameters' => [
                 [
                     'name' => 'ParamType',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1801,7 +1801,7 @@
                 ],
                 [
                     'name' => 'Mobiles',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1826,7 +1826,7 @@
             'parameters' => [
                 [
                     'name' => 'ParamType',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1834,7 +1834,7 @@
                 ],
                 [
                     'name' => 'Mobile',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1859,7 +1859,7 @@
             'parameters' => [
                 [
                     'name' => 'ParamType',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1867,7 +1867,7 @@
                 ],
                 [
                     'name' => 'IdentifyNum',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1875,7 +1875,7 @@
                 ],
                 [
                     'name' => 'UserName',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1883,7 +1883,7 @@
                 ],
                 [
                     'name' => 'Mobile',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1908,7 +1908,7 @@
             'parameters' => [
                 [
                     'name' => 'ParamType',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1916,7 +1916,7 @@
                 ],
                 [
                     'name' => 'IdentifyNum',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1924,7 +1924,48 @@
                 ],
                 [
                     'name' => 'UserName',
-                    'in' => 'query',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'Id2MetaStandardVerify' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ParamType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IdentifyNum',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserName',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1949,7 +1990,7 @@
             'parameters' => [
                 [
                     'name' => 'ParamType',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1957,7 +1998,7 @@
                 ],
                 [
                     'name' => 'IdentifyNum',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1965,7 +2006,7 @@
                 ],
                 [
                     'name' => 'UserName',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1973,7 +2014,7 @@
                 ],
                 [
                     'name' => 'Mobile',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

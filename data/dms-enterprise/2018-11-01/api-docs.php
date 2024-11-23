@@ -37,6 +37,312 @@
                     ],
                 ],
             ],
+            'DLCatalog' => [
+                'type' => 'object',
+                'properties' => [
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Location' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DLColumn' => [
+                'type' => 'object',
+                'properties' => [
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DLDatabase' => [
+                'type' => 'object',
+                'properties' => [
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'Parameters' => [
+                        'type' => 'string',
+                    ],
+                    'DbId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'CatalogName' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Location' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DLOrder' => [
+                'type' => 'object',
+                'properties' => [
+                    'Order' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Col' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DLSerdeInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'SerializationLib' => [
+                        'type' => 'string',
+                    ],
+                    'DeserializerClass' => [
+                        'type' => 'string',
+                    ],
+                    'Parameters' => [
+                        'type' => 'object',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'SerdeType' => [
+                        'type' => 'string',
+                    ],
+                    'SerializerClass' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DLSkewedInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'SkewedColValues' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'array',
+                            'items' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'SkewedColValueLocationMaps' => [
+                        'type' => 'object',
+                    ],
+                    'SkewedColNames' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'DLStorageDescriptor' => [
+                'type' => 'object',
+                'properties' => [
+                    'OriginalColumns' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DLColumn',
+                        ],
+                    ],
+                    'SortCols' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DLOrder',
+                        ],
+                    ],
+                    'Parameters' => [
+                        'type' => 'object',
+                    ],
+                    'SkewedInfo' => [
+                        '$ref' => '#/components/schemas/DLSkewedInfo',
+                    ],
+                    'InputFormat' => [
+                        'type' => 'string',
+                    ],
+                    'OutputFormat' => [
+                        'type' => 'string',
+                    ],
+                    'Columns' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DLColumn',
+                        ],
+                    ],
+                    'IsCompressed' => [
+                        'type' => 'boolean',
+                    ],
+                    'SerdeInfo' => [
+                        '$ref' => '#/components/schemas/DLSerdeInfo',
+                    ],
+                    'BucketCols' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'NumBuckets' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Location' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DLTable' => [
+                'type' => 'object',
+                'properties' => [
+                    'ViewOriginalText' => [
+                        'type' => 'string',
+                    ],
+                    'Owner' => [
+                        'type' => 'string',
+                    ],
+                    'TableType' => [
+                        'type' => 'string',
+                    ],
+                    'Parameters' => [
+                        'type' => 'object',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'CreatorId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'StorageDescriptor' => [
+                        '$ref' => '#/components/schemas/DLStorageDescriptor',
+                    ],
+                    'LastAccessTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Retention' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'OwnerType' => [
+                        'type' => 'string',
+                    ],
+                    'ViewExpandedText' => [
+                        'type' => 'string',
+                    ],
+                    'DbId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DbName' => [
+                        'type' => 'string',
+                    ],
+                    'CatalogName' => [
+                        'type' => 'string',
+                    ],
+                    'PartitionKeys' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DLColumn',
+                        ],
+                    ],
+                    'ModifierId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Location' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DLTablebaseInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'Owner' => [
+                        'type' => 'string',
+                    ],
+                    'ViewOriginalText' => [
+                        'type' => 'string',
+                    ],
+                    'TableType' => [
+                        'type' => 'string',
+                    ],
+                    'Parameters' => [
+                        'type' => 'object',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'CreatorId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'LastAccessTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Retention' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'OwnerType' => [
+                        'type' => 'string',
+                    ],
+                    'ViewExpandedText' => [
+                        'type' => 'string',
+                    ],
+                    'DbId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DbName' => [
+                        'type' => 'string',
+                    ],
+                    'CatalogName' => [
+                        'type' => 'string',
+                    ],
+                    'PartitionKeys' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DLColumn',
+                        ],
+                    ],
+                    'ModifierId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Location' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'DatasetItemVO' => [
                 'type' => 'object',
                 'properties' => [

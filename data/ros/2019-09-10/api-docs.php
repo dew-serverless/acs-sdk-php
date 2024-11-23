@@ -2480,7 +2480,6 @@
             ],
         ],
         'DeleteTemplate' => [
-            'path' => '/V2/DeleteTemplate',
             'methods' => [
                 'post',
                 'get',
@@ -2948,7 +2947,6 @@
             ],
         ],
         'SetTemplatePermission' => [
-            'path' => '/V2/SetTemplatePermission',
             'methods' => [
                 'post',
                 'get',
@@ -4410,6 +4408,20 @@
                         'maxItems' => 1,
                     ],
                 ],
+                [
+                    'name' => 'DeploymentOptions',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 1,
+                    ],
+                ],
             ],
         ],
         'ListStackGroups' => [
@@ -4687,6 +4699,20 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'DeploymentOptions',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 1,
                     ],
                 ],
             ],

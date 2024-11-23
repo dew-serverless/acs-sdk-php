@@ -1128,835 +1128,6 @@
                 ],
             ],
         ],
-        'CreateRecord' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RecordName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Proxied',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'BizName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Ttl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Data',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'Value' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Priority' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Flag' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Tag' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Weight' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Port' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Type' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'KeyTag' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Algorithm' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Certificate' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Usage' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Selector' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'MatchingType' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Fingerprint' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Comment',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AuthConf',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'AuthType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'AccessKey' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'SecretKey' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Version' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Region' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'HostPolicy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [],
-                    ],
-                ],
-            ],
-        ],
-        'BatchCreateRecords' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RecordList',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'BizName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Data' => [
-                                    'type' => 'object',
-                                    'required' => true,
-                                    'properties' => [
-                                        'Value' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Priority' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'Flag' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'Tag' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Weight' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'Port' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'Type' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'KeyTag' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'Algorithm' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'Certificate' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Usage' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'Selector' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'MatchingType' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'Fingerprint' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                                'Ttl' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => true,
-                                ],
-                                'Type' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'Proxied' => [
-                                    'type' => 'boolean',
-                                    'required' => true,
-                                ],
-                                'RecordName' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'SourceType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AuthConf' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'AuthType' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'AccessKey' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'SecretKey' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Version' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Region' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DeleteRecord' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'RecordId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ListRecords' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RecordName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecordMatchType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'BizName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Proxied',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetRecord' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'RecordId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateRecord' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'RecordId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Ttl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Proxied',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Data',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'Value' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Priority' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Flag' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Tag' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Weight' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Port' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Type' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'KeyTag' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Algorithm' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Certificate' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Usage' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Selector' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'MatchingType' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'Fingerprint' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'SourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'BizName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Comment',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AuthConf',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'AuthType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'SecretKey' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'AccessKey' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Region' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Version' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'HostPolicy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [],
-                    ],
-                ],
-            ],
-        ],
-        'ListEdgeRoutineRecords' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RecordName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecordMatchType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListEdgeContainerRecords' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RecordName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecordMatchType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ExportRecords' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'PurgeCaches' => [
             'methods' => [
                 'post',
@@ -2968,6 +2139,835 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'BatchCreateRecords' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RecordList',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'BizName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Data' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Priority' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'Flag' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'Tag' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Weight' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'Port' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'Type' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'KeyTag' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'Algorithm' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'Certificate' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Usage' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'Selector' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'MatchingType' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'Fingerprint' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'Ttl' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => true,
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Proxied' => [
+                                    'type' => 'boolean',
+                                    'required' => true,
+                                ],
+                                'RecordName' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'SourceType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AuthConf' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'AuthType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'AccessKey' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'SecretKey' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Version' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Region' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateRecord' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RecordName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Proxied',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BizName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Ttl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Data',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Value' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Priority' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Flag' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Tag' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Weight' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Port' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Type' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'KeyTag' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Algorithm' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Certificate' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Usage' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Selector' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'MatchingType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Fingerprint' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AuthConf',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AuthType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AccessKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SecretKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Version' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Region' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HostPolicy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteRecord' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RecordId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListRecords' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RecordName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RecordMatchType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BizName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Proxied',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetRecord' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RecordId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateRecord' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RecordId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Ttl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Proxied',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Data',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Value' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Priority' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Flag' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Tag' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Weight' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Port' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Type' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'KeyTag' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Algorithm' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Certificate' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Usage' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Selector' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'MatchingType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Fingerprint' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BizName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AuthConf',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AuthType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SecretKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AccessKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Region' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Version' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HostPolicy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+            ],
+        ],
+        'ListEdgeRoutineRecords' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RecordName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RecordMatchType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListEdgeContainerRecords' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RecordName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RecordMatchType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ExportRecords' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4209,6 +4209,49 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListClientCertificates' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -5739,6 +5782,143 @@
                 ],
             ],
         ],
+        'CreateOriginProtection' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteOriginProtection' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetOriginProtection' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateOriginProtection' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'OriginConverge',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'on',
+                            'off',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateOriginProtectionIpWhiteList' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'CreatePage' => [
             'methods' => [
                 'post',
@@ -6436,6 +6616,414 @@
                 ],
                 [
                     'name' => 'Objects',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateRoutine' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SpecName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteRoutineCodeVersion' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CodeVersion',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteRoutine' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetRoutineUserInfo' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'PublishRoutineCodeVersion' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Env',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CodeVersion',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CanaryCodeVersion',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CanaryAreaList',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetRoutineStagingEnvIp' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'GetErService' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'CommitRoutineStagingCode' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CodeDescription',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetRoutine' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListRoutineOptionalSpecs' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'GetRoutineStagingCodeUploadInfo' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CodeDescription',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListRoutineCanaryAreas' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'ListEdgeContainerApps' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OrderKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OrderType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SearchType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SearchKey',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9349,73 +9937,6 @@
                 ],
             ],
         ],
-        'ListEdgeContainerApps' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'OrderKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'OrderType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SearchType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SearchKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'GetCacheReserveSpecification' => [
             'methods' => [
                 'get',
@@ -9708,49 +10229,6 @@
                 ],
             ],
         ],
-        'ListClientCertificates' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'DeleteRoutineRelatedRecord' => [
             'methods' => [
                 'post',
@@ -9803,98 +10281,6 @@
                 ],
             ],
         ],
-        'GetRoutine' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Name',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListRoutineCanaryAreas' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-        'CommitRoutineStagingCode' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Name',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CodeDescription',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetErService' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
         'DeleteRoutineRelatedRoute' => [
             'methods' => [
                 'post',
@@ -9946,23 +10332,6 @@
                 ],
             ],
         ],
-        'ListRoutineOptionalSpecs' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
         'CreateRoutineRelatedRecord' => [
             'methods' => [
                 'post',
@@ -9998,57 +10367,6 @@
                 ],
                 [
                     'name' => 'RecordName',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetRoutineStagingEnvIp' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-        'GetRoutineStagingCodeUploadInfo' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Name',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CodeDescription',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -10100,36 +10418,9 @@
                 ],
             ],
         ],
-        'DeleteRoutine' => [
+        'UpdateSiteFunction' => [
             'methods' => [
                 'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Name',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteRoutineCodeVersion' => [
-            'methods' => [
-                'post',
-                'get',
             ],
             'schemes' => [
                 'https',
@@ -10142,110 +10433,933 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Name',
-                    'in' => 'formData',
+                    'name' => 'SiteId',
+                    'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => false,
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
                     ],
                 ],
                 [
-                    'name' => 'CodeVersion',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetRoutineUserInfo' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-        'PublishRoutineCodeVersion' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Name',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Env',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CodeVersion',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CanaryCodeVersion',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CanaryAreaList',
-                    'in' => 'formData',
+                    'name' => 'CacheRules',
+                    'in' => 'query',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
                         'required' => false,
                         'items' => [
-                            'type' => 'string',
+                            'type' => 'object',
                             'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'BypassCache' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'BrowserCacheMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'BrowserCacheTtl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EdgeCacheMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EdgeCacheTtl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EdgeStatusCodeCacheTtl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SortQueryStringForCache' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'QueryStringMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'QueryString' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'IncludeHeader' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'IncludeCookie' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AdditionalCacheablePorts' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CheckPresenceHeader' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CheckPresenceCookie' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'UserDeviceType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'UserGeo' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'UserLanguage' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ServeStale' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CacheDeceptionArmor' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CacheReserveEligibility' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'RewriteUrlRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'RewriteUriType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Uri' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RewriteQueryStringType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'QueryString' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HttpRequestHeaderModificationRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'RequestHeaderModification' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Operation' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HttpResponseHeaderModificationRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'ResponseHeaderModification' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Operation' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ManagedTransforms',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'AddClientGeolocationHeaders' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AddRealClientIpHeader' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'RedirectRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'TargetUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'StatusCode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ReserveQueryString' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CompressionRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Gzip' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Brotli' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OriginRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OriginHost' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OriginHttpPort' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OriginScheme' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OriginSni' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DnsRecord' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OriginHttpsPort' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Range' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ImageTransform',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TieredCache',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'CacheArchitectureMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CacheReserve',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'InstanceId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Ipv6',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SitePause',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'Paused' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CacheTags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'TagName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CaseInsensitive' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SeoBypass',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DevelopmentMode',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SiteNameExclusive',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CnameFlattening',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'FlattenMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CrossBorderOptimization',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HttpsBasicConfiguration',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Https' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Tls10' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Tls11' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Tls12' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Tls13' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CiphersuiteGroup' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Ciphersuite' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OcspStapling' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Http2' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Http3' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HttpsApplicationConfiguration',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HttpsForce' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HttpsForceCode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AltSvc' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AltSvcClear' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AltSvcPersist' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AltSvcMa' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Hsts' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HstsMaxAge' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HstsIncludeSubdomains' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HstsPreload' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NetworkOptimization',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SmartRouting' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Http2Origin' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Websocket' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Grpc' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'UploadMaxFilesize' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ConfigId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
                         ],
                     ],
                 ],
             ],
         ],
-        'CreateRoutine' => [
+        'CreateSiteFunction' => [
             'methods' => [
                 'post',
-                'get',
             ],
             'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -10256,27 +11370,964 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Name',
-                    'in' => 'formData',
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SiteVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RewriteUrlRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RewriteUriType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Uri' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RewriteQueryStringType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'QueryString' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HttpRequestHeaderModificationRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RequestHeaderModification' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Operation' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HttpResponseHeaderModificationRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ResponseHeaderModification' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Operation' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ManagedTransforms',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'AddClientGeolocationHeaders' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AddRealClientIpHeader' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'RedirectRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'TargetUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'StatusCode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ReserveQueryString' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CompressionRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Gzip' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Brotli' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OriginRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OriginHost' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OriginHttpPort' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OriginScheme' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OriginSni' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DnsRecord' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OriginHttpsPort' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Range' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ImageTransform',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TieredCache',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'CacheArchitectureMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CacheReserve',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'InstanceId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Ipv6',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SitePause',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Paused' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CacheTags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'TagName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CaseInsensitive' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SeoBypass',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DevelopmentMode',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OriginProtection',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CacheRules',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'BypassCache' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'BrowserCacheMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'BrowserCacheTtl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EdgeCacheMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EdgeCacheTtl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EdgeStatusCodeCacheTtl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SortQueryStringForCache' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'QueryStringMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'QueryString' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'IncludeHeader' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'IncludeCookie' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AdditionalCacheablePorts' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CheckPresenceHeader' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CheckPresenceCookie' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'UserDeviceType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'UserGeo' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'UserLanguage' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ServeStale' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CacheDeceptionArmor' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CacheReserveEligibility' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SiteNameExclusive',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CnameFlattening',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'FlattenMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CrossBorderOptimization',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Enable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HttpsBasicConfiguration',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Https' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Tls10' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Tls11' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Tls12' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Tls13' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CiphersuiteGroup' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Ciphersuite' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OcspStapling' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Http2' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Http3' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HttpsApplicationConfiguration',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HttpsForce' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HttpsForceCode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AltSvc' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AltSvcClear' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AltSvcPersist' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AltSvcMa' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Hsts' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HstsMaxAge' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HstsIncludeSubdomains' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HstsPreload' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NetworkOptimization',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RuleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RuleEnable' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Rule' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SmartRouting' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Http2Origin' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Websocket' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Grpc' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'UploadMaxFilesize' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListSiteFunctions' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FunctionName',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'Description',
-                    'in' => 'formData',
+                    'name' => 'ConfigId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'global',
+                            'rule',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'RuleName',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'SpecName',
-                    'in' => 'formData',
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SiteVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSiteFunction' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigIds',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],

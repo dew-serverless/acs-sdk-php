@@ -2280,19 +2280,7 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Status' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'enum' => [
-                                        'Enable',
-                                        'Disable',
-                                    ],
-                                ],
-                                'MasterService' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'MasterResourceType' => [
+                                'AssociatedResourceType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -2300,9 +2288,21 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'AssociatedResourceType' => [
+                                'MasterResourceType' => [
                                     'type' => 'string',
                                     'required' => false,
+                                ],
+                                'MasterService' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Status' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'Enable',
+                                        'Disable',
+                                    ],
                                 ],
                             ],
                         ],

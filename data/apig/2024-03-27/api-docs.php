@@ -7,6 +7,32 @@
     ],
     'components' => [
         'schemas' => [
+            'AiServiceConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'provider' => [
+                        'type' => 'string',
+                    ],
+                    'protocols' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'address' => [
+                        'type' => 'string',
+                    ],
+                    'apiKeys' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'enableHealthCheck' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
             'AkSkIdentityConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -517,6 +543,18 @@
                     'resourceGroupId' => [
                         'type' => 'string',
                     ],
+                    'aiProtocols' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'deployConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/HttpApiDeployConfig',
+                        ],
+                    ],
                 ],
             ],
             'HttpApiBackendMatchCondition' => [
@@ -578,6 +616,9 @@
                                     'format' => 'int64',
                                 ],
                                 'modelNamePattern' => [
+                                    'type' => 'string',
+                                ],
+                                'modelName' => [
                                     'type' => 'string',
                                 ],
                             ],
@@ -1528,6 +1569,9 @@
                     'groupName' => [
                         'type' => 'string',
                     ],
+                    'aiServiceConfig' => [
+                        '$ref' => '#/components/schemas/AiServiceConfig',
+                    ],
                 ],
             ],
             'ServiceHealthCheck' => [
@@ -1764,6 +1808,26 @@
                                     ],
                                 ],
                             ],
+                            'resourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'aiProtocols' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'deployConfigs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/HttpApiDeployConfig',
+                                    'required' => false,
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -1854,6 +1918,22 @@
                                         'type' => 'boolean',
                                         'required' => false,
                                     ],
+                                ],
+                            ],
+                            'aiProtocols' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'deployConfigs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/HttpApiDeployConfig',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -1973,6 +2053,22 @@
                 ],
                 [
                     'name' => 'withConsumerInfoById',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withEnvironmentInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2394,6 +2490,38 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'resourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'tags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
             ],
         ],
         'AddGatewaySecurityGroupRule' => [
@@ -2523,6 +2651,10 @@
                             'gatewayId' => [
                                 'type' => 'string',
                                 'required' => true,
+                            ],
+                            'resourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -2704,6 +2836,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'resourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDomain' => [
@@ -2800,6 +2940,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'resourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2848,6 +2992,14 @@
                 ],
                 [
                     'name' => 'gatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2941,6 +3093,45 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetHttpApiRoute' => [
+            'path' => '/v1/http-apis/{httpApiId}/routes/{routeId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'httpApiId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'routeId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

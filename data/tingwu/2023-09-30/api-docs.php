@@ -111,6 +111,10 @@
                                             'required' => false,
                                         ],
                                     ],
+                                    'AudioChannelMode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'Parameters' => [

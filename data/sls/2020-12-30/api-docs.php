@@ -613,7 +613,7 @@
                             '$ref' => '#/components/schemas/LogTag',
                         ],
                     ],
-                    'Logs' => [
+                    'LogItems' => [
                         'type' => 'array',
                         'required' => true,
                         'items' => [

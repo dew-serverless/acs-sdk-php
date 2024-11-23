@@ -109,6 +109,7 @@
                                 ],
                             ],
                         ],
+                        'minItems' => 1,
                         'maxItems' => 21,
                     ],
                 ],
@@ -1435,7 +1436,7 @@
             'parameters' => [
                 [
                     'name' => 'ObjectPath',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -1443,7 +1444,7 @@
                 ],
                 [
                     'name' => 'ObjectType',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -1451,7 +1452,7 @@
                 ],
                 [
                     'name' => 'Force',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
@@ -7344,6 +7345,21 @@
             'methods' => [
                 'get',
                 'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [],
+        ],
+        'ListRealtimeLogDelivery' => [
+            'methods' => [
+                'get',
             ],
             'schemes' => [
                 'http',

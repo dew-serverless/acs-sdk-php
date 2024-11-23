@@ -369,6 +369,74 @@
                 ],
             ],
         ],
+        'DisableHiveAccess' => [
+            'path' => '/api/v1/instances/{instanceId}/disableHiveAccess',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'EnableHiveAccess' => [
+            'path' => '/api/v1/instances/{instanceId}/enableHiveAccess',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'StopInstance' => [
             'path' => '/api/v1/instances/{instanceId}/stop',
             'methods' => [
@@ -464,6 +532,42 @@
                 ],
             ],
         ],
+        'ChangeResourceGroup' => [
+            'path' => '/api/v1/tag/changeResourceGroup',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'newResourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'instanceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ListInstances' => [
             'path' => '/api/v1/instances',
             'methods' => [
@@ -551,60 +655,8 @@
                 ],
             ],
         ],
-        'GetWarehouseDetail' => [
-            'path' => '/api/v1/instances/{instanceId}/getWarehouseDetail',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListWarehouses' => [
-            'path' => '/api/v1/instances/{instanceId}/listWarehouses',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DisableHiveAccess' => [
-            'path' => '/api/v1/instances/{instanceId}/disableHiveAccess',
+        'CreateHoloWarehouse' => [
+            'path' => '/api/v1/instances/{instanceId}/createHoloWarehouse',
             'methods' => [
                 'post',
             ],
@@ -620,72 +672,13 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'RegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'instanceId',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
-            ],
-        ],
-        'EnableHiveAccess' => [
-            'path' => '/api/v1/instances/{instanceId}/enableHiveAccess',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'RegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ChangeResourceGroup' => [
-            'path' => '/api/v1/tag/changeResourceGroup',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
                 [
                     'name' => 'body',
                     'in' => 'body',
@@ -694,21 +687,21 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'newResourceGroupId' => [
+                            'name' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
-                            'instanceId' => [
+                            'cpu' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'RebalanceHoloWarehouse' => [
-            'path' => '/api/v1/instances/{instanceId}/rebalanceHoloWarehouse',
+        'DeleteHoloWarehouse' => [
+            'path' => '/api/v1/instances/{instanceId}/deleteHoloWarehouse',
             'methods' => [
                 'post',
             ],
@@ -748,8 +741,8 @@
                 ],
             ],
         ],
-        'DeleteHoloWarehouse' => [
-            'path' => '/api/v1/instances/{instanceId}/deleteHoloWarehouse',
+        'RebalanceHoloWarehouse' => [
+            'path' => '/api/v1/instances/{instanceId}/rebalanceHoloWarehouse',
             'methods' => [
                 'post',
             ],
@@ -962,51 +955,6 @@
                 ],
             ],
         ],
-        'CreateHoloWarehouse' => [
-            'path' => '/api/v1/instances/{instanceId}/createHoloWarehouse',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'name' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'cpu' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'RestartHoloWarehouse' => [
             'path' => '/api/v1/instances/{instanceId}/restartHoloWarehouse',
             'methods' => [
@@ -1044,6 +992,92 @@
                                 'required' => true,
                             ],
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'GetWarehouseDetail' => [
+            'path' => '/api/v1/instances/{instanceId}/getWarehouseDetail',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListWarehouses' => [
+            'path' => '/api/v1/instances/{instanceId}/listWarehouses',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListBackupData' => [
+            'path' => '/api/v1/backups',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'backupType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

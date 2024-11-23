@@ -28,6 +28,9 @@
                     'AK' => [],
                 ],
             ],
+            'produces' => [
+                'application/octet-stream',
+            ],
             'deprecated' => false,
             'parameters' => [
                 [

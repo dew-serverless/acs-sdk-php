@@ -20988,31 +20988,7 @@
                 ],
             ],
         ],
-        'DeleteLiveAIStudio' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'StudioId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ModifyLiveAIStudio' => [
+        'CreateLiveAIStudio' => [
             'methods' => [
                 'post',
                 'get',
@@ -21189,7 +21165,31 @@
                 ],
             ],
         ],
-        'CreateLiveAIStudio' => [
+        'DeleteLiveAIStudio' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'StudioId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyLiveAIStudio' => [
             'methods' => [
                 'post',
                 'get',
@@ -21416,6 +21416,170 @@
                 ],
             ],
         ],
+        'AddLiveAISubtitle' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'SubtitleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SrcLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DstLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FontColor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FontName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BgColor',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PositionNormalized',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'number',
+                            'format' => 'float',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ShowSourceLan',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxLines',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WordPerLine',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FontSizeNormalized',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BorderWidthNormalized',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BgWidthNormalized',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CopyFrom',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Width',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Height',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DeleteLiveAISubtitle' => [
             'methods' => [
                 'post',
@@ -21444,63 +21608,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeLiveAISubtitle' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'SubtitleId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SubtitleName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IsDefault',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -21670,7 +21777,7 @@
                 ],
             ],
         ],
-        'AddLiveAISubtitle' => [
+        'DescribeLiveAISubtitle' => [
             'methods' => [
                 'post',
                 'get',
@@ -21686,23 +21793,23 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'SubtitleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'SubtitleName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'SrcLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DstLanguage',
+                    'name' => 'PageNumber',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -21710,7 +21817,7 @@
                     ],
                 ],
                 [
-                    'name' => 'FontColor',
+                    'name' => 'PageSize',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -21718,117 +21825,10 @@
                     ],
                 ],
                 [
-                    'name' => 'FontName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'BgColor',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PositionNormalized',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'number',
-                            'format' => 'float',
-                            'required' => false,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'ShowSourceLan',
+                    'name' => 'IsDefault',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MaxLines',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'WordPerLine',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'FontSizeNormalized',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'BorderWidthNormalized',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'BgWidthNormalized',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CopyFrom',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Description',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Width',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Height',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

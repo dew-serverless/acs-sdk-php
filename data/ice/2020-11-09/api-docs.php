@@ -71,12 +71,21 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
+                            'WorkflowOverrideParams' => [
+                                'type' => 'string',
+                            ],
+                            'AvatarUrlType' => [
+                                'type' => 'string',
+                            ],
                             'BailianAppParams' => [
                                 'type' => 'string',
                             ],
                             'AsrMaxSilence' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                            ],
+                            'AvatarUrl' => [
+                                'type' => 'string',
                             ],
                             'Volume' => [
                                 'type' => 'integer',
@@ -93,6 +102,10 @@
                             ],
                             'UseVoiceprint' => [
                                 'type' => 'boolean',
+                            ],
+                            'MaxIdleTime' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                             ],
                             'GracefulShutdown' => [
                                 'type' => 'boolean',
@@ -115,6 +128,9 @@
                             'UserOfflineTimeout' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                            ],
+                            'WorkflowOverrideParams' => [
+                                'type' => 'string',
                             ],
                             'EnableIntelligentSegment' => [
                                 'type' => 'boolean',
@@ -142,6 +158,10 @@
                             'UseVoiceprint' => [
                                 'type' => 'boolean',
                             ],
+                            'MaxIdleTime' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
                             'GracefulShutdown' => [
                                 'type' => 'boolean',
                             ],
@@ -163,6 +183,9 @@
                             'UserOfflineTimeout' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                            ],
+                            'WorkflowOverrideParams' => [
+                                'type' => 'string',
                             ],
                             'BailianAppParams' => [
                                 'type' => 'string',
@@ -189,6 +212,10 @@
                             ],
                             'UseVoiceprint' => [
                                 'type' => 'boolean',
+                            ],
+                            'MaxIdleTime' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                             ],
                             'GracefulShutdown' => [
                                 'type' => 'boolean',
@@ -10409,6 +10436,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SubmitSmarttagJob' => [
@@ -12189,6 +12224,11 @@
                             ],
                             'UseVoiceprint' => [
                                 'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
                                 'required' => false,
                             ],
                         ],

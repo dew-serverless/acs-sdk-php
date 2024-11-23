@@ -801,6 +801,7 @@
                             ],
                             'node_name_mode' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'custom_san' => [
@@ -821,10 +822,12 @@
                             ],
                             'image_id' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'rds_instances' => [
                                 'type' => 'array',
+                                'deprecated' => true,
                                 'required' => false,
                                 'items' => [
                                     'type' => 'string',
@@ -849,6 +852,7 @@
                             ],
                             'taints' => [
                                 'type' => 'array',
+                                'deprecated' => true,
                                 'required' => false,
                                 'items' => [
                                     '$ref' => '#/components/schemas/taint',
@@ -857,22 +861,27 @@
                             ],
                             'cloud_monitor_flags' => [
                                 'type' => 'boolean',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'platform' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'os_type' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'soc_enabled' => [
                                 'type' => 'boolean',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'security_hardening_os' => [
                                 'type' => 'boolean',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'cis_enabled' => [
@@ -882,6 +891,7 @@
                             ],
                             'cpu_policy' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'proxy_mode' => [
@@ -894,6 +904,7 @@
                             ],
                             'master_vswitch_ids' => [
                                 'type' => 'array',
+                                'deprecated' => true,
                                 'required' => false,
                                 'items' => [
                                     'type' => 'string',
@@ -902,19 +913,23 @@
                             ],
                             'key_pair' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'login_password' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'master_count' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'master_instance_types' => [
                                 'type' => 'array',
+                                'deprecated' => true,
                                 'required' => false,
                                 'items' => [
                                     'type' => 'string',
@@ -923,41 +938,50 @@
                             ],
                             'master_system_disk_category' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'master_system_disk_size' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'master_system_disk_performance_level' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'master_system_disk_snapshot_policy_id' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'master_instance_charge_type' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'master_period_unit' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'master_period' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'master_auto_renew' => [
                                 'type' => 'boolean',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'master_auto_renew_period' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'num_of_nodes' => [
@@ -1069,6 +1093,7 @@
                             ],
                             'instances' => [
                                 'type' => 'array',
+                                'deprecated' => true,
                                 'required' => false,
                                 'items' => [
                                     'type' => 'string',
@@ -1077,10 +1102,12 @@
                             ],
                             'format_disk' => [
                                 'type' => 'boolean',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'keep_instance_name' => [
                                 'type' => 'boolean',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'service_discovery_types' => [
@@ -1099,14 +1126,6 @@
                                 'type' => 'string',
                                 'deprecated' => true,
                                 'required' => false,
-                            ],
-                            'zone_ids' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                             ],
                             'profile' => [
                                 'type' => 'string',
@@ -1144,14 +1163,17 @@
                             'timeout_mins' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'image_type' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'load_balancer_spec' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'enable_rrsa' => [
@@ -1208,6 +1230,14 @@
                                     'required' => false,
                                 ],
                             ],
+                            'zone_ids' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                             'load_balancer_id' => [
                                 'type' => 'string',
                                 'required' => false,
@@ -1233,6 +1263,117 @@
                                                 'required' => false,
                                             ],
                                         ],
+                                    ],
+                                ],
+                            ],
+                            'control_plane_config' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'charge_type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'period' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'period_unit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'auto_renew' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'auto_renew_period' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'instance_types' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'image_type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'image_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'key_pair' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'login_password' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_category' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_size' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_snapshot_policy_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_performance_level' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_provisioned_iops' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_bursting_enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'deploymentset_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'cloud_monitor_flags' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'soc_enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'security_hardening_os' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'cpu_policy' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'runtime' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'node_port_range' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'size' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
                                     ],
                                 ],
                             ],
@@ -2012,6 +2153,117 @@
                                 'items' => [
                                     'type' => 'string',
                                     'required' => false,
+                                ],
+                            ],
+                            'control_plane_config' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'charge_type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'period' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'period_unit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'auto_renew' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'auto_renew_period' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'instance_types' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'image_type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'image_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'key_pair' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'login_password' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_category' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_size' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_snapshot_policy_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_performance_level' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_provisioned_iops' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_bursting_enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'deploymentset_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'cloud_monitor_flags' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'soc_enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'security_hardening_os' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'cpu_policy' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'runtime' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'node_port_range' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'size' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                         ],
@@ -8421,48 +8673,120 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'cs.cn-shenzhen-finance-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'cs.cn-qingdao.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'cs.cn-beijing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'cs.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-huhehaote',
             'endpoint' => 'cs.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'cs.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'cs.ap-northeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-wulanchabu',
             'endpoint' => 'cs.cn-wulanchabu.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'cs.cn-hangzhou.aliyuncs.com',
+            'regionId' => 'cn-north-2-gov-1',
+            'endpoint' => 'cs.cn-north-2-gov-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'cs.cn-shanghai.aliyuncs.com',
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'cs.ap-southeast-3.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'cs.cn-shenzhen.aliyuncs.com',
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'cs.ap-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'cs.cn-beijing-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'cs.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'cs.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'cs.ap-southeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhengzhou-jva',
+            'endpoint' => 'cs.cn-zhengzhou-jva.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-guangzhou',
             'endpoint' => 'cs.cn-guangzhou.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-qingdao-acdr-ut-1',
+            'endpoint' => 'cs.cn-qingdao-acdr-ut-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'cs.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'cs.cn-shanghai-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'cs.cn-fuzhou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-chengdu',
             'endpoint' => 'cs.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'cs.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'cs.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'cs.cn-shenzhen-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'cs.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'cs.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'rus-west-1',
+            'endpoint' => 'cs.rus-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'cs.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'cs.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'cs.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu-acdr-ut-1',
+            'endpoint' => 'cs.cn-chengdu-acdr-ut-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'cs.eu-central-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
@@ -8473,36 +8797,28 @@
             'endpoint' => 'cs.ap-northeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'cs.ap-southeast-1.aliyuncs.com',
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'cs.cn-qingdao.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'cs.ap-southeast-2.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'cs.ap-southeast-3.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'cs.ap-southeast-5.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'cs.us-east-1.aliyuncs.com',
+            'regionId' => 'cn-nanjing',
+            'endpoint' => 'cs.cn-nanjing.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',
             'endpoint' => 'cs.us-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'cs.eu-west-1.aliyuncs.com',
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'cs.cn-shanghai.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'cs.eu-central-1.aliyuncs.com',
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'cs.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'cs.cn-heyuan-acdr-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',
@@ -8510,15 +8826,7 @@
         ],
         [
             'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'cs-vpc.cn-hangzhou-finance.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'cs.cn-shanghai-finance-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-finance-1',
-            'endpoint' => 'cs.aliyuncs.com',
+            'endpoint' => 'cs.cn-hangzhou-finance.aliyuncs.com',
         ],
     ],
 ];

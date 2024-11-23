@@ -153,10 +153,6 @@
             'endpoint' => 'ecd.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'ecd.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-6',
             'endpoint' => 'ecd.ap-southeast-6.aliyuncs.com',
         ],

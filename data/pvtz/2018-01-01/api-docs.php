@@ -3106,10 +3106,6 @@
             'endpoint' => 'pvtz.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'pvtz.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'pvtz.aliyuncs.com',
         ],

@@ -539,6 +539,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDdosEventList' => [

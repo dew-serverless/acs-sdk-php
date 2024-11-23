@@ -7355,6 +7355,10 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'slb.ap-southeast-7.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-qingdao',
             'endpoint' => 'slb.cn-qingdao.aliyuncs.com',
         ],
@@ -7443,6 +7447,10 @@
             'endpoint' => 'slb.me-east-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'slb.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'slb.aliyuncs.com',
         ],
@@ -7453,10 +7461,6 @@
         [
             'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'slb.cn-beijing-finance-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'slb.aliyuncs.com',
         ],
     ],
 ];

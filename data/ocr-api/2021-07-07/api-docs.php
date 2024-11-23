@@ -3029,6 +3029,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'OutputOricoord',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RecognizeMultiLanguage' => [

@@ -55,6 +55,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteDomainAsync($arguments = [])
  * @method \Dew\Acs\Result updateDomain(array $arguments = [])
  * @method \Http\Promise\Promise updateDomainAsync($arguments = [])
+ * @method \Dew\Acs\Result getHttpApiRoute(array $arguments = [])
+ * @method \Http\Promise\Promise getHttpApiRouteAsync($arguments = [])
  */
 final class ApigClient extends AcsClient
 {

@@ -1854,7 +1854,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1862,7 +1862,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -7904,10 +7904,6 @@
         ],
         [
             'regionId' => 'ap-northeast-2-pop',
-            'endpoint' => 'cloudfw.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
             'endpoint' => 'cloudfw.aliyuncs.com',
         ],
         [

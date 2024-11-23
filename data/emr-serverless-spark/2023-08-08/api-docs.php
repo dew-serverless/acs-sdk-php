@@ -10,6 +10,12 @@
             'Artifact' => [
                 'type' => 'object',
                 'properties' => [
+                    'fullPath' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
                     'gmtModified' => [
                         'type' => 'string',
                         'required' => true,
@@ -18,6 +24,9 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                    'credential' => [
+                        '$ref' => '#/components/schemas/Credential',
                     ],
                     'gmtCreated' => [
                         'type' => 'string',
@@ -40,8 +49,8 @@
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'credential' => [
-                        '$ref' => '#/components/schemas/Credential',
+                    'catagoryBizId' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -290,73 +299,50 @@
             'Task' => [
                 'type' => 'object',
                 'properties' => [
-                    'sparkArgs' => [
-                        'type' => 'string',
-                    ],
-                    'sparkDriverMemory' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                    'sparkVersion' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'sparkExecutorMemory' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                    'sparkLogLevel' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'sparkEntrypoint' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
                     'gmtModified' => [
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'hasCommited' => [
-                        'type' => 'boolean',
-                        'required' => true,
-                    ],
-                    'sparkLogPath' => [
+                    'defaultSqlComputeId' => [
                         'type' => 'string',
-                        'required' => true,
                     ],
-                    'creator' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                    'archives' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'lastRunResourceQueueId' => [
+                        'type' => 'string',
+                    ],
+                    'sparkLogLevel' => [
+                        'type' => 'string',
                         'required' => true,
                     ],
                     'gmtCreated' => [
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'name' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'sparkDriverCores' => [
+                    'sparkDriverMemory' => [
                         'type' => 'integer',
-                        'format' => 'int32',
+                        'format' => 'int64',
                         'required' => true,
                     ],
-                    'type' => [
-                        'type' => 'string',
+                    'modifier' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
+                    ],
+                    'jars' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                     'sparkExecutorCores' => [
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => true,
-                    ],
-                    'content' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                     'extraArtifactIds' => [
                         'type' => 'array',
@@ -365,26 +351,74 @@
                             'type' => 'string',
                         ],
                     ],
-                    'lastRunResourceQueueId' => [
+                    'type' => [
                         'type' => 'string',
-                    ],
-                    'modifier' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
                         'required' => true,
                     ],
-                    'sparkConf' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/SparkConf',
+                    'content' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'sparkVersion' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'sparkEntrypoint' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'sparkArgs' => [
+                        'type' => 'string',
+                    ],
+                    'environmentId' => [
+                        'type' => 'string',
+                    ],
+                    'credential' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'accessId' => [
+                                'type' => 'string',
+                            ],
+                            'securityToken' => [
+                                'type' => 'string',
+                            ],
+                            'path' => [
+                                'type' => 'string',
+                            ],
+                            'signature' => [
+                                'type' => 'string',
+                            ],
+                            'accessUrl' => [
+                                'type' => 'string',
+                            ],
+                            'expire' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'host' => [
+                                'type' => 'string',
+                            ],
+                            'policy' => [
+                                'type' => 'string',
+                            ],
                         ],
+                    ],
+                    'hasChanged' => [
+                        'type' => 'boolean',
+                    ],
+                    'extraSparkSubmitParams' => [
+                        'type' => 'string',
+                    ],
+                    'deploymentId' => [
+                        'type' => 'string',
                     ],
                     'bizId' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                    'categoryBizId' => [
-                        'type' => 'string',
                     ],
                     'artifactUrl' => [
                         'type' => 'string',
@@ -392,18 +426,25 @@
                     'defaultResourceQueueId' => [
                         'type' => 'string',
                     ],
-                    'tags' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
-                    ],
                     'defaultDatabase' => [
                         'type' => 'string',
                     ],
-                    'hasChanged' => [
-                        'type' => 'boolean',
+                    'creator' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'categoryBizId' => [
+                        'type' => 'string',
+                    ],
+                    'sparkSubmitClause' => [
+                        'type' => 'string',
+                    ],
+                    'sparkConf' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/SparkConf',
+                        ],
                     ],
                     'pyFiles' => [
                         'type' => 'array',
@@ -412,23 +453,39 @@
                             'type' => 'string',
                         ],
                     ],
+                    'tags' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
                     'defaultCatalogId' => [
                         'type' => 'string',
                     ],
-                    'defaultSqlComputeId' => [
+                    'sparkExecutorMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'fusion' => [
+                        'type' => 'boolean',
+                    ],
+                    'isStreaming' => [
+                        'type' => 'boolean',
+                    ],
+                    'sparkDriverCores' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                    'sparkLogPath' => [
                         'type' => 'string',
+                        'required' => true,
                     ],
-                    'jars' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'archives' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                     'files' => [
                         'type' => 'array',
@@ -436,24 +493,9 @@
                             'type' => 'string',
                         ],
                     ],
-                    'extraSparkSubmitParams' => [
-                        'type' => 'string',
-                    ],
-                    'deploymentId' => [
-                        'type' => 'string',
-                    ],
-                    'isStreaming' => [
+                    'hasCommited' => [
                         'type' => 'boolean',
-                    ],
-                    'sparkSubmitClause' => [
-                        'type' => 'string',
-                    ],
-                    'fusion' => [
-                        'type' => 'boolean',
-                    ],
-                    'timeout' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -601,53 +643,6 @@
         ],
     ],
     'apis' => [
-        'GetSessionCluster' => [
-            'path' => '/api/v1/workspaces/{workspaceId}/sessionClusters/{sessionClusterId}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'sessionClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'regionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'StopSessionCluster' => [
             'path' => '/api/v1/workspaces/{workspaceId}/sessionClusters/action/stopSessionCluster',
             'methods' => [

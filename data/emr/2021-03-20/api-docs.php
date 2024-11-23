@@ -645,6 +645,9 @@
                     'Description' => [
                         'type' => 'string',
                     ],
+                    'DeletionProtection' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'ClusterScript' => [
@@ -739,6 +742,9 @@
                     ],
                     'Description' => [
                         'type' => 'string',
+                    ],
+                    'DeletionProtection' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],
@@ -1559,9 +1565,6 @@
                     'NodeGroupState' => [
                         'type' => 'string',
                     ],
-                    'Status' => [
-                        'type' => 'string',
-                    ],
                     'AdditionalSecurityGroupIds' => [
                         'type' => 'array',
                         'items' => [
@@ -1602,6 +1605,12 @@
                         '$ref' => '#/components/schemas/CostOptimizedConfig',
                     ],
                     'DeploymentSetStrategy' => [
+                        'type' => 'string',
+                    ],
+                    'PrivatePoolOptions' => [
+                        '$ref' => '#/components/schemas/PrivatePoolOptions',
+                    ],
+                    'Status' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1693,6 +1702,9 @@
                     ],
                     'AutoScalingPolicy' => [
                         '$ref' => '#/components/schemas/AutoScalingPolicy',
+                    ],
+                    'PrivatePoolOptions' => [
+                        '$ref' => '#/components/schemas/PrivatePoolOptions',
                     ],
                 ],
             ],
@@ -1996,6 +2008,20 @@
                         'items' => [
                             '$ref' => '#/components/schemas/PromotionInfo',
                         ],
+                    ],
+                ],
+            ],
+            'PrivatePoolOptions' => [
+                'type' => 'object',
+                'properties' => [
+                    'PrivatePoolIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'MatchCriteria' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

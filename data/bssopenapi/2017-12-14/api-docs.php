@@ -3162,6 +3162,14 @@
                     ],
                 ],
                 [
+                    'name' => 'IsDisplayLocalCurrency',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'PageNum',
                     'in' => 'query',
                     'schema' => [
@@ -3346,6 +3354,14 @@
                 ],
                 [
                     'name' => 'IsHideZeroCharge',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IsDisplayLocalCurrency',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
@@ -6604,10 +6620,6 @@
         ],
         [
             'regionId' => 'ap-southeast-1',
-            'endpoint' => 'business.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
             'endpoint' => 'business.ap-southeast-1.aliyuncs.com',
         ],
         [

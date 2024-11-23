@@ -549,6 +549,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listEnabledExtensionsForProjectAsync($arguments = [])
  * @method \Dew\Acs\Result callbackExtension(array $arguments = [])
  * @method \Http\Promise\Promise callbackExtensionAsync($arguments = [])
+ * @method \Dew\Acs\Result listCheckProcesses(array $arguments = [])
+ * @method \Http\Promise\Promise listCheckProcessesAsync($arguments = [])
  * @method \Dew\Acs\Result createTable(array $arguments = [])
  * @method \Http\Promise\Promise createTableAsync($arguments = [])
  * @method \Dew\Acs\Result deleteTable(array $arguments = [])

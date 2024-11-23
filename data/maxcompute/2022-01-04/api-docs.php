@@ -450,56 +450,6 @@
                 ],
             ],
         ],
-        'CreateQuotaSchedule' => [
-            'path' => '/api/v1/quotas/{nickname}/schedule',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'nickname',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'tenantId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'region',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'UpdateQuotaSchedule' => [
             'path' => '/api/v1/quotas/{nickname}/schedule',
             'methods' => [
@@ -1892,10 +1842,6 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'maxcompute.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'maxcompute.ap-southeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',

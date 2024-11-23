@@ -351,6 +351,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCdnTypesAsync($arguments = [])
  * @method \Dew\Acs\Result describeUserCdnStatus(array $arguments = [])
  * @method \Http\Promise\Promise describeUserCdnStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result listRealtimeLogDelivery(array $arguments = [])
+ * @method \Http\Promise\Promise listRealtimeLogDeliveryAsync($arguments = [])
  */
 final class CdnClient extends AcsClient
 {

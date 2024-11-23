@@ -12348,6 +12348,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'pattern' => '^\\d+$',
                     ],
                 ],
             ],

@@ -3540,11 +3540,15 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                         'DatasetId' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
-                                        'Name' => [
+                                        'VersionName' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
@@ -3593,6 +3597,10 @@
                                             'required' => false,
                                         ],
                                         'OutputUri' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'VersionName' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],

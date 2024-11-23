@@ -49,8 +49,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise changeDetailListOfOrderNumAsync($arguments = [])
  * @method \Dew\Acs\Result flightChangeOfOrder(array $arguments = [])
  * @method \Http\Promise\Promise flightChangeOfOrderAsync($arguments = [])
- * @method \Dew\Acs\Result collectFlightLowestPrice(array $arguments = [])
- * @method \Http\Promise\Promise collectFlightLowestPriceAsync($arguments = [])
  * @method \Dew\Acs\Result accountFlowList(array $arguments = [])
  * @method \Http\Promise\Promise accountFlowListAsync($arguments = [])
  * @method \Dew\Acs\Result fileUpload(array $arguments = [])
@@ -59,6 +57,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise luggageDirectAsync($arguments = [])
  * @method \Dew\Acs\Result transitVisa(array $arguments = [])
  * @method \Http\Promise\Promise transitVisaAsync($arguments = [])
+ * @method \Dew\Acs\Result collectFlightLowestPrice(array $arguments = [])
+ * @method \Http\Promise\Promise collectFlightLowestPriceAsync($arguments = [])
  */
 final class AirticketOpenClient extends AcsClient
 {

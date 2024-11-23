@@ -138,6 +138,39 @@
                     ],
                 ],
             ],
+            'LineageRelationRegisterTaskVO' => [
+                'type' => 'object',
+                'properties' => [
+                    'InputEntities' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/LineageEntityVO',
+                        ],
+                    ],
+                    'OutputEntities' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/LineageEntityVO',
+                        ],
+                    ],
+                    'CreateTimestamp' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'QualifiedName' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Attributes' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'LineageRelationRegisterVO' => [
                 'type' => 'object',
                 'properties' => [
@@ -17533,6 +17566,81 @@
                 ],
             ],
         ],
+        'ListCheckProcesses' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EventCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Operator',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '10',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CHECKING',
+                            'PASSED',
+                            'BLOCKED',
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreateTable' => [
             'methods' => [
                 'post',
@@ -20069,10 +20177,6 @@
             'endpoint' => 'dataworks.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'dataworks.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'dataworks.ap-southeast-3.aliyuncs.com',
         ],
@@ -20095,10 +20199,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'dataworks.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'dataworks.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',

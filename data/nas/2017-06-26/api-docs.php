@@ -6842,10 +6842,6 @@
             'endpoint' => 'nas.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'nas.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'nas.ap-southeast-3.aliyuncs.com',
         ],

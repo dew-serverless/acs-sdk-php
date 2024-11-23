@@ -27,6 +27,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteRuleV4Async($arguments = [])
  * @method \Dew\Acs\Result testRuleV4(array $arguments = [])
  * @method \Http\Promise\Promise testRuleV4Async($arguments = [])
+ * @method \Dew\Acs\Result deleteCheckTypeToScheme(array $arguments = [])
+ * @method \Http\Promise\Promise deleteCheckTypeToSchemeAsync($arguments = [])
  * @method \Dew\Acs\Result createQualityCheckScheme(array $arguments = [])
  * @method \Http\Promise\Promise createQualityCheckSchemeAsync($arguments = [])
  * @method \Dew\Acs\Result updateQualityCheckScheme(array $arguments = [])
@@ -181,8 +183,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listUsersAsync($arguments = [])
  * @method \Dew\Acs\Result updateUser(array $arguments = [])
  * @method \Http\Promise\Promise updateUserAsync($arguments = [])
- * @method \Dew\Acs\Result deleteCheckTypeToScheme(array $arguments = [])
- * @method \Http\Promise\Promise deleteCheckTypeToSchemeAsync($arguments = [])
  */
 final class QualitycheckClient extends AcsClient
 {

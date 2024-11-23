@@ -5854,6 +5854,10 @@
                                             'type' => 'string',
                                             'required' => false,
                                         ],
+                                        'enable' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
                             ],

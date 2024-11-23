@@ -353,6 +353,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateServiceSourceAsync($arguments = [])
  * @method \Dew\Acs\Result importServices(array $arguments = [])
  * @method \Http\Promise\Promise importServicesAsync($arguments = [])
+ * @method \Dew\Acs\Result updateGatewayService(array $arguments = [])
+ * @method \Http\Promise\Promise updateGatewayServiceAsync($arguments = [])
  * @method \Dew\Acs\Result pullServices(array $arguments = [])
  * @method \Http\Promise\Promise pullServicesAsync($arguments = [])
  * @method \Dew\Acs\Result updateGatewayServiceCheck(array $arguments = [])

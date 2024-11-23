@@ -5732,6 +5732,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PrivateLinkId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'OperateAgentClientInstall' => [
@@ -37012,8 +37021,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [

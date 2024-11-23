@@ -1483,6 +1483,33 @@
                     'Accessibility' => [
                         'type' => 'string',
                     ],
+                    'Cpu' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SummaryRelativePath' => [
+                        'type' => 'string',
+                    ],
+                    'MaxRunningTimeMinutes' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'WorkspaceId' => [
+                        'type' => 'string',
+                    ],
+                    'DataSourceType' => [
+                        'type' => 'string',
+                    ],
+                    'Options' => [
+                        'type' => 'string',
+                    ],
+                    'Memory' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Token' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'TensorboardDataSourceSpec' => [
@@ -2100,6 +2127,14 @@
                 ],
                 [
                     'name' => 'Accessibility',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OversoldInfo',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2975,6 +3010,14 @@
                 ],
                 [
                     'name' => 'Accessibility',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Priority',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

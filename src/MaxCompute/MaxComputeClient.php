@@ -23,8 +23,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getQuotaPlanAsync($arguments = [])
  * @method \Dew\Acs\Result deleteQuotaPlan(array $arguments = [])
  * @method \Http\Promise\Promise deleteQuotaPlanAsync($arguments = [])
- * @method \Dew\Acs\Result createQuotaSchedule(array $arguments = [])
- * @method \Http\Promise\Promise createQuotaScheduleAsync($arguments = [])
  * @method \Dew\Acs\Result updateQuotaSchedule(array $arguments = [])
  * @method \Http\Promise\Promise updateQuotaScheduleAsync($arguments = [])
  * @method \Dew\Acs\Result getQuotaSchedule(array $arguments = [])

@@ -709,6 +709,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDiskEncryptionByDefaultStatusAsync($arguments = [])
  * @method \Dew\Acs\Result enableDiskEncryptionByDefault(array $arguments = [])
  * @method \Http\Promise\Promise enableDiskEncryptionByDefaultAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyDiskDeployment(array $arguments = [])
+ * @method \Http\Promise\Promise modifyDiskDeploymentAsync($arguments = [])
  */
 final class EcsClient extends AcsClient
 {

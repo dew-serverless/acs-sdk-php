@@ -1961,6 +1961,14 @@
         'defaultVersion' => '2022-08-28',
     ],
     [
+        'code' => 'es-serverless',
+        'style' => 'RPC',
+        'versions' => [
+            '2023-06-27',
+        ],
+        'defaultVersion' => '2023-06-27',
+    ],
+    [
         'code' => 'ResourceCenter',
         'style' => 'RPC',
         'versions' => [
@@ -2271,5 +2279,13 @@
             '2024-08-28',
         ],
         'defaultVersion' => '2024-08-28',
+    ],
+    [
+        'code' => 'AIMath',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-11-14',
+        ],
+        'defaultVersion' => '2024-11-14',
     ],
 ];

@@ -255,6 +255,14 @@ final class SchemaReaderTest extends TestCase
         $this->assertSame(['value' => 'foo'], $reader->getObjectProperty($schema, ['value' => 'foo'], 'value'));
     }
 
+    public function test_get_object_without_definition(): void
+    {
+        $reader = new SchemaReader();
+        $schema = Schema::make([]);
+        $value = $reader->getObjectProperty($schema, ['value' => 'foo'], 'value');
+        $this->assertSame(['value' => 'foo'], $value);
+    }
+
     public function test_get_array_property(): void
     {
         $reader = new SchemaReader();

@@ -184,7 +184,10 @@ final class SchemaReader
             );
         }
 
-        throw new RuntimeException('The properties could not be found in the schema.');
+        // If the object definition is missing from the parameter to fulfill
+        // the API request, we let the user take full control of the data
+        // that's sent over the wire instead of throwing the exception.
+        return $value;
     }
 
     /**

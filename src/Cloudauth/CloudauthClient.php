@@ -57,6 +57,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise mobile3MetaSimpleVerifyAsync($arguments = [])
  * @method \Dew\Acs\Result id2MetaVerify(array $arguments = [])
  * @method \Http\Promise\Promise id2MetaVerifyAsync($arguments = [])
+ * @method \Dew\Acs\Result id2MetaStandardVerify(array $arguments = [])
+ * @method \Http\Promise\Promise id2MetaStandardVerifyAsync($arguments = [])
  * @method \Dew\Acs\Result mobile3MetaDetailVerify(array $arguments = [])
  * @method \Http\Promise\Promise mobile3MetaDetailVerifyAsync($arguments = [])
  * @method \Dew\Acs\Result createAuthKey(array $arguments = [])

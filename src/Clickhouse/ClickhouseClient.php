@@ -133,8 +133,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise checkServiceLinkedRoleAsync($arguments = [])
  * @method \Dew\Acs\Result modifyMinorVersionGreadeType(array $arguments = [])
  * @method \Http\Promise\Promise modifyMinorVersionGreadeTypeAsync($arguments = [])
- * @method \Dew\Acs\Result listClusters(array $arguments = []) {@since 2022-01-01}
- * @method \Http\Promise\Promise listClustersAsync($arguments = []) {@since 2022-01-01}
  * @method \Dew\Acs\Result deleteDBInstance(array $arguments = []) {@since 2023-05-22}
  * @method \Http\Promise\Promise deleteDBInstanceAsync($arguments = []) {@since 2023-05-22}
  * @method \Dew\Acs\Result startDBInstance(array $arguments = []) {@since 2023-05-22}

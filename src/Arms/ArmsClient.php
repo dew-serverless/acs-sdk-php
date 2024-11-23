@@ -497,6 +497,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryCommercialUsageAsync($arguments = [])
  * @method \Dew\Acs\Result getRumOcuStatisticData(array $arguments = [])
  * @method \Http\Promise\Promise getRumOcuStatisticDataAsync($arguments = [])
+ * @method \Dew\Acs\Result listEnvironmentKubeResources(array $arguments = [])
+ * @method \Http\Promise\Promise listEnvironmentKubeResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result listEnvironmentMetricTargets(array $arguments = [])
+ * @method \Http\Promise\Promise listEnvironmentMetricTargetsAsync($arguments = [])
+ * @method \Dew\Acs\Result listEnvironmentAddons(array $arguments = [])
+ * @method \Http\Promise\Promise listEnvironmentAddonsAsync($arguments = [])
+ * @method \Dew\Acs\Result listEnvironmentAlertRules(array $arguments = [])
+ * @method \Http\Promise\Promise listEnvironmentAlertRulesAsync($arguments = [])
  */
 final class ArmsClient extends AcsClient
 {

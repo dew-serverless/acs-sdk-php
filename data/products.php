@@ -2193,6 +2193,14 @@
         'defaultVersion' => '2024-04-15',
     ],
     [
+        'code' => 'schedulerx3',
+        'style' => '',
+        'versions' => [
+            '2024-06-24',
+        ],
+        'defaultVersion' => '2024-06-24',
+    ],
+    [
         'code' => 'ContactCenterAI',
         'style' => 'RPC',
         'versions' => [

@@ -9514,10 +9514,6 @@
             'endpoint' => 'edas.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'edas.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'edas.cn-beijing.aliyuncs.com',
         ],

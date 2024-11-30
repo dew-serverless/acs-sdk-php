@@ -7691,6 +7691,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DbEndpointMinSlaveCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyDBProxyEndpointAddress' => [

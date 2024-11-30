@@ -988,6 +988,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'TargetMinorVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDBCluster' => [

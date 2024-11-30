@@ -8117,6 +8117,11 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'Rotate' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],

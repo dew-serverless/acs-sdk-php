@@ -188,8 +188,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -281,15 +281,15 @@
                                             ],
                                             'departure_airport' => [
                                                 'type' => 'string',
-                                                'required' => true,
+                                                'required' => false,
                                             ],
                                             'arrival_airport' => [
                                                 'type' => 'string',
-                                                'required' => true,
+                                                'required' => false,
                                             ],
                                             'departure_time' => [
                                                 'type' => 'string',
-                                                'required' => true,
+                                                'required' => false,
                                             ],
                                             'marketing_flight_no' => [
                                                 'type' => 'string',
@@ -418,8 +418,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [

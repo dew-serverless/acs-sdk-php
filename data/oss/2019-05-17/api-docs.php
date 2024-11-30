@@ -2499,6 +2499,9 @@
                     'Redirect' => [
                         '$ref' => '#/components/schemas/RoutingRuleRedirect',
                     ],
+                    'LuaConfig' => [
+                        '$ref' => '#/components/schemas/RoutingRuleLuaConfig',
+                    ],
                 ],
             ],
             'RoutingRuleCondition' => [
@@ -2523,6 +2526,12 @@
                                     'type' => 'string',
                                 ],
                                 'Equals' => [
+                                    'type' => 'string',
+                                ],
+                                'StartsWith' => [
+                                    'type' => 'string',
+                                ],
+                                'EndsWith' => [
                                     'type' => 'string',
                                 ],
                             ],
@@ -2617,6 +2626,142 @@
                     ],
                     'MirrorPassOriginalSlashes' => [
                         'type' => 'boolean',
+                    ],
+                    'MirrorURLSlave' => [
+                        'type' => 'string',
+                    ],
+                    'MirrorURLProbe' => [
+                        'type' => 'string',
+                    ],
+                    'MirrorSaveOssMeta' => [
+                        'type' => 'boolean',
+                    ],
+                    'MirrorProxyPass' => [
+                        'type' => 'boolean',
+                    ],
+                    'MirrorAllowGetImageInfo' => [
+                        'type' => 'boolean',
+                    ],
+                    'MirrorAllowVideoSnapshot' => [
+                        'type' => 'boolean',
+                    ],
+                    'MirrorIsExpressTunnel' => [
+                        'type' => 'boolean',
+                    ],
+                    'MirrorDstRegion' => [
+                        'type' => 'string',
+                    ],
+                    'MirrorDstVpcId' => [
+                        'type' => 'string',
+                    ],
+                    'MirrorDstSlaveVpcId' => [
+                        'type' => 'string',
+                    ],
+                    'MirrorUserLastModified' => [
+                        'type' => 'boolean',
+                    ],
+                    'MirrorSwitchAllErrors' => [
+                        'type' => 'boolean',
+                    ],
+                    'MirrorTunnelId' => [
+                        'type' => 'string',
+                    ],
+                    'MirrorUsingRole' => [
+                        'type' => 'boolean',
+                    ],
+                    'MirrorRole' => [
+                        'type' => 'string',
+                    ],
+                    'MirrorAllowHeadObject' => [
+                        'type' => 'boolean',
+                    ],
+                    'TransparentMirrorResponseCodes' => [
+                        'type' => 'string',
+                    ],
+                    'MirrorAsyncStatus' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'MirrorTaggings' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Taggings' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'MirrorReturnHeaders' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'ReturnHeader' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'MirrorAuth' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AuthType' => [
+                                'type' => 'string',
+                            ],
+                            'Region' => [
+                                'type' => 'string',
+                            ],
+                            'AccessKeyId' => [
+                                'type' => 'string',
+                            ],
+                            'AccessKeySecret' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'MirrorMultiAlternates' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'MirrorMultiAlternate' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'MirrorMultiAlternateNumber' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                        ],
+                                        'MirrorMultiAlternateURL' => [
+                                            'type' => 'string',
+                                        ],
+                                        'MirrorMultiAlternateVpcId' => [
+                                            'type' => 'string',
+                                        ],
+                                        'MirrorMultiAlternateDstRegion' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -4400,15 +4545,7 @@
                         'type' => 'object',
                         'properties' => [
                             'LifecycleConfiguration' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'Rule' => [
-                                        'type' => 'array',
-                                        'items' => [
-                                            '$ref' => '#/components/schemas/LifecycleRule',
-                                        ],
-                                    ],
-                                ],
+                                '$ref' => '#/components/schemas/LifecycleConfiguration',
                             ],
                         ],
                     ],

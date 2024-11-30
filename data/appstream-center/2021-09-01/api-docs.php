@@ -1707,6 +1707,20 @@
                                     'required' => false,
                                 ],
                             ],
+                            'UserProfileFollow' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'ProfileFollowSwitch' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'FileSystemId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -1742,6 +1756,14 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PerSessionPerApp',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -1976,7 +1998,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 100,
+                        'maxItems' => 200,
                     ],
                 ],
                 [
@@ -1990,7 +2012,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 100,
+                        'maxItems' => 200,
                     ],
                 ],
                 [

@@ -3983,6 +3983,21 @@
                 ],
             ],
         ],
+        'ListRealtimeLogDelivery' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [],
+        ],
         'DescribeDomainRealtimeLogDelivery' => [
             'methods' => [
                 'get',
@@ -5161,6 +5176,7 @@
                                 ],
                             ],
                         ],
+                        'minItems' => 1,
                         'maxItems' => 21,
                     ],
                 ],
@@ -5394,6 +5410,7 @@
                                 ],
                             ],
                         ],
+                        'minItems' => 1,
                         'maxItems' => 21,
                     ],
                 ],
@@ -6907,6 +6924,63 @@
                 ],
             ],
         ],
+        'ModifyCdnService' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'InternetChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeUserCdnStatus' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [],
+        ],
+        'DescribeCdnTypes' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [],
+        ],
         'ModifyCdnDomainOwner' => [
             'methods' => [
                 'get',
@@ -7299,78 +7373,6 @@
                     ],
                 ],
             ],
-        ],
-        'ModifyCdnService' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'InternetChargeType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCdnTypes' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [],
-        ],
-        'DescribeUserCdnStatus' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [],
-        ],
-        'ListRealtimeLogDelivery' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [],
         ],
     ],
     'endpoints' => [

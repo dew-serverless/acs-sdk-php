@@ -375,6 +375,32 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'StorageClass',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'STANDARD',
+                            'ARCHIVE',
+                            'IA',
+                            'COLD_ARCHIVE',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DataRedundancyType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'LRS',
+                            'ZRS',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeTopRiskyResources' => [

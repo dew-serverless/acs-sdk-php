@@ -2419,6 +2419,50 @@
                     ],
                 ],
             ],
+            'KnowledgeBase' => [
+                'type' => 'object',
+                'properties' => [
+                    'knowledge_base_id' => [
+                        'type' => 'string',
+                    ],
+                    'owner_type' => [
+                        'type' => 'string',
+                    ],
+                    'owner_id' => [
+                        'type' => 'string',
+                    ],
+                    'owner_name' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'cover_uri' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'updated_at' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'created_at' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'file_filter' => [
+                        'type' => 'string',
+                    ],
+                    'link_rule_list' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/LinkRule',
+                        ],
+                    ],
+                ],
+            ],
             'KnowledgeCategory' => [
                 'type' => 'object',
                 'properties' => [
@@ -2553,6 +2597,29 @@
                     ],
                     'extra' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'LinkRule' => [
+                'type' => 'object',
+                'properties' => [
+                    'src_file_id' => [
+                        'type' => 'string',
+                    ],
+                    'src_drive_id' => [
+                        'type' => 'string',
+                    ],
+                    'link_type' => [
+                        'type' => 'string',
+                    ],
+                    'src_file_name' => [
+                        'type' => 'string',
+                    ],
+                    'src_drive_name' => [
+                        'type' => 'string',
+                    ],
+                    'src_valid' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],

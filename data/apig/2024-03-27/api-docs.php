@@ -1375,6 +1375,74 @@
                     ],
                 ],
             ],
+            'ParentResourceInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                    'apiInfo' => [
+                        '$ref' => '#/components/schemas/HttpApiApiInfo',
+                    ],
+                ],
+            ],
+            'PluginClassInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'pluginClassId' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'mode' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'alias' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'source' => [
+                        'type' => 'string',
+                    ],
+                    'version' => [
+                        'type' => 'string',
+                    ],
+                    'versionDescription' => [
+                        'type' => 'string',
+                    ],
+                    'executeStage' => [
+                        'type' => 'string',
+                    ],
+                    'executePriority' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'configExample' => [
+                        'type' => 'string',
+                    ],
+                    'imageName' => [
+                        'type' => 'string',
+                    ],
+                    'wasmLanguage' => [
+                        'type' => 'string',
+                    ],
+                    'supportedMinGatewayVersion' => [
+                        'type' => 'string',
+                    ],
+                    'wasmUrl' => [
+                        'type' => 'string',
+                    ],
+                    'innerPlugin' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
             'PolicyClassInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -1479,6 +1547,23 @@
                         'type' => 'string',
                     ],
                     'executePriority' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ResourceInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                    'resourceId' => [
+                        'type' => 'string',
+                    ],
+                    'resourceName' => [
+                        'type' => 'string',
+                    ],
+                    'resourceVersion' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1715,6 +1800,31 @@
                     ],
                     'networkType' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'TlsCipherSuitesConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'configType' => [
+                        'type' => 'string',
+                    ],
+                    'cipherSuites' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'name' => [
+                                    'type' => 'string',
+                                ],
+                                'supportVersions' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -2068,10 +2178,34 @@
                     ],
                 ],
                 [
+                    'name' => 'withPluginAttachmentByPluginId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'resourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withEnvironmentInfoById',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withAuthPolicyList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -2348,6 +2482,14 @@
                 ],
                 [
                     'name' => 'consumerAuthorizationRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withPluginAttachmentByPluginId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2944,6 +3086,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'tlsCipherSuitesConfig' => [
+                                '$ref' => '#/components/schemas/TlsCipherSuitesConfig',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -3084,6 +3230,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'tlsCipherSuitesConfig' => [
+                                '$ref' => '#/components/schemas/TlsCipherSuitesConfig',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -3139,8 +3289,20 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'apig.cn-qingdao.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'apig.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'apig.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'apig.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -3153,6 +3315,78 @@
         [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'apig.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'apig.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'apig.cn-guangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'apig.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'apig.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'apig.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'apig.ap-northeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'apig.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'apig.ap-southeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'apig.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'apig.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'apig.ap-southeast-6.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'apig.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'apig.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'apig.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'apig.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-east-1',
+            'endpoint' => 'apig.me-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'apig.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'apig.me-central-1.aliyuncs.com',
         ],
     ],
 ];

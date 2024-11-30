@@ -53,99 +53,6 @@
         ],
     ],
     'apis' => [
-        'DetectObject' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ImageURL',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DetectIPCObject' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ImageURL',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DetectVideoIPCObject' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'VideoURL',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StartTimestamp',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '0',
-                    ],
-                ],
-                [
-                    'name' => 'CallbackOnlyHasObject',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'DetectVehicleICongestion' => [
             'methods' => [
                 'post',
@@ -356,9 +263,8 @@
                 ],
             ],
         ],
-        'GetAsyncJobResult' => [
+        'DetectObject' => [
             'methods' => [
-                'get',
                 'post',
             ],
             'schemes' => [
@@ -373,7 +279,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'JobId',
+                    'name' => 'ImageURL',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -382,7 +288,7 @@
                 ],
             ],
         ],
-        'DetectKitchenAnimals' => [
+        'DetectIPCObject' => [
             'methods' => [
                 'post',
             ],
@@ -398,7 +304,32 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'ImageURLA',
+                    'name' => 'ImageURL',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DetectVideoIPCObject' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'VideoURL',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -406,11 +337,21 @@
                     ],
                 ],
                 [
-                    'name' => 'ImageURLB',
+                    'name' => 'StartTimestamp',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => true,
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'CallbackOnlyHasObject',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -472,6 +413,65 @@
                         ],
                         'minItems' => 0,
                         'maxItems' => 3,
+                    ],
+                ],
+            ],
+        ],
+        'DetectKitchenAnimals' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ImageURLA',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ImageURLB',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetAsyncJobResult' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'JobId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

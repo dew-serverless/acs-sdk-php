@@ -215,6 +215,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryCopilotEmbedConfigAsync($arguments = [])
  * @method \Dew\Acs\Result queryDataRange(array $arguments = [])
  * @method \Http\Promise\Promise queryDataRangeAsync($arguments = [])
+ * @method \Dew\Acs\Result smartqQueryAbility(array $arguments = [])
+ * @method \Http\Promise\Promise smartqQueryAbilityAsync($arguments = [])
  * @method \Dew\Acs\Result queryAuditLog(array $arguments = [])
  * @method \Http\Promise\Promise queryAuditLogAsync($arguments = [])
  */

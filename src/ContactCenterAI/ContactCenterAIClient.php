@@ -17,6 +17,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getTaskResultAsync($arguments = [])
  * @method \Dew\Acs\Result createTask(array $arguments = [])
  * @method \Http\Promise\Promise createTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result analyzeImage(array $arguments = [])
+ * @method \Http\Promise\Promise analyzeImageAsync($arguments = [])
  */
 final class ContactCenterAIClient extends AcsClient
 {

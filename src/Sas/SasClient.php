@@ -747,8 +747,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSecurityEventOperationStatusAsync($arguments = [])
  * @method \Dew\Acs\Result describeSimilarEventScenarios(array $arguments = [])
  * @method \Http\Promise\Promise describeSimilarEventScenariosAsync($arguments = [])
- * @method \Dew\Acs\Result describeUserLayoutAuthorization(array $arguments = []) {@deprecated 2018-12-03}
- * @method \Http\Promise\Promise describeUserLayoutAuthorizationAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result describeSecurityStatInfo(array $arguments = [])
  * @method \Http\Promise\Promise describeSecurityStatInfoAsync($arguments = [])
  * @method \Dew\Acs\Result describeLoginBaseConfigs(array $arguments = [])
@@ -1683,6 +1681,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceVulStatisticsAsync($arguments = [])
  * @method \Dew\Acs\Result setImageBuildRiskStatus(array $arguments = [])
  * @method \Http\Promise\Promise setImageBuildRiskStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result submitTenantCheck(array $arguments = [])
+ * @method \Http\Promise\Promise submitTenantCheckAsync($arguments = [])
+ * @method \Dew\Acs\Result getTenantCheckAvailable(array $arguments = [])
+ * @method \Http\Promise\Promise getTenantCheckAvailableAsync($arguments = [])
  */
 final class SasClient extends AcsClient
 {

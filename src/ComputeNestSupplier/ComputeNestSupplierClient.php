@@ -91,6 +91,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getServiceTemplateParameterConstraintsAsync($arguments = [])
  * @method \Dew\Acs\Result pushMeteringData(array $arguments = [])
  * @method \Http\Promise\Promise pushMeteringDataAsync($arguments = [])
+ * @method \Dew\Acs\Result rollbackServiceInstance(array $arguments = [])
+ * @method \Http\Promise\Promise rollbackServiceInstanceAsync($arguments = [])
  */
 final class ComputeNestSupplierClient extends AcsClient
 {

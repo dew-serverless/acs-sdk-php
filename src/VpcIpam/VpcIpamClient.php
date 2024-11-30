@@ -49,6 +49,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteIpamPoolAllocationAsync($arguments = [])
  * @method \Dew\Acs\Result updateIpamPoolAllocation(array $arguments = [])
  * @method \Http\Promise\Promise updateIpamPoolAllocationAsync($arguments = [])
+ * @method \Dew\Acs\Result getIpamPoolAllocation(array $arguments = [])
+ * @method \Http\Promise\Promise getIpamPoolAllocationAsync($arguments = [])
  * @method \Dew\Acs\Result listIpamPoolAllocations(array $arguments = [])
  * @method \Http\Promise\Promise listIpamPoolAllocationsAsync($arguments = [])
  * @method \Dew\Acs\Result listIpamResourceDiscoveries(array $arguments = [])

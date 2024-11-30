@@ -229,6 +229,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeTableAccessCountAsync($arguments = [])
  * @method \Dew\Acs\Result describeSqlPattern(array $arguments = [])
  * @method \Http\Promise\Promise describeSqlPatternAsync($arguments = [])
+ * @method \Dew\Acs\Result describeKmsKeys(array $arguments = [])
+ * @method \Http\Promise\Promise describeKmsKeysAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVSwitchs(array $arguments = [])
+ * @method \Http\Promise\Promise describeVSwitchsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVpcs(array $arguments = [])
+ * @method \Http\Promise\Promise describeVpcsAsync($arguments = [])
  * @method \Dew\Acs\Result deleteBackups(array $arguments = [])
  * @method \Http\Promise\Promise deleteBackupsAsync($arguments = [])
  * @method \Dew\Acs\Result describeDBClusterShardNumber(array $arguments = [])
@@ -385,6 +391,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise loadSampleDataSetAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeApsActionLogs(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeApsActionLogsAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result modifyDBClusterVip(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise modifyDBClusterVipAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result modifyEssdCacheConfig(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise modifyEssdCacheConfigAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeEssdCacheConfig(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeEssdCacheConfigAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeCompactionServiceSwitch(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeCompactionServiceSwitchAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result modifyCompactionServiceSwitch(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise modifyCompactionServiceSwitchAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeLakeCacheSize(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeLakeCacheSizeAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result modifyLakeCacheSize(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise modifyLakeCacheSizeAsync($arguments = []) {@since 2021-12-01}
  */
 final class AdbClient extends AcsClient
 {

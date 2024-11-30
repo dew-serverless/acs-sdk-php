@@ -61,6 +61,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getCoupondeductProductCodeAsync($arguments = [])
  * @method \Dew\Acs\Result createCouponTemplate(array $arguments = [])
  * @method \Http\Promise\Promise createCouponTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelCoupon(array $arguments = [])
+ * @method \Http\Promise\Promise cancelCouponAsync($arguments = [])
  */
 final class AgencyClient extends AcsClient
 {

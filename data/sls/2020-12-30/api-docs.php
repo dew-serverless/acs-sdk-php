@@ -1997,6 +1997,9 @@
                     'userdefined-id' => [
                         'type' => 'string',
                     ],
+                    'host-id' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'machineGroup' => [

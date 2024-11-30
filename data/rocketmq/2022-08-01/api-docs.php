@@ -121,6 +121,14 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'storageEncryption' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'storageSecretKey' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'networkInfo' => [
@@ -179,6 +187,7 @@
                                             ],
                                             'ipWhitelist' => [
                                                 'type' => 'array',
+                                                'deprecated' => true,
                                                 'required' => false,
                                                 'items' => [
                                                     'type' => 'string',
@@ -408,6 +417,14 @@
                             'type' => 'string',
                             'required' => false,
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'storageSecretKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1202,8 +1219,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [

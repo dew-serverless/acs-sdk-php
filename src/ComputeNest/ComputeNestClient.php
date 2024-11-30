@@ -65,6 +65,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise rollbackServiceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result updateServiceInstanceAttributes(array $arguments = [])
  * @method \Http\Promise\Promise updateServiceInstanceAttributesAsync($arguments = [])
+ * @method \Dew\Acs\Result getService(array $arguments = [])
+ * @method \Http\Promise\Promise getServiceAsync($arguments = [])
  */
 final class ComputeNestClient extends AcsClient
 {

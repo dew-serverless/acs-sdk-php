@@ -181,6 +181,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise disableRealtimeLogDeliveryAsync($arguments = [])
  * @method \Dew\Acs\Result enableRealtimeLogDelivery(array $arguments = [])
  * @method \Http\Promise\Promise enableRealtimeLogDeliveryAsync($arguments = [])
+ * @method \Dew\Acs\Result listRealtimeLogDelivery(array $arguments = [])
+ * @method \Http\Promise\Promise listRealtimeLogDeliveryAsync($arguments = [])
  * @method \Dew\Acs\Result describeDomainRealtimeLogDelivery(array $arguments = [])
  * @method \Http\Promise\Promise describeDomainRealtimeLogDeliveryAsync($arguments = [])
  * @method \Dew\Acs\Result describeRealtimeDeliveryAcc(array $arguments = [])
@@ -321,6 +323,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeUserConfigsAsync($arguments = []) {@deprecated 2018-05-10}
  * @method \Dew\Acs\Result setReqHeaderConfig(array $arguments = [])
  * @method \Http\Promise\Promise setReqHeaderConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyCdnService(array $arguments = [])
+ * @method \Http\Promise\Promise modifyCdnServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result describeUserCdnStatus(array $arguments = [])
+ * @method \Http\Promise\Promise describeUserCdnStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCdnTypes(array $arguments = [])
+ * @method \Http\Promise\Promise describeCdnTypesAsync($arguments = [])
  * @method \Dew\Acs\Result modifyCdnDomainOwner(array $arguments = [])
  * @method \Http\Promise\Promise modifyCdnDomainOwnerAsync($arguments = [])
  * @method \Dew\Acs\Result describeCdnConditionIPBInfo(array $arguments = [])
@@ -345,14 +353,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise setCdnFullDomainsBlockIPAsync($arguments = [])
  * @method \Dew\Acs\Result describeCdnFullDomainsBlockIPConfig(array $arguments = [])
  * @method \Http\Promise\Promise describeCdnFullDomainsBlockIPConfigAsync($arguments = [])
- * @method \Dew\Acs\Result modifyCdnService(array $arguments = [])
- * @method \Http\Promise\Promise modifyCdnServiceAsync($arguments = [])
- * @method \Dew\Acs\Result describeCdnTypes(array $arguments = [])
- * @method \Http\Promise\Promise describeCdnTypesAsync($arguments = [])
- * @method \Dew\Acs\Result describeUserCdnStatus(array $arguments = [])
- * @method \Http\Promise\Promise describeUserCdnStatusAsync($arguments = [])
- * @method \Dew\Acs\Result listRealtimeLogDelivery(array $arguments = [])
- * @method \Http\Promise\Promise listRealtimeLogDeliveryAsync($arguments = [])
  */
 final class CdnClient extends AcsClient
 {

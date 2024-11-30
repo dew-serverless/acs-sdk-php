@@ -1571,6 +1571,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateVideoInfos' => [
@@ -2139,6 +2147,14 @@
                 ],
                 [
                     'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SessionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

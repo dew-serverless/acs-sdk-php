@@ -4424,6 +4424,7 @@
                 [
                     'name' => 'body',
                     'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
                         'type' => 'object',
                         'required' => false,

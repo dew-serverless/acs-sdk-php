@@ -550,6 +550,99 @@
                 ],
             ],
         ],
+        'ListTunnelQuotaTimer' => [
+            'path' => '/api/v1/tunnel/{nickname}/timers',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateTunnelQuotaTimer' => [
+            'path' => '/api/v1/tunnel/{nickname}/timers',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'beginTime' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'endTime' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'timezone' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'tunnelQuotaParameter' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'slotNum' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'elasticReservedSlotNum' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreateProject' => [
             'path' => '/api/v1/projects',
             'methods' => [
@@ -705,6 +798,159 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateProjectBasicMeta' => [
+            'path' => '/api/v1/projects/{projectName}/meta',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'projectName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'properties' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'allowFullScan' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'enableDecimal2' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'enableTunnelQuotaRoute' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'encryption' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'enable' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'key' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'algorithm' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'retentionDays' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'sqlMeteringMax' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'tableLifecycle' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'type' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'timezone' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'tunnelQuota' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'typeSystem' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateProjectDefaultQuota' => [
+            'path' => '/api/v1/projects/{projectName}/quota',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'projectName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'quota' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

@@ -533,6 +533,9 @@
                                             'Operator' => [
                                                 'type' => 'string',
                                             ],
+                                            'Expression' => [
+                                                'type' => 'string',
+                                            ],
                                         ],
                                     ],
                                     'Warned' => [
@@ -544,6 +547,9 @@
                                             'Operator' => [
                                                 'type' => 'string',
                                             ],
+                                            'Expression' => [
+                                                'type' => 'string',
+                                            ],
                                         ],
                                     ],
                                     'Critical' => [
@@ -553,6 +559,9 @@
                                                 'type' => 'string',
                                             ],
                                             'Operator' => [
+                                                'type' => 'string',
+                                            ],
+                                            'Expression' => [
                                                 'type' => 'string',
                                             ],
                                         ],

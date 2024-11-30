@@ -116,5 +116,14 @@
             ],
         ],
     ],
-    'endpoints' => [],
+    'endpoints' => [
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'wss.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'wss.ap-southeast-1.aliyuncs.com',
+        ],
+    ],
 ];

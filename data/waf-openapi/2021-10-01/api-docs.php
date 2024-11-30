@@ -1441,6 +1441,14 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'BackupBackends' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -1701,6 +1709,14 @@
                             'XffProto' => [
                                 'type' => 'boolean',
                                 'required' => false,
+                            ],
+                            'BackupBackends' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],

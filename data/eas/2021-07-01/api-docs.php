@@ -5224,6 +5224,10 @@
                                 'format' => 'int32',
                                 'required' => false,
                             ],
+                            'EnableSSLRedirection' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

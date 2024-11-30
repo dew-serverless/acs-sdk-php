@@ -913,6 +913,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -929,11 +930,63 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
                 [
                     'name' => 'sourceMaterial',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'allowEmoji',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sentiment',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'lengthRange',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'extraInfo',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'modelId',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

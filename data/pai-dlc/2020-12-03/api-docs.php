@@ -3355,12 +3355,12 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'pai-dlc.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'pai-dlc.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'pai-dlc.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -3375,8 +3375,16 @@
             'endpoint' => 'pai-dlc.cn-shenzhen.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'pai-dlc.cn-guangzhou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'pai-dlc.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'pai-dlc.ap-northeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',
@@ -3385,6 +3393,14 @@
         [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'pai-dlc.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'pai-dlc.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'pai-dlc.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',

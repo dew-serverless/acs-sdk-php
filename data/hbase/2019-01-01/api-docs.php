@@ -5349,6 +5349,10 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'hbase.ap-southeast-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-qingdao',
             'endpoint' => 'hbase.aliyuncs.com',
         ],
@@ -5391,10 +5395,6 @@
         [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'hbase.ap-northeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'hbase.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-2',

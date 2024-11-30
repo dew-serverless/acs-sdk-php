@@ -215,6 +215,47 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EncryptedInstance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'KmsKeyId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetInstance' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
             ],
         ],
         'UpdateInstance' => [
@@ -358,6 +399,22 @@
                             '7',
                             '15',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'EncryptedInstance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'KmsKeyId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1581,10 +1638,6 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'amqp-open.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'amqp-open.ap-southeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',

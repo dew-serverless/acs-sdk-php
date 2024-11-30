@@ -123,23 +123,6 @@
                 ],
             ],
         ],
-        'GetAccountInfo' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
         'GetResolveCountSummary' => [
             'methods' => [
                 'post',

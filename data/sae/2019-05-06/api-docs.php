@@ -1828,6 +1828,267 @@
                     ],
                 ],
             ],
+            'HttpApiRoute' => [
+                'type' => 'object',
+                'required' => false,
+                'properties' => [
+                    'IngressId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'RouteId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'HttpApiId' => [
+                        'type' => 'string',
+                    ],
+                    'HttpApiType' => [
+                        'type' => 'string',
+                    ],
+                    'HttpApiName' => [
+                        'type' => 'string',
+                    ],
+                    'EnvironmentId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'NamespaceId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'GatewayId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Domains' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'DomainId' => [
+                                    'type' => 'string',
+                                ],
+                                'DomainName' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'DestinationType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Services' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'AppId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AppName' => [
+                                    'type' => 'string',
+                                ],
+                                'ServiceId' => [
+                                    'type' => 'string',
+                                ],
+                                'ServiceName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ServicePort' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'ServiceProtocol' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ServiceWeight' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Predicates' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'PathPredicates' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Path' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'IgnoreCase' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'MethodPredicates' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'HeaderPredicates' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'QueryPredicates' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Policies' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Retry' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Attempts' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                    'HttpCodes' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'RetryOn' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'Enable' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'Timeout' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'TimeUnit' => [
+                                        'type' => 'string',
+                                    ],
+                                    'UnitNum' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                    'Enable' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'Fallback' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Destinations' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'object',
+                                            'properties' => [
+                                                'AppId' => [
+                                                    'type' => 'string',
+                                                ],
+                                                'AppName' => [
+                                                    'type' => 'string',
+                                                ],
+                                                'ServiceId' => [
+                                                    'type' => 'string',
+                                                ],
+                                                'ServiceName' => [
+                                                    'type' => 'string',
+                                                ],
+                                                'ServiceProtocol' => [
+                                                    'type' => 'string',
+                                                ],
+                                                'ServicePort' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'Enable' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'SourceType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'NacosNamespaceId' => [
+                        'type' => 'string',
+                    ],
+                    'NacosInstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'DeployStatus' => [
+                        'type' => 'string',
+                    ],
+                    'AddressType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
             'ImageConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -3216,6 +3477,40 @@
                         'required' => false,
                     ],
                     'requestId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SidecarContainerConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Cpu' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Memory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ImageUrl' => [
+                        'type' => 'string',
+                    ],
+                    'Command' => [
+                        'type' => 'string',
+                    ],
+                    'CommandArgs' => [
+                        'type' => 'string',
+                    ],
+                    'Envs' => [
+                        'type' => 'string',
+                    ],
+                    'ConfigMapMountDesc' => [
+                        'type' => 'string',
+                    ],
+                    'EmptyDirDesc' => [
                         'type' => 'string',
                     ],
                 ],

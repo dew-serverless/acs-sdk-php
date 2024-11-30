@@ -723,6 +723,10 @@
                                     'type' => 'string',
                                     'required' => true,
                                 ],
+                                'PostFee' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'OrderCreateTime' => [
                                     'type' => 'string',
                                     'required' => true,
@@ -794,8 +798,128 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'OrderTag' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'ConsignTime' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'ReceiverCity' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'ReceiverState' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'DiscountFee' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'AdjustFee' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'ItemMealId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'ItemMealName' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'BuyerRate' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'SellerRate' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'RefundId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Cid' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'BuyerArea' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'SellerFlag' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'TradeFrom' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Payment' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
+                                ],
+                                'ConsignTime' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ReceiverCity' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ReceiverState' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Sid' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'BuyerRate' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SellerRate' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DiscountFee' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AdjustFee' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'CommissionFee' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'BuyerArea' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PointFee' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RealPointFee' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SellerFlag' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'tradeFrom' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],

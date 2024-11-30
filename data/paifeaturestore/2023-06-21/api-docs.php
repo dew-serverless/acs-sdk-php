@@ -1081,7 +1081,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1495,7 +1495,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1995,7 +1995,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -2275,7 +2275,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -2749,101 +2749,6 @@
                 ],
             ],
         ],
-        'CreateModelFeatureTrainingSetFGTable' => [
-            'path' => '/api/v1/instances/{InstanceId}/modelfeatures/{ModelFeatureId}/trainingsetfgtable',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ModelFeatureId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateModelFeatureFGInfo' => [
-            'path' => '/api/v1/instances/{InstanceId}/modelfeatures/{ModelFeatureId}/fginfo',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ModelFeatureId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'Content' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'UpdateModelFeatureFGFeature' => [
             'path' => '/api/v1/instances/{InstanceId}/modelfeatures/{ModelFeatureId}/fgfeature',
             'methods' => [
@@ -3164,81 +3069,6 @@
                 ],
             ],
         ],
-        'ExportModelFeatureTrainingSetFGTable' => [
-            'path' => '/api/v1/instances/{InstanceId}/modelfeatures/{ModelFeatureId}/action/exporttrainingsetfgtable',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ModelFeatureId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'TrainingSetFgConfig' => [
-                                'type' => 'object',
-                                'required' => true,
-                                'properties' => [
-                                    'Partitions' => [
-                                        'type' => 'object',
-                                        'required' => true,
-                                        'additionalProperties' => [
-                                            'type' => 'object',
-                                            'additionalProperties' => [
-                                                'type' => 'string',
-                                            ],
-                                        ],
-                                    ],
-                                    'FgJsonName' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'JarName' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'GetTask' => [
             'path' => '/api/v1/instances/{InstanceId}/tasks/{TaskId}',
             'methods' => [
@@ -3372,7 +3202,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [

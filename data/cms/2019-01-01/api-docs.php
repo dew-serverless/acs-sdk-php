@@ -12402,7 +12402,7 @@
         ],
         [
             'regionId' => 'cn-heyuan-acdr-1',
-            'endpoint' => 'metrics.cn-heyuan-addr-1.aliyuncs.com',
+            'endpoint' => 'metrics.cn-heyuan-acdr-1.aliyuncs.com',
         ],
     ],
 ];

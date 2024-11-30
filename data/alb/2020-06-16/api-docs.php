@@ -2525,6 +2525,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'CrossZoneEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteServerGroup' => [
@@ -2806,6 +2814,14 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'CrossZoneEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4320,7 +4336,7 @@
                             ],
                         ],
                         'minItems' => 1,
-                        'maxItems' => 11,
+                        'maxItems' => 100,
                     ],
                 ],
             ],
@@ -4411,7 +4427,7 @@
                             'required' => false,
                         ],
                         'minItems' => 1,
-                        'maxItems' => 11,
+                        'maxItems' => 100,
                     ],
                 ],
             ],
@@ -5377,6 +5393,8 @@
                                 ],
                             ],
                         ],
+                        'minItems' => 1,
+                        'maxItems' => 100,
                     ],
                 ],
                 [

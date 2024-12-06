@@ -145,7 +145,7 @@ final class V3Signature implements SignsRequest, NeedsApiContext
     /**
      * @param  string[]|null  $headers
      */
-    public function getCanonicalHeaders(RequestInterface $request, array $headers = null): string
+    public function getCanonicalHeaders(RequestInterface $request, ?array $headers = null): string
     {
         $headers ??= $this->getSignedHeaders($request);
 

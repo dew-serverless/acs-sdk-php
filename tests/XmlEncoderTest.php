@@ -147,4 +147,10 @@ final class XmlEncoderTest extends TestCase
         $encoder = new XmlEncoder();
         $this->assertSame(['root' => '<h1>Hello world!</h1>'], $encoder->decode($xml));
     }
+
+    public function test_decode_empty(): void
+    {
+        $encoder = new XmlEncoder();
+        $this->assertSame([], $encoder->decode(''));
+    }
 }

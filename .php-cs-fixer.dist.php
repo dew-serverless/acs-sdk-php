@@ -30,5 +30,9 @@ return (new PhpCsFixer\Config())
         'phpdoc_separation' => [
             'skip_unlisted_annotations' => true,
         ],
+        'nullable_type_declaration' => [
+            'syntax' => 'question_mark',
+        ],
+        'nullable_type_declaration_for_default_null_value' => true,
     ])
     ->setFinder($finder);

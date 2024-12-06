@@ -118,6 +118,10 @@ final class XmlEncoder implements DataEncoder
     #[Override]
     public function decode(string $data): array
     {
+        if ($data === '') {
+            return [];
+        }
+
         $xml = new DOMDocument();
         $xml->loadXML($data, LIBXML_NOBLANKS);
 

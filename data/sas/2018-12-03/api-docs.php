@@ -26107,6 +26107,23 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SnapshotName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RetentionDays',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'AddBaselineCheckWhiteRecord' => [
@@ -30576,6 +30593,14 @@
                             'required' => false,
                         ],
                         'maxItems' => 1000,
+                    ],
+                ],
+                [
+                    'name' => 'Source',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

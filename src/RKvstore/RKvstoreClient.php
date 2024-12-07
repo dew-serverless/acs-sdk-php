@@ -259,6 +259,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise masterNodeShutDownFailOverAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceBandwidth(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceBandwidthAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyTaskInfo(array $arguments = [])
+ * @method \Http\Promise\Promise modifyTaskInfoAsync($arguments = [])
  */
 final class RKvstoreClient extends AcsClient
 {

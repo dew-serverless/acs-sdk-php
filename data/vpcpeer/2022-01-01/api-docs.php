@@ -165,6 +165,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'LinkType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteVpcPeerConnection' => [
@@ -499,6 +507,14 @@
                 [
                     'name' => 'ClientToken',
                     'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LinkType',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

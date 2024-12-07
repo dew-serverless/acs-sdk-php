@@ -936,6 +936,15 @@
             'JobStatus' => [
                 'type' => 'object',
                 'properties' => [
+                    'running' => [
+                        '$ref' => '#/components/schemas/JobStatusRunning',
+                    ],
+                    'riskLevel' => [
+                        'type' => 'string',
+                    ],
+                    'failure' => [
+                        '$ref' => '#/components/schemas/JobFailure',
+                    ],
                     'currentJobStatus' => [
                         'type' => 'string',
                         'enum' => [
@@ -947,11 +956,9 @@
                             'FINISHED',
                         ],
                     ],
-                    'failure' => [
-                        '$ref' => '#/components/schemas/JobFailure',
-                    ],
-                    'running' => [
-                        '$ref' => '#/components/schemas/JobStatusRunning',
+                    'healthScore' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],

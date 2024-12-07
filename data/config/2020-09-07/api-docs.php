@@ -8403,6 +8403,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AggregatorDeliveryDataType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListIntegratedService' => [

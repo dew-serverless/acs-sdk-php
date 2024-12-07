@@ -6627,6 +6627,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'InstanceId',
@@ -6668,6 +6669,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'InstanceId',
@@ -7440,6 +7442,21 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Features',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ImdsSupport' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeImages' => [
@@ -7779,6 +7796,10 @@
                         'required' => false,
                         'properties' => [
                             'NvmeSupport' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ImdsSupport' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -8306,6 +8327,10 @@
                         'required' => false,
                         'properties' => [
                             'NvmeSupport' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ImdsSupport' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -10208,6 +10233,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -10350,6 +10376,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -10484,6 +10511,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -10567,6 +10595,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'regionId',
@@ -11167,6 +11196,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'PageNumber',
@@ -20873,7 +20903,7 @@
                     'style' => 'repeatList',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
@@ -20887,7 +20917,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -21300,6 +21330,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'RegionId',

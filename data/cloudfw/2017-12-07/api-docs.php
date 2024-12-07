@@ -5644,6 +5644,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IsOnlyPrivateAssoc',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeUserAssetIPTrafficInfo' => [

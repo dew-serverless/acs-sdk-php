@@ -371,14 +371,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createRoutineRelatedRecordAsync($arguments = [])
  * @method \Dew\Acs\Result createRoutineRelatedRoute(array $arguments = [])
  * @method \Http\Promise\Promise createRoutineRelatedRouteAsync($arguments = [])
- * @method \Dew\Acs\Result updateSiteFunction(array $arguments = [])
- * @method \Http\Promise\Promise updateSiteFunctionAsync($arguments = [])
- * @method \Dew\Acs\Result createSiteFunction(array $arguments = [])
- * @method \Http\Promise\Promise createSiteFunctionAsync($arguments = [])
- * @method \Dew\Acs\Result listSiteFunctions(array $arguments = [])
- * @method \Http\Promise\Promise listSiteFunctionsAsync($arguments = [])
- * @method \Dew\Acs\Result deleteSiteFunction(array $arguments = [])
- * @method \Http\Promise\Promise deleteSiteFunctionAsync($arguments = [])
  * @method \Dew\Acs\Result listCiphers(array $arguments = [])
  * @method \Http\Promise\Promise listCiphersAsync($arguments = [])
  * @method \Dew\Acs\Result listClientCaCertificates(array $arguments = [])
@@ -401,6 +393,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteClientCertificateAsync($arguments = [])
  * @method \Dew\Acs\Result deleteCertificate(array $arguments = [])
  * @method \Http\Promise\Promise deleteCertificateAsync($arguments = [])
+ * @method \Dew\Acs\Result getClientCertificateHostnames(array $arguments = [])
+ * @method \Http\Promise\Promise getClientCertificateHostnamesAsync($arguments = [])
+ * @method \Dew\Acs\Result setClientCertificateHostnames(array $arguments = [])
+ * @method \Http\Promise\Promise setClientCertificateHostnamesAsync($arguments = [])
  */
 final class EsaClient extends AcsClient
 {

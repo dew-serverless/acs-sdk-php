@@ -1184,6 +1184,26 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'OptionalRelayStates' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'RelayState' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'maxLength' => 256,
+                                        ],
+                                        'DisplayName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'maxLength' => 64,
+                                        ],
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -1311,6 +1331,14 @@
                 ],
                 [
                     'name' => 'InitLoginUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

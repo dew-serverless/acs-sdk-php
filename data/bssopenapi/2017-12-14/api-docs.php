@@ -5016,6 +5016,16 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'PricingCycle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
             ],
         ],
         'ModifyInstance' => [

@@ -1792,5 +1792,45 @@
             'regionId' => 'ap-southeast-5',
             'endpoint' => 'selectdb.ap-southeast-5.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'selectdb.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'selectdb.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'selectdb.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'selectdb.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'selectdb.aliyuncs.com',
+        ],
     ],
 ];

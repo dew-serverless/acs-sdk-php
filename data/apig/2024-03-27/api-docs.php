@@ -2641,7 +2641,7 @@
                     ],
                 ],
                 [
-                    'name' => 'tags',
+                    'name' => 'tag',
                     'in' => 'query',
                     'style' => 'json',
                     'schema' => [

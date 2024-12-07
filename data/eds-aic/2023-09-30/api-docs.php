@@ -2213,6 +2213,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'BackupFileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RecoveryFile' => [

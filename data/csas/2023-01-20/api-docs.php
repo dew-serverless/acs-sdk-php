@@ -6,7 +6,43 @@
         'version' => '2023-01-20',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'Rule' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'RuleType' => [
+                        'type' => 'string',
+                    ],
+                    'RuleSubType' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Operator' => [
+                        'type' => 'string',
+                    ],
+                    'Values' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'Combinator' => [
+                        'type' => 'string',
+                    ],
+                    'Rules' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Rule',
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'apis' => [
         'ListNacUserCert' => [

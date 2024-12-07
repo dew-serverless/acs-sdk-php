@@ -516,6 +516,22 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'UsePromotionCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'QueryRenewInstancePrice' => [

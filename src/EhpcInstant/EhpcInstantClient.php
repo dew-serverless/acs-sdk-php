@@ -37,6 +37,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result unTagResources(array $arguments = [])
  * @method \Http\Promise\Promise unTagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result getAppVersions(array $arguments = [])
+ * @method \Http\Promise\Promise getAppVersionsAsync($arguments = [])
  */
 final class EhpcInstantClient extends AcsClient
 {

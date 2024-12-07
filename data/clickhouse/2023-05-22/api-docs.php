@@ -1685,7 +1685,7 @@
         ],
         [
             'regionId' => 'ap-southeast-1',
-            'endpoint' => 'clickhouse.aliyuncs.com',
+            'endpoint' => 'clickhouse.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',

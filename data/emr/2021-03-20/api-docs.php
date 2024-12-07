@@ -1499,6 +1499,18 @@
                     'MasterRootPassword' => [
                         'type' => 'string',
                     ],
+                    'SystemDiskEncrypted' => [
+                        'type' => 'boolean',
+                    ],
+                    'SystemDiskKMSKeyId' => [
+                        'type' => 'string',
+                    ],
+                    'DataDiskEncrypted' => [
+                        'type' => 'boolean',
+                    ],
+                    'DataDiskKMSKeyId' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'NodeCountConstraint' => [

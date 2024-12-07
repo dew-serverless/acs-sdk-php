@@ -237,6 +237,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'Mode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RemoveImage' => [
@@ -1183,11 +1191,70 @@
                 ],
             ],
         ],
+        'GetAppVersions' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ImageCategory',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ImageType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'ehpcinstant.cn-guangzhou.aliyuncs.com',
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'ehpcinstant.cn-shanghai.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
@@ -1200,6 +1267,10 @@
         [
             'regionId' => 'cn-heyuan',
             'endpoint' => 'ehpcinstant.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'ehpcinstant.cn-guangzhou.aliyuncs.com',
         ],
     ],
 ];

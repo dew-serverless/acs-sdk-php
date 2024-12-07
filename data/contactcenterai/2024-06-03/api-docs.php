@@ -559,6 +559,10 @@
                                     'required' => false,
                                 ],
                             ],
+                            'sourceCallerUid' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -591,6 +595,22 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'requiredFieldList',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'enum' => [
+                                'asr_result',
+                            ],
+                        ],
                     ],
                 ],
             ],

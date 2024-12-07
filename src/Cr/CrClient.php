@@ -81,6 +81,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listRepoSyncRuleAsync($arguments = [])
  * @method \Dew\Acs\Result getRepoSyncTask(array $arguments = [])
  * @method \Http\Promise\Promise getRepoSyncTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelRepoSyncTask(array $arguments = [])
+ * @method \Http\Promise\Promise cancelRepoSyncTaskAsync($arguments = [])
  * @method \Dew\Acs\Result createNamespace(array $arguments = [])
  * @method \Http\Promise\Promise createNamespaceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteNamespace(array $arguments = [])

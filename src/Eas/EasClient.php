@@ -189,6 +189,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise reinstallTenantAddonAsync($arguments = [])
  * @method \Dew\Acs\Result listTenantAddons(array $arguments = [])
  * @method \Http\Promise\Promise listTenantAddonsAsync($arguments = [])
+ * @method \Dew\Acs\Result listGatewayIntranetSupportedZone(array $arguments = [])
+ * @method \Http\Promise\Promise listGatewayIntranetSupportedZoneAsync($arguments = [])
  */
 final class EasClient extends AcsClient
 {

@@ -394,6 +394,14 @@
         'defaultVersion' => '2019-01-01',
     ],
     [
+        'code' => 'mssp',
+        'style' => 'RPC',
+        'versions' => [
+            '2016-12-28',
+        ],
+        'defaultVersion' => '2016-12-28',
+    ],
+    [
         'code' => 'waf-openapi',
         'style' => 'RPC',
         'versions' => [
@@ -1788,6 +1796,8 @@
         'versions' => [
             '2021-09-01',
             '2021-02-18',
+            '2021-02-20',
+            '2021-09-03',
         ],
         'defaultVersion' => '2021-09-01',
     ],

@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.1] - 2024-12-07
+
+### Fixed
+
+- Fix PHP 8.4 deprecation warning caused by nullable type declaration
+  https://github.com/dew-serverless/acs-sdk-php/pull/79
+- Fix error when decoding XML data with an empty string
+  https://github.com/dew-serverless/acs-sdk-php/pull/80
+
 ## [0.7.0] - 2024-11-23
 
 ### Added
@@ -74,7 +83,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release.
 
-[unreleased]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.7.0...HEAD
+[unreleased]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.7.1...HEAD
+[0.7.1]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.4.0...v0.5.0

@@ -59,6 +59,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise unbindAligenieUserAsync($arguments = []) {@since ssp_1.0}
  * @method \Dew\Acs\Result queryUserDeviceListByTmeUserId(array $arguments = []) {@since ssp_1.0}
  * @method \Http\Promise\Promise queryUserDeviceListByTmeUserIdAsync($arguments = []) {@since ssp_1.0}
+ * @method \Dew\Acs\Result invalidateThirdPartyAppLoginState(array $arguments = []) {@since ssp_1.0}
+ * @method \Http\Promise\Promise invalidateThirdPartyAppLoginStateAsync($arguments = []) {@since ssp_1.0}
  * @method \Dew\Acs\Result checkAuthCodeBindForExt(array $arguments = []) {@since ssp_1.0}
  * @method \Http\Promise\Promise checkAuthCodeBindForExtAsync($arguments = []) {@since ssp_1.0}
  * @method \Dew\Acs\Result getCodeEnhance(array $arguments = []) {@since ssp_1.0}

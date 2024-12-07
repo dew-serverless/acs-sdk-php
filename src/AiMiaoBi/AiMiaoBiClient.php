@@ -193,6 +193,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listHotNewsWithTypeAsync($arguments = [])
  * @method \Dew\Acs\Result generateViewPoint(array $arguments = [])
  * @method \Http\Promise\Promise generateViewPointAsync($arguments = [])
+ * @method \Dew\Acs\Result getSmartClipTask(array $arguments = [])
+ * @method \Http\Promise\Promise getSmartClipTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result submitSmartClipTask(array $arguments = [])
+ * @method \Http\Promise\Promise submitSmartClipTaskAsync($arguments = [])
  */
 final class AiMiaoBiClient extends AcsClient
 {

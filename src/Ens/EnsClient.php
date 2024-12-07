@@ -545,6 +545,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeEnsRouteTablesAsync($arguments = [])
  * @method \Dew\Acs\Result deleteHaVips(array $arguments = [])
  * @method \Http\Promise\Promise deleteHaVipsAsync($arguments = [])
+ * @method \Dew\Acs\Result modifySnatEntry(array $arguments = [])
+ * @method \Http\Promise\Promise modifySnatEntryAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

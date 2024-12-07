@@ -11,6 +11,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getAuthCodeAsync($arguments = []) {@since 2021-02-18}
  * @method \Dew\Acs\Result expireLoginToken(array $arguments = []) {@since 2021-02-18}
  * @method \Http\Promise\Promise expireLoginTokenAsync($arguments = []) {@since 2021-02-18}
+ * @method \Dew\Acs\Result getLoginToken(array $arguments = []) {@since 2021-02-20}
+ * @method \Http\Promise\Promise getLoginTokenAsync($arguments = []) {@since 2021-02-20}
+ * @method \Dew\Acs\Result refreshLoginToken(array $arguments = []) {@since 2021-02-20}
+ * @method \Http\Promise\Promise refreshLoginTokenAsync($arguments = []) {@since 2021-02-20}
+ * @method \Dew\Acs\Result getStsToken(array $arguments = []) {@since 2021-02-20}
+ * @method \Http\Promise\Promise getStsTokenAsync($arguments = []) {@since 2021-02-20}
+ * @method \Dew\Acs\Result findIdpListByLoginIdentifier(array $arguments = []) {@since 2021-02-20}
+ * @method \Http\Promise\Promise findIdpListByLoginIdentifierAsync($arguments = []) {@since 2021-02-20}
  * @method \Dew\Acs\Result accessPageSetAcl(array $arguments = [])
  * @method \Http\Promise\Promise accessPageSetAclAsync($arguments = [])
  * @method \Dew\Acs\Result createAccessPage(array $arguments = [])
@@ -81,6 +89,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listTenantConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyTenantConfig(array $arguments = [])
  * @method \Http\Promise\Promise modifyTenantConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result listPublishedAppInfo(array $arguments = []) {@since 2021-09-03}
+ * @method \Http\Promise\Promise listPublishedAppInfoAsync($arguments = []) {@since 2021-09-03}
+ * @method \Dew\Acs\Result listRunningApps(array $arguments = []) {@since 2021-09-03}
+ * @method \Http\Promise\Promise listRunningAppsAsync($arguments = []) {@since 2021-09-03}
+ * @method \Dew\Acs\Result stopApp(array $arguments = []) {@since 2021-09-03}
+ * @method \Http\Promise\Promise stopAppAsync($arguments = []) {@since 2021-09-03}
  */
 final class AppstreamCenterClient extends AcsClient
 {

@@ -67,6 +67,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateServiceInstanceAttributesAsync($arguments = [])
  * @method \Dew\Acs\Result getService(array $arguments = [])
  * @method \Http\Promise\Promise getServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result listServices(array $arguments = [])
+ * @method \Http\Promise\Promise listServicesAsync($arguments = [])
  */
 final class ComputeNestClient extends AcsClient
 {

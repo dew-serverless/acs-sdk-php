@@ -53,6 +53,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeLiveUserTagsAsync($arguments = [])
  * @method \Dew\Acs\Result verifyLiveDomainOwner(array $arguments = [])
  * @method \Http\Promise\Promise verifyLiveDomainOwnerAsync($arguments = [])
+ * @method \Dew\Acs\Result describeLiveVerifyContent(array $arguments = [])
+ * @method \Http\Promise\Promise describeLiveVerifyContentAsync($arguments = [])
  * @method \Dew\Acs\Result setLiveStreamPreloadTasks(array $arguments = [])
  * @method \Http\Promise\Promise setLiveStreamPreloadTasksAsync($arguments = [])
  * @method \Dew\Acs\Result describeLiveStreamPreloadTasks(array $arguments = [])
@@ -799,6 +801,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateCasterResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result changeLiveDomainResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeLiveDomainResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result tagLiveResources(array $arguments = [])
+ * @method \Http\Promise\Promise tagLiveResourcesAsync($arguments = [])
  */
 final class LiveClient extends AcsClient
 {

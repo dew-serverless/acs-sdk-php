@@ -2360,26 +2360,14 @@
         ],
         [
             'regionId' => 'ap-southeast-5',
-            'endpoint' => 'dysmsapi.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'dysmsapi.aliyuncs.com',
+            'endpoint' => 'dysmsapi.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'dysmsapi.ap-southeast-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-northeast-2-pop',
-            'endpoint' => 'dysmsapi.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
             'endpoint' => 'dysmsapi.ap-southeast-1.aliyuncs.com',
         ],
         [
@@ -2415,10 +2403,6 @@
             'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'dysmsapi.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-hangzhou-bj-b01',
             'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
@@ -2451,10 +2435,6 @@
             'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'dysmsapi.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-huhehaote-nebula-1',
             'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
@@ -2464,10 +2444,6 @@
         ],
         [
             'regionId' => 'cn-qingdao-nebula',
-            'endpoint' => 'dysmsapi.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
             'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
         [
@@ -2515,10 +2491,6 @@
             'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'dysmsapi.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-yushanfang',
             'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
@@ -2531,10 +2503,6 @@
             'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'dysmsapi.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-zhangjiakou-na62-a01',
             'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
@@ -2544,18 +2512,10 @@
         ],
         [
             'regionId' => 'eu-central-1',
-            'endpoint' => 'dysmsapi.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'dysmsapi.ap-southeast-1.aliyuncs.com',
+            'endpoint' => 'dysmsapi.eu-central-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1-oxs',
-            'endpoint' => 'dysmsapi.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'me-east-1',
             'endpoint' => 'dysmsapi.ap-southeast-1.aliyuncs.com',
         ],
         [
@@ -2563,12 +2523,16 @@
             'endpoint' => 'dysmsapi.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'dysmsapi.ap-southeast-1.aliyuncs.com',
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'dysmsapi.ap-southeast-1.aliyuncs.com',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'dysmsapi.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
     ],
 ];

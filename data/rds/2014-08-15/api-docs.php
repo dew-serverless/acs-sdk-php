@@ -1198,6 +1198,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'OptimizedWrites',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'optimized',
+                            'none',
+                        ],
+                    ],
+                ],
             ],
         ],
         'CreateDBInstanceForRebuild' => [
@@ -1848,6 +1860,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OptimizedWrites',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'optimized',
+                            'none',
+                        ],
                     ],
                 ],
             ],

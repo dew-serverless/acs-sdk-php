@@ -453,6 +453,68 @@
                 ],
             ],
         ],
+        'InvalidateThirdPartyAppLoginState' => [
+            'path' => '/v1.0/ssp/invalidateThirdPartyAppLoginState',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AliGenie_Auth_SPI' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/x-www-form-urlencoded',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DeviceInfo',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Id' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'IdType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'EncodeType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'EncodeKey' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'OrganizationId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ThirdPartyAppId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'CheckAuthCodeBindForExt' => [
             'path' => '/v1.0/ssp/checkAuthCodeBindForExt',
             'methods' => [

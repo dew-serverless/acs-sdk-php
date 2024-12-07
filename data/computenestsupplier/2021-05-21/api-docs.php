@@ -2007,6 +2007,14 @@
                     ],
                 ],
                 [
+                    'name' => 'ArtifactBuildType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Name',
                     'in' => 'query',
                     'schema' => [
@@ -2155,7 +2163,63 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'CodeRepo' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Platform' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'RepoName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Owner' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Branch' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'DockerfilePath' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'BuildArgs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'ArgumentName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ArgumentValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SourceContainerImage' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2186,6 +2250,14 @@
                 ],
                 [
                     'name' => 'ArtifactVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2327,7 +2399,63 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'CodeRepo' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Platform' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'RepoName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Owner' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Branch' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'DockerfilePath' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'BuildArgs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'ArgumentName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ArgumentValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SourceContainerImage' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2562,6 +2690,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

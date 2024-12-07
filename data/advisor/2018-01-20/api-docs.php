@@ -299,6 +299,58 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ResourceDimensionList',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Product' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Security' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'Performance' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'Reliablility' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'Cost' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'Service' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'ProductName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AssumeAliyunId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RefreshAdvisorResource' => [

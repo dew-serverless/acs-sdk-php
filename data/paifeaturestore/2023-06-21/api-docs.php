@@ -2744,6 +2744,11 @@
                                     'required' => false,
                                 ],
                             ],
+                            'LabelPriorityLevel' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2930,10 +2935,10 @@
                             ],
                             'Reserves' => [
                                 'type' => 'array',
-                                'required' => true,
+                                'required' => false,
                                 'items' => [
                                     'type' => 'string',
-                                    'required' => true,
+                                    'required' => false,
                                 ],
                             ],
                         ],

@@ -3158,6 +3158,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'tag-key',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'tag-value',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'tagging',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
             'responses' => [
                 200 => [
@@ -3343,6 +3367,14 @@
                     'in' => 'header',
                     'schema' => [
                         '$ref' => '#/components/schemas/ResourceGroupId',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'x-oss-bucket-tagging',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

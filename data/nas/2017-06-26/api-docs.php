@@ -6579,6 +6579,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'FileSystemId',
@@ -6628,6 +6629,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'FileSystemId',
@@ -6653,6 +6655,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'FileSystemId',

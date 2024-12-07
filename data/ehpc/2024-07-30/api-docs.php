@@ -719,6 +719,21 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'MonitorSpec',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'EnableComputeLoadMonitor' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'InstallSoftwares' => [
@@ -1973,6 +1988,14 @@
                 ],
                 [
                     'name' => 'KeepAlive',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DeploymentSetId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

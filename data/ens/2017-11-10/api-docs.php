@@ -1636,6 +1636,19 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ServiceStatus',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeAvailableResourceInfo' => [
@@ -15451,6 +15464,49 @@
                             'required' => false,
                         ],
                         'maxItems' => 10,
+                    ],
+                ],
+            ],
+        ],
+        'ModifySnatEntry' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SnatEntryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SnatEntryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'IspAffinity',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

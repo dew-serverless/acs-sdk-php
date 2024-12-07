@@ -4017,7 +4017,7 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '0',
-                        'maximum' => '32768',
+                        'maximum' => '65536',
                     ],
                 ],
                 [

@@ -1156,7 +1156,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -1172,6 +1172,7 @@
                             'ignoreparams',
                             'hostname',
                             'purgeall',
+                            'cachekey',
                         ],
                     ],
                 ],
@@ -6653,7 +6654,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -6669,7 +6670,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -6694,7 +6695,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -6702,7 +6703,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -6728,7 +6729,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -6771,7 +6772,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -6779,7 +6780,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -6866,7 +6867,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -6900,7 +6901,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -6943,7 +6944,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10268,7 +10269,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10277,7 +10278,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10285,7 +10286,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10294,7 +10295,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -10320,7 +10321,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10329,7 +10330,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10337,7 +10338,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10345,7 +10346,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -10371,7 +10372,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10380,7 +10381,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10388,7 +10389,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -10414,7 +10415,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10423,7 +10424,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10431,1921 +10432,15 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateSiteFunction' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
                 [
-                    'name' => 'CacheRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'BypassCache' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'BrowserCacheMode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'BrowserCacheTtl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'EdgeCacheMode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'EdgeCacheTtl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'EdgeStatusCodeCacheTtl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'SortQueryStringForCache' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'QueryStringMode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'QueryString' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IncludeHeader' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IncludeCookie' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AdditionalCacheablePorts' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CheckPresenceHeader' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CheckPresenceCookie' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'UserDeviceType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'UserGeo' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'UserLanguage' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ServeStale' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CacheDeceptionArmor' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CacheReserveEligibility' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'RewriteUrlRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'RewriteUriType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Uri' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RewriteQueryStringType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'QueryString' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'HttpRequestHeaderModificationRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'RequestHeaderModification' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'Operation' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Name' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Value' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'HttpResponseHeaderModificationRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'ResponseHeaderModification' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'Operation' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Name' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Value' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'ManagedTransforms',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'AddClientGeolocationHeaders' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AddRealClientIpHeader' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'RedirectRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Type' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'TargetUrl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'StatusCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ReserveQueryString' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'CompressionRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Gzip' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Brotli' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'OriginRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OriginHost' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OriginHttpPort' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OriginScheme' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OriginSni' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'DnsRecord' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OriginHttpsPort' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Range' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'ImageTransform',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'TieredCache',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'CacheArchitectureMode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'CacheReserve',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'InstanceId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Ipv6',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'SitePause',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'Paused' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'CacheTags',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'TagName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CaseInsensitive' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'SeoBypass',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'DevelopmentMode',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'SiteNameExclusive',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'CnameFlattening',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                                'FlattenMode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'CrossBorderOptimization',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'HttpsBasicConfiguration',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Https' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Tls10' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Tls11' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Tls12' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Tls13' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CiphersuiteGroup' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Ciphersuite' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OcspStapling' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Http2' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Http3' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'HttpsApplicationConfiguration',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HttpsForce' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HttpsForceCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AltSvc' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AltSvcClear' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AltSvcPersist' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AltSvcMa' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Hsts' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HstsMaxAge' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HstsIncludeSubdomains' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HstsPreload' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'NetworkOptimization',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'SmartRouting' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Http2Origin' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Websocket' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Grpc' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'UploadMaxFilesize' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ConfigId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'CreateSiteFunction' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SiteVersion',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RewriteUrlRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RewriteUriType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Uri' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RewriteQueryStringType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'QueryString' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'HttpRequestHeaderModificationRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RequestHeaderModification' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'Operation' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Name' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Value' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'HttpResponseHeaderModificationRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ResponseHeaderModification' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'Operation' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Name' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Value' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'ManagedTransforms',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'AddClientGeolocationHeaders' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AddRealClientIpHeader' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'RedirectRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Type' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'TargetUrl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'StatusCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ReserveQueryString' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'CompressionRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Gzip' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Brotli' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'OriginRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OriginHost' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OriginHttpPort' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OriginScheme' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OriginSni' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'DnsRecord' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OriginHttpsPort' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Range' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'ImageTransform',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'TieredCache',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'CacheArchitectureMode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'CacheReserve',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'InstanceId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Ipv6',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'SitePause',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Paused' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'CacheTags',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'TagName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CaseInsensitive' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'SeoBypass',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'DevelopmentMode',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'OriginProtection',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'CacheRules',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'BypassCache' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'BrowserCacheMode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'BrowserCacheTtl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'EdgeCacheMode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'EdgeCacheTtl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'EdgeStatusCodeCacheTtl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'SortQueryStringForCache' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'QueryStringMode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'QueryString' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IncludeHeader' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IncludeCookie' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AdditionalCacheablePorts' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CheckPresenceHeader' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CheckPresenceCookie' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'UserDeviceType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'UserGeo' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'UserLanguage' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ServeStale' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CacheDeceptionArmor' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CacheReserveEligibility' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'SiteNameExclusive',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'CnameFlattening',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'FlattenMode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'CrossBorderOptimization',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Enable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'HttpsBasicConfiguration',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Https' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Tls10' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Tls11' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Tls12' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Tls13' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'CiphersuiteGroup' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Ciphersuite' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'OcspStapling' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Http2' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Http3' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'HttpsApplicationConfiguration',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HttpsForce' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HttpsForceCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AltSvc' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AltSvcClear' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AltSvcPersist' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AltSvcMa' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Hsts' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HstsMaxAge' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HstsIncludeSubdomains' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HstsPreload' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'NetworkOptimization',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'RuleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RuleEnable' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rule' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'SmartRouting' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Http2Origin' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Websocket' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Grpc' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'UploadMaxFilesize' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListSiteFunctions' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'FunctionName',
-                    'in' => 'query',
+                    'name' => 'ByPass',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ConfigType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'global',
-                            'rule',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'RuleName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SiteVersion',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteSiteFunction' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SiteId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ConfigIds',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],
@@ -12735,6 +10830,85 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetClientCertificateHostnames' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SetClientCertificateHostnames' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Hostnames',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

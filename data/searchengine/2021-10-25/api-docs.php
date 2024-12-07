@@ -1107,6 +1107,10 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'format' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                             'catalog' => [
                                                 'type' => 'string',
                                                 'required' => false,
@@ -1144,11 +1148,15 @@
                                         'format' => 'int32',
                                         'required' => false,
                                     ],
+                                    'partition' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ossDataPath' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
-                            ],
-                            'extend' => [
-                                'type' => 'object',
-                                'required' => false,
                             ],
                             'description' => [
                                 'type' => 'string',
@@ -1292,6 +1300,10 @@
                             ],
                             'pushMode' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'extend' => [
+                                'type' => 'object',
                                 'required' => false,
                             ],
                         ],
@@ -1487,6 +1499,10 @@
                                                 'required' => false,
                                             ],
                                             'bucket' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'format' => [
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],

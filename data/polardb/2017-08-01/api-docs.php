@@ -858,6 +858,7 @@
                             'ON',
                             'OFF',
                             'STANDBY',
+                            '3AZ',
                         ],
                     ],
                 ],
@@ -8735,7 +8736,7 @@
         ],
         [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'polardb.aliyuncs.com',
+            'endpoint' => 'polardb.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',

@@ -7859,6 +7859,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'InstanceClass',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpgradeTwoWay' => [

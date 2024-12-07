@@ -395,6 +395,10 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
+                    'GpuMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
                     'IsAvailable' => [
                         'type' => 'boolean',
                     ],

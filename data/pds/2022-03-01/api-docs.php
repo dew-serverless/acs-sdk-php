@@ -163,6 +163,23 @@
                     ],
                 ],
             ],
+            'AddStoryFile' => [
+                'type' => 'object',
+                'properties' => [
+                    'file_id' => [
+                        'type' => 'string',
+                    ],
+                    'revision_id' => [
+                        'type' => 'string',
+                    ],
+                    'error_code' => [
+                        'type' => 'string',
+                    ],
+                    'error_message' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Address' => [
                 'type' => 'object',
                 'properties' => [
@@ -1041,10 +1058,10 @@
             'CommonFileItem' => [
                 'type' => 'object',
                 'properties' => [
-                    'file_id' => [
+                    'drive_id' => [
                         'type' => 'string',
                     ],
-                    'drive_id' => [
+                    'file_id' => [
                         'type' => 'string',
                     ],
                     'revision_id' => [
@@ -1872,6 +1889,19 @@
                     ],
                     'video_media_metadata' => [
                         '$ref' => '#/components/schemas/VideoMediaMetadata',
+                    ],
+                    'id_path' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'name_path' => [
+                        'type' => 'string',
+                    ],
+                    'action_list' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],

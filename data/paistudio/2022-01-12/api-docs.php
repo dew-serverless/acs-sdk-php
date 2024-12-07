@@ -83,7 +83,7 @@
                     ],
                     'SupportedInstanceTypes' => [
                         'type' => 'array',
-                        'deprecated' => true,
+                        'deprecated' => false,
                         'items' => [
                             'type' => 'string',
                         ],
@@ -652,6 +652,9 @@
                     'GPUType' => [
                         'type' => 'string',
                     ],
+                    'GPUMemory' => [
+                        'type' => 'string',
+                    ],
                     'NodeStatus' => [
                         'type' => 'string',
                     ],
@@ -891,6 +894,9 @@
                         'type' => 'string',
                     ],
                     'GPUType' => [
+                        'type' => 'string',
+                    ],
+                    'GPUMemory' => [
                         'type' => 'string',
                     ],
                 ],

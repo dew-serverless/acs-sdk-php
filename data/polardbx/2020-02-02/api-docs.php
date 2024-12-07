@@ -247,6 +247,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ExtraParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteDBInstance' => [

@@ -7859,9 +7859,11 @@
                                             ],
                                             'ObkvPartitionConfig' => [
                                                 'type' => 'object',
+                                                'required' => false,
                                                 'properties' => [
                                                     'PartitionType' => [
                                                         'type' => 'string',
+                                                        'required' => false,
                                                         'enum' => [
                                                             'KEY',
                                                             'RANGE',
@@ -7870,10 +7872,12 @@
                                                     ],
                                                     'VirtualColumn' => [
                                                         'type' => 'string',
+                                                        'required' => false,
                                                     ],
                                                     'PartitionSize' => [
                                                         'type' => 'integer',
                                                         'format' => 'int32',
+                                                        'required' => false,
                                                         'minimum' => '1',
                                                         'maximum' => '1024',
                                                     ],

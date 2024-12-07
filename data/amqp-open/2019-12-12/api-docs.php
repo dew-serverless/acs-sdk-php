@@ -110,6 +110,7 @@
                             'professional',
                             'enterprise',
                             'vip',
+                            'serverless',
                         ],
                     ],
                 ],

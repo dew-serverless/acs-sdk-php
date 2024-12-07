@@ -21,6 +21,109 @@
                     ],
                 ],
             ],
+            'ThirdApp' => [
+                'type' => 'object',
+                'properties' => [
+                    'AppKey' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Secrets' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Enable' => [
+                                    'type' => 'boolean',
+                                ],
+                                'Secret' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'OidcSsoConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'EnableAuthLogin' => [
+                                'type' => 'boolean',
+                            ],
+                            'AccessTokenEffectiveTime' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'IdTokenEffectiveTime' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'RefreshTokenEffective' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'CodeEffectiveTime' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'IdTokenAlgorithmType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'RedirectUris' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'GrantTypes' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'GrantScopes' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'Endpoints' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Issuer' => [
+                                        'type' => 'string',
+                                    ],
+                                    'DiscoveryEndpoint' => [
+                                        'type' => 'string',
+                                    ],
+                                    'AuthorizationEndpoint' => [
+                                        'type' => 'string',
+                                    ],
+                                    'GuestAuthorizationEndpoint' => [
+                                        'type' => 'string',
+                                    ],
+                                    'TokenEndpoint' => [
+                                        'type' => 'string',
+                                    ],
+                                    'UserinfoEndpoint' => [
+                                        'type' => 'string',
+                                    ],
+                                    'JwksEndpoint' => [
+                                        'type' => 'string',
+                                    ],
+                                    'RevokeEndpoint' => [
+                                        'type' => 'string',
+                                    ],
+                                    'LogoutEndpoint' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'WaIdPermissions' => [
                 'type' => 'object',
                 'properties' => [
@@ -108,7 +211,7 @@
                                 ],
                             ],
                         ],
-                        'maxItems' => 20,
+                        'maxItems' => 100,
                     ],
                 ],
                 [

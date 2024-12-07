@@ -76,6 +76,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -83,6 +84,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -90,6 +92,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -874,123 +877,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'RunCommentGeneration' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/runCommentGeneration',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-                'sse',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/octet-stream',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'length',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'deprecated' => true,
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'numComments',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'style',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'deprecated' => true,
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'sourceMaterial',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'allowEmoji',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'type',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'sentiment',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'lengthRange',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'extraInfo',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'modelId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],

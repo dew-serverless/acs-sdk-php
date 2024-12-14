@@ -447,8 +447,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listPrivateRegistryListAsync($arguments = [])
  * @method \Dew\Acs\Result describeCountNotScannedImage(array $arguments = [])
  * @method \Http\Promise\Promise describeCountNotScannedImageAsync($arguments = [])
- * @method \Dew\Acs\Result describeImageScanAuthorization(array $arguments = []) {@deprecated 2018-12-03}
- * @method \Http\Promise\Promise describeImageScanAuthorizationAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result getImageScanNumInPeriod(array $arguments = [])
  * @method \Http\Promise\Promise getImageScanNumInPeriodAsync($arguments = [])
  * @method \Dew\Acs\Result setRegistryScanDayNum(array $arguments = [])
@@ -945,8 +943,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise fixCheckWarningsAsync($arguments = [])
  * @method \Dew\Acs\Result addBaselineCheckWhiteRecord(array $arguments = [])
  * @method \Http\Promise\Promise addBaselineCheckWhiteRecordAsync($arguments = [])
- * @method \Dew\Acs\Result ignoreHcCheckWarnings(array $arguments = [])
- * @method \Http\Promise\Promise ignoreHcCheckWarningsAsync($arguments = [])
+ * @method \Dew\Acs\Result ignoreHcCheckWarnings(array $arguments = []) {@deprecated 2018-12-03}
+ * @method \Http\Promise\Promise ignoreHcCheckWarningsAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result describeCustomizedStrategyTargets(array $arguments = [])
  * @method \Http\Promise\Promise describeCustomizedStrategyTargetsAsync($arguments = [])
  * @method \Dew\Acs\Result listCheckTypes(array $arguments = [])
@@ -1685,6 +1683,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise submitTenantCheckAsync($arguments = [])
  * @method \Dew\Acs\Result getTenantCheckAvailable(array $arguments = [])
  * @method \Http\Promise\Promise getTenantCheckAvailableAsync($arguments = [])
+ * @method \Dew\Acs\Result listOperationProcessDetail(array $arguments = [])
+ * @method \Http\Promise\Promise listOperationProcessDetailAsync($arguments = [])
+ * @method \Dew\Acs\Result listOperationProcess(array $arguments = [])
+ * @method \Http\Promise\Promise listOperationProcessAsync($arguments = [])
  */
 final class SasClient extends AcsClient
 {

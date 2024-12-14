@@ -11513,20 +11513,12 @@
             'endpoint' => 'apigateway.cn-north-2-gov-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'apigateway.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-east-1',
             'endpoint' => 'apigateway.me-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-2',
             'endpoint' => 'apigateway.ap-northeast-2.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'apigateway.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-huhehaote',

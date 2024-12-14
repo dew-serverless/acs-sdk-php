@@ -501,14 +501,6 @@
                     ],
                 ],
                 [
-                    'name' => 'ClientIp',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'ClientChannel',
                     'in' => 'formData',
                     'schema' => [
@@ -556,6 +548,14 @@
                         'additionalProperties' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'ClientIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

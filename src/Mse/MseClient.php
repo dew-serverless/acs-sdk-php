@@ -471,6 +471,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result updateNacosGrayConfig(array $arguments = [])
  * @method \Http\Promise\Promise updateNacosGrayConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result createNamespace(array $arguments = [])
+ * @method \Http\Promise\Promise createNamespaceAsync($arguments = [])
+ * @method \Dew\Acs\Result listNamespaces(array $arguments = [])
+ * @method \Http\Promise\Promise listNamespacesAsync($arguments = [])
  */
 final class MseClient extends AcsClient
 {

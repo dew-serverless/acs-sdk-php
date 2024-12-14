@@ -3012,6 +3012,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EventLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeMetricData' => [

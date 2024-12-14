@@ -15217,6 +15217,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EndUserIdFilter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeSessionStatistic' => [

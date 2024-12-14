@@ -189,6 +189,44 @@
                     ],
                 ],
             ],
+            'KerberosConf' => [
+                'type' => 'object',
+                'properties' => [
+                    'gmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'creator' => [
+                        'type' => 'string',
+                    ],
+                    'krb5Conf' => [
+                        'type' => 'string',
+                    ],
+                    'gmtCreated' => [
+                        'type' => 'string',
+                    ],
+                    'networkServiceId' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'kerberosConfId' => [
+                        'type' => 'string',
+                    ],
+                    'keytabs' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'workspaceId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'PrincipalAction' => [
                 'type' => 'object',
                 'properties' => [

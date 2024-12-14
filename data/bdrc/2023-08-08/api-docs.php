@@ -235,6 +235,14 @@
                         'maximum' => '100',
                     ],
                 ],
+                [
+                    'name' => 'ResourceCategoryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeCheckDetails' => [
@@ -401,56 +409,15 @@
                         ],
                     ],
                 ],
-            ],
-        ],
-        'DescribeTopRiskyResources' => [
-            'path' => '/api/v1/resources/top-risky',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
                 [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ResourceType',
+                    'name' => 'ResourceCategoryId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'enum' => [
-                            'ACS::ECS::Instance',
-                            'ACS::OSS::Bucket',
-                            'ACS::NAS::FileSystem',
-                            'ACS::OTS::Instance',
-                        ],
                     ],
                 ],
             ],
-        ],
-        'DescribeProducts' => [
-            'path' => '/api/v1/products',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
         ],
         'DescribeTasks' => [
             'path' => '/api/v1/tasks',

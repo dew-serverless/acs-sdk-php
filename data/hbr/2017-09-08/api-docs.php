@@ -3042,7 +3042,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
-                        'required' => false,
+                        'required' => true,
                         'items' => [
                             'type' => 'any',
                             'required' => false,

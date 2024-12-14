@@ -1266,6 +1266,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'FileId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                             'IndexId' => [
                                 'type' => 'string',
                                 'required' => true,

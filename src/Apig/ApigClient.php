@@ -27,6 +27,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listHttpApiOperationsAsync($arguments = [])
  * @method \Dew\Acs\Result deleteHttpApiOperation(array $arguments = [])
  * @method \Http\Promise\Promise deleteHttpApiOperationAsync($arguments = [])
+ * @method \Dew\Acs\Result createHttpApiRoute(array $arguments = [])
+ * @method \Http\Promise\Promise createHttpApiRouteAsync($arguments = [])
+ * @method \Dew\Acs\Result updateHttpApiRoute(array $arguments = [])
+ * @method \Http\Promise\Promise updateHttpApiRouteAsync($arguments = [])
+ * @method \Dew\Acs\Result getHttpApiRoute(array $arguments = [])
+ * @method \Http\Promise\Promise getHttpApiRouteAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteHttpApiRoute(array $arguments = [])
+ * @method \Http\Promise\Promise deleteHttpApiRouteAsync($arguments = [])
  * @method \Dew\Acs\Result getGateway(array $arguments = [])
  * @method \Http\Promise\Promise getGatewayAsync($arguments = [])
  * @method \Dew\Acs\Result listGateways(array $arguments = [])
@@ -55,8 +63,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteDomainAsync($arguments = [])
  * @method \Dew\Acs\Result updateDomain(array $arguments = [])
  * @method \Http\Promise\Promise updateDomainAsync($arguments = [])
- * @method \Dew\Acs\Result getHttpApiRoute(array $arguments = [])
- * @method \Http\Promise\Promise getHttpApiRouteAsync($arguments = [])
+ * @method \Dew\Acs\Result importHttpApi(array $arguments = [])
+ * @method \Http\Promise\Promise importHttpApiAsync($arguments = [])
+ * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
  */
 final class ApigClient extends AcsClient
 {

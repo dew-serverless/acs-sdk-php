@@ -4813,6 +4813,25 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'DatasetName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PredictWorkerCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PredictWorkerCpu' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PredictWorkerMemory' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -5071,6 +5090,25 @@
                             ],
                             'DatasetMountPath' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DatasetName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PredictWorkerCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PredictWorkerCpu' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PredictWorkerMemory' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                                 'required' => false,
                             ],
                         ],

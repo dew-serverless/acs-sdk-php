@@ -235,6 +235,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createServiceLinkedRoleAsync($arguments = [])
  * @method \Dew\Acs\Result describeKmsKeys(array $arguments = [])
  * @method \Http\Promise\Promise describeKmsKeysAsync($arguments = [])
+ * @method \Dew\Acs\Result describeLogHubAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise describeLogHubAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result describeLogStoreKeys(array $arguments = [])
+ * @method \Http\Promise\Promise describeLogStoreKeysAsync($arguments = [])
+ * @method \Dew\Acs\Result describeLoghubDetail(array $arguments = [])
+ * @method \Http\Promise\Promise describeLoghubDetailAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRdsAnalysisResourceQuotas(array $arguments = [])
+ * @method \Http\Promise\Promise describeRdsAnalysisResourceQuotasAsync($arguments = [])
  * @method \Dew\Acs\Result describeRegionsMixed(array $arguments = [])
  * @method \Http\Promise\Promise describeRegionsMixedAsync($arguments = [])
  * @method \Dew\Acs\Result describeSyncAvailableDBClusterList(array $arguments = [])
@@ -251,6 +259,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifySyncJobAsync($arguments = [])
  * @method \Dew\Acs\Result operateLogHub(array $arguments = [])
  * @method \Http\Promise\Promise operateLogHubAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelActiveOperationTasks(array $arguments = [])
+ * @method \Http\Promise\Promise cancelActiveOperationTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result describeHistoryEventsStat(array $arguments = [])
+ * @method \Http\Promise\Promise describeHistoryEventsStatAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyActiveOperationMaintainConf(array $arguments = [])
+ * @method \Http\Promise\Promise modifyActiveOperationMaintainConfAsync($arguments = [])
+ * @method \Dew\Acs\Result describeActiveOperationTasks(array $arguments = [])
+ * @method \Http\Promise\Promise describeActiveOperationTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result describeActiveOperationMaintainConf(array $arguments = [])
+ * @method \Http\Promise\Promise describeActiveOperationMaintainConfAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyActiveOperationTasks(array $arguments = [])
+ * @method \Http\Promise\Promise modifyActiveOperationTasksAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBClusterVip(array $arguments = [])
  * @method \Http\Promise\Promise modifyDBClusterVipAsync($arguments = [])
  * @method \Dew\Acs\Result deleteBackups(array $arguments = [])
@@ -421,6 +441,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeLakeCacheSizeAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result modifyLakeCacheSize(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise modifyLakeCacheSizeAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeSparkAppDiagnosisInfo(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeSparkAppDiagnosisInfoAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeSparkAppType(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeSparkAppTypeAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result getSparkReplSession(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise getSparkReplSessionAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result executeSparkReplStatement(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise executeSparkReplStatementAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result getSparkReplStatement(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise getSparkReplStatementAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result cancelSparkReplStatement(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise cancelSparkReplStatementAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result startSparkReplSession(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise startSparkReplSessionAsync($arguments = []) {@since 2021-12-01}
  */
 final class AdbClient extends AcsClient
 {

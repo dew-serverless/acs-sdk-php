@@ -9901,6 +9901,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'SkipMatching',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CancelInstanceRefresh' => [

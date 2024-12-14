@@ -1972,5 +1972,9 @@
             'regionId' => 'cn-wulanchabu',
             'endpoint' => 'gwlb.cn-wulanchabu.aliyuncs.com',
         ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'gwlb.ap-southeast-1.aliyuncs.com',
+        ],
     ],
 ];

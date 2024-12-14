@@ -66,6 +66,60 @@
                 ],
             ],
         ],
+        'Predict' => [
+            'path' => '/v1/openapi/models/predict',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'dbName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'input' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'instanceName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'modelClass' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'parameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [],
 ];

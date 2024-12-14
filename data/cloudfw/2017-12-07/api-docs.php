@@ -7268,10 +7268,10 @@
                     'style' => 'repeatList',
                     'schema' => [
                         'type' => 'array',
-                        'required' => false,
+                        'required' => true,
                         'items' => [
                             'type' => 'string',
-                            'required' => false,
+                            'required' => true,
                         ],
                         'maxItems' => 100,
                     ],

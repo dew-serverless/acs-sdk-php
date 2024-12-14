@@ -2527,6 +2527,14 @@
                     ],
                 ],
                 [
+                    'name' => 'QueryType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Blacklist',
                     'in' => 'query',
                     'schema' => [
@@ -2717,6 +2725,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'QueryType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [

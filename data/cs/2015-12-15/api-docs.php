@@ -180,6 +180,63 @@
                             'type' => 'string',
                         ],
                     ],
+                    'reservedMemory' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'numaNode' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'limits' => [
+                                    'type' => 'object',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'memoryManagerPolicy' => [
+                        'type' => 'string',
+                    ],
+                    'cpuCFSQuota' => [
+                        'type' => 'boolean',
+                    ],
+                    'cpuCFSQuotaPeriod' => [
+                        'type' => 'string',
+                    ],
+                    'imageGCHighThresholdPercent' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'imageGCLowThresholdPercent' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'podPidsLimit' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'topologyManagerPolicy' => [
+                        'type' => 'string',
+                    ],
+                    'clusterDNS' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'tracing' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'endpoint' => [
+                                'type' => 'string',
+                            ],
+                            'samplingRatePerMillion' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'maintenance_window' => [
@@ -6163,6 +6220,89 @@
                 ],
             ],
         ],
+        'UpdateUserPermissions' => [
+            'path' => '/permissions/users/{uid}/update',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'uid',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'cluster' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'is_custom' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'role_name' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'role_type' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'namespace' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'is_ram_role' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'mode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'delete',
+                            'patch',
+                            'apply',
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CheckServiceRole' => [
             'path' => '/ram/check-service-role',
             'methods' => [
@@ -7962,89 +8102,6 @@
             'deprecated' => false,
             'parameters' => [],
         ],
-        'UpdateUserPermissions' => [
-            'path' => '/permissions/users/{uid}/update',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'uid',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'cluster' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'is_custom' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'role_name' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'role_type' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'namespace' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'is_ram_role' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'mode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'delete',
-                            'patch',
-                            'apply',
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'ListOperationPlans' => [
             'path' => '/operation/plans',
             'methods' => [
@@ -8260,7 +8317,7 @@
             'produces' => [
                 'application/json',
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'ClusterId',
@@ -8308,7 +8365,7 @@
             'produces' => [
                 'application/json',
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'body',
@@ -8438,7 +8495,7 @@
             'produces' => [
                 'application/json',
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'ClusterId',
@@ -8676,7 +8733,7 @@
             'produces' => [
                 'application/json',
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'Id',

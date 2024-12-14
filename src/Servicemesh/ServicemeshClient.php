@@ -197,6 +197,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeMeshMultiClusterNetworkAsync($arguments = [])
  * @method \Dew\Acs\Result modifyPilotEipResource(array $arguments = [])
  * @method \Http\Promise\Promise modifyPilotEipResourceAsync($arguments = [])
+ * @method \Dew\Acs\Result updateGuestClusterConfig(array $arguments = [])
+ * @method \Http\Promise\Promise updateGuestClusterConfigAsync($arguments = [])
  */
 final class ServicemeshClient extends AcsClient
 {

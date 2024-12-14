@@ -2537,6 +2537,304 @@
                 ],
             ],
         ],
+        'CreateHttpApiRoute' => [
+            'path' => '/v1/http-apis/{httpApiId}/routes',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'httpApiId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'environmentId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'domainIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'match' => [
+                                '$ref' => '#/components/schemas/HttpRouteMatch',
+                                'required' => false,
+                            ],
+                            'backendConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'scene' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'services' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'serviceId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'protocol' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'port' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'weight' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'version' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateHttpApiRoute' => [
+            'path' => '/v1/http-apis/{httpApiId}/routes/{routeId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'httpApiId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'routeId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'domainIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'match' => [
+                                '$ref' => '#/components/schemas/HttpRouteMatch',
+                                'required' => false,
+                            ],
+                            'backendConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'scene' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'services' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'serviceId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'protocol' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'version' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'weight' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'port' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'environmentId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetHttpApiRoute' => [
+            'path' => '/v1/http-apis/{httpApiId}/routes/{routeId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'httpApiId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'routeId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteHttpApiRoute' => [
+            'path' => '/v1/http-apis/{httpApiId}/routes/{routeId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'httpApiId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'routeId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'GetGateway' => [
             'path' => '/v1/gateways/{gatewayId}',
             'methods' => [
@@ -3247,10 +3545,10 @@
                 ],
             ],
         ],
-        'GetHttpApiRoute' => [
-            'path' => '/v1/http-apis/{httpApiId}/routes/{routeId}',
+        'ImportHttpApi' => [
+            'path' => '/v1/http-apis/import',
             'methods' => [
-                'get',
+                'post',
             ],
             'schemes' => [
                 'https',
@@ -3269,16 +3567,125 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'httpApiId',
-                    'in' => 'path',
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'specContentBase64' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'specFileUrl' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'versionConfig' => [
+                                '$ref' => '#/components/schemas/HttpApiVersionConfig',
+                                'required' => false,
+                            ],
+                            'dryRun' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'strategy' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'SpecFirst',
+                                    'SpecOnly',
+                                    'ExistFirst',
+                                ],
+                            ],
+                            'targetHttpApiId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'resourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'specOssConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'regionId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'bucketName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'objectKey' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ChangeResourceGroup' => [
+            'path' => '/move-resource-group',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Service',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'routeId',
-                    'in' => 'path',
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

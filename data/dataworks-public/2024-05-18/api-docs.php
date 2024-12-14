@@ -4349,8 +4349,8 @@
                                 'required' => false,
                                 'properties' => [
                                     'RequestedCu' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
+                                        'type' => 'number',
+                                        'format' => 'double',
                                         'required' => false,
                                     ],
                                     'ResourceGroupIdentifier' => [
@@ -4364,8 +4364,8 @@
                                 'required' => false,
                                 'properties' => [
                                     'RequestedCu' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
+                                        'type' => 'number',
+                                        'format' => 'double',
                                         'required' => false,
                                     ],
                                     'ResourceGroupIdentifier' => [
@@ -4379,8 +4379,8 @@
                                 'required' => false,
                                 'properties' => [
                                     'RequestedCu' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
+                                        'type' => 'number',
+                                        'format' => 'double',
                                         'required' => false,
                                     ],
                                     'ResourceGroupIdentifier' => [

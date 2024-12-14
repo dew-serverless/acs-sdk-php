@@ -169,6 +169,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateInstancePackageStateAsync($arguments = [])
  * @method \Dew\Acs\Result listInstancePackageStates(array $arguments = [])
  * @method \Http\Promise\Promise listInstancePackageStatesAsync($arguments = [])
+ * @method \Dew\Acs\Result getTemplateParameterConstraints(array $arguments = [])
+ * @method \Http\Promise\Promise getTemplateParameterConstraintsAsync($arguments = [])
  */
 final class OosClient extends AcsClient
 {

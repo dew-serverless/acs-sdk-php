@@ -95,6 +95,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getMaterialByIdAsync($arguments = [])
  * @method \Dew\Acs\Result listMaterialDocuments(array $arguments = [])
  * @method \Http\Promise\Promise listMaterialDocumentsAsync($arguments = [])
+ * @method \Dew\Acs\Result submitSmartClipTask(array $arguments = [])
+ * @method \Http\Promise\Promise submitSmartClipTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getSmartClipTask(array $arguments = [])
+ * @method \Http\Promise\Promise getSmartClipTaskAsync($arguments = [])
  * @method \Dew\Acs\Result listHotSources(array $arguments = [])
  * @method \Http\Promise\Promise listHotSourcesAsync($arguments = [])
  * @method \Dew\Acs\Result listHotTopics(array $arguments = [])
@@ -193,10 +197,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listHotNewsWithTypeAsync($arguments = [])
  * @method \Dew\Acs\Result generateViewPoint(array $arguments = [])
  * @method \Http\Promise\Promise generateViewPointAsync($arguments = [])
- * @method \Dew\Acs\Result getSmartClipTask(array $arguments = [])
- * @method \Http\Promise\Promise getSmartClipTaskAsync($arguments = [])
- * @method \Dew\Acs\Result submitSmartClipTask(array $arguments = [])
- * @method \Http\Promise\Promise submitSmartClipTaskAsync($arguments = [])
  */
 final class AiMiaoBiClient extends AcsClient
 {

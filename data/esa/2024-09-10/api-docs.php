@@ -323,6 +323,12 @@
                             ],
                         ],
                     ],
+                    'Value' => [
+                        'type' => 'string',
+                    ],
+                    'Notes' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'WafRuleMatch' => [
@@ -490,6 +496,63 @@
                         'properties' => [
                             'Value' => [
                                 'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'BotManagement' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'DefiniteBots' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Id' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                    'Action' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'LikelyBots' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Id' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                    'Action' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'VerifiedBots' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Id' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                    'Action' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'JSDetection' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Enable' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'EffectOnStatic' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Enable' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -4301,7 +4364,6 @@
         ],
         'SetCertificate' => [
             'methods' => [
-                'get',
                 'post',
             ],
             'schemes' => [
@@ -4761,6 +4823,10 @@
                             'RulesetId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'ConfigValueLike' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                             'OrderBy' => [
@@ -5450,6 +5516,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Path',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

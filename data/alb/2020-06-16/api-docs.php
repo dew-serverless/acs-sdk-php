@@ -3868,7 +3868,7 @@
                 ],
                 [
                     'name' => 'Rules',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'style' => 'flat',
                     'schema' => [
                         'type' => 'array',
@@ -4950,7 +4950,7 @@
                 ],
                 [
                     'name' => 'Rules',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'style' => 'flat',
                     'schema' => [
                         'type' => 'array',

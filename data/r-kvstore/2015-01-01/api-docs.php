@@ -5880,6 +5880,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ParamNoLooseSentinelPasswordFreeCommands',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeParameterTemplates' => [

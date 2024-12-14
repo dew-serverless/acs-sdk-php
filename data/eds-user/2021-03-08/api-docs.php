@@ -726,6 +726,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IsQueryAllSubOrgs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetManagerInfoByAuthCode' => [

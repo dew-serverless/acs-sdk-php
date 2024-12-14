@@ -840,6 +840,33 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'messages',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'role' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'content' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'createTime' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'GenerateBroadcastNews' => [

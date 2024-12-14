@@ -1618,6 +1618,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SsoLoginWithDomain',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetUserSsoSettings' => [

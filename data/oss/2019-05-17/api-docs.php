@@ -1251,6 +1251,10 @@
                             'ExpiredObjectDeleteMarker' => [
                                 'type' => 'boolean',
                             ],
+                            'Date' => [
+                                'type' => 'string',
+                                'format' => 'iso8601',
+                            ],
                         ],
                     ],
                     'Transition' => [

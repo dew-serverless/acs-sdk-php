@@ -1057,6 +1057,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DnStorageSpace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDBInstanceHA' => [

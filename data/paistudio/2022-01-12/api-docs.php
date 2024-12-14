@@ -1209,6 +1209,18 @@
                     'UsedQuota' => [
                         '$ref' => '#/components/schemas/ResourceAmount',
                     ],
+                    'AllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
+                    'SelfAllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
+                    'AncestorsAllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
+                    'DescendantsAllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
                 ],
             ],
             'QuotaIdName' => [

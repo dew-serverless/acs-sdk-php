@@ -297,6 +297,37 @@
                     ],
                 ],
             ],
+            'LineageEntity' => [
+                'type' => 'object',
+                'properties' => [
+                    'Attributes' => [
+                        'type' => 'object',
+                    ],
+                    'EntityType' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'QualifiedName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'LineageRelation' => [
+                'type' => 'object',
+                'properties' => [
+                    'DestEntityQualifiedName' => [
+                        'type' => 'string',
+                    ],
+                    'RelationshipGuid' => [
+                        'type' => 'string',
+                    ],
+                    'SrcEntityQualifiedName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Model' => [
                 'type' => 'object',
                 'properties' => [
@@ -470,6 +501,37 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+            ],
+            'Relation' => [
+                'type' => 'object',
+                'properties' => [
+                    'ErrMsg' => [
+                        'type' => 'string',
+                    ],
+                    'LineageRelation' => [
+                        '$ref' => '#/components/schemas/LineageRelation',
+                    ],
+                    'Result' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'Relationship' => [
+                'type' => 'object',
+                'properties' => [
+                    'Attributes' => [
+                        'type' => 'object',
+                    ],
+                    'DataChannel' => [
+                        'type' => 'string',
+                    ],
+                    'RelationshipGuid' => [
+                        'type' => 'string',
+                    ],
+                    'RelationshipType' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -5487,12 +5549,16 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'aiworkspace.cn-shanghai-finance-1.aliyuncs.com',
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'aiworkspace.ap-northeast-1.aliyuncs.com	',
         ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'aiworkspace.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'aiworkspace.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -5505,6 +5571,14 @@
         [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'aiworkspace.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'aiworkspace.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'aiworkspace.cn-guangzhou.aliyuncs.com	',
         ],
         [
             'regionId' => 'cn-hongkong',
@@ -5539,12 +5613,8 @@
             'endpoint' => 'aiworkspace.ap-south-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'aiworkspace.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'aiworkspace.cn-heyuan.aliyuncs.com',
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'aiworkspace.cn-shanghai-finance-1.aliyuncs.com',
         ],
     ],
 ];

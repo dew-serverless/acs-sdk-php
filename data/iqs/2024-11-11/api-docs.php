@@ -78,6 +78,12 @@
                             '$ref' => '#/components/schemas/ScorePageItem',
                         ],
                     ],
+                    'sceneItems' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/SceneItem',
+                        ],
+                    ],
                     'searchInformation' => [
                         '$ref' => '#/components/schemas/SearchInformation',
                     ],
@@ -108,6 +114,17 @@
                     ],
                 ],
             ],
+            'SceneItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'detail' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ScorePageItem' => [
                 'type' => 'object',
                 'properties' => [
@@ -116,10 +133,8 @@
                         'format' => 'int64',
                         'required' => true,
                     ],
-                    'score' => [
-                        'type' => 'number',
-                        'format' => 'double',
-                        'required' => false,
+                    'hostLogo' => [
+                        'type' => 'string',
                     ],
                     'images' => [
                         'type' => 'array',
@@ -129,25 +144,9 @@
                             'required' => false,
                         ],
                     ],
-                    'htmlTitle' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'displayLink' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
                     'mime' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                    'pageMap' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'additionalProperties' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
                     ],
                     'cardType' => [
                         'type' => 'string',
@@ -157,15 +156,42 @@
                         'type' => 'string',
                         'required' => true,
                     ],
+                    'title' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'siteLabel' => [
+                        'type' => 'string',
+                    ],
+                    'score' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'required' => false,
+                    ],
+                    'hostname' => [
+                        'type' => 'string',
+                    ],
+                    'htmlTitle' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'displayLink' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'pageMap' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
                     'mainText' => [
                         'type' => 'string',
                         'required' => false,
                     ],
                     'htmlSnippet' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'title' => [
                         'type' => 'string',
                         'required' => true,
                     ],

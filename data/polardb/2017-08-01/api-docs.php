@@ -3926,6 +3926,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'StandbyClusterIdListNeedToSync',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyDBClusterParameters' => [
@@ -4882,14 +4890,6 @@
                 ],
                 [
                     'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PrivForAllDB',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

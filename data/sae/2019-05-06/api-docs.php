@@ -6622,6 +6622,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SecretMountDesc',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteApplication' => [
@@ -7472,6 +7480,14 @@
                 ],
                 [
                     'name' => 'OidcRoleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SecretMountDesc',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

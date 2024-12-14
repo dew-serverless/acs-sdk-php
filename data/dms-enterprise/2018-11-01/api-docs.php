@@ -3317,8 +3317,24 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '9223372036854775807',
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
                     ],
                 ],
             ],

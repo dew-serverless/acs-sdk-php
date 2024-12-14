@@ -1014,6 +1014,7 @@
                     ],
                     'UseSpotInstance' => [
                         'type' => 'boolean',
+                        'deprecated' => true,
                     ],
                     'SpotSpec' => [
                         '$ref' => '#/components/schemas/SpotSpec',
@@ -1389,6 +1390,10 @@
                         'type' => 'string',
                     ],
                     'SpotDiscountLimit' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'SpotPriceLimit' => [
                         'type' => 'number',
                         'format' => 'float',
                     ],

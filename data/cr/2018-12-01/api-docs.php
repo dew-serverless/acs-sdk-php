@@ -839,6 +839,9 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'enum' => [
+                            'Instance',
+                        ],
                     ],
                 ],
                 [
@@ -911,6 +914,9 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'enum' => [
+                            'Instance',
+                        ],
                     ],
                 ],
                 [
@@ -981,6 +987,9 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'enum' => [
+                            'Instance',
+                        ],
                     ],
                 ],
                 [
@@ -5879,6 +5888,10 @@
             'endpoint' => 'cr.ap-southeast-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'cr.ap-southeast-2.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'cr.ap-southeast-3.aliyuncs.com',
         ],
@@ -5907,6 +5920,10 @@
             'endpoint' => 'cr.eu-central-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'cr.ap-south-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'me-east-1',
             'endpoint' => 'cr.me-east-1.aliyuncs.com',
         ],
@@ -5925,6 +5942,10 @@
         [
             'regionId' => 'ap-southeast-7',
             'endpoint' => 'cr.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'cr.cn-beijing-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-central-1',

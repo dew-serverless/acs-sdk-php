@@ -1039,6 +1039,9 @@
                     'status' => [
                         'type' => 'string',
                     ],
+                    'scheduleId' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'MaxComputeExportConfiguration' => [
@@ -1089,6 +1092,7 @@
                     ],
                     'odpsRolearn' => [
                         'type' => 'string',
+                        'required' => true,
                     ],
                     'odpsAccessKeyId' => [
                         'type' => 'string',
@@ -11303,6 +11307,10 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'cn-beijing-finance-1.log.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-qingdao',
             'endpoint' => 'cn-qingdao.log.aliyuncs.com',
         ],
@@ -11409,6 +11417,18 @@
         [
             'regionId' => 'me-east-1',
             'endpoint' => 'me-east-1.log.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'cn-hangzhou-finance.log.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'cn-shanghai-finance-1.log.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'cn-shenzhen-finance.log.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-7',

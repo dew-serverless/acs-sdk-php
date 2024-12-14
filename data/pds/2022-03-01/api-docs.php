@@ -3186,6 +3186,9 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'office_editable' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'ShareLinkConfig' => [
@@ -8729,6 +8732,10 @@
                                 'format' => 'int64',
                                 'required' => false,
                             ],
+                            'office_editable' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'creatable' => [
                                 'type' => 'boolean',
                                 'required' => false,
@@ -8860,6 +8867,10 @@
                             'download_limit' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'office_editable' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],

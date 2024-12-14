@@ -1694,7 +1694,7 @@
                         'format' => 'int32',
                         'required' => true,
                         'minimum' => '1',
-                        'maximum' => '50',
+                        'maximum' => '100',
                     ],
                 ],
                 [
@@ -1705,7 +1705,7 @@
                         'format' => 'int32',
                         'required' => true,
                         'minimum' => '1',
-                        'maximum' => '20',
+                        'maximum' => '50',
                     ],
                 ],
                 [

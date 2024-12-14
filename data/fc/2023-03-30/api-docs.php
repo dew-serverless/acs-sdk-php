@@ -337,25 +337,27 @@
             'CreateFunctionInput' => [
                 'type' => 'object',
                 'properties' => [
+                    'handler' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
                     'code' => [
                         '$ref' => '#/components/schemas/InputCodeLocation',
                         'required' => false,
                     ],
-                    'cpu' => [
-                        'type' => 'number',
-                        'format' => 'float',
+                    'role' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 300,
+                    ],
+                    'tracingConfig' => [
+                        '$ref' => '#/components/schemas/TracingConfig',
                         'required' => false,
                     ],
-                    'customContainerConfig' => [
-                        '$ref' => '#/components/schemas/CustomContainerConfig',
-                        'required' => false,
-                    ],
-                    'customDNS' => [
-                        '$ref' => '#/components/schemas/CustomDNS',
-                        'required' => false,
-                    ],
-                    'customRuntimeConfig' => [
-                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
+                    'nasConfig' => [
+                        '$ref' => '#/components/schemas/NASConfig',
                         'required' => false,
                     ],
                     'description' => [
@@ -363,41 +365,14 @@
                         'required' => false,
                         'maxLength' => 256,
                     ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
                     'diskSize' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'environmentVariables' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'functionName' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'minLength' => 1,
-                        'maxLength' => 128,
-                    ],
-                    'gpuConfig' => [
-                        '$ref' => '#/components/schemas/GPUConfig',
-                        'required' => false,
-                    ],
-                    'handler' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'minLength' => 1,
-                        'maxLength' => 128,
-                    ],
-                    'instanceConcurrency' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'instanceLifecycleConfig' => [
-                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
                         'required' => false,
                     ],
                     'internetAccess' => [
@@ -411,40 +386,71 @@
                             'type' => 'string',
                         ],
                     ],
+                    'ossMountConfig' => [
+                        '$ref' => '#/components/schemas/OSSMountConfig',
+                        'required' => false,
+                    ],
+                    'customRuntimeConfig' => [
+                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
+                        'required' => false,
+                    ],
                     'logConfig' => [
                         '$ref' => '#/components/schemas/LogConfig',
                         'required' => false,
+                    ],
+                    'functionName' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'instanceLifecycleConfig' => [
+                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
+                        'required' => false,
+                    ],
+                    'gpuConfig' => [
+                        '$ref' => '#/components/schemas/GPUConfig',
+                        'required' => false,
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'runtime' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'customContainerConfig' => [
+                        '$ref' => '#/components/schemas/CustomContainerConfig',
+                        'required' => false,
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'tags' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Tag',
+                        ],
                     ],
                     'memorySize' => [
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
                     ],
-                    'nasConfig' => [
-                        '$ref' => '#/components/schemas/NASConfig',
+                    'customDNS' => [
+                        '$ref' => '#/components/schemas/CustomDNS',
                         'required' => false,
                     ],
-                    'ossMountConfig' => [
-                        '$ref' => '#/components/schemas/OSSMountConfig',
+                    'environmentVariables' => [
+                        'type' => 'object',
                         'required' => false,
-                    ],
-                    'role' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'maxLength' => 300,
-                    ],
-                    'runtime' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'timeout' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'tracingConfig' => [
-                        '$ref' => '#/components/schemas/TracingConfig',
-                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                     'vpcConfig' => [
                         '$ref' => '#/components/schemas/VPCConfig',
@@ -904,7 +910,39 @@
             'Function' => [
                 'type' => 'object',
                 'properties' => [
-                    'codeChecksum' => [
+                    'handler' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'role' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'tracingConfig' => [
+                        '$ref' => '#/components/schemas/TracingConfig',
+                        'required' => false,
+                    ],
+                    'lastUpdateStatusReasonCode' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'nasConfig' => [
+                        '$ref' => '#/components/schemas/NASConfig',
+                        'required' => false,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'stateReasonCode' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'stateReason' => [
                         'type' => 'string',
                         'required' => false,
                     ],
@@ -913,28 +951,12 @@
                         'format' => 'int64',
                         'required' => false,
                     ],
-                    'cpu' => [
-                        'type' => 'number',
-                        'format' => 'float',
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
-                    'createdTime' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'customContainerConfig' => [
-                        '$ref' => '#/components/schemas/CustomContainerConfig',
-                        'required' => false,
-                    ],
-                    'customDNS' => [
-                        '$ref' => '#/components/schemas/CustomDNS',
-                        'required' => false,
-                    ],
-                    'customRuntimeConfig' => [
-                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
-                        'required' => false,
-                    ],
-                    'description' => [
+                    'codeChecksum' => [
                         'type' => 'string',
                         'required' => false,
                     ],
@@ -943,51 +965,7 @@
                         'format' => 'int32',
                         'required' => false,
                     ],
-                    'environmentVariables' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'functionArn' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
                     'functionId' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'functionName' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'gpuConfig' => [
-                        '$ref' => '#/components/schemas/GPUConfig',
-                        'required' => false,
-                    ],
-                    'handler' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'instanceConcurrency' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'instanceLifecycleConfig' => [
-                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
-                        'required' => false,
-                    ],
-                    'internetAccess' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                    'lastModifiedTime' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'lastUpdateStatus' => [
                         'type' => 'string',
                         'required' => false,
                     ],
@@ -995,8 +973,8 @@
                         'type' => 'string',
                         'required' => false,
                     ],
-                    'lastUpdateStatusReasonCode' => [
-                        'type' => 'string',
+                    'internetAccess' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                     'layers' => [
@@ -1006,28 +984,11 @@
                             '$ref' => '#/components/schemas/FunctionLayer',
                         ],
                     ],
-                    'logConfig' => [
-                        '$ref' => '#/components/schemas/LogConfig',
-                        'required' => false,
-                    ],
-                    'memorySize' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'nasConfig' => [
-                        '$ref' => '#/components/schemas/NASConfig',
-                        'required' => false,
-                    ],
                     'ossMountConfig' => [
                         '$ref' => '#/components/schemas/OSSMountConfig',
                         'required' => false,
                     ],
-                    'role' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'runtime' => [
+                    'createdTime' => [
                         'type' => 'string',
                         'required' => false,
                     ],
@@ -1035,21 +996,72 @@
                         'type' => 'string',
                         'required' => false,
                     ],
-                    'stateReason' => [
+                    'functionArn' => [
                         'type' => 'string',
                         'required' => false,
                     ],
-                    'stateReasonCode' => [
+                    'customRuntimeConfig' => [
+                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
+                        'required' => false,
+                    ],
+                    'logConfig' => [
+                        '$ref' => '#/components/schemas/LogConfig',
+                        'required' => false,
+                    ],
+                    'functionName' => [
                         'type' => 'string',
                         'required' => false,
                     ],
-                    'timeout' => [
+                    'instanceLifecycleConfig' => [
+                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
+                        'required' => false,
+                    ],
+                    'gpuConfig' => [
+                        '$ref' => '#/components/schemas/GPUConfig',
+                        'required' => false,
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'runtime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'customContainerConfig' => [
+                        '$ref' => '#/components/schemas/CustomContainerConfig',
+                        'required' => false,
+                    ],
+                    'instanceConcurrency' => [
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
                     ],
-                    'tracingConfig' => [
-                        '$ref' => '#/components/schemas/TracingConfig',
+                    'tags' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Tag',
+                        ],
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'customDNS' => [
+                        '$ref' => '#/components/schemas/CustomDNS',
+                        'required' => false,
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'lastUpdateStatus' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                     'vpcConfig' => [
@@ -1084,6 +1096,20 @@
                         'type' => 'string',
                         'required' => false,
                         'maxLength' => 128,
+                    ],
+                ],
+            ],
+            'GetInstanceLifecycleEventsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'events' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/InstanceEventItem',
+                        ],
                     ],
                 ],
             ],
@@ -1167,16 +1193,52 @@
                     ],
                 ],
             ],
+            'InstanceEventItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'level' => [
+                        'type' => 'string',
+                    ],
+                    'children' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/InstanceEventItem',
+                        ],
+                    ],
+                    'time' => [
+                        'type' => 'string',
+                    ],
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'InstanceInfo' => [
                 'type' => 'object',
                 'properties' => [
+                    'versionId' => [
+                        'type' => 'string',
+                    ],
                     'instanceId' => [
                         'type' => 'string',
                         'required' => false,
                     ],
-                    'versionId' => [
+                    'createdTimeMs' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'qualifier' => [
                         'type' => 'string',
-                        'required' => false,
+                    ],
+                    'destroyedTimeMs' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'status' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1398,6 +1460,9 @@
                         'items' => [
                             '$ref' => '#/components/schemas/InstanceInfo',
                         ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1738,6 +1803,26 @@
             'ProvisionConfig' => [
                 'type' => 'object',
                 'properties' => [
+                    'scheduledActions' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScheduledAction',
+                        ],
+                    ],
+                    'currentError' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'defaultTarget' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'current' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
                     'alwaysAllocateCPU' => [
                         'type' => 'boolean',
                         'required' => false,
@@ -1746,37 +1831,21 @@
                         'type' => 'boolean',
                         'required' => false,
                     ],
-                    'current' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                    'currentError' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'functionArn' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'scheduledActions' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            '$ref' => '#/components/schemas/ScheduledAction',
-                        ],
-                    ],
-                    'target' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
                     'targetTrackingPolicies' => [
                         'type' => 'array',
                         'required' => false,
                         'items' => [
                             '$ref' => '#/components/schemas/TargetTrackingPolicy',
                         ],
+                    ],
+                    'functionArn' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'target' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1826,6 +1895,17 @@
             'PutProvisionConfigInput' => [
                 'type' => 'object',
                 'properties' => [
+                    'scheduledActions' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScheduledAction',
+                        ],
+                    ],
+                    'defaultTarget' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                     'alwaysAllocateCPU' => [
                         'type' => 'boolean',
                         'required' => false,
@@ -1834,24 +1914,18 @@
                         'type' => 'boolean',
                         'required' => false,
                     ],
-                    'scheduledActions' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            '$ref' => '#/components/schemas/ScheduledAction',
-                        ],
-                    ],
-                    'target' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
                     'targetTrackingPolicies' => [
                         'type' => 'array',
                         'required' => false,
                         'items' => [
                             '$ref' => '#/components/schemas/TargetTrackingPolicy',
                         ],
+                    ],
+                    'target' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => true,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -4122,6 +4196,7 @@
             'produces' => [
                 'application/json',
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'functionName',
@@ -4161,6 +4236,7 @@
             'produces' => [
                 'application/json',
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'functionName',
@@ -4750,6 +4826,71 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instanceStatus',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'enum' => [
+                                'Running',
+                                'Terminating',
+                                'Destroyed',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'startTimeMs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'endTimeMs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'startKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'limit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instanceIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],

@@ -381,6 +381,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listRemoteADBDataSourcesAsync($arguments = [])
  * @method \Dew\Acs\Result modifyRemoteADBDataSource(array $arguments = [])
  * @method \Http\Promise\Promise modifyRemoteADBDataSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result textEmbedding(array $arguments = [])
+ * @method \Http\Promise\Promise textEmbeddingAsync($arguments = [])
  */
 final class GpdbClient extends AcsClient
 {

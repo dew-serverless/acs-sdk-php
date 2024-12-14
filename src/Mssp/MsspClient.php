@@ -47,6 +47,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getUserStatusAsync($arguments = [])
  * @method \Dew\Acs\Result createServiceWorkOrder(array $arguments = [])
  * @method \Http\Promise\Promise createServiceWorkOrderAsync($arguments = [])
+ * @method \Dew\Acs\Result getConsoleScore(array $arguments = [])
+ * @method \Http\Promise\Promise getConsoleScoreAsync($arguments = [])
  * @method \Dew\Acs\Result getSowList(array $arguments = [])
  * @method \Http\Promise\Promise getSowListAsync($arguments = [])
  * @method \Dew\Acs\Result disposeWorkTask(array $arguments = [])

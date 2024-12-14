@@ -93,6 +93,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteCustomAuthConnectBlackAsync($arguments = [])
  * @method \Dew\Acs\Result queryCustomAuthConnectBlack(array $arguments = [])
  * @method \Http\Promise\Promise queryCustomAuthConnectBlackAsync($arguments = [])
+ * @method \Dew\Acs\Result setSniConfig(array $arguments = [])
+ * @method \Http\Promise\Promise setSniConfigAsync($arguments = [])
  */
 final class OnsMqttClient extends AcsClient
 {

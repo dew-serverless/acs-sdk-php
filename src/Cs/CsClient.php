@@ -141,6 +141,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeUserPermissionAsync($arguments = [])
  * @method \Dew\Acs\Result grantPermissions(array $arguments = [])
  * @method \Http\Promise\Promise grantPermissionsAsync($arguments = [])
+ * @method \Dew\Acs\Result updateUserPermissions(array $arguments = [])
+ * @method \Http\Promise\Promise updateUserPermissionsAsync($arguments = [])
  * @method \Dew\Acs\Result checkServiceRole(array $arguments = [])
  * @method \Http\Promise\Promise checkServiceRoleAsync($arguments = [])
  * @method \Dew\Acs\Result createTemplate(array $arguments = [])
@@ -219,8 +221,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deployPolicyInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result describeUserQuota(array $arguments = [])
  * @method \Http\Promise\Promise describeUserQuotaAsync($arguments = [])
- * @method \Dew\Acs\Result updateUserPermissions(array $arguments = [])
- * @method \Http\Promise\Promise updateUserPermissionsAsync($arguments = [])
  * @method \Dew\Acs\Result listOperationPlans(array $arguments = [])
  * @method \Http\Promise\Promise listOperationPlansAsync($arguments = [])
  * @method \Dew\Acs\Result cancelOperationPlan(array $arguments = [])
@@ -229,16 +229,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateResourcesDeleteProtectionAsync($arguments = [])
  * @method \Dew\Acs\Result describeResourcesDeleteProtection(array $arguments = [])
  * @method \Http\Promise\Promise describeResourcesDeleteProtectionAsync($arguments = [])
- * @method \Dew\Acs\Result describeExternalAgent(array $arguments = [])
- * @method \Http\Promise\Promise describeExternalAgentAsync($arguments = [])
- * @method \Dew\Acs\Result createKubernetesTrigger(array $arguments = [])
- * @method \Http\Promise\Promise createKubernetesTriggerAsync($arguments = [])
+ * @method \Dew\Acs\Result describeExternalAgent(array $arguments = []) {@deprecated 2015-12-15}
+ * @method \Http\Promise\Promise describeExternalAgentAsync($arguments = []) {@deprecated 2015-12-15}
+ * @method \Dew\Acs\Result createKubernetesTrigger(array $arguments = []) {@deprecated 2015-12-15}
+ * @method \Http\Promise\Promise createKubernetesTriggerAsync($arguments = []) {@deprecated 2015-12-15}
  * @method \Dew\Acs\Result resumeComponentUpgrade(array $arguments = []) {@deprecated 2015-12-15}
  * @method \Http\Promise\Promise resumeComponentUpgradeAsync($arguments = []) {@deprecated 2015-12-15}
  * @method \Dew\Acs\Result pauseComponentUpgrade(array $arguments = []) {@deprecated 2015-12-15}
  * @method \Http\Promise\Promise pauseComponentUpgradeAsync($arguments = []) {@deprecated 2015-12-15}
- * @method \Dew\Acs\Result getKubernetesTrigger(array $arguments = [])
- * @method \Http\Promise\Promise getKubernetesTriggerAsync($arguments = [])
+ * @method \Dew\Acs\Result getKubernetesTrigger(array $arguments = []) {@deprecated 2015-12-15}
+ * @method \Http\Promise\Promise getKubernetesTriggerAsync($arguments = []) {@deprecated 2015-12-15}
  * @method \Dew\Acs\Result describeClusters(array $arguments = []) {@deprecated 2015-12-15}
  * @method \Http\Promise\Promise describeClustersAsync($arguments = []) {@deprecated 2015-12-15}
  * @method \Dew\Acs\Result describeClusterV2UserKubeconfig(array $arguments = []) {@deprecated 2015-12-15}
@@ -247,8 +247,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeClusterAddonUpgradeStatusAsync($arguments = []) {@deprecated 2015-12-15}
  * @method \Dew\Acs\Result cancelComponentUpgrade(array $arguments = []) {@deprecated 2015-12-15}
  * @method \Http\Promise\Promise cancelComponentUpgradeAsync($arguments = []) {@deprecated 2015-12-15}
- * @method \Dew\Acs\Result deleteKubernetesTrigger(array $arguments = [])
- * @method \Http\Promise\Promise deleteKubernetesTriggerAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteKubernetesTrigger(array $arguments = []) {@deprecated 2015-12-15}
+ * @method \Http\Promise\Promise deleteKubernetesTriggerAsync($arguments = []) {@deprecated 2015-12-15}
  */
 final class CsClient extends AcsClient
 {

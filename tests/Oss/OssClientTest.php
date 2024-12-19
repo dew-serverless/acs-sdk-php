@@ -43,7 +43,7 @@ final class OssClientTest extends TestCase
     {
         $data = ['DeleteResult' => ['Deleted' => ['Key' => 'greeting.txt']]];
         $mock = new Client();
-        $mock->setDefaultResponse(new Response(200, ['Content-Type' => 'application/xml'], (new XmlEncoder)->encode($data)));
+        $mock->setDefaultResponse(new Response(200, ['Content-Type' => 'application/xml'], (new XmlEncoder())->encode($data)));
         $client = $this->makeClient(['http_client' => $mock]);
         $result = $client->deleteMultipleObjects([
             'bucket' => 'mybucket',

@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Dew\Acs\Tests\Oss;
 
 use Dew\Acs\Oss\OssClient;
+use Dew\Acs\XmlEncoder;
+use GuzzleHttp\Psr7\Response;
 use Http\Mock\Client;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -15,6 +17,42 @@ use PHPUnit\Framework\TestCase;
 #[CoversClass(OssClient::class)]
 final class OssClientTest extends TestCase
 {
+    public function test_delete_multiple_objects(): void
+    {
+        $mock = new Client();
+        $client = $this->makeClient(['http_client' => $mock]);
+        $client->deleteMultipleObjects([
+            'bucket' => 'mybucket',
+            'body' => [
+                'Delete' => [
+                    'Object' => [
+                        ['Key' => 'greeting.txt'],
+                        ['Key' => 'photo.jpg'],
+                    ],
+                    'Quiet' => true,
+                ],
+            ],
+        ]);
+        $lastRequest = $mock->getLastRequest();
+        $this->assertSame('POST', $lastRequest->getMethod());
+        $this->assertSame('https://mybucket.oss-cn-somewhere.aliyuncs.com?delete', (string) $lastRequest->getUri());
+        $this->assertArrayHasKey('Content-MD5', $lastRequest->getHeaders());
+    }
+
+    public function test_delete_multiple_objects_response_deleted_is_a_list(): void
+    {
+        $data = ['DeleteResult' => ['Deleted' => ['Key' => 'greeting.txt']]];
+        $mock = new Client();
+        $mock->setDefaultResponse(new Response(200, ['Content-Type' => 'application/xml'], (new XmlEncoder())->encode($data)));
+        $client = $this->makeClient(['http_client' => $mock]);
+        $result = $client->deleteMultipleObjects([
+            'bucket' => 'mybucket',
+            'body' => ['Delete' => ['Object' => [['Key' => 'greeting.txt']]]],
+        ]);
+        $this->assertIsList($result['DeleteResult']['Deleted']);
+        $this->assertSame('greeting.txt', $result['DeleteResult']['Deleted'][0]['Key']);
+    }
+
     public function test_url_to_download(): void
     {
         $client = $this->makeClient();

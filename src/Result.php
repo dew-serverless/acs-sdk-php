@@ -80,7 +80,7 @@ final class Result implements ArrayAccess
     /**
      * @return self<TData>
      */
-    public function setResponse(ResponseInterface $response): self
+    public function setResponse(?ResponseInterface $response): self
     {
         $this->response = $response;
 

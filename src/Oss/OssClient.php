@@ -315,6 +315,8 @@ use Override;
  */
 final class OssClient extends AcsClient
 {
+    use DeletesMultipleObjects;
+
     public function urlToDownload(string $bucket, string $object, int $expires = 900): string
     {
         return $this->signUrl('GET', $bucket, $object, $expires);

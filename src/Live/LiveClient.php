@@ -781,8 +781,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeRTSNativeSDKFirstFrameDelayAsync($arguments = [])
  * @method \Dew\Acs\Result describeRTSNativeSDKVvData(array $arguments = [])
  * @method \Http\Promise\Promise describeRTSNativeSDKVvDataAsync($arguments = [])
- * @method \Dew\Acs\Result allowPushStream(array $arguments = [])
- * @method \Http\Promise\Promise allowPushStreamAsync($arguments = [])
  * @method \Dew\Acs\Result describeLiveRealtimeLogAuthorized(array $arguments = [])
  * @method \Http\Promise\Promise describeLiveRealtimeLogAuthorizedAsync($arguments = [])
  * @method \Dew\Acs\Result describeUpBpsPeakData(array $arguments = [])

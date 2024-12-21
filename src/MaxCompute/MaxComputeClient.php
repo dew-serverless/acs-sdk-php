@@ -7,6 +7,16 @@ namespace Dew\Acs\MaxCompute;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result createMmsDataSource(array $arguments = [])
+ * @method \Http\Promise\Promise createMmsDataSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result getMmsDataSource(array $arguments = [])
+ * @method \Http\Promise\Promise getMmsDataSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result listMmsDataSources(array $arguments = [])
+ * @method \Http\Promise\Promise listMmsDataSourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result updateMmsDataSource(array $arguments = [])
+ * @method \Http\Promise\Promise updateMmsDataSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteMmsDataSource(array $arguments = [])
+ * @method \Http\Promise\Promise deleteMmsDataSourceAsync($arguments = [])
  * @method \Dew\Acs\Result listQuotas(array $arguments = [])
  * @method \Http\Promise\Promise listQuotasAsync($arguments = [])
  * @method \Dew\Acs\Result queryQuota(array $arguments = [])

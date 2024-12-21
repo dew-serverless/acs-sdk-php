@@ -63,6 +63,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDBClusterConfigChangeLogsAsync($arguments = [])
  * @method \Dew\Acs\Result describeAllDBInstanceClass(array $arguments = [])
  * @method \Http\Promise\Promise describeAllDBInstanceClassAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyElasticRule(array $arguments = [])
+ * @method \Http\Promise\Promise modifyElasticRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result describeElasticRules(array $arguments = [])
+ * @method \Http\Promise\Promise describeElasticRulesAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteElasticRule(array $arguments = [])
+ * @method \Http\Promise\Promise deleteElasticRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result enDisableScalingRules(array $arguments = [])
+ * @method \Http\Promise\Promise enDisableScalingRulesAsync($arguments = [])
+ * @method \Dew\Acs\Result createElasticRule(array $arguments = [])
+ * @method \Http\Promise\Promise createElasticRuleAsync($arguments = [])
  */
 final class SelectdbClient extends AcsClient
 {

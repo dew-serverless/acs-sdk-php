@@ -85,6 +85,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createVectorIndexAsync($arguments = [])
  * @method \Dew\Acs\Result deleteVectorIndex(array $arguments = [])
  * @method \Http\Promise\Promise deleteVectorIndexAsync($arguments = [])
+ * @method \Dew\Acs\Result textEmbedding(array $arguments = [])
+ * @method \Http\Promise\Promise textEmbeddingAsync($arguments = [])
  * @method \Dew\Acs\Result rerank(array $arguments = [])
  * @method \Http\Promise\Promise rerankAsync($arguments = [])
  * @method \Dew\Acs\Result listStreamingDataSources(array $arguments = [])
@@ -381,8 +383,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listRemoteADBDataSourcesAsync($arguments = [])
  * @method \Dew\Acs\Result modifyRemoteADBDataSource(array $arguments = [])
  * @method \Http\Promise\Promise modifyRemoteADBDataSourceAsync($arguments = [])
- * @method \Dew\Acs\Result textEmbedding(array $arguments = [])
- * @method \Http\Promise\Promise textEmbeddingAsync($arguments = [])
  */
 final class GpdbClient extends AcsClient
 {

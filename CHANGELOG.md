@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0] - 2024-12-21
+
+### Added
+
+- OSS: Upload multiple objects
+  https://github.com/dew-serverless/acs-sdk-php/pull/85
+
 ## [0.7.1] - 2024-12-07
 
 ### Fixed
@@ -83,7 +90,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release.
 
-[unreleased]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.7.1...HEAD
+[unreleased]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.7.1...v0.8.0
 [0.7.1]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.5.0...v0.6.0

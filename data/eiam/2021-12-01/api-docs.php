@@ -4612,6 +4612,1096 @@
                 ],
             ],
         ],
+        'CreateIdentityProvider' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'UdPushConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'IncrementalCallbackStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 32,
+                            ],
+                            'PeriodicSyncStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 32,
+                            ],
+                            'UdSyncScopeConfigs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'SourceScopes' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                        'TargetScope' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'UdPullConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'GroupSyncStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 32,
+                            ],
+                            'IncrementalCallbackStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 32,
+                            ],
+                            'PeriodicSyncStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 32,
+                            ],
+                            'UdSyncScopeConfig' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'SourceScopes' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'TargetScope' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AuthnConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AuthnStatus' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'maxLength' => 32,
+                            ],
+                            'AutoUpdatePasswordStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'BindingConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AutoMatchUserProfileExpressions' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'ExpressionMappingType' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'SourceValueExpression' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'TargetField' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'TargetFieldDescription' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'AutoMatchUserStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'MappingBindingStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DingtalkAppConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AppKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AppSecret' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CorpId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DingtalkVersion' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 32,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LdapConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AdministratorPassword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AdministratorUsername' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CertificateFingerprintStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CertificateFingerprints' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'GroupMemberAttributeName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'GroupObjectClass' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'GroupObjectClassCustomFilter' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'LdapProtocol' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'LdapServerHost' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'LdapServerPort' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'OrganizationUnitObjectClass' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'StartTlsStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'UserLoginIdentifier' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'UserObjectClass' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'UserObjectClassCustomFilter' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'WeComConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AgentId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AuthorizeCallbackDomain' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CorpId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CorpSecret' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TrustableDomain' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OidcConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AuthnParam' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'AuthnMethod' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ClientId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ClientSecret' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'EndpointConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'AuthorizationEndpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Issuer' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'JwksUri' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'TokenEndpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'UserinfoEndpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'GrantScopes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'GrantType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PkceChallengeMethod' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PkceRequired' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NetworkAccessEndpointId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoCreateUserConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AutoCreateUserStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetOrganizationalUnitIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AutoUpdateUserConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AutoUpdateUserStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LarkConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AppId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AppSecret' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'EnterpriseNumber' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 128,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LogoUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteIdentityProvider' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateIdentityProvider' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LdapConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AdministratorPassword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AdministratorUsername' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CertificateFingerprintStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CertificateFingerprints' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'LdapProtocol' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'LdapServerHost' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'LdapServerPort' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'StartTlsStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DingtalkAppConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AppKey' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'AppSecret' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'WeComConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AgentId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AuthorizeCallbackDomain' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CorpSecret' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TrustableDomain' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OidcConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AuthnParam' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'AuthnMethod' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ClientSecret' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'EndpointConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'AuthorizationEndpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Issuer' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'JwksUri' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'TokenEndpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'UserinfoEndpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'GrantScopes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'GrantType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PkceChallengeMethod' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PkceRequired' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NetworkAccessEndpointId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LarkConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AppId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'AppSecret' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LogoUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetIdentityProvider' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+            ],
+        ],
+        'ListIdentityProviders' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'EnableIdentityProviderUdPull' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+            ],
+        ],
+        'DisableIdentityProviderUdPull' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+            ],
+        ],
+        'SetIdentityProviderUdPullConfiguration' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IncrementalCallbackStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 32,
+                    ],
+                ],
+                [
+                    'name' => 'GroupSyncStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 32,
+                    ],
+                ],
+                [
+                    'name' => 'UdSyncScopeConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'SourceScopes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'TargetScope' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PullProtectedRule',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'UserDeletedThreshold' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'OrganizationalUnitDeletedThreshold' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'GroupDeletedThreshold' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LdapUdPullConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'UserObjectClass' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'OrganizationUnitObjectClass' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'UserObjectClassCustomFilter' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'GroupObjectClass' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'GroupMemberAttributeName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'GroupObjectClassCustomFilter' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PeriodicSyncStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 32,
+                    ],
+                ],
+            ],
+        ],
+        'GetIdentityProviderUdPullConfiguration' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'IdentityProviderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+            ],
+        ],
         'SetForgetPasswordConfiguration' => [
             'methods' => [
                 'post',
@@ -5180,6 +6270,33 @@
                         'maxLength' => 64,
                     ],
                 ],
+                [
+                    'name' => 'Filters',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Values' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'RunSynchronizationJob' => [
@@ -5211,7 +6328,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'maxLength' => 64,
+                        'maxLength' => 128,
                     ],
                 ],
                 [
@@ -5220,6 +6337,77 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'UserIdentityTypes',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'enum' => [
+                                'username',
+                                'email',
+                                'phoneNumber',
+                                'externalId',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SynchronizationScopeConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'OrganizationalUnitIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'GroupIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'UserIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PasswordInitialization',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

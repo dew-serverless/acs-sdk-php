@@ -708,6 +708,7 @@
                         'enum' => [
                             '-1',
                             '1',
+                            '2',
                             '3',
                             '5',
                             '100',
@@ -843,6 +844,20 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'ExecutorBlockStrategy',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                            '2',
+                            '3',
+                        ],
+                    ],
+                ],
             ],
         ],
         'UpdateJob' => [
@@ -970,6 +985,7 @@
                         'enum' => [
                             '-1',
                             '1',
+                            '2',
                             '3',
                             '5',
                             '100',
@@ -1088,6 +1104,20 @@
                                     'required' => false,
                                 ],
                             ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ExecutorBlockStrategy',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                            '2',
+                            '3',
                         ],
                     ],
                 ],

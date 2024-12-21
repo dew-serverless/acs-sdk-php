@@ -135,6 +135,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeHanaBackupsAsyncAsync($arguments = [])
  * @method \Dew\Acs\Result describeHanaRestores(array $arguments = [])
  * @method \Http\Promise\Promise describeHanaRestoresAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteAirEcsInstance(array $arguments = [])
+ * @method \Http\Promise\Promise deleteAirEcsInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result openHbrService(array $arguments = [])
  * @method \Http\Promise\Promise openHbrServiceAsync($arguments = [])
  * @method \Dew\Acs\Result addContainerCluster(array $arguments = [])

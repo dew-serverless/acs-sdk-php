@@ -1789,8 +1789,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'eflo-controller.cn-shenzhen.aliyuncs.com',
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'eflo-controller.cn-hangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-wulanchabu',
@@ -1799,6 +1799,10 @@
         [
             'regionId' => 'cn-shanghai',
             'endpoint' => 'eflo-controller.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'eflo-controller.cn-shenzhen.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-heyuan',

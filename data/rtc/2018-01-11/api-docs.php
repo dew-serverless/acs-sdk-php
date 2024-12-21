@@ -2307,6 +2307,35 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'LayoutSpecifiedUsers',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'white',
+                                    'black',
+                                ],
+                            ],
+                            'Ids' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'minItems' => 1,
+                                'maxItems' => 16,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'UpdateCloudRecord' => [
@@ -3039,6 +3068,35 @@
                             ],
                         ],
                         'maxItems' => 3,
+                    ],
+                ],
+                [
+                    'name' => 'LayoutSpecifiedUsers',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'white',
+                                    'black',
+                                ],
+                            ],
+                            'Ids' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'minItems' => 1,
+                                'maxItems' => 16,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -4254,6 +4312,35 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'LayoutSpecifiedUsers',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'white',
+                                    'black',
+                                ],
+                            ],
+                            'Ids' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'minItems' => 1,
+                                'maxItems' => 16,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'UpdateStreamingOut' => [
@@ -4988,6 +5075,35 @@
                         'maxItems' => 3,
                     ],
                 ],
+                [
+                    'name' => 'LayoutSpecifiedUsers',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'white',
+                                    'black',
+                                ],
+                            ],
+                            'Ids' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'minItems' => 1,
+                                'maxItems' => 16,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'StopStreamingOut' => [
@@ -5029,6 +5145,487 @@
                         'minLength' => 1,
                         'maxLength' => 55,
                         'pattern' => '^[0-9a-zA-Z_-]+$',
+                    ],
+                ],
+            ],
+        ],
+        'StartCloudNote' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 55,
+                        'pattern' => '^[\\w.-]+$',
+                    ],
+                ],
+                [
+                    'name' => 'StorageConfig',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Vendor' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                                'minimum' => '1',
+                            ],
+                            'Region' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'Bucket' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                            ],
+                            'AccessKey' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                            ],
+                            'SecretKey' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SourceLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'cn',
+                            'en',
+                            'ja',
+                            'yue',
+                            'ko',
+                            'de',
+                            'fr',
+                            'ru',
+                            'multilingual',
+                            'es',
+                            'vi',
+                            'it',
+                            'sv',
+                            'cs',
+                            'pl',
+                            'th',
+                            'fi',
+                            'hi',
+                            'id',
+                            'pt',
+                            'ar',
+                            'fil',
+                            'ms',
+                            'tr',
+                            'hu',
+                            'lo',
+                            'pt-br',
+                            'es-ar',
+                            'es-mx',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LanguageHints',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'enum' => [
+                                'cn',
+                                'en',
+                                'ja',
+                                'ko',
+                                'de',
+                                'fr',
+                                'ru',
+                                'es',
+                                'vi',
+                                'it',
+                                'sv',
+                                'cs',
+                                'pl',
+                                'th',
+                                'fi',
+                                'hi',
+                                'id',
+                                'pt',
+                                'ar',
+                                'fil',
+                                'ms',
+                                'tr',
+                                'hu',
+                                'lo',
+                                'pt-br',
+                                'es-ar',
+                                'es-mx',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AutoChapters',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MeetingAssistance',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'MeetingAssistanceType' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'Actions',
+                                        'KeyInformation',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Summarization',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'Type' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'Paragraph',
+                                        'Conversational',
+                                        'QuestionsAnswering',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TextPolish',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ServiceInspection',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'SceneIntroduction' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'maxLength' => 1024,
+                            ],
+                            'InspectionIntroduction' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'maxLength' => 1024,
+                            ],
+                            'InspectionContents' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'Title' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                                'maxItems' => 100,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CustomPrompt',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'CustomPromptContents' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Prompt' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Model' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'tingwu-turbo',
+                                                'tingwu-plus',
+                                                'qwen-max',
+                                            ],
+                                        ],
+                                        'TransType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'default',
+                                                'chat',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'minItems' => 1,
+                                'maxItems' => 3,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'StopCloudNote' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 55,
+                        'pattern' => '^[\\w.-]+$',
+                    ],
+                ],
+            ],
+        ],
+        'DescribeCloudNotes' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'StartTs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndTs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaskIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'minLength' => 1,
+                            'maxLength' => 55,
+                            'pattern' => '^[\\w.-]+$',
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 10,
                     ],
                 ],
             ],

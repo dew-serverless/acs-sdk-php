@@ -7,6 +7,10 @@ namespace Dew\Acs\Mssp;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result createServiceLinkedRole(array $arguments = [])
+ * @method \Http\Promise\Promise createServiceLinkedRoleAsync($arguments = [])
+ * @method \Dew\Acs\Result describeServiceLinkedRole(array $arguments = [])
+ * @method \Http\Promise\Promise describeServiceLinkedRoleAsync($arguments = [])
  * @method \Dew\Acs\Result pageServiceCustomer(array $arguments = [])
  * @method \Http\Promise\Promise pageServiceCustomerAsync($arguments = [])
  * @method \Dew\Acs\Result getSuspPageSummary(array $arguments = [])
@@ -57,6 +61,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise disposeServiceWorkOrderAsync($arguments = [])
  * @method \Dew\Acs\Result sendCustomEvent(array $arguments = [])
  * @method \Http\Promise\Promise sendCustomEventAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteDjbhReport(array $arguments = [])
+ * @method \Http\Promise\Promise deleteDjbhReportAsync($arguments = [])
+ * @method \Dew\Acs\Result confirmDjbhReport(array $arguments = [])
+ * @method \Http\Promise\Promise confirmDjbhReportAsync($arguments = [])
  */
 final class MsspClient extends AcsClient
 {

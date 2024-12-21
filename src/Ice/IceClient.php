@@ -359,6 +359,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise sendAIAgentSpeechAsync($arguments = [])
  * @method \Dew\Acs\Result takeoverAIAgentCall(array $arguments = [])
  * @method \Http\Promise\Promise takeoverAIAgentCallAsync($arguments = [])
+ * @method \Dew\Acs\Result sendAIAgentDataChannelMessage(array $arguments = [])
+ * @method \Http\Promise\Promise sendAIAgentDataChannelMessageAsync($arguments = [])
  * @method \Dew\Acs\Result setNotifyConfig(array $arguments = [])
  * @method \Http\Promise\Promise setNotifyConfigAsync($arguments = [])
  * @method \Dew\Acs\Result describeNotifyConfig(array $arguments = [])

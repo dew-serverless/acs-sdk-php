@@ -21,8 +21,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyLoadBalancerInstanceSpecAsync($arguments = [])
  * @method \Dew\Acs\Result modifyLoadBalancerInternetSpec(array $arguments = [])
  * @method \Http\Promise\Promise modifyLoadBalancerInternetSpecAsync($arguments = [])
- * @method \Dew\Acs\Result modifyLoadBalancerPayType(array $arguments = [])
- * @method \Http\Promise\Promise modifyLoadBalancerPayTypeAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyLoadBalancerPayType(array $arguments = []) {@deprecated 2014-05-15}
+ * @method \Http\Promise\Promise modifyLoadBalancerPayTypeAsync($arguments = []) {@deprecated 2014-05-15}
  * @method \Dew\Acs\Result setLoadBalancerDeleteProtection(array $arguments = [])
  * @method \Http\Promise\Promise setLoadBalancerDeleteProtectionAsync($arguments = [])
  * @method \Dew\Acs\Result setLoadBalancerModificationProtection(array $arguments = [])

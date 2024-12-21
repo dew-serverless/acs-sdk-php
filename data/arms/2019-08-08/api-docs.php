@@ -4143,6 +4143,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ExtraInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'AddTagToFlinkCluster' => [
@@ -9025,6 +9033,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PaymentType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'POSTPAY',
+                            'POSTPAY_GB',
+                        ],
+                    ],
+                ],
             ],
         ],
         'UpdatePrometheusInstance' => [
@@ -9123,6 +9143,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PaymentType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'POSTPAY',
+                            'POSTPAY_GB',
+                        ],
                     ],
                 ],
             ],

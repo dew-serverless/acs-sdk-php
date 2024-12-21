@@ -319,8 +319,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDomainRealTimeDetailDataAsync($arguments = [])
  * @method \Dew\Acs\Result describeDomainMultiUsageData(array $arguments = [])
  * @method \Http\Promise\Promise describeDomainMultiUsageDataAsync($arguments = [])
- * @method \Dew\Acs\Result describeUserConfigs(array $arguments = []) {@deprecated 2018-05-10}
- * @method \Http\Promise\Promise describeUserConfigsAsync($arguments = []) {@deprecated 2018-05-10}
+ * @method \Dew\Acs\Result describeUserConfigs(array $arguments = [])
+ * @method \Http\Promise\Promise describeUserConfigsAsync($arguments = [])
  * @method \Dew\Acs\Result setReqHeaderConfig(array $arguments = [])
  * @method \Http\Promise\Promise setReqHeaderConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyCdnService(array $arguments = [])

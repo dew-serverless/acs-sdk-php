@@ -287,6 +287,17 @@
                     ],
                 ],
             ],
+            'ForwardInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'NatGatewayId' => [
+                        'type' => 'string',
+                    ],
+                    'EipAllocationId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'GPUInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -2030,6 +2041,9 @@
                     ],
                     'DefaultRoute' => [
                         'type' => 'string',
+                    ],
+                    'DefaultForwardInfo' => [
+                        '$ref' => '#/components/schemas/ForwardInfo',
                     ],
                 ],
             ],

@@ -523,7 +523,6 @@
             ],
         ],
         'ListExecutionRiskyTasks' => [
-            'path' => '/ListExecutionRiskyTasks',
             'methods' => [
                 'post',
                 'get',
@@ -4366,6 +4365,9 @@
                 [
                     'AK' => [],
                 ],
+                [
+                    'APP' => [],
+                ],
             ],
             'deprecated' => false,
             'parameters' => [
@@ -4429,7 +4431,6 @@
         ],
         'GetServiceSettings' => [
             'methods' => [
-                'post',
                 'get',
             ],
             'schemes' => [

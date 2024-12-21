@@ -99,8 +99,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDdosOriginInstanceBillAsync($arguments = [])
  * @method \Dew\Acs\Result moveResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise moveResourceGroupAsync($arguments = [])
- * @method \Dew\Acs\Result describeCcPolicy(array $arguments = [])
- * @method \Http\Promise\Promise describeCcPolicyAsync($arguments = [])
  */
 final class DdosbgpClient extends AcsClient
 {

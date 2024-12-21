@@ -1742,6 +1742,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CooperationChannel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Simplify',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeRiskLevels' => [

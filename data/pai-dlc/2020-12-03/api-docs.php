@@ -715,7 +715,27 @@
                         'type' => 'string',
                     ],
                     'UserVpc' => [
-                        'type' => 'string',
+                        'type' => 'object',
+                        'properties' => [
+                            'VpcId' => [
+                                'type' => 'string',
+                            ],
+                            'SwitchId' => [
+                                'type' => 'string',
+                            ],
+                            'SecurityGroupId' => [
+                                'type' => 'string',
+                            ],
+                            'ExtendedCidrs' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'DefaultRoute' => [
+                                'type' => 'string',
+                            ],
+                        ],
                     ],
                     'UserId' => [
                         'type' => 'string',
@@ -1686,6 +1706,10 @@
                                             'required' => false,
                                         ],
                                         'Options' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'DataSourceVersion' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],

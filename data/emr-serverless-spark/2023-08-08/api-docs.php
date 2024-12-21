@@ -1902,5 +1902,25 @@
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'emr-serverless-spark.cn-shenzhen.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'emr-serverless-spark.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'emr-serverless-spark.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'emr-serverless-spark.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'emr-serverless-spark.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'emr-serverless-spark.eu-central-1.aliyuncs.com',
+        ],
     ],
 ];

@@ -11690,75 +11690,15 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-qingdao',
+            'regionId' => 'ap-southeast-8-pop',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'cbn.aliyuncs.com',
+            'regionId' => 'rus-west-1',
+            'endpoint' => 'cbn-share.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
+            'regionId' => 'cn-beijing-finance-pop',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
@@ -11766,11 +11706,83 @@
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-central-1',
+            'regionId' => 'cn-guangzhou',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'me-east-1',
+            'regionId' => 'sa-east-1-pop',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu-test-5',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-cloudspe',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-pop',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu-test-2',
+            'endpoint' => 'cbn-test-pre.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-ant',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou-spe',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote-test-3',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote-nebula-1',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-nantong',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
@@ -11778,55 +11790,75 @@
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shenzhen-finance-1',
+            'regionId' => 'cn-hangzhou-onebox-nebula',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-north-2-gov-1',
+            'regionId' => 'cn-qingdao-acdr-ut-1',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-2-pop',
+            'regionId' => 'cn-wulanchabu-test-6',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-finance-1',
+            'regionId' => 'cn-chengdu-ant',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-finance-pop',
+            'regionId' => 'cn-shenzhen',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-gov-1',
+            'regionId' => 'cn-taiyuan',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-nu16-b01',
+            'regionId' => 'us-west-1',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-edge-1',
+            'regionId' => 'cn-heyuan',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-fujian',
+            'regionId' => 'ap-southeast-7-pop',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-haidian-cm12-c01',
+            'regionId' => 'cn-taiwan-pop',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-bj-b01',
+            'regionId' => 'rus-west-1-pop',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-finance',
+            'regionId' => 'eu-central-1',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-internal-prod-1',
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-xian',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'rsa-north-1-pop',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
@@ -11838,84 +11870,68 @@
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-north-2-gov-1',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou-acdr-ut-1',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu-acdr-1',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hangzhou-internal-test-3',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-test-306',
+            'regionId' => 'ap-southeast-6-pop',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hongkong-finance-pop',
+            'regionId' => 'ap-northeast-2-pop',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-huhehaote-nebula-1',
+            'regionId' => 'cn-chengdu',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-qingdao-nebula',
+            'regionId' => 'cn-chengdu-smarthosting-1',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shanghai-et15-b01',
+            'regionId' => 'cn-huhehaote-test-4',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shanghai-et2-b01',
+            'regionId' => 'cn-hangzhou',
             'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-inner',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-internal-test-1',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-inner',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-st4-d01',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-su18-b01',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wuhan',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-yushanfang',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangbei',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangbei-na61-b01',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou-na62-a01',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhengzhou-nebula-1',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1-oxs',
-            'endpoint' => 'cbn.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'rus-west-1-pop',
-            'endpoint' => 'cbn-share.aliyuncs.com',
         ],
     ],
 ];

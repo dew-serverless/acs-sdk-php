@@ -474,6 +474,14 @@
                     ],
                 ],
                 [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DryRun',
                     'in' => 'query',
                     'schema' => [
@@ -879,6 +887,14 @@
                 ],
                 [
                     'name' => 'IpamPoolDescription',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

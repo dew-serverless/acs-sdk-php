@@ -1135,14 +1135,6 @@
                     ],
                 ],
                 [
-                    'name' => 'BpeEnabled',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'BurstingEnabled',
                     'in' => 'query',
                     'schema' => [
@@ -2194,6 +2186,15 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
                     ],
                 ],
             ],
@@ -6217,14 +6218,6 @@
                 ],
                 [
                     'name' => 'Port',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'BpeEnabled',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11738,43 +11731,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ServerlessConfig',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'AutoPause' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'MaxCapacity' => [
-                                'type' => 'number',
-                                'format' => 'double',
-                                'required' => false,
-                            ],
-                            'MinCapacity' => [
-                                'type' => 'number',
-                                'format' => 'double',
-                                'required' => false,
-                            ],
-                            'SwitchForce' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'BpeEnabled',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

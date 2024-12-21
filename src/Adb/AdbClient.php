@@ -455,6 +455,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise cancelSparkReplStatementAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result startSparkReplSession(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise startSparkReplSessionAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result getCreateTableSQL(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise getCreateTableSQLAsync($arguments = []) {@since 2021-12-01}
  */
 final class AdbClient extends AcsClient
 {

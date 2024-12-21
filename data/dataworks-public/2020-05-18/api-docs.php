@@ -3797,6 +3797,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Timeout',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateUdfFile' => [
@@ -4939,6 +4948,15 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Timeout',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],

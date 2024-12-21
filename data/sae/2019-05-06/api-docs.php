@@ -3513,6 +3513,9 @@
                     'EmptyDirDesc' => [
                         'type' => 'string',
                     ],
+                    'AcrInstanceId' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'SourceCodeAccount' => [
@@ -6623,10 +6626,31 @@
                     ],
                 ],
                 [
+                    'name' => 'SidecarContainersConfig',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/SidecarContainerConfig',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'SecretMountDesc',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableSidecarResourceIsolated',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -7487,10 +7511,31 @@
                     ],
                 ],
                 [
+                    'name' => 'SidecarContainersConfig',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/SidecarContainerConfig',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'SecretMountDesc',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableSidecarResourceIsolated',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -8870,6 +8915,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ContainerId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

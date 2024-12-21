@@ -253,6 +253,74 @@
         ],
     ],
     'apis' => [
+        'AITeacherExpansionPracticeTaskGenerate' => [
+            'path' => '/api/v1/aiteacher/expansionPractice/generateTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'grade' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'textbook' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'topic' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'learningObject' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'textContent' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'keySentences' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'keyWords' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'AliyunConsoleOpenApiQueryAliyunConsoleServcieList' => [
             'path' => '/api/v1/aliyunconsole/queryAliyunConsoleServcieList',
             'methods' => [
@@ -268,6 +336,127 @@
             ],
             'deprecated' => false,
             'parameters' => [],
+        ],
+        'PersonalizedTextToImageQueryPreModelInferenceJobInfo' => [
+            'path' => '/api/v1/personalizedtxt2img/queryPreModelInferenceJobInfo',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'inferenceJobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'PersonalizedTextToImageAddInferenceJob' => [
+            'path' => '/api/v1/personalizedtxt2img/addPreModelInferenceJob',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'imageUrl' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'trainSteps' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'prompt' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'imageNumber' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'seed' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'strength' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'PersonalizedTextToImageQueryImageAsset' => [
+            'path' => '/api/v1/personalizedtxt2img/queryImageAssetFromImageId',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'imageId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'encodeFormat',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'base64',
+                        ],
+                    ],
+                ],
+            ],
         ],
         'Personalizedtxt2imgQueryInferenceJobInfo' => [
             'path' => '/api/v1/personalizedtxt2img/queryInferenceJobInfo',
@@ -497,127 +686,6 @@
             ],
             'deprecated' => false,
             'parameters' => [],
-        ],
-        'PersonalizedTextToImageAddInferenceJob' => [
-            'path' => '/api/v1/personalizedtxt2img/addPreModelInferenceJob',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'imageUrl' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'trainSteps' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'prompt' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'imageNumber' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'seed' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'strength' => [
-                                'type' => 'number',
-                                'format' => 'double',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'PersonalizedTextToImageQueryImageAsset' => [
-            'path' => '/api/v1/personalizedtxt2img/queryImageAssetFromImageId',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'imageId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'encodeFormat',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'base64',
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'PersonalizedTextToImageQueryPreModelInferenceJobInfo' => [
-            'path' => '/api/v1/personalizedtxt2img/queryPreModelInferenceJobInfo',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'inferenceJobId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
         ],
     ],
     'endpoints' => [

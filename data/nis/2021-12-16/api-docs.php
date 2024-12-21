@@ -1953,7 +1953,7 @@
                         'type' => 'string',
                         'required' => true,
                         'minLength' => 1,
-                        'maxLength' => 128,
+                        'maxLength' => 23,
                     ],
                 ],
                 [

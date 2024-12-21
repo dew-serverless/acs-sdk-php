@@ -348,7 +348,7 @@
                             ],
                             'dialogue' => [
                                 'type' => 'object',
-                                'required' => true,
+                                'required' => false,
                                 'properties' => [
                                     'sentences' => [
                                         'type' => 'array',
@@ -490,6 +490,7 @@
                                         'service_finish',
                                         'label_classification',
                                         'analysis_image',
+                                        'custom_prompt',
                                     ],
                                 ],
                             ],
@@ -560,6 +561,10 @@
                                 ],
                             ],
                             'sourceCallerUid' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'customPrompt' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

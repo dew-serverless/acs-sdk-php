@@ -72,6 +72,9 @@
                     'requestId' => [
                         'type' => 'string',
                     ],
+                    'queryContext' => [
+                        '$ref' => '#/components/schemas/QueryContext',
+                    ],
                     'pageItems' => [
                         'type' => 'array',
                         'items' => [
@@ -111,6 +114,39 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'QueryContext' => [
+                'type' => 'object',
+                'properties' => [
+                    'originalQuery' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'query' => [
+                                'type' => 'string',
+                            ],
+                            'industry' => [
+                                'type' => 'string',
+                            ],
+                            'page' => [
+                                'type' => 'string',
+                            ],
+                            'timeRange' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'rewrite' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'enabled' => [
+                                'type' => 'boolean',
+                            ],
+                            'timeRange' => [
+                                'type' => 'string',
+                            ],
+                        ],
                     ],
                 ],
             ],

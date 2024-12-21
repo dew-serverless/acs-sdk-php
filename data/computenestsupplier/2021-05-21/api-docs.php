@@ -2050,10 +2050,6 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'FileScriptMetadata' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                             'RegionId' => [
                                 'type' => 'string',
                                 'required' => false,
@@ -2067,10 +2063,6 @@
                                 'required' => false,
                             ],
                             'CommodityVersion' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'ScriptMetadata' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -2331,14 +2323,6 @@
                                 'required' => false,
                             ],
                             'CommodityVersion' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'FileScriptMetadata' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'ScriptMetadata' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

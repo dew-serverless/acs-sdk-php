@@ -2154,6 +2154,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetClusterDiagnosisCheckItems' => [
@@ -2188,6 +2196,14 @@
                 [
                     'name' => 'diagnosis_id',
                     'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -6991,6 +7007,7 @@
                 [
                     'name' => 'body',
                     'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
                         'type' => 'array',
                         'required' => false,

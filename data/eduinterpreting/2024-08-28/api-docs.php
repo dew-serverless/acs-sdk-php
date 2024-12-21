@@ -49,10 +49,18 @@
                 ],
                 [
                     'name' => 'EnableCallBack',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'boolean',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Language',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

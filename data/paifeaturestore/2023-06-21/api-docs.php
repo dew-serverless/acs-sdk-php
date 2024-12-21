@@ -2492,6 +2492,10 @@
                                             'type' => 'boolean',
                                             'required' => false,
                                         ],
+                                        'UseMock' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
                             ],

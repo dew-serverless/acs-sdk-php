@@ -10399,6 +10399,38 @@
                 ],
             ],
         ],
+        'SendAIAgentDataChannelMessage' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Message',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'SetNotifyConfig' => [
             'methods' => [
                 'post',
@@ -13044,6 +13076,14 @@
         [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'ice.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'ice.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'ice.us-west-1.aliyuncs.com',
         ],
     ],
 ];

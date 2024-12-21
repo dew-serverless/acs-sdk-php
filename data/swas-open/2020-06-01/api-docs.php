@@ -5841,108 +5841,112 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'swas.ap-southeast-5.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'swas.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'swas.cn-guangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'swas.us-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'swas.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'swas.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'swas.us-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'swas.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'swas.eu-west-1.aliyuncs.com',
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'swas.cn-qingdao.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'swas.cn-beijing.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'swas.cn-chengdu.aliyuncs.com',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'swas.cn-zhangjiakou.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'swas.cn-shenzhen.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'swas.cn-hongkong.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'swas.cn-shanghai.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'swas.ap-southeast-3.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'swas.ap-northeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'swas.cn-hangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'swas.cn-qingdao.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-6',
-            'endpoint' => 'swas.ap-southeast-6.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'swas.ap-southeast-7.aliyuncs.com',
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'swas.cn-huhehaote.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-wulanchabu',
             'endpoint' => 'swas.cn-wulanchabu.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'swas.cn-heyuan.aliyuncs.com',
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'swas.cn-hangzhou.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'swas.cn-wuhan-lr.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-fuzhou',
-            'endpoint' => 'swas.cn-fuzhou.aliyuncs.com',
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'swas.cn-shanghai.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-nanjing',
             'endpoint' => 'swas.cn-nanjing.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'swas.cn-fuzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'swas.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'swas.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'swas.cn-guangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'swas.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'swas.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'swas.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'swas.ap-northeast-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-northeast-2',
             'endpoint' => 'swas.ap-northeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'swas.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'swas.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'swas.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'swas.ap-southeast-6.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'swas.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'swas.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'swas.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'swas.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'swas.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'swas.me-central-1.aliyuncs.com',
         ],
     ],
 ];

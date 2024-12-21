@@ -418,8 +418,8 @@
                 'post',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [

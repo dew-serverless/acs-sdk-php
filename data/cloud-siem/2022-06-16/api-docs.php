@@ -1109,6 +1109,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'pattern' => '^\\d+$',
                     ],
                 ],
                 [
@@ -1117,6 +1118,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'pattern' => '^\\d+$',
                     ],
                 ],
             ],

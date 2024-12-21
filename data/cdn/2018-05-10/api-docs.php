@@ -6910,7 +6910,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => true,
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'Config',

@@ -586,6 +586,56 @@
                     ],
                 ],
             ],
+            'DataQualityRuleTemplate' => [
+                'type' => 'object',
+                'properties' => [
+                    'Code' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'TenantId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ProjectId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SamplingConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Metric' => [
+                                'type' => 'string',
+                            ],
+                            'MetricParameters' => [
+                                'type' => 'string',
+                            ],
+                            'SettingConfig' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'CheckingConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                            ],
+                            'ReferencedSamplesFilter' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'VisibleScope' => [
+                        'type' => 'string',
+                    ],
+                    'DirectoryPath' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
         ],
     ],
     'apis' => [
@@ -1416,7 +1466,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -1504,7 +1554,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -1512,7 +1562,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -8275,7 +8325,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -8530,7 +8580,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -8696,7 +8746,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -9029,7 +9079,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -9144,7 +9194,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [

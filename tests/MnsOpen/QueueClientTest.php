@@ -222,6 +222,7 @@ final class QueueClientTest extends TestCase
         </Error>
         XML)));
         $this->expectException(QueueException::class);
+        $this->expectExceptionMessage('Message not exist.');
         $queue->receiveMessage(['QueueName' => 'testing']);
     }
 

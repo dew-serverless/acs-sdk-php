@@ -7,22 +7,25 @@ namespace Dew\Acs;
 use Exception;
 use Psr\Http\Message\ResponseInterface;
 
-/**
- * @phpstan-type TError array{
- *   Code: string,
- *   Message: string,
- *   RequestId: string
- * }
- */
 class AcsException extends Exception
 {
+    /**
+     * The message field in the error response.
+     */
+    public const ERROR_MESSAGE = 'Message';
+
+    /**
+     * The code field in the error response.
+     */
+    public const ERROR_CODE = 'Code';
+
     /**
      * @var int|string
      */
     protected $code;
 
     /**
-     * @var \Dew\Acs\Result<TError>|null
+     * @var \Dew\Acs\Result<array<mixed>>|null
      */
     protected ?Result $result = null;
 
@@ -33,20 +36,21 @@ class AcsException extends Exception
     }
 
     /**
-     * @param  \Dew\Acs\Result<TError>  $result
+     * @param  \Dew\Acs\Result<array<mixed>>  $result
      */
     public static function makeFromResult(Result $result): static
     {
-        $e = new static(
-            $result->get('Message', 'Could not communicate with Alibaba Cloud.'),
-            $result->get('Code', 0)
-        );
+        /** @var string */
+        $message = $result->get(static::ERROR_MESSAGE, 'Could not communicate with Alibaba Cloud.');
 
-        return $e->setResult($result);
+        /** @var string|int */
+        $code = $result->get(static::ERROR_CODE, 0);
+
+        return (new static($message, $code))->setResult($result);
     }
 
     /**
-     * @param  \Dew\Acs\Result<TError>  $result
+     * @param  \Dew\Acs\Result<array<mixed>>  $result
      */
     public function setResult(Result $result): static
     {
@@ -56,7 +60,7 @@ class AcsException extends Exception
     }
 
     /**
-     * @return \Dew\Acs\Result<TError>|null
+     * @return \Dew\Acs\Result<array<mixed>>|null
      */
     public function getResult(): ?Result
     {

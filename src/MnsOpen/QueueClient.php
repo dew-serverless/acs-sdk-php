@@ -295,13 +295,7 @@ final readonly class QueueClient
                     ->setResponse($response->getPsrResponse());
 
                 if ($response->isError()) {
-                    /** @var string */
-                    $message = $result->get('Error.Message', 'Could not communicate with Alibaba Cloud.');
-
-                    /** @var string|int */
-                    $code = $result->get('Error.Code', 0);
-
-                    throw (new QueueException($message, $code))->setResult($result);
+                    throw QueueException::makeFromResult($result);
                 }
 
                 return $result;

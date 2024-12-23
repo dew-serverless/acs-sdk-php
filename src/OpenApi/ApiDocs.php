@@ -9,12 +9,13 @@ use InvalidArgumentException;
 /**
  * @phpstan-import-type TApi from \Dew\Acs\OpenApi\Api
  * @phpstan-import-type TInfo from \Dew\Acs\OpenApi\Info
+ * @phpstan-type TEndpoint array{regionId: string, endpoint: string}
  * @phpstan-type TApiDocs array{
  *   directories: mixed[][],
  *   info: TInfo,
  *   apis: TApi[],
  *   components: array<string, mixed[]>,
- *   endpoints: mixed[][]
+ *   endpoints: TEndpoint[]
  * }
  *
  * @see https://api.aliyun.com/openmeta/struct/ApiDocs
@@ -24,7 +25,7 @@ final readonly class ApiDocs
     /**
      * @param  TApi[]  $apis
      * @param  mixed[][]  $components
-     * @param  mixed[][]  $endpoints
+     * @param  TEndpoint[]  $endpoints
      */
     public function __construct(
         public Info $info,

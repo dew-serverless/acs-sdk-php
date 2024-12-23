@@ -6,6 +6,7 @@ namespace Dew\Acs\MnsOpen;
 
 use Dew\Acs\DataEncoder;
 use Dew\Acs\Plugins\SignRequest;
+use Dew\Acs\Response;
 use Dew\Acs\Result;
 use Dew\Acs\XmlEncoder;
 use GuzzleHttp\Psr7;
@@ -288,10 +289,22 @@ final readonly class QueueClient
             ->then(function (Promise $promise): Result {
                 /** @var \Psr\Http\Message\ResponseInterface */
                 $response = $promise->wait();
+                $response = new Response($response);
 
-                return (new Result(
-                    $this->encoder->decode((string) $response->getBody())
-                ))->setResponse($response);
+                $result = (new Result($this->encoder->decode($response->body())))
+                    ->setResponse($response->getPsrResponse());
+
+                if ($response->isError()) {
+                    /** @var string */
+                    $message = $result->get('Error.Message', 'Could not communicate with Alibaba Cloud.');
+
+                    /** @var string|int */
+                    $code = $result->get('Error.Code', 0);
+
+                    throw (new QueueException($message, $code))->setResult($result);
+                }
+
+                return $result;
             });
     }
 

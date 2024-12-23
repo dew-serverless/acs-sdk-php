@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Dew\Acs\Tests\MnsOpen;
 
 use Dew\Acs\MnsOpen\QueueClient;
+use Dew\Acs\MnsOpen\QueueException;
 use DOMDocument;
+use GuzzleHttp\Psr7\Response;
 use Http\Mock\Client;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -208,6 +210,19 @@ final class QueueClientTest extends TestCase
         $this->assertSame('example.com', $request->getUri()->getHost());
         $this->assertSame('/queues/testing/messages', $request->getUri()->getPath());
         $this->assertSame('receiptHandle=MbZj6wDWli+QEauMZc8ZRv37sIW2iJKq3M9Mx/KSbkJ0&visibilityTimeout=60', $request->getUri()->getQuery());
+    }
+
+    public function test_queue_exception_should_be_thrown_when_error_occurred(): void
+    {
+        [$mock, $queue] = $this->clients();
+        $mock->setDefaultResponse(new Response(404, [], $this->xml(<<<'XML'
+        <Error>
+            <Code>MessageNotExist</Code>
+            <Message>Message not exist.</Message>
+        </Error>
+        XML)));
+        $this->expectException(QueueException::class);
+        $queue->receiveMessage(['QueueName' => 'testing']);
     }
 
     /**

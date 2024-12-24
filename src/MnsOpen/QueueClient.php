@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Dew\Acs\MnsOpen;
 
 use Dew\Acs\DataEncoder;
+use Dew\Acs\MnsOpen\Results\MnsResult;
 use Dew\Acs\Plugins\SignRequest;
 use Dew\Acs\Response;
 use Dew\Acs\Result;
@@ -66,15 +67,15 @@ use RuntimeException;
  *   VisibilityTimeout: int
  * }
  *
- * @method \Dew\Acs\Result sendMessage(TSendMessage $arguments)
- * @method \Dew\Acs\Result batchSendMessage(TBatchSendMessage $arguments)
- * @method \Dew\Acs\Result receiveMessage(TReceiveMessage $arguments)
- * @method \Dew\Acs\Result batchReceiveMessage(TBatchReceiveMessage $arguments)
- * @method \Dew\Acs\Result deleteMessage(TDeleteMessage $arguments)
- * @method \Dew\Acs\Result batchDeleteMessage(TBatchDeleteMessage $arguments)
- * @method \Dew\Acs\Result peekMessage(TPeekMessage $arguments)
- * @method \Dew\Acs\Result batchPeekMessage(TBatchPeekMessage $arguments)
- * @method \Dew\Acs\Result changeMessageVisibility(TChangeMessageVisibility $arguments)
+ * @method \Dew\Acs\MnsOpen\Results\SendMessageResult sendMessage(TSendMessage $arguments)
+ * @method \Dew\Acs\MnsOpen\Results\BatchSendMessageResult batchSendMessage(TBatchSendMessage $arguments)
+ * @method \Dew\Acs\MnsOpen\Results\ReceiveMessageResult receiveMessage(TReceiveMessage $arguments)
+ * @method \Dew\Acs\MnsOpen\Results\BatchReceiveMessageResult batchReceiveMessage(TBatchReceiveMessage $arguments)
+ * @method \Dew\Acs\MnsOpen\Results\MnsResult deleteMessage(TDeleteMessage $arguments)
+ * @method \Dew\Acs\MnsOpen\Results\MnsResult batchDeleteMessage(TBatchDeleteMessage $arguments)
+ * @method \Dew\Acs\MnsOpen\Results\PeekMessageResult peekMessage(TPeekMessage $arguments)
+ * @method \Dew\Acs\MnsOpen\Results\BatchPeekMessageResult batchPeekMessage(TBatchPeekMessage $arguments)
+ * @method \Dew\Acs\MnsOpen\Results\ChangeMessageVisibilityResult changeMessageVisibility(TChangeMessageVisibility $arguments)
  */
 final readonly class QueueClient
 {
@@ -119,9 +120,11 @@ final readonly class QueueClient
      */
     public function sendMessageAsync(array $arguments): Promise
     {
-        return $this->send('POST', sprintf('/queues/%s/messages', $arguments['QueueName']), [
-            'Message' => $arguments['Message'],
-        ]);
+        return $this
+            ->send('POST', sprintf('/queues/%s/messages', $arguments['QueueName']), [
+                'Message' => $arguments['Message'],
+            ])
+            ->then($this->castInto(Results\SendMessageResult::class));
     }
 
     /**
@@ -131,10 +134,11 @@ final readonly class QueueClient
      */
     public function batchSendMessageAsync(array $arguments): Promise
     {
-        return $this->send(
-            'POST', sprintf('/queues/%s/messages', $arguments['QueueName']),
-            ['Messages' => $arguments['Messages']]
-        );
+        return $this
+            ->send('POST', sprintf('/queues/%s/messages', $arguments['QueueName']), [
+                'Messages' => $arguments['Messages']
+            ])
+            ->then($this->castInto(Results\BatchSendMessageResult::class));
     }
 
     /**
@@ -148,10 +152,12 @@ final readonly class QueueClient
             'waitseconds' => $arguments['waitseconds'] ?? null,
         ]));
 
-        return $this->send('GET', sprintf('/queues/%s/messages%s',
-            $arguments['QueueName'],
-            $query === '' ? '' : '?'.$query
-        ));
+        return $this
+            ->send('GET', sprintf('/queues/%s/messages%s',
+                $arguments['QueueName'],
+                $query === '' ? '' : '?'.$query
+            ))
+            ->then($this->castInto(Results\ReceiveMessageResult::class));
     }
 
     /**
@@ -166,9 +172,11 @@ final readonly class QueueClient
             'waitseconds' => $arguments['waitseconds'] ?? null,
         ]));
 
-        return $this->send('GET', sprintf('/queues/%s/messages?%s',
-            $arguments['QueueName'], $query
-        ));
+        return $this
+            ->send('GET', sprintf('/queues/%s/messages?%s',
+                $arguments['QueueName'], $query
+            ))
+            ->then($this->castInto(Results\BatchReceiveMessageResult::class));
     }
 
     /**
@@ -178,9 +186,11 @@ final readonly class QueueClient
      */
     public function deleteMessageAsync(array $arguments): Promise
     {
-        return $this->send('DELETE', sprintf('/queues/%s/messages?ReceiptHandle=%s',
-            $arguments['QueueName'], $arguments['ReceiptHandle']
-        ));
+        return $this
+            ->send('DELETE', sprintf('/queues/%s/messages?ReceiptHandle=%s',
+                $arguments['QueueName'], $arguments['ReceiptHandle']
+            ))
+            ->then($this->castInto(Results\MnsResult::class));
     }
 
     /**
@@ -190,11 +200,11 @@ final readonly class QueueClient
      */
     public function batchDeleteMessageAsync(array $arguments): Promise
     {
-        return $this->send(
-            'DELETE', sprintf('/queues/%s/messages', $arguments['QueueName']), [
+        return $this
+            ->send('DELETE', sprintf('/queues/%s/messages', $arguments['QueueName']), [
                 'ReceiptHandles' => $arguments['ReceiptHandles'],
-            ]
-        );
+            ])
+            ->then($this->castInto(Results\MnsResult::class));
     }
 
     /**
@@ -204,9 +214,11 @@ final readonly class QueueClient
      */
     public function peekMessageAsync(array $arguments): Promise
     {
-        return $this->send('GET', sprintf('/queues/%s/messages?peekonly=true',
-            $arguments['QueueName']
-        ));
+        return $this
+            ->send('GET', sprintf('/queues/%s/messages?peekonly=true',
+                $arguments['QueueName']
+            ))
+            ->then($this->castInto(Results\PeekMessageResult::class));
     }
 
     /**
@@ -216,10 +228,11 @@ final readonly class QueueClient
      */
     public function batchPeekMessageAsync(array $arguments): Promise
     {
-        return $this->send('GET', sprintf(
-            '/queues/%s/messages?peekonly=true&numOfMessages=%s',
-            $arguments['QueueName'], $arguments['numOfMessages']
-        ));
+        return $this
+            ->send('GET', sprintf('/queues/%s/messages?peekonly=true&numOfMessages=%s',
+                $arguments['QueueName'], $arguments['numOfMessages']
+            ))
+            ->then($this->castInto(Results\BatchPeekMessageResult::class));
     }
 
     /**
@@ -229,11 +242,12 @@ final readonly class QueueClient
      */
     public function changeMessageVisibilityAsync(array $arguments): Promise
     {
-        return $this->send('PUT', sprintf(
-            '/queues/%s/messages?receiptHandle=%s&visibilityTimeout=%s',
-            $arguments['QueueName'], $arguments['ReceiptHandle'],
-            $arguments['VisibilityTimeout'],
-        ));
+        return $this
+            ->send('PUT', sprintf('/queues/%s/messages?receiptHandle=%s&visibilityTimeout=%s',
+                $arguments['QueueName'], $arguments['ReceiptHandle'],
+                $arguments['VisibilityTimeout'],
+            ))
+            ->then($this->castInto(Results\ChangeMessageVisibilityResult::class));
     }
 
     /**
@@ -300,6 +314,17 @@ final readonly class QueueClient
 
                 return $result;
             });
+    }
+
+    /**
+     * Cast the result.
+     *
+     * @param  class-string<\Dew\Acs\MnsOpen\Results\MnsResult>  $resultClass
+     * @return \Closure(\Dew\Acs\Result<array<mixed>>): \Dew\Acs\MnsOpen\Results\MnsResult
+     */
+    private function castInto(string $resultClass): callable
+    {
+        return fn (Result $result): MnsResult => new $resultClass($result);
     }
 
     /**

@@ -32,6 +32,12 @@ final class MnsResultTest extends TestCase
         $this->assertSame([['foo' => 'bar']], $result->list('value'));
     }
 
+    public function test_list_returns_null_if_could_not_retrieve_data(): void
+    {
+        $result = new MnsResult(new Result());
+        $this->assertNull($result->list('value'));
+    }
+
     public function test_cast_into_casts_items_into_class_through_make_method(): void
     {
         $result = new MnsResult(new Result(['data' => ['value' => 'foo']]));

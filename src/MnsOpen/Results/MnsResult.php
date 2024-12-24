@@ -59,6 +59,10 @@ class MnsResult
     {
         $result = $this->get($name);
 
+        if ($result === null) {
+            return null;
+        }
+
         if (! is_array($result)) {
             return [$result];
         }

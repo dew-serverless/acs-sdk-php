@@ -60,9 +60,11 @@ class AcsException extends Exception
     }
 
     /**
+     * Get the underlying result.
+     *
      * @return \Dew\Acs\Result<array<mixed>>|null
      */
-    public function getResult(): ?Result
+    public function getResult()
     {
         return $this->result;
     }

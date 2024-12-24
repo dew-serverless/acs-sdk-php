@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Dew\Acs\Tests\MnsOpen;
 
 use Dew\Acs\MnsOpen\QueueException;
+use Dew\Acs\MnsOpen\Results\MnsResult;
 use Dew\Acs\Result;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -17,6 +18,7 @@ final class QueueExceptionTest extends TestCase
         $e = QueueException::makeFromResult(new Result(['Error' => ['Code' => 'Unknown', 'Message' => 'Something went wrong!']]));
         $this->assertSame('Something went wrong!', $e->getMessage());
         $this->assertSame('Unknown', $e->getCode());
+        $this->assertInstanceOf(MnsResult::class, $e->getResult());
     }
 
     public function test_result_contains_multiple_error_messages_1_other(): void

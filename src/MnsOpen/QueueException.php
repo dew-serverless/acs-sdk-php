@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Dew\Acs\MnsOpen;
 
 use Dew\Acs\AcsException;
+use Dew\Acs\MnsOpen\Results\MnsResult;
 use Dew\Acs\Result;
 use Override;
 
@@ -65,5 +66,16 @@ final class QueueException extends AcsException
         };
 
         return (new static($message, $code))->setResult($result);
+    }
+
+    /**
+     * Get the underlying result.
+     *
+     * @return \Dew\Acs\MnsOpen\Results\MnsResult|null
+     */
+    #[Override]
+    public function getResult()
+    {
+        return $this->result ? new MnsResult($this->result) : null;
     }
 }

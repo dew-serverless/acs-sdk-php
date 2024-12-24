@@ -261,6 +261,16 @@ final readonly class QueueClient
     }
 
     /**
+     * Execute an API action.
+     *
+     * @param  array<int, mixed>  $arguments
+     */
+    private function execute(string $action, array $arguments = []): mixed
+    {
+        return $this->executeAsync($action, $arguments)->wait();
+    }
+
+    /**
      * Send an HTTP request asynchronously.
      *
      * @param  array<string, mixed>  $data
@@ -333,7 +343,7 @@ final readonly class QueueClient
     public function __call(string $method, array $arguments = []): mixed
     {
         if (method_exists($this, $method.'Async')) {
-            return $this->executeAsync($method, $arguments)->wait();
+            return $this->execute($method, $arguments);
         }
 
         throw new RuntimeException(sprintf('Call to undefined method %s::%s()', self::class, $method));

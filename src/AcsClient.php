@@ -23,14 +23,14 @@ use Psr\Http\Message\UriFactoryInterface;
  * @phpstan-type TCredentials array{
  *   key: string,
  *   secret: string,
- *   token?: string
+ *   token?: ?string
  * }
  * @phpstan-type TConfig array{
  *   region: string,
- *   endpoint?: string,
+ *   endpoint?: ?string,
  *   credentials: TCredentials,
- *   version?: string,
- *   http_client?: \Psr\Http\Client\ClientInterface
+ *   version?: ?string,
+ *   http_client?: ?\Psr\Http\Client\ClientInterface
  * }
  */
 abstract class AcsClient

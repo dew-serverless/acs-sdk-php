@@ -66,6 +66,13 @@ use RuntimeException;
  *   ReceiptHandle: string,
  *   VisibilityTimeout: int
  * }
+ * @phpstan-type TRequestOptions array{
+ *   method: string,
+ *   queue: string,
+ *   query?: array<string, mixed>,
+ *   body?: array<mixed>,
+ *   cast?: class-string<\Dew\Acs\MnsOpen\Results\MnsResult>
+ * }
  *
  * @method \Dew\Acs\MnsOpen\Results\SendMessageResult sendMessage(TSendMessage $arguments)
  * @method \Dew\Acs\MnsOpen\Results\BatchSendMessageResult batchSendMessage(TBatchSendMessage $arguments)
@@ -120,11 +127,12 @@ final readonly class QueueClient
      */
     public function sendMessageAsync(array $arguments): Promise
     {
-        return $this
-            ->send('POST', sprintf('/queues/%s/messages', $arguments['QueueName']), [
-                'Message' => $arguments['Message'],
-            ])
-            ->then($this->castInto(Results\SendMessageResult::class));
+        return $this->send([
+            'method' => 'POST',
+            'queue' => $arguments['QueueName'],
+            'body' => ['Message' => $arguments['Message']],
+            'cast' => Results\SendMessageResult::class,
+        ]);
     }
 
     /**
@@ -134,11 +142,12 @@ final readonly class QueueClient
      */
     public function batchSendMessageAsync(array $arguments): Promise
     {
-        return $this
-            ->send('POST', sprintf('/queues/%s/messages', $arguments['QueueName']), [
-                'Messages' => $arguments['Messages']
-            ])
-            ->then($this->castInto(Results\BatchSendMessageResult::class));
+        return $this->send([
+            'method' => 'POST',
+            'queue' => $arguments['QueueName'],
+            'body' => ['Messages' => $arguments['Messages']],
+            'cast' => Results\BatchSendMessageResult::class,
+        ]);
     }
 
     /**
@@ -148,16 +157,12 @@ final readonly class QueueClient
      */
     public function receiveMessageAsync(array $arguments): Promise
     {
-        $query = Psr7\Query::build(array_filter([
-            'waitseconds' => $arguments['waitseconds'] ?? null,
-        ]));
-
-        return $this
-            ->send('GET', sprintf('/queues/%s/messages%s',
-                $arguments['QueueName'],
-                $query === '' ? '' : '?'.$query
-            ))
-            ->then($this->castInto(Results\ReceiveMessageResult::class));
+        return $this->send([
+            'method' => 'GET',
+            'queue' => $arguments['QueueName'],
+            'query' => ['waitseconds' => $arguments['waitseconds'] ?? null],
+            'cast' => Results\ReceiveMessageResult::class,
+        ]);
     }
 
     /**
@@ -167,16 +172,15 @@ final readonly class QueueClient
      */
     public function batchReceiveMessageAsync(array $arguments): Promise
     {
-        $query = Psr7\Query::build(array_filter([
-            'numOfMessages' => $arguments['numOfMessages'],
-            'waitseconds' => $arguments['waitseconds'] ?? null,
-        ]));
-
-        return $this
-            ->send('GET', sprintf('/queues/%s/messages?%s',
-                $arguments['QueueName'], $query
-            ))
-            ->then($this->castInto(Results\BatchReceiveMessageResult::class));
+        return $this->send([
+            'method' => 'GET',
+            'queue' => $arguments['QueueName'],
+            'query' => [
+                'numOfMessages' => $arguments['numOfMessages'],
+                'waitseconds' => $arguments['waitseconds'] ?? null,
+            ],
+            'cast' => Results\BatchReceiveMessageResult::class,
+        ]);
     }
 
     /**
@@ -186,11 +190,11 @@ final readonly class QueueClient
      */
     public function deleteMessageAsync(array $arguments): Promise
     {
-        return $this
-            ->send('DELETE', sprintf('/queues/%s/messages?ReceiptHandle=%s',
-                $arguments['QueueName'], $arguments['ReceiptHandle']
-            ))
-            ->then($this->castInto(Results\MnsResult::class));
+        return $this->send([
+            'method' => 'DELETE',
+            'queue' => $arguments['QueueName'],
+            'query' => ['ReceiptHandle' => $arguments['ReceiptHandle']],
+        ]);
     }
 
     /**
@@ -200,11 +204,11 @@ final readonly class QueueClient
      */
     public function batchDeleteMessageAsync(array $arguments): Promise
     {
-        return $this
-            ->send('DELETE', sprintf('/queues/%s/messages', $arguments['QueueName']), [
-                'ReceiptHandles' => $arguments['ReceiptHandles'],
-            ])
-            ->then($this->castInto(Results\MnsResult::class));
+        return $this->send([
+            'method' => 'DELETE',
+            'queue' => $arguments['QueueName'],
+            'body' => ['ReceiptHandles' => $arguments['ReceiptHandles']],
+        ]);
     }
 
     /**
@@ -214,11 +218,12 @@ final readonly class QueueClient
      */
     public function peekMessageAsync(array $arguments): Promise
     {
-        return $this
-            ->send('GET', sprintf('/queues/%s/messages?peekonly=true',
-                $arguments['QueueName']
-            ))
-            ->then($this->castInto(Results\PeekMessageResult::class));
+        return $this->send([
+            'method' => 'GET',
+            'queue' => $arguments['QueueName'],
+            'query' => ['peekonly' => 'true'],
+            'cast' => Results\PeekMessageResult::class,
+        ]);
     }
 
     /**
@@ -228,11 +233,15 @@ final readonly class QueueClient
      */
     public function batchPeekMessageAsync(array $arguments): Promise
     {
-        return $this
-            ->send('GET', sprintf('/queues/%s/messages?peekonly=true&numOfMessages=%s',
-                $arguments['QueueName'], $arguments['numOfMessages']
-            ))
-            ->then($this->castInto(Results\BatchPeekMessageResult::class));
+        return $this->send([
+            'method' => 'GET',
+            'queue' => $arguments['QueueName'],
+            'query' => [
+                'peekonly' => 'true',
+                'numOfMessages' => $arguments['numOfMessages'],
+            ],
+            'cast' => Results\BatchPeekMessageResult::class,
+        ]);
     }
 
     /**
@@ -242,12 +251,15 @@ final readonly class QueueClient
      */
     public function changeMessageVisibilityAsync(array $arguments): Promise
     {
-        return $this
-            ->send('PUT', sprintf('/queues/%s/messages?receiptHandle=%s&visibilityTimeout=%s',
-                $arguments['QueueName'], $arguments['ReceiptHandle'],
-                $arguments['VisibilityTimeout'],
-            ))
-            ->then($this->castInto(Results\ChangeMessageVisibilityResult::class));
+        return $this->send([
+            'method' => 'PUT',
+            'queue' => $arguments['QueueName'],
+            'query' => [
+                'receiptHandle' => $arguments['ReceiptHandle'],
+                'visibilityTimeout' => $arguments['VisibilityTimeout'],
+            ],
+            'cast' => Results\ChangeMessageVisibilityResult::class,
+        ]);
     }
 
     /**
@@ -273,25 +285,41 @@ final readonly class QueueClient
     /**
      * Send an HTTP request asynchronously.
      *
-     * @param  array<string, mixed>  $data
+     * @param  TRequestOptions  $options
      */
-    private function send(string $method, string $resource, array $data = []): Promise
+    private function send(array $options): Promise
     {
-        $uri = new Psr7\Uri($resource);
-
-        $request = $this->requestFactory->createRequest($method, $this->config['endpoint']);
-        $request = $request->withUri($request->getUri()
-            ->withPath($uri->getPath())
-            ->withQuery($uri->getQuery())
+        $request = $this->requestFactory->createRequest(
+            $options['method'], $this->endpoint($options['queue'])
         );
 
-        if ($data !== []) {
-            $request = $request
-                ->withHeader('Content-Type', 'text/xml')
-                ->withBody($this->streamFactory->createStream($this->encoder->encode($data)));
+        if (isset($options['query'])) {
+            $query = array_filter($options['query'], fn (mixed $value): bool => $value !== null);
+
+            $request = $request->withUri(
+                $request->getUri()->withQuery(Psr7\Query::build($query, encoding: false))
+            );
         }
 
-        return $this->handleResponse($this->client()->sendAsyncRequest($request));
+        if (isset($options['body'])) {
+            $request = $request
+                ->withHeader('Content-Type', 'text/xml')
+                ->withBody($this->streamFactory->createStream($this->encoder->encode($options['body'])));
+        }
+
+        return $this
+            ->handleResponse($this->client()->sendAsyncRequest($request))
+            ->then($this->castInto($options['cast'] ?? Results\MnsResult::class));
+    }
+
+    /**
+     * The queue endpoint.
+     */
+    private function endpoint(string $queue): string
+    {
+        return sprintf('%s/queues/%s/messages',
+            $this->config['endpoint'], $queue
+        );
     }
 
     /**

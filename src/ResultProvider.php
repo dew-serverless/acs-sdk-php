@@ -10,9 +10,6 @@ use Dew\Acs\OpenApi\RefFinder;
 use Dew\Acs\OpenApi\Schema;
 use Psr\Http\Message\ResponseInterface;
 
-/**
- * @phpstan-import-type TError from \Dew\Acs\AcsException
- */
 final readonly class ResultProvider
 {
     private RefFinder $refFinder;
@@ -39,7 +36,6 @@ final readonly class ResultProvider
         $response = new Response($response);
 
         if ($response->isError()) {
-            /** @var \Dew\Acs\Result<TError> $result */
             throw $this->exceptionClass::makeFromResult($result);
         }
 

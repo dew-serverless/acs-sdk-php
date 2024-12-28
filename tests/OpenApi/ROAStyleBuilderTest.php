@@ -317,6 +317,27 @@ final class ROAStyleBuilderTest extends TestCase
         $this->assertSame('foo', $data->body);
     }
 
+    public function test_parameter_simple_style(): void
+    {
+        $docs = $this->makeApiDocs();
+        $api = $this->makeApi([
+            'parameters' => [[
+                'name' => 'array',
+                'in' => 'query',
+                'style' => 'simple',
+                'schema' => [
+                    'type' => 'array',
+                    'items' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ]],
+        ]);
+        $builder = new ROAStyleBuilder($docs, $api);
+        $data = $builder->build(['array' => ['foo', 'bar']]);
+        $this->assertSame('array=foo%2Cbar', $data->query);
+    }
+
     public function test_parameter_json_style(): void
     {
         $docs = $this->makeApiDocs();

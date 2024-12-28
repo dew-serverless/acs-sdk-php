@@ -67,8 +67,7 @@
                                 'format' => 'int32',
                             ],
                             'IdTokenAlgorithmType' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
+                                'type' => 'string',
                             ],
                             'RedirectUris' => [
                                 'type' => 'array',

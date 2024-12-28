@@ -93,6 +93,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteCustomAuthConnectBlackAsync($arguments = [])
  * @method \Dew\Acs\Result queryCustomAuthConnectBlack(array $arguments = [])
  * @method \Http\Promise\Promise queryCustomAuthConnectBlackAsync($arguments = [])
+ * @method \Dew\Acs\Result tagResources(array $arguments = [])
+ * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result listTagResources(array $arguments = [])
+ * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result untagResources(array $arguments = [])
+ * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result setSniConfig(array $arguments = [])
  * @method \Http\Promise\Promise setSniConfigAsync($arguments = [])
  */

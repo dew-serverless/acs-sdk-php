@@ -201,8 +201,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeKvUsageDataAsync($arguments = [])
  * @method \Dew\Acs\Result setDcdnDomainSSLCertificate(array $arguments = [])
  * @method \Http\Promise\Promise setDcdnDomainSSLCertificateAsync($arguments = [])
- * @method \Dew\Acs\Result batchSetDcdnDomainCertificate(array $arguments = [])
- * @method \Http\Promise\Promise batchSetDcdnDomainCertificateAsync($arguments = [])
  * @method \Dew\Acs\Result describeDcdnHttpsDomainList(array $arguments = [])
  * @method \Http\Promise\Promise describeDcdnHttpsDomainListAsync($arguments = [])
  * @method \Dew\Acs\Result describeDcdnCertificateList(array $arguments = []) {@deprecated 2018-01-15}
@@ -221,8 +219,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDcdnSMCertificateListAsync($arguments = [])
  * @method \Dew\Acs\Result describeDcdnUserCertificateExpireCount(array $arguments = [])
  * @method \Http\Promise\Promise describeDcdnUserCertificateExpireCountAsync($arguments = [])
- * @method \Dew\Acs\Result setDcdnDomainCertificate(array $arguments = []) {@deprecated 2018-01-15}
- * @method \Http\Promise\Promise setDcdnDomainCertificateAsync($arguments = []) {@deprecated 2018-01-15}
  * @method \Dew\Acs\Result tagDcdnResources(array $arguments = [])
  * @method \Http\Promise\Promise tagDcdnResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result describeDcdnTagResources(array $arguments = [])

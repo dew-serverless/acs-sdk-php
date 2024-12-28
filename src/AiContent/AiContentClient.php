@@ -9,6 +9,8 @@ use Dew\Acs\AcsClient;
 /**
  * @method \Dew\Acs\Result aITeacherExpansionPracticeTaskGenerate(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise aITeacherExpansionPracticeTaskGenerateAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result aITeacherSyncPracticeTaskGenerate(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise aITeacherSyncPracticeTaskGenerateAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result aliyunConsoleOpenApiQueryAliyunConsoleServcieList(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise aliyunConsoleOpenApiQueryAliyunConsoleServcieListAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result personalizedTextToImageQueryPreModelInferenceJobInfo(array $arguments = []) {@since 20240611}

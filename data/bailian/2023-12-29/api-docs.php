@@ -305,6 +305,18 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'CategoryType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'UNSTRUCTURED',
+                            'SESSION_FILE',
+                        ],
+                    ],
+                ],
             ],
         ],
         'ApplyFileUploadLease' => [
@@ -368,6 +380,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CategoryType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'UNSTRUCTURED',
+                            'SESSION_FILE',
+                        ],
                     ],
                 ],
             ],

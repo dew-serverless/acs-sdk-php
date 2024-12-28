@@ -49,6 +49,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getHistoryListByBizTypeAsync($arguments = [])
  * @method \Dew\Acs\Result invokePlugin(array $arguments = [])
  * @method \Http\Promise\Promise invokePluginAsync($arguments = [])
+ * @method \Dew\Acs\Result realTimeDialog(array $arguments = [])
+ * @method \Http\Promise\Promise realTimeDialogAsync($arguments = [])
+ * @method \Dew\Acs\Result createDialog(array $arguments = [])
+ * @method \Http\Promise\Promise createDialogAsync($arguments = [])
  * @method \Dew\Acs\Result rebuildTask(array $arguments = [])
  * @method \Http\Promise\Promise rebuildTaskAsync($arguments = [])
  * @method \Dew\Acs\Result createAnnualDocSummaryTask(array $arguments = [])
@@ -75,6 +79,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise evictTaskAsync($arguments = [])
  * @method \Dew\Acs\Result runChatResultGeneration(array $arguments = [])
  * @method \Http\Promise\Promise runChatResultGenerationAsync($arguments = [])
+ * @method \Dew\Acs\Result getChatQuestionResp(array $arguments = [])
+ * @method \Http\Promise\Promise getChatQuestionRespAsync($arguments = [])
+ * @method \Dew\Acs\Result genDocQaResult(array $arguments = [])
+ * @method \Http\Promise\Promise genDocQaResultAsync($arguments = [])
+ * @method \Dew\Acs\Result updateQaLibrary(array $arguments = [])
+ * @method \Http\Promise\Promise updateQaLibraryAsync($arguments = [])
+ * @method \Dew\Acs\Result submitChatQuestion(array $arguments = [])
+ * @method \Http\Promise\Promise submitChatQuestionAsync($arguments = [])
  */
 final class DianJinClient extends AcsClient
 {

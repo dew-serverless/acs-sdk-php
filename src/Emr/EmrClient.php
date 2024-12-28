@@ -17,6 +17,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createClusterAsync($arguments = [])
  * @method \Dew\Acs\Result getCluster(array $arguments = [])
  * @method \Http\Promise\Promise getClusterAsync($arguments = [])
+ * @method \Dew\Acs\Result updateClusterAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise updateClusterAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result listClusters(array $arguments = [])
  * @method \Http\Promise\Promise listClustersAsync($arguments = [])
  * @method \Dew\Acs\Result deleteCluster(array $arguments = [])

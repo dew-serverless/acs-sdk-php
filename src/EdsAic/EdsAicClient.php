@@ -41,6 +41,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise rebootAndroidInstancesInGroupAsync($arguments = [])
  * @method \Dew\Acs\Result resetAndroidInstancesInGroup(array $arguments = [])
  * @method \Http\Promise\Promise resetAndroidInstancesInGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result batchGetAcpConnectionTicket(array $arguments = [])
+ * @method \Http\Promise\Promise batchGetAcpConnectionTicketAsync($arguments = [])
  * @method \Dew\Acs\Result runCommand(array $arguments = [])
  * @method \Http\Promise\Promise runCommandAsync($arguments = [])
  * @method \Dew\Acs\Result describeInvocations(array $arguments = [])

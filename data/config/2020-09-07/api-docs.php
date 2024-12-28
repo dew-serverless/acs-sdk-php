@@ -2389,7 +2389,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'maxLength' => 100,
+                        'maxLength' => 1000,
                     ],
                 ],
                 [
@@ -3700,7 +3700,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'maxLength' => 100,
+                        'maxLength' => 1000,
                     ],
                 ],
                 [

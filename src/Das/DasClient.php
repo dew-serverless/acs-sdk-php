@@ -201,6 +201,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceDasProAsync($arguments = [])
  * @method \Dew\Acs\Result getDasProServiceUsage(array $arguments = [])
  * @method \Http\Promise\Promise getDasProServiceUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSlowLogHistogramAsync(array $arguments = [])
+ * @method \Http\Promise\Promise describeSlowLogHistogramAsyncAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSlowLogStatistic(array $arguments = [])
+ * @method \Http\Promise\Promise describeSlowLogStatisticAsync($arguments = [])
  */
 final class DasClient extends AcsClient
 {

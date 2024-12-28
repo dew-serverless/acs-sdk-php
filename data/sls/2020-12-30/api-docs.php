@@ -1124,6 +1124,12 @@
                             'type' => 'string',
                         ],
                     ],
+                    'mode' => [
+                        'type' => 'string',
+                    ],
+                    'filterInvalid' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'OSSExport' => [

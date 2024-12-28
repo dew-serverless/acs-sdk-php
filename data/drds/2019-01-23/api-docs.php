@@ -388,6 +388,8 @@
                             'cn-wulanchabu',
                             'eu-central-1',
                             'ap-southeast-5',
+                            'cn-zhengzhou-jva',
+                            'ap-northeast-1',
                         ],
                     ],
                 ],

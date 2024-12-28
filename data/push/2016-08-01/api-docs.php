@@ -9,483 +9,6 @@
         'schemas' => [],
     ],
     'apis' => [
-        'MassPush' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PushTask',
-                    'in' => 'formData',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'PushType' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'DeviceType' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'Target' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'TargetValue' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'StoreOffline' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'SendChannels' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'PushTime' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ExpireTime' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'JobKey' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Title' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Body' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'Trim' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'iOSApnsEnv' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'iOSRemind' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'iOSSubtitle' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'iOSRemindBody' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'iOSMusic' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'iOSBadge' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'iOSBadgeAutoIncrement' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'iOSSilentNotification' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'iOSMutableContent' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'iOSNotificationCategory' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'iOSNotificationCollapseId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'iOSNotificationThreadId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'iOSInterruptionLevel' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'iOSRelevanceScore' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                ],
-                                'iOSExtParameters' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidNotifyType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidRemind' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'AndroidOpenType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidActivity' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidOpenUrl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidPopupActivity' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidPopupTitle' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidPopupBody' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidRenderStyle' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidBigTitle' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidBigBody' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidBigPictureUrl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidXiaomiBigPictureUrl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidImageUrl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidXiaomiImageUrl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidInboxBody' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidNotificationBarType' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'AndroidNotificationBarPriority' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'AndroidNotificationNotifyId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'AndroidNotificationChannel' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidNotificationHuaweiChannel' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidNotificationHonorChannel' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidNotificationXiaomiChannel' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidNotificationVivoChannel' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidNotificationGroup' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidNotificationThreadId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidExtParameters' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidMessageHuaweiUrgency' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidMessageHuaweiCategory' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidMessageOppoCategory' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidMessageOppoNotifyLevel' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'AndroidMessageVivoCategory' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidTargetUserType' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '0',
-                                        '1',
-                                    ],
-                                ],
-                                'AndroidHuaweiTargetUserType' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '0',
-                                        '1',
-                                    ],
-                                ],
-                                'AndroidHonorTargetUserType' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '0',
-                                        '1',
-                                    ],
-                                ],
-                                'AndroidVivoPushMode' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '0',
-                                        '1',
-                                    ],
-                                ],
-                                'AndroidHuaweiReceiptId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidVivoReceiptId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidBadgeClass' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AndroidBadgeAddNum' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'AndroidBadgeSetNum' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'AndroidMusic' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HarmonyRemind' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'HarmonyRemindTitle' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HarmonyRemindBody' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HarmonyCategory' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                    'enum' => [
-                                        'IM',
-                                        'VOIP',
-                                        'SUBSCRIPTION',
-                                        'TRAVEL',
-                                        'HEALTH',
-                                        'WORK',
-                                        'ACCOUNT',
-                                        'EXPRESS',
-                                        'FINANCE',
-                                        'DEVICE_REMINDER',
-                                        'MAIL',
-                                        'CUSTOMER_SERVICE',
-                                        'MARKETING',
-                                    ],
-                                ],
-                                'HarmonyNotificationSlotType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                    'enum' => [
-                                        'SOCIAL_COMMUNICATION',
-                                        'SERVICE_INFORMATION',
-                                        'CONTENT_INFORMATION',
-                                        'CUSTOMER_SERVICE',
-                                        'OTHER_TYPES',
-                                    ],
-                                ],
-                                'HarmonyNotifyId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'HarmonyActionType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                    'enum' => [
-                                        'APP_HOME_PAGE',
-                                        'APP_CUSTOM_PAGE',
-                                    ],
-                                ],
-                                'HarmonyAction' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HarmonyUri' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HarmonyRenderStyle' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                    'enum' => [
-                                        'NORMAL',
-                                        'MULTI_LINE',
-                                    ],
-                                ],
-                                'HarmonyImageUrl' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HarmonyInboxContent' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HarmonyExtParameters' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HarmonyTestMessage' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'HarmonyReceiptId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HarmonyExtensionPush' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'HarmonyExtensionExtraData' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'HarmonyBadgeAddNum' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'HarmonyBadgeSetNum' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'SendSpeed' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'deprecated' => true,
-                                    'required' => false,
-                                ],
-                                'AndroidXiaoMiNotifyTitle' => [
-                                    'type' => 'string',
-                                    'deprecated' => true,
-                                    'required' => false,
-                                ],
-                                'AndroidXiaoMiNotifyBody' => [
-                                    'type' => 'string',
-                                    'deprecated' => true,
-                                    'required' => false,
-                                ],
-                                'AndroidXiaoMiActivity' => [
-                                    'type' => 'string',
-                                    'deprecated' => true,
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-            ],
-        ],
         'Push' => [
             'methods' => [
                 'post',
@@ -1405,6 +928,483 @@
                 ],
             ],
         ],
+        'MassPush' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PushTask',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'PushType' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'DeviceType' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Target' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'TargetValue' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'StoreOffline' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'SendChannels' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PushTime' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ExpireTime' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'JobKey' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Title' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Body' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Trim' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'iOSApnsEnv' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSRemind' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'iOSSubtitle' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSRemindBody' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSMusic' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSBadge' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'iOSBadgeAutoIncrement' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'iOSSilentNotification' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'iOSMutableContent' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'iOSNotificationCategory' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSNotificationCollapseId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSNotificationThreadId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSInterruptionLevel' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSRelevanceScore' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                ],
+                                'iOSExtParameters' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidNotifyType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidRemind' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'AndroidOpenType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidActivity' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidOpenUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidPopupActivity' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidPopupTitle' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidPopupBody' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidRenderStyle' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidBigTitle' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidBigBody' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidBigPictureUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidXiaomiBigPictureUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidImageUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidXiaomiImageUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidInboxBody' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidNotificationBarType' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'AndroidNotificationBarPriority' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'AndroidNotificationNotifyId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'AndroidNotificationChannel' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidNotificationHuaweiChannel' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidNotificationHonorChannel' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidNotificationXiaomiChannel' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidNotificationVivoChannel' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidNotificationGroup' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidNotificationThreadId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidExtParameters' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidMessageHuaweiUrgency' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidMessageHuaweiCategory' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidMessageOppoCategory' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidMessageOppoNotifyLevel' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'AndroidMessageVivoCategory' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidTargetUserType' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '0',
+                                        '1',
+                                    ],
+                                ],
+                                'AndroidHuaweiTargetUserType' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '0',
+                                        '1',
+                                    ],
+                                ],
+                                'AndroidHonorTargetUserType' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '0',
+                                        '1',
+                                    ],
+                                ],
+                                'AndroidVivoPushMode' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '0',
+                                        '1',
+                                    ],
+                                ],
+                                'AndroidHuaweiReceiptId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidVivoReceiptId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidBadgeClass' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AndroidBadgeAddNum' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'AndroidBadgeSetNum' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'AndroidMusic' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HarmonyRemind' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'HarmonyRemindTitle' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HarmonyRemindBody' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HarmonyCategory' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'IM',
+                                        'VOIP',
+                                        'SUBSCRIPTION',
+                                        'TRAVEL',
+                                        'HEALTH',
+                                        'WORK',
+                                        'ACCOUNT',
+                                        'EXPRESS',
+                                        'FINANCE',
+                                        'DEVICE_REMINDER',
+                                        'MAIL',
+                                        'CUSTOMER_SERVICE',
+                                        'MARKETING',
+                                    ],
+                                ],
+                                'HarmonyNotificationSlotType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'SOCIAL_COMMUNICATION',
+                                        'SERVICE_INFORMATION',
+                                        'CONTENT_INFORMATION',
+                                        'CUSTOMER_SERVICE',
+                                        'OTHER_TYPES',
+                                    ],
+                                ],
+                                'HarmonyNotifyId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'HarmonyActionType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'APP_HOME_PAGE',
+                                        'APP_CUSTOM_PAGE',
+                                    ],
+                                ],
+                                'HarmonyAction' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HarmonyUri' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HarmonyRenderStyle' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'NORMAL',
+                                        'MULTI_LINE',
+                                    ],
+                                ],
+                                'HarmonyImageUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HarmonyInboxContent' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HarmonyExtParameters' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HarmonyTestMessage' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'HarmonyReceiptId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HarmonyExtensionPush' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'HarmonyExtensionExtraData' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'HarmonyBadgeAddNum' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'HarmonyBadgeSetNum' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'SendSpeed' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'deprecated' => true,
+                                    'required' => false,
+                                ],
+                                'AndroidXiaoMiNotifyTitle' => [
+                                    'type' => 'string',
+                                    'deprecated' => true,
+                                    'required' => false,
+                                ],
+                                'AndroidXiaoMiNotifyBody' => [
+                                    'type' => 'string',
+                                    'deprecated' => true,
+                                    'required' => false,
+                                ],
+                                'AndroidXiaoMiActivity' => [
+                                    'type' => 'string',
+                                    'deprecated' => true,
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
         'ContinuouslyPush' => [
             'methods' => [
                 'post',
@@ -1527,353 +1527,6 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'PushMessageToAndroid' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Target',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'ALL',
-                            'DEVICE',
-                            'ACCOUNT',
-                            'ALIAS',
-                            'TAG',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'TargetValue',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Title',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Body',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StoreOffline',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'JobKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'PushMessageToiOS' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Target',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'ALL',
-                            'DEVICE',
-                            'ACCOUNT',
-                            'ALIAS',
-                            'TAG',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'TargetValue',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Title',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Body',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StoreOffline',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'JobKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'PushNoticeToAndroid' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Target',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'ALL',
-                            'DEVICE',
-                            'ACCOUNT',
-                            'ALIAS',
-                            'TAG',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'TargetValue',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Title',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Body',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StoreOffline',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'JobKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ExtParameters',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'PushNoticeToiOS' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'AppKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Target',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'ALL',
-                            'DEVICE',
-                            'ACCOUNT',
-                            'ALIAS',
-                            'TAG',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'TargetValue',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ApnsEnv',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'DEV',
-                            'PRODUCT',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Title',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Body',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'JobKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ExtParameters',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -2304,41 +1957,6 @@
                 ],
                 [
                     'name' => 'DeviceIds',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CheckDevice' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'AppKey',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DeviceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2823,6 +2441,388 @@
                 ],
             ],
             'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DeviceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'PushMessageToiOS' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Target',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'ALL',
+                            'DEVICE',
+                            'ACCOUNT',
+                            'ALIAS',
+                            'TAG',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TargetValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Body',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StoreOffline',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'JobKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'PushNoticeToiOS' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'AppKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Target',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'ALL',
+                            'DEVICE',
+                            'ACCOUNT',
+                            'ALIAS',
+                            'TAG',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TargetValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ApnsEnv',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'DEV',
+                            'PRODUCT',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Body',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'JobKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExtParameters',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'PushNoticeToAndroid' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Target',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'ALL',
+                            'DEVICE',
+                            'ACCOUNT',
+                            'ALIAS',
+                            'TAG',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TargetValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Body',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StoreOffline',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'JobKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExtParameters',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'PushMessageToAndroid' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Target',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'ALL',
+                            'DEVICE',
+                            'ACCOUNT',
+                            'ALIAS',
+                            'TAG',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TargetValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Body',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StoreOffline',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'JobKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CheckDevice' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'AppKey',

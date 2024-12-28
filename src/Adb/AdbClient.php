@@ -273,6 +273,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyActiveOperationTasksAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBClusterVip(array $arguments = [])
  * @method \Http\Promise\Promise modifyDBClusterVipAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInclinedNodes(array $arguments = [])
+ * @method \Http\Promise\Promise describeInclinedNodesAsync($arguments = [])
  * @method \Dew\Acs\Result deleteBackups(array $arguments = [])
  * @method \Http\Promise\Promise deleteBackupsAsync($arguments = [])
  * @method \Dew\Acs\Result describeDBClusterShardNumber(array $arguments = [])
@@ -457,6 +459,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise startSparkReplSessionAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result getCreateTableSQL(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise getCreateTableSQLAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result modifyUserEniVswitchOptions(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise modifyUserEniVswitchOptionsAsync($arguments = []) {@since 2021-12-01}
  */
 final class AdbClient extends AcsClient
 {

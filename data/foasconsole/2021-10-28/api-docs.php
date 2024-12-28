@@ -250,14 +250,6 @@
                     ],
                 ],
                 [
-                    'name' => 'ZoneId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'VpcId',
                     'in' => 'formData',
                     'schema' => [
@@ -475,14 +467,6 @@
                     ],
                 ],
                 [
-                    'name' => 'HaZoneId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'HaVSwitchIds',
                     'in' => 'formData',
                     'style' => 'json',
@@ -683,14 +667,6 @@
                     ],
                 ],
                 [
-                    'name' => 'ZoneId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'VpcId',
                     'in' => 'formData',
                     'schema' => [
@@ -833,14 +809,6 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HaZoneId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

@@ -213,6 +213,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise openTrafficMirrorServiceAsync($arguments = [])
  * @method \Dew\Acs\Result getTrafficMirrorServiceStatus(array $arguments = [])
  * @method \Http\Promise\Promise getTrafficMirrorServiceStatusAsync($arguments = [])
+ * @method \Dew\Acs\Result transformEipSegmentToPublicIpAddressPool(array $arguments = [])
+ * @method \Http\Promise\Promise transformEipSegmentToPublicIpAddressPoolAsync($arguments = [])
  * @method \Dew\Acs\Result openPublicIpAddressPoolService(array $arguments = [])
  * @method \Http\Promise\Promise openPublicIpAddressPoolServiceAsync($arguments = [])
  * @method \Dew\Acs\Result getPublicIpAddressPoolServiceStatus(array $arguments = [])

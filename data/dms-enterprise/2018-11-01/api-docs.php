@@ -101,6 +101,71 @@
                     ],
                 ],
             ],
+            'DLPartition' => [
+                'type' => 'object',
+                'properties' => [
+                    'TableName' => [
+                        'type' => 'string',
+                    ],
+                    'Sd' => [
+                        '$ref' => '#/components/schemas/DLStorageDescriptor',
+                    ],
+                    'Parameters' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Values' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'CatalogName' => [
+                        'type' => 'string',
+                    ],
+                    'DbName' => [
+                        'type' => 'string',
+                    ],
+                    'LastAccessTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
+            'DLPartitionInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'Parameters' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Values' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'StorageDescriptor' => [
+                        '$ref' => '#/components/schemas/DLStorageDescriptor',
+                    ],
+                    'LastAccessTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
             'DLSerdeInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -117,7 +182,8 @@
                         'type' => 'string',
                     ],
                     'SerdeType' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                     'SerializerClass' => [
                         'type' => 'string',
@@ -445,6 +511,20 @@
                     ],
                 ],
             ],
+            'PartitionError' => [
+                'type' => 'object',
+                'properties' => [
+                    'ErrorDetail' => [
+                        'type' => 'string',
+                    ],
+                    'Values' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'ProjectDetailsLiteVO' => [
                 'type' => 'object',
                 'properties' => [
@@ -577,6 +657,70 @@
                     'Creator' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                ],
+            ],
+            'open_struct_DLTableInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'Owner' => [
+                        'type' => 'string',
+                    ],
+                    'ViewOriginalText' => [
+                        'type' => 'string',
+                    ],
+                    'TableType' => [
+                        'type' => 'string',
+                    ],
+                    'Parameters' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'CreatorId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'StorageDescriptor' => [
+                        '$ref' => '#/components/schemas/DLStorageDescriptor',
+                    ],
+                    'LastAccessTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Retention' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'OwnerType' => [
+                        'type' => 'string',
+                    ],
+                    'ViewExpandedText' => [
+                        'type' => 'string',
+                    ],
+                    'PartitionKeys' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DLColumn',
+                        ],
+                    ],
+                    'ModifierId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Location' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

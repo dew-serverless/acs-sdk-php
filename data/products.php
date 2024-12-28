@@ -2099,6 +2099,14 @@
         'defaultVersion' => '2023-08-08',
     ],
     [
+        'code' => 'eflo-cnp',
+        'style' => 'RPC',
+        'versions' => [
+            '2023-08-28',
+        ],
+        'defaultVersion' => '2023-08-28',
+    ],
+    [
         'code' => 'dms-dg',
         'style' => 'RPC',
         'versions' => [

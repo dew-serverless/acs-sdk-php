@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.0] - 2024-12-28
+
+### Added
+
+- MNS: Send and receive queue messages
+  by @lizhineng in https://github.com/dew-serverless/acs-sdk-php/pull/88
+
+- Support for the `simple` style of parameter encoding
+  by @lizhineng in https://github.com/dew-serverless/acs-sdk-php/pull/91
+
+### Changed
+
+- Optional configs can also be nullable
+  by @lizhineng in https://github.com/dew-serverless/acs-sdk-php/pull/89
+
 ## [0.8.0] - 2024-12-21
 
 ### Added
@@ -90,7 +105,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release.
 
-[unreleased]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.8.0...HEAD
+[unreleased]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.7.1...v0.8.0
 [0.7.1]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/dew-serverless/acs-sdk-php/compare/v0.6.0...v0.7.0

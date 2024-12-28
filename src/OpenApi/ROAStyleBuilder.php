@@ -6,7 +6,6 @@ namespace Dew\Acs\OpenApi;
 
 use Dew\Acs\JsonEncoder;
 use Dew\Acs\Str;
-use Dew\Acs\XmlEncoder;
 use GuzzleHttp\Psr7\Query;
 use InvalidArgumentException;
 use Override;
@@ -22,6 +21,11 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
     private SchemaReader $schemaReader;
 
     private string $scheme;
+
+    /**
+     * The parameter style encoder.
+     */
+    private StyleEncoder $encoder;
 
     /**
      * @var array<string, string>
@@ -55,6 +59,8 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
             : $this->api->schemes[0];
 
         $this->defaultHeaders = $this->prepareDefaultHeaders();
+
+        $this->encoder = new StyleEncoder();
     }
 
     /**
@@ -190,17 +196,14 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
             $parameter->schema, $value, $parameter->name
         );
 
+        if (! is_array($value)) {
+            return $value;
+        }
+
         return match ($parameter->style) {
-            'xml' => is_array($value)
-                ? (new XmlEncoder())->encode($value)
-                : throw new InvalidArgumentException(
-                    'Data should be an array when performing XML encoding.'
-                ),
-            'json' => is_array($value)
-                ? (new JsonEncoder())->encode($value)
-                : throw new InvalidArgumentException(
-                    'Data should be an array when performing JSON encoding.'
-                ),
+            'simple' => $this->encoder->encodeSimple($value),
+            'xml' => $this->encoder->encodeXml($value),
+            'json' => $this->encoder->encodeJson($value),
             default => $value,
         };
     }

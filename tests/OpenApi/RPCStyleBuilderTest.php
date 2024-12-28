@@ -125,6 +125,27 @@ final class RPCStyleBuilderTest extends TestCase
         );
     }
 
+    public function test_query_resolution_simple_style(): void
+    {
+        $docs = $this->makeApiDocs();
+        $api = $this->makeApi([
+            'parameters' => [[
+                'name' => 'values',
+                'in' => 'query',
+                'style' => 'simple',
+                'schema' => [
+                    'type' => 'array',
+                    'items' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ]],
+        ]);
+        $builder = new RPCStyleBuilder($docs, $api);
+        $argument = $builder->build(['values' => ['foo', 'bar']]);
+        $this->assertSame('values=foo%2Cbar', $argument->query);
+    }
+
     /**
      * @param  mixed[]  $arguments
      */

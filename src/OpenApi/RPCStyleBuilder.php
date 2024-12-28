@@ -16,6 +16,11 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
 
     private string $scheme;
 
+    /**
+     * The parameter style encoder.
+     */
+    private StyleEncoder $encoder;
+
     public function __construct(
         private ApiDocs $docs,
         private Api $api
@@ -24,6 +29,8 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
         $this->scheme = in_array('https', $this->api->schemes, strict: true)
             ? 'https'
             : $this->api->schemes[0];
+
+        $this->encoder = new StyleEncoder();
     }
 
     /**
@@ -94,11 +101,9 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
         }
 
         return match ($parameter->style) {
-            'repeatList', 'flat' => $this->encodeRepeatListStyle(
-                array_is_list($value) ? $this->shiftKey($value, 1) : $value,
-                $parameter->name
-            ),
-            'json' => $this->encodeJsonStyle($value),
+            'simple' => $this->encoder->encodeSimple($value),
+            'repeatList', 'flat' => $this->encoder->encodeRepeatList($value, $parameter->name),
+            'json' => $this->encoder->encodeJson($value),
             default => $value,
         };
     }
@@ -114,49 +119,5 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
         }
 
         throw new InvalidArgumentException('Could not encode the query.');
-    }
-
-    /**
-     * @param  array<string, mixed>  $values
-     * @return array<string, mixed>
-     */
-    private function encodeRepeatListStyle(array $values, string $prefix): array
-    {
-        $result = [];
-
-        foreach ($values as $key => $value) {
-            $slug = $prefix.'.'.$key;
-
-            if (is_array($value)) {
-                $result = [...$result, ...$this->encodeRepeatListStyle($value, $slug)];
-            } else {
-                $result[$slug] = $value;
-            }
-        }
-
-        return $result;
-    }
-
-    /**
-     * @param  array<int, mixed>  $values
-     * @return array<int, mixed>
-     */
-    private function shiftKey(array $values, int $offset): array
-    {
-        $result = [];
-
-        foreach ($values as $key => $value) {
-            $result[$key + $offset] = $value;
-        }
-
-        return $result;
-    }
-
-    /**
-     * @param  mixed[]  $data
-     */
-    private function encodeJsonStyle(array $data): string
-    {
-        return json_encode($data, JSON_THROW_ON_ERROR);
     }
 }

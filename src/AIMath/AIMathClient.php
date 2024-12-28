@@ -17,6 +17,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateAnalysisAsync($arguments = [])
  * @method \Dew\Acs\Result updateStep(array $arguments = [])
  * @method \Http\Promise\Promise updateStepAsync($arguments = [])
+ * @method \Dew\Acs\Result chatMessage(array $arguments = [])
+ * @method \Http\Promise\Promise chatMessageAsync($arguments = [])
+ * @method \Dew\Acs\Result createConversation(array $arguments = [])
+ * @method \Http\Promise\Promise createConversationAsync($arguments = [])
+ * @method \Dew\Acs\Result createRelatedConversation(array $arguments = [])
+ * @method \Http\Promise\Promise createRelatedConversationAsync($arguments = [])
  */
 final class AIMathClient extends AcsClient
 {

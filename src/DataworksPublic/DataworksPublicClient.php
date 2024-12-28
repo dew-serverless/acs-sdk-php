@@ -841,10 +841,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateDataQualityRuleTemplateAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result deleteDataQualityRuleTemplate(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise deleteDataQualityRuleTemplateAsync($arguments = []) {@since 2024-05-18}
- * @method \Dew\Acs\Result listDataQualityRuleTemplate(array $arguments = []) {@since 2024-05-18}
- * @method \Http\Promise\Promise listDataQualityRuleTemplateAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result getJobStatus(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise getJobStatusAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result listDataQualityRuleTemplates(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise listDataQualityRuleTemplatesAsync($arguments = []) {@since 2024-05-18}
  */
 final class DataworksPublicClient extends AcsClient
 {

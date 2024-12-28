@@ -171,6 +171,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise revokeSecurityGroupEgressAsync($arguments = [])
  * @method \Dew\Acs\Result describeSecurityGroupAttribute(array $arguments = [])
  * @method \Http\Promise\Promise describeSecurityGroupAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteEip(array $arguments = [])
+ * @method \Http\Promise\Promise deleteEipAsync($arguments = [])
  * @method \Dew\Acs\Result createEipInstance(array $arguments = [])
  * @method \Http\Promise\Promise createEipInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result associateEnsEipAddress(array $arguments = [])
@@ -547,6 +549,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteHaVipsAsync($arguments = [])
  * @method \Dew\Acs\Result modifySnatEntry(array $arguments = [])
  * @method \Http\Promise\Promise modifySnatEntryAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVSwitchAttributes(array $arguments = [])
+ * @method \Http\Promise\Promise describeVSwitchAttributesAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyEnsRouteEntry(array $arguments = [])
+ * @method \Http\Promise\Promise modifyEnsRouteEntryAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

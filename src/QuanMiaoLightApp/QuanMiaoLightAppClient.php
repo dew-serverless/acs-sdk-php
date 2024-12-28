@@ -27,6 +27,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise runHotTopicChatAsync($arguments = [])
  * @method \Dew\Acs\Result generateBroadcastNews(array $arguments = [])
  * @method \Http\Promise\Promise generateBroadcastNewsAsync($arguments = [])
+ * @method \Dew\Acs\Result generateOutputFormat(array $arguments = [])
+ * @method \Http\Promise\Promise generateOutputFormatAsync($arguments = [])
+ * @method \Dew\Acs\Result runTagMiningAnalysis(array $arguments = [])
+ * @method \Http\Promise\Promise runTagMiningAnalysisAsync($arguments = [])
  */
 final class QuanMiaoLightAppClient extends AcsClient
 {

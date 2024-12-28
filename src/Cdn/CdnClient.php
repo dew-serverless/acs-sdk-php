@@ -209,10 +209,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCdnOrderCommodityCodeAsync($arguments = [])
  * @method \Dew\Acs\Result describeCdnService(array $arguments = [])
  * @method \Http\Promise\Promise describeCdnServiceAsync($arguments = [])
- * @method \Dew\Acs\Result setDomainServerCertificate(array $arguments = []) {@deprecated 2018-05-10}
- * @method \Http\Promise\Promise setDomainServerCertificateAsync($arguments = []) {@deprecated 2018-05-10}
- * @method \Dew\Acs\Result batchSetCdnDomainServerCertificate(array $arguments = [])
- * @method \Http\Promise\Promise batchSetCdnDomainServerCertificateAsync($arguments = [])
  * @method \Dew\Acs\Result describeCdnDomainByCertificate(array $arguments = [])
  * @method \Http\Promise\Promise describeCdnDomainByCertificateAsync($arguments = [])
  * @method \Dew\Acs\Result describeDomainCertificateInfo(array $arguments = [])

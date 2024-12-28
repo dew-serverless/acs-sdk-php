@@ -7,6 +7,8 @@ namespace Dew\Acs\Aiccs;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result llmSmartCall(array $arguments = [])
+ * @method \Http\Promise\Promise llmSmartCallAsync($arguments = [])
  * @method \Dew\Acs\Result getHotlineServiceStatistics(array $arguments = [])
  * @method \Http\Promise\Promise getHotlineServiceStatisticsAsync($arguments = [])
  * @method \Dew\Acs\Result getSkillGroupAndAgentStatusSummary(array $arguments = [])

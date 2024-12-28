@@ -207,6 +207,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getBatchAsync($arguments = [])
  * @method \Dew\Acs\Result deleteBatch(array $arguments = [])
  * @method \Http\Promise\Promise deleteBatchAsync($arguments = [])
+ * @method \Dew\Acs\Result contextualAnswer(array $arguments = [])
+ * @method \Http\Promise\Promise contextualAnswerAsync($arguments = [])
+ * @method \Dew\Acs\Result contextualRetrieval(array $arguments = [])
+ * @method \Http\Promise\Promise contextualRetrievalAsync($arguments = [])
  */
 final class ImmClient extends AcsClient
 {

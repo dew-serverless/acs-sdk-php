@@ -89,6 +89,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listInstanceAccountAsync($arguments = [])
  * @method \Dew\Acs\Result getInstanceAccount(array $arguments = [])
  * @method \Http\Promise\Promise getInstanceAccountAsync($arguments = [])
+ * @method \Dew\Acs\Result addDisasterRecoveryItem(array $arguments = [])
+ * @method \Http\Promise\Promise addDisasterRecoveryItemAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result untagResources(array $arguments = [])

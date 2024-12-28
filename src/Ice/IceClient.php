@@ -269,6 +269,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getBatchMediaProducingJobAsync($arguments = [])
  * @method \Dew\Acs\Result submitSportsHighlightsJob(array $arguments = [])
  * @method \Http\Promise\Promise submitSportsHighlightsJobAsync($arguments = [])
+ * @method \Dew\Acs\Result submitScreenMediaHighlightsJob(array $arguments = [])
+ * @method \Http\Promise\Promise submitScreenMediaHighlightsJobAsync($arguments = [])
  * @method \Dew\Acs\Result listMediaProducingJobs(array $arguments = [])
  * @method \Http\Promise\Promise listMediaProducingJobsAsync($arguments = [])
  * @method \Dew\Acs\Result listBatchMediaProducingJobs(array $arguments = [])

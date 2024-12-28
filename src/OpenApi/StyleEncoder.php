@@ -39,4 +39,14 @@ final class StyleEncoder
 
         return $result;
     }
+
+    /**
+     * Encode a list of items with a comma character.
+     *
+     * @param  array<int, mixed>  $data
+     */
+    public function encodeSimple(array $data): string
+    {
+        return implode(',', $data);
+    }
 }

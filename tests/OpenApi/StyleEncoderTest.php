@@ -34,4 +34,11 @@ final class StyleEncoderTest extends TestCase
         $result = $encoder->encodeRepeatList($data);
         $this->assertSame($expected, $result);
     }
+
+    public function test_encode_simple(): void
+    {
+        $encoder = new StyleEncoder();
+        $result = $encoder->encodeSimple(['foo', 2, 3.14]);
+        $this->assertSame('foo,2,3.14', $result);
+    }
 }

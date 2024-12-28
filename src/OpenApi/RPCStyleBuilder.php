@@ -101,6 +101,7 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
         }
 
         return match ($parameter->style) {
+            'simple' => $this->encoder->encodeSimple($value),
             'repeatList', 'flat' => $this->encoder->encodeRepeatList($value, $parameter->name),
             'json' => $this->encoder->encodeJson($value),
             default => $value,

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tests\OpenApi;
 
+use Dew\Acs\DataEncoder;
 use Dew\Acs\OpenApi\StyleEncoder;
+use Mockery;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
@@ -14,9 +16,20 @@ final class StyleEncoderTest extends TestCase
 {
     public function test_encode_json(): void
     {
-        $encoder = new StyleEncoder();
+        $mock = Mockery::mock(DataEncoder::class);
+        $mock->shouldReceive('encode')->once()->andReturn('{"foo":"bar"}');
+        $encoder = new StyleEncoder(jsonEncoder: $mock);
         $result = $encoder->encodeJson(['foo' => 'bar']);
         $this->assertSame('{"foo":"bar"}', $result);
+    }
+
+    public function test_encode_xml(): void
+    {
+        $mock = Mockery::mock(DataEncoder::class);
+        $mock->shouldReceive('encode')->once()->andReturn('<root />');
+        $encoder = new StyleEncoder(xmlEncoder: $mock);
+        $result = $encoder->encodeXml(['root' => []]);
+        $this->assertSame('<root />', $result);
     }
 
     /**

@@ -4,8 +4,22 @@ declare(strict_types=1);
 
 namespace Dew\Acs\OpenApi;
 
-final class StyleEncoder
+use Dew\Acs\DataEncoder;
+use Dew\Acs\JsonEncoder;
+use Dew\Acs\XmlEncoder;
+
+final readonly class StyleEncoder
 {
+    /**
+     * Create a new style encoder instance.
+     */
+    public function __construct(
+        private DataEncoder $jsonEncoder = new JsonEncoder(),
+        private DataEncoder $xmlEncoder = new XmlEncoder()
+    ) {
+        //
+    }
+
     /**
      * Encode data into a JSON string.
      *
@@ -13,7 +27,17 @@ final class StyleEncoder
      */
     public function encodeJson(array $data): string
     {
-        return json_encode($data, JSON_THROW_ON_ERROR);
+        return $this->jsonEncoder->encode($data);
+    }
+
+    /**
+     * Encode data into an XML document.
+     *
+     * @param  array<mixed>  $data
+     */
+    public function encodeXml(array $data): string
+    {
+        return $this->xmlEncoder->encode($data);
     }
 
     /**

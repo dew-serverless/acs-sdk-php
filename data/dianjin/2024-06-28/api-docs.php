@@ -1789,6 +1789,214 @@
                 ],
             ],
         ],
+        'RealTimeDialog' => [
+            'path' => '/{workspaceId}/api/realtime/dialog/chat',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'bizType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'analysis' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'recommend' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'metaData' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'stream' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'conversationModel' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'role' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                            ],
+                                        ],
+                                        'customerServiceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                            ],
+                                        ],
+                                        'customerServiceId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'customerId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'enum' => [
+                                                'text',
+                                                'audio',
+                                                'image',
+                                            ],
+                                        ],
+                                        'beginTime' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'begin' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'end' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'dialogMemoryTurns' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateDialog' => [
+            'path' => '/{workspaceId}/api/virtualHuman/dialog/create',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'playCode' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'channel' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'metaData' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'qaLibraryList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'requestId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'enableLibrary' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'selfDirected' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'RebuildTask' => [
             'path' => '/{workspaceId}/api/task/rebuild',
             'methods' => [
@@ -2759,6 +2967,278 @@
                                         ],
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetChatQuestionResp' => [
+            'path' => '/{workspaceId}/api/virtualHuman/chat/query',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'batchId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GenDocQaResult' => [
+            'path' => '/{workspaceId}/api/virtualHuman/qa/parse',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'docId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'libraryId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'requestId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateQaLibrary' => [
+            'path' => '/{workspaceId}/api/virtualHuman/qa/upload',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'parseQaResults' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'question' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'answer' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'qaLibraryId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'requestId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'SubmitChatQuestion' => [
+            'path' => '/{workspaceId}/api/virtualHuman/chat/submit',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'gmtService' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'liveScriptContent' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'openSmallTalk' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'questionList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'sessionId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'userId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'userName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'gmtCreate' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'reply' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'requestId' => [
+                                'type' => 'string',
+                                'required' => true,
                             ],
                         ],
                     ],

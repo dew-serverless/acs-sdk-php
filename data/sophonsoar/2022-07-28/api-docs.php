@@ -722,6 +722,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RequestUuid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeSoarRecordInOutput' => [
@@ -1932,6 +1940,7 @@
         'DescribeProcessTasks' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'https',
@@ -2094,6 +2103,22 @@
                 ],
                 [
                     'name' => 'EntityUuid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EventUuid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TriggerSource',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

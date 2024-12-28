@@ -5585,7 +5585,7 @@
                                                     'required' => false,
                                                 ],
                                             ],
-                                            'AutoRerunAlert' => [
+                                            'AutoRerunAlertEnabled' => [
                                                 'type' => 'boolean',
                                                 'required' => false,
                                             ],
@@ -5864,7 +5864,7 @@
                                                     'required' => false,
                                                 ],
                                             ],
-                                            'AutoRerunAlert' => [
+                                            'AutoRerunAlertEnabled' => [
                                                 'type' => 'boolean',
                                                 'required' => false,
                                             ],
@@ -7214,6 +7214,7 @@
                             'PartitionSpec' => [
                                 'type' => 'string',
                                 'required' => false,
+                                'maxLength' => 255,
                             ],
                         ],
                     ],
@@ -7224,6 +7225,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 65535,
                     ],
                 ],
                 [
@@ -7232,6 +7234,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'maxLength' => 255,
                     ],
                 ],
                 [
@@ -7272,7 +7275,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -7338,6 +7341,7 @@
                                                         'items' => [
                                                             'type' => 'string',
                                                             'required' => false,
+                                                            'maxLength' => 255,
                                                         ],
                                                     ],
                                                 ],
@@ -7398,10 +7402,15 @@
                                 'Severity' => [
                                     'type' => 'string',
                                     'required' => false,
+                                    'enum' => [
+                                        'High',
+                                        'Normal',
+                                    ],
                                 ],
                                 'Description' => [
                                     'type' => 'string',
                                     'required' => false,
+                                    'maxLength' => 500,
                                 ],
                                 'TemplateCode' => [
                                     'type' => 'string',
@@ -7422,6 +7431,7 @@
                                         'SettingConfig' => [
                                             'type' => 'string',
                                             'required' => false,
+                                            'maxLength' => 1000,
                                         ],
                                         'SamplingFilter' => [
                                             'type' => 'string',
@@ -7578,6 +7588,7 @@
                             'PartitionSpec' => [
                                 'type' => 'string',
                                 'required' => false,
+                                'maxLength' => 255,
                             ],
                         ],
                     ],
@@ -7588,6 +7599,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 65535,
                     ],
                 ],
                 [
@@ -7596,6 +7608,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 255,
                     ],
                 ],
                 [
@@ -7702,6 +7715,7 @@
                                                         'items' => [
                                                             'type' => 'string',
                                                             'required' => false,
+                                                            'maxLength' => 255,
                                                         ],
                                                     ],
                                                 ],
@@ -7754,6 +7768,7 @@
                                 'Name' => [
                                     'type' => 'string',
                                     'required' => false,
+                                    'maxLength' => 255,
                                 ],
                                 'Enabled' => [
                                     'type' => 'boolean',
@@ -7762,10 +7777,15 @@
                                 'Severity' => [
                                     'type' => 'string',
                                     'required' => false,
+                                    'enum' => [
+                                        'High',
+                                        'Normal',
+                                    ],
                                 ],
                                 'Description' => [
                                     'type' => 'string',
                                     'required' => false,
+                                    'maxLength' => 500,
                                 ],
                                 'TemplateCode' => [
                                     'type' => 'string',
@@ -7786,6 +7806,7 @@
                                         'SettingConfig' => [
                                             'type' => 'string',
                                             'required' => false,
+                                            'maxLength' => 1000,
                                         ],
                                         'SamplingFilter' => [
                                             'type' => 'string',
@@ -7935,7 +7956,7 @@
                         'items' => [
                             'type' => 'integer',
                             'format' => 'int64',
-                            'required' => false,
+                            'required' => true,
                         ],
                     ],
                 ],
@@ -7983,7 +8004,7 @@
                         'items' => [
                             'type' => 'integer',
                             'format' => 'int64',
-                            'required' => false,
+                            'required' => true,
                         ],
                     ],
                 ],
@@ -8018,7 +8039,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -8043,7 +8064,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -8104,6 +8125,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'maxLength' => 255,
                     ],
                 ],
                 [
@@ -8129,6 +8151,10 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'High',
+                            'Normal',
+                        ],
                     ],
                 ],
                 [
@@ -8137,6 +8163,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 500,
                     ],
                 ],
                 [
@@ -8171,7 +8198,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -8193,6 +8220,7 @@
                             'SettingConfig' => [
                                 'type' => 'string',
                                 'required' => false,
+                                'maxLength' => 1000,
                             ],
                             'SamplingFilter' => [
                                 'type' => 'string',
@@ -8359,6 +8387,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 255,
                     ],
                 ],
                 [
@@ -8375,6 +8404,10 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'High',
+                            'Normal',
+                        ],
                     ],
                 ],
                 [
@@ -8383,6 +8416,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 500,
                     ],
                 ],
                 [
@@ -8409,6 +8443,7 @@
                             'DatabaseType' => [
                                 'type' => 'string',
                                 'required' => false,
+                                'enum' => [],
                             ],
                             'TableGuid' => [
                                 'type' => 'string',
@@ -8448,6 +8483,7 @@
                             'SettingConfig' => [
                                 'type' => 'string',
                                 'required' => false,
+                                'maxLength' => 1000,
                             ],
                             'SamplingFilter' => [
                                 'type' => 'string',
@@ -8589,7 +8625,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -8614,7 +8650,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -8771,7 +8807,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -8883,7 +8919,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -8989,6 +9025,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'maxLength' => 128,
                     ],
                 ],
                 [
@@ -9006,6 +9043,10 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'Project',
+                            'Tenant',
+                        ],
                     ],
                 ],
                 [
@@ -9035,6 +9076,7 @@
                             'SettingConfig' => [
                                 'type' => 'string',
                                 'required' => false,
+                                'maxLength' => 1000,
                             ],
                         ],
                     ],
@@ -9112,6 +9154,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 128,
                     ],
                 ],
                 [
@@ -9150,6 +9193,7 @@
                             'SettingConfig' => [
                                 'type' => 'string',
                                 'required' => false,
+                                'maxLength' => 1000,
                             ],
                         ],
                     ],
@@ -9203,12 +9247,36 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
         ],
-        'ListDataQualityRuleTemplate' => [
+        'GetJobStatus' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListDataQualityRuleTemplates' => [
             'methods' => [
                 'get',
             ],
@@ -9228,7 +9296,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -9262,6 +9330,7 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'minimum' => '1',
                     ],
                 ],
                 [
@@ -9271,30 +9340,8 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetJobStatus' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'JobId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
+                        'minimum' => '1',
+                        'maximum' => '200',
                     ],
                 ],
             ],

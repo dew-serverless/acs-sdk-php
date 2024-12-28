@@ -461,8 +461,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -509,6 +509,11 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'maxSendTps' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -520,8 +525,8 @@
                 'patch',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -556,6 +561,11 @@
                         'properties' => [
                             'remark' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'maxSendTps' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
                                 'required' => false,
                             ],
                         ],
@@ -672,8 +682,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -706,8 +716,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -774,6 +784,11 @@
                                         'required' => false,
                                     ],
                                 ],
+                            ],
+                            'maxReceiveTps' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -786,8 +801,8 @@
                 'patch',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -854,6 +869,11 @@
                                         'required' => false,
                                     ],
                                 ],
+                            ],
+                            'maxReceiveTps' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -900,8 +920,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -932,7 +952,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '100000000',
                     ],
@@ -943,7 +963,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '10',
                         'maximum' => '100',
                     ],
@@ -2337,6 +2357,74 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AddDisasterRecoveryItem' => [
+            'path' => '/disaster_recovery/{planId}/items',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'topics' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'regionId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'instanceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'instanceId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'topicName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'consumerGroupId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

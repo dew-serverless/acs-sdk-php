@@ -1357,12 +1357,15 @@
                         'required' => false,
                         'items' => [
                             'type' => 'object',
+                            'required' => false,
                             'properties' => [
                                 'Key' => [
                                     'type' => 'string',
+                                    'required' => false,
                                 ],
                                 'Value' => [
                                     'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -1519,14 +1522,18 @@
                     'style' => 'repeatList',
                     'schema' => [
                         'type' => 'array',
+                        'required' => false,
                         'items' => [
                             'type' => 'object',
+                            'required' => false,
                             'properties' => [
                                 'Key' => [
                                     'type' => 'string',
+                                    'required' => false,
                                 ],
                                 'Value' => [
                                     'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],

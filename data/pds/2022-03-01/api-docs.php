@@ -8255,6 +8255,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'drive_name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

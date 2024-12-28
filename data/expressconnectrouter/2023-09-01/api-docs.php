@@ -734,6 +734,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CallerType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyExpressConnectRouterInterRegionTransitMode' => [

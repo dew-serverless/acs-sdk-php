@@ -2902,14 +2902,6 @@
                     ],
                 ],
                 [
-                    'name' => 'ProxyProtocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'PortRanges',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -3081,6 +3073,27 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'EnableClientIPPreservation' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'EnableProxyProtocol' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'VpcId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'VSwitchIds' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'maxItems' => 10,
+                                            ],
                                         ],
                                     ],
                                 ],
@@ -3115,14 +3128,6 @@
                                             ],
                                         ],
                                     ],
-                                ],
-                                'EnableClientIPPreservationToa' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'EnableClientIPPreservationProxyProtocol' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -3433,6 +3438,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -4136,7 +4142,7 @@
                 [
                     'name' => 'EndpointConfigurations',
                     'in' => 'query',
-                    'style' => 'repeatList',
+                    'style' => 'flat',
                     'schema' => [
                         'type' => 'array',
                         'required' => false,
@@ -4169,9 +4175,21 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'VpcId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'VSwitchIds' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'maxItems' => 10,
+                                ],
                             ],
                         ],
-                        'maxItems' => 100,
                     ],
                 ],
                 [
@@ -4258,6 +4276,14 @@
                             ],
                         ],
                         'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4531,7 +4557,7 @@
                 [
                     'name' => 'EndpointConfigurations',
                     'in' => 'query',
-                    'style' => 'repeatList',
+                    'style' => 'flat',
                     'schema' => [
                         'type' => 'array',
                         'required' => false,
@@ -4564,9 +4590,21 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'VpcId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'VSwitchIds' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'maxItems' => 10,
+                                ],
                             ],
                         ],
-                        'maxItems' => 100,
                     ],
                 ],
                 [
@@ -4608,7 +4646,7 @@
                                 ],
                             ],
                         ],
-                        'maxItems' => 100,
+                        'maxItems' => 200,
                     ],
                 ],
                 [
@@ -5060,6 +5098,27 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'EnableClientIPPreservation' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'EnableProxyProtocol' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'VpcId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'VSwitchIds' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'maxItems' => 10,
+                                            ],
                                         ],
                                     ],
                                     'maxItems' => 100,
@@ -5096,14 +5155,6 @@
                                         ],
                                     ],
                                     'maxItems' => 5,
-                                ],
-                                'EnableClientIPPreservationToa' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'EnableClientIPPreservationProxyProtocol' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
                                 ],
                                 'Tag' => [
                                     'type' => 'array',
@@ -5197,7 +5248,7 @@
                 [
                     'name' => 'EndpointGroupConfigurations',
                     'in' => 'query',
-                    'style' => 'repeatList',
+                    'style' => 'flat',
                     'schema' => [
                         'type' => 'array',
                         'required' => true,
@@ -5269,6 +5320,27 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'EnableClientIPPreservation' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'EnableProxyProtocol' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'VpcId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'VSwitchIds' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'maxItems' => 10,
+                                            ],
                                         ],
                                     ],
                                     'maxItems' => 100,
@@ -5300,7 +5372,7 @@
                                             ],
                                         ],
                                     ],
-                                    'maxItems' => 5,
+                                    'maxItems' => 200,
                                 ],
                                 'EnableClientIPPreservationToa' => [
                                     'type' => 'boolean',
@@ -5316,7 +5388,6 @@
                                 ],
                             ],
                         ],
-                        'maxItems' => 10,
                     ],
                 ],
                 [
@@ -8893,6 +8964,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

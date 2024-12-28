@@ -1356,6 +1356,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'XForwardedForProcessingMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                             'XForwardedForProtoEnabled' => [
                                 'type' => 'boolean',
                                 'required' => false,
@@ -1374,6 +1378,10 @@
                             ],
                             'XForwardedForClientSourceIpsTrusted' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'XForwardedForHostEnabled' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],
@@ -1900,6 +1908,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'XForwardedForProcessingMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                             'XForwardedForProtoEnabled' => [
                                 'type' => 'boolean',
                                 'required' => false,
@@ -1918,6 +1930,10 @@
                             ],
                             'XForwardedForClientSourceIpsTrusted' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'XForwardedForHostEnabled' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],

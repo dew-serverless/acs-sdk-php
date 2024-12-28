@@ -1696,6 +1696,14 @@
                     ],
                 ],
                 [
+                    'name' => 'RepoNameFilter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TagFilter',
                     'in' => 'query',
                     'schema' => [

@@ -321,6 +321,74 @@
                 ],
             ],
         ],
+        'AITeacherSyncPracticeTaskGenerate' => [
+            'path' => '/api/v1/aiteacher/syncPractice/generateTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'grade' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'textbook' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'topic' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'learningObject' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'textContent' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'keySentences' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'keyWords' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'AliyunConsoleOpenApiQueryAliyunConsoleServcieList' => [
             'path' => '/api/v1/aliyunconsole/queryAliyunConsoleServcieList',
             'methods' => [

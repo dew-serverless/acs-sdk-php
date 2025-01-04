@@ -56,12 +56,6 @@
                     'type' => [
                         'type' => 'string',
                     ],
-                    'generateMode' => [
-                        'type' => 'string',
-                    ],
-                    'apikey' => [
-                        'type' => 'string',
-                    ],
                     'apikeySource' => [
                         'type' => 'object',
                         'properties' => [
@@ -70,6 +64,20 @@
                             ],
                             'value' => [
                                 'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'credentials' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'generateMode' => [
+                                    'type' => 'string',
+                                ],
+                                'apikey' => [
+                                    'type' => 'string',
+                                ],
                             ],
                         ],
                     ],
@@ -198,6 +206,17 @@
                         'type' => 'string',
                     ],
                     'gatewayId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'AuthConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'authType' => [
+                        'type' => 'string',
+                    ],
+                    'authMode' => [
                         'type' => 'string',
                     ],
                 ],
@@ -555,6 +574,12 @@
                             '$ref' => '#/components/schemas/HttpApiDeployConfig',
                         ],
                     ],
+                    'enabelAuth' => [
+                        'type' => 'boolean',
+                    ],
+                    'authConfig' => [
+                        '$ref' => '#/components/schemas/AuthConfig',
+                    ],
                 ],
             ],
             'HttpApiBackendMatchCondition' => [
@@ -730,6 +755,12 @@
                     'mock' => [
                         '$ref' => '#/components/schemas/HttpApiMockContract',
                     ],
+                    'enableAuth' => [
+                        'type' => 'boolean',
+                    ],
+                    'authConfig' => [
+                        '$ref' => '#/components/schemas/AuthConfig',
+                    ],
                 ],
             ],
             'HttpApiOperationInfo' => [
@@ -762,6 +793,12 @@
                     'createTimestamp' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'enableAuth' => [
+                        'type' => 'boolean',
+                    ],
+                    'authConfig' => [
+                        '$ref' => '#/components/schemas/AuthConfig',
                     ],
                 ],
             ],
@@ -1938,6 +1975,14 @@
                                     'required' => false,
                                 ],
                             ],
+                            'enableAuth' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'authConfig' => [
+                                '$ref' => '#/components/schemas/AuthConfig',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2045,6 +2090,14 @@
                                     '$ref' => '#/components/schemas/HttpApiDeployConfig',
                                     'required' => false,
                                 ],
+                            ],
+                            'enableAuth' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'authConfig' => [
+                                '$ref' => '#/components/schemas/AuthConfig',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -3516,11 +3569,11 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
-                            'certIndentifier' => [
+                            'certIdentifier' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'caCertIndentifier' => [
+                            'caCertIdentifier' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

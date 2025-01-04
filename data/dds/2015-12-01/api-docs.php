@@ -3112,6 +3112,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ShowTags',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeHistoryTasksStat' => [

@@ -520,6 +520,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'UsePerformanceMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteMountPoint' => [
@@ -1671,6 +1679,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'UseAssumeRoleChkServerPerm',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'BindVscMountPointAlias' => [
@@ -1794,6 +1810,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UseAssumeRoleChkServerPerm',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

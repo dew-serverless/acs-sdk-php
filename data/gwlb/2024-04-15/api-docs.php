@@ -1976,5 +1976,17 @@
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'gwlb.ap-southeast-1.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'gwlb.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'gwlb.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'gwlb.cn-hangzhou.aliyuncs.com',
+        ],
     ],
 ];

@@ -103,6 +103,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -276,6 +280,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -328,6 +336,10 @@
                                 'required' => false,
                             ],
                             'Environment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Description' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

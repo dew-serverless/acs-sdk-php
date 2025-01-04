@@ -2163,6 +2163,14 @@
                     ],
                 ],
             ],
+            'StreamOptions' => [
+                'type' => 'object',
+                'properties' => [
+                    'IncrementalOutput' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
             'SubtitleStream' => [
                 'type' => 'object',
                 'properties' => [
@@ -10069,6 +10077,7 @@
             ],
             'schemes' => [
                 'https',
+                'sse',
             ],
             'security' => [
                 [

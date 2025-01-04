@@ -25,7 +25,7 @@
             ],
             'parameters' => [
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -33,7 +33,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -58,7 +58,7 @@
             ],
             'parameters' => [
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -66,7 +66,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -91,7 +91,7 @@
             ],
             'parameters' => [
                 [
-                    'name' => 'RegionId',
+                    'name' => 'InstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -99,7 +99,7 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -491,7 +491,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -499,7 +499,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2072,7 +2072,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2080,7 +2080,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2343,7 +2343,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2351,7 +2351,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3672,6 +3672,22 @@
                     ],
                 ],
                 [
+                    'name' => 'RuleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
@@ -3864,7 +3880,15 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'TemplateIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3873,6 +3897,14 @@
                 ],
                 [
                     'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3954,7 +3986,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3962,7 +3994,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4070,7 +4102,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4078,7 +4110,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4120,7 +4152,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4128,7 +4160,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4179,7 +4211,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4187,7 +4219,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4229,7 +4261,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4237,7 +4269,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4544,7 +4576,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4552,7 +4584,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -10177,7 +10209,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -10185,7 +10217,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -10377,6 +10409,22 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceManagerResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -10857,77 +10905,6 @@
                 ],
             ],
         ],
-        'TagResources' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'RegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceId',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 51,
-                    ],
-                ],
-                [
-                    'name' => 'Tag',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 21,
-                    ],
-                ],
-            ],
-        ],
         'ListTagKeys' => [
             'methods' => [
                 'post',
@@ -11189,6 +11166,77 @@
                 ],
             ],
         ],
+        'TagResources' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 51,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
+            ],
+        ],
         'ModifyHybridCloudClusterRule' => [
             'methods' => [
                 'get',
@@ -11247,7 +11295,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11255,7 +11303,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11345,7 +11393,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11353,7 +11401,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11484,7 +11532,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11492,7 +11540,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11551,7 +11599,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11559,7 +11607,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11693,7 +11741,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11701,7 +11749,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

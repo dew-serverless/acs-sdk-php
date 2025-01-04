@@ -318,55 +318,55 @@
             'Run' => [
                 'type' => 'object',
                 'properties' => [
-                    'RunId' => [
-                        'type' => 'string',
-                    ],
-                    'Name' => [
-                        'type' => 'string',
-                    ],
                     'Status' => [
                         'type' => 'string',
                     ],
-                    'UserId' => [
+                    'Message' => [
                         'type' => 'string',
                     ],
-                    'ParentUserId' => [
+                    'Accessibility' => [
                         'type' => 'string',
                     ],
-                    'StartedAt' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'FinishedAt' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'NodeId' => [
+                    'WorkspaceId' => [
                         'type' => 'string',
                     ],
                     'Duration' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'WorkspaceId' => [
-                        'type' => 'string',
-                    ],
-                    'Message' => [
-                        'type' => 'string',
-                    ],
                     'Source' => [
-                        'type' => 'string',
-                    ],
-                    'ExperimentId' => [
-                        'type' => 'string',
-                    ],
-                    'GmtCreateTime' => [
                         'type' => 'string',
                     ],
                     'GmtModifiedTime' => [
                         'type' => 'string',
                     ],
-                    'Accessibility' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'ParentUserId' => [
+                        'type' => 'string',
+                    ],
+                    'UserId' => [
+                        'type' => 'string',
+                    ],
+                    'ExperimentId' => [
+                        'type' => 'string',
+                    ],
+                    'NodeId' => [
+                        'type' => 'string',
+                    ],
+                    'FinishedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'StartedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'RunId' => [
+                        'type' => 'string',
+                    ],
+                    'GmtCreateTime' => [
                         'type' => 'string',
                     ],
                 ],

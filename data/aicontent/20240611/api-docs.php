@@ -253,6 +253,352 @@
         ],
     ],
     'apis' => [
+        'AITeacherSyncPracticeTaskGenerate' => [
+            'path' => '/api/v1/aiteacher/syncPractice/generateTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'grade' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'textbook' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'topic' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'learningObject' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'textContent' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'keySentences' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'keyWords' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteAITeacherSyncDialogue' => [
+            'path' => '/api/v1/aiteacher/syncPractice/executeSyncTraining',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'records' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'role' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'isOnTopic' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'isOffTopicControl' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'dialogueTasks' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'assistant' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'assistantTranslate' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'user' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'languageCode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteAITeacherSyncDialogueTranslate' => [
+            'path' => '/api/v1/aiteacher/syncPractice/translate',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'records' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'role' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'isOnTopic' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'isOffTopicControl' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'dialogueTasks' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'assistant' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'assistantTranslate' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'user' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetAITeacherSyncDialogueSuggestion' => [
+            'path' => '/api/v1/aiteacher/syncPractice/suggestion',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'records' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'role' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'isOnTopic' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'isOffTopicControl' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'dialogueTasks' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'assistant' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'assistantTranslate' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'user' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'languageCode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'AITeacherExpansionPracticeTaskGenerate' => [
             'path' => '/api/v1/aiteacher/expansionPractice/generateTask',
             'methods' => [
@@ -321,8 +667,8 @@
                 ],
             ],
         ],
-        'AITeacherSyncPracticeTaskGenerate' => [
-            'path' => '/api/v1/aiteacher/syncPractice/generateTask',
+        'ExecuteAITeacherExpansionDialogue' => [
+            'path' => '/api/v1/aiteacher/expansionPractice/executeExpansionTraining',
             'methods' => [
                 'post',
             ],
@@ -344,45 +690,489 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'userId' => [
-                                'type' => 'string',
-                                'required' => true,
+                            'records' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'role' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'isOnTopic' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'isOffTopicControl' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
                             ],
-                            'grade' => [
-                                'type' => 'string',
+                            'dialogueTasks' => [
+                                'type' => 'array',
                                 'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'assistant' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'assistantTranslate' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'user' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
                             ],
-                            'textbook' => [
+                            'languageCode' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'background' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'roleInfo' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'assistant' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'user' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                ],
                             ],
                             'topic' => [
                                 'type' => 'string',
                                 'required' => true,
                             ],
-                            'learningObject' => [
+                            'startSentence' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'textContent' => [
+                            'userId' => [
                                 'type' => 'string',
                                 'required' => true,
                             ],
-                            'keySentences' => [
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteAITeacherExpansionDialogueTranslate' => [
+            'path' => '/api/v1/aiteacher/expansionPractice/translate',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'records' => [
                                 'type' => 'array',
                                 'required' => false,
                                 'items' => [
-                                    'type' => 'string',
+                                    'type' => 'object',
                                     'required' => false,
+                                    'properties' => [
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'role' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'isOnTopic' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'isOffTopicControl' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
                                 ],
                             ],
-                            'keyWords' => [
+                            'dialogueTasks' => [
                                 'type' => 'array',
-                                'required' => false,
+                                'required' => true,
                                 'items' => [
-                                    'type' => 'string',
+                                    'type' => 'object',
                                     'required' => false,
+                                    'properties' => [
+                                        'assistant' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'assistantTranslate' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'user' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
                                 ],
+                            ],
+                            'background' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'roleInfo' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'assistant' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'user' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'topic' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'startSentence' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetAITeacherExpansionDialogueSuggestion' => [
+            'path' => '/api/v1/aiteacher/expansionPractice/suggestion',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'records' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'role' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'isOnTopic' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'isOffTopicControl' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'dialogueTasks' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'assistant' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'assistantTranslate' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'user' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'languageCode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'background' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'roleInfo' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'assistant' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'user' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'topic' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'startSentence' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteAITeacherExpansionDialogueRefine' => [
+            'path' => '/api/v1/aiteacher/expansionPractice/refineByContext',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'records' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'role' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'isOnTopic' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'isOffTopicControl' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'dialogueTasks' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'assistant' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'assistantTranslate' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'user' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'order' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'background' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'roleInfo' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'assistant' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'user' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'topic' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'languageCode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'startSentence' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteAITeacherGrammarCheck' => [
+            'path' => '/api/v1/aiteacher/common/grammarChecking',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'content' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => true,
                             ],
                         ],
                     ],

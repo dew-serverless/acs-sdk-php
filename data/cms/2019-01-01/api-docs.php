@@ -5298,55 +5298,6 @@
                 ],
             ],
         ],
-        'BatchCreateOnceSiteMonitor' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'TaskList',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'properties' => [
-                                'Address' => [
-                                    'type' => 'string',
-                                ],
-                                'IspCities' => [
-                                    'type' => 'string',
-                                ],
-                                'OptionsJson' => [
-                                    'type' => 'string',
-                                ],
-                                'TaskName' => [
-                                    'type' => 'string',
-                                ],
-                                'TaskType' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                        ],
-                        'minItems' => 1,
-                        'maxItems' => 200,
-                    ],
-                ],
-            ],
-        ],
         'BatchCreateInstantSiteMonitor' => [
             'methods' => [
                 'get',
@@ -5990,79 +5941,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeSiteInstantMonitorLog' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'TaskIds',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MetricName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StartTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EndTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'NextToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Length',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Filter',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
                     ],
                 ],
             ],

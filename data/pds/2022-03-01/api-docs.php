@@ -8736,6 +8736,10 @@
                                 'format' => 'int64',
                                 'required' => false,
                             ],
+                            'require_login' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'office_editable' => [
                                 'type' => 'boolean',
                                 'required' => false,

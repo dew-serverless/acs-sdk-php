@@ -145,8 +145,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createSiteMonitorAsync($arguments = [])
  * @method \Dew\Acs\Result createInstantSiteMonitor(array $arguments = [])
  * @method \Http\Promise\Promise createInstantSiteMonitorAsync($arguments = [])
- * @method \Dew\Acs\Result batchCreateOnceSiteMonitor(array $arguments = []) {@deprecated 2019-01-01}
- * @method \Http\Promise\Promise batchCreateOnceSiteMonitorAsync($arguments = []) {@deprecated 2019-01-01}
  * @method \Dew\Acs\Result batchCreateInstantSiteMonitor(array $arguments = [])
  * @method \Http\Promise\Promise batchCreateInstantSiteMonitorAsync($arguments = [])
  * @method \Dew\Acs\Result deleteSiteMonitors(array $arguments = [])
@@ -171,8 +169,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSiteMonitorListAsync($arguments = [])
  * @method \Dew\Acs\Result describeSiteMonitorLog(array $arguments = [])
  * @method \Http\Promise\Promise describeSiteMonitorLogAsync($arguments = [])
- * @method \Dew\Acs\Result describeSiteInstantMonitorLog(array $arguments = [])
- * @method \Http\Promise\Promise describeSiteInstantMonitorLogAsync($arguments = [])
  * @method \Dew\Acs\Result describeMetricLast(array $arguments = [])
  * @method \Http\Promise\Promise describeMetricLastAsync($arguments = [])
  * @method \Dew\Acs\Result describeMetricList(array $arguments = [])

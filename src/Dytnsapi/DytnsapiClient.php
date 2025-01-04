@@ -33,8 +33,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise phoneNumberStatusForSmsAsync($arguments = [])
  * @method \Dew\Acs\Result phoneNumberStatusForVoice(array $arguments = [])
  * @method \Http\Promise\Promise phoneNumberStatusForVoiceAsync($arguments = [])
- * @method \Dew\Acs\Result phoneNumberStatusForVirtual(array $arguments = [])
- * @method \Http\Promise\Promise phoneNumberStatusForVirtualAsync($arguments = [])
  * @method \Dew\Acs\Result describePhoneTwiceTelVerify(array $arguments = [])
  * @method \Http\Promise\Promise describePhoneTwiceTelVerifyAsync($arguments = [])
  * @method \Dew\Acs\Result describePhoneNumberOnlineTime(array $arguments = [])

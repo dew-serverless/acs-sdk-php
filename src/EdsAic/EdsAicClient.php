@@ -75,6 +75,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise installAppAsync($arguments = [])
  * @method \Dew\Acs\Result uninstallApp(array $arguments = [])
  * @method \Http\Promise\Promise uninstallAppAsync($arguments = [])
+ * @method \Dew\Acs\Result operateApp(array $arguments = [])
+ * @method \Http\Promise\Promise operateAppAsync($arguments = [])
  * @method \Dew\Acs\Result createKeyPair(array $arguments = [])
  * @method \Http\Promise\Promise createKeyPairAsync($arguments = [])
  * @method \Dew\Acs\Result importKeyPair(array $arguments = [])

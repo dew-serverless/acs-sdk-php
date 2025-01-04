@@ -303,10 +303,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise addSkillGroupAsync($arguments = [])
  * @method \Dew\Acs\Result deleteSkillGroup(array $arguments = [])
  * @method \Http\Promise\Promise deleteSkillGroupAsync($arguments = [])
- * @method \Dew\Acs\Result deleteTaskAiOutboundTask(array $arguments = []) {@deprecated 2019-10-15}
- * @method \Http\Promise\Promise deleteTaskAiOutboundTaskAsync($arguments = []) {@deprecated 2019-10-15}
- * @method \Dew\Acs\Result terminateTaskAiOutboundTask(array $arguments = []) {@deprecated 2019-10-15}
- * @method \Http\Promise\Promise terminateTaskAiOutboundTaskAsync($arguments = []) {@deprecated 2019-10-15}
  */
 final class AiccsClient extends AcsClient
 {

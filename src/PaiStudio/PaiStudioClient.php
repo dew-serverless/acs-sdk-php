@@ -103,10 +103,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise scaleQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result deleteQuota(array $arguments = [])
  * @method \Http\Promise\Promise deleteQuotaAsync($arguments = [])
- * @method \Dew\Acs\Result listNodes(array $arguments = [])
- * @method \Http\Promise\Promise listNodesAsync($arguments = [])
  * @method \Dew\Acs\Result listQuotaWorkloads(array $arguments = [])
  * @method \Http\Promise\Promise listQuotaWorkloadsAsync($arguments = [])
+ * @method \Dew\Acs\Result listNodes(array $arguments = [])
+ * @method \Http\Promise\Promise listNodesAsync($arguments = [])
+ * @method \Dew\Acs\Result getSpotPriceHistory(array $arguments = [])
+ * @method \Http\Promise\Promise getSpotPriceHistoryAsync($arguments = [])
  */
 final class PaiStudioClient extends AcsClient
 {

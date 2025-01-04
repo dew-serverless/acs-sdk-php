@@ -89,6 +89,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listInstanceAccountAsync($arguments = [])
  * @method \Dew\Acs\Result getInstanceAccount(array $arguments = [])
  * @method \Http\Promise\Promise getInstanceAccountAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteDisasterRecoveryPlan(array $arguments = [])
+ * @method \Http\Promise\Promise deleteDisasterRecoveryPlanAsync($arguments = [])
+ * @method \Dew\Acs\Result startDisasterRecoveryItem(array $arguments = [])
+ * @method \Http\Promise\Promise startDisasterRecoveryItemAsync($arguments = [])
+ * @method \Dew\Acs\Result stopDisasterRecoveryItem(array $arguments = [])
+ * @method \Http\Promise\Promise stopDisasterRecoveryItemAsync($arguments = [])
  * @method \Dew\Acs\Result addDisasterRecoveryItem(array $arguments = [])
  * @method \Http\Promise\Promise addDisasterRecoveryItemAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
@@ -103,6 +109,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result listAvailableZones(array $arguments = [])
  * @method \Http\Promise\Promise listAvailableZonesAsync($arguments = [])
+ * @method \Dew\Acs\Result listMetricMeta(array $arguments = [])
+ * @method \Http\Promise\Promise listMetricMetaAsync($arguments = [])
  */
 final class RocketMQClient extends AcsClient
 {

@@ -155,6 +155,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getNodeInfoForPodAsync($arguments = [])
  * @method \Dew\Acs\Result listNodeInfosForPod(array $arguments = [])
  * @method \Http\Promise\Promise listNodeInfosForPodAsync($arguments = [])
+ * @method \Dew\Acs\Result getDestinationCidrBlock(array $arguments = [])
+ * @method \Http\Promise\Promise getDestinationCidrBlockAsync($arguments = [])
+ * @method \Dew\Acs\Result refundVcc(array $arguments = [])
+ * @method \Http\Promise\Promise refundVccAsync($arguments = [])
  */
 final class EfloClient extends AcsClient
 {

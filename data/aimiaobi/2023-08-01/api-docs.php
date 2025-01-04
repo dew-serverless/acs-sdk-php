@@ -820,6 +820,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'SummaryReturnType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -3140,7 +3144,101 @@
                                     ],
                                 ],
                             ],
+                            'MediaConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Volume' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'SpeechConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Volume' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'Voice' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Style' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SpeechRate' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'AsrConfig' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'X' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Y' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Alignment' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Font' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'FontColor' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'FontSize' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Spacing' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'BackgroundMusicConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Volume' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'Style' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'ExtendParam',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -7893,6 +7991,48 @@
                 ],
             ],
         ],
+        'RunDocSmartCard' => [
+            'path' => '/miaodu/stream/runDocSmartCard',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DocId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SessionId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'RunDocTranslation' => [
             'path' => '/miaodu/stream/runDocTranslation',
             'methods' => [
@@ -8236,6 +8376,146 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'RunBookSmartCard' => [
+            'path' => '/miaodu/stream/runBookSmartCard',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DocId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SessionId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UploadBook' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Docs',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'DocName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FileUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CategoryId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'RunBookIntroduction' => [
+            'path' => '/miaodu/stream/runBookIntroduction',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DocId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SessionId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

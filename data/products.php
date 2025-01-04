@@ -1979,6 +1979,14 @@
         'defaultVersion' => '2023-06-27',
     ],
     [
+        'code' => 'starrocks',
+        'style' => 'RPC',
+        'versions' => [
+            '2022-10-19',
+        ],
+        'defaultVersion' => '2022-10-19',
+    ],
+    [
         'code' => 'ResourceCenter',
         'style' => 'RPC',
         'versions' => [

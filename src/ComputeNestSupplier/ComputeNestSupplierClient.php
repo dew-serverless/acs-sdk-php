@@ -7,6 +7,8 @@ namespace Dew\Acs\ComputeNestSupplier;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result generateServicePolicy(array $arguments = [])
+ * @method \Http\Promise\Promise generateServicePolicyAsync($arguments = [])
  * @method \Dew\Acs\Result createService(array $arguments = [])
  * @method \Http\Promise\Promise createServiceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteService(array $arguments = [])
@@ -23,6 +25,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise registerServiceAsync($arguments = [])
  * @method \Dew\Acs\Result launchService(array $arguments = [])
  * @method \Http\Promise\Promise launchServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result getServiceProvisions(array $arguments = [])
+ * @method \Http\Promise\Promise getServiceProvisionsAsync($arguments = [])
+ * @method \Dew\Acs\Result getServiceTemplateParameterConstraints(array $arguments = [])
+ * @method \Http\Promise\Promise getServiceTemplateParameterConstraintsAsync($arguments = [])
+ * @method \Dew\Acs\Result getServiceEstimateCost(array $arguments = [])
+ * @method \Http\Promise\Promise getServiceEstimateCostAsync($arguments = [])
+ * @method \Dew\Acs\Result rollbackServiceInstance(array $arguments = [])
+ * @method \Http\Promise\Promise rollbackServiceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result createServiceInstance(array $arguments = [])
  * @method \Http\Promise\Promise createServiceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteServiceInstances(array $arguments = [])
@@ -85,14 +95,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise removeServiceSharedAccountsAsync($arguments = [])
  * @method \Dew\Acs\Result listServiceSharedAccounts(array $arguments = [])
  * @method \Http\Promise\Promise listServiceSharedAccountsAsync($arguments = [])
- * @method \Dew\Acs\Result getServiceEstimateCost(array $arguments = [])
- * @method \Http\Promise\Promise getServiceEstimateCostAsync($arguments = [])
- * @method \Dew\Acs\Result getServiceTemplateParameterConstraints(array $arguments = [])
- * @method \Http\Promise\Promise getServiceTemplateParameterConstraintsAsync($arguments = [])
+ * @method \Dew\Acs\Result tagResources(array $arguments = [])
+ * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result unTagResources(array $arguments = [])
+ * @method \Http\Promise\Promise unTagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result listTagValues(array $arguments = [])
+ * @method \Http\Promise\Promise listTagValuesAsync($arguments = [])
+ * @method \Dew\Acs\Result listTagKeys(array $arguments = [])
+ * @method \Http\Promise\Promise listTagKeysAsync($arguments = [])
  * @method \Dew\Acs\Result pushMeteringData(array $arguments = [])
  * @method \Http\Promise\Promise pushMeteringDataAsync($arguments = [])
- * @method \Dew\Acs\Result rollbackServiceInstance(array $arguments = [])
- * @method \Http\Promise\Promise rollbackServiceInstanceAsync($arguments = [])
  */
 final class ComputeNestSupplierClient extends AcsClient
 {

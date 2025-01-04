@@ -175,6 +175,23 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListIpOrHosts' => [
@@ -580,6 +597,14 @@
                             ],
                         ],
                         'maxItems' => 5,
+                    ],
+                ],
+                [
+                    'name' => 'StatusCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

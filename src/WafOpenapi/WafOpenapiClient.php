@@ -361,8 +361,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeMemberAccountsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result tagResources(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise tagResourcesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result listTagKeys(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise listTagKeysAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result untagResources(array $arguments = []) {@since 2021-10-01}
@@ -371,6 +369,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result listTagValues(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise listTagValuesAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result tagResources(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise tagResourcesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyHybridCloudClusterRule(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise modifyHybridCloudClusterRuleAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result createHybridCloudGroup(array $arguments = []) {@since 2021-10-01}

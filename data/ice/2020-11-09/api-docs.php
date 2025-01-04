@@ -115,6 +115,12 @@
                                 'type' => 'integer',
                                 'format' => 'int64',
                             ],
+                            'VoiceIdList' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
                             'EnableVoiceInterrupt' => [
                                 'type' => 'boolean',
                             ],
@@ -191,6 +197,12 @@
                                 'type' => 'integer',
                                 'format' => 'int64',
                             ],
+                            'VoiceIdList' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
                             'EnableVoiceInterrupt' => [
                                 'type' => 'boolean',
                             ],
@@ -266,6 +278,12 @@
                             'Volume' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                            ],
+                            'VoiceIdList' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
                             ],
                             'AvatarId' => [
                                 'type' => 'string',
@@ -349,6 +367,71 @@
                     ],
                 ],
             ],
+            'Channel' => [
+                'type' => 'object',
+                'properties' => [
+                    'FillerSourceName' => [
+                        'type' => 'string',
+                    ],
+                    'FillerSourceLocationName' => [
+                        'type' => 'string',
+                    ],
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'ChannelName' => [
+                        'type' => 'string',
+                    ],
+                    'ChannelTier' => [
+                        'type' => 'string',
+                    ],
+                    'AccessToken' => [
+                        'type' => 'string',
+                    ],
+                    'State' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'Arn' => [
+                        'type' => 'string',
+                    ],
+                    'PlaybackMode' => [
+                        'type' => 'string',
+                    ],
+                    'OutPutConfigList' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'ManifestName' => [
+                                    'type' => 'string',
+                                ],
+                                'ChannelName' => [
+                                    'type' => 'string',
+                                ],
+                                'Format' => [
+                                    'type' => 'string',
+                                ],
+                                'PlaybackUrl' => [
+                                    'type' => 'string',
+                                ],
+                                'ManifestSettings' => [
+                                    'type' => 'string',
+                                ],
+                                'SourceGroupName' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'AccessPolicy' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
             'LicenseInstanceAppDTO' => [
                 'type' => 'object',
                 'properties' => [
@@ -413,6 +496,184 @@
                     'UserId' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                ],
+            ],
+            'Program' => [
+                'type' => 'object',
+                'properties' => [
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'ChannelName' => [
+                        'type' => 'string',
+                    ],
+                    'SourceLocationName' => [
+                        'type' => 'string',
+                    ],
+                    'AdBreaks' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'TimeSignalSettings' => [
+                                    'type' => 'string',
+                                ],
+                                'OffsetMillis' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'ChannelName' => [
+                                    'type' => 'string',
+                                ],
+                                'SourceLocationName' => [
+                                    'type' => 'string',
+                                ],
+                                'SpliceInsertSettings' => [
+                                    'type' => 'string',
+                                ],
+                                'SourceName' => [
+                                    'type' => 'string',
+                                ],
+                                'ProgramName' => [
+                                    'type' => 'string',
+                                ],
+                                'MessageType' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'SourceType' => [
+                        'type' => 'string',
+                    ],
+                    'Transition' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'SourceName' => [
+                        'type' => 'string',
+                    ],
+                    'ClipRange' => [
+                        'type' => 'string',
+                    ],
+                    'Arn' => [
+                        'type' => 'string',
+                    ],
+                    'ProgramName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ScheduleData' => [
+                'type' => 'object',
+                'properties' => [
+                    'EntryType' => [
+                        'type' => 'string',
+                    ],
+                    'SourceLocationName' => [
+                        'type' => 'string',
+                    ],
+                    'AdBreaks' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'OffsetMillis' => [
+                                    'type' => 'string',
+                                ],
+                                'TimeSignalSettings' => [
+                                    'type' => 'string',
+                                ],
+                                'SourceLocationName' => [
+                                    'type' => 'string',
+                                ],
+                                'SpliceInsertSettings' => [
+                                    'type' => 'string',
+                                ],
+                                'SourceName' => [
+                                    'type' => 'string',
+                                ],
+                                'MessageType' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'SourceType' => [
+                        'type' => 'string',
+                    ],
+                    'SourceName' => [
+                        'type' => 'string',
+                    ],
+                    'ApproximateDurationSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ApproximateStartTime' => [
+                        'type' => 'string',
+                    ],
+                    'ProgramName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'Source' => [
+                'type' => 'object',
+                'properties' => [
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'SourceLocationName' => [
+                        'type' => 'string',
+                    ],
+                    'State' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'SourceType' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'SourceName' => [
+                        'type' => 'string',
+                    ],
+                    'HttpPackageConfigurations' => [
+                        'type' => 'string',
+                    ],
+                    'Arn' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SourceLocation' => [
+                'type' => 'object',
+                'properties' => [
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'SourceLocationName' => [
+                        'type' => 'string',
+                    ],
+                    'State' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'SegmentDeliveryConfigurations' => [
+                        'type' => 'string',
+                    ],
+                    'BaseUrl' => [
+                        'type' => 'string',
+                    ],
+                    'Arn' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2448,6 +2709,14 @@
                 ],
                 [
                     'name' => 'AnalysisParams',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserData',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

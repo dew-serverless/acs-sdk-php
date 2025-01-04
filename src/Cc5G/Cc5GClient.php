@@ -127,12 +127,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise addGroupDnsAuthorizationRuleAsync($arguments = [])
  * @method \Dew\Acs\Result updateGroupDnsAuthorizationRule(array $arguments = [])
  * @method \Http\Promise\Promise updateGroupDnsAuthorizationRuleAsync($arguments = [])
- * @method \Dew\Acs\Result getCreateCustomerInfomation(array $arguments = [])
- * @method \Http\Promise\Promise getCreateCustomerInfomationAsync($arguments = [])
- * @method \Dew\Acs\Result innerLimitRateCards(array $arguments = [])
- * @method \Http\Promise\Promise innerLimitRateCardsAsync($arguments = [])
- * @method \Dew\Acs\Result innerStopCards(array $arguments = [])
- * @method \Http\Promise\Promise innerStopCardsAsync($arguments = [])
  */
 final class Cc5GClient extends AcsClient
 {

@@ -957,7 +957,7 @@
                     ],
                 ],
             ],
-            'GetResourcePoolInfoResponse' => [
+            'GetResourcePoolInfoResp' => [
                 'type' => 'object',
                 'properties' => [
                     'Region' => [

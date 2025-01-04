@@ -8446,6 +8446,7 @@
         'CancelActiveOperationTasks' => [
             'methods' => [
                 'post',
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -8586,6 +8587,7 @@
         'ModifyActiveOperationTasks' => [
             'methods' => [
                 'post',
+                'get',
             ],
             'schemes' => [
                 'http',

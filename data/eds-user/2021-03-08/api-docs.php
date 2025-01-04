@@ -555,6 +555,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'IsQueryAllSubOrgs',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'FilterUsers' => [

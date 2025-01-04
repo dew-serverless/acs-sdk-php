@@ -187,10 +187,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeVMsInServiceMeshAsync($arguments = []) {@deprecated 2020-01-11}
  * @method \Dew\Acs\Result describeServiceMeshVMs(array $arguments = []) {@deprecated 2020-01-11}
  * @method \Http\Promise\Promise describeServiceMeshVMsAsync($arguments = []) {@deprecated 2020-01-11}
- * @method \Dew\Acs\Result addVmAppToMesh(array $arguments = [])
- * @method \Http\Promise\Promise addVmAppToMeshAsync($arguments = [])
- * @method \Dew\Acs\Result removeVmAppFromMesh(array $arguments = [])
- * @method \Http\Promise\Promise removeVmAppFromMeshAsync($arguments = [])
  * @method \Dew\Acs\Result updateMeshMultiClusterNetwork(array $arguments = [])
  * @method \Http\Promise\Promise updateMeshMultiClusterNetworkAsync($arguments = [])
  * @method \Dew\Acs\Result describeMeshMultiClusterNetwork(array $arguments = [])

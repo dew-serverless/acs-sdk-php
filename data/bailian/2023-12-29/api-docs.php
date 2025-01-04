@@ -815,6 +815,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'enableHeaders',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetIndexJobStatus' => [

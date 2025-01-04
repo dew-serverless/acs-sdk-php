@@ -5390,7 +5390,7 @@
         ],
         [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'hbase.aliyuncs.com',
+            'endpoint' => 'hbase.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',

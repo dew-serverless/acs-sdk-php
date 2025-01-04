@@ -7,10 +7,26 @@ namespace Dew\Acs\AiContent;
 use Dew\Acs\AcsClient;
 
 /**
- * @method \Dew\Acs\Result aITeacherExpansionPracticeTaskGenerate(array $arguments = []) {@since 20240611}
- * @method \Http\Promise\Promise aITeacherExpansionPracticeTaskGenerateAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result aITeacherSyncPracticeTaskGenerate(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise aITeacherSyncPracticeTaskGenerateAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeAITeacherSyncDialogue(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeAITeacherSyncDialogueAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeAITeacherSyncDialogueTranslate(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeAITeacherSyncDialogueTranslateAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result getAITeacherSyncDialogueSuggestion(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise getAITeacherSyncDialogueSuggestionAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result aITeacherExpansionPracticeTaskGenerate(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise aITeacherExpansionPracticeTaskGenerateAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeAITeacherExpansionDialogue(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeAITeacherExpansionDialogueAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeAITeacherExpansionDialogueTranslate(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeAITeacherExpansionDialogueTranslateAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result getAITeacherExpansionDialogueSuggestion(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise getAITeacherExpansionDialogueSuggestionAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeAITeacherExpansionDialogueRefine(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeAITeacherExpansionDialogueRefineAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeAITeacherGrammarCheck(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeAITeacherGrammarCheckAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result aliyunConsoleOpenApiQueryAliyunConsoleServcieList(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise aliyunConsoleOpenApiQueryAliyunConsoleServcieListAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result personalizedTextToImageQueryPreModelInferenceJobInfo(array $arguments = []) {@since 20240611}

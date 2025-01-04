@@ -567,8 +567,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryRecommendByCodeAsync($arguments = [])
  * @method \Dew\Acs\Result createOrderForDeleteDBNodes(array $arguments = [])
  * @method \Http\Promise\Promise createOrderForDeleteDBNodesAsync($arguments = [])
- * @method \Dew\Acs\Result describeDiagnosticReportList(array $arguments = []) {@deprecated 2014-08-15}
- * @method \Http\Promise\Promise describeDiagnosticReportListAsync($arguments = []) {@deprecated 2014-08-15}
  * @method \Dew\Acs\Result destroyDBInstance(array $arguments = [])
  * @method \Http\Promise\Promise destroyDBInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result describeTasks(array $arguments = [])

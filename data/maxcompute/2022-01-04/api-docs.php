@@ -200,13 +200,12 @@
                 ],
             ],
         ],
-        'ListQuotasPlans' => [
-            'path' => '/api/v1/quotas/{nickname}/plans',
+        'CreateComputeQuotaPlan' => [
+            'path' => '/api/v1/quotas/{nickname}/computeQuotaPlan',
             'methods' => [
-                'get',
+                'post',
             ],
             'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -225,19 +224,586 @@
                     ],
                 ],
                 [
-                    'name' => 'tenantId',
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'quota' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'parameter' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'elasticReservedCU' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => true,
+                                            ],
+                                        ],
+                                    ],
+                                    'subQuotaInfoList' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'nickName' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'parameter' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'elasticReservedCU' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => true,
+                                                        ],
+                                                        'maxCU' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => true,
+                                                        ],
+                                                        'minCU' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => true,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateComputeSubQuota' => [
+            'path' => '/api/v1/quotas/{nickname}/computeSubQuota',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'subQuotaInfoList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'nickName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'parameter' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'enablePriority' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'forceReservedMin' => [
+                                                    'type' => 'boolean',
+                                                    'required' => false,
+                                                ],
+                                                'maxCU' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => true,
+                                                ],
+                                                'minCU' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => true,
+                                                ],
+                                                'schedulerType' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'singleJobCULimit' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int64',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetComputeQuotaPlan' => [
+            'path' => '/api/v1/quotas/{nickname}/computeQuotaPlan/{planName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'planName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListComputeQuotaPlan' => [
+            'path' => '/api/v1/quotas/{nickname}/computeQuotaPlan',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateComputeQuotaPlan' => [
+            'path' => '/api/v1/quotas/{nickname}/computeQuotaPlan',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'quota' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'parameter' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'elasticReservedCU' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => true,
+                                            ],
+                                        ],
+                                    ],
+                                    'subQuotaInfoList' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'nickName' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'parameter' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'elasticReservedCU' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => true,
+                                                        ],
+                                                        'maxCU' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => true,
+                                                        ],
+                                                        'minCU' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => true,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteComputeQuotaPlan' => [
+            'path' => '/api/v1/quotas/{nickname}/computeQuotaPlan/{planName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'planName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ApplyComputeQuotaPlan' => [
+            'path' => '/api/v1/quotas/{nickname}/computeQuotaPlan/{planName}/apply',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'planName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetComputeQuotaSchedule' => [
+            'path' => '/api/v1/quotas/{nickname}/computeQuotaSchedule',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'displayTimezone',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
                     ],
                 ],
+            ],
+        ],
+        'UpdateComputeQuotaSchedule' => [
+            'path' => '/api/v1/quotas/{nickname}/computeQuotaSchedule',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
                 [
-                    'name' => 'region',
-                    'in' => 'query',
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
                     'schema' => [
                         'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
                         'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'condition' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'at' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                                'timezone' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'type' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'plan' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetComputeEffectivePlan' => [
+            'path' => '/api/v1/quotas/{nickname}/computeEffectivePlan/',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListTunnelQuotaTimer' => [
+            'path' => '/api/v1/tunnel/{nickname}/timers',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateTunnelQuotaTimer' => [
+            'path' => '/api/v1/tunnel/{nickname}/timers',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'beginTime' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'endTime' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'timezone' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'tunnelQuotaParameter' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'slotNum' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'elasticReservedSlotNum' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -285,6 +851,56 @@
                 [
                     'name' => 'body',
                     'in' => 'body',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetQuotaPlan' => [
+            'path' => '/api/v1/quotas/{nickname}/plans/{planName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nickname',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'planName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'tenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -350,8 +966,8 @@
                 ],
             ],
         ],
-        'GetQuotaPlan' => [
-            'path' => '/api/v1/quotas/{nickname}/plans/{planName}',
+        'ListQuotasPlans' => [
+            'path' => '/api/v1/quotas/{nickname}/plans',
             'methods' => [
                 'get',
             ],
@@ -368,14 +984,6 @@
             'parameters' => [
                 [
                     'name' => 'nickname',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'planName',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
@@ -546,99 +1154,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListTunnelQuotaTimer' => [
-            'path' => '/api/v1/tunnel/{nickname}/timers',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'nickname',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateTunnelQuotaTimer' => [
-            'path' => '/api/v1/tunnel/{nickname}/timers',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'nickname',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'beginTime' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'endTime' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'timezone' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'tunnelQuotaParameter' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'slotNum' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                        'elasticReservedSlotNum' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
                     ],
                 ],
             ],

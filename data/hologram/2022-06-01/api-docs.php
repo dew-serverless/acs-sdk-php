@@ -1085,60 +1085,72 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'hologram.us-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'hologram.cn-beijing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'hologram.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'hologram.cn-hangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'hologram.cn-shanghai.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'hologram.cn-shenzhen.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'hologram.cn-hongkong.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'hologram.ap-northeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'hologram.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'hologram.ap-southeast-3.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'hologram.ap-southeast-5.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'hologram.us-east-1.aliyuncs.com',
+            'regionId' => 'cn-north-2-gov-1',
+            'endpoint' => 'hologram.cn-north-2-gov-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'hologram.eu-central-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'hologram.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'hologram.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'hologram.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'hologram.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'hologram.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'hologram.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'hologram.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'hologram.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'hologram.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'hologram.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'hologram.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'hologram.ap-south-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'hologram.cn-shanghai-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'hologram.cn-shenzhen-finance-1.aliyuncs.com',
         ],
     ],
 ];

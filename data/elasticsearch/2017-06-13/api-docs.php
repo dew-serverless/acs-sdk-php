@@ -5864,6 +5864,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'updateStrategy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateInstanceSettings' => [

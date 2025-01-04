@@ -206,6 +206,24 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'tags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -461,8 +479,8 @@
                 'post',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -525,8 +543,8 @@
                 'patch',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -682,8 +700,8 @@
                 'get',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -716,8 +734,8 @@
                 'post',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -801,8 +819,8 @@
                 'patch',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -920,8 +938,8 @@
                 'get',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -1239,8 +1257,8 @@
                 'get',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -2361,6 +2379,105 @@
                 ],
             ],
         ],
+        'DeleteDisasterRecoveryPlan' => [
+            'path' => '/disaster_recovery/{planId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StartDisasterRecoveryItem' => [
+            'path' => '/disaster_recovery/{planId}/items/{itemId}/start',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'itemId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StopDisasterRecoveryItem' => [
+            'path' => '/disaster_recovery/{planId}/items/{itemId}/stop',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'itemId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'AddDisasterRecoveryItem' => [
             'path' => '/disaster_recovery/{planId}/items',
             'methods' => [
@@ -2686,6 +2803,46 @@
             ],
             'deprecated' => false,
             'parameters' => [],
+        ],
+        'ListMetricMeta' => [
+            'path' => '/monitor/metrics/meta',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                        'minimum' => '1',
+                        'maximum' => '100000000',
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                        'minimum' => '10',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
         ],
     ],
     'endpoints' => [

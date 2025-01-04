@@ -9,8 +9,12 @@ use Dew\Acs\AcsClient;
 /**
  * @method \Dew\Acs\Result createPostPayOrder(array $arguments = [])
  * @method \Http\Promise\Promise createPostPayOrderAsync($arguments = [])
+ * @method \Dew\Acs\Result createPostPayInstance(array $arguments = [])
+ * @method \Http\Promise\Promise createPostPayInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result createPrePayOrder(array $arguments = [])
  * @method \Http\Promise\Promise createPrePayOrderAsync($arguments = [])
+ * @method \Dew\Acs\Result createPrePayInstance(array $arguments = [])
+ * @method \Http\Promise\Promise createPrePayInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteInstance(array $arguments = [])
  * @method \Http\Promise\Promise deleteInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result startInstance(array $arguments = [])

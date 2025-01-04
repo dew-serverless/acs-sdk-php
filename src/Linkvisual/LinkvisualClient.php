@@ -97,8 +97,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise checkFaceUserDoExistOnDeviceAsync($arguments = [])
  * @method \Dew\Acs\Result clearFaceDeviceDB(array $arguments = [])
  * @method \Http\Promise\Promise clearFaceDeviceDBAsync($arguments = [])
- * @method \Dew\Acs\Result detectUserFaceByUrl(array $arguments = [])
- * @method \Http\Promise\Promise detectUserFaceByUrlAsync($arguments = [])
  * @method \Dew\Acs\Result createPictureSearchApp(array $arguments = [])
  * @method \Http\Promise\Promise createPictureSearchAppAsync($arguments = [])
  * @method \Dew\Acs\Result createPictureSearchJob(array $arguments = [])

@@ -3641,7 +3641,33 @@
                 [
                     'name' => 'Ipv6Address',
                     'in' => 'query',
-                    'style' => 'simple',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionIds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NetworkInterfaceIds',
+                    'in' => 'query',
+                    'style' => 'flat',
                     'schema' => [
                         'type' => 'array',
                         'required' => false,
@@ -4241,6 +4267,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 128,
                     ],
                 ],
                 [
@@ -4249,6 +4276,85 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 256,
+                    ],
+                ],
+                [
+                    'name' => 'Permissions',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Direction' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'egress',
+                                        'ingress',
+                                    ],
+                                ],
+                                'IpProtocol' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'TCP',
+                                        'UDP',
+                                        'ICMP',
+                                        'ALL',
+                                        'GRE',
+                                        'tcp',
+                                        'udp',
+                                        'icmp',
+                                        'all',
+                                        'gre',
+                                    ],
+                                ],
+                                'PortRange' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'SourcePortRange' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Policy' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'Accept',
+                                        'Drop',
+                                        'accept',
+                                        'drop',
+                                    ],
+                                ],
+                                'DestCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SourceCidrIp' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Description' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'maxLength' => 256,
+                                ],
+                                'Priority' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => true,
+                                    'minimum' => '1',
+                                    'maximum' => '100',
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 200,
                     ],
                 ],
             ],
@@ -4420,6 +4526,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'SecurityGroupId',
@@ -4430,13 +4537,11 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
+                    'name' => 'SecurityGroupName',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
+                        'type' => 'string',
                         'required' => false,
-                        'minimum' => '1',
                     ],
                 ],
                 [
@@ -4447,15 +4552,17 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
-                        'maximum' => '50',
+                        'maximum' => '100',
                     ],
                 ],
                 [
-                    'name' => 'SecurityGroupName',
+                    'name' => 'PageNumber',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
+                        'minimum' => '1',
                     ],
                 ],
             ],

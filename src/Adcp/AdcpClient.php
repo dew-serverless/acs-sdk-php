@@ -25,8 +25,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateHubClusterFeatureAsync($arguments = [])
  * @method \Dew\Acs\Result describeUserPermissions(array $arguments = [])
  * @method \Http\Promise\Promise describeUserPermissionsAsync($arguments = [])
- * @method \Dew\Acs\Result grantUserPermissions(array $arguments = []) {@deprecated 2022-01-01}
- * @method \Http\Promise\Promise grantUserPermissionsAsync($arguments = []) {@deprecated 2022-01-01}
  * @method \Dew\Acs\Result describeHubClusterKubeconfig(array $arguments = [])
  * @method \Http\Promise\Promise describeHubClusterKubeconfigAsync($arguments = [])
  * @method \Dew\Acs\Result grantUserPermission(array $arguments = [])

@@ -420,7 +420,7 @@
             'AutoScalingPolicy' => [
                 'type' => 'object',
                 'properties' => [
-                    'scalingRules' => [
+                    'ScalingRules' => [
                         'type' => 'array',
                         'required' => false,
                         'items' => [
@@ -428,14 +428,14 @@
                             'required' => false,
                         ],
                     ],
-                    'constraints' => [
+                    'Constraints' => [
                         'type' => 'object',
                         'properties' => [
-                            'maxCapacity' => [
+                            'MaxCapacity' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
-                            'minCapacity' => [
+                            'MinCapacity' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
@@ -7886,15 +7886,15 @@
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'emr.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'emr.aliyuncs.com',
+            'endpoint' => 'emr.cn-shanghai-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-central-1',
             'endpoint' => 'emr.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'emr.cn-heyuan-acdr-1.aliyuncs.com',
         ],
     ],
 ];

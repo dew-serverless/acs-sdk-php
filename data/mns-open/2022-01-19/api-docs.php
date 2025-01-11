@@ -6,7 +6,25 @@
         'version' => '2022-01-19',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'EventMatchRule' => [
+                'type' => 'object',
+                'properties' => [
+                    'MatchState' => [
+                        'type' => 'boolean',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Prefix' => [
+                        'type' => 'string',
+                    ],
+                    'Suffix' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+        ],
     ],
     'apis' => [
         'CreateTopic' => [

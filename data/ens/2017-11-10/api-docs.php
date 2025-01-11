@@ -1990,6 +1990,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TargetOSSRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'cn-beijing',
+                            'ap-southeast-1',
+                        ],
+                    ],
+                ],
             ],
         ],
         'ExportImage' => [
@@ -3837,6 +3849,7 @@
                         'enum' => [
                             'Instance',
                             'HaVip',
+                            'NetworkPeer',
                         ],
                     ],
                 ],
@@ -5077,6 +5090,14 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'AssociateEnsEipAddress' => [
@@ -6181,6 +6202,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

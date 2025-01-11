@@ -1424,21 +1424,6 @@
                     ],
                 ],
                 [
-                    'name' => 'OverheadReservationOption',
-                    'in' => 'query',
-                    'style' => 'flat',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'EnableOverheadReservation' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
                     'name' => 'OsType',
                     'in' => 'query',
                     'schema' => [

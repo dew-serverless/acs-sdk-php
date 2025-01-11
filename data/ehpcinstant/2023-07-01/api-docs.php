@@ -1513,12 +1513,20 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'ehpcinstant.cn-shanghai.aliyuncs.com',
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'ehpcinstant.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'ehpcinstant.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'ehpcinstant.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'ehpcinstant.cn-shanghai.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shenzhen',

@@ -3867,6 +3867,23 @@
                             ],
                         ],
                     ],
+                    'quick_video_list' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'template_id' => [
+                                    'type' => 'string',
+                                ],
+                                'status' => [
+                                    'type' => 'string',
+                                ],
+                                'url' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
                     'offline_video_transcoding_list' => [
                         'type' => 'array',
                         'items' => [
@@ -3885,6 +3902,24 @@
                                     'type' => 'string',
                                 ],
                             ],
+                        ],
+                    ],
+                    'live_transcoding_subtitle_task_list' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/VideoPreviewSubtitleInfo',
+                        ],
+                    ],
+                    'quick_video_subtitle_list' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/VideoPreviewSubtitleInfo',
+                        ],
+                    ],
+                    'offline_video_transcoding_subtitle_list' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/VideoPreviewSubtitleInfo',
                         ],
                     ],
                     'master_url' => [
@@ -3930,6 +3965,51 @@
                         ],
                     ],
                     'category' => [
+                        'type' => 'string',
+                    ],
+                    'quick_video_list' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'template_id' => [
+                                    'type' => 'string',
+                                ],
+                                'status' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'offline_video_transcoding_list' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'template_id' => [
+                                    'type' => 'string',
+                                ],
+                                'status' => [
+                                    'type' => 'string',
+                                ],
+                                'keep_original_resolution' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'VideoPreviewSubtitleInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'language' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'url' => [
                         'type' => 'string',
                     ],
                 ],

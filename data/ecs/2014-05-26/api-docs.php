@@ -8968,6 +8968,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'DestinationZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ReplaceSystemDisk' => [
@@ -12102,6 +12110,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'EnableRss' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -12590,6 +12602,10 @@
                         'required' => false,
                         'properties' => [
                             'EnableSriov' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'EnableRss' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],

@@ -7,6 +7,60 @@
     ],
     'components' => [
         'schemas' => [
+            'AuthReportInterval' => [
+                'type' => 'object',
+                'properties' => [
+                    'TimeUnit' => [
+                        'type' => 'string',
+                    ],
+                    'Value' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'DisposalContent' => [
+                'type' => 'object',
+                'properties' => [
+                    'ProhibitActions' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'NotifyActions' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'AlertTitle' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'AlertContent' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'RecoveryContent' => [
+                'type' => 'object',
+                'properties' => [
+                    'RecoveryActions' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'AuthReportInterval' => [
+                        '$ref' => '#/components/schemas/AuthReportInterval',
+                    ],
+                ],
+            ],
             'Rule' => [
                 'type' => 'object',
                 'properties' => [

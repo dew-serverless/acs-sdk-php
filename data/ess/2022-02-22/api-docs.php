@@ -8548,6 +8548,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IgnoreInvalidInstance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RemoveInstances' => [

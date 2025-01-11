@@ -108,6 +108,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'MatchType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'Value' => [
                                     'type' => 'array',
                                     'required' => false,
@@ -116,10 +120,6 @@
                                         'required' => false,
                                     ],
                                     'maxItems' => 200,
-                                ],
-                                'MatchType' => [
-                                    'type' => 'string',
-                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -392,6 +392,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'MatchType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'Value' => [
                                     'type' => 'array',
                                     'required' => false,
@@ -400,10 +404,6 @@
                                         'required' => false,
                                     ],
                                     'maxItems' => 200,
-                                ],
-                                'MatchType' => [
-                                    'type' => 'string',
-                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -1046,6 +1046,25 @@
                 ],
                 [
                     'name' => 'Scope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '1000',
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

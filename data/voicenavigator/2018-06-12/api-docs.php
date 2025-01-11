@@ -2331,6 +2331,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Engine',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetAsrConfig' => [

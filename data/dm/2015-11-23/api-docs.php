@@ -671,6 +671,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Headers',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'BatchSendMail' => [
@@ -766,6 +774,14 @@
                 ],
                 [
                     'name' => 'UnSubscribeFilterLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Headers',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

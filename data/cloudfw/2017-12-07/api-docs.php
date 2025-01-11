@@ -7788,6 +7788,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'MaxSdl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
             ],
         ],
         'ModifyObjectGroupOperation' => [

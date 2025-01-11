@@ -1810,6 +1810,14 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
+                                'User' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Address' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'ProxyType' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -1818,21 +1826,13 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Address' => [
+                                'Password' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
                                 'Port' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'User' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Password' => [
-                                    'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
@@ -2062,7 +2062,7 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'ProxyType' => [
+                                'User' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -2070,21 +2070,21 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Address' => [
+                                'ProxyType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Port' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
+                                'Address' => [
+                                    'type' => 'string',
                                     'required' => false,
                                 ],
                                 'Password' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'User' => [
-                                    'type' => 'string',
+                                'Port' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                     'required' => false,
                                 ],
                             ],

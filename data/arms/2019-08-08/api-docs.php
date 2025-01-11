@@ -2657,6 +2657,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'Upload' => [
@@ -3531,6 +3539,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Workspace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateRumUploadFileUrl' => [
@@ -3718,6 +3734,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Workspace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetRumApps' => [
@@ -3796,6 +3820,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Workspace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3912,6 +3944,14 @@
                 ],
                 [
                     'name' => 'RealRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Workspace',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

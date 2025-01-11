@@ -279,6 +279,20 @@
                     ],
                 ],
             ],
+            'ConsumerInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'consumerId' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'enable' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
             'DashboardFilter' => [
                 'type' => 'object',
                 'properties' => [

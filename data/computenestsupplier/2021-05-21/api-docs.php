@@ -2668,7 +2668,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -2685,7 +2685,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
-                        'required' => true,
+                        'required' => false,
                         'properties' => [
                             'Url' => [
                                 'type' => 'string',
@@ -2817,6 +2817,14 @@
                 ],
                 [
                     'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PermissionType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3631,6 +3639,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'RegionId',

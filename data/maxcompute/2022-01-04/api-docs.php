@@ -3832,6 +3832,10 @@
                                     'type' => 'any',
                                 ],
                             ],
+                            'eta' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

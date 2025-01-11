@@ -2259,6 +2259,14 @@
         'defaultVersion' => '2024-06-28',
     ],
     [
+        'code' => 'RAI',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-07-01',
+        ],
+        'defaultVersion' => '2024-07-01',
+    ],
+    [
         'code' => 'IQS',
         'style' => 'RPC',
         'versions' => [

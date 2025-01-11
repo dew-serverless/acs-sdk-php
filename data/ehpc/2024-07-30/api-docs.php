@@ -179,6 +179,12 @@
                                 'MountDir' => [
                                     'type' => 'string',
                                 ],
+                                'Device' => [
+                                    'type' => 'string',
+                                ],
+                                'SnapshotId' => [
+                                    'type' => 'string',
+                                ],
                             ],
                         ],
                     ],
@@ -728,6 +734,21 @@
                         'required' => false,
                         'properties' => [
                             'EnableComputeLoadMonitor' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SchedulerSpec',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'EnableTopologyAwareness' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],

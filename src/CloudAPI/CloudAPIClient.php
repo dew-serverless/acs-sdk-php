@@ -19,6 +19,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listPrivateDNSAsync($arguments = [])
  * @method \Dew\Acs\Result updatePrivateDNS(array $arguments = [])
  * @method \Http\Promise\Promise updatePrivateDNSAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInstanceVpcAttributeForConsole(array $arguments = [])
+ * @method \Http\Promise\Promise modifyInstanceVpcAttributeForConsoleAsync($arguments = [])
  * @method \Dew\Acs\Result createInstance(array $arguments = [])
  * @method \Http\Promise\Promise createInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteInstance(array $arguments = [])

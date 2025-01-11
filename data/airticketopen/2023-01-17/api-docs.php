@@ -161,6 +161,10 @@
                                     'required' => false,
                                 ],
                             ],
+                            'service_quality' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

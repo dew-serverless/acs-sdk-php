@@ -393,6 +393,7 @@
         'DescribeFileModerationResult' => [
             'methods' => [
                 'post',
+                'get',
             ],
             'schemes' => [
                 'https',

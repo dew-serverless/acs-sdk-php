@@ -821,6 +821,7 @@
                                     'required' => false,
                                     'enum' => [
                                         '1',
+                                        '2',
                                     ],
                                 ],
                                 'Name' => [
@@ -1097,6 +1098,7 @@
                                     'required' => false,
                                     'enum' => [
                                         '1',
+                                        '2',
                                     ],
                                 ],
                                 'Name' => [

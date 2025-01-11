@@ -31,6 +31,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise cardOcrAsync($arguments = []) {@deprecated 2022-08-09}
  * @method \Dew\Acs\Result faceGuardRisk(array $arguments = [])
  * @method \Http\Promise\Promise faceGuardRiskAsync($arguments = [])
+ * @method \Dew\Acs\Result id2MetaPeriodVerifyIntl(array $arguments = [])
+ * @method \Http\Promise\Promise id2MetaPeriodVerifyIntlAsync($arguments = [])
  */
 final class CloudauthIntlClient extends AcsClient
 {

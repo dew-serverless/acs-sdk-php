@@ -1124,9 +1124,6 @@
                             'type' => 'string',
                         ],
                     ],
-                    'mode' => [
-                        'type' => 'string',
-                    ],
                     'filterInvalid' => [
                         'type' => 'boolean',
                     ],
@@ -4474,6 +4471,16 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'hot_ttl' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'infrequentAccessTTL' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -4573,6 +4580,16 @@
                             ],
                             'mode' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'hot_ttl' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'infrequentAccessTTL' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                                 'required' => false,
                             ],
                         ],

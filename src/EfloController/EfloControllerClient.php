@@ -55,8 +55,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSendFileResultsAsync($arguments = [])
  * @method \Dew\Acs\Result sendFile(array $arguments = [])
  * @method \Http\Promise\Promise sendFileAsync($arguments = [])
+ * @method \Dew\Acs\Result listMachineTypes(array $arguments = [])
+ * @method \Http\Promise\Promise listMachineTypesAsync($arguments = [])
  * @method \Dew\Acs\Result createDiagnosticTask(array $arguments = [])
  * @method \Http\Promise\Promise createDiagnosticTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result listNodeGroups(array $arguments = [])
+ * @method \Http\Promise\Promise listNodeGroupsAsync($arguments = [])
  */
 final class EfloControllerClient extends AcsClient
 {

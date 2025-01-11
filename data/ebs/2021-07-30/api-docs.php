@@ -2921,6 +2921,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DiskIdPattern',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeEvents' => [

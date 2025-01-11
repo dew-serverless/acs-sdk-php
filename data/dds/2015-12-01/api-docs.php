@@ -4722,6 +4722,19 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'CharacterType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'db',
+                            'cs',
+                            'normal',
+                        ],
+                    ],
+                ],
             ],
         ],
         'ResetAccountPassword' => [
@@ -4817,6 +4830,19 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CharacterType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'db',
+                            'cs',
+                            'normal',
+                        ],
                     ],
                 ],
             ],

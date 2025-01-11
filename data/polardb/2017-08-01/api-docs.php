@@ -1588,6 +1588,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TableMeta',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ModifyRowCompression',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyDBClusterDescription' => [

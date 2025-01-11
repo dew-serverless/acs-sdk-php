@@ -4059,11 +4059,11 @@
                     ],
                 ],
                 [
-                    'name' => 'JobName',
+                    'name' => 'Name',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4359,6 +4359,15 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'JobName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'deprecated' => true,
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateDIJob' => [
@@ -4376,12 +4385,12 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'DIJobId',
+                    'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4630,6 +4639,16 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DIJobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => true,
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDIJob' => [
@@ -4647,12 +4666,12 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'DIJobId',
+                    'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4661,6 +4680,16 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DIJobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -4681,12 +4710,12 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'DIJobId',
+                    'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4695,6 +4724,16 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DIJobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -4715,7 +4754,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'DIJobId',
+                    'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4746,21 +4785,34 @@
                             ],
                             'FailoverSettings' => [
                                 'type' => 'object',
+                                'deprecated' => true,
                                 'required' => false,
                                 'properties' => [
                                     'Interval' => [
                                         'type' => 'integer',
                                         'format' => 'int64',
+                                        'deprecated' => true,
                                         'required' => false,
                                     ],
                                     'UpperLimit' => [
                                         'type' => 'integer',
                                         'format' => 'int64',
+                                        'deprecated' => true,
                                         'required' => false,
                                     ],
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'DIJobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => true,
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4780,7 +4832,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'DIJobId',
+                    'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4805,6 +4857,16 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DIJobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => true,
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDIJobLog' => [
@@ -4822,12 +4884,12 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'DIJobId',
+                    'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4845,6 +4907,16 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DIJobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -5223,11 +5295,21 @@
                                     'format' => 'int64',
                                     'required' => false,
                                 ],
-                                'DdlReportTags' => [
+                                'DdlTypes' => [
                                     'type' => 'array',
                                     'required' => false,
                                     'items' => [
                                         'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                                'DdlReportTags' => [
+                                    'type' => 'array',
+                                    'deprecated' => true,
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'deprecated' => true,
                                         'required' => false,
                                     ],
                                 ],
@@ -5287,9 +5369,15 @@
                                     ],
                                 ],
                             ],
+                            'MuteInterval' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
                             'InhibitionInterval' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                         ],
@@ -5312,12 +5400,12 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'DIAlarmRuleId',
+                    'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -5341,6 +5429,16 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DIJobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => false,
                         'required' => false,
                     ],
                 ],
@@ -5369,11 +5467,21 @@
                                     'format' => 'int64',
                                     'required' => false,
                                 ],
-                                'DdlReportTags' => [
+                                'DdlTypes' => [
                                     'type' => 'array',
                                     'required' => false,
                                     'items' => [
                                         'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                                'DdlReportTags' => [
+                                    'type' => 'array',
+                                    'deprecated' => true,
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'deprecated' => true,
                                         'required' => false,
                                     ],
                                 ],
@@ -5433,9 +5541,15 @@
                                     ],
                                 ],
                             ],
+                            'MuteInterval' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
                             'InhibitionInterval' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                         ],
@@ -5450,11 +5564,12 @@
                     ],
                 ],
                 [
-                    'name' => 'DIJobId',
+                    'name' => 'DIAlarmRuleId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -5475,7 +5590,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'DIAlarmRuleId',
+                    'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -5489,6 +5604,17 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'deprecated' => false,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DIAlarmRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -6421,6 +6547,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => false,
                         'required' => false,
                         'enum' => [
                             'Prod',
@@ -7316,6 +7443,18 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnvType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Prod',
+                            'Dev',
+                        ],
                     ],
                 ],
                 [
@@ -9400,6 +9539,485 @@
                 ],
             ],
         ],
+        'DeleteDataAssetTag' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Key',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Values',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'minLength' => 0,
+                            'maxLength' => 128,
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 20,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateDataAssetTag' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Key',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Values',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'minLength' => 0,
+                            'maxLength' => 128,
+                            'pattern' => '^([^\\x00-\\xff]|[\\w.,;/@\\n-])+$',
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 0,
+                        'maxLength' => 1024,
+                    ],
+                ],
+                [
+                    'name' => 'Managers',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 20,
+                    ],
+                ],
+            ],
+        ],
+        'ListDataAssetTags' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Key',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Category',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Normal',
+                            'System',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '200',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'TagDataAssets' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => true,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 128,
+                                    'pattern' => '^[\\u4E00-\\u9FA5A-Za-z0-9_\\-@#*<>|\\[\\]()+=&%$!~]+$',
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'minLength' => 0,
+                                    'maxLength' => 128,
+                                    'pattern' => '^[\\u4E00-\\u9FA5A-Za-z0-9_\\-@#*<>|\\[\\]()+=&%$.!~]+$',
+                                ],
+                            ],
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'DataAssetIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => true,
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'DataAssetType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'ACS::DataWorks::Task',
+                            'ACS::DataWorks::Table',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnvType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Dev',
+                            'Prod',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AutoTraceEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UnTagDataAssets' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => true,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 128,
+                                    'pattern' => '^[\\u4E00-\\u9FA5A-Za-z0-9_\\-@#*<>|\\[\\]()+=&%$!~]+$',
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'minLength' => 0,
+                                    'maxLength' => 128,
+                                    'pattern' => '^[\\u4E00-\\u9FA5A-Za-z0-9_\\-@#*<>|\\[\\]()+=&%$!.~]+$',
+                                ],
+                            ],
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'DataAssetIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => true,
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'DataAssetType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'ACS::DataWorks::Task',
+                            'ACS::DataWorks::Table',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnvType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Prod',
+                            'Dev',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListDataAssets' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => true,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'pattern' => '^[\\u4E00-\\u9FA5A-Za-z0-9_\\-@#*<>|\\[\\]()+=&%$!~]+$',
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'pattern' => '^[\\u4E00-\\u9FA5A-Za-z0-9_\\-@#*<>|\\[\\]()+=&%$!~]+$',
+                                ],
+                            ],
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'DataAssetIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'DataAssetType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'ACS::DataWorks::Table',
+                            'ACS::DataWorks::Task',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'EnvType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Prod',
+                            'Dev',
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetJobStatus' => [
             'methods' => [
                 'get',
@@ -9490,6 +10108,90 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '200',
+                    ],
+                ],
+            ],
+        ],
+        'CreateDataAssetTag' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Key',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                        'pattern' => '^([^\\x00-\\xff]|[\\w.,;/@\\n-])+$',
+                    ],
+                ],
+                [
+                    'name' => 'Values',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'minLength' => 0,
+                            'maxLength' => 128,
+                            'pattern' => '^([^\\x00-\\xff]|[\\w.,;/@\\n-])+$',
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 0,
+                        'maxLength' => 1024,
+                    ],
+                ],
+                [
+                    'name' => 'ValueType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Boolean',
+                            'Int',
+                            'String',
+                            'Double',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Managers',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 20,
                     ],
                 ],
             ],

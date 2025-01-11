@@ -2794,6 +2794,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AllowUserToLoginWithPasskey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetSecurityPreference' => [

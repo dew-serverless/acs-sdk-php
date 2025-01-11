@@ -1292,7 +1292,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -1301,7 +1301,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -1310,7 +1310,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [

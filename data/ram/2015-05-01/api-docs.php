@@ -1285,6 +1285,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CascadingDelete',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListPolicies' => [

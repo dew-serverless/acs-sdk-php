@@ -235,6 +235,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyLosslessRuleAsync($arguments = [])
  * @method \Dew\Acs\Result fetchLosslessRuleList(array $arguments = [])
  * @method \Http\Promise\Promise fetchLosslessRuleListAsync($arguments = [])
+ * @method \Dew\Acs\Result getLocalityRule(array $arguments = [])
+ * @method \Http\Promise\Promise getLocalityRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result updateLocalityRule(array $arguments = [])
+ * @method \Http\Promise\Promise updateLocalityRuleAsync($arguments = [])
  * @method \Dew\Acs\Result getApplicationList(array $arguments = [])
  * @method \Http\Promise\Promise getApplicationListAsync($arguments = [])
  * @method \Dew\Acs\Result createMseServiceApplication(array $arguments = []) {@deprecated 2019-05-31}
@@ -253,6 +257,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyGovernanceKubernetesClusterAsync($arguments = [])
  * @method \Dew\Acs\Result getGovernanceKubernetesCluster(array $arguments = [])
  * @method \Http\Promise\Promise getGovernanceKubernetesClusterAsync($arguments = [])
+ * @method \Dew\Acs\Result listNamespaces(array $arguments = [])
+ * @method \Http\Promise\Promise listNamespacesAsync($arguments = [])
+ * @method \Dew\Acs\Result createNamespace(array $arguments = [])
+ * @method \Http\Promise\Promise createNamespaceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteNamespace(array $arguments = [])
  * @method \Http\Promise\Promise deleteNamespaceAsync($arguments = [])
  * @method \Dew\Acs\Result queryNamespace(array $arguments = [])
@@ -471,10 +479,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result updateNacosGrayConfig(array $arguments = [])
  * @method \Http\Promise\Promise updateNacosGrayConfigAsync($arguments = [])
- * @method \Dew\Acs\Result createNamespace(array $arguments = [])
- * @method \Http\Promise\Promise createNamespaceAsync($arguments = [])
- * @method \Dew\Acs\Result listNamespaces(array $arguments = [])
- * @method \Http\Promise\Promise listNamespacesAsync($arguments = [])
  */
 final class MseClient extends AcsClient
 {

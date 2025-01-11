@@ -255,6 +255,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listEiamRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result listEiamInstances(array $arguments = [])
  * @method \Http\Promise\Promise listEiamInstancesAsync($arguments = [])
+ * @method \Dew\Acs\Result getInstanceLicense(array $arguments = [])
+ * @method \Http\Promise\Promise getInstanceLicenseAsync($arguments = [])
  */
 final class EiamClient extends AcsClient
 {

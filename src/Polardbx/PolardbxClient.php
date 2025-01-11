@@ -153,6 +153,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeArchiveTableListAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result switchGdnMemberRole(array $arguments = [])
+ * @method \Http\Promise\Promise switchGdnMemberRoleAsync($arguments = [])
+ * @method \Dew\Acs\Result describeGdnInstances(array $arguments = [])
+ * @method \Http\Promise\Promise describeGdnInstancesAsync($arguments = [])
  */
 final class PolardbxClient extends AcsClient
 {

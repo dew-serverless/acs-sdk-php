@@ -175,6 +175,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listWaypointsAsync($arguments = [])
  * @method \Dew\Acs\Result listServiceAccounts(array $arguments = [])
  * @method \Http\Promise\Promise listServiceAccountsAsync($arguments = [])
+ * @method \Dew\Acs\Result updateMeshMultiClusterNetwork(array $arguments = [])
+ * @method \Http\Promise\Promise updateMeshMultiClusterNetworkAsync($arguments = [])
+ * @method \Dew\Acs\Result describeMeshMultiClusterNetwork(array $arguments = [])
+ * @method \Http\Promise\Promise describeMeshMultiClusterNetworkAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyPilotEipResource(array $arguments = [])
+ * @method \Http\Promise\Promise modifyPilotEipResourceAsync($arguments = [])
+ * @method \Dew\Acs\Result updateGuestClusterConfig(array $arguments = [])
+ * @method \Http\Promise\Promise updateGuestClusterConfigAsync($arguments = [])
  * @method \Dew\Acs\Result addVMIntoServiceMesh(array $arguments = []) {@deprecated 2020-01-11}
  * @method \Http\Promise\Promise addVMIntoServiceMeshAsync($arguments = []) {@deprecated 2020-01-11}
  * @method \Dew\Acs\Result removeVMFromServiceMesh(array $arguments = []) {@deprecated 2020-01-11}
@@ -187,14 +195,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeVMsInServiceMeshAsync($arguments = []) {@deprecated 2020-01-11}
  * @method \Dew\Acs\Result describeServiceMeshVMs(array $arguments = []) {@deprecated 2020-01-11}
  * @method \Http\Promise\Promise describeServiceMeshVMsAsync($arguments = []) {@deprecated 2020-01-11}
- * @method \Dew\Acs\Result updateMeshMultiClusterNetwork(array $arguments = [])
- * @method \Http\Promise\Promise updateMeshMultiClusterNetworkAsync($arguments = [])
- * @method \Dew\Acs\Result describeMeshMultiClusterNetwork(array $arguments = [])
- * @method \Http\Promise\Promise describeMeshMultiClusterNetworkAsync($arguments = [])
- * @method \Dew\Acs\Result modifyPilotEipResource(array $arguments = [])
- * @method \Http\Promise\Promise modifyPilotEipResourceAsync($arguments = [])
- * @method \Dew\Acs\Result updateGuestClusterConfig(array $arguments = [])
- * @method \Http\Promise\Promise updateGuestClusterConfigAsync($arguments = [])
  */
 final class ServicemeshClient extends AcsClient
 {

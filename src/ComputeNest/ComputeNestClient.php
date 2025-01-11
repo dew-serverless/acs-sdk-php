@@ -73,6 +73,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createServiceUsageAsync($arguments = [])
  * @method \Dew\Acs\Result updateServiceUsage(array $arguments = [])
  * @method \Http\Promise\Promise updateServiceUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRegions(array $arguments = [])
+ * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result checkServiceDeployable(array $arguments = [])

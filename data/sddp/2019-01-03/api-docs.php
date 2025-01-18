@@ -1354,6 +1354,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TemplateRuleIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ModelRuleIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteRule' => [
@@ -1553,6 +1569,22 @@
                 ],
                 [
                     'name' => 'SourceIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateRuleIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ModelRuleIds',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

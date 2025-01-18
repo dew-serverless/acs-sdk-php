@@ -61,6 +61,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createDiagnosticTaskAsync($arguments = [])
  * @method \Dew\Acs\Result listNodeGroups(array $arguments = [])
  * @method \Http\Promise\Promise listNodeGroupsAsync($arguments = [])
+ * @method \Dew\Acs\Result stopNodes(array $arguments = [])
+ * @method \Http\Promise\Promise stopNodesAsync($arguments = [])
  */
 final class EfloControllerClient extends AcsClient
 {

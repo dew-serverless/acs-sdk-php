@@ -614,6 +614,7 @@
                             'required' => false,
                             'enum' => [
                                 'asr_result',
+                                'debug',
                             ],
                         ],
                     ],
@@ -872,6 +873,23 @@
                                     'voiceFileUrl' => [
                                         'type' => 'string',
                                         'required' => true,
+                                    ],
+                                    'asrModelCode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                        'enum' => [
+                                            'asr',
+                                            'paraformer',
+                                        ],
+                                    ],
+                                    'level' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                        'enum' => [
+                                            'low',
+                                            'middle',
+                                            'high',
+                                        ],
                                     ],
                                 ],
                             ],

@@ -211,6 +211,9 @@
                         'type' => 'string',
                         'required' => true,
                     ],
+                    'markdownText' => [
+                        'type' => 'string',
+                    ],
                     'displayLink' => [
                         'type' => 'string',
                         'required' => true,

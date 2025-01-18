@@ -74,6 +74,9 @@
                     'AccessToken' => [
                         'type' => 'string',
                     ],
+                    'TrafficMode' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'Instance' => [
@@ -511,6 +514,9 @@
                         'type' => 'string',
                     ],
                     'AppVersion' => [
+                        'type' => 'string',
+                    ],
+                    'TrafficState' => [
                         'type' => 'string',
                     ],
                 ],

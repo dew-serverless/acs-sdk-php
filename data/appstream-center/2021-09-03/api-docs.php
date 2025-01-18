@@ -90,6 +90,14 @@
                     ],
                 ],
                 [
+                    'name' => 'ClientType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ClientOS',
                     'in' => 'formData',
                     'schema' => [
@@ -179,6 +187,14 @@
                 ],
                 [
                     'name' => 'ConnectionProperties',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnvironmentConfig',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

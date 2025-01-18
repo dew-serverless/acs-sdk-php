@@ -5082,6 +5082,14 @@
                                 'required' => false,
                                 'maxLength' => 128,
                             ],
+                            'EncryptKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VerificationToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -5356,6 +5364,14 @@
                                 'required' => false,
                             ],
                             'AppSecret' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'EncryptKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VerificationToken' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

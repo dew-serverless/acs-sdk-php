@@ -7411,6 +7411,14 @@
                         'maximum' => '9223372036854775807',
                     ],
                 ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyDataCorrectExecSQL' => [
@@ -7457,6 +7465,14 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
+                    ],
+                ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -8036,6 +8052,14 @@
                         'maximum' => '9223372036854775807',
                     ],
                 ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RestartDataCorrectSQLJob' => [
@@ -8095,6 +8119,14 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
+                    ],
+                ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -8306,6 +8338,14 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
+                    ],
+                ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

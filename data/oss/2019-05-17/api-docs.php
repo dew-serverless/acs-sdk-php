@@ -326,6 +326,9 @@
                             'Comment' => [
                                 'type' => 'string',
                             ],
+                            'BlockPublicAccess' => [
+                                'type' => 'boolean',
+                            ],
                         ],
                     ],
                 ],

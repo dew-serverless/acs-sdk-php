@@ -2576,7 +2576,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2584,7 +2585,8 @@
                     'name' => 'ContainerId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -2624,7 +2626,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2632,7 +2635,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2656,7 +2660,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2664,7 +2669,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2696,7 +2702,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2704,7 +2711,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2736,7 +2744,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2744,7 +2753,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2776,7 +2786,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -2784,7 +2795,8 @@
                     'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2808,7 +2820,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2824,7 +2837,8 @@
                     'name' => 'ContainerId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -2886,7 +2900,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2894,7 +2909,8 @@
                     'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2940,7 +2956,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -2972,7 +2989,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3004,7 +3022,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3012,7 +3031,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3036,7 +3056,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3044,7 +3065,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3076,7 +3098,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3084,7 +3107,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3116,7 +3140,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3124,7 +3149,8 @@
                     'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3156,7 +3182,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -3164,7 +3191,8 @@
                     'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3188,7 +3216,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3250,7 +3279,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                         'pattern' => '',
                     ],
@@ -3283,7 +3313,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3291,7 +3322,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3315,7 +3347,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3323,7 +3356,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3355,7 +3389,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3363,7 +3398,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3395,7 +3431,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3403,7 +3440,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3435,7 +3473,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -3443,7 +3482,8 @@
                     'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3467,7 +3507,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3529,7 +3570,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3561,7 +3603,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3569,7 +3612,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3593,7 +3637,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3601,7 +3646,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3633,7 +3679,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3641,7 +3688,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3673,7 +3721,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3681,7 +3730,8 @@
                     'name' => 'Id',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3713,7 +3763,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -3721,7 +3772,8 @@
                     'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3745,7 +3797,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3807,7 +3860,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                         'pattern' => '',
                     ],
@@ -3863,7 +3917,8 @@
                     'name' => 'ProjectId',
                     'in' => 'formData',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3895,7 +3950,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3935,7 +3991,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -3967,7 +4024,8 @@
                     'name' => 'ProjectId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                 ],
@@ -6443,6 +6501,20 @@
                     ],
                 ],
                 [
+                    'name' => 'Ids',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'Owner',
                     'in' => 'formData',
                     'schema' => [
@@ -7754,6 +7826,10 @@
                                                             'type' => 'string',
                                                             'required' => false,
                                                         ],
+                                                        'Expression' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
                                                     ],
                                                 ],
                                                 'Warned' => [
@@ -7768,6 +7844,10 @@
                                                             'type' => 'string',
                                                             'required' => false,
                                                         ],
+                                                        'Expression' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
                                                     ],
                                                 ],
                                                 'Critical' => [
@@ -7779,6 +7859,10 @@
                                                             'required' => false,
                                                         ],
                                                         'Value' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Expression' => [
                                                             'type' => 'string',
                                                             'required' => false,
                                                         ],
@@ -8129,6 +8213,10 @@
                                                             'type' => 'string',
                                                             'required' => false,
                                                         ],
+                                                        'Expression' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
                                                     ],
                                                 ],
                                                 'Warned' => [
@@ -8143,6 +8231,10 @@
                                                             'type' => 'string',
                                                             'required' => false,
                                                         ],
+                                                        'Expression' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
                                                     ],
                                                 ],
                                                 'Critical' => [
@@ -8154,6 +8246,10 @@
                                                             'required' => false,
                                                         ],
                                                         'Value' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Expression' => [
                                                             'type' => 'string',
                                                             'required' => false,
                                                         ],
@@ -8713,34 +8809,6 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Target',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'Type' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'DatabaseType' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'enum' => [],
-                            ],
-                            'TableGuid' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'PartitionSpec' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
                     ],
                 ],
                 [
@@ -9539,6 +9607,160 @@
                 ],
             ],
         ],
+        'ListDataQualityRuleTemplates' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CreationSource',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DirectoryPath',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '200',
+                    ],
+                ],
+            ],
+        ],
+        'CreateDataAssetTag' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Key',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                        'pattern' => '^([^\\x00-\\xff]|[\\w.,;/@\\n-])+$',
+                    ],
+                ],
+                [
+                    'name' => 'Values',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'minLength' => 0,
+                            'maxLength' => 128,
+                            'pattern' => '^([^\\x00-\\xff]|[\\w.,;/@\\n-])+$',
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 0,
+                        'maxLength' => 1024,
+                    ],
+                ],
+                [
+                    'name' => 'ValueType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Boolean',
+                            'Int',
+                            'String',
+                            'Double',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Managers',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 20,
+                    ],
+                ],
+            ],
+        ],
         'DeleteDataAssetTag' => [
             'methods' => [
                 'post',
@@ -10038,160 +10260,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ListDataQualityRuleTemplates' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ProjectId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CreationSource',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DirectoryPath',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '200',
-                    ],
-                ],
-            ],
-        ],
-        'CreateDataAssetTag' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Key',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'minLength' => 1,
-                        'maxLength' => 128,
-                        'pattern' => '^([^\\x00-\\xff]|[\\w.,;/@\\n-])+$',
-                    ],
-                ],
-                [
-                    'name' => 'Values',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                            'minLength' => 0,
-                            'maxLength' => 128,
-                            'pattern' => '^([^\\x00-\\xff]|[\\w.,;/@\\n-])+$',
-                        ],
-                        'minItems' => 0,
-                        'maxItems' => 20,
-                    ],
-                ],
-                [
-                    'name' => 'Description',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'minLength' => 0,
-                        'maxLength' => 1024,
-                    ],
-                ],
-                [
-                    'name' => 'ValueType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'Boolean',
-                            'Int',
-                            'String',
-                            'Double',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Managers',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'minItems' => 0,
-                        'maxItems' => 20,
                     ],
                 ],
             ],

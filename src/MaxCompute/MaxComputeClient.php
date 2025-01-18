@@ -99,12 +99,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listUsersAsync($arguments = [])
  * @method \Dew\Acs\Result getQuotaUsage(array $arguments = [])
  * @method \Http\Promise\Promise getQuotaUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result listJobMetric(array $arguments = [])
+ * @method \Http\Promise\Promise listJobMetricAsync($arguments = [])
  * @method \Dew\Acs\Result listStorageTablesInfo(array $arguments = [])
  * @method \Http\Promise\Promise listStorageTablesInfoAsync($arguments = [])
  * @method \Dew\Acs\Result listStoragePartitionsInfo(array $arguments = [])
  * @method \Http\Promise\Promise listStoragePartitionsInfoAsync($arguments = [])
  * @method \Dew\Acs\Result listJobInfos(array $arguments = [])
  * @method \Http\Promise\Promise listJobInfosAsync($arguments = [])
+ * @method \Dew\Acs\Result listJobSnapshotInfos(array $arguments = [])
+ * @method \Http\Promise\Promise listJobSnapshotInfosAsync($arguments = [])
  * @method \Dew\Acs\Result getRunningJobs(array $arguments = [])
  * @method \Http\Promise\Promise getRunningJobsAsync($arguments = [])
  * @method \Dew\Acs\Result killJobs(array $arguments = [])
@@ -159,6 +163,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getMmsTaskAsync($arguments = [])
  * @method \Dew\Acs\Result listMmsTaskLogs(array $arguments = [])
  * @method \Http\Promise\Promise listMmsTaskLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result listComputeMetricsByInstance(array $arguments = [])
+ * @method \Http\Promise\Promise listComputeMetricsByInstanceAsync($arguments = [])
  */
 final class MaxComputeClient extends AcsClient
 {

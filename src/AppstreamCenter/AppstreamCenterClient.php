@@ -75,6 +75,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getConnectionTicketAsync($arguments = [])
  * @method \Dew\Acs\Result unbind(array $arguments = [])
  * @method \Http\Promise\Promise unbindAsync($arguments = [])
+ * @method \Dew\Acs\Result listBindInfo(array $arguments = [])
+ * @method \Http\Promise\Promise listBindInfoAsync($arguments = [])
  * @method \Dew\Acs\Result createImageFromAppInstanceGroup(array $arguments = [])
  * @method \Http\Promise\Promise createImageFromAppInstanceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result getDebugAppInstance(array $arguments = [])

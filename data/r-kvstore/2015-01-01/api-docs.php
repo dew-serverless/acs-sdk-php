@@ -5001,6 +5001,18 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'NoShardBackup',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'True',
+                            'False',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeMonitorItems' => [

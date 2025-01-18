@@ -253,8 +253,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteRcuSceneAsync($arguments = []) {@since ip_1.0}
  * @method \Dew\Acs\Result updateRcuScene(array $arguments = []) {@since ip_1.0}
  * @method \Http\Promise\Promise updateRcuSceneAsync($arguments = []) {@since ip_1.0}
+ * @method \Dew\Acs\Result executeScene(array $arguments = []) {@since ip_1.0}
+ * @method \Http\Promise\Promise executeSceneAsync($arguments = []) {@since ip_1.0}
  * @method \Dew\Acs\Result querySceneList(array $arguments = []) {@since ip_1.0}
  * @method \Http\Promise\Promise querySceneListAsync($arguments = []) {@since ip_1.0}
+ * @method \Dew\Acs\Result queryRoomStatus(array $arguments = []) {@since ip_1.0}
+ * @method \Http\Promise\Promise queryRoomStatusAsync($arguments = []) {@since ip_1.0}
+ * @method \Dew\Acs\Result queryRoomControlDevicesAndStatus(array $arguments = []) {@since ip_1.0}
+ * @method \Http\Promise\Promise queryRoomControlDevicesAndStatusAsync($arguments = []) {@since ip_1.0}
  * @method \Dew\Acs\Result listAllProvinces(array $arguments = []) {@since ip_1.0}
  * @method \Http\Promise\Promise listAllProvincesAsync($arguments = []) {@since ip_1.0}
  * @method \Dew\Acs\Result listCitiesByProvince(array $arguments = []) {@since ip_1.0}
@@ -377,8 +383,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getUnionIdAsync($arguments = []) {@since ip_1.0}
  * @method \Dew\Acs\Result hotelQrBind(array $arguments = []) {@since ip_1.0}
  * @method \Http\Promise\Promise hotelQrBindAsync($arguments = []) {@since ip_1.0}
- * @method \Dew\Acs\Result queryRoomControlDevicesAndStatus(array $arguments = []) {@since ip_1.0}
- * @method \Http\Promise\Promise queryRoomControlDevicesAndStatusAsync($arguments = []) {@since ip_1.0}
  */
 final class AliGenieClient extends AcsClient
 {

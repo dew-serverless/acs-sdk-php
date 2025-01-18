@@ -1988,5 +1988,13 @@
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'gwlb.cn-hangzhou.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'gwlb.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'gwlb.ap-northeast-1.aliyuncs.com',
+        ],
     ],
 ];

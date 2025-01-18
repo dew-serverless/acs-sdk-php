@@ -253,6 +253,609 @@
         ],
     ],
     'apis' => [
+        'GetTextbookAssistantToken' => [
+            'path' => '/api/v1/textbookAssistant/teachingResource/GetToken',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'deviceId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'model' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListTextbookAssistantGradeVolumes' => [
+            'path' => '/api/v1/textbookAssistant/teachingResource/ListGradeVolumes',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'scenario' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'SYNC',
+                                    'EXPAND',
+                                ],
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListTextbookAssistantBooks' => [
+            'path' => '/api/v1/textbookAssistant/teachingResource/ListBooks',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'bookId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'grade' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'volume' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'version' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'page' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'maxResults' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListTextbookAssistantBookDirectories' => [
+            'path' => '/api/v1/textbookAssistant/teachingResource/ListBookDirectories',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'bookId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'scenario' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'SYNC',
+                                    'EXPAND',
+                                    'ALL',
+                                ],
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListTextbookAssistantArticles' => [
+            'path' => '/api/v1/textbookAssistant/teachingResource/ListArticles',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'directoryId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteTextbookAssistantStartConversation' => [
+            'path' => '/api/v1/textbookAssistant/dialogue/StartConversation',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'scenario' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'SYNC',
+                                    'EXPAND',
+                                ],
+                            ],
+                            'articleId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteTextbookAssistantDialogue' => [
+            'path' => '/api/v1/textbookAssistant/dialogue/ExecuteDialogue',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'scenario' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'SYNC',
+                                    'EXPAND',
+                                ],
+                            ],
+                            'chatId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'userMessage' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteTextbookAssistantTranslate' => [
+            'path' => '/api/v1/textbookAssistant/dialogue/ExecuteTranslate',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'scenario' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'SYNC',
+                                    'EXPAND',
+                                ],
+                            ],
+                            'chatId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'assistant' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteTextbookAssistantSuggestion' => [
+            'path' => '/api/v1/textbookAssistant/dialogue/Suggestion',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'chatId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'assistant' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'scenario' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'SYNC',
+                                    'EXPAND',
+                                ],
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteTextbookAssistantDifficulty' => [
+            'path' => '/api/v1/textbookAssistant/dialogue/ExecuteDifficulty',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'scenario' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'SYNC',
+                                    'EXPAND',
+                                ],
+                            ],
+                            'chatId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'assistant' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'action' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'UP',
+                                    'DOWN',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteTextbookAssistantRefineByContext' => [
+            'path' => '/api/v1/textbookAssistant/dialogue/RefineByContext',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'scenario' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'SYNC',
+                                    'EXPAND',
+                                ],
+                            ],
+                            'chatId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'user' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteTextbookAssistantGrammarCheck' => [
+            'path' => '/api/v1/textbookAssistant/dialogue/ExecuteGrammarCheck',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'scenario' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'SYNC',
+                                    'EXPAND',
+                                ],
+                            ],
+                            'chatId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'user' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteTextbookAssistantRetryConversation' => [
+            'path' => '/api/v1/textbookAssistant/dialogue/RetryConversation',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'scenario' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'SYNC',
+                                    'EXPAND',
+                                ],
+                            ],
+                            'chatId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'assistant' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'AITeacherSyncPracticeTaskGenerate' => [
             'path' => '/api/v1/aiteacher/syncPractice/generateTask',
             'methods' => [

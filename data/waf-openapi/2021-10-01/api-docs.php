@@ -2019,11 +2019,19 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 20,
+                        'maxItems' => 100,
                     ],
                 ],
                 [
                     'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PunishType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7690,7 +7698,7 @@
                         'format' => 'int64',
                         'required' => false,
                         'minimum' => '1',
-                        'maximum' => '25',
+                        'maximum' => '10',
                     ],
                 ],
                 [

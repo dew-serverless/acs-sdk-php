@@ -5176,6 +5176,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'RegionId',
@@ -7440,7 +7441,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -7547,6 +7548,101 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ImportImageOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Architecture' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'OSType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Platform' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'BootMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'LicenseType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DiskDeviceMappings' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'OSSBucket' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'OSSObject' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Format' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'DiskImageSize' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Features' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'NvmeSupport' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'RetainImportedImage' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NvmeSupport',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AdvancedOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'RetainCloudAssistant' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -11033,100 +11129,6 @@
                                 'maxItems' => 10,
                             ],
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'ModifyAutoSnapshotPolicy' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'SystemDiskPolicyEnabled',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SystemDiskPolicyTimePeriod',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '4',
-                    ],
-                ],
-                [
-                    'name' => 'SystemDiskPolicyRetentionDays',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '3',
-                    ],
-                ],
-                [
-                    'name' => 'SystemDiskPolicyRetentionLastWeek',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DataDiskPolicyEnabled',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DataDiskPolicyTimePeriod',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '4',
-                    ],
-                ],
-                [
-                    'name' => 'DataDiskPolicyRetentionDays',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '3',
-                    ],
-                ],
-                [
-                    'name' => 'DataDiskPolicyRetentionLastWeek',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -23325,6 +23327,39 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'EndTerminalSession' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SessionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

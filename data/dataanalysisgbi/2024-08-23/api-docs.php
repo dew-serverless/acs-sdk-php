@@ -596,6 +596,14 @@
                                     'required' => false,
                                 ],
                             ],
+                            'noModifiedTableNames' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -800,6 +808,10 @@
                             'tableIdKey' => [
                                 'type' => 'string',
                                 'required' => true,
+                            ],
+                            'keep' => [
+                                'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
                     ],

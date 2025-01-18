@@ -79,6 +79,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeAlertSourceAsync($arguments = [])
  * @method \Dew\Acs\Result describeAlertsCount(array $arguments = [])
  * @method \Http\Promise\Promise describeAlertsCountAsync($arguments = [])
+ * @method \Dew\Acs\Result listEntities(array $arguments = [])
+ * @method \Http\Promise\Promise listEntitiesAsync($arguments = [])
  * @method \Dew\Acs\Result describeEntityInfo(array $arguments = [])
  * @method \Http\Promise\Promise describeEntityInfoAsync($arguments = [])
  * @method \Dew\Acs\Result postEventDisposeAndWhiteruleList(array $arguments = [])

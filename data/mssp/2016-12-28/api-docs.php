@@ -1124,6 +1124,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IsMilestone',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetConsoleScore' => [

@@ -37,6 +37,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise unsubscribeAsync($arguments = [])
  * @method \Dew\Acs\Result listSubscriptionByTopic(array $arguments = [])
  * @method \Http\Promise\Promise listSubscriptionByTopicAsync($arguments = [])
+ * @method \Dew\Acs\Result disableEndpoint(array $arguments = [])
+ * @method \Http\Promise\Promise disableEndpointAsync($arguments = [])
+ * @method \Dew\Acs\Result enableEndpoint(array $arguments = [])
+ * @method \Http\Promise\Promise enableEndpointAsync($arguments = [])
+ * @method \Dew\Acs\Result getEndpointAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise getEndpointAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result revokeEndpointAcl(array $arguments = [])
+ * @method \Http\Promise\Promise revokeEndpointAclAsync($arguments = [])
+ * @method \Dew\Acs\Result authorizeEndpointAcl(array $arguments = [])
+ * @method \Http\Promise\Promise authorizeEndpointAclAsync($arguments = [])
  */
 final class MnsOpenClient extends AcsClient
 {

@@ -430,6 +430,22 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'MonitorConfigJson',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MonitorContactsJson',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListGroups' => [

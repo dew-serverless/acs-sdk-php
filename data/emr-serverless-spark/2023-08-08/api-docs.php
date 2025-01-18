@@ -337,6 +337,9 @@
             'Task' => [
                 'type' => 'object',
                 'properties' => [
+                    'kernelId' => [
+                        'type' => 'string',
+                    ],
                     'gmtModified' => [
                         'type' => 'string',
                         'required' => true,
@@ -473,6 +476,9 @@
                         'required' => true,
                     ],
                     'categoryBizId' => [
+                        'type' => 'string',
+                    ],
+                    'sessionClusterId' => [
                         'type' => 'string',
                     ],
                     'sparkSubmitClause' => [
@@ -681,53 +687,6 @@
         ],
     ],
     'apis' => [
-        'GetSessionCluster' => [
-            'path' => '/api/v1/workspaces/{workspaceId}/sessionClusters/{sessionClusterId}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'sessionClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'regionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'StopSessionCluster' => [
             'path' => '/api/v1/workspaces/{workspaceId}/sessionClusters/action/stopSessionCluster',
             'methods' => [
@@ -1482,6 +1441,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'minDuration',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],

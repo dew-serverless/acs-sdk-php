@@ -203,8 +203,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeAutoSnapshotPolicyExAsync($arguments = [])
  * @method \Dew\Acs\Result modifyAutoSnapshotPolicyEx(array $arguments = [])
  * @method \Http\Promise\Promise modifyAutoSnapshotPolicyExAsync($arguments = [])
- * @method \Dew\Acs\Result modifyAutoSnapshotPolicy(array $arguments = []) {@deprecated 2014-05-26}
- * @method \Http\Promise\Promise modifyAutoSnapshotPolicyAsync($arguments = []) {@deprecated 2014-05-26}
  * @method \Dew\Acs\Result applyAutoSnapshotPolicy(array $arguments = [])
  * @method \Http\Promise\Promise applyAutoSnapshotPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result cancelAutoSnapshotPolicy(array $arguments = [])
@@ -421,6 +419,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise installCloudAssistantAsync($arguments = [])
  * @method \Dew\Acs\Result startTerminalSession(array $arguments = [])
  * @method \Http\Promise\Promise startTerminalSessionAsync($arguments = [])
+ * @method \Dew\Acs\Result endTerminalSession(array $arguments = [])
+ * @method \Http\Promise\Promise endTerminalSessionAsync($arguments = [])
  * @method \Dew\Acs\Result describeTerminalSessions(array $arguments = [])
  * @method \Http\Promise\Promise describeTerminalSessionsAsync($arguments = [])
  * @method \Dew\Acs\Result modifyCloudAssistantSettings(array $arguments = [])

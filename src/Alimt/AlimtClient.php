@@ -51,6 +51,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise openAlimtServiceAsync($arguments = [])
  * @method \Dew\Acs\Result getTranslateReport(array $arguments = [])
  * @method \Http\Promise\Promise getTranslateReportAsync($arguments = [])
+ * @method \Dew\Acs\Result translateSearch(array $arguments = [])
+ * @method \Http\Promise\Promise translateSearchAsync($arguments = [])
  */
 final class AlimtClient extends AcsClient
 {

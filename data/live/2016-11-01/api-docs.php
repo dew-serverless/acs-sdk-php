@@ -18516,6 +18516,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'minLength' => 1,
                     ],
                 ],
                 [

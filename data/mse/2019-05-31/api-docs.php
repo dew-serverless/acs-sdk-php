@@ -6284,6 +6284,13 @@
                     ],
                 ],
                 [
+                    'name' => 'LimitApp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
                     'name' => 'AcceptLanguage',
                     'in' => 'query',
                     'schema' => [
@@ -6410,6 +6417,14 @@
                 ],
                 [
                     'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LimitApp',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -6624,6 +6639,14 @@
                     ],
                 ],
                 [
+                    'name' => 'LimitApp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'AcceptLanguage',
                     'in' => 'query',
                     'schema' => [
@@ -6822,6 +6845,14 @@
                             '4',
                             '3',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'LimitApp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [

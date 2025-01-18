@@ -1165,6 +1165,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'SortOrder',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListServiceInstanceResources' => [

@@ -384,6 +384,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CameraSelection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeFaceVerify' => [

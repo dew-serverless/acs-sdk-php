@@ -7,6 +7,32 @@ namespace Dew\Acs\AiContent;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result getTextbookAssistantToken(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise getTextbookAssistantTokenAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result listTextbookAssistantGradeVolumes(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise listTextbookAssistantGradeVolumesAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result listTextbookAssistantBooks(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise listTextbookAssistantBooksAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result listTextbookAssistantBookDirectories(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise listTextbookAssistantBookDirectoriesAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result listTextbookAssistantArticles(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise listTextbookAssistantArticlesAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeTextbookAssistantStartConversation(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeTextbookAssistantStartConversationAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeTextbookAssistantDialogue(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeTextbookAssistantDialogueAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeTextbookAssistantTranslate(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeTextbookAssistantTranslateAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeTextbookAssistantSuggestion(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeTextbookAssistantSuggestionAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeTextbookAssistantDifficulty(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeTextbookAssistantDifficultyAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeTextbookAssistantRefineByContext(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeTextbookAssistantRefineByContextAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeTextbookAssistantGrammarCheck(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeTextbookAssistantGrammarCheckAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeTextbookAssistantRetryConversation(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeTextbookAssistantRetryConversationAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result aITeacherSyncPracticeTaskGenerate(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise aITeacherSyncPracticeTaskGenerateAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result executeAITeacherSyncDialogue(array $arguments = []) {@since 20240611}

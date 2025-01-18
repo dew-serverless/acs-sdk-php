@@ -7,8 +7,6 @@ namespace Dew\Acs\EmrServerlessSpark;
 use Dew\Acs\AcsClient;
 
 /**
- * @method \Dew\Acs\Result getSessionCluster(array $arguments = [])
- * @method \Http\Promise\Promise getSessionClusterAsync($arguments = [])
  * @method \Dew\Acs\Result stopSessionCluster(array $arguments = [])
  * @method \Http\Promise\Promise stopSessionClusterAsync($arguments = [])
  * @method \Dew\Acs\Result startSessionCluster(array $arguments = [])

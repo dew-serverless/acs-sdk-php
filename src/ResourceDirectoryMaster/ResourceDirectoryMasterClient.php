@@ -43,6 +43,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listAccountsForParentAsync($arguments = [])
  * @method \Dew\Acs\Result getPayerForAccount(array $arguments = [])
  * @method \Http\Promise\Promise getPayerForAccountAsync($arguments = [])
+ * @method \Dew\Acs\Result updatePayerForAccount(array $arguments = [])
+ * @method \Http\Promise\Promise updatePayerForAccountAsync($arguments = [])
  * @method \Dew\Acs\Result inviteAccountToResourceDirectory(array $arguments = [])
  * @method \Http\Promise\Promise inviteAccountToResourceDirectoryAsync($arguments = [])
  * @method \Dew\Acs\Result acceptHandshake(array $arguments = [])

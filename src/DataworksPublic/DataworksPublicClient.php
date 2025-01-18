@@ -841,6 +841,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateDataQualityRuleTemplateAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result deleteDataQualityRuleTemplate(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise deleteDataQualityRuleTemplateAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result listDataQualityRuleTemplates(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise listDataQualityRuleTemplatesAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result createDataAssetTag(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise createDataAssetTagAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result deleteDataAssetTag(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise deleteDataAssetTagAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result updateDataAssetTag(array $arguments = []) {@since 2024-05-18}
@@ -855,10 +859,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listDataAssetsAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result getJobStatus(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise getJobStatusAsync($arguments = []) {@since 2024-05-18}
- * @method \Dew\Acs\Result listDataQualityRuleTemplates(array $arguments = []) {@since 2024-05-18}
- * @method \Http\Promise\Promise listDataQualityRuleTemplatesAsync($arguments = []) {@since 2024-05-18}
- * @method \Dew\Acs\Result createDataAssetTag(array $arguments = []) {@since 2024-05-18}
- * @method \Http\Promise\Promise createDataAssetTagAsync($arguments = []) {@since 2024-05-18}
  */
 final class DataworksPublicClient extends AcsClient
 {

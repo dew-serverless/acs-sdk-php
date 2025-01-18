@@ -21,6 +21,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDocumentUrlAsync($arguments = [])
  * @method \Dew\Acs\Result previewDocument(array $arguments = [])
  * @method \Http\Promise\Promise previewDocumentAsync($arguments = [])
+ * @method \Dew\Acs\Result getFilterDocumentList(array $arguments = [])
+ * @method \Http\Promise\Promise getFilterDocumentListAsync($arguments = [])
  * @method \Dew\Acs\Result getDocumentList(array $arguments = [])
  * @method \Http\Promise\Promise getDocumentListAsync($arguments = [])
  * @method \Dew\Acs\Result deleteDocument(array $arguments = [])

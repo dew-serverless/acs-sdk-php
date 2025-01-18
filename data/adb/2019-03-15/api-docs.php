@@ -8451,10 +8451,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'adb.ap-southeast-7.com',
-        ],
-        [
             'regionId' => 'cn-qingdao',
             'endpoint' => 'adb.aliyuncs.com',
         ],
@@ -8465,6 +8461,10 @@
         [
             'regionId' => 'cn-zhangjiakou',
             'endpoint' => 'adb.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'adb.cn-huhehaote.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -8483,12 +8483,8 @@
             'endpoint' => 'adb.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'adb.cn-chengdu.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',
@@ -8496,11 +8492,11 @@
         ],
         [
             'regionId' => 'ap-northeast-2',
-            'endpoint' => 'adb.ap-northeast-2.com',
+            'endpoint' => 'adb.ap-northeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-2',
@@ -8511,12 +8507,20 @@
             'endpoint' => 'adb.ap-southeast-3.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'adb.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'adb.ap-southeast-6.aliyuncs.com',
+        ],
+        [
             'regionId' => 'us-east-1',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.us-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',
@@ -8525,10 +8529,6 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'adb.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'me-east-1',
-            'endpoint' => 'adb.ap-northeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou-finance',
@@ -8543,8 +8543,16 @@
             'endpoint' => 'adb.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'adb.ap-southeast-7.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'adb.me-central-1.aliyuncs.com',
         ],
     ],
 ];

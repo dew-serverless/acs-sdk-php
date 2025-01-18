@@ -882,5 +882,13 @@
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'governance.ap-southeast-1.aliyuncs.com',
         ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'governance.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'governance.cn-shanghai-finance-1.aliyuncs.com',
+        ],
     ],
 ];

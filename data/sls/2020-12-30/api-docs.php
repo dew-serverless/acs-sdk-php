@@ -2084,6 +2084,9 @@
                             'type' => 'any',
                         ],
                     ],
+                    'location' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'serviceStatus' => [

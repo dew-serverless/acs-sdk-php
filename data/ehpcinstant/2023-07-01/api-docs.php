@@ -1513,8 +1513,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'ehpcinstant.ap-southeast-1.aliyuncs.com',
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'ehpcinstant.eu-central-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
@@ -1539,6 +1539,10 @@
         [
             'regionId' => 'cn-guangzhou',
             'endpoint' => 'ehpcinstant.cn-guangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'ehpcinstant.ap-southeast-1.aliyuncs.com',
         ],
     ],
 ];

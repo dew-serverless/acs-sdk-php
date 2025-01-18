@@ -926,6 +926,16 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IdempotentToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 36,
+                        'maxLength' => 36,
+                    ],
+                ],
             ],
         ],
         'MassPush' => [
@@ -1401,6 +1411,16 @@
                             ],
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'IdempotentToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 36,
+                        'maxLength' => 36,
                     ],
                 ],
             ],

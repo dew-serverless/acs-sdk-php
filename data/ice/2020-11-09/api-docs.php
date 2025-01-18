@@ -499,6 +499,318 @@
                     ],
                 ],
             ],
+            'MediaConvertAudio' => [
+                'type' => 'object',
+                'properties' => [
+                    'Codec' => [
+                        'type' => 'string',
+                    ],
+                    'Remove' => [
+                        'type' => 'boolean',
+                    ],
+                    'Bitrate' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Samplerate' => [
+                        'type' => 'string',
+                    ],
+                    'Profile' => [
+                        'type' => 'string',
+                    ],
+                    'Channels' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'MediaConvertInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'InputFile' => [
+                        '$ref' => '#/components/schemas/MediaObject',
+                    ],
+                ],
+            ],
+            'MediaConvertMuxConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'Segment' => [
+                        '$ref' => '#/components/schemas/MediaConvertSegment',
+                    ],
+                ],
+            ],
+            'MediaConvertOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'OutputFile' => [
+                        '$ref' => '#/components/schemas/MediaObject',
+                    ],
+                    'Priority' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'minimum' => '1',
+                        'maximum' => '10',
+                    ],
+                    'OverrideParams' => [
+                        'type' => 'string',
+                    ],
+                    'Features' => [
+                        'type' => 'string',
+                    ],
+                    'TemplateId' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'MediaConvertOutputDetail' => [
+                'type' => 'object',
+                'properties' => [
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'TaskId' => [
+                        'type' => 'string',
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                    ],
+                    'Code' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'MediaConvertOutputGroup' => [
+                'type' => 'object',
+                'properties' => [
+                    'GroupConfig' => [
+                        '$ref' => '#/components/schemas/MediaConvertOutputGroupConfig',
+                    ],
+                    'Outputs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/MediaConvertOutputGroupOutput',
+                        ],
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'MediaConvertOutputGroupConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'OutputFileBase' => [
+                        '$ref' => '#/components/schemas/MediaObject',
+                    ],
+                    'ManifestName' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'MediaConvertOutputGroupDetail' => [
+                'type' => 'object',
+                'properties' => [
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'TaskId' => [
+                        'type' => 'string',
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                    ],
+                    'Outputs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/MediaConvertOutputDetail',
+                        ],
+                    ],
+                    'Code' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'MediaConvertOutputGroupOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'Priority' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'OverrideParams' => [
+                        'type' => 'string',
+                    ],
+                    'Features' => [
+                        'type' => 'string',
+                    ],
+                    'OutputFileName' => [
+                        'type' => 'string',
+                    ],
+                    'TemplateId' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'MediaConvertSegment' => [
+                'type' => 'object',
+                'properties' => [
+                    'ForceSegTime' => [
+                        'type' => 'string',
+                    ],
+                    'Duration' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
+            'MediaConvertTransConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'IsCheckAudioBitrate' => [
+                        'type' => 'boolean',
+                    ],
+                    'AdjDarMethod' => [
+                        'type' => 'string',
+                    ],
+                    'IsCheckAudioBitrateFail' => [
+                        'type' => 'boolean',
+                    ],
+                    'IsCheckVideoBitrateFail' => [
+                        'type' => 'boolean',
+                    ],
+                    'IsCheckReso' => [
+                        'type' => 'boolean',
+                    ],
+                    'IsCheckVideoBitrate' => [
+                        'type' => 'boolean',
+                    ],
+                    'TransMode' => [
+                        'type' => 'string',
+                    ],
+                    'IsCheckResoFail' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'MediaConvertVideo' => [
+                'type' => 'object',
+                'properties' => [
+                    'Bufsize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Qscale' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ScanMode' => [
+                        'type' => 'string',
+                    ],
+                    'LongShortMode' => [
+                        'type' => 'boolean',
+                    ],
+                    'Fps' => [
+                        'type' => 'any',
+                    ],
+                    'Gop' => [
+                        'type' => 'any',
+                    ],
+                    'Remove' => [
+                        'type' => 'boolean',
+                    ],
+                    'Bitrate' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Profile' => [
+                        'type' => 'string',
+                    ],
+                    'Crop' => [
+                        'type' => 'string',
+                    ],
+                    'Codec' => [
+                        'type' => 'string',
+                    ],
+                    'Maxrate' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Pad' => [
+                        'type' => 'string',
+                    ],
+                    'MaxFps' => [
+                        'type' => 'any',
+                    ],
+                    'Crf' => [
+                        'type' => 'any',
+                    ],
+                    'Height' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Width' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
+            'MediaConvertVolume' => [
+                'type' => 'object',
+                'properties' => [
+                    'LoudnessRangeTarget' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'TruePeak' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'IntegratedLoudnessTarget' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Level' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Method' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'MediaObject' => [
+                'type' => 'object',
+                'properties' => [
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'Media' => [
+                        'type' => 'string',
+                    ],
+                    'Url' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Program' => [
                 'type' => 'object',
                 'properties' => [
@@ -3935,6 +4247,81 @@
             'parameters' => [
                 [
                     'name' => 'Speed',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SubmitMediaConvertJob' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Config',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PipelineId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetMediaConvertJob' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'JobId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -12539,6 +12926,90 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SubmitProjectExportJob' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Timeline',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExportType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OutputMediaConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetProjectExportJob' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

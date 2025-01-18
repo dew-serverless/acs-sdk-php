@@ -2980,6 +2980,10 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'ehpc.cn-guangzhou.aliyuncs.com	',
+        ],
+        [
             'regionId' => 'cn-qingdao',
             'endpoint' => 'ehpc.cn-qingdao.aliyuncs.com',
         ],

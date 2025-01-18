@@ -5923,11 +5923,6 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'DepartmentId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
                                 'GroupIdList' => [
                                     'type' => 'array',
                                     'required' => false,
@@ -5936,6 +5931,11 @@
                                         'format' => 'int64',
                                         'required' => false,
                                     ],
+                                ],
+                                'DepartmentId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -6092,11 +6092,6 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'DepartmentId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                    'required' => false,
-                                ],
                                 'GroupIdList' => [
                                     'type' => 'array',
                                     'required' => false,
@@ -6105,6 +6100,11 @@
                                         'format' => 'int64',
                                         'required' => false,
                                     ],
+                                ],
+                                'DepartmentId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -8342,13 +8342,13 @@
                         'items' => [
                             'type' => 'object',
                             'properties' => [
-                                'Name' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                                 'Id' => [
                                     'type' => 'integer',
                                     'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'Name' => [
+                                    'type' => 'string',
                                     'required' => false,
                                 ],
                             ],

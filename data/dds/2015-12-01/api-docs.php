@@ -726,6 +726,7 @@
                         'type' => 'string',
                         'required' => false,
                         'enum' => [
+                            '0',
                             '1',
                             '2',
                             '3',

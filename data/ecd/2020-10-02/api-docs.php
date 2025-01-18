@@ -1735,6 +1735,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'StopDesktop',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SendTokenCode' => [

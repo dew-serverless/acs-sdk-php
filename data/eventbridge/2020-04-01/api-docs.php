@@ -2438,6 +2438,24 @@
                                             ],
                                         ],
                                     ],
+                                    'DataFormat' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
                                 ],
                             ],
                             'SinkRabbitMQParameters' => [
@@ -4569,6 +4587,24 @@
                                         ],
                                     ],
                                     'Body' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'DataFormat' => [
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [

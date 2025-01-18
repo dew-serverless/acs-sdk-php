@@ -1280,6 +1280,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DisablePorts',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifySecurityIPList' => [

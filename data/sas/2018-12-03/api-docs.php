@@ -27205,8 +27205,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -27380,8 +27380,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -27866,8 +27866,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -44135,62 +44135,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-nanjing',
-            'endpoint' => 'tds.aliyuncs.com	',
-        ],
-        [
-            'regionId' => 'cn-fuzhou',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'tds.aliyuncs.com	',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'tds.ap-southeast-1.aliyuncs.com',
         ],
@@ -44239,28 +44183,76 @@
             'endpoint' => 'tds.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'tds.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-7',
             'endpoint' => 'tds.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-finance-1',
-            'endpoint' => 'tds.aliyuncs.com	',
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
         ],
         [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'tds.ap-southeast-1.aliyuncs.com',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-nanjing',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'tds.cn-shanghai.aliyuncs.com',
         ],
     ],
 ];

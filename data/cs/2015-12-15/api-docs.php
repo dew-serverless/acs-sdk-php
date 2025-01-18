@@ -76,7 +76,7 @@
             'instance_patterns' => [
                 'type' => 'object',
                 'properties' => [
-                    'core' => [
+                    'cores' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
@@ -87,24 +87,60 @@
                     'instance_family_level' => [
                         'type' => 'string',
                     ],
-                    'max_price' => [
+                    'excluded_instance_types' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'min_cpu_cores' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'max_cpu_cores' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'min_memory_size' => [
                         'type' => 'number',
                         'format' => 'float',
                     ],
+                    'max_memory_size' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'instance_categories' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'cpu_architectures' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'core' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => true,
+                    ],
+                    'max_price' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'deprecated' => true,
+                    ],
                     'architectures' => [
                         'type' => 'array',
+                        'deprecated' => true,
                         'items' => [
                             'type' => 'string',
                         ],
                     ],
                     'burst_performance_option' => [
                         'type' => 'string',
-                    ],
-                    'excluded_instance_types' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
+                        'deprecated' => true,
                     ],
                 ],
             ],
@@ -236,6 +272,13 @@
                                 'format' => 'int32',
                             ],
                         ],
+                    ],
+                    'containerLogMaxWorkers' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'containerLogMonitorInterval' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -4997,6 +5040,16 @@
                             'scaler_type' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'priorities' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
                             ],
                         ],
                     ],

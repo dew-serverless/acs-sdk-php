@@ -669,6 +669,14 @@
         'defaultVersion' => '2022-02-22',
     ],
     [
+        'code' => 'OssAdmin',
+        'style' => 'RPC',
+        'versions' => [
+            '2019-04-22',
+        ],
+        'defaultVersion' => '2019-04-22',
+    ],
+    [
         'code' => 'Slb',
         'style' => 'RPC',
         'versions' => [

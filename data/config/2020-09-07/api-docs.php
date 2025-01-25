@@ -119,6 +119,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'UpdateAggregator' => [
@@ -196,6 +220,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'DeleteAggregators' => [
@@ -270,6 +318,30 @@
                         'exclusiveMaximum' => false,
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'GetAggregator' => [
@@ -294,6 +366,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
                     ],
                 ],
             ],
@@ -3415,6 +3511,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'UpdateAggregateConfigRule' => [
@@ -3689,6 +3809,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'ListAggregateConfigRules' => [
@@ -3788,6 +3932,30 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
                     ],
                 ],
                 [
@@ -4823,6 +4991,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'ResourceTypeFormat',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ResourceEvaluateItems',
                     'in' => 'formData',
                     'style' => 'json',
@@ -5127,6 +5303,30 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'UpdateCompliancePack' => [
@@ -5359,6 +5559,30 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'ListCompliancePacks' => [
@@ -5406,6 +5630,30 @@
                         'minimum' => '1',
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'GetCompliancePack' => [
@@ -5429,6 +5677,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
                     ],
                 ],
             ],
@@ -5907,6 +6179,30 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'UpdateAggregateCompliancePack' => [
@@ -6147,6 +6443,30 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'ListAggregateCompliancePacks' => [
@@ -6202,6 +6522,30 @@
                         'minimum' => '1',
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'GetAggregateCompliancePack' => [
@@ -6233,6 +6577,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
                     ],
                 ],
             ],

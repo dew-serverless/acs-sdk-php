@@ -2374,12 +2374,20 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
                     'name' => 'NetworkId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -6420,6 +6428,543 @@
                 ],
             ],
         ],
+        'UpdateTask' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientUniqueCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnvType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Prod',
+                            'Dev',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Owner',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'T+1',
+                            'Immediately',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Timeout',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RerunMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'AllAllowed',
+                            'FailureAllowed',
+                            'AllDenied',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'RerunTimes',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RerunInterval',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Script',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Content' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Parameters' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Trigger',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'Scheduler',
+                                    'Manual',
+                                ],
+                            ],
+                            'Recurrence' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'Normal',
+                                    'Skip',
+                                    'Pause',
+                                ],
+                            ],
+                            'Cron' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'StartTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'EndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'RuntimeResource',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ResourceGroupId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Image' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Cu' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DataSource',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Inputs',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Variables' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Type' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'enum' => [
+                                                'System',
+                                                'Constant',
+                                                'NodeOutput',
+                                                'PassThrough',
+                                            ],
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Outputs',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'TaskOutputs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Output' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Variables' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Type' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'enum' => [
+                                                'System',
+                                                'Constant',
+                                                'NodeOutput',
+                                                'PassThrough',
+                                            ],
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Dependencies',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'Normal',
+                                        'CrossCycleDependsOnSelf',
+                                        'CrossCycleDependsOnChildren',
+                                        'CrossCycleDependsOnOtherNode',
+                                    ],
+                                ],
+                                'UpstreamOutput' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'UpstreamTaskId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'BatchUpdateTasks' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Tasks',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => true,
+                                ],
+                                'EnvType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'Prod',
+                                        'Dev',
+                                    ],
+                                ],
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Description' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Owner' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Timeout' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'RerunMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'AllAllowed',
+                                        'FailureAllowed',
+                                        'AllDenied',
+                                    ],
+                                ],
+                                'RerunTimes' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'RerunInterval' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Trigger' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'Scheduler',
+                                                'Manual',
+                                            ],
+                                        ],
+                                        'Recurrence' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'Normal',
+                                                'Skip',
+                                                'Pause',
+                                            ],
+                                        ],
+                                        'Cron' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'StartTime' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'EndTime' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'RuntimeResource' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'ResourceGroupId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Image' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Cu' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'DataSource' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'Tags' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Key' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 50,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'GetTask' => [
             'methods' => [
                 'get',
@@ -7536,6 +8081,1403 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteWorkflow' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnvType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Prod',
+                            'Dev',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ClientUniqueCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateWorkflow' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnvType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Prod',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Owner',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Trigger',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'Scheduler',
+                                    'Manual',
+                                ],
+                            ],
+                            'Cron' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'StartTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'EndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Dependencies',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'Normal',
+                                        'CrossCycleDependsOnSelf',
+                                        'CrossCycleDependsOnChildren',
+                                        'CrossCycleDependsOnOtherNode',
+                                    ],
+                                ],
+                                'UpstreamOutput' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'UpstreamTaskId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Parameters',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tasks',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => true,
+                                ],
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Description' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Owner' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'BaseLineId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'Timeout' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'RerunMode' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [
+                                        'AllAllowed',
+                                        'FailureAllowed',
+                                        'AllDenied',
+                                    ],
+                                ],
+                                'RerunTimes' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'RerunInterval' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Script' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Content' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Parameters' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'Trigger' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'Type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'Scheduler',
+                                                'Manual',
+                                            ],
+                                        ],
+                                        'Recurrence' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'enum' => [
+                                                'Normal',
+                                                'Skip',
+                                                'Pause',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'RuntimeResource' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'ResourceGroupId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Image' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Cu' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'DataSource' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'Inputs' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Variables' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Type' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                        'enum' => [
+                                                            'System',
+                                                            'Constant',
+                                                            'NodeOutput',
+                                                            'PassThrough',
+                                                        ],
+                                                    ],
+                                                    'Value' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'Outputs' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'TaskOutputs' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Output' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'Variables' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Type' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                        'enum' => [
+                                                            'System',
+                                                            'Constant',
+                                                            'NodeOutput',
+                                                            'PassThrough',
+                                                        ],
+                                                    ],
+                                                    'Value' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'Dependencies' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Type' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                                'enum' => [
+                                                    'Normal',
+                                                    'CrossCycleDependsOnSelf',
+                                                    'CrossCycleDependsOnChildren',
+                                                    'CrossCycleDependsOnOtherNode',
+                                                ],
+                                            ],
+                                            'UpstreamOutput' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'UpstreamTaskId' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'Tags' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Key' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'ClientUniqueCode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EnvType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'Prod',
+                                        'Dev',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Outputs',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'TaskOutputs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Output' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ClientUniqueCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetWorkflow' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnvType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Prod',
+                            'Dev',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListWorkflows' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnvType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Prod',
+                            'Dev',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Ids',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Owner',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TriggerType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Scheduler',
+                            'Manual',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateWorkflowInstances' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnvType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Prod',
+                            'Dev',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'WorkflowId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Periods',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'BizDates' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'StartBizDate' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'EndBizDate' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'StartTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'EndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'ManualWorkflow',
+                            'SupplementData',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'WorkflowParameters',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaskParameters',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoStartEnabled',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DefaultRunProperties',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'RootTaskIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                            'IncludeTaskIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                            'ExcludeTaskIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                            'IncludeProjectIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                            'ExcludeProjectIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                            'Mode' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'General',
+                                    'ManualSelection',
+                                    'Chain',
+                                    'AllDownstream',
+                                    'Huge',
+                                ],
+                            ],
+                            'Analysis' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'Enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => true,
+                                    ],
+                                    'Blocked' => [
+                                        'type' => 'boolean',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'RunPolicy' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'StartTime' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'EndTime' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                        'enum' => [
+                                            'Daily',
+                                            'Weekend',
+                                        ],
+                                    ],
+                                    'Immediately' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'Alert' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                        'enum' => [
+                                            'Success',
+                                            'Failure',
+                                            'SuccessFailure',
+                                        ],
+                                    ],
+                                    'NoticeType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                        'enum' => [
+                                            'Sms',
+                                            'Mail',
+                                            'SmsMail',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Parallelism' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'Order' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'Asc',
+                                    'Desc',
+                                ],
+                            ],
+                            'RuntimeResource' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetCreateWorkflowInstancesResult' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OperationId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetWorkflowInstance' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListWorkflowInstances' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BizDate',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Normal',
+                            'ManualWorkflow',
+                            'Manual',
+                            'SupplementData',
+                            'SmokeTest',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'WorkflowId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Ids',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Owner',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StartWorkflowInstances' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+                [
+                    'BearerToken' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Ids',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StopWorkflowInstances' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Ids',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteAdhocWorkflowInstance' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'EnvType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Prod',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Owner',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BizDate',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tasks',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Owner' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Timeout' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Script' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Content' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Parameters' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'RuntimeResource' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'ResourceGroupId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Image' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Cu' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'DataSource' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'Inputs' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Variables' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Value' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'Outputs' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'TaskOutputs' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Output' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'Variables' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Type' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                        'enum' => [
+                                                            'System',
+                                                            'Constant',
+                                                            'NodeOutput',
+                                                            'PassThrough',
+                                                        ],
+                                                    ],
+                                                    'Value' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'Dependencies' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'UpstreamOutput' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'ClientUniqueCode' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

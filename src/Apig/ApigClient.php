@@ -43,16 +43,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise addGatewaySecurityGroupRuleAsync($arguments = [])
  * @method \Dew\Acs\Result deleteGateway(array $arguments = [])
  * @method \Http\Promise\Promise deleteGatewayAsync($arguments = [])
- * @method \Dew\Acs\Result createEnvironment(array $arguments = [])
- * @method \Http\Promise\Promise createEnvironmentAsync($arguments = [])
- * @method \Dew\Acs\Result getEnvironment(array $arguments = [])
- * @method \Http\Promise\Promise getEnvironmentAsync($arguments = [])
- * @method \Dew\Acs\Result updateEnvironment(array $arguments = [])
- * @method \Http\Promise\Promise updateEnvironmentAsync($arguments = [])
- * @method \Dew\Acs\Result deleteEnvironment(array $arguments = [])
- * @method \Http\Promise\Promise deleteEnvironmentAsync($arguments = [])
- * @method \Dew\Acs\Result listEnvironments(array $arguments = [])
- * @method \Http\Promise\Promise listEnvironmentsAsync($arguments = [])
  * @method \Dew\Acs\Result getDomain(array $arguments = [])
  * @method \Http\Promise\Promise getDomainAsync($arguments = [])
  * @method \Dew\Acs\Result createDomain(array $arguments = [])
@@ -91,6 +81,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise exportHttpApiAsync($arguments = [])
  * @method \Dew\Acs\Result getResourceOverview(array $arguments = [])
  * @method \Http\Promise\Promise getResourceOverviewAsync($arguments = [])
+ * @method \Dew\Acs\Result createEnvironment(array $arguments = []) {@deprecated 2024-03-27}
+ * @method \Http\Promise\Promise createEnvironmentAsync($arguments = []) {@deprecated 2024-03-27}
+ * @method \Dew\Acs\Result getEnvironment(array $arguments = []) {@deprecated 2024-03-27}
+ * @method \Http\Promise\Promise getEnvironmentAsync($arguments = []) {@deprecated 2024-03-27}
+ * @method \Dew\Acs\Result updateEnvironment(array $arguments = []) {@deprecated 2024-03-27}
+ * @method \Http\Promise\Promise updateEnvironmentAsync($arguments = []) {@deprecated 2024-03-27}
+ * @method \Dew\Acs\Result deleteEnvironment(array $arguments = []) {@deprecated 2024-03-27}
+ * @method \Http\Promise\Promise deleteEnvironmentAsync($arguments = []) {@deprecated 2024-03-27}
+ * @method \Dew\Acs\Result listEnvironments(array $arguments = []) {@deprecated 2024-03-27}
+ * @method \Http\Promise\Promise listEnvironmentsAsync($arguments = []) {@deprecated 2024-03-27}
  */
 final class ApigClient extends AcsClient
 {

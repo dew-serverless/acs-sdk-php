@@ -202,7 +202,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
@@ -216,8 +216,8 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
-                        'maxLength' => 1000,
+                        'required' => false,
+                        'maxLength' => 2000,
                     ],
                 ],
                 [
@@ -235,11 +235,27 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'processStage',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'useSearch',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -962,6 +978,45 @@
                 ],
             ],
         ],
+        'GenerateBroadcastNews' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/GenerateBroadcastNews',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'prompt',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'ListHotTopicSummaries' => [
             'path' => '/{workspaceId}/quanmiao/lightapp/listHotTopicSummaries',
             'methods' => [
@@ -1307,6 +1362,92 @@
                 ],
             ],
         ],
+        'GenerateOutputFormat' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/generateOutputFormat',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'businessType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskDescription',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'content',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'tags',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'tagName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'tagDefinePrompt' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'extraInfo',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'RunTagMiningAnalysis' => [
             'path' => '/{workspaceId}/quanmiao/lightapp/runTagMiningAnalysis',
             'methods' => [
@@ -1406,131 +1547,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GenerateOutputFormat' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/generateOutputFormat',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'businessType',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'taskDescription',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'content',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'tags',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'tagName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'tagDefinePrompt' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'extraInfo',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GenerateBroadcastNews' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/GenerateBroadcastNews',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'prompt',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],

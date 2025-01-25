@@ -3985,6 +3985,288 @@
                 ],
             ],
         ],
+        'WithdrawService' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CancelServiceRegistration' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegistrationId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListServiceRegistrations' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Value' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'maxItems' => 20,
+                                ],
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
+        'ListServiceInstanceDeployDetails' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Value' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'maxItems' => 20,
+                                ],
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 10,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CycleTimeZone',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Dimension',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 10,
+                    ],
+                ],
+                [
+                    'name' => 'CycleType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

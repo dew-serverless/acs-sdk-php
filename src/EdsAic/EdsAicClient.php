@@ -51,6 +51,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise sendFileAsync($arguments = [])
  * @method \Dew\Acs\Result fetchFile(array $arguments = [])
  * @method \Http\Promise\Promise fetchFileAsync($arguments = [])
+ * @method \Dew\Acs\Result createScreenshot(array $arguments = [])
+ * @method \Http\Promise\Promise createScreenshotAsync($arguments = [])
  * @method \Dew\Acs\Result createCustomImage(array $arguments = [])
  * @method \Http\Promise\Promise createCustomImageAsync($arguments = [])
  * @method \Dew\Acs\Result describeImageList(array $arguments = [])
@@ -107,6 +109,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deletePolicyGroupAsync($arguments = [])
  * @method \Dew\Acs\Result describeTasks(array $arguments = [])
  * @method \Http\Promise\Promise describeTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result setAdbSecure(array $arguments = [])
+ * @method \Http\Promise\Promise setAdbSecureAsync($arguments = [])
  */
 final class EdsAicClient extends AcsClient
 {

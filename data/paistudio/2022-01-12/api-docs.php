@@ -1203,6 +1203,12 @@
                     'EnablePreemptSubquotaWorkloads' => [
                         'type' => 'boolean',
                     ],
+                    'SubQuotaPreemptionConfig' => [
+                        '$ref' => '#/components/schemas/SubQuotaPreemptionConfig',
+                    ],
+                    'EnableSubQuotaPreemption' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'QuotaDetails' => [
@@ -1719,7 +1725,7 @@
             'Rules' => [
                 'type' => 'object',
                 'properties' => [
-                    'SchedulingRule' => [
+                    'Scheduling' => [
                         '$ref' => '#/components/schemas/SchedulingRule',
                     ],
                 ],
@@ -1772,6 +1778,21 @@
                     'SpotDiscount' => [
                         'type' => 'number',
                         'format' => 'float',
+                    ],
+                ],
+            ],
+            'SubQuotaPreemptionConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'PreemptedPriorityUpperBound' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'PreemptedProducts' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],

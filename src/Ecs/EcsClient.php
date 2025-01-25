@@ -183,6 +183,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSnapshotsUsageAsync($arguments = [])
  * @method \Dew\Acs\Result modifySnapshotAttribute(array $arguments = [])
  * @method \Http\Promise\Promise modifySnapshotAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result modifySnapshotCategory(array $arguments = [])
+ * @method \Http\Promise\Promise modifySnapshotCategoryAsync($arguments = [])
  * @method \Dew\Acs\Result copySnapshot(array $arguments = [])
  * @method \Http\Promise\Promise copySnapshotAsync($arguments = [])
  * @method \Dew\Acs\Result deleteSnapshot(array $arguments = [])

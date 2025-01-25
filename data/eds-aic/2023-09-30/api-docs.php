@@ -32,6 +32,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SaleMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Instance',
+                            'Node',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeSpec' => [
@@ -88,6 +100,18 @@
                     ],
                 ],
                 [
+                    'name' => 'SaleMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Instance',
+                            'Node',
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'MaxResults',
                     'in' => 'query',
                     'schema' => [
@@ -104,6 +128,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MatrixSpec',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'cpm.gn6.gx2',
+                            'cpm.gn6.gx1',
+                        ],
                     ],
                 ],
             ],
@@ -158,6 +194,18 @@
                             'acp.perf-g4.large',
                             'acp.pro.large',
                             'acp.pro-g6.large',
+                            'cps.std',
+                            'cps.std.64c256g',
+                            'cps.perf.gn6ia',
+                            'cps.std.gn6ia',
+                            'cps.std.r8ys',
+                            'cpm.gn6.gx1',
+                            'cpm.gn6.gx2',
+                            'ac.se',
+                            'ac.plus',
+                            'ac.pro',
+                            'ac.max',
+                            'ac1.plus',
                             'acp.std.medium',
                             'acp.basic-g2r.small',
                             'acp.std-g3.medium',
@@ -824,6 +872,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'NodeId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NodeName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyAndroidInstance' => [
@@ -1351,6 +1415,54 @@
                 ],
             ],
         ],
+        'CreateScreenshot' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AndroidInstanceIdList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'deprecated' => false,
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => true,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'OssBucketName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SkipCheckPolicyConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'CreateCustomImage' => [
             'methods' => [
                 'post',
@@ -1465,6 +1577,14 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'ImagePackageType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3124,6 +3244,46 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SetAdbSecure' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 50,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
                     ],
                 ],
             ],

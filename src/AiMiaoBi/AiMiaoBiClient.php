@@ -191,6 +191,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listSearchTaskDialoguesAsync($arguments = [])
  * @method \Dew\Acs\Result listSearchTaskDialogueDatas(array $arguments = [])
  * @method \Http\Promise\Promise listSearchTaskDialogueDatasAsync($arguments = [])
+ * @method \Dew\Acs\Result runSearchSimilarArticles(array $arguments = [])
+ * @method \Http\Promise\Promise runSearchSimilarArticlesAsync($arguments = [])
  * @method \Dew\Acs\Result listInterveneCnt(array $arguments = [])
  * @method \Http\Promise\Promise listInterveneCntAsync($arguments = [])
  * @method \Dew\Acs\Result listIntervenes(array $arguments = [])

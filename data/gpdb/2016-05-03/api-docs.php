@@ -3433,6 +3433,412 @@
                 ],
             ],
         ],
+        'CreateIndex' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'ip',
+                            'l2',
+                            'cosine',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NamespacePassword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Collection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'IndexName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IndexField',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IndexConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeCreateIndexJob' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'ip',
+                            'l2',
+                            'cosine',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NamespacePassword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Collection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CancelCreateIndexJob' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'ip',
+                            'l2',
+                            'cosine',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NamespacePassword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Collection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteIndex' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'ip',
+                            'l2',
+                            'cosine',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NamespacePassword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Collection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'IndexName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeIndex' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'ip',
+                            'l2',
+                            'cosine',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NamespacePassword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Collection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'IndexName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'TextEmbedding' => [
             'methods' => [
                 'post',
@@ -6784,6 +7190,55 @@
                 ],
             ],
         ],
+        'ModifyDBInstanceDeploymentMode' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DeployMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StandbyZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StandbyVSwitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeDataReDistributeInfo' => [
             'methods' => [
                 'post',
@@ -7466,131 +7921,6 @@
                 ],
             ],
         ],
-        'ListBackupJobs' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'DBInstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'BackupMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeBackupJob' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'DBInstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'BackupJobId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteBackup' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'DBInstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'BackupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateBackup' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'DBInstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'DescribeBackupPolicy' => [
             'methods' => [
                 'post',
@@ -7844,6 +8174,172 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateBackup' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteBackup' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BackupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListBackupJobs' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BackupMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeBackupJob' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BackupJobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CloneDBInstance' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SrcDbInstanceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BackupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

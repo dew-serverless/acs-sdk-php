@@ -159,6 +159,14 @@
                     ],
                 ],
                 [
+                    'name' => 'WormEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'EncryptType',
                     'in' => 'query',
                     'schema' => [
@@ -347,6 +355,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WormEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

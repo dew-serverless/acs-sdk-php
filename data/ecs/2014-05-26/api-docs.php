@@ -10108,6 +10108,54 @@
                 ],
             ],
         ],
+        'ModifySnapshotCategory' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SnapshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Category',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Archive',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'RetentionDays',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '61',
+                        'maximum' => '65536',
+                    ],
+                ],
+            ],
+        ],
         'CopySnapshot' => [
             'methods' => [
                 'post',

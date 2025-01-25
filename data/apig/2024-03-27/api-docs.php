@@ -1860,7 +1860,7 @@
                     'configType' => [
                         'type' => 'string',
                     ],
-                    'cipherSuites' => [
+                    'tlsCipherSuite' => [
                         'type' => 'array',
                         'items' => [
                             'type' => 'object',
@@ -3128,239 +3128,6 @@
                 ],
             ],
         ],
-        'CreateEnvironment' => [
-            'path' => '/v1/environments',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'name' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'alias' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'description' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'gatewayId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'resourceGroupId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetEnvironment' => [
-            'path' => '/v1/environments/{environmentId}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'environmentId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'withVpcInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'withStatistics',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateEnvironment' => [
-            'path' => '/v1/environments/{environmentId}',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'alias' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'description' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'environmentId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteEnvironment' => [
-            'path' => '/v1/environments/{environmentId}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'environmentId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ListEnvironments' => [
-            'path' => '/v1/environments',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'nameLike',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'aliasLike',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'gatewayId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'gatewayNameLike',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'resourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'GetDomain' => [
             'path' => '/v1/domains/{domainId}',
             'methods' => [
@@ -4287,6 +4054,239 @@
             ],
             'deprecated' => false,
             'parameters' => [],
+        ],
+        'CreateEnvironment' => [
+            'path' => '/v1/environments',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'alias' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'gatewayId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'resourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetEnvironment' => [
+            'path' => '/v1/environments/{environmentId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'environmentId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'withVpcInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withStatistics',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateEnvironment' => [
+            'path' => '/v1/environments/{environmentId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'alias' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'environmentId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteEnvironment' => [
+            'path' => '/v1/environments/{environmentId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'environmentId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListEnvironments' => [
+            'path' => '/v1/environments',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'nameLike',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'aliasLike',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'gatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'gatewayNameLike',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
         ],
     ],
     'endpoints' => [

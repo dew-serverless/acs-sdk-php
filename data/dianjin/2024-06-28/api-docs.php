@@ -1789,6 +1789,77 @@
                 ],
             ],
         ],
+        'RunAgent' => [
+            'path' => '/{workspaceId}/api/bot/thread/run',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/octet-stream',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'modelId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'threadId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'botId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'userContent' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'stream' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'versionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'useDraft' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetDialogAnalysisResult' => [
             'path' => '/{workspaceId}/api/virtualHuman/dialog/analysis',
             'methods' => [

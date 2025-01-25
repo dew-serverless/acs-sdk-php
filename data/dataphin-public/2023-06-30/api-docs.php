@@ -464,6 +464,47 @@
                 ],
             ],
         ],
+        'GetSparkLocalClientInfo' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnvEnum',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'AddTenantMembers' => [
             'methods' => [
                 'post',
@@ -7090,6 +7131,60 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListAuthorizedDataServiceApiDetails' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'AppKey' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Page' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                                'minimum' => '1',
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                                'minimum' => '1',
+                                'maximum' => '100',
+                            ],
+                        ],
                     ],
                 ],
             ],

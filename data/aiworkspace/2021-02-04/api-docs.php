@@ -2039,6 +2039,10 @@
                                     'required' => true,
                                 ],
                             ],
+                            'ResourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2144,6 +2148,14 @@
                 ],
                 [
                     'name' => 'WorkspaceIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

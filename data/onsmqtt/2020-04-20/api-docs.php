@@ -1480,7 +1480,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                         'enum' => [
                             'ORIGIN',
                             'SIGNED',

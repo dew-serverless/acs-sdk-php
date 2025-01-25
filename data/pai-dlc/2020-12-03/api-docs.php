@@ -1002,6 +1002,9 @@
                             'OnSucceed',
                         ],
                     ],
+                    'EnableCPUAffinity' => [
+                        'type' => 'boolean',
+                    ],
                     'DisableEcsStockCheck' => [
                         'type' => 'boolean',
                     ],

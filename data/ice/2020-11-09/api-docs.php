@@ -81,6 +81,9 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
+                            'AsrLanguageId' => [
+                                'type' => 'string',
+                            ],
                             'UserOfflineTimeout' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
@@ -169,6 +172,9 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
+                            'AsrLanguageId' => [
+                                'type' => 'string',
+                            ],
                             'UserOfflineTimeout' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
@@ -250,6 +256,9 @@
                             'UserOnlineTimeout' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                            ],
+                            'AsrLanguageId' => [
+                                'type' => 'string',
                             ],
                             'UserOfflineTimeout' => [
                                 'type' => 'integer',
@@ -429,6 +438,249 @@
                     ],
                     'AccessPolicy' => [
                         'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'ChannelAssemblyChannel' => [
+                'type' => 'object',
+                'properties' => [
+                    'FillerSourceName' => [
+                        'type' => 'string',
+                    ],
+                    'FillerSourceLocationName' => [
+                        'type' => 'string',
+                    ],
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'ChannelName' => [
+                        'type' => 'string',
+                    ],
+                    'ChannelTier' => [
+                        'type' => 'string',
+                    ],
+                    'AccessToken' => [
+                        'type' => 'string',
+                    ],
+                    'State' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'Arn' => [
+                        'type' => 'string',
+                    ],
+                    'PlaybackMode' => [
+                        'type' => 'string',
+                    ],
+                    'OutPutConfigList' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'ManifestName' => [
+                                    'type' => 'string',
+                                ],
+                                'ChannelName' => [
+                                    'type' => 'string',
+                                ],
+                                'Format' => [
+                                    'type' => 'string',
+                                ],
+                                'PlaybackUrl' => [
+                                    'type' => 'string',
+                                ],
+                                'ManifestSettings' => [
+                                    'type' => 'string',
+                                ],
+                                'SourceGroupName' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'AccessPolicy' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'ChannelAssemblyProgram' => [
+                'type' => 'object',
+                'properties' => [
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'ChannelName' => [
+                        'type' => 'string',
+                    ],
+                    'SourceLocationName' => [
+                        'type' => 'string',
+                    ],
+                    'AdBreaks' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'TimeSignalSettings' => [
+                                    'type' => 'string',
+                                ],
+                                'OffsetMillis' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'ChannelName' => [
+                                    'type' => 'string',
+                                ],
+                                'SourceLocationName' => [
+                                    'type' => 'string',
+                                ],
+                                'SpliceInsertSettings' => [
+                                    'type' => 'string',
+                                ],
+                                'SourceName' => [
+                                    'type' => 'string',
+                                ],
+                                'ProgramName' => [
+                                    'type' => 'string',
+                                ],
+                                'MessageType' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'SourceType' => [
+                        'type' => 'string',
+                    ],
+                    'Transition' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'SourceName' => [
+                        'type' => 'string',
+                    ],
+                    'ClipRange' => [
+                        'type' => 'string',
+                    ],
+                    'Arn' => [
+                        'type' => 'string',
+                    ],
+                    'ProgramName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ChannelAssemblyScheduleData' => [
+                'type' => 'object',
+                'properties' => [
+                    'EntryType' => [
+                        'type' => 'string',
+                    ],
+                    'SourceLocationName' => [
+                        'type' => 'string',
+                    ],
+                    'AdBreaks' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'OffsetMillis' => [
+                                    'type' => 'string',
+                                ],
+                                'TimeSignalSettings' => [
+                                    'type' => 'string',
+                                ],
+                                'SourceLocationName' => [
+                                    'type' => 'string',
+                                ],
+                                'SpliceInsertSettings' => [
+                                    'type' => 'string',
+                                ],
+                                'SourceName' => [
+                                    'type' => 'string',
+                                ],
+                                'MessageType' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'SourceType' => [
+                        'type' => 'string',
+                    ],
+                    'SourceName' => [
+                        'type' => 'string',
+                    ],
+                    'ApproximateDurationSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ApproximateStartTime' => [
+                        'type' => 'string',
+                    ],
+                    'ProgramName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ChannelAssemblySource' => [
+                'type' => 'object',
+                'properties' => [
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'SourceLocationName' => [
+                        'type' => 'string',
+                    ],
+                    'State' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'SourceType' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'SourceName' => [
+                        'type' => 'string',
+                    ],
+                    'HttpPackageConfigurations' => [
+                        'type' => 'string',
+                    ],
+                    'Arn' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ChannelAssemblySourceLocation' => [
+                'type' => 'object',
+                'properties' => [
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'SourceLocationName' => [
+                        'type' => 'string',
+                    ],
+                    'State' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'SegmentDeliveryConfigurations' => [
+                        'type' => 'string',
+                    ],
+                    'BaseUrl' => [
+                        'type' => 'string',
+                    ],
+                    'Arn' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -986,6 +1238,130 @@
                     ],
                     'Arn' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'VodPackagingAsset' => [
+                'type' => 'object',
+                'properties' => [
+                    'GroupName' => [
+                        'type' => 'string',
+                    ],
+                    'Input' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                            ],
+                            'Media' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'ContentId' => [
+                        'type' => 'string',
+                    ],
+                    'AssetName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'VodPackagingConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'ManifestName' => [
+                        'type' => 'string',
+                    ],
+                    'StreamSelection' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'MinVideoBitsPerSecond' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'StreamOrder' => [
+                                'type' => 'string',
+                            ],
+                            'MaxVideoBitsPerSecond' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                    'DrmProvider' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'SystemIds' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'EncryptionMethod' => [
+                                'type' => 'string',
+                            ],
+                            'IV' => [
+                                'type' => 'string',
+                            ],
+                            'Url' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'SegmentDuration' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'VodPackagingConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'GroupName' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'ConfigurationName' => [
+                        'type' => 'string',
+                    ],
+                    'Protocol' => [
+                        'type' => 'string',
+                    ],
+                    'PackageConfig' => [
+                        '$ref' => '#/components/schemas/VodPackagingConfig',
+                    ],
+                ],
+            ],
+            'VodPackagingGroup' => [
+                'type' => 'object',
+                'properties' => [
+                    'GroupName' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'DomainName' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'ApproximateAssetCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ConfigurationCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -8558,6 +8934,90 @@
                 ],
             ],
         ],
+        'SubmitProjectExportJob' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Timeline',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExportType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OutputMediaConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetProjectExportJob' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'SubmitMediaProducingJob' => [
             'methods' => [
                 'get',
@@ -10876,6 +11336,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SessionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'StopAIAgentInstance' => [
@@ -11267,6 +11735,14 @@
                 ],
                 [
                     'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SessionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -12930,10 +13406,9 @@
                 ],
             ],
         ],
-        'SubmitProjectExportJob' => [
-            'path' => '',
+        'GetSourceLocation' => [
+            'path' => '/',
             'methods' => [
-                'get',
                 'post',
             ],
             'schemes' => [
@@ -12947,31 +13422,32 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'ProjectId',
+                    'name' => 'SourceLocationName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
+            ],
+        ],
+        'UpdateSourceLocation' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
                 [
-                    'name' => 'Timeline',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
+                    'AK' => [],
                 ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
                 [
-                    'name' => 'ExportType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'OutputMediaConfig',
+                    'name' => 'SourceLocationName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -12979,7 +13455,23 @@
                     ],
                 ],
                 [
-                    'name' => 'UserData',
+                    'name' => 'BaseUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableSegmentDelivery',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SegmentDeliveryUrl',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -12988,7 +13480,1283 @@
                 ],
             ],
         ],
-        'GetProjectExportJob' => [
+        'DeleteSourceLocation' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SoftDelete',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListSourceLocations' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FilterState',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortByModifiedTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSourceLocation' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BaseUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnableSegmentDelivery',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SegmentDeliveryUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateProgram' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProgramName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClipRange',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AdBreaks',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Transition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetProgram' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProgramName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteChannel' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateSource' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'HttpPackageConfigurations',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StartChannel' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteProgram' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProgramName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSource' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SoftDelete',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StopChannel' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListChannels' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelTier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PlaybackMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'State',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortByModifiedTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListPrograms' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProgramName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetSource' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateChannel' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelTier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PlaybackMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AccessPolicy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AccessToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FillerSourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FillerSourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OutPutConfigList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListSchedules' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'WindowDurationSeconds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListSources' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FilterState',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortByModifiedTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListAlerts' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceArn',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Category',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortByModifiedTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GmtStart',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GmtEnd',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetChannel' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateProgram' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProgramName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Transition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClipRange',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AdBreaks',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListChannelAlerts' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceArn',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Category',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortByModifiedTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GmtStart',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GmtEnd',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSource' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'HttpPackageConfigurations',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateChannel' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AccessPolicy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AccessToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FillerSourceLocationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FillerSourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OutPutConfigList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateVodPackagingGroup' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetVodPackagingGroup' => [
             'path' => '',
             'methods' => [
                 'get',
@@ -13005,7 +14773,1379 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'JobId',
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListVodPackagingGroups' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Keyword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteVodPackagingGroup' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateVodPackagingConfiguration' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigurationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Protocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PackageConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ManifestName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SegmentDuration' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'StreamSelection' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'MinVideoBitsPerSecond' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'MaxVideoBitsPerSecond' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'StreamOrder' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'DrmProvider' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'EncryptionMethod' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'IV' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SystemIds' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'Url' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetVodPackagingConfiguration' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ConfigurationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListVodPackagingConfigurations' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Keyword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteVodPackagingConfiguration' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ConfigurationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateVodPackagingAsset' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AssetName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Input',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Media' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ContentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'BatchCreateVodPackagingAsset' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Assets',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'AssetName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ContentId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Input' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Media' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetVodPackagingAsset' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AssetName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListVodPackagingAssets' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Keyword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteVodPackagingAsset' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AssetName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateLivePackageChannelGroup' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateLivePackageChannelGroup' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetLivePackageChannelGroup' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListLivePackageChannelGroups' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Keyword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteLivePackageChannelGroup' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateLivePackageChannel' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SegmentCount',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SegmentDuration',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Protocol',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateLivePackageChannel' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Protocol',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SegmentCount',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SegmentDuration',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateLivePackageChannelCredentials' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RotateCredentials',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetLivePackageChannel' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListLivePackageChannels' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Keyword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteLivePackageChannel' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateLivePackageOriginEndpoint' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndpointName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Protocol',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ManifestName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TimeshiftVision',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AuthorizationCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpWhitelist',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpBlacklist',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateLivePackageOriginEndpoint' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndpointName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Protocol',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ManifestName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TimeshiftVision',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AuthorizationCode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpWhitelist',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpBlacklist',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetLivePackageOriginEndpoint' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndpointName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListLivePackageOriginEndpoints' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Keyword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteLivePackageOriginEndpoint' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndpointName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

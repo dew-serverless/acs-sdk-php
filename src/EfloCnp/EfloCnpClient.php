@@ -35,14 +35,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteExperimentAsync($arguments = [])
  * @method \Dew\Acs\Result getWorkload(array $arguments = [])
  * @method \Http\Promise\Promise getWorkloadAsync($arguments = [])
- * @method \Dew\Acs\Result deleteExperimentPlanTemplate(array $arguments = [])
- * @method \Http\Promise\Promise deleteExperimentPlanTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result getExperimentResultData(array $arguments = [])
  * @method \Http\Promise\Promise getExperimentResultDataAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteExperimentPlanTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise deleteExperimentPlanTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result getExperiment(array $arguments = [])
  * @method \Http\Promise\Promise getExperimentAsync($arguments = [])
  * @method \Dew\Acs\Result stopExperiment(array $arguments = [])
  * @method \Http\Promise\Promise stopExperimentAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteExperimentPlan(array $arguments = [])
+ * @method \Http\Promise\Promise deleteExperimentPlanAsync($arguments = [])
+ * @method \Dew\Acs\Result updateExperimentPlanTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise updateExperimentPlanTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result getExperimentPlanTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise getExperimentPlanTemplateAsync($arguments = [])
  */
 final class EfloCnpClient extends AcsClient
 {

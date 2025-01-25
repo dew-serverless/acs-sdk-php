@@ -199,6 +199,43 @@
                     ],
                 ],
             ],
+            'DistributeProductCommand' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'requestUser' => [
+                        'type' => 'string',
+                    ],
+                    'requestTime' => [
+                        'type' => 'string',
+                    ],
+                    'lmShopId' => [
+                        'type' => 'string',
+                    ],
+                    'products' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DistributionProduct',
+                        ],
+                    ],
+                ],
+            ],
+            'DistributeProductResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'DistributionMaxRefundFee' => [
                 'type' => 'object',
                 'properties' => [
@@ -211,6 +248,103 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'DistributionProduct' => [
+                'type' => 'object',
+                'properties' => [
+                    'productId' => [
+                        'type' => 'string',
+                    ],
+                    'channelCode' => [
+                        'type' => 'string',
+                    ],
+                    'sellerId' => [
+                        'type' => 'string',
+                    ],
+                    'categoryLeafId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'categoryLeafName' => [
+                        'type' => 'string',
+                    ],
+                    'categoryChain' => [
+                        'type' => 'string',
+                    ],
+                    'title' => [
+                        'type' => 'string',
+                    ],
+                    'shortTitle' => [
+                        'type' => 'string',
+                    ],
+                    'picUrl' => [
+                        'type' => 'string',
+                    ],
+                    'whiteBackgroundPicUrl' => [
+                        'type' => 'string',
+                    ],
+                    'distributeStatus' => [
+                        'type' => 'string',
+                    ],
+                    'skus' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DistributionSku',
+                        ],
+                    ],
+                ],
+            ],
+            'DistributionSku' => [
+                'type' => 'object',
+                'properties' => [
+                    'skuId' => [
+                        'type' => 'string',
+                    ],
+                    'title' => [
+                        'type' => 'string',
+                    ],
+                    'aliasTitle' => [
+                        'type' => 'string',
+                    ],
+                    'picUrl' => [
+                        'type' => 'string',
+                    ],
+                    'jxPrice' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'dxPrice' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'taxCode' => [
+                        'type' => 'string',
+                    ],
+                    'taxRate' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'barCode' => [
+                        'type' => 'string',
+                    ],
+                    'skuStatus' => [
+                        'type' => 'string',
+                    ],
+                    'quantity' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'hasInvoice' => [
+                        'type' => 'boolean',
+                    ],
+                    'hasCredit' => [
+                        'type' => 'boolean',
+                    ],
+                    'creditPeriod' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],
@@ -394,6 +528,26 @@
                         'items' => [
                             '$ref' => '#/components/schemas/GeneralBill',
                             'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+            'GetDistributionProductResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                    'products' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DistributionProduct',
                         ],
                     ],
                 ],
@@ -2084,6 +2238,46 @@
                     ],
                     'valueAlias' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'StopDistributionCommand' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'requestUser' => [
+                        'type' => 'string',
+                    ],
+                    'requestTime' => [
+                        'type' => 'string',
+                    ],
+                    'lmShopId' => [
+                        'type' => 'string',
+                    ],
+                    'productId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'StopDistributionResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'code' => [
+                        'type' => 'string',
+                    ],
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                    'products' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DistributionProduct',
+                        ],
                     ],
                 ],
             ],

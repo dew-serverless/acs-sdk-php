@@ -4837,6 +4837,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TriggerTemplateId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeletePrivateAccessPolicy' => [
@@ -5023,6 +5031,14 @@
                 ],
                 [
                     'name' => 'DeviceAttributeAction',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TriggerTemplateId',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

@@ -4920,6 +4920,12 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'Cover',
+                            'Append',
+                            'Delete',
+                            'Extend',
+                        ],
                     ],
                 ],
                 [

@@ -6934,11 +6934,16 @@
                                         'DbId' => [
                                             'type' => 'integer',
                                             'format' => 'int64',
-                                            'required' => true,
+                                            'required' => false,
                                         ],
                                         'Logic' => [
                                             'type' => 'boolean',
-                                            'required' => true,
+                                            'required' => false,
+                                        ],
+                                        'InstanceId' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
                                         ],
                                     ],
                                 ],

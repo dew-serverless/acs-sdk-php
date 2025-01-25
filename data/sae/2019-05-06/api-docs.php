@@ -7412,6 +7412,14 @@
                     ],
                 ],
                 [
+                    'name' => 'SwimlanePvtzDiscoverySvc',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'MicroRegistration',
                     'in' => 'query',
                     'schema' => [

@@ -2822,8 +2822,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -8492,6 +8492,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'VendorAuthAlias',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteCloudVendorAccountAK' => [
@@ -8594,6 +8602,14 @@
                 ],
                 [
                     'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VendorAuthAlias',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -8710,6 +8726,14 @@
                 ],
                 [
                     'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VendorAuthAlias',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -27098,8 +27122,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -27238,8 +27262,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -27330,8 +27354,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -27546,8 +27570,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -27604,8 +27628,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -27899,8 +27923,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -29096,7 +29120,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -29112,7 +29136,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [

@@ -672,10 +672,6 @@
                                         ],
                                     ],
                                 ],
-                                'timezone' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                                 'type' => [
                                     'type' => 'string',
                                     'required' => true,
@@ -686,6 +682,14 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'scheduleTimezone',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -782,10 +786,6 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'timezone' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                                 'tunnelQuotaParameter' => [
                                     'type' => 'object',
                                     'required' => false,
@@ -804,6 +804,14 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'timezone',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

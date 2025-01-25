@@ -4344,6 +4344,32 @@
                         'maximum' => '100',
                     ],
                 ],
+                [
+                    'name' => 'OrderByField',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'SpaceUsage',
+                            'FileCountUsage',
+                            'SizeLimit',
+                            'FileCountLimit',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SortOrder',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'asc',
+                            'desc',
+                        ],
+                    ],
+                ],
             ],
         ],
         'SetFilesetQuota' => [

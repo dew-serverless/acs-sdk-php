@@ -17331,6 +17331,19 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'StreamSupport',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                        ],
+                    ],
+                ],
             ],
         ],
         'CreateLiveMessageGroup' => [
@@ -18680,6 +18693,22 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HighReliability',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Storage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

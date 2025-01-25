@@ -18460,6 +18460,14 @@
                     ],
                 ],
                 [
+                    'name' => 'MseAppName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'AppName',
                     'in' => 'query',
                     'schema' => [

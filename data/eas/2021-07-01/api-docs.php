@@ -3296,6 +3296,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'DisableSpotProtectionPeriod' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -3503,6 +3507,10 @@
                             ],
                             'VirtualResourceName' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DisableSpotProtectionPeriod' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],
@@ -4401,6 +4409,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkerName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListResources' => [
@@ -4455,6 +4471,30 @@
                 ],
                 [
                     'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Sort',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

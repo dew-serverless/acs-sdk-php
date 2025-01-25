@@ -1106,7 +1106,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 4,
+                        'maxItems' => 10,
                     ],
                 ],
                 [
@@ -1162,7 +1162,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 4,
+                        'maxItems' => 10,
                     ],
                 ],
                 [

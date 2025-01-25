@@ -105,6 +105,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listTagKeysAsync($arguments = [])
  * @method \Dew\Acs\Result pushMeteringData(array $arguments = [])
  * @method \Http\Promise\Promise pushMeteringDataAsync($arguments = [])
+ * @method \Dew\Acs\Result withdrawService(array $arguments = [])
+ * @method \Http\Promise\Promise withdrawServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelServiceRegistration(array $arguments = [])
+ * @method \Http\Promise\Promise cancelServiceRegistrationAsync($arguments = [])
+ * @method \Dew\Acs\Result listServiceRegistrations(array $arguments = [])
+ * @method \Http\Promise\Promise listServiceRegistrationsAsync($arguments = [])
+ * @method \Dew\Acs\Result listServiceInstanceDeployDetails(array $arguments = [])
+ * @method \Http\Promise\Promise listServiceInstanceDeployDetailsAsync($arguments = [])
  */
 final class ComputeNestSupplierClient extends AcsClient
 {

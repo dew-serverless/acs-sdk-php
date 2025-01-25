@@ -473,6 +473,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise importContactFlowAsync($arguments = [])
  * @method \Dew\Acs\Result exportContactFlow(array $arguments = [])
  * @method \Http\Promise\Promise exportContactFlowAsync($arguments = [])
+ * @method \Dew\Acs\Result createCallSummary(array $arguments = [])
+ * @method \Http\Promise\Promise createCallSummaryAsync($arguments = [])
+ * @method \Dew\Acs\Result updateCallSummary(array $arguments = [])
+ * @method \Http\Promise\Promise updateCallSummaryAsync($arguments = [])
+ * @method \Dew\Acs\Result getSummaryTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise getSummaryTemplateAsync($arguments = [])
  */
 final class CccClient extends AcsClient
 {

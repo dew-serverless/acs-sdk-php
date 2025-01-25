@@ -507,6 +507,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise cancelSparkReplStatementAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result startSparkReplSession(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise startSparkReplSessionAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeSparkSQLDiagnosisAttribute(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeSparkSQLDiagnosisAttributeAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeSparkSQLDiagnosisList(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeSparkSQLDiagnosisListAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeAPSADBInstances(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeAPSADBInstancesAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result getApsManagedDatabases(array $arguments = []) {@since 2021-12-01}

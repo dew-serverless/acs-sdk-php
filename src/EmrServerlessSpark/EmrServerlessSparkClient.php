@@ -47,6 +47,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listLogContentsAsync($arguments = [])
  * @method \Dew\Acs\Result getTemplate(array $arguments = [])
  * @method \Http\Promise\Promise getTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result getCuHours(array $arguments = [])
+ * @method \Http\Promise\Promise getCuHoursAsync($arguments = [])
  */
 final class EmrServerlessSparkClient extends AcsClient
 {

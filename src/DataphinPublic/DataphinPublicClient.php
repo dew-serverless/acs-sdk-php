@@ -21,6 +21,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise checkDataSourceConnectivityAsync($arguments = [])
  * @method \Dew\Acs\Result checkDataSourceConnectivityById(array $arguments = [])
  * @method \Http\Promise\Promise checkDataSourceConnectivityByIdAsync($arguments = [])
+ * @method \Dew\Acs\Result getSparkLocalClientInfo(array $arguments = [])
+ * @method \Http\Promise\Promise getSparkLocalClientInfoAsync($arguments = [])
  * @method \Dew\Acs\Result addTenantMembers(array $arguments = [])
  * @method \Http\Promise\Promise addTenantMembersAsync($arguments = [])
  * @method \Dew\Acs\Result addTenantMembersBySourceUser(array $arguments = [])
@@ -225,6 +227,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listAlertEventsAsync($arguments = [])
  * @method \Dew\Acs\Result getAlertEvent(array $arguments = [])
  * @method \Http\Promise\Promise getAlertEventAsync($arguments = [])
+ * @method \Dew\Acs\Result listAuthorizedDataServiceApiDetails(array $arguments = [])
+ * @method \Http\Promise\Promise listAuthorizedDataServiceApiDetailsAsync($arguments = [])
  */
 final class DataphinPublicClient extends AcsClient
 {

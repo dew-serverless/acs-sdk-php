@@ -93,6 +93,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise cancelCreateIndexJobAsync($arguments = [])
  * @method \Dew\Acs\Result deleteIndex(array $arguments = [])
  * @method \Http\Promise\Promise deleteIndexAsync($arguments = [])
+ * @method \Dew\Acs\Result listIndices(array $arguments = [])
+ * @method \Http\Promise\Promise listIndicesAsync($arguments = [])
  * @method \Dew\Acs\Result describeIndex(array $arguments = [])
  * @method \Http\Promise\Promise describeIndexAsync($arguments = [])
  * @method \Dew\Acs\Result textEmbedding(array $arguments = [])

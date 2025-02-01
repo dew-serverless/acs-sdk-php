@@ -435,6 +435,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise unbindUserDesktopAsync($arguments = []) {@since 2020-10-02}
  * @method \Dew\Acs\Result verifyCredential(array $arguments = []) {@since 2020-10-02}
  * @method \Http\Promise\Promise verifyCredentialAsync($arguments = []) {@since 2020-10-02}
+ * @method \Dew\Acs\Result describeUserResources(array $arguments = []) {@since 2020-10-02}
+ * @method \Http\Promise\Promise describeUserResourcesAsync($arguments = []) {@since 2020-10-02}
  * @method \Dew\Acs\Result describeBenefits(array $arguments = []) {@since 2023-06-27}
  * @method \Http\Promise\Promise describeBenefitsAsync($arguments = []) {@since 2023-06-27}
  * @method \Dew\Acs\Result getRedeemCodes(array $arguments = []) {@since 2023-06-27}

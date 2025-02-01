@@ -7,8 +7,6 @@ namespace Dew\Acs\ComputeNestSupplier;
 use Dew\Acs\AcsClient;
 
 /**
- * @method \Dew\Acs\Result generateServicePolicy(array $arguments = [])
- * @method \Http\Promise\Promise generateServicePolicyAsync($arguments = [])
  * @method \Dew\Acs\Result createService(array $arguments = [])
  * @method \Http\Promise\Promise createServiceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteService(array $arguments = [])
@@ -31,6 +29,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getServiceTemplateParameterConstraintsAsync($arguments = [])
  * @method \Dew\Acs\Result getServiceEstimateCost(array $arguments = [])
  * @method \Http\Promise\Promise getServiceEstimateCostAsync($arguments = [])
+ * @method \Dew\Acs\Result withdrawService(array $arguments = [])
+ * @method \Http\Promise\Promise withdrawServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result generateServicePolicy(array $arguments = [])
+ * @method \Http\Promise\Promise generateServicePolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelServiceRegistration(array $arguments = [])
+ * @method \Http\Promise\Promise cancelServiceRegistrationAsync($arguments = [])
+ * @method \Dew\Acs\Result listServiceRegistrations(array $arguments = [])
+ * @method \Http\Promise\Promise listServiceRegistrationsAsync($arguments = [])
  * @method \Dew\Acs\Result rollbackServiceInstance(array $arguments = [])
  * @method \Http\Promise\Promise rollbackServiceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result createServiceInstance(array $arguments = [])
@@ -59,6 +65,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise stopServiceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result restartServiceInstance(array $arguments = [])
  * @method \Http\Promise\Promise restartServiceInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result listServiceInstanceDeployDetails(array $arguments = [])
+ * @method \Http\Promise\Promise listServiceInstanceDeployDetailsAsync($arguments = [])
  * @method \Dew\Acs\Result createArtifact(array $arguments = [])
  * @method \Http\Promise\Promise createArtifactAsync($arguments = [])
  * @method \Dew\Acs\Result deleteArtifact(array $arguments = [])
@@ -95,6 +103,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise removeServiceSharedAccountsAsync($arguments = [])
  * @method \Dew\Acs\Result listServiceSharedAccounts(array $arguments = [])
  * @method \Http\Promise\Promise listServiceSharedAccountsAsync($arguments = [])
+ * @method \Dew\Acs\Result updateSharedAccountPermission(array $arguments = [])
+ * @method \Http\Promise\Promise updateSharedAccountPermissionAsync($arguments = [])
  * @method \Dew\Acs\Result tagResources(array $arguments = [])
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result unTagResources(array $arguments = [])
@@ -105,14 +115,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listTagKeysAsync($arguments = [])
  * @method \Dew\Acs\Result pushMeteringData(array $arguments = [])
  * @method \Http\Promise\Promise pushMeteringDataAsync($arguments = [])
- * @method \Dew\Acs\Result withdrawService(array $arguments = [])
- * @method \Http\Promise\Promise withdrawServiceAsync($arguments = [])
- * @method \Dew\Acs\Result cancelServiceRegistration(array $arguments = [])
- * @method \Http\Promise\Promise cancelServiceRegistrationAsync($arguments = [])
- * @method \Dew\Acs\Result listServiceRegistrations(array $arguments = [])
- * @method \Http\Promise\Promise listServiceRegistrationsAsync($arguments = [])
- * @method \Dew\Acs\Result listServiceInstanceDeployDetails(array $arguments = [])
- * @method \Http\Promise\Promise listServiceInstanceDeployDetailsAsync($arguments = [])
  */
 final class ComputeNestSupplierClient extends AcsClient
 {

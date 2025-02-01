@@ -2265,10 +2265,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'enum' => [
-                            'static',
-                            'dynamic',
-                        ],
+                        'enum' => [],
                     ],
                 ],
                 [

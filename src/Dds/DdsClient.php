@@ -239,6 +239,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeActiveOperationMaintenanceConfigAsync($arguments = [])
  * @method \Dew\Acs\Result checkServiceLinkedRole(array $arguments = [])
  * @method \Http\Promise\Promise checkServiceLinkedRoleAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyDBInstanceConfig(array $arguments = [])
+ * @method \Http\Promise\Promise modifyDBInstanceConfigAsync($arguments = [])
  */
 final class DdsClient extends AcsClient
 {

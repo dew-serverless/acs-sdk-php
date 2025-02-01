@@ -147,6 +147,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listSkillGroupConfigAsync($arguments = [])
  * @method \Dew\Acs\Result deleteSkillGroupConfig(array $arguments = [])
  * @method \Http\Promise\Promise deleteSkillGroupConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result applyWsToken(array $arguments = [])
+ * @method \Http\Promise\Promise applyWsTokenAsync($arguments = [])
  * @method \Dew\Acs\Result getSyncResult(array $arguments = []) {@deprecated 2019-01-15}
  * @method \Http\Promise\Promise getSyncResultAsync($arguments = []) {@deprecated 2019-01-15}
  * @method \Dew\Acs\Result syncQualityCheck(array $arguments = [])

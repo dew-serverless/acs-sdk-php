@@ -551,6 +551,14 @@
                     ],
                 ],
                 [
+                    'name' => 'ClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'FileSystemId',
                     'in' => 'query',
                     'schema' => [
@@ -634,6 +642,14 @@
                 ],
                 [
                     'name' => 'Options',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DataSourceId',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

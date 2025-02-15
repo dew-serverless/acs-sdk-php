@@ -553,6 +553,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeVSwitchAttributesAsync($arguments = [])
  * @method \Dew\Acs\Result modifyEnsRouteEntry(array $arguments = [])
  * @method \Http\Promise\Promise modifyEnsRouteEntryAsync($arguments = [])
+ * @method \Dew\Acs\Result listProductAbilities(array $arguments = [])
+ * @method \Http\Promise\Promise listProductAbilitiesAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

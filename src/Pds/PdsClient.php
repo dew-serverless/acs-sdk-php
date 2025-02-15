@@ -107,6 +107,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise filePutUserTagsAsync($arguments = [])
  * @method \Dew\Acs\Result fileDeleteUserTags(array $arguments = [])
  * @method \Http\Promise\Promise fileDeleteUserTagsAsync($arguments = [])
+ * @method \Dew\Acs\Result videoDRMLicense(array $arguments = [])
+ * @method \Http\Promise\Promise videoDRMLicenseAsync($arguments = [])
  * @method \Dew\Acs\Result deleteRevision(array $arguments = [])
  * @method \Http\Promise\Promise deleteRevisionAsync($arguments = [])
  * @method \Dew\Acs\Result updateRevision(array $arguments = [])

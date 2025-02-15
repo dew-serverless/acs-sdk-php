@@ -55,6 +55,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listIpamPoolAllocationsAsync($arguments = [])
  * @method \Dew\Acs\Result listIpamResourceDiscoveries(array $arguments = [])
  * @method \Http\Promise\Promise listIpamResourceDiscoveriesAsync($arguments = [])
+ * @method \Dew\Acs\Result listIpamResourceDiscoveryAssociations(array $arguments = [])
+ * @method \Http\Promise\Promise listIpamResourceDiscoveryAssociationsAsync($arguments = [])
  * @method \Dew\Acs\Result listIpamDiscoveredResource(array $arguments = [])
  * @method \Http\Promise\Promise listIpamDiscoveredResourceAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])

@@ -119,6 +119,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listReportsAsync($arguments = [])
  * @method \Dew\Acs\Result getReport(array $arguments = [])
  * @method \Http\Promise\Promise getReportAsync($arguments = [])
+ * @method \Dew\Acs\Result describeUserTagKeys(array $arguments = [])
+ * @method \Http\Promise\Promise describeUserTagKeysAsync($arguments = [])
  */
 final class EbsClient extends AcsClient
 {

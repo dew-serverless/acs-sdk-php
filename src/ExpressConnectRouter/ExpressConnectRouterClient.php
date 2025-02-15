@@ -7,6 +7,18 @@ namespace Dew\Acs\ExpressConnectRouter;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result createFlowLog(array $arguments = [])
+ * @method \Http\Promise\Promise createFlowLogAsync($arguments = [])
+ * @method \Dew\Acs\Result deactivateFlowLog(array $arguments = [])
+ * @method \Http\Promise\Promise deactivateFlowLogAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteFlowlog(array $arguments = [])
+ * @method \Http\Promise\Promise deleteFlowlogAsync($arguments = [])
+ * @method \Dew\Acs\Result describeFlowLogs(array $arguments = [])
+ * @method \Http\Promise\Promise describeFlowLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyFlowLogAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise modifyFlowLogAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result activateFlowLog(array $arguments = [])
+ * @method \Http\Promise\Promise activateFlowLogAsync($arguments = [])
  * @method \Dew\Acs\Result describeExpressConnectRouterInterRegionTransitMode(array $arguments = [])
  * @method \Http\Promise\Promise describeExpressConnectRouterInterRegionTransitModeAsync($arguments = [])
  * @method \Dew\Acs\Result describeExpressConnectRouterAllowedPrefixHistory(array $arguments = [])

@@ -543,6 +543,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyClickhouseEngineAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result downloadInstanceCACertificate(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise downloadInstanceCACertificateAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result listSparkWarehouseBatchSQL(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise listSparkWarehouseBatchSQLAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result cancelSparkWarehouseBatchSQL(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise cancelSparkWarehouseBatchSQLAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result getSparkWarehouseBatchSQL(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise getSparkWarehouseBatchSQLAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result executeSparkWarehouseBatchSQL(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise executeSparkWarehouseBatchSQLAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result modifyUserEniVswitchOptions(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise modifyUserEniVswitchOptionsAsync($arguments = []) {@since 2021-12-01}
  */

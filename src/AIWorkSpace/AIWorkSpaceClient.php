@@ -169,6 +169,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listProductsAsync($arguments = [])
  * @method \Dew\Acs\Result createProductOrders(array $arguments = [])
  * @method \Http\Promise\Promise createProductOrdersAsync($arguments = [])
+ * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
  */
 final class AIWorkSpaceClient extends AcsClient
 {

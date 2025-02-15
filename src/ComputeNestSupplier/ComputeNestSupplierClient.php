@@ -67,6 +67,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise restartServiceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result listServiceInstanceDeployDetails(array $arguments = [])
  * @method \Http\Promise\Promise listServiceInstanceDeployDetailsAsync($arguments = [])
+ * @method \Dew\Acs\Result listArtifactRisks(array $arguments = [])
+ * @method \Http\Promise\Promise listArtifactRisksAsync($arguments = [])
  * @method \Dew\Acs\Result createArtifact(array $arguments = [])
  * @method \Http\Promise\Promise createArtifactAsync($arguments = [])
  * @method \Dew\Acs\Result deleteArtifact(array $arguments = [])

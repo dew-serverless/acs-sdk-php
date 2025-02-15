@@ -45,6 +45,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise runTagMiningAnalysisAsync($arguments = [])
  * @method \Dew\Acs\Result runNetworkContentAudit(array $arguments = [])
  * @method \Http\Promise\Promise runNetworkContentAuditAsync($arguments = [])
+ * @method \Dew\Acs\Result submitTagMiningAnalysisTask(array $arguments = [])
+ * @method \Http\Promise\Promise submitTagMiningAnalysisTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getTagMiningAnalysisTask(array $arguments = [])
+ * @method \Http\Promise\Promise getTagMiningAnalysisTaskAsync($arguments = [])
  */
 final class QuanMiaoLightAppClient extends AcsClient
 {

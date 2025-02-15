@@ -2338,4 +2338,12 @@
         ],
         'defaultVersion' => '2024-11-14',
     ],
+    [
+        'code' => 'OpenAPIExplorer',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-11-30',
+        ],
+        'defaultVersion' => '2024-11-30',
+    ],
 ];

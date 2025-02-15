@@ -9,6 +9,21 @@
         'schemas' => [],
     ],
     'apis' => [
+        'DescribeRegions' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
         'CreateFlow' => [
             'methods' => [
                 'post',

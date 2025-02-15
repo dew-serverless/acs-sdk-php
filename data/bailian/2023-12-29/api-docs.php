@@ -2187,5 +2187,9 @@
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'bailian.ap-southeast-1.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'bailian.cn-shanghai-finance-1.aliyuncs.com',
+        ],
     ],
 ];

@@ -1996,5 +1996,13 @@
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'gwlb.ap-northeast-1.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'gwlb.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'gwlb.ap-southeast-3.aliyuncs.com',
+        ],
     ],
 ];

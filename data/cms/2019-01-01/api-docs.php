@@ -12040,32 +12040,6 @@
                 ],
             ],
         ],
-        'OpenCmsService' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-                [
-                    'APP' => [],
-                ],
-                [
-                    'PrivateKey' => [],
-                ],
-                [
-                    'BearerToken' => [],
-                ],
-            ],
-            'deprecated' => true,
-            'parameters' => [],
-        ],
         'DescribeSyntheticProbeList' => [
             'path' => '',
             'methods' => [

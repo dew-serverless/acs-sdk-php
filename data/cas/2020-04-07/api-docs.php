@@ -2155,8 +2155,16 @@
             'endpoint' => 'cas.cn-hongkong.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'cas.ap-northeast-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'cas.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'cas.ap-southeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',
@@ -2169,6 +2177,14 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'cas.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'cas.ap-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-east-1',
+            'endpoint' => 'cas.me-east-1.aliyuncs.com',
         ],
     ],
 ];

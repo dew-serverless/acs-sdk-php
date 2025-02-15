@@ -7755,6 +7755,60 @@
                 ],
             ],
         ],
+        'VideoDRMLicense' => [
+            'path' => '/v2/file/video_drm_license',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+                [
+                    'BearerToken' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'domain_id',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'drmType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'licenseRequest' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'DeleteRevision' => [
             'path' => '/v2/file/revision/delete',
             'methods' => [

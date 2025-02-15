@@ -142,6 +142,28 @@
                         'type' => 'string',
                         'deprecated' => true,
                     ],
+                    'instance_type_families' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'minimum_eni_quantity' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'minimum_eni_private_ip_address_quantity' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'minimum_eni_ipv6_address_quantity' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'maximum_gpu_amount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'kubelet_config' => [

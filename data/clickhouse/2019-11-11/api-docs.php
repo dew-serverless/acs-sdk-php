@@ -1377,6 +1377,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SourceClusterName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SourceShards',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateServiceLinkedRole' => [

@@ -89,6 +89,88 @@
                     ],
                 ],
             ],
+            'DLFunction' => [
+                'type' => 'object',
+                'properties' => [
+                    'FunctionName' => [
+                        'type' => 'string',
+                    ],
+                    'OwnerName' => [
+                        'type' => 'string',
+                    ],
+                    'OwnerType' => [
+                        'type' => 'string',
+                    ],
+                    'CreatorId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'FunctionType' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ResourceUris' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DLResourceUri',
+                        ],
+                    ],
+                    'ClassName' => [
+                        'type' => 'string',
+                    ],
+                    'CatalogName' => [
+                        'type' => 'string',
+                    ],
+                    'DbName' => [
+                        'type' => 'string',
+                    ],
+                    'ModifierId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'DLFunctionInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'FunctionName' => [
+                        'type' => 'string',
+                    ],
+                    'OwnerName' => [
+                        'type' => 'string',
+                    ],
+                    'OwnerType' => [
+                        'type' => 'string',
+                    ],
+                    'CreatorId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'FunctionType' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ResourceUris' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DLResourceUri',
+                        ],
+                    ],
+                    'ClassName' => [
+                        'type' => 'string',
+                    ],
+                    'ModifierId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
             'DLOrder' => [
                 'type' => 'object',
                 'properties' => [
@@ -163,6 +245,17 @@
                     'LastAccessTime' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                ],
+            ],
+            'DLResourceUri' => [
+                'type' => 'object',
+                'properties' => [
+                    'ResourceType' => [
+                        'type' => 'string',
+                    ],
+                    'Uri' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -835,6 +928,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UidString',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -3907,6 +4008,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TableName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -7210,6 +7319,7 @@
                                     'SQL',
                                     'CSV',
                                     'JSON',
+                                    'EXCEL',
                                 ],
                             ],
                             'FileEncoding' => [
@@ -7259,6 +7369,15 @@
                                 'enum' => [
                                     'TEXT',
                                     'ATTACHMENT',
+                                ],
+                            ],
+                            'ExecMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'COMMITOR',
+                                    'AUTO',
+                                    'LAST_AUDITOR',
                                 ],
                             ],
                         ],
@@ -17265,6 +17384,436 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
+                    ],
+                ],
+            ],
+        ],
+        'GetDataLakeFunction' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CatalogName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DbName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FunctionName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DataRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateDataLakeFunction' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CatalogName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DbName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FunctionInput',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/DLFunctionInput',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DataRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListDataLakeFunction' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DataRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '9223372036854775807',
+                    ],
+                ],
+                [
+                    'name' => 'CatalogName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DbName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FunctionNamePattern',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+            ],
+        ],
+        'UpdateDataLakeFunction' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CatalogName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DbName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FunctionInput',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/DLFunctionInput',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DataRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FunctionName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListDataLakeFunctionName' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DataRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '9223372036854775807',
+                    ],
+                ],
+                [
+                    'name' => 'CatalogName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DbName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FunctionNamePattern',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+            ],
+        ],
+        'DeleteDataLakeFunction' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CatalogName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DbName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FunctionName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DataRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],

@@ -6863,6 +6863,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'MasterAISpec',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDBInstance' => [
@@ -11973,7 +11981,15 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MasterAISpec',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

@@ -2185,6 +2185,14 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'ExternalLabels' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'RoleName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'SourceCustomizedKafkaParameters' => [
@@ -4084,6 +4092,14 @@
                                         'required' => false,
                                     ],
                                     'Labels' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExternalLabels' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'RoleName' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],

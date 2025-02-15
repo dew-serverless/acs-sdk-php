@@ -18689,6 +18689,58 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'LaunchConfiguration',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Period' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'PeriodUnit' => [
+                                'type' => 'string',
+                            ],
+                            'AutoRenew' => [
+                                'type' => 'boolean',
+                            ],
+                            'AutoRenewPeriod' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PrePaidOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'SpecifyCapacityDistribution' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'InstanceTypes' => [
+                                            'type' => 'array',
+                                            'items' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                        'MinTargetCapacity' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeAutoProvisioningGroups' => [
@@ -19578,6 +19630,23 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'AutoRenew',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoRenewPeriod',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeElasticityAssurances' => [
@@ -19890,6 +19959,21 @@
                         ],
                         'minItems' => 1,
                         'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'AutoRenew',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+                [
+                    'name' => 'AutoRenewPeriod',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],
@@ -33375,6 +33459,10 @@
             'endpoint' => 'ecs.cn-chengdu.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'ecs.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'ecs.cn-hongkong.aliyuncs.com',
         ],
@@ -33389,6 +33477,10 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'ecs.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'ecs.ap-southeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',
@@ -33419,6 +33511,10 @@
             'endpoint' => 'ecs.eu-central-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'ecs.ap-south-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'me-east-1',
             'endpoint' => 'ecs.me-east-1.aliyuncs.com',
         ],
@@ -33447,8 +33543,12 @@
             'endpoint' => 'ecs.me-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'ecs.cn-wuhan-lr.aliyuncs.com',
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'ecs.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'ecs.na-south-1.aliyuncs.com',
         ],
     ],
 ];

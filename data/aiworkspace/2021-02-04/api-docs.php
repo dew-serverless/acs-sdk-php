@@ -146,6 +146,18 @@
                     'LatestVersion' => [
                         '$ref' => '#/components/schemas/DatasetVersion',
                     ],
+                    'MountAccess' => [
+                        'type' => 'string',
+                    ],
+                    'MountAccessReadWriteRoleIdList' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'ImportInfo' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'DatasetLabel' => [
@@ -205,6 +217,12 @@
                     'DataSize' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'MountAccess' => [
+                        'type' => 'string',
+                    ],
+                    'ImportInfo' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -3290,6 +3308,18 @@
                                 'minimum' => '1',
                                 'maximum' => '999999999999',
                             ],
+                            'MountAccessReadWriteRoleIdList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'ImportInfo' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -3376,6 +3406,14 @@
                             'Options' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'MountAccessReadWriteRoleIdList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],
@@ -3536,6 +3574,14 @@
                 ],
                 [
                     'name' => 'SourceDatasetId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3748,6 +3794,10 @@
                             'DataCount' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'ImportInfo' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -5536,6 +5586,46 @@
                                         ],
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ChangeResourceGroup' => [
+            'path' => '/resourcegroups/action/changeresourcegroup',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ResourceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'NewResourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ResourceType' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],

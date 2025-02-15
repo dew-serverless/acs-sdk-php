@@ -2744,6 +2744,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SavingPlanId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateDiskEncryptionService' => [
@@ -12393,7 +12401,7 @@
                                 ],
                             ],
                         ],
-                        'maxItems' => 300,
+                        'maxItems' => 500,
                     ],
                 ],
                 [
@@ -13179,7 +13187,7 @@
                                 ],
                             ],
                         ],
-                        'maxItems' => 300,
+                        'maxItems' => 500,
                     ],
                 ],
                 [

@@ -4622,8 +4622,8 @@
         ],
         'SetDcdnDomainSMCertificate' => [
             'methods' => [
-                'get',
                 'post',
+                'get',
             ],
             'schemes' => [
                 'http',

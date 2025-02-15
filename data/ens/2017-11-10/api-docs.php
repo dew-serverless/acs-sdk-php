@@ -6402,6 +6402,20 @@
                     ],
                 ],
                 [
+                    'name' => 'EnsRegionIds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
                     'name' => 'PageNumber',
                     'in' => 'query',
                     'schema' => [
@@ -8357,6 +8371,26 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'ListenerPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '65535',
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 256,
                     ],
                 ],
             ],
@@ -15806,6 +15840,21 @@
                     ],
                 ],
             ],
+        ],
+        'ListProductAbilities' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
         ],
     ],
     'endpoints' => [

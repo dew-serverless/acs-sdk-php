@@ -733,7 +733,7 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
-                        'minimum' => '20',
+                        'minimum' => '10',
                         'maximum' => '64000',
                     ],
                 ],
@@ -8769,6 +8769,22 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'MacAddress',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SystemIdentifier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

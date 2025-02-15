@@ -1729,6 +1729,20 @@
                                     ],
                                 ],
                             ],
+                            'UserProfile' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'UserProfileSwitch' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'FileSystemId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],

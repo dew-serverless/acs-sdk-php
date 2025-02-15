@@ -383,6 +383,30 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'DlqPolicy',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'DeadLetterTargetQueue' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'MaxReceiveCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'SetQueueAttributes' => [
@@ -460,6 +484,30 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DlqPolicy',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'DeadLetterTargetQueue' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'MaxReceiveCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -682,6 +730,25 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DlqPolicy',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'DeadLetterTargetQueue' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'SetSubscriptionAttributes' => [
@@ -722,6 +789,25 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DlqPolicy',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'DeadLetterTargetQueue' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

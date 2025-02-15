@@ -3806,6 +3806,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ImageId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateUdfFile' => [
@@ -4957,6 +4965,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ImageId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

@@ -309,6 +309,20 @@
                     'InstanceUsedGpuMemory' => [
                         'type' => 'string',
                     ],
+                    'Labels' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'LabelKey' => [
+                                    'type' => 'string',
+                                ],
+                                'LabelValue' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'ResourceInstanceWorker' => [
@@ -3627,6 +3641,13 @@
                                     ],
                                 ],
                             ],
+                            'Labels' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    'type' => 'string',
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -3703,6 +3724,13 @@
                             'Zone' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'Labels' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    'type' => 'string',
+                                ],
                             ],
                         ],
                     ],
@@ -3910,6 +3938,154 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteResourceInstanceLabel' => [
+            'path' => '/api/v2/resources/{ClusterId}/{ResourceId}/label',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceIds',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AllInstances',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Keys',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateResourceInstanceLabel' => [
+            'path' => '/api/v2/resources/{ClusterId}/{ResourceId}/label',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceIds',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AllInstances',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Labels' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -4328,6 +4504,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Label',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
                 [
@@ -5530,6 +5718,39 @@
                 ],
             ],
         ],
+        'ListGatewayIntranetSupportedZone' => [
+            'path' => '/api/v2/gateways/{ClusterId}/{GatewayId}/intranet_supported_zone',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GatewayId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DeleteGatewayIntranetLinkedVpc' => [
             'path' => '/api/v2/gateways/{ClusterId}/{GatewayId}/intranet_endpoint_linked_vpc',
             'methods' => [
@@ -5862,39 +6083,6 @@
             ],
             'deprecated' => false,
             'parameters' => [],
-        ],
-        'ListGatewayIntranetSupportedZone' => [
-            'path' => '/api/v2/gateways/{ClusterId}/{GatewayId}/intranet_supported_zone',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'GatewayId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
         ],
     ],
     'endpoints' => [

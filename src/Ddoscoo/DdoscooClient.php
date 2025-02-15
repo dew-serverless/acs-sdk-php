@@ -367,6 +367,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise configLayer4RulePolicyAsync($arguments = [])
  * @method \Dew\Acs\Result describeLayer4RulePolicy(array $arguments = [])
  * @method \Http\Promise\Promise describeLayer4RulePolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInstance(array $arguments = [])
+ * @method \Http\Promise\Promise modifyInstanceAsync($arguments = [])
  */
 final class DdoscooClient extends AcsClient
 {

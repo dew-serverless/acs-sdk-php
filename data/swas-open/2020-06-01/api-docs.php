@@ -1257,6 +1257,25 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'LoginCredentials',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Password' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'KeyPairName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'CreateInstanceKeyPair' => [

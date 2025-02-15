@@ -7,6 +7,8 @@ namespace Dew\Acs\Fnf;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result describeRegions(array $arguments = [])
+ * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result createFlow(array $arguments = [])
  * @method \Http\Promise\Promise createFlowAsync($arguments = [])
  * @method \Dew\Acs\Result deleteFlow(array $arguments = [])

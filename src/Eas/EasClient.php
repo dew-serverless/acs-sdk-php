@@ -121,6 +121,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteResourceInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result deleteResourceLog(array $arguments = [])
  * @method \Http\Promise\Promise deleteResourceLogAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteResourceInstanceLabel(array $arguments = [])
+ * @method \Http\Promise\Promise deleteResourceInstanceLabelAsync($arguments = [])
+ * @method \Dew\Acs\Result updateResourceInstanceLabel(array $arguments = [])
+ * @method \Http\Promise\Promise updateResourceInstanceLabelAsync($arguments = [])
  * @method \Dew\Acs\Result updateResource(array $arguments = [])
  * @method \Http\Promise\Promise updateResourceAsync($arguments = [])
  * @method \Dew\Acs\Result updateResourceDLink(array $arguments = [])
@@ -181,6 +185,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createGatewayIntranetLinkedVpcAsync($arguments = [])
  * @method \Dew\Acs\Result listGatewayIntranetLinkedVpc(array $arguments = [])
  * @method \Http\Promise\Promise listGatewayIntranetLinkedVpcAsync($arguments = [])
+ * @method \Dew\Acs\Result listGatewayIntranetSupportedZone(array $arguments = [])
+ * @method \Http\Promise\Promise listGatewayIntranetSupportedZoneAsync($arguments = [])
  * @method \Dew\Acs\Result deleteGatewayIntranetLinkedVpc(array $arguments = [])
  * @method \Http\Promise\Promise deleteGatewayIntranetLinkedVpcAsync($arguments = [])
  * @method \Dew\Acs\Result deleteGateway(array $arguments = [])
@@ -195,8 +201,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise reinstallTenantAddonAsync($arguments = [])
  * @method \Dew\Acs\Result listTenantAddons(array $arguments = [])
  * @method \Http\Promise\Promise listTenantAddonsAsync($arguments = [])
- * @method \Dew\Acs\Result listGatewayIntranetSupportedZone(array $arguments = [])
- * @method \Http\Promise\Promise listGatewayIntranetSupportedZoneAsync($arguments = [])
  */
 final class EasClient extends AcsClient
 {

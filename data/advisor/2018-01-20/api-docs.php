@@ -150,6 +150,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CheckPlanId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeAdvisorChecks' => [
@@ -351,6 +360,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CheckPlanId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RefreshAdvisorResource' => [
@@ -458,6 +476,15 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CheckPlanId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],

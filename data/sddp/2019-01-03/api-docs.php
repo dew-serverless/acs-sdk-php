@@ -2427,6 +2427,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EngineType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeOssObjects' => [

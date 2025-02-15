@@ -1882,6 +1882,124 @@
         ],
     ],
     'apis' => [
+        'DeployHttpApi' => [
+            'path' => '/v1/http-apis/{httpApiId}/deploy',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'httpApiId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'routeId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'restApiConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'revisionId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'description' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'environment' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'environmentId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'customDomainIds' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                            'backendScene' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'serviceConfigs' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'serviceId' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'protocol' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'port' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int32',
+                                                            'required' => false,
+                                                        ],
+                                                        'weight' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int32',
+                                                            'required' => false,
+                                                        ],
+                                                        'version' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'match' => [
+                                                            '$ref' => '#/components/schemas/HttpApiBackendMatchConditions',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreateHttpApi' => [
             'path' => '/v1/http-apis',
             'methods' => [

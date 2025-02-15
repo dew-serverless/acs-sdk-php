@@ -252,6 +252,9 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'ReservedNodePoolId' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'SharedStorageTemplate' => [
@@ -2023,6 +2026,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ReservedNodePoolId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateQueue' => [
@@ -2130,6 +2141,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                            ],
+                            'ReservedNodePoolId' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],

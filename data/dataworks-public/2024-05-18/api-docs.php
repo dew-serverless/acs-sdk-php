@@ -2082,6 +2082,8 @@
                                 'Deleting',
                                 'DeleteFailed',
                                 'Timeout',
+                                'Freezed',
+                                'Starting',
                             ],
                         ],
                     ],
@@ -9279,6 +9281,7 @@
                         'required' => false,
                         'enum' => [
                             'Prod',
+                            'Dev',
                         ],
                     ],
                 ],

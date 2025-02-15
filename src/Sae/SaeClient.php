@@ -261,6 +261,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise upgradeApplicationApmServiceAsync($arguments = [])
  * @method \Dew\Acs\Result getWebshellToken(array $arguments = [])
  * @method \Http\Promise\Promise getWebshellTokenAsync($arguments = [])
+ * @method \Dew\Acs\Result listAppServices(array $arguments = [])
+ * @method \Http\Promise\Promise listAppServicesAsync($arguments = [])
  */
 final class SaeClient extends AcsClient
 {

@@ -7,6 +7,8 @@ namespace Dew\Acs\Apig;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result deployHttpApi(array $arguments = [])
+ * @method \Http\Promise\Promise deployHttpApiAsync($arguments = [])
  * @method \Dew\Acs\Result createHttpApi(array $arguments = [])
  * @method \Http\Promise\Promise createHttpApiAsync($arguments = [])
  * @method \Dew\Acs\Result updateHttpApi(array $arguments = [])

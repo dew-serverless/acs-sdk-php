@@ -2444,6 +2444,14 @@
                     ],
                 ],
                 [
+                    'name' => 'Ipv6Enabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'UpstreamKeepaliveEnabled',
                     'in' => 'query',
                     'schema' => [

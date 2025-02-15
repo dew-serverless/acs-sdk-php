@@ -61,6 +61,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise fetchImageTaskAsync($arguments = [])
  * @method \Dew\Acs\Result feedbackDialogue(array $arguments = [])
  * @method \Http\Promise\Promise feedbackDialogueAsync($arguments = [])
+ * @method \Dew\Acs\Result listStyleLearningResult(array $arguments = [])
+ * @method \Http\Promise\Promise listStyleLearningResultAsync($arguments = [])
  * @method \Dew\Acs\Result getCustomText(array $arguments = [])
  * @method \Http\Promise\Promise getCustomTextAsync($arguments = [])
  * @method \Dew\Acs\Result updateCustomText(array $arguments = [])

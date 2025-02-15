@@ -103,6 +103,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeProcessTasksAsync($arguments = [])
  * @method \Dew\Acs\Result triggerProcessTask(array $arguments = [])
  * @method \Http\Promise\Promise triggerProcessTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result convertPlaybook(array $arguments = [])
+ * @method \Http\Promise\Promise convertPlaybookAsync($arguments = [])
  */
 final class SophonsoarClient extends AcsClient
 {

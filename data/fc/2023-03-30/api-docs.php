@@ -2870,6 +2870,30 @@
                     ],
                 ],
             ],
+            'open_struct_DescribeRegionsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'Regions' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Region' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'RegionId' => [
+                                            'type' => 'string',
+                                        ],
+                                        'LocalName' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
     'apis' => [

@@ -372,6 +372,42 @@
                                             ],
                                         ],
                                     ],
+                                    'ContentExtractionEnabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'ContentExtraction' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'SceneIntroduction' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'ExtractionContents' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'Title' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Content' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                            'SpeakerMap' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],

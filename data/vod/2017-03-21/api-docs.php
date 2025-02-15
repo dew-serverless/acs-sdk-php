@@ -122,6 +122,9 @@
                                 'FeatureIds' => [
                                     'type' => 'string',
                                 ],
+                                'IsTrial' => [
+                                    'type' => 'boolean',
+                                ],
                             ],
                         ],
                     ],

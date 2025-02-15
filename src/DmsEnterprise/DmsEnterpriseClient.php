@@ -541,6 +541,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise buyPayAsYouGoOrderAsync($arguments = [])
  * @method \Dew\Acs\Result analyzeSQLLineage(array $arguments = [])
  * @method \Http\Promise\Promise analyzeSQLLineageAsync($arguments = [])
+ * @method \Dew\Acs\Result getDataLakeFunction(array $arguments = [])
+ * @method \Http\Promise\Promise getDataLakeFunctionAsync($arguments = [])
+ * @method \Dew\Acs\Result createDataLakeFunction(array $arguments = [])
+ * @method \Http\Promise\Promise createDataLakeFunctionAsync($arguments = [])
+ * @method \Dew\Acs\Result listDataLakeFunction(array $arguments = [])
+ * @method \Http\Promise\Promise listDataLakeFunctionAsync($arguments = [])
+ * @method \Dew\Acs\Result updateDataLakeFunction(array $arguments = [])
+ * @method \Http\Promise\Promise updateDataLakeFunctionAsync($arguments = [])
+ * @method \Dew\Acs\Result listDataLakeFunctionName(array $arguments = [])
+ * @method \Http\Promise\Promise listDataLakeFunctionNameAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteDataLakeFunction(array $arguments = [])
+ * @method \Http\Promise\Promise deleteDataLakeFunctionAsync($arguments = [])
  */
 final class DmsEnterpriseClient extends AcsClient
 {

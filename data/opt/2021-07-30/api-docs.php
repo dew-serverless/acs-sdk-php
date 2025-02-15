@@ -137,5 +137,9 @@
             'regionId' => 'cn-beijing',
             'endpoint' => 'opt.cn-beijing.aliyuncs.com',
         ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'opt.us-east-1.aliyuncs.com',
+        ],
     ],
 ];

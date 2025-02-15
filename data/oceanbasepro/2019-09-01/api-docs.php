@@ -2312,6 +2312,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'GlobalPermissions',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeTenantUsers' => [
@@ -2564,6 +2572,23 @@
                 ],
                 [
                     'name' => 'ModifyType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'GlobalPermissions',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -4470,6 +4495,14 @@
                         'enum' => [],
                     ],
                 ],
+                [
+                    'name' => 'TenantId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeInstanceSSL' => [
@@ -4493,6 +4526,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TenantId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

@@ -17,6 +17,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise searchImageByNameAsync($arguments = []) {@since 2020-12-14}
  * @method \Dew\Acs\Result searchImageByPic(array $arguments = []) {@since 2020-12-14}
  * @method \Http\Promise\Promise searchImageByPicAsync($arguments = []) {@since 2020-12-14}
+ * @method \Dew\Acs\Result compareSimilarByImage(array $arguments = []) {@since 2020-12-14}
+ * @method \Http\Promise\Promise compareSimilarByImageAsync($arguments = []) {@since 2020-12-14}
  * @method \Dew\Acs\Result detail(array $arguments = []) {@since 2020-12-14}
  * @method \Http\Promise\Promise detailAsync($arguments = []) {@since 2020-12-14}
  * @method \Dew\Acs\Result dumpMeta(array $arguments = []) {@since 2020-12-14}

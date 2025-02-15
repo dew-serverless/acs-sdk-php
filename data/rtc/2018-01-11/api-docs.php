@@ -1613,6 +1613,7 @@
                                         'video',
                                         'camera',
                                         'screen',
+                                        'whiteboard',
                                     ],
                                 ],
                                 'PaneId' => [
@@ -1839,6 +1840,16 @@
                                         ],
                                     ],
                                     'maxItems' => 3,
+                                ],
+                                'Whiteboard' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'WhiteboardId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],
@@ -2408,6 +2419,7 @@
                                         'video',
                                         'camera',
                                         'screen',
+                                        'whiteboard',
                                     ],
                                 ],
                                 'PaneId' => [
@@ -2634,6 +2646,16 @@
                                         ],
                                     ],
                                     'maxItems' => 3,
+                                ],
+                                'Whiteboard' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'WhiteboardId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],
@@ -3845,6 +3867,16 @@
                                     ],
                                     'maxItems' => 3,
                                 ],
+                                'Whiteboard' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'WhiteboardId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                         'maxItems' => 16,
@@ -4413,6 +4445,7 @@
                                         'video',
                                         'camera',
                                         'screen',
+                                        'whiteboard',
                                     ],
                                 ],
                                 'PaneId' => [
@@ -4639,6 +4672,16 @@
                                         ],
                                     ],
                                     'maxItems' => 3,
+                                ],
+                                'Whiteboard' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'WhiteboardId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],

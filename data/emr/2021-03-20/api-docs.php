@@ -3630,6 +3630,7 @@
                             'eu-central-1',
                             'eu-west-1',
                             'cn-north-2-gov-1',
+                            'cn-wulanchabu-acdr-1',
                         ],
                     ],
                 ],

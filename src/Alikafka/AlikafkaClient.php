@@ -109,6 +109,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteAclAsync($arguments = [])
  * @method \Dew\Acs\Result describeAcls(array $arguments = [])
  * @method \Http\Promise\Promise describeAclsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAclResourceName(array $arguments = [])
+ * @method \Http\Promise\Promise describeAclResourceNameAsync($arguments = [])
  */
 final class AlikafkaClient extends AcsClient
 {

@@ -113,14 +113,6 @@
                                         'format' => 'int32',
                                         'required' => false,
                                     ],
-                                    'chargeType' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'intranetSpec' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
                                     'storageEncryption' => [
                                         'type' => 'boolean',
                                         'required' => false,
@@ -1752,6 +1744,93 @@
                 ],
             ],
         ],
+        'GetInstanceIpWhitelist' => [
+            'path' => '/instances/{instanceId}/ip/whitelists',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ipWhitelists',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetInstanceAcl' => [
+            'path' => '/instances/{instanceId}/acl/account/{username}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'username',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'resourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'resourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'CreateInstanceAccount' => [
             'path' => '/instances/{instanceId}/accounts',
             'methods' => [
@@ -1858,12 +1937,11 @@
                                 ],
                             ],
                             'actions' => [
-                                'type' => 'string',
+                                'type' => 'array',
                                 'required' => true,
-                                'enum' => [
-                                    'Pub',
-                                    'Sub',
-                                    'Pub|Sub',
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                             'ipWhitelists' => [
@@ -2037,7 +2115,21 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ipWhitelists',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],
@@ -2091,8 +2183,12 @@
                                 'required' => true,
                             ],
                             'actions' => [
-                                'type' => 'string',
+                                'type' => 'array',
                                 'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                             'decision' => [
                                 'type' => 'string',
@@ -2140,7 +2236,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -2191,7 +2287,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '100000000',
                     ],
@@ -2202,7 +2298,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '10',
                         'maximum' => '10000',
                     ],
@@ -2247,7 +2343,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '100000000',
                     ],
@@ -2258,7 +2354,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '10',
                         'maximum' => '10000',
                     ],
@@ -2303,7 +2399,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '100000000',
                     ],
@@ -2314,7 +2410,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '10',
                         'maximum' => '10000',
                     ],

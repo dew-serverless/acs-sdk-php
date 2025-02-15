@@ -9,13 +9,12 @@
         'schemas' => [],
     ],
     'apis' => [
-        'DescribeDeliveryAddress' => [
+        'CreateMultiOrder' => [
             'methods' => [
-                'post',
                 'get',
+                'post',
             ],
             'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -23,7 +22,102 @@
                     'AK' => [],
                 ],
             ],
-            'parameters' => [],
+            'parameters' => [
+                [
+                    'name' => 'OrderItems',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Amount' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'ResourceType' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'AutoPay' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'AutoRenew' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'PeriodUnit' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Components' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Key' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 100,
+                                ],
+                                'PromotionId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Period' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'ResourceIds' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'maxItems' => 100,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'OrderType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Properties',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
         ],
         'DescribePackageDeductions' => [
             'methods' => [
@@ -83,7 +177,6 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'maximum' => '100',
                     ],
                 ],
                 [
@@ -93,6 +186,7 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'maximum' => '100',
                     ],
                 ],
                 [
@@ -114,6 +208,85 @@
                     ],
                 ],
             ],
+        ],
+        'ModifyInstanceProperties' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Key',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Value',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 200,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeDeliveryAddress' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [],
         ],
     ],
     'endpoints' => [

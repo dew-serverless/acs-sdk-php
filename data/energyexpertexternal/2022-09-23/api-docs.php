@@ -1508,7 +1508,7 @@
                         'properties' => [
                             'factoryId' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'pKey' => [
                                 'type' => 'string',
@@ -1554,11 +1554,11 @@
                         'properties' => [
                             'factoryId' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'systemId' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'pKey' => [
                                 'type' => 'string',
@@ -1658,15 +1658,15 @@
                         'properties' => [
                             'factoryId' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'systemId' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'hvacDeviceConfigVOList' => [
                                 'type' => 'array',
-                                'required' => false,
+                                'required' => true,
                                 'items' => [
                                     'type' => 'object',
                                     'required' => false,
@@ -1681,7 +1681,7 @@
                                         ],
                                         'deviceType' => [
                                             'type' => 'string',
-                                            'required' => false,
+                                            'required' => true,
                                         ],
                                         'isForbidden' => [
                                             'type' => 'integer',
@@ -1691,7 +1691,7 @@
                                         'isUnfavorableArea' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
-                                            'required' => false,
+                                            'required' => true,
                                         ],
                                         'buildingId' => [
                                             'type' => 'string',
@@ -1744,15 +1744,15 @@
                         'properties' => [
                             'factoryId' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'systemId' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'hvacDeviceConfigVOList' => [
                                 'type' => 'array',
-                                'required' => false,
+                                'required' => true,
                                 'items' => [
                                     'type' => 'object',
                                     'required' => false,
@@ -1767,12 +1767,12 @@
                                         ],
                                         'deviceType' => [
                                             'type' => 'string',
-                                            'required' => false,
+                                            'required' => true,
                                         ],
                                         'isForbidden' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
-                                            'required' => false,
+                                            'required' => true,
                                         ],
                                         'isUnfavorableArea' => [
                                             'type' => 'integer',
@@ -1830,11 +1830,11 @@
                         'properties' => [
                             'factoryId' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'systemId' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'seasonMode' => [
                                 'type' => 'integer',
@@ -1848,11 +1848,11 @@
                             ],
                             'startTime' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'endTime' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'workingStartTime' => [
                                 'type' => 'string',

@@ -3827,7 +3827,8 @@
                     'name' => 'BaseMeAgentId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],

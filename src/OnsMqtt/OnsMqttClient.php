@@ -101,6 +101,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result setSniConfig(array $arguments = [])
  * @method \Http\Promise\Promise setSniConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result disasterDowngrade(array $arguments = [])
+ * @method \Http\Promise\Promise disasterDowngradeAsync($arguments = [])
+ * @method \Dew\Acs\Result disasterRecovery(array $arguments = [])
+ * @method \Http\Promise\Promise disasterRecoveryAsync($arguments = [])
  */
 final class OnsMqttClient extends AcsClient
 {

@@ -479,6 +479,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateCallSummaryAsync($arguments = [])
  * @method \Dew\Acs\Result getSummaryTemplate(array $arguments = [])
  * @method \Http\Promise\Promise getSummaryTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result listVisitorChatMessages(array $arguments = [])
+ * @method \Http\Promise\Promise listVisitorChatMessagesAsync($arguments = [])
  * @method \Dew\Acs\Result createChatMediaUrl(array $arguments = [])
  * @method \Http\Promise\Promise createChatMediaUrlAsync($arguments = [])
  * @method \Dew\Acs\Result processCustomIMCallback(array $arguments = [])

@@ -783,6 +783,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise moveResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyEipForwardMode(array $arguments = [])
+ * @method \Http\Promise\Promise modifyEipForwardModeAsync($arguments = [])
  */
 final class VpcClient extends AcsClient
 {

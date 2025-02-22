@@ -19,6 +19,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createTaskAsync($arguments = [])
  * @method \Dew\Acs\Result analyzeImage(array $arguments = [])
  * @method \Http\Promise\Promise analyzeImageAsync($arguments = [])
+ * @method \Dew\Acs\Result createVocab(array $arguments = [])
+ * @method \Http\Promise\Promise createVocabAsync($arguments = [])
+ * @method \Dew\Acs\Result updateVocab(array $arguments = [])
+ * @method \Http\Promise\Promise updateVocabAsync($arguments = [])
+ * @method \Dew\Acs\Result listVocab(array $arguments = [])
+ * @method \Http\Promise\Promise listVocabAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteVocab(array $arguments = [])
+ * @method \Http\Promise\Promise deleteVocabAsync($arguments = [])
+ * @method \Dew\Acs\Result getVocab(array $arguments = [])
+ * @method \Http\Promise\Promise getVocabAsync($arguments = [])
  */
 final class ContactCenterAIClient extends AcsClient
 {

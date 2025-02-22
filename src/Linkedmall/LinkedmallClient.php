@@ -73,6 +73,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listSelectionSkuSaleInfosAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result listCategories(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise listCategoriesAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result searchProducts(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise searchProductsAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result selectionGroupAddProduct(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise selectionGroupAddProductAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result selectionGroupRemoveProduct(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise selectionGroupRemoveProductAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result splitPurchaseOrder(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise splitPurchaseOrderAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result renderPurchaseOrder(array $arguments = []) {@since 2023-09-30}

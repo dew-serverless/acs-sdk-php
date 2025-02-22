@@ -87,6 +87,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result untagResources(array $arguments = [])
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result batchSendMessageToGlobe(array $arguments = []) {@since 2018-05-01}
+ * @method \Http\Promise\Promise batchSendMessageToGlobeAsync($arguments = []) {@since 2018-05-01}
+ * @method \Dew\Acs\Result sendMessageWithTemplate(array $arguments = []) {@since 2018-05-01}
+ * @method \Http\Promise\Promise sendMessageWithTemplateAsync($arguments = []) {@since 2018-05-01}
+ * @method \Dew\Acs\Result sendMessageToGlobe(array $arguments = []) {@since 2018-05-01}
+ * @method \Http\Promise\Promise sendMessageToGlobeAsync($arguments = []) {@since 2018-05-01}
+ * @method \Dew\Acs\Result queryMessage(array $arguments = []) {@since 2018-05-01}
+ * @method \Http\Promise\Promise queryMessageAsync($arguments = []) {@since 2018-05-01}
+ * @method \Dew\Acs\Result conversionData(array $arguments = []) {@since 2018-05-01}
+ * @method \Http\Promise\Promise conversionDataAsync($arguments = []) {@since 2018-05-01}
+ * @method \Dew\Acs\Result smsConversion(array $arguments = []) {@since 2018-05-01}
+ * @method \Http\Promise\Promise smsConversionAsync($arguments = []) {@since 2018-05-01}
  */
 final class DysmsapiClient extends AcsClient
 {

@@ -703,6 +703,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeTagsAsync($arguments = []) {@deprecated 2014-05-26}
  * @method \Dew\Acs\Result removeTags(array $arguments = []) {@deprecated 2014-05-26}
  * @method \Http\Promise\Promise removeTagsAsync($arguments = []) {@deprecated 2014-05-26}
+ * @method \Dew\Acs\Result describeElasticityAssuranceAutoRenewAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise describeElasticityAssuranceAutoRenewAttributeAsync($arguments = [])
  */
 final class EcsClient extends AcsClient
 {

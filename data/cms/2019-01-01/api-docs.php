@@ -905,9 +905,8 @@
             'PushingTarget' => [
                 'type' => 'object',
                 'properties' => [
-                    'Name' => [
+                    'Type' => [
                         'type' => 'string',
-                        'required' => true,
                     ],
                     'Description' => [
                         'type' => 'string',
@@ -925,28 +924,22 @@
                     'UpdateTime' => [
                         'type' => 'string',
                     ],
-                    'Range' => [
-                        'type' => 'string',
-                    ],
-                    'Type' => [
-                        'type' => 'string',
-                    ],
-                    'Arn' => [
-                        'type' => 'string',
-                    ],
                     'TemplateUuid' => [
                         'type' => 'string',
                     ],
                     'HttpRequestTarget' => [
                         'type' => 'object',
                         'properties' => [
-                            'Url' => [
+                            'EncryptTimestampKey' => [
                                 'type' => 'string',
                             ],
-                            'Method' => [
+                            'EncryptString' => [
                                 'type' => 'string',
                             ],
                             'ContentType' => [
+                                'type' => 'string',
+                            ],
+                            'EncryptSignatureKey' => [
                                 'type' => 'string',
                             ],
                             'Headers' => [
@@ -954,20 +947,33 @@
                                 'items' => [
                                     'type' => 'object',
                                     'properties' => [
-                                        'Key' => [
+                                        'Value' => [
                                             'type' => 'string',
                                         ],
-                                        'Value' => [
+                                        'Key' => [
                                             'type' => 'string',
                                         ],
                                     ],
                                 ],
                                 'maxItems' => 10,
                             ],
-                            'EncryptString' => [
+                            'Method' => [
+                                'type' => 'string',
+                            ],
+                            'Url' => [
                                 'type' => 'string',
                             ],
                         ],
+                    ],
+                    'Range' => [
+                        'type' => 'string',
+                    ],
+                    'Arn' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

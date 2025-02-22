@@ -3206,6 +3206,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'IncludeScriptContent',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListWorkflowDefinitions' => [
@@ -4985,6 +4993,23 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'deprecated' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NodeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

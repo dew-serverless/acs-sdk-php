@@ -4784,5 +4784,9 @@
             'regionId' => 'cn-shenzhen-finance-1',
             'endpoint' => 'maxcompute.cn-shenzhen-finance-1.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'maxcompute.cn-hangzhou-finance.aliyuncs.com',
+        ],
     ],
 ];

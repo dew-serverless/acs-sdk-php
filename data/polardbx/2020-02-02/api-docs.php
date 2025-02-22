@@ -4398,6 +4398,15 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'TaskTimeout',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeGdnInstances' => [

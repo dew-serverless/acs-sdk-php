@@ -891,6 +891,10 @@
                                             'high',
                                         ],
                                     ],
+                                    'vocabularyId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                         ],
@@ -967,6 +971,266 @@
                                         'watermark',
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateVocab' => [
+            'path' => '/vocab/createVocab',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'workspaceId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'audioModelCode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'wordWeightList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'weight' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                        'word' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateVocab' => [
+            'path' => '/vocab/updateVocab',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'vocabularyId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'wordWeightList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'word' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'weight' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'workspaceId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListVocab' => [
+            'path' => '/vocab/listVocab',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'workspaceId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteVocab' => [
+            'path' => '/vocab/deleteVocab',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'vocabularyId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'workspaceId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetVocab' => [
+            'path' => '/vocab/getVocab',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'vocabularyId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'workspaceId' => [
+                                'type' => 'string',
+                                'required' => true,
                             ],
                         ],
                     ],

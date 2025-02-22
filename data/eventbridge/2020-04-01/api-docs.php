@@ -1783,6 +1783,8 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'minLength' => 2,
+                        'maxLength' => 255,
                     ],
                 ],
             ],
@@ -1858,6 +1860,8 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'minLength' => 2,
+                        'maxLength' => 255,
                     ],
                 ],
             ],
@@ -1883,6 +1887,8 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'minLength' => 2,
+                        'maxLength' => 255,
                     ],
                 ],
                 [
@@ -2098,6 +2104,78 @@
                                     ],
                                 ],
                             ],
+                            'SourceRocketMQCheckpointParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'RegionId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstanceType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstanceId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Topics' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SourceApacheRocketMQCheckpointParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'RegionId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Topics' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'InstanceEndpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstanceUsername' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstancePassword' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                             'SourceMQTTParameters' => [
                                 'type' => 'object',
                                 'required' => false,
@@ -2185,11 +2263,11 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
-                                    'ExternalLabels' => [
+                                    'RoleName' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
-                                    'RoleName' => [
+                                    'ExternalLabels' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
@@ -2258,6 +2336,20 @@
                                         'required' => false,
                                     ],
                                     'Delimiter' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'SourceEventBusParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'EventBusName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'EventRuleName' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
@@ -2985,6 +3077,198 @@
                                                 'required' => false,
                                             ],
                                         ],
+                                    ],
+                                    'DeliveryOrderType' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'ShardingKey' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SinkRocketMQCheckpointParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'InstanceType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstanceId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Topic' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'ConsumeTimestamp' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Group' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SinkApacheRocketMQCheckpointParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Topic' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'ConsumeTimestamp' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Group' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'InstanceEndpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstanceUsername' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstancePassword' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
                                     ],
                                 ],
                             ],
@@ -3781,6 +4065,8 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'minLength' => 2,
+                        'maxLength' => 255,
                     ],
                 ],
                 [
@@ -3996,6 +4282,78 @@
                                     ],
                                 ],
                             ],
+                            'SourceRocketMQCheckpointParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'RegionId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstanceType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstanceId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Topics' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SourceApacheRocketMQCheckpointParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'RegionId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Topics' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'InstanceEndpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstanceUsername' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstancePassword' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                             'SourceMQTTParameters' => [
                                 'type' => 'object',
                                 'required' => false,
@@ -4095,11 +4453,11 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
-                                    'ExternalLabels' => [
+                                    'RoleName' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
-                                    'RoleName' => [
+                                    'ExternalLabels' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
@@ -4168,6 +4526,66 @@
                                         'required' => false,
                                     ],
                                     'Delimiter' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'SourceOpenSourceRabbitMQParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Endpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VirtualHostName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'QueueName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'BodyDataType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Username' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Password' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'SourceEventBusParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'EventBusName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'EventRuleName' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
@@ -4896,6 +5314,198 @@
                                             ],
                                         ],
                                     ],
+                                    'DeliveryOrderType' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'ShardingKey' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SinkRocketMQCheckpointParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'InstanceType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstanceId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Topic' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'ConsumeTimestamp' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Group' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SinkApacheRocketMQCheckpointParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Topic' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'ConsumeTimestamp' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Group' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'InstanceEndpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstanceUsername' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'InstancePassword' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'SinkSLSParameters' => [
@@ -5525,6 +6135,156 @@
                                         ],
                                     ],
                                     'DashVectorSchemaParameters' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SinkOpenSourceRabbitMQParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Endpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VirtualHostName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'TargetType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Username' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Password' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Exchange' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'QueueName' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'RoutingKey' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Body' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'MessageId' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Properties' => [
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [

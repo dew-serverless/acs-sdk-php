@@ -7,6 +7,12 @@ namespace Dew\Acs\DataAnalysisGBI;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result runDataAnalysis(array $arguments = [])
+ * @method \Http\Promise\Promise runDataAnalysisAsync($arguments = [])
+ * @method \Dew\Acs\Result runDataResultAnalysis(array $arguments = [])
+ * @method \Http\Promise\Promise runDataResultAnalysisAsync($arguments = [])
+ * @method \Dew\Acs\Result runSqlGeneration(array $arguments = [])
+ * @method \Http\Promise\Promise runSqlGenerationAsync($arguments = [])
  * @method \Dew\Acs\Result updateBusinessLogic(array $arguments = [])
  * @method \Http\Promise\Promise updateBusinessLogicAsync($arguments = [])
  * @method \Dew\Acs\Result createBusinessLogic(array $arguments = [])
@@ -59,12 +65,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteVirtualDatasourceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result saveVirtualDatasourceDdl(array $arguments = [])
  * @method \Http\Promise\Promise saveVirtualDatasourceDdlAsync($arguments = [])
- * @method \Dew\Acs\Result runSqlGeneration(array $arguments = [])
- * @method \Http\Promise\Promise runSqlGenerationAsync($arguments = [])
- * @method \Dew\Acs\Result runDataResultAnalysis(array $arguments = [])
- * @method \Http\Promise\Promise runDataResultAnalysisAsync($arguments = [])
- * @method \Dew\Acs\Result runDataAnalysis(array $arguments = [])
- * @method \Http\Promise\Promise runDataAnalysisAsync($arguments = [])
  */
 final class DataAnalysisGBIClient extends AcsClient
 {

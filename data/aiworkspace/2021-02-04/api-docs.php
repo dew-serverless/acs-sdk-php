@@ -160,6 +160,273 @@
                     ],
                 ],
             ],
+            'DatasetFileMeta' => [
+                'type' => 'object',
+                'properties' => [
+                    'DatasetFileMetaId' => [
+                        'type' => 'string',
+                    ],
+                    'Uri' => [
+                        'type' => 'string',
+                    ],
+                    'FileName' => [
+                        'type' => 'string',
+                    ],
+                    'DownloadUrl' => [
+                        'type' => 'string',
+                    ],
+                    'Score' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'DataSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'FileFingerPrint' => [
+                        'type' => 'string',
+                    ],
+                    'FileUpdateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'Tags' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DatasetFileMetaConentUpdate' => [
+                'type' => 'object',
+                'properties' => [
+                    'FileName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                    'FileCreateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'FileUpdateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'DataSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'FileType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'ContentType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'MetaAttributes' => [
+                        'type' => 'string',
+                    ],
+                    'Tags' => [
+                        'type' => 'string',
+                    ],
+                    'DatasetFileMetaId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'DatasetFileMetaContentCreate' => [
+                'type' => 'object',
+                'properties' => [
+                    'FileName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Uri' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                    'FileCreateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'FileUpdateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                        'required' => true,
+                    ],
+                    'FileFingerPrint' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'DataSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'FileType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ContentType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'MetaAttributes' => [
+                        'type' => 'string',
+                    ],
+                    'Tags' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DatasetFileMetaContentGet' => [
+                'type' => 'object',
+                'properties' => [
+                    'FileName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Uri' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                    'FileCreateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'FileUpdateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                        'required' => false,
+                    ],
+                    'FileFingerPrint' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'DataSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'FileType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'ContentType' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'MetaAttributes' => [
+                        'type' => 'string',
+                    ],
+                    'Tags' => [
+                        'type' => 'string',
+                    ],
+                    'DatasetFileMetaId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DatasetFileMetaResponse' => [
+                'type' => 'object',
+                'properties' => [
+                    'DatasetFileMetaId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'Result' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'Uri' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'DatasetJob' => [
+                'type' => 'object',
+                'properties' => [
+                    'DatasetJobId' => [
+                        'type' => 'string',
+                    ],
+                    'JobAction' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'FinishTime' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'JobMode' => [
+                        'type' => 'string',
+                    ],
+                    'JobSpec' => [
+                        'type' => 'string',
+                    ],
+                    'Logs' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'TotalFileCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'CompletedFileCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'FailedFileCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DatasetVersion' => [
+                        'type' => 'string',
+                    ],
+                    'WorkspaceId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DatasetJobConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'DatasetJobConfigId' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'ModifyTime' => [
+                        'type' => 'string',
+                    ],
+                    'ConfigType' => [
+                        'type' => 'string',
+                    ],
+                    'Config' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'DatasetLabel' => [
                 'type' => 'object',
                 'properties' => [
@@ -5586,6 +5853,48 @@
                                         ],
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'AcceptDataworksEvent' => [
+            'path' => '/api/v1/workspaces/action/acceptdataworksevent',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'MessageId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Data' => [
+                                'type' => 'object',
+                                'required' => false,
                             ],
                         ],
                     ],

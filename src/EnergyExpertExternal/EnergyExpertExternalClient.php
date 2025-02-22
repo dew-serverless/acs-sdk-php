@@ -73,6 +73,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDeviceListAsync($arguments = [])
  * @method \Dew\Acs\Result getDeviceInfo(array $arguments = [])
  * @method \Http\Promise\Promise getDeviceInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result analyzeVlRealtime(array $arguments = [])
+ * @method \Http\Promise\Promise analyzeVlRealtimeAsync($arguments = [])
  * @method \Dew\Acs\Result submitDocumentAnalyzeJob(array $arguments = [])
  * @method \Http\Promise\Promise submitDocumentAnalyzeJobAsync($arguments = [])
  * @method \Dew\Acs\Result getDocumentAnalyzeResult(array $arguments = [])

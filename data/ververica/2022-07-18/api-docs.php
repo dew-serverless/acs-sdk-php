@@ -579,23 +579,22 @@
                     'eventId' => [
                         'type' => 'string',
                     ],
-                    'namespace' => [
+                    'jobId' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
                         'type' => 'string',
                     ],
                     'workspace' => [
                         'type' => 'string',
                     ],
-                    'createdAt' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'eventName' => [
-                        'type' => 'string',
-                    ],
                     'deploymentId' => [
                         'type' => 'string',
                     ],
-                    'jobId' => [
+                    'namespace' => [
+                        'type' => 'string',
+                    ],
+                    'eventName' => [
                         'type' => 'string',
                     ],
                     'message' => [
@@ -868,6 +867,82 @@
                     ],
                     'modifiedAt' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'JobDiagnosis' => [
+                'type' => 'object',
+                'properties' => [
+                    'symptoms' => [
+                        '$ref' => '#/components/schemas/JobDiagnosisSymptoms',
+                    ],
+                    'workspace' => [
+                        'type' => 'string',
+                    ],
+                    'riskLevel' => [
+                        'type' => 'string',
+                    ],
+                    'diagnoseId' => [
+                        'type' => 'string',
+                    ],
+                    'namespace' => [
+                        'type' => 'string',
+                    ],
+                    'diagnoseTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'JobDiagnosisSymptom' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'recommendation' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'JobDiagnosisSymptoms' => [
+                'type' => 'object',
+                'properties' => [
+                    'autopilot' => [
+                        '$ref' => '#/components/schemas/JobDiagnosisSymptom',
+                    ],
+                    'startup' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/JobDiagnosisSymptom',
+                        ],
+                    ],
+                    'runtime' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/JobDiagnosisSymptom',
+                        ],
+                    ],
+                    'troubleshooting' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/JobDiagnosisSymptom',
+                        ],
+                    ],
+                    'state' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/JobDiagnosisSymptom',
+                        ],
+                    ],
+                    'others' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/JobDiagnosisSymptom',
+                        ],
                     ],
                 ],
             ],

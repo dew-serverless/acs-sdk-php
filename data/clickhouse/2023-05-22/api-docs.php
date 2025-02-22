@@ -143,6 +143,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SourceDBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BackupSetId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDBInstance' => [

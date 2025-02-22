@@ -1039,6 +1039,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IsUseBenefit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetCustomerOrders' => [

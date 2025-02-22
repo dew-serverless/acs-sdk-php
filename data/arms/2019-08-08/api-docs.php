@@ -3966,6 +3966,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteRumApp' => [
@@ -4121,6 +4129,14 @@
                 ],
                 [
                     'name' => 'BackendServiceTraceRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppConfig',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

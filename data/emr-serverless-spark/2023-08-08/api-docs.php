@@ -52,6 +52,9 @@
                     'catagoryBizId' => [
                         'type' => 'string',
                     ],
+                    'modifierName' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'Category' => [
@@ -1183,6 +1186,14 @@
                 'application/json',
             ],
             'parameters' => [
+                [
+                    'name' => 'serviceFilter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'releaseVersion',
                     'in' => 'query',

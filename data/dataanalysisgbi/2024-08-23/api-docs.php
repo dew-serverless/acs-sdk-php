@@ -9,6 +9,203 @@
         'schemas' => [],
     ],
     'apis' => [
+        'RunDataAnalysis' => [
+            'path' => '/{workspaceId}/gbi/runDataAnalysis',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'specificationType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'generateSqlOnly' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'query' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'dataRole' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'userParams' => [
+                                'type' => 'any',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'RunDataResultAnalysis' => [
+            'path' => '/gbi/runDataResultAnalysis',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'sqlData' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'column' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'data' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'additionalProperties' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'analysisMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'requestId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'RunSqlGeneration' => [
+            'path' => '/gbi/runSqlGeneration',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'specificationType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'query' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'UpdateBusinessLogic' => [
             'path' => '/gbi/update/logic',
             'methods' => [
@@ -1424,203 +1621,6 @@
                             'ddl' => [
                                 'type' => 'string',
                                 'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'RunSqlGeneration' => [
-            'path' => '/gbi/runSqlGeneration',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-                'sse',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'specificationType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'query' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'sessionId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'RunDataResultAnalysis' => [
-            'path' => '/gbi/runDataResultAnalysis',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-                'sse',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'sqlData' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'column' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                    'data' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'additionalProperties' => [
-                                                'type' => 'string',
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'analysisMode' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'requestId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'RunDataAnalysis' => [
-            'path' => '/{workspaceId}/gbi/runDataAnalysis',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-                'sse',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'specificationType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'generateSqlOnly' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'query' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'sessionId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'dataRole' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'userParams' => [
-                                'type' => 'object',
-                                'required' => false,
                             ],
                         ],
                     ],

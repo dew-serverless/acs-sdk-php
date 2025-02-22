@@ -619,6 +619,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'PriceComparisonMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -947,6 +951,10 @@
                             ],
                             'SpotAutoReplaceOnDemand' => [
                                 'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'PriceComparisonMode' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -11835,6 +11843,10 @@
         [
             'regionId' => 'cn-heyuan-acdr-1',
             'endpoint' => 'ess.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'ess.na-south-1.aliyuncs.com',
         ],
     ],
 ];

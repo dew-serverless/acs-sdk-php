@@ -141,6 +141,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDoctorApplicationAsync($arguments = [])
  * @method \Dew\Acs\Result getDoctorHDFSUGI(array $arguments = [])
  * @method \Http\Promise\Promise getDoctorHDFSUGIAsync($arguments = [])
+ * @method \Dew\Acs\Result createUsers(array $arguments = [])
+ * @method \Http\Promise\Promise createUsersAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteUsers(array $arguments = [])
+ * @method \Http\Promise\Promise deleteUsersAsync($arguments = [])
+ * @method \Dew\Acs\Result updateUserAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise updateUserAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result listUsers(array $arguments = [])
+ * @method \Http\Promise\Promise listUsersAsync($arguments = [])
  */
 final class EmrClient extends AcsClient
 {

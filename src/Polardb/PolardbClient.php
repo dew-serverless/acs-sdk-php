@@ -313,6 +313,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createActivationCodeAsync($arguments = [])
  * @method \Dew\Acs\Result describeActivationCodeDetails(array $arguments = [])
  * @method \Http\Promise\Promise describeActivationCodeDetailsAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyDBClusterArch(array $arguments = [])
+ * @method \Http\Promise\Promise modifyDBClusterArchAsync($arguments = [])
  */
 final class PolardbClient extends AcsClient
 {

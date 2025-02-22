@@ -91,6 +91,9 @@
                             'WorkflowOverrideParams' => [
                                 'type' => 'string',
                             ],
+                            'LlmSystemPrompt' => [
+                                'type' => 'string',
+                            ],
                             'EnableIntelligentSegment' => [
                                 'type' => 'boolean',
                             ],
@@ -182,6 +185,9 @@
                             'WorkflowOverrideParams' => [
                                 'type' => 'string',
                             ],
+                            'LlmSystemPrompt' => [
+                                'type' => 'string',
+                            ],
                             'EnableIntelligentSegment' => [
                                 'type' => 'boolean',
                             ],
@@ -265,6 +271,9 @@
                                 'format' => 'int32',
                             ],
                             'WorkflowOverrideParams' => [
+                                'type' => 'string',
+                            ],
+                            'LlmSystemPrompt' => [
                                 'type' => 'string',
                             ],
                             'EnableIntelligentSegment' => [

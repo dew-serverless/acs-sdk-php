@@ -330,5 +330,9 @@
             'regionId' => 'cn-wuhan-lr',
             'endpoint' => 'sts.cn-wuhan-lr.aliyuncs.com',
         ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'sts.na-south-1.aliyuncs.com',
+        ],
     ],
 ];

@@ -43,6 +43,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeUploadTokenAsync($arguments = [])
  * @method \Dew\Acs\Result imageBatchModeration(array $arguments = [])
  * @method \Http\Promise\Promise imageBatchModerationAsync($arguments = [])
+ * @method \Dew\Acs\Result manualCallback(array $arguments = [])
+ * @method \Http\Promise\Promise manualCallbackAsync($arguments = [])
+ * @method \Dew\Acs\Result manualModeration(array $arguments = [])
+ * @method \Http\Promise\Promise manualModerationAsync($arguments = [])
+ * @method \Dew\Acs\Result manualModerationResult(array $arguments = [])
+ * @method \Http\Promise\Promise manualModerationResultAsync($arguments = [])
  */
 final class GreenClient extends AcsClient
 {

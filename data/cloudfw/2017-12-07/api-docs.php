@@ -1241,6 +1241,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'FirewallVpcStandbyZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyVpcFirewallCenSwitchStatus' => [
@@ -6352,6 +6360,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],

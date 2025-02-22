@@ -615,6 +615,20 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EffectiveTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                            'Immediately',
+                            'MaintainTime',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteInstance' => [
@@ -1179,6 +1193,48 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReplicaCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'SlaveReplicaCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'ReadOnlyCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '9',
+                    ],
+                ],
+                [
+                    'name' => 'SlaveReadOnlyCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '9',
                     ],
                 ],
             ],
@@ -8028,7 +8084,55 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-qingdao',
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'r-kvstore.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'r-kvstore.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'r-kvstore.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-north-2-gov-1',
+            'endpoint' => 'r-kvstore.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'r-kvstore.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote-nebula-1',
+            'endpoint' => 'r-kvstore.cn-huhehaote-nebula-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'r-kvstore.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'r-kvstore.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'r-kvstore.ap-southeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-inner-alibabacloud',
+            'endpoint' => 'r-kvstore.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'r-kvstore.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'r-kvstore.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-inner',
             'endpoint' => 'r-kvstore.aliyuncs.com',
         ],
         [
@@ -8036,27 +8140,11 @@
             'endpoint' => 'r-kvstore.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'r-kvstore.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-zhengzhou-jva',
             'endpoint' => 'r-kvstore.cn-zhengzhou-jva.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'r-kvstore.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'r-kvstore.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'r-kvstore.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
+            'regionId' => 'cn-hebei-inner-alibabacloud',
             'endpoint' => 'r-kvstore.aliyuncs.com',
         ],
         [
@@ -8064,79 +8152,51 @@
             'endpoint' => 'r-kvstore.cn-nanjing.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-fuzhou',
-            'endpoint' => 'r-kvstore.cn-fuzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
+            'regionId' => 'cn-qingdao',
             'endpoint' => 'r-kvstore.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'r-kvstore.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'r-kvstore.cn-guangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'r-kvstore.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'r-kvstore.cn-hongkong.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'r-kvstore.ap-northeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'r-kvstore.ap-northeast-2.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'r-kvstore.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'r-kvstore.ap-southeast-3.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'r-kvstore.ap-southeast-5.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-6',
-            'endpoint' => 'r-kvstore.ap-southeast-6.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'r-kvstore.us-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'r-kvstore.us-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'r-kvstore.eu-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'r-kvstore.eu-central-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-south-1',
             'endpoint' => 'r-kvstore.ap-south-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'r-kvstore.cn-fuzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'r-kvstore.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-inner',
+            'endpoint' => 'r-kvstore.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou-acdr-ut-1',
+            'endpoint' => 'r-kvstore-share.cn-hangzhou-acdr-ut-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-cloudspe',
+            'endpoint' => 'r-kvstore.cn-shanghai-cloudspe.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'r-kvstore.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'r-kvstore.aliyuncs.com',
+        ],
+        [
             'regionId' => 'me-east-1',
             'endpoint' => 'r-kvstore.me-east-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-finance',
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'r-kvstore.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-inner',
             'endpoint' => 'r-kvstore.aliyuncs.com',
         ],
         [
@@ -8144,24 +8204,84 @@
             'endpoint' => 'r-kvstore.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shenzhen-finance-1',
+            'regionId' => 'me-central-1',
+            'endpoint' => 'r-kvstore.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
             'endpoint' => 'r-kvstore.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'r-kvstore.ap-southeast-7.aliyuncs.com',
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'r-kvstore.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'rus-west-1',
+            'endpoint' => 'r-kvstore.rus-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'r-kvstore.aliyuncs.com',
         ],
         [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'r-kvstore.me-central-1.aliyuncs.com',
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'r-kvstore.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'r-kvstore.cn-wuhan-lr.aliyuncs.com',
+            'regionId' => 'cn-qingdao-acdr-ut-1',
+            'endpoint' => 'r-kvstore.cn-qingdao-acdr-ut-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'r-kvstore.ap-northeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'r-kvstore.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'r-kvstore.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'r-kvstore.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'r-kvstore.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'r-kvstore.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu-acdr-1',
+            'endpoint' => 'r-kvstore.cn-wulanchabu-acdr-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-inner-alibabacloud',
+            'endpoint' => 'r-kvstore.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'r-kvstore.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'r-kvstore.ap-southeast-6.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-inner-alibabacloud',
+            'endpoint' => 'r-kvstore.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'r-kvstore.cn-guangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'r-kvstore.ap-southeast-1.aliyuncs.com',
         ],
     ],
 ];

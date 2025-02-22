@@ -767,6 +767,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ParallelOperation',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'AllocateInstancePublicConnection' => [
@@ -1480,6 +1488,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'ParallelOperation',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDBCluster' => [
@@ -1642,6 +1658,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ParallelOperation',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

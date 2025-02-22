@@ -1020,6 +1020,30 @@
                         'maxLength' => 32,
                     ],
                 ],
+                [
+                    'name' => 'M2MClientStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceServerStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SsoType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'EnableApplicationSso' => [
@@ -6881,12 +6905,16 @@
             'endpoint' => 'eiam.cn-hangzhou.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'eiam.cn-hongkong.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'eiam.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'eiam.cn-hongkong.aliyuncs.com',
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'eiam.eu-central-1.aliyuncs.com',
         ],
     ],
 ];

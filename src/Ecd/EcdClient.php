@@ -29,6 +29,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyOfficeSiteCrossDesktopAccessAsync($arguments = [])
  * @method \Dew\Acs\Result deleteOfficeSites(array $arguments = [])
  * @method \Http\Promise\Promise deleteOfficeSitesAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyOfficeSiteDnsInfo(array $arguments = [])
+ * @method \Http\Promise\Promise modifyOfficeSiteDnsInfoAsync($arguments = [])
  * @method \Dew\Acs\Result createSimpleOfficeSite(array $arguments = [])
  * @method \Http\Promise\Promise createSimpleOfficeSiteAsync($arguments = [])
  * @method \Dew\Acs\Result activateOfficeSite(array $arguments = [])

@@ -960,6 +960,52 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RecurrenceRules',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RecurrenceType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RecurrenceValue' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'StartHour' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '24',
+                                ],
+                                'EndHour' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '24',
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
             ],
         ],
         'DescribeRenewalPrice' => [
@@ -1387,7 +1433,7 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '0',
-                        'maximum' => '6',
+                        'maximum' => '720',
                     ],
                 ],
                 [
@@ -16804,6 +16850,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'DeleteOnRelease' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 8,
@@ -17576,6 +17626,10 @@
                                 ],
                                 'NetworkInterfaceTrafficMode' => [
                                     'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DeleteOnRelease' => [
+                                    'type' => 'boolean',
                                     'required' => false,
                                 ],
                             ],
@@ -19631,6 +19685,44 @@
                     ],
                 ],
                 [
+                    'name' => 'RecurrenceRules',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RecurrenceType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RecurrenceValue' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'StartHour' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '24',
+                                ],
+                                'EndHour' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '24',
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
                     'name' => 'AutoRenew',
                     'in' => 'query',
                     'schema' => [
@@ -19771,6 +19863,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PackageType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeElasticityAssuranceInstances' => [
@@ -19889,6 +19989,44 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RecurrenceRules',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'RecurrenceType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RecurrenceValue' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'StartHour' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '24',
+                                ],
+                                'EndHour' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '24',
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
             ],
         ],
         'RenewElasticityAssurances' => [
@@ -19910,7 +20048,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -19952,10 +20090,10 @@
                     'style' => 'repeatList',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
-                            'required' => true,
+                            'required' => false,
                         ],
                         'minItems' => 1,
                         'maxItems' => 20,
@@ -19966,6 +20104,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -19974,6 +20113,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -33396,6 +33536,44 @@
                             ],
                         ],
                         'maxItems' => 20,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeElasticityAssuranceAutoRenewAttribute' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PrivatePoolOptions.Id',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],

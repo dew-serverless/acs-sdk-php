@@ -535,8 +535,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listPermissionApplyOrdersAsync($arguments = [])
  * @method \Dew\Acs\Result approvePermissionApplyOrder(array $arguments = [])
  * @method \Http\Promise\Promise approvePermissionApplyOrderAsync($arguments = [])
- * @method \Dew\Acs\Result revokeColumnPermission(array $arguments = [])
- * @method \Http\Promise\Promise revokeColumnPermissionAsync($arguments = [])
  * @method \Dew\Acs\Result revokeTablePermission(array $arguments = [])
  * @method \Http\Promise\Promise revokeTablePermissionAsync($arguments = [])
  * @method \Dew\Acs\Result listExtensions(array $arguments = [])

@@ -1211,6 +1211,9 @@
                             '$ref' => '#/components/schemas/LimitRule',
                         ],
                     ],
+                    'inGroup' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'ProductDTO' => [
@@ -2558,6 +2561,266 @@
                     'schema' => [
                         '$ref' => '#/components/schemas/CategoryListQuery',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SearchProducts' => [
+            'path' => '/opensaas-s2b/opensaas-s2b-biz-trade/v2/selectionPool/selection-group/product/command/searchProduct',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'purchaserId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'categoryIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'productStatus' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'productName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'productId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'lmItemId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'inGroup' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'inventoryRiskLevel' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'distributionLowPrice' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'distributionHighPrice' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'distributionLowPriceRatio' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'distributionHighPriceRatio' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'lowMarkPrice' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'highMarkPrice' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'lowPrice' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'highPrice' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'platform' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'brandName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'inGroupStartTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'inGroupEndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'modifyStartTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'modifyEndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'createStartTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'createEndTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'tradeModeAndCredit' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'taxRate' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'pageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'pageNumber' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'orderBy' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'orderDirection' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'SelectionGroupAddProduct' => [
+            'path' => '/opensaas-s2b/opensaas-s2b-biz-trade/v2/selectionPool/selection-group/product/command/addProduct',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'purchaserId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'productIds' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'SelectionGroupRemoveProduct' => [
+            'path' => '/opensaas-s2b/opensaas-s2b-biz-trade/v2/selectionPool/selection-group/product/command/removeProduct',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'purchaserId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'productIds' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

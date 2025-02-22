@@ -203,6 +203,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -210,6 +211,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

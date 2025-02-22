@@ -164,6 +164,9 @@
             'ScorePageItem' => [
                 'type' => 'object',
                 'properties' => [
+                    'snippet' => [
+                        'type' => 'string',
+                    ],
                     'publishTime' => [
                         'type' => 'integer',
                         'format' => 'int64',

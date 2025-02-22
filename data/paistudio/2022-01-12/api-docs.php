@@ -5308,6 +5308,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WithHistoricalData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListNodes' => [

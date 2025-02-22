@@ -24,6 +24,23 @@
                     ],
                 ],
             ],
+            'containerd_config' => [
+                'type' => 'object',
+                'properties' => [
+                    'registryMirrors' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'insecureRegistries' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'data_disk' => [
                 'type' => 'object',
                 'properties' => [
@@ -4676,6 +4693,7 @@
                             ],
                             'auto_restart' => [
                                 'type' => 'boolean',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'operations' => [
@@ -4861,6 +4879,10 @@
                                     ],
                                 ],
                             ],
+                            'containerd_config' => [
+                                '$ref' => '#/components/schemas/containerd_config',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -4956,6 +4978,11 @@
                             ],
                             'options' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'expired' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
                                 'required' => false,
                             ],
                         ],

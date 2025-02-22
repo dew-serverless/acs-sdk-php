@@ -11321,7 +11321,7 @@
                             ],
                         ],
                         'minItems' => 1,
-                        'maxItems' => 24,
+                        'maxItems' => 144,
                     ],
                 ],
                 [
@@ -11431,7 +11431,7 @@
                                 ],
                             ],
                         ],
-                        'maxItems' => 24,
+                        'maxItems' => 144,
                     ],
                 ],
                 [
@@ -17270,74 +17270,6 @@
                             '4',
                             '5',
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'RevokeColumnPermission' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                        'minimum' => '1',
-                        'maximum' => '9999999',
-                    ],
-                ],
-                [
-                    'name' => 'MaxComputeProjectName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'TableName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Columns',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RevokeUserName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RevokeUserId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],

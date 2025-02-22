@@ -2385,7 +2385,7 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => true,
-                        'maximum' => '1000',
+                        'maximum' => '100',
                     ],
                 ],
                 [

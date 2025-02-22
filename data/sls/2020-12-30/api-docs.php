@@ -269,6 +269,66 @@
                     ],
                 ],
             ],
+            'CopilotAction' => [
+                'type' => 'object',
+                'properties' => [
+                    'queryTemplate' => [
+                        'type' => 'string',
+                    ],
+                    'queryTemplateParameters' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'name' => [
+                                    'type' => 'string',
+                                ],
+                                'type' => [
+                                    'type' => 'string',
+                                ],
+                                'prompt' => [
+                                    'type' => 'string',
+                                ],
+                                'required' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'action' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'scene' => [
+                        'type' => 'string',
+                    ],
+                    'parameters' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'name' => [
+                                    'type' => 'string',
+                                ],
+                                'type' => [
+                                    'type' => 'string',
+                                ],
+                                'prompt' => [
+                                    'type' => 'string',
+                                ],
+                                'required' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'ETL' => [
                 'type' => 'object',
                 'properties' => [
@@ -8671,7 +8731,7 @@
                         'properties' => [
                             'displayName' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'description' => [
                                 'type' => 'string',
@@ -8679,7 +8739,7 @@
                             ],
                             'configuration' => [
                                 '$ref' => '#/components/schemas/OSSExportConfiguration',
-                                'required' => false,
+                                'required' => true,
                             ],
                         ],
                     ],
@@ -9333,7 +9393,7 @@
                     'in' => 'host',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -9341,7 +9401,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -9435,7 +9495,7 @@
                     'in' => 'host',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -9443,7 +9503,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -9472,6 +9532,7 @@
                     'in' => 'host',
                     'schema' => [
                         'type' => 'string',
+                        'required' => true,
                     ],
                 ],
                 [
@@ -9479,6 +9540,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -9509,7 +9571,7 @@
                     'in' => 'host',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -9567,7 +9629,7 @@
                     'in' => 'host',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -9575,7 +9637,7 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],

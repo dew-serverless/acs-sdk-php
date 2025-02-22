@@ -4072,6 +4072,14 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'fromPachSetBizId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'toPatchSetBizId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

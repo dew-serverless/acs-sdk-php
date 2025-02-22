@@ -191,6 +191,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'FastMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'QueryUpgradableVersions' => [
@@ -548,6 +556,14 @@
                         'maximum' => '100',
                     ],
                 ],
+                [
+                    'name' => 'FastMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyCu' => [
@@ -605,6 +621,14 @@
                             '32',
                             '64',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'FastMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

@@ -392,6 +392,23 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EnableIpv6',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Ipv6Bandwidth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeAndroidInstanceGroups' => [

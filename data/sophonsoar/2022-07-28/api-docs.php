@@ -976,6 +976,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PlaybookUuids',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribePlaybookReleases' => [

@@ -6871,6 +6871,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AINodeSpecInfos',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'AINodeNum' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AINodeSpec' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'DeleteDBInstance' => [

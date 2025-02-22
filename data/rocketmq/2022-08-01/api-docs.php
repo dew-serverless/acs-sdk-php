@@ -986,8 +986,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -1249,8 +1249,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -1273,6 +1273,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'topicName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2631,6 +2639,10 @@
                                             'required' => false,
                                         ],
                                         'consumerGroupId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'deliveryOrderType' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],

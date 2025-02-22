@@ -540,6 +540,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TrainOperatorEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CostInsightsEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeUserPermissions' => [

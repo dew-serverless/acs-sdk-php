@@ -5716,7 +5716,6 @@
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => true,
-                                'maximum' => '132324',
                             ],
                         ],
                     ],

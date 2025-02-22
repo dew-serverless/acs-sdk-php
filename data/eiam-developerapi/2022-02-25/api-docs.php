@@ -1796,12 +1796,16 @@
             'endpoint' => 'eiam-developerapi.cn-hangzhou.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'eiam-developerapi.cn-hongkong.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'eiam-developerapi.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'eiam-developerapi.cn-hongkong.aliyuncs.com',
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'eiam-developerapi.eu-central-1.aliyuncs.com',
         ],
     ],
 ];

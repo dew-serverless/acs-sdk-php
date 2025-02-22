@@ -5895,6 +5895,7 @@
                             'cn-wulanchabu',
                             'cn-zhengzhou-jva',
                             'cn-wuhan-lr',
+                            'cn-shanghai-cloudspe',
                         ],
                     ],
                 ],

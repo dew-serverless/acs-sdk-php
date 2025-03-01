@@ -363,6 +363,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeVodSSLCertificateListAsync($arguments = [])
  * @method \Dew\Acs\Result setVodDomainSSLCertificate(array $arguments = [])
  * @method \Http\Promise\Promise setVodDomainSSLCertificateAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVodEditingUsageData(array $arguments = [])
+ * @method \Http\Promise\Promise describeVodEditingUsageDataAsync($arguments = [])
  */
 final class VodClient extends AcsClient
 {

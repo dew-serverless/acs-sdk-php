@@ -457,6 +457,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise batchDeleteDcdnKvWithHighCapacityAsync($arguments = [])
  * @method \Dew\Acs\Result putDcdnKvWithHighCapacity(array $arguments = [])
  * @method \Http\Promise\Promise putDcdnKvWithHighCapacityAsync($arguments = [])
+ * @method \Dew\Acs\Result describeKvRealTimeQpsData(array $arguments = [])
+ * @method \Http\Promise\Promise describeKvRealTimeQpsDataAsync($arguments = [])
  */
 final class DcdnClient extends AcsClient
 {

@@ -405,6 +405,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise applyCoordinatePrivilegeAsync($arguments = [])
  * @method \Dew\Acs\Result revokeCoordinatePrivilege(array $arguments = [])
  * @method \Http\Promise\Promise revokeCoordinatePrivilegeAsync($arguments = [])
+ * @method \Dew\Acs\Result createBandwidthResourcePackages(array $arguments = [])
+ * @method \Http\Promise\Promise createBandwidthResourcePackagesAsync($arguments = [])
  * @method \Dew\Acs\Result getLoginToken(array $arguments = []) {@since 2020-10-02}
  * @method \Http\Promise\Promise getLoginTokenAsync($arguments = []) {@since 2020-10-02}
  * @method \Dew\Acs\Result refreshLoginToken(array $arguments = []) {@since 2020-10-02}

@@ -37,6 +37,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getHttpApiRouteAsync($arguments = [])
  * @method \Dew\Acs\Result deleteHttpApiRoute(array $arguments = [])
  * @method \Http\Promise\Promise deleteHttpApiRouteAsync($arguments = [])
+ * @method \Dew\Acs\Result listHttpApiRoutes(array $arguments = [])
+ * @method \Http\Promise\Promise listHttpApiRoutesAsync($arguments = [])
+ * @method \Dew\Acs\Result createService(array $arguments = [])
+ * @method \Http\Promise\Promise createServiceAsync($arguments = [])
  * @method \Dew\Acs\Result getGateway(array $arguments = [])
  * @method \Http\Promise\Promise getGatewayAsync($arguments = [])
  * @method \Dew\Acs\Result listGateways(array $arguments = [])
@@ -97,6 +101,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise exportHttpApiAsync($arguments = [])
  * @method \Dew\Acs\Result getResourceOverview(array $arguments = [])
  * @method \Http\Promise\Promise getResourceOverviewAsync($arguments = [])
+ * @method \Dew\Acs\Result getService(array $arguments = [])
+ * @method \Http\Promise\Promise getServiceAsync($arguments = [])
  * @method \Dew\Acs\Result createEnvironment(array $arguments = []) {@deprecated 2024-03-27}
  * @method \Http\Promise\Promise createEnvironmentAsync($arguments = []) {@deprecated 2024-03-27}
  * @method \Dew\Acs\Result getEnvironment(array $arguments = []) {@deprecated 2024-03-27}
@@ -107,6 +113,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteEnvironmentAsync($arguments = []) {@deprecated 2024-03-27}
  * @method \Dew\Acs\Result listEnvironments(array $arguments = []) {@deprecated 2024-03-27}
  * @method \Http\Promise\Promise listEnvironmentsAsync($arguments = []) {@deprecated 2024-03-27}
+ * @method \Dew\Acs\Result listServices(array $arguments = [])
+ * @method \Http\Promise\Promise listServicesAsync($arguments = [])
  */
 final class ApigClient extends AcsClient
 {

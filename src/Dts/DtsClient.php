@@ -137,6 +137,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result untagResources(array $arguments = [])
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result convertInstanceResourceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise convertInstanceResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result countJobByCondition(array $arguments = [])
  * @method \Http\Promise\Promise countJobByConditionAsync($arguments = [])
  * @method \Dew\Acs\Result createDtsInstance(array $arguments = [])

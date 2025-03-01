@@ -29,6 +29,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCategoryAsync($arguments = [])
  * @method \Dew\Acs\Result listCategory(array $arguments = [])
  * @method \Http\Promise\Promise listCategoryAsync($arguments = [])
+ * @method \Dew\Acs\Result tongyiChatDebugInfo(array $arguments = [])
+ * @method \Http\Promise\Promise tongyiChatDebugInfoAsync($arguments = [])
  * @method \Dew\Acs\Result applyForStreamAccessToken(array $arguments = [])
  * @method \Http\Promise\Promise applyForStreamAccessTokenAsync($arguments = [])
  * @method \Dew\Acs\Result feedback(array $arguments = [])

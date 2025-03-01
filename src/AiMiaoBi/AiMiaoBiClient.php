@@ -263,6 +263,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listHotNewsWithTypeAsync($arguments = [])
  * @method \Dew\Acs\Result generateViewPoint(array $arguments = [])
  * @method \Http\Promise\Promise generateViewPointAsync($arguments = [])
+ * @method \Dew\Acs\Result runHotword(array $arguments = [])
+ * @method \Http\Promise\Promise runHotwordAsync($arguments = [])
+ * @method \Dew\Acs\Result runGenerateQuestions(array $arguments = [])
+ * @method \Http\Promise\Promise runGenerateQuestionsAsync($arguments = [])
  */
 final class AiMiaoBiClient extends AcsClient
 {

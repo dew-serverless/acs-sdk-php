@@ -97,6 +97,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listServicesAsync($arguments = [])
  * @method \Dew\Acs\Result listGroups(array $arguments = [])
  * @method \Http\Promise\Promise listGroupsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeMachineSpec(array $arguments = [])
+ * @method \Http\Promise\Promise describeMachineSpecAsync($arguments = [])
  * @method \Dew\Acs\Result updateVirtualResource(array $arguments = [])
  * @method \Http\Promise\Promise updateVirtualResourceAsync($arguments = [])
  * @method \Dew\Acs\Result listVirtualResource(array $arguments = [])

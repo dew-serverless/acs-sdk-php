@@ -553,6 +553,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteRCClusterNodesAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBInstanceReplicationSwitch(array $arguments = [])
  * @method \Http\Promise\Promise modifyDBInstanceReplicationSwitchAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDBInstanceReplication(array $arguments = [])
+ * @method \Http\Promise\Promise describeDBInstanceReplicationAsync($arguments = [])
  * @method \Dew\Acs\Result describeHistoryEventsStat(array $arguments = [])
  * @method \Http\Promise\Promise describeHistoryEventsStatAsync($arguments = [])
  * @method \Dew\Acs\Result describeHistoryEvents(array $arguments = [])
@@ -613,8 +615,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeBackupDatabaseAsync($arguments = [])
  * @method \Dew\Acs\Result copyDatabase(array $arguments = [])
  * @method \Http\Promise\Promise copyDatabaseAsync($arguments = [])
- * @method \Dew\Acs\Result describeDBInstanceReplication(array $arguments = [])
- * @method \Http\Promise\Promise describeDBInstanceReplicationAsync($arguments = [])
  */
 final class RdsClient extends AcsClient
 {

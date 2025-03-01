@@ -10022,6 +10022,7 @@
         'PutBucket' => [
             'methods' => [
                 'post',
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -10035,8 +10036,16 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'BucketName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
                     'name' => 'LogicalBucketType',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -10044,7 +10053,7 @@
                 ],
                 [
                     'name' => 'Comment',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -10052,23 +10061,15 @@
                 ],
                 [
                     'name' => 'BucketAcl',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'BucketName',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'EnsRegionId',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -10076,7 +10077,7 @@
                 ],
                 [
                     'name' => 'DispatchScope',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

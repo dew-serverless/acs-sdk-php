@@ -5764,6 +5764,61 @@
                 ],
             ],
         ],
+        'UpdateVariable' => [
+            'path' => '/api/v2/namespaces/{namespace}/variables/{name}',
+            'methods' => [
+                'patch',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/Variable',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'CreateVariable' => [
             'path' => '/api/v2/namespaces/{namespace}/variables',
             'methods' => [
@@ -5917,6 +5972,61 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
+                    ],
+                ],
+            ],
+        ],
+        'GetJobDiagnosis' => [
+            'path' => '/api/v2/namespaces/{namespace}/deployments/{deploymentId}/jobs/{jobId}/job-diagnoses/lite',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'deploymentId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'jobId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

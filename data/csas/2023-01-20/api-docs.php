@@ -46,6 +46,185 @@
                     ],
                 ],
             ],
+            'PAL7Config' => [
+                'type' => 'object',
+                'properties' => [
+                    'RequestQueryRewriteConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Ops' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/PAL7ConfigRewriteOp',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'JsHookConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Mode' => [
+                                'type' => 'string',
+                                'enum' => [
+                                    'disabled',
+                                    'whitelist',
+                                    'blacklist',
+                                    'global',
+                                    'on_demand',
+                                ],
+                            ],
+                            'ReplaceRules' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/PAL7ConfigReplaceRule',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'BypassConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AppBypassFroms' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'Mode' => [
+                                'type' => 'string',
+                                'enum' => [
+                                    'disabled',
+                                    'app',
+                                    'url',
+                                ],
+                            ],
+                            'UrlBypassRules' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Paths' => [
+                                            'type' => 'array',
+                                            'items' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                        'Froms' => [
+                                            'type' => 'array',
+                                            'items' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'CertId' => [
+                        'type' => 'string',
+                    ],
+                    'ResponseHeaderRewriteConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Ops' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/PAL7ConfigRewriteOp',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'ResponseRewriteConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Mode' => [
+                                'type' => 'string',
+                                'enum' => [
+                                    'disabled',
+                                    'auto',
+                                    'replace',
+                                ],
+                            ],
+                            'ReplaceRules' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/PAL7ConfigReplaceRule',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'RequestHeaderRewriteConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Ops' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/PAL7ConfigRewriteOp',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'DnsConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'DnsServers' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'ProxyDomainTypes' => [
+                        'type' => 'string',
+                        'format' => 'byte',
+                    ],
+                ],
+            ],
+            'PAL7ConfigReplaceRule' => [
+                'type' => 'object',
+                'properties' => [
+                    'From' => [
+                        'type' => 'string',
+                    ],
+                    'To' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'PAL7ConfigRewriteOp' => [
+                'type' => 'object',
+                'properties' => [
+                    'Op' => [
+                        'type' => 'string',
+                    ],
+                    'OldValue' => [
+                        'type' => 'string',
+                    ],
+                    'Value' => [
+                        'type' => 'string',
+                    ],
+                    'Key' => [
+                        'type' => 'string',
+                    ],
+                    'ValueVariable' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'sase_app_name',
+                            'sase_app_id',
+                            'sase_policy_name',
+                            'sase_policy_id',
+                            'sase_user_username',
+                            'sase_user_department',
+                            'sase_user_group_infos',
+                            'sase_user_matched_user_groups',
+                            'sase_client_addr',
+                            'sase_client_ip',
+                            'sase_client_port',
+                        ],
+                    ],
+                ],
+            ],
             'RecoveryContent' => [
                 'type' => 'object',
                 'properties' => [
@@ -92,6 +271,44 @@
                         'type' => 'array',
                         'items' => [
                             '$ref' => '#/components/schemas/Rule',
+                        ],
+                    ],
+                ],
+            ],
+            'UserCertificate' => [
+                'type' => 'object',
+                'properties' => [
+                    'PrivateKey' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'CertId' => [
+                        'type' => 'string',
+                    ],
+                    'ExpTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Certificate' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModifiedUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'GmtCreateUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DnsNames' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
                         ],
                     ],
                 ],
@@ -3947,6 +4164,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'L7Config',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/PAL7Config',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeletePrivateAccessApplication' => [
@@ -4110,10 +4336,11 @@
                     ],
                 ],
                 [
-                    'name' => 'L7ProxyDomainPrivate',
+                    'name' => 'L7Config',
                     'in' => 'formData',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'string',
+                        '$ref' => '#/components/schemas/PAL7Config',
                         'required' => false,
                     ],
                 ],

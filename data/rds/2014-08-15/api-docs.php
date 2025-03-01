@@ -1135,6 +1135,14 @@
                     ],
                 ],
                 [
+                    'name' => 'BpeEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'BurstingEnabled',
                     'in' => 'query',
                     'schema' => [
@@ -6233,6 +6241,14 @@
                     ],
                 ],
                 [
+                    'name' => 'BpeEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'BurstingEnabled',
                     'in' => 'query',
                     'schema' => [
@@ -7598,6 +7614,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'destVpcId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],
@@ -7654,6 +7674,14 @@
                 ],
                 [
                     'name' => 'ReadOnlyInstanceMaxDelayTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CausalConsistReadTimeout',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7750,6 +7778,14 @@
                 ],
                 [
                     'name' => 'DbEndpointMinSlaveCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VpcId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11743,6 +11779,43 @@
                     ],
                 ],
                 [
+                    'name' => 'ServerlessConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AutoPause' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'MaxCapacity' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'MinCapacity' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'SwitchForce' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'BpeEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'IoAccelerationEnabled',
                     'in' => 'query',
                     'schema' => [
@@ -11879,7 +11952,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -11888,7 +11961,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -18388,6 +18461,47 @@
                 ],
             ],
         ],
+        'DescribeDBInstanceReplication' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeHistoryEventsStat' => [
             'methods' => [
                 'post',
@@ -20476,47 +20590,6 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDBInstanceReplication' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'RegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DBInstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
                 [

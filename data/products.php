@@ -1003,6 +1003,14 @@
         'defaultVersion' => '2019-06-15',
     ],
     [
+        'code' => 'emas-appmonitor',
+        'style' => 'RPC',
+        'versions' => [
+            '2019-06-11',
+        ],
+        'defaultVersion' => '2019-06-11',
+    ],
+    [
         'code' => 'ltl',
         'style' => 'RPC',
         'versions' => [
@@ -1475,6 +1483,14 @@
             '2021-02-04',
         ],
         'defaultVersion' => '2021-02-04',
+    ],
+    [
+        'code' => 'brain-industrial',
+        'style' => 'RPC',
+        'versions' => [
+            '2020-09-20',
+        ],
+        'defaultVersion' => '2020-09-20',
     ],
     [
         'code' => 'ecd',

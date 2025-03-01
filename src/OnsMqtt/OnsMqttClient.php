@@ -13,6 +13,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryTokenAsync($arguments = [])
  * @method \Dew\Acs\Result revokeToken(array $arguments = [])
  * @method \Http\Promise\Promise revokeTokenAsync($arguments = [])
+ * @method \Dew\Acs\Result listInstances(array $arguments = [])
+ * @method \Http\Promise\Promise listInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result createGroupId(array $arguments = [])
  * @method \Http\Promise\Promise createGroupIdAsync($arguments = [])
  * @method \Dew\Acs\Result deleteGroupId(array $arguments = [])

@@ -1897,11 +1897,28 @@
                     'name_path' => [
                         'type' => 'string',
                     ],
+                    'dir_size_info' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'dir_count' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'file_count' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
                     'action_list' => [
                         'type' => 'array',
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                    'auto_delete_left_sec' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],

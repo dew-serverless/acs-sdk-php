@@ -101,8 +101,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'ecd.ap-southeast-7.aliyuncs.com',
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'ecd.cn-shanghai-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-qingdao',
@@ -171,6 +171,10 @@
         [
             'regionId' => 'cn-hangzhou-finance',
             'endpoint' => 'ecd.cn-hangzhou-finance.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'ecd.ap-southeast-7.aliyuncs.com',
         ],
     ],
 ];

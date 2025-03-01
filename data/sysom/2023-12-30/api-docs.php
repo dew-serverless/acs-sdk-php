@@ -2515,6 +2515,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'analysisTool' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

@@ -3225,6 +3225,42 @@
                 ],
             ],
         ],
+        'DescribeMachineSpec' => [
+            'path' => '/api/v2/public/instance_types',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceTypes',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'deprecated' => true,
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'UpdateVirtualResource' => [
             'path' => '/api/v2/virtualresources/{ClusterId}/{VirtualResourceId}',
             'methods' => [

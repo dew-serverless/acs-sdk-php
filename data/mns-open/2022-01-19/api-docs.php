@@ -321,6 +321,8 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
+                        'minimum' => '60',
+                        'maximum' => '604800',
                     ],
                 ],
                 [

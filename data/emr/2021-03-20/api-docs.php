@@ -1610,6 +1610,9 @@
                     'SpotInstanceRemedy' => [
                         'type' => 'boolean',
                     ],
+                    'CompensateWithOnDemand' => [
+                        'type' => 'boolean',
+                    ],
                     'NodeResizeStrategy' => [
                         'type' => 'string',
                     ],
@@ -1695,6 +1698,9 @@
                         'type' => 'boolean',
                     ],
                     'SpotInstanceRemedy' => [
+                        'type' => 'boolean',
+                    ],
+                    'CompensateWithOnDemand' => [
                         'type' => 'boolean',
                     ],
                     'NodeResizeStrategy' => [

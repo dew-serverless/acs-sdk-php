@@ -7502,5 +7502,9 @@
             'regionId' => 'cn-heyuan-acdr-1',
             'endpoint' => 'slb.cn-heyuan-acdr-1.aliyuncs.com',
         ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'slb.na-south-1.aliyuncs.com',
+        ],
     ],
 ];

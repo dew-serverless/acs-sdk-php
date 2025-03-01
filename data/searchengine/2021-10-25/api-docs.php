@@ -6241,14 +6241,6 @@
                     ],
                 ],
                 [
-                    'name' => 'address',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'type',
                     'in' => 'query',
                     'schema' => [
@@ -6289,14 +6281,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'address',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [
@@ -6345,7 +6329,7 @@
                     ],
                 ],
                 [
-                    'name' => 'address',
+                    'name' => 'path',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

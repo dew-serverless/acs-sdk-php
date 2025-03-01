@@ -6120,6 +6120,14 @@
                         'maxItems' => 10000,
                     ],
                 ],
+                [
+                    'name' => 'emails',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'QuerySkuPriceList' => [

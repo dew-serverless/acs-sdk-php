@@ -2275,6 +2275,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteRoute' => [
@@ -8857,6 +8865,8 @@
                         'enum' => [
                             'ManualWorkflow',
                             'SupplementData',
+                            'Manual',
+                            'SmokeTest',
                         ],
                     ],
                 ],
@@ -8950,15 +8960,15 @@
                             ],
                             'Analysis' => [
                                 'type' => 'object',
-                                'required' => true,
+                                'required' => false,
                                 'properties' => [
                                     'Enabled' => [
                                         'type' => 'boolean',
-                                        'required' => true,
+                                        'required' => false,
                                     ],
                                     'Blocked' => [
                                         'type' => 'boolean',
-                                        'required' => true,
+                                        'required' => false,
                                     ],
                                 ],
                             ],
@@ -9015,7 +9025,7 @@
                             'Parallelism' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'Order' => [
                                 'type' => 'string',

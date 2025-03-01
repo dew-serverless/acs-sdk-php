@@ -409,6 +409,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
             ],
         ],
         'DescribeAndroidInstanceGroups' => [
@@ -1205,6 +1229,39 @@
                 ],
             ],
         ],
+        'DisconnectAndroidInstance' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                            'pattern' => '^[^\';<>=|\\(\\)]+$',
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
         'RunCommand' => [
             'methods' => [
                 'post',
@@ -1355,7 +1412,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1472,6 +1529,82 @@
                 ],
                 [
                     'name' => 'SkipCheckPolicyConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GenerateCoordinationCode' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OwnerUserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'EndCoordination' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OwnerUserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CoordinatorUserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1827,6 +1960,47 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CustomAppInfo',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'DownloadUrl' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 1024,
+                            ],
+                            'Version' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 64,
+                            ],
+                            'VersionCode' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 64,
+                            ],
+                            'PackageName' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 128,
+                            ],
+                            'ApkSize' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 128,
+                            ],
+                            'Md5' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 128,
+                            ],
+                        ],
                     ],
                 ],
             ],

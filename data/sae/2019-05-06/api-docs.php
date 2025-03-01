@@ -12463,6 +12463,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateApplicationVswitches' => [

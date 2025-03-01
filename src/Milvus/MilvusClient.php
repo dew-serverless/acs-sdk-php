@@ -23,6 +23,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updatePublicNetworkStatusAsync($arguments = [])
  * @method \Dew\Acs\Result updateAccessControlList(array $arguments = [])
  * @method \Http\Promise\Promise updateAccessControlListAsync($arguments = [])
+ * @method \Dew\Acs\Result createDefaultRole(array $arguments = [])
+ * @method \Http\Promise\Promise createDefaultRoleAsync($arguments = [])
  */
 final class MilvusClient extends AcsClient
 {

@@ -1560,6 +1560,7 @@
                             'tair_scm',
                             'tair_essd',
                             'tair_rdb',
+                            'tair_skv',
                         ],
                     ],
                 ],
@@ -2435,6 +2436,7 @@
                             'tair_scm',
                             'Tair',
                             'tair_rdb',
+                            'tair_skv',
                         ],
                     ],
                 ],
@@ -3817,6 +3819,14 @@
                 ],
                 [
                     'name' => 'AutoRenew',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Product',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

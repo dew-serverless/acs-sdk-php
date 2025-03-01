@@ -330,6 +330,23 @@
                 ],
             ],
         ],
+        'CreateDefaultRole' => [
+            'path' => '/webapi/user/create_default_role',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
     ],
     'endpoints' => [
         [

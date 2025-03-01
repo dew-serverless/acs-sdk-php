@@ -326,6 +326,14 @@
                     'Notes' => [
                         'type' => 'string',
                     ],
+                    'SecurityLevel' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'WafRuleMatch' => [
@@ -9384,6 +9392,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'OriginMtls',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OriginVerify',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetOriginRule' => [
@@ -9607,6 +9631,22 @@
                 ],
                 [
                     'name' => 'Range',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OriginMtls',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OriginVerify',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

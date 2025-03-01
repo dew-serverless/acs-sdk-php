@@ -1196,6 +1196,24 @@
                                     'required' => false,
                                 ],
                             ],
+                            'UserProfile' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'UserProfileSwitch' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'RemoteStorageType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'RemoteStoragePath' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -1261,6 +1279,18 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'SessionUserGenerationMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SessionPreOpen' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PerSessionPerApp' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -1300,6 +1330,30 @@
                 ],
                 [
                     'name' => 'AppPolicyId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SubPayType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppPackageType',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -2292,6 +2346,20 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserIdList',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],

@@ -4725,6 +4725,10 @@
             'endpoint' => 'maxcompute.cn-zhangjiakou.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'maxcompute.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'maxcompute.cn-hangzhou.aliyuncs.com',
         ],
@@ -4777,6 +4781,14 @@
             'endpoint' => 'maxcompute.eu-central-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'me-east-1',
+            'endpoint' => 'maxcompute.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'maxcompute.cn-hangzhou-finance.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'maxcompute.cn-shanghai-finance-1.aliyuncs.com',
         ],
@@ -4785,8 +4797,12 @@
             'endpoint' => 'maxcompute.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'maxcompute.cn-hangzhou-finance.aliyuncs.com',
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'macompute.cn-beijing-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'maxcompute.me-central-1.aliyuncs.com',
         ],
     ],
 ];

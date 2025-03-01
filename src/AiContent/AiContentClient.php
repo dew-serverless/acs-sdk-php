@@ -7,6 +7,8 @@ namespace Dew\Acs\AiContent;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result executeAITeacherChineseCompositionTutoringWorkflowRun(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeAITeacherChineseCompositionTutoringWorkflowRunAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result getTextbookAssistantToken(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise getTextbookAssistantTokenAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result listTextbookAssistantGradeVolumes(array $arguments = []) {@since 20240611}
@@ -33,6 +35,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise executeTextbookAssistantGrammarCheckAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result executeTextbookAssistantRetryConversation(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise executeTextbookAssistantRetryConversationAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeAITeacherEnglishParaphraseChatMessage(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeAITeacherEnglishParaphraseChatMessageAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeAITeacherEnglishCompositionTutoringWorkflowRun(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeAITeacherEnglishCompositionTutoringWorkflowRunAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result aITeacherSyncPracticeTaskGenerate(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise aITeacherSyncPracticeTaskGenerateAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result executeAITeacherSyncDialogue(array $arguments = []) {@since 20240611}

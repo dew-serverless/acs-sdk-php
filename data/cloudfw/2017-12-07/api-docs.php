@@ -6318,23 +6318,26 @@
                     'name' => 'CtiRules',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => true,
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
                 [
                     'name' => 'BasicRules',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => true,
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
                 [
                     'name' => 'PatchRules',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -6342,7 +6345,8 @@
                     'name' => 'RunMode',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => true,
                     ],
                 ],
@@ -6350,7 +6354,8 @@
                     'name' => 'RuleClass',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],

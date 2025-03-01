@@ -77,6 +77,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deployServiceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result describeRegions(array $arguments = [])
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
+ * @method \Dew\Acs\Result listPolicies(array $arguments = [])
+ * @method \Http\Promise\Promise listPoliciesAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result getServiceInstanceSubscriptionEstimateCost(array $arguments = [])

@@ -3464,6 +3464,32 @@
                     ],
                 ],
                 [
+                    'name' => 'ResponseHeaders',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'maxLength' => 50,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'maxLength' => 50,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 5,
+                    ],
+                ],
+                [
                     'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [

@@ -191,6 +191,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCenRouteMapsAsync($arguments = [])
  * @method \Dew\Acs\Result createTransitRouteTableAggregation(array $arguments = [])
  * @method \Http\Promise\Promise createTransitRouteTableAggregationAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyTransitRouteTableAggregation(array $arguments = [])
+ * @method \Http\Promise\Promise modifyTransitRouteTableAggregationAsync($arguments = [])
  * @method \Dew\Acs\Result deleteTransitRouteTableAggregation(array $arguments = [])
  * @method \Http\Promise\Promise deleteTransitRouteTableAggregationAsync($arguments = [])
  * @method \Dew\Acs\Result refreshTransitRouteTableAggregation(array $arguments = [])

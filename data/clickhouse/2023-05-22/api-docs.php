@@ -296,6 +296,7 @@
         'ModifyDBInstanceClass' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'https',

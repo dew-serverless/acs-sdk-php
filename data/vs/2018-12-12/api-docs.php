@@ -511,6 +511,22 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'DataPackageId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ActionName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateRenderingInstanceConfiguration' => [
@@ -1510,6 +1526,18 @@
                         'maxLength' => 64,
                     ],
                 ],
+                [
+                    'name' => 'Category',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Package',
+                            'Baseline',
+                        ],
+                    ],
+                ],
             ],
         ],
         'ListRenderingDataPackages' => [
@@ -1547,6 +1575,14 @@
                 ],
                 [
                     'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Category',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

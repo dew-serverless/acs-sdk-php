@@ -744,7 +744,7 @@
                                         ],
                                         'enumValues' => [
                                             'type' => 'array',
-                                            'required' => true,
+                                            'required' => false,
                                             'items' => [
                                                 'type' => 'object',
                                                 'required' => true,
@@ -788,6 +788,9 @@
                                         'keywords',
                                         'service_inspection',
                                         'question_solution',
+                                        'custom_prompt',
+                                        'category_tag',
+                                        'questions_and_answer',
                                     ],
                                 ],
                             ],
@@ -896,6 +899,10 @@
                                         'required' => false,
                                     ],
                                 ],
+                            ],
+                            'customPrompt' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],

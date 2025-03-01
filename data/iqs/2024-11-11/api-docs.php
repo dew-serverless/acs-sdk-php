@@ -466,6 +466,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'industry',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
     ],

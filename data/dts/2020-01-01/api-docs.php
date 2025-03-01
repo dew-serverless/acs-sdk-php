@@ -3319,6 +3319,43 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'cn-hangzhou',
+                            'cn-shanghai',
+                            'cn-beijing',
+                            'cn-guangzhou',
+                            'cn-shenzhen',
+                            'cn-chengdu',
+                            'cn-heyuan',
+                            'cn-hongkong',
+                            'cn-qingdao',
+                            'cn-zhangbei',
+                            'cn-zhangjiakou',
+                            'us-east-1',
+                            'us-west-1',
+                            'cn-hangzhou-finance',
+                            'cn-shanghai-finance',
+                            'cn-shanghai-finance-1',
+                            'cn-shenzhen-finance',
+                            'cn-shenzhen-finance-1',
+                            'cn-beijing-finance-1',
+                            'cn-huhehaote',
+                            'cn-north-2-gov-1',
+                            'eu-central-1',
+                            'eu-west-1',
+                            'me-central-1',
+                            'me-east-1',
+                            'ap-northeast-1',
+                            'ap-northeast-2',
+                            'ap-southeast-1',
+                            'ap-southeast-3',
+                            'ap-southeast-5',
+                            'ap-southeast-6',
+                            'ap-southeast-7',
+                            'cn-wulanchabu',
+                            'cn-zhengzhou-jva',
+                            'cn-wuhan-lr',
+                        ],
                     ],
                 ],
                 [
@@ -6231,6 +6268,72 @@
                             'required' => false,
                         ],
                         'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ConvertInstanceResourceGroup' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DtsJobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NewResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ZeroEtlJob',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
                 [

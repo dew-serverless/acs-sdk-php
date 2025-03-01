@@ -375,8 +375,8 @@
                 'get',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -899,8 +899,8 @@
                 'get',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -1039,8 +1039,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -1081,8 +1081,8 @@
                 'get',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -1139,8 +1139,8 @@
                 'get',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [
@@ -3315,8 +3315,8 @@
                 'get',
             ],
             'schemes' => [
-                'http',
                 'https',
+                'http',
             ],
             'security' => [
                 [

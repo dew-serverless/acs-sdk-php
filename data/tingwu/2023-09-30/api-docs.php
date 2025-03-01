@@ -190,6 +190,10 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'RealtimeDiarizationEnabled' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
                                     'Translation' => [

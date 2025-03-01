@@ -303,6 +303,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ClientName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ProfileRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RefreshLoginToken' => [

@@ -4180,6 +4180,10 @@
             'endpoint' => 'nlb.cn-nanjing.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'nlb.cn-fuzhou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'nlb.cn-shenzhen.aliyuncs.com',
         ],
@@ -4194,6 +4198,10 @@
         [
             'regionId' => 'cn-chengdu',
             'endpoint' => 'nlb.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'nlb.cn-wuhan-lr.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
@@ -4240,6 +4248,10 @@
             'endpoint' => 'nlb.eu-central-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'nlb.ap-south-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'nlb.cn-shanghai-finance-1.aliyuncs.com',
         ],
@@ -4260,8 +4272,12 @@
             'endpoint' => 'nlb.me-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'nlb.cn-wuhan-lr.aliyuncs.com',
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'nlb.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'nlb.na-south-1.aliyuncs.com',
         ],
     ],
 ];

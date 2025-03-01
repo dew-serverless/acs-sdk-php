@@ -5906,6 +5906,14 @@
                     ],
                 ],
                 [
+                    'name' => 'updateStrategy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'clientToken',
                     'in' => 'query',
                     'schema' => [

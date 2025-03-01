@@ -1187,6 +1187,12 @@
                     'filterInvalid' => [
                         'type' => 'boolean',
                     ],
+                    'timeFormatType' => [
+                        'type' => 'string',
+                    ],
+                    'bufferInterval' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'OSSExport' => [

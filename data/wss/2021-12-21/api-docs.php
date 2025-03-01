@@ -117,6 +117,15 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'ResellerOwnerUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribePackageDeductions' => [

@@ -2055,6 +2055,14 @@
                                 'format' => 'int32',
                                 'required' => false,
                             ],
+                            'userVad' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'scriptContentPlayed' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

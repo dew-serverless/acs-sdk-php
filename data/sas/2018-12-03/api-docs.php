@@ -3590,8 +3590,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -19104,7 +19104,7 @@
                     'schema' => [
                         'type' => 'string',
                         'deprecated' => true,
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],

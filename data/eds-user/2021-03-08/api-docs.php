@@ -532,6 +532,22 @@
                     ],
                 ],
                 [
+                    'name' => 'BizType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SolutionId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ShowExtras',
                     'in' => 'formData',
                     'style' => 'json',
@@ -561,6 +577,18 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FilterWithAssignedResource',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],

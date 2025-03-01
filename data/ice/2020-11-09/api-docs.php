@@ -77,21 +77,7 @@
                                     ],
                                 ],
                             ],
-                            'UserOnlineTimeout' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'AsrLanguageId' => [
-                                'type' => 'string',
-                            ],
-                            'UserOfflineTimeout' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
                             'WorkflowOverrideParams' => [
-                                'type' => 'string',
-                            ],
-                            'LlmSystemPrompt' => [
                                 'type' => 'string',
                             ],
                             'EnableIntelligentSegment' => [
@@ -100,26 +86,8 @@
                             'AvatarUrlType' => [
                                 'type' => 'string',
                             ],
-                            'BailianAppParams' => [
-                                'type' => 'string',
-                            ],
-                            'LlmHistoryLimit' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'AsrMaxSilence' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
                             'AvatarUrl' => [
                                 'type' => 'string',
-                            ],
-                            'WakeUpQuery' => [
-                                'type' => 'string',
-                            ],
-                            'Volume' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
                             ],
                             'VoiceIdList' => [
                                 'type' => 'array',
@@ -133,6 +101,51 @@
                             'VoiceprintId' => [
                                 'type' => 'string',
                             ],
+                            'GracefulShutdown' => [
+                                'type' => 'boolean',
+                            ],
+                            'InterruptWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'UserOnlineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'AsrLanguageId' => [
+                                'type' => 'string',
+                            ],
+                            'UserOfflineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'LlmSystemPrompt' => [
+                                'type' => 'string',
+                            ],
+                            'BailianAppParams' => [
+                                'type' => 'string',
+                            ],
+                            'VadLevel' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'LlmHistoryLimit' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'AsrMaxSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'WakeUpQuery' => [
+                                'type' => 'string',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
                             'VoiceId' => [
                                 'type' => 'string',
                             ],
@@ -143,9 +156,6 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
-                            'GracefulShutdown' => [
-                                'type' => 'boolean',
-                            ],
                             'EnablePushToTalk' => [
                                 'type' => 'boolean',
                             ],
@@ -154,6 +164,12 @@
                     'VisionChat' => [
                         'type' => 'object',
                         'properties' => [
+                            'InterruptWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
                             'Greeting' => [
                                 'type' => 'string',
                             ],
@@ -193,6 +209,10 @@
                             ],
                             'BailianAppParams' => [
                                 'type' => 'string',
+                            ],
+                            'VadLevel' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                             ],
                             'LlmHistoryLimit' => [
                                 'type' => 'integer',
@@ -259,43 +279,11 @@
                                     ],
                                 ],
                             ],
-                            'UserOnlineTimeout' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'AsrLanguageId' => [
-                                'type' => 'string',
-                            ],
-                            'UserOfflineTimeout' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
                             'WorkflowOverrideParams' => [
-                                'type' => 'string',
-                            ],
-                            'LlmSystemPrompt' => [
                                 'type' => 'string',
                             ],
                             'EnableIntelligentSegment' => [
                                 'type' => 'boolean',
-                            ],
-                            'BailianAppParams' => [
-                                'type' => 'string',
-                            ],
-                            'LlmHistoryLimit' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'AsrMaxSilence' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'WakeUpQuery' => [
-                                'type' => 'string',
-                            ],
-                            'Volume' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
                             ],
                             'VoiceIdList' => [
                                 'type' => 'array',
@@ -312,6 +300,51 @@
                             'VoiceprintId' => [
                                 'type' => 'string',
                             ],
+                            'GracefulShutdown' => [
+                                'type' => 'boolean',
+                            ],
+                            'InterruptWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'UserOnlineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'AsrLanguageId' => [
+                                'type' => 'string',
+                            ],
+                            'UserOfflineTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'LlmSystemPrompt' => [
+                                'type' => 'string',
+                            ],
+                            'BailianAppParams' => [
+                                'type' => 'string',
+                            ],
+                            'VadLevel' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'LlmHistoryLimit' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'AsrMaxSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'WakeUpQuery' => [
+                                'type' => 'string',
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
                             'VoiceId' => [
                                 'type' => 'string',
                             ],
@@ -321,9 +354,6 @@
                             'MaxIdleTime' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
-                            ],
-                            'GracefulShutdown' => [
-                                'type' => 'boolean',
                             ],
                             'EnablePushToTalk' => [
                                 'type' => 'boolean',
@@ -9797,24 +9827,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'PageNo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'Type',
                     'in' => 'query',
                     'schema' => [
@@ -11373,6 +11385,25 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ChatSyncConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'IMAIAgentId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ReceiverId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'StopAIAgentInstance' => [
@@ -11857,6 +11888,25 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChatSyncConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'IMAIAgentId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ReceiverId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -13612,6 +13662,1334 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateMediaLiveInputSecurityGroup' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'WhitelistRules',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateMediaLiveInputSecurityGroup' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SecurityGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'WhitelistRules',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetMediaLiveInputSecurityGroup' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SecurityGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListMediaLiveInputSecurityGroups' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Skip',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortOrder',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Keyword',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteMediaLiveInputSecurityGroup' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SecurityGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateMediaLiveInput' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityGroupIds',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'InputSettings',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'StreamName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SourceUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FlowId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FlowOutputName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateMediaLiveInput' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InputId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SecurityGroupIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'InputSettings',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'StreamName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SourceUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FlowId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FlowOutputName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetMediaLiveInput' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InputId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListMediaLiveInputs' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Skip',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortOrder',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Keyword',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Types',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteMediaLiveInput' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InputId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateMediaLiveChannel' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InputAttachments',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'InputId' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'LanguageName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AudioSelectors' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                            'AudioLanguageSelection' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'LanguageCode' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                            'AudioPidSelection' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Pid' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                            'AudioTrackSelection' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'TrackId' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => true,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OutputGroups',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Outputs' => [
+                                    'type' => 'array',
+                                    'required' => true,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                            'MediaType' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'MediaPackageOutputSetting' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'NameModifier' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'AudioGroupId' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                            'VideoSettingName' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'AudioSettingNames' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'MediaPackageGroupSetting' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'GroupName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ChannelName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AudioSettings',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'AudioSelectorName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'LanguageCode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'LanguageName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AudioCodec' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AudioCodecSetting' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Profile' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Bitrate' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'SampleRate' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'VideoSettings',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Width' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Height' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'VideoCodec' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'VideoCodecSetting' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Rate' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Bitrate' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'RateControlMode' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MaxBitrate' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'BufferSize' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'Framerate' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'FramerateControl' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'FramerateNumerator' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'FramerateDenominator' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'Gop' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'GopSizeUnits' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'GopSize' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'BframesNum' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'CodecDetail' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Profile' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Level' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateMediaLiveChannel' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InputAttachments',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'InputId' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'LanguageName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AudioSelectors' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                            'AudioLanguageSelection' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'LanguageCode' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                            'AudioPidSelection' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Pid' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int64',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                            'AudioTrackSelection' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'TrackId' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int64',
+                                                            'required' => true,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OutputGroups',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Outputs' => [
+                                    'type' => 'array',
+                                    'required' => true,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Name' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                            'MediaType' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'MediaPackageOutputSetting' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'NameModifier' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'AudioGroupId' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                            'VideoSettingName' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'AudioSettingNames' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'MediaPackageGroupSetting' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'GroupName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ChannelName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AudioSettings',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'AudioSelectorName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'LanguageCode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'LanguageName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AudioCodec' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AudioCodecSetting' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Profile' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Bitrate' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'SampleRate' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'VideoSettings',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Width' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Height' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'VideoCodec' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'VideoCodecSetting' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Rate' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Bitrate' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'RateControlMode' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MaxBitrate' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'BufferSize' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'Framerate' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'FramerateControl' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'FramerateNumerator' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'FramerateDenominator' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'Gop' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'GopSizeUnits' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'GopSize' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'BframesNum' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'CodecDetail' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Profile' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'Level' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetMediaLiveChannel' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListMediaLiveChannels' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Skip',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortOrder',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Keyword',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'States',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteMediaLiveChannel' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StartMediaLiveChannel' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StopMediaLiveChannel' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],

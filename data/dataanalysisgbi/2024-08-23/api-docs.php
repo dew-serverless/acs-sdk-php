@@ -70,6 +70,10 @@
                                 'type' => 'any',
                                 'required' => false,
                             ],
+                            'agentCtrlParams' => [
+                                'type' => 'any',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

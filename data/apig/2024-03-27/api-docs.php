@@ -336,6 +336,12 @@
                     'resourceGroupId' => [
                         'type' => 'string',
                     ],
+                    'mTLSEnabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'clientCACert' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'EnvironmentInfo' => [
@@ -3028,6 +3034,235 @@
                 ],
             ],
         ],
+        'ListHttpApiRoutes' => [
+            'path' => '/v1/http-apis/{httpApiId}/routes',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'httpApiId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'environmentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'deployStatuses',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'nameLike',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pathLike',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'gatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withConsumerInfoById',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consumerAuthorizationRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withAuthPolicyInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withPluginAttachmentByPluginId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'domainId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateService' => [
+            'path' => '/v1/services',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'gatewayId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'sourceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'serviceConfigs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'namespace' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'groupName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'addresses' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                        'qualifier' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'aiServiceConfig' => [
+                                            '$ref' => '#/components/schemas/AiServiceConfig',
+                                            'required' => false,
+                                        ],
+                                        'dnsServers' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'resourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetGateway' => [
             'path' => '/v1/gateways/{gatewayId}',
             'methods' => [
@@ -3657,11 +3892,19 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'mTLSEnabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'certIdentifier' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
                             'caCertIdentifier' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'clientCACert' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -3805,11 +4048,19 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'mTLSEnabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                             'certIdentifier' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
                             'caCertIdentifier' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'clientCACert' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -4451,6 +4702,37 @@
             'deprecated' => false,
             'parameters' => [],
         ],
+        'GetService' => [
+            'path' => '/v1/services/{serviceId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'serviceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'CreateEnvironment' => [
             'path' => '/v1/environments',
             'methods' => [
@@ -4671,6 +4953,79 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListServices' => [
+            'path' => '/v1/services',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'gatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

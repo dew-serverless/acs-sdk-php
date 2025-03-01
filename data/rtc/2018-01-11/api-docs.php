@@ -1559,6 +1559,14 @@
                     ],
                 ],
                 [
+                    'name' => 'ReservePaneForNoCameraUser',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'StorageConfig',
                     'in' => 'query',
                     'style' => 'flat',
@@ -1592,6 +1600,11 @@
                                 'required' => true,
                                 'minLength' => 1,
                             ],
+                            'Endpoint' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'minLength' => 1,
+                            ],
                         ],
                     ],
                 ],
@@ -1616,6 +1629,14 @@
                                         'whiteboard',
                                     ],
                                 ],
+                                'VideoOrder' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'cameraFirst',
+                                        'screenFirst',
+                                    ],
+                                ],
                                 'PaneId' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
@@ -1636,6 +1657,10 @@
                                         '2',
                                         '3',
                                     ],
+                                ],
+                                'ReservePaneForOfflineUser' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
                                 ],
                                 'Images' => [
                                     'type' => 'array',
@@ -2422,6 +2447,14 @@
                                         'whiteboard',
                                     ],
                                 ],
+                                'VideoOrder' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'cameraFirst',
+                                        'screenFirst',
+                                    ],
+                                ],
                                 'PaneId' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
@@ -2442,6 +2475,10 @@
                                         '2',
                                         '3',
                                     ],
+                                ],
+                                'ReservePaneForOfflineUser' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
                                 ],
                                 'Images' => [
                                     'type' => 'array',
@@ -3627,6 +3664,31 @@
                     ],
                 ],
                 [
+                    'name' => 'ReservePaneForNoCameraUser',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartWithoutChannel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartWithoutChannelWaitTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Panes',
                     'in' => 'query',
                     'style' => 'flat',
@@ -3641,6 +3703,14 @@
                                     'type' => 'string',
                                     'required' => false,
                                     'enum' => [],
+                                ],
+                                'VideoOrder' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'cameraFirst',
+                                        'screenFirst',
+                                    ],
                                 ],
                                 'PaneId' => [
                                     'type' => 'string',
@@ -3661,6 +3731,10 @@
                                         '2',
                                         '3',
                                     ],
+                                ],
+                                'ReservePaneForOfflineUser' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
                                 ],
                                 'Images' => [
                                     'type' => 'array',
@@ -4448,6 +4522,14 @@
                                         'whiteboard',
                                     ],
                                 ],
+                                'VideoOrder' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'cameraFirst',
+                                        'screenFirst',
+                                    ],
+                                ],
                                 'PaneId' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
@@ -4468,6 +4550,10 @@
                                         '2',
                                         '3',
                                     ],
+                                ],
+                                'ReservePaneForOfflineUser' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
                                 ],
                                 'Images' => [
                                     'type' => 'array',

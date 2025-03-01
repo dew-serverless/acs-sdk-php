@@ -2046,6 +2046,7 @@
         'ListDownloadTasks' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',

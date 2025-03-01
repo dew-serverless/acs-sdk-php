@@ -253,6 +253,106 @@
         ],
     ],
     'apis' => [
+        'ExecuteAITeacherChineseCompositionTutoringWorkflowRun' => [
+            'path' => '/pop/api/v1/intelligentAgent/chineseCompositionTutoring/workflowRun',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'callerUid',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'callerType',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'callerParentId',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'stsTokenCallerUid',
+                    'in' => 'header',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'essayOutline' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'essayRequirements' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'essayTopic' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'essayType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'essayWordCount' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'grade' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'responseMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetTextbookAssistantToken' => [
             'path' => '/api/v1/textbookAssistant/teachingResource/GetToken',
             'methods' => [
@@ -849,6 +949,143 @@
                             ],
                             'authToken' => [
                                 'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteAITeacherEnglishParaphraseChatMessage' => [
+            'path' => '/pop/api/v1/intelligentAgent/englishParaphrase/chatMessage',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'responseMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'content' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'grade' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'questionInfo' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'userAnswer' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'chatId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'questionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteAITeacherEnglishCompositionTutoringWorkflowRun' => [
+            'path' => '/pop/api/v1/intelligentAgent/englishCompositionTutoring/workflowRun',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'responseMode' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'streaming',
+                                ],
+                            ],
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'essayTopic' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'essayRequirements' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'essayOutline' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'outline',
+                                    'essay',
+                                ],
+                            ],
+                            'essayWordCount' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'essayType' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'essay',
+                                    'outline',
+                                ],
+                            ],
+                            'grade' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
                                 'required' => true,
                             ],
                         ],
@@ -2157,6 +2394,10 @@
         [
             'regionId' => 'cn-shanghai',
             'endpoint' => 'aicontent.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'aicontent.cn-hangzhou.aliyuncs.com',
         ],
     ],
 ];

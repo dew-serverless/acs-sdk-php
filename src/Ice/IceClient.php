@@ -383,6 +383,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listAIAgentDialoguesAsync($arguments = [])
  * @method \Dew\Acs\Result deleteAIAgentDialogue(array $arguments = [])
  * @method \Http\Promise\Promise deleteAIAgentDialogueAsync($arguments = [])
+ * @method \Dew\Acs\Result sendMessageChatText(array $arguments = [])
+ * @method \Http\Promise\Promise sendMessageChatTextAsync($arguments = [])
  * @method \Dew\Acs\Result submitSmarttagJob(array $arguments = [])
  * @method \Http\Promise\Promise submitSmarttagJobAsync($arguments = [])
  * @method \Dew\Acs\Result querySmarttagJob(array $arguments = [])

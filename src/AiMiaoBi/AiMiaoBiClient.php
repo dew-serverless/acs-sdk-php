@@ -235,6 +235,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listDocsAsync($arguments = [])
  * @method \Dew\Acs\Result deleteDocs(array $arguments = [])
  * @method \Http\Promise\Promise deleteDocsAsync($arguments = [])
+ * @method \Dew\Acs\Result runGenerateQuestions(array $arguments = [])
+ * @method \Http\Promise\Promise runGenerateQuestionsAsync($arguments = [])
+ * @method \Dew\Acs\Result runHotword(array $arguments = [])
+ * @method \Http\Promise\Promise runHotwordAsync($arguments = [])
  * @method \Dew\Acs\Result runMultiDocIntroduction(array $arguments = [])
  * @method \Http\Promise\Promise runMultiDocIntroductionAsync($arguments = [])
  * @method \Dew\Acs\Result runDocBrainmap(array $arguments = [])
@@ -263,10 +267,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listHotNewsWithTypeAsync($arguments = [])
  * @method \Dew\Acs\Result generateViewPoint(array $arguments = [])
  * @method \Http\Promise\Promise generateViewPointAsync($arguments = [])
- * @method \Dew\Acs\Result runHotword(array $arguments = [])
- * @method \Http\Promise\Promise runHotwordAsync($arguments = [])
- * @method \Dew\Acs\Result runGenerateQuestions(array $arguments = [])
- * @method \Http\Promise\Promise runGenerateQuestionsAsync($arguments = [])
  */
 final class AiMiaoBiClient extends AcsClient
 {

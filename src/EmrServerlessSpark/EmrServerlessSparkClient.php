@@ -7,6 +7,8 @@ namespace Dew\Acs\EmrServerlessSpark;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result createSessionCluster(array $arguments = [])
+ * @method \Http\Promise\Promise createSessionClusterAsync($arguments = [])
  * @method \Dew\Acs\Result stopSessionCluster(array $arguments = [])
  * @method \Http\Promise\Promise stopSessionClusterAsync($arguments = [])
  * @method \Dew\Acs\Result startSessionCluster(array $arguments = [])
@@ -19,6 +21,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createSqlStatementAsync($arguments = [])
  * @method \Dew\Acs\Result getSqlStatement(array $arguments = [])
  * @method \Http\Promise\Promise getSqlStatementAsync($arguments = [])
+ * @method \Dew\Acs\Result createWorkspace(array $arguments = [])
+ * @method \Http\Promise\Promise createWorkspaceAsync($arguments = [])
  * @method \Dew\Acs\Result listWorkspaces(array $arguments = [])
  * @method \Http\Promise\Promise listWorkspacesAsync($arguments = [])
  * @method \Dew\Acs\Result listWorkspaceQueues(array $arguments = [])
@@ -49,6 +53,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result getCuHours(array $arguments = [])
  * @method \Http\Promise\Promise getCuHoursAsync($arguments = [])
+ * @method \Dew\Acs\Result listKyuubiSparkApplications(array $arguments = [])
+ * @method \Http\Promise\Promise listKyuubiSparkApplicationsAsync($arguments = [])
+ * @method \Dew\Acs\Result getSessionCluster(array $arguments = [])
+ * @method \Http\Promise\Promise getSessionClusterAsync($arguments = [])
  */
 final class EmrServerlessSparkClient extends AcsClient
 {

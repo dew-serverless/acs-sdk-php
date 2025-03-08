@@ -109,6 +109,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listJobInfosAsync($arguments = [])
  * @method \Dew\Acs\Result listJobSnapshotInfos(array $arguments = [])
  * @method \Http\Promise\Promise listJobSnapshotInfosAsync($arguments = [])
+ * @method \Dew\Acs\Result getJobInfo(array $arguments = [])
+ * @method \Http\Promise\Promise getJobInfoAsync($arguments = [])
  * @method \Dew\Acs\Result getRunningJobs(array $arguments = [])
  * @method \Http\Promise\Promise getRunningJobsAsync($arguments = [])
  * @method \Dew\Acs\Result killJobs(array $arguments = [])

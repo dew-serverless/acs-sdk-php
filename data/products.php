@@ -441,6 +441,7 @@
         'style' => 'RPC',
         'versions' => [
             '2022-12-16',
+            '2025-02-27',
         ],
         'defaultVersion' => '2022-12-16',
     ],
@@ -1859,6 +1860,14 @@
         'defaultVersion' => '2022-02-25',
     ],
     [
+        'code' => 'metaspace',
+        'style' => 'RPC',
+        'versions' => [
+            '2022-03-07',
+        ],
+        'defaultVersion' => '2022-03-07',
+    ],
+    [
         'code' => 'CC5G',
         'style' => 'RPC',
         'versions' => [
@@ -2242,14 +2251,6 @@
             '2024-04-15',
         ],
         'defaultVersion' => '2024-04-15',
-    ],
-    [
-        'code' => 'schedulerx3',
-        'style' => '',
-        'versions' => [
-            '2024-06-24',
-        ],
-        'defaultVersion' => '2024-06-24',
     ],
     [
         'code' => 'ContactCenterAI',

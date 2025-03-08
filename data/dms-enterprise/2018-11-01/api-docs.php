@@ -17819,7 +17819,6 @@
             ],
         ],
         'UpdateTaskContentV2' => [
-            'path' => '',
             'methods' => [
                 'post',
                 'get',

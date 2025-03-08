@@ -259,8 +259,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeTenantBindNumberAsync($arguments = [])
  * @method \Dew\Acs\Result listAllTenantBindNumberBinding(array $arguments = [])
  * @method \Http\Promise\Promise listAllTenantBindNumberBindingAsync($arguments = [])
- * @method \Dew\Acs\Result generateUploadUrl(array $arguments = [])
- * @method \Http\Promise\Promise generateUploadUrlAsync($arguments = [])
  * @method \Dew\Acs\Result uploadScriptRecording(array $arguments = [])
  * @method \Http\Promise\Promise uploadScriptRecordingAsync($arguments = [])
  * @method \Dew\Acs\Result downloadScriptRecording(array $arguments = [])
@@ -279,6 +277,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteScriptWaveformAsync($arguments = [])
  * @method \Dew\Acs\Result createScriptWaveform(array $arguments = [])
  * @method \Http\Promise\Promise createScriptWaveformAsync($arguments = [])
+ * @method \Dew\Acs\Result generateUploadUrl(array $arguments = [])
+ * @method \Http\Promise\Promise generateUploadUrlAsync($arguments = [])
  */
 final class OutboundBotClient extends AcsClient
 {

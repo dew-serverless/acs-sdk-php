@@ -273,6 +273,14 @@
                                             'deprecated' => true,
                                             'required' => false,
                                         ],
+                                        'MountAccess' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'RW',
+                                                'RO',
+                                            ],
+                                        ],
                                     ],
                                 ],
                             ],
@@ -585,6 +593,14 @@
                                             'type' => 'string',
                                             'deprecated' => true,
                                             'required' => false,
+                                        ],
+                                        'MountAccess' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'RW',
+                                                'RO',
+                                            ],
                                         ],
                                     ],
                                 ],

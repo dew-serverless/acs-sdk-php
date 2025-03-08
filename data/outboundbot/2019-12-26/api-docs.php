@@ -7831,37 +7831,6 @@
             'deprecated' => false,
             'parameters' => [],
         ],
-        'GenerateUploadUrl' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Key',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'FileName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
         'UploadScriptRecording' => [
             'methods' => [
                 'get',
@@ -8295,6 +8264,37 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GenerateUploadUrl' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Key',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'FileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

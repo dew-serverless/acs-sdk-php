@@ -1571,6 +1571,15 @@
                     ],
                 ],
                 [
+                    'name' => 'Dimension',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'FullTextRetrievalFields',
                     'in' => 'query',
                     'schema' => [

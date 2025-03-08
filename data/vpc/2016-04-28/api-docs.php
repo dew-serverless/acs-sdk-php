@@ -31013,6 +31013,10 @@
             'endpoint' => 'vpc.cn-chengdu.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'vpc.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'vpc.cn-hongkong.aliyuncs.com',
         ],
@@ -31089,8 +31093,12 @@
             'endpoint' => 'vpc.me-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'vpc.cn-wuhan-lr.aliyuncs.com',
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'vpc.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'vpc.na-south-1.aliyuncs.com',
         ],
     ],
 ];

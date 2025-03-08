@@ -2854,6 +2854,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'EnableAudit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeSqlLogStatistic' => [

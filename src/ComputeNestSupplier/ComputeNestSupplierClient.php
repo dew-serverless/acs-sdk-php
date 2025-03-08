@@ -145,6 +145,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise generateDefaultServiceTestConfigAsync($arguments = [])
  * @method \Dew\Acs\Result getServiceRegistration(array $arguments = [])
  * @method \Http\Promise\Promise getServiceRegistrationAsync($arguments = [])
+ * @method \Dew\Acs\Result listResellers(array $arguments = [])
+ * @method \Http\Promise\Promise listResellersAsync($arguments = [])
  * @method \Dew\Acs\Result deleteServiceTestCase(array $arguments = [])
  * @method \Http\Promise\Promise deleteServiceTestCaseAsync($arguments = [])
  * @method \Dew\Acs\Result updateServiceTestCase(array $arguments = [])

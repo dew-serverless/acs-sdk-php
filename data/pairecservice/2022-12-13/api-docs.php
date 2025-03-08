@@ -5626,6 +5626,10 @@
                                 'format' => 'int64',
                                 'required' => true,
                             ],
+                            'ServiceName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

@@ -4056,6 +4056,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ResellerOwnerUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyDesktopChargeType' => [
@@ -7621,6 +7630,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoRenew',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -13751,6 +13768,24 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ClonePolicyGroup' => [
@@ -16912,8 +16947,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'ecd.cn-shanghai-finance-1.aliyuncs.com',
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'ecd.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-qingdao',
@@ -16926,6 +16961,10 @@
         [
             'regionId' => 'cn-zhangjiakou',
             'endpoint' => 'ecd.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'ecd.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -16982,6 +17021,10 @@
         [
             'regionId' => 'cn-hangzhou-finance',
             'endpoint' => 'ecd.cn-hangzhou-finance.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'ecd.cn-shanghai-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-7',

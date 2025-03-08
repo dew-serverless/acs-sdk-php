@@ -450,6 +450,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'MetadataOnly',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetExecutionHistory' => [

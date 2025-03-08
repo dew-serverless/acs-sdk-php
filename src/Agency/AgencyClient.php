@@ -69,6 +69,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteCouponTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result couponApprovalStatusList(array $arguments = [])
  * @method \Http\Promise\Promise couponApprovalStatusListAsync($arguments = [])
+ * @method \Dew\Acs\Result getBillDetailFileList(array $arguments = []) {@since 2025-02-27}
+ * @method \Http\Promise\Promise getBillDetailFileListAsync($arguments = []) {@since 2025-02-27}
+ * @method \Dew\Acs\Result getSubPartnerOrderList(array $arguments = []) {@since 2025-02-27}
+ * @method \Http\Promise\Promise getSubPartnerOrderListAsync($arguments = []) {@since 2025-02-27}
+ * @method \Dew\Acs\Result getSubPartnerList(array $arguments = []) {@since 2025-02-27}
+ * @method \Http\Promise\Promise getSubPartnerListAsync($arguments = []) {@since 2025-02-27}
+ * @method \Dew\Acs\Result getRenewalRateList(array $arguments = []) {@since 2025-02-27}
+ * @method \Http\Promise\Promise getRenewalRateListAsync($arguments = []) {@since 2025-02-27}
+ * @method \Dew\Acs\Result getCustomerOrderList(array $arguments = []) {@since 2025-02-27}
+ * @method \Http\Promise\Promise getCustomerOrderListAsync($arguments = []) {@since 2025-02-27}
+ * @method \Dew\Acs\Result getCommissionDetailFileList(array $arguments = []) {@since 2025-02-27}
+ * @method \Http\Promise\Promise getCommissionDetailFileListAsync($arguments = []) {@since 2025-02-27}
  */
 final class AgencyClient extends AcsClient
 {

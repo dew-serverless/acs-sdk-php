@@ -277,6 +277,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeBackupEncryptedStringAsync($arguments = [])
  * @method \Dew\Acs\Result describeStandbyCreateMode(array $arguments = [])
  * @method \Http\Promise\Promise describeStandbyCreateModeAsync($arguments = [])
+ * @method \Dew\Acs\Result describeProxyService(array $arguments = [])
+ * @method \Http\Promise\Promise describeProxyServiceAsync($arguments = [])
  */
 final class OceanBaseProClient extends AcsClient
 {

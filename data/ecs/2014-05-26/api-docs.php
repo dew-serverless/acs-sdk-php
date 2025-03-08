@@ -7511,6 +7511,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -7585,6 +7586,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -7673,6 +7675,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -7687,6 +7690,61 @@
                             'RetainCloudAssistant' => [
                                 'type' => 'boolean',
                                 'required' => false,
+                            ],
+                            'ImageNameSuffix' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ImageOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ImageName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ImageFamily' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ImageFeatures' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'NvmeSupport' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'ImageTags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],

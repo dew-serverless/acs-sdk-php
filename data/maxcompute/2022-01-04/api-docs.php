@@ -2987,6 +2987,31 @@
                 ],
             ],
         ],
+        'GetJobInfo' => [
+            'path' => '/api/v1/jobs/{instanceId}/info',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'GetRunningJobs' => [
             'path' => '/api/v1/jobs/runningJobs',
             'methods' => [

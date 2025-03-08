@@ -111,6 +111,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise entElementVerifyAsync($arguments = []) {@since 2022-11-25}
  * @method \Dew\Acs\Result entRiskQuery(array $arguments = []) {@since 2022-11-25}
  * @method \Http\Promise\Promise entRiskQueryAsync($arguments = []) {@since 2022-11-25}
+ * @method \Dew\Acs\Result entElementVerifyV2(array $arguments = []) {@since 2022-11-25}
+ * @method \Http\Promise\Promise entElementVerifyV2Async($arguments = []) {@since 2022-11-25}
  */
 final class CloudauthClient extends AcsClient
 {

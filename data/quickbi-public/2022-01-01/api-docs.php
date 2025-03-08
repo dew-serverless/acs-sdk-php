@@ -3169,6 +3169,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'deprecated' => true,
                         'required' => false,
                         'minimum' => '25',
                         'maximum' => '30',

@@ -491,6 +491,7 @@
                                         'label_classification',
                                         'analysis_image',
                                         'custom_prompt',
+                                        'dianxiao_summary',
                                     ],
                                 ],
                             ],

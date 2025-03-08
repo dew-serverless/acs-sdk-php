@@ -1217,20 +1217,6 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceARN',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 20,
-                    ],
-                ],
-                [
                     'name' => 'Tag',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -1252,30 +1238,6 @@
                             ],
                         ],
                         'maxItems' => 20,
-                    ],
-                ],
-                [
-                    'name' => 'ExpireTimeStart',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ExpireTimeEnd',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PayType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [

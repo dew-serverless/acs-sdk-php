@@ -690,6 +690,130 @@
         ],
     ],
     'apis' => [
+        'CreateSessionCluster' => [
+            'path' => '/api/v1/workspaces/{workspaceId}/sessionClusters',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'queueName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'autoStartConfiguration' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'enable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'autoStopConfiguration' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'enable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'idleTimeoutMinutes' => [
+                                        'type' => 'integer',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'applicationConfigs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'configFileName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'configItemKey' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'configItemValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'releaseVersion' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'kind' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'displayReleaseVersion' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'fusion' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'envId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'StopSessionCluster' => [
             'path' => '/api/v1/workspaces/{workspaceId}/sessionClusters/action/stopSessionCluster',
             'methods' => [
@@ -1042,6 +1166,114 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateWorkspace' => [
+            'path' => '/api/v1/workspaces',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'workspaceName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'resourceSpec' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'cu' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'ossBucket' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'dlfCatalogId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'paymentType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'paymentDurationUnit' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'duration' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'autoRenew' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'autoRenewPeriod' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'autoRenewPeriodUnit' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ramRoleName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'autoStartSessionCluster' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'releaseType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'dlfType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
                 [
@@ -2707,6 +2939,146 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListKyuubiSparkApplications' => [
+            'path' => '/api/v1/kyuubi/{workspaceId}/{kyuubiServiceId}/applications',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'kyuubiServiceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'applicationId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'applicationName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'startTime',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'startTime' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'endTime' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetSessionCluster' => [
+            'path' => '/api/v1/workspaces/{workspaceId}/sessionClusters/{sessionClusterId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sessionClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

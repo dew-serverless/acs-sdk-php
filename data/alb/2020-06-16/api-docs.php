@@ -6112,6 +6112,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetHealthCheckTemplateAttribute' => [
@@ -6426,6 +6434,14 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

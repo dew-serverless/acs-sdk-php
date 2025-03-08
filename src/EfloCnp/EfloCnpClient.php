@@ -49,6 +49,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateExperimentPlanTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result getExperimentPlanTemplate(array $arguments = [])
  * @method \Http\Promise\Promise getExperimentPlanTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result updateExperimentPlan(array $arguments = [])
+ * @method \Http\Promise\Promise updateExperimentPlanAsync($arguments = [])
+ * @method \Dew\Acs\Result untagResources(array $arguments = [])
+ * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result listTagResources(array $arguments = [])
+ * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result tagResources(array $arguments = [])
+ * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  */
 final class EfloCnpClient extends AcsClient
 {

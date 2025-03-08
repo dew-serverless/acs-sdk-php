@@ -556,31 +556,34 @@
             'SparkBatchSQLStatement' => [
                 'type' => 'object',
                 'properties' => [
+                    'ResultUri' => [
+                        'type' => 'string',
+                    ],
+                    'EndTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'AppId' => [
+                        'type' => 'string',
+                    ],
                     'StatementId' => [
                         'type' => 'string',
                     ],
-                    'Code' => [
-                        'type' => 'string',
-                    ],
                     'State' => [
-                        'type' => 'string',
-                    ],
-                    'Error' => [
-                        'type' => 'string',
-                    ],
-                    'Result' => [
-                        'type' => 'string',
-                    ],
-                    'ResultUri' => [
                         'type' => 'string',
                     ],
                     'StartTime' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'EndTime' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                    'Error' => [
+                        'type' => 'string',
+                    ],
+                    'Code' => [
+                        'type' => 'string',
+                    ],
+                    'Result' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

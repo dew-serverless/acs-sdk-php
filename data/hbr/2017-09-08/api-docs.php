@@ -482,6 +482,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'VaultName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateBackupPlan' => [
@@ -1580,6 +1588,10 @@
                                 'ColdArchiveDays' => [
                                     'type' => 'integer',
                                     'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'VaultId' => [
+                                    'type' => 'string',
                                     'required' => false,
                                 ],
                                 'RetentionRules' => [

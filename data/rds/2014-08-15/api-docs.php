@@ -12107,6 +12107,14 @@
                     ],
                 ],
                 [
+                    'name' => 'BackupSetRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'RestoreTime',
                     'in' => 'query',
                     'schema' => [

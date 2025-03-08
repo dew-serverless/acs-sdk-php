@@ -1961,12 +1961,12 @@
             'endpoint' => 'dm.ap-southeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'dm.eu-central-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'us-east-1',
             'endpoint' => 'dm.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'dm.eu-central-1.aliyuncs.com',
         ],
     ],
 ];

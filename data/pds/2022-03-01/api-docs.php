@@ -11661,5 +11661,29 @@
             'regionId' => 'cn-shanghai',
             'endpoint' => 'cn-shanghai.admin.aliyunpds.com',
         ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'ap-southeast-1.admin.aliyunpds.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'cn-guangzhou.admin.aliyunpds.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'cn-hongkong.admin.aliyunpds.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'us-west-1.admin.aliyunpds.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'eu-central-1.admin.aliyunpds.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'ap-southeast-5.admin.aliyunpds.com',
+        ],
     ],
 ];

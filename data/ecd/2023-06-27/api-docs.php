@@ -101,8 +101,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'ecd.cn-shanghai-finance-1.aliyuncs.com',
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'ecd.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-qingdao',
@@ -115,6 +115,10 @@
         [
             'regionId' => 'cn-zhangjiakou',
             'endpoint' => 'ecd.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'ecd.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -171,6 +175,10 @@
         [
             'regionId' => 'cn-hangzhou-finance',
             'endpoint' => 'ecd.cn-hangzhou-finance.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'ecd.cn-shanghai-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-7',

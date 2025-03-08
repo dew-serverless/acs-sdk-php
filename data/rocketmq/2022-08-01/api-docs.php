@@ -1048,6 +1048,90 @@
                 ],
             ],
         ],
+        'ListConsumerGroupSubscriptions' => [
+            'path' => '/instances/{instanceId}/consumerGroups/{consumerGroupId}/subscriptions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'consumerGroupId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'topicName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetConsumerGroupSubscription' => [
+            'path' => '/instances/{instanceId}/consumerGroups/{consumerGroupId}/subscriptions/{topicName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+                'http',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'consumerGroupId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'topicName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'DeleteConsumerGroupSubscription' => [
             'path' => '/instances/{instanceId}/consumerGroups/{consumerGroupId}/subscriptions',
             'methods' => [
@@ -1106,42 +1190,8 @@
                 ],
             ],
         ],
-        'ListConsumerGroupSubscriptions' => [
-            'path' => '/instances/{instanceId}/consumerGroups/{consumerGroupId}/subscriptions',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'consumerGroupId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GetConsumerGroupSubscription' => [
-            'path' => '/instances/{instanceId}/consumerGroups/{consumerGroupId}/subscriptions/{topicName}',
+        'ListConsumerConnections' => [
+            'path' => '/instances/{instanceId}/consumerGroups/{consumerGroupId}/connections',
             'methods' => [
                 'get',
             ],
@@ -1170,75 +1220,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'topicName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ResetConsumeOffset' => [
-            'path' => '/instances/{instanceId}/consumerGroups/{consumerGroupId}/consumeOffsets/{topicName}',
-            'methods' => [
-                'patch',
-            ],
-            'schemes' => [
-                'https',
-                'http',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'consumerGroupId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'topicName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'resetType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'resetTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
                     ],
                 ],
             ],
@@ -1327,10 +1308,10 @@
                 ],
             ],
         ],
-        'ListConsumerConnections' => [
-            'path' => '/instances/{instanceId}/consumerGroups/{consumerGroupId}/connections',
+        'ResetConsumeOffset' => [
+            'path' => '/instances/{instanceId}/consumerGroups/{consumerGroupId}/consumeOffsets/{topicName}',
             'methods' => [
-                'get',
+                'patch',
             ],
             'schemes' => [
                 'https',
@@ -1353,32 +1334,6 @@
                 ],
                 [
                     'name' => 'consumerGroupId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'VerifySendMessage' => [
-            'path' => '/instances/{instanceId}/topics/{topicName}/messages',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
@@ -1401,77 +1356,15 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'message' => [
+                            'resetType' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'messageTag' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'messageKey' => [
+                            'resetTime' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'VerifyConsumeMessage' => [
-            'path' => '/instances/{instanceId}/topics/{topicName}/messages/{messageId}/action/verifyConsume',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'topicName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'messageId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'consumerGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'clientId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],
@@ -1607,6 +1500,121 @@
                 [
                     'name' => 'messageId',
                     'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'VerifySendMessage' => [
+            'path' => '/instances/{instanceId}/topics/{topicName}/messages',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'topicName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'message' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'messageTag' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'messageKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'VerifyConsumeMessage' => [
+            'path' => '/instances/{instanceId}/topics/{topicName}/messages/{messageId}/action/verifyConsume',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'topicName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'messageId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'consumerGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'clientId',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -1752,93 +1760,6 @@
                 ],
             ],
         ],
-        'GetInstanceIpWhitelist' => [
-            'path' => '/instances/{instanceId}/ip/whitelists',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ipWhitelists',
-                    'in' => 'query',
-                    'style' => 'simple',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetInstanceAcl' => [
-            'path' => '/instances/{instanceId}/acl/account/{username}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'username',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'resourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'resourceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'CreateInstanceAccount' => [
             'path' => '/instances/{instanceId}/accounts',
             'methods' => [
@@ -1878,337 +1799,6 @@
                             'username' => [
                                 'type' => 'string',
                                 'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'CreateInstanceAcl' => [
-            'path' => '/instances/{instanceId}/acl/account/{username}',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'username',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'resourceType' => [
-                                'type' => 'string',
-                                'required' => true,
-                                'enum' => [
-                                    'Topic',
-                                    'Group',
-                                ],
-                            ],
-                            'resourceName' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'decision' => [
-                                'type' => 'string',
-                                'required' => true,
-                                'enum' => [
-                                    'Allow',
-                                    'Deny',
-                                ],
-                            ],
-                            'actions' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'ipWhitelists' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DeleteInstanceAccount' => [
-            'path' => '/instances/{instanceId}/accounts/{username}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'username',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateInstanceIpWhitelist' => [
-            'path' => '/instances/{instanceId}/ip/whitelist',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'ipWhitelists' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DeleteInstanceAcl' => [
-            'path' => '/instances/{instanceId}/acl/account/{username}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'username',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'resourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'resourceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteInstanceIpWhitelist' => [
-            'path' => '/instances/{instanceId}/ip/whitelist',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ipWhitelist',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'deprecated' => true,
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ipWhitelists',
-                    'in' => 'query',
-                    'style' => 'simple',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateInstanceAcl' => [
-            'path' => '/instances/{instanceId}/acl/account/{username}',
-            'methods' => [
-                'patch',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'username',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'resourceType' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'resourceName' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'actions' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'decision' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'ipWhitelists' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                             ],
                         ],
                     ],
@@ -2265,10 +1855,10 @@
                 ],
             ],
         ],
-        'ListInstanceIpWhitelist' => [
-            'path' => '/instances/{instanceId}/ip/whitelist',
+        'DeleteInstanceAccount' => [
+            'path' => '/instances/{instanceId}/accounts/{username}',
             'methods' => [
-                'get',
+                'delete',
             ],
             'schemes' => [
                 'http',
@@ -2290,89 +1880,11 @@
                     ],
                 ],
                 [
-                    'name' => 'pageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100000000',
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '10',
-                        'maximum' => '10000',
-                    ],
-                ],
-                [
-                    'name' => 'ipWhitelist',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListInstanceAcl' => [
-            'path' => '/instances/{instanceId}/acl',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'instanceId',
+                    'name' => 'username',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'pageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100000000',
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '10',
-                        'maximum' => '10000',
-                    ],
-                ],
-                [
-                    'name' => 'filter',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -2483,6 +1995,623 @@
                 ],
             ],
         ],
+        'CreateInstanceAcl' => [
+            'path' => '/instances/{instanceId}/acl/account/{username}',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'username',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'resourceType' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'Topic',
+                                    'Group',
+                                ],
+                            ],
+                            'resourceName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'decision' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'Allow',
+                                    'Deny',
+                                ],
+                            ],
+                            'actions' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'ipWhitelists' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateInstanceAcl' => [
+            'path' => '/instances/{instanceId}/acl/account/{username}',
+            'methods' => [
+                'patch',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'username',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'resourceType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'resourceName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'actions' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'decision' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ipWhitelists' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteInstanceAcl' => [
+            'path' => '/instances/{instanceId}/acl/account/{username}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'username',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'resourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'resourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListInstanceAcl' => [
+            'path' => '/instances/{instanceId}/acl',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100000000',
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '10',
+                        'maximum' => '10000',
+                    ],
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetInstanceAcl' => [
+            'path' => '/instances/{instanceId}/acl/account/{username}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'username',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'resourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'resourceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateInstanceIpWhitelist' => [
+            'path' => '/instances/{instanceId}/ip/whitelist',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ipWhitelists' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteInstanceIpWhitelist' => [
+            'path' => '/instances/{instanceId}/ip/whitelist',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ipWhitelist',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'deprecated' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ipWhitelists',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListInstanceIpWhitelist' => [
+            'path' => '/instances/{instanceId}/ip/whitelist',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100000000',
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '10',
+                        'maximum' => '10000',
+                    ],
+                ],
+                [
+                    'name' => 'ipWhitelist',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetInstanceIpWhitelist' => [
+            'path' => '/instances/{instanceId}/ip/whitelists',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ipWhitelists',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateDisasterRecoveryPlan' => [
+            'path' => '/disaster_recovery',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'planName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'planDesc' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'planType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'instances' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'instanceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'regionId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'instanceId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'instanceRole' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'authType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'username' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'password' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'endpointUrl' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'networkType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'vpcId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'vSwitchId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'messageProperty' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'propertyKey' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'propertyValue' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'securityGroupId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'autoSyncCheckpoint' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'syncCheckpointEnabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'DeleteDisasterRecoveryPlan' => [
             'path' => '/disaster_recovery/{planId}',
             'methods' => [
@@ -2510,10 +2639,10 @@
                 ],
             ],
         ],
-        'StartDisasterRecoveryItem' => [
-            'path' => '/disaster_recovery/{planId}/items/{itemId}/start',
+        'UpdateDisasterRecoveryPlan' => [
+            'path' => '/disaster_recovery/{planId}',
             'methods' => [
-                'post',
+                'patch',
             ],
             'schemes' => [
                 'http',
@@ -2536,20 +2665,162 @@
                     ],
                 ],
                 [
-                    'name' => 'itemId',
-                    'in' => 'path',
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'planName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'planDesc' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'planType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'instances' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'instanceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'regionId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'instanceId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'instanceRole' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'authType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'username' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'password' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'endpointUrl' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'networkType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'vpcId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'vSwitchId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'messageProperty' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'propertyKey' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'propertyValue' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'securityGroupId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'autoSyncCheckpoint' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'syncCheckpointEnabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
         ],
-        'StopDisasterRecoveryItem' => [
-            'path' => '/disaster_recovery/{planId}/items/{itemId}/stop',
+        'ListDisasterRecoveryPlans' => [
+            'path' => '/disaster_recovery',
             'methods' => [
-                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100000000',
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '10',
+                        'maximum' => '10000',
+                    ],
+                ],
+            ],
+        ],
+        'GetDisasterRecoveryPlan' => [
+            'path' => '/disaster_recovery/{planId}',
+            'methods' => [
+                'get',
             ],
             'schemes' => [
                 'http',
@@ -2564,15 +2835,6 @@
             'parameters' => [
                 [
                     'name' => 'planId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'itemId',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'integer',
@@ -2654,6 +2916,398 @@
                 ],
             ],
         ],
+        'UpdateDisasterRecoveryItem' => [
+            'path' => '/disaster_recovery/{planId}/items/{itemId}',
+            'methods' => [
+                'patch',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'itemId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'topics' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'regionId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'instanceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'instanceId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'topicName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'consumerGroupId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'deliveryOrderType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteDisasterRecoveryItem' => [
+            'path' => '/disaster_recovery/{planId}/items/{itemId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'itemId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StartDisasterRecoveryItem' => [
+            'path' => '/disaster_recovery/{planId}/items/{itemId}/start',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'itemId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StopDisasterRecoveryItem' => [
+            'path' => '/disaster_recovery/{planId}/items/{itemId}/stop',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'itemId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListDisasterRecoveryItems' => [
+            'path' => '/disaster_recovery/{planId}/items',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100000000',
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '10',
+                        'maximum' => '10000',
+                    ],
+                ],
+            ],
+        ],
+        'GetDisasterRecoveryItem' => [
+            'path' => '/disaster_recovery/{planId}/items/{itemId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'itemId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListDisasterRecoveryCheckpoints' => [
+            'path' => '/disaster_recovery/{planId}/items/{itemId}/checkpoints',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'itemId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'instanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'filter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SyncDisasterRecoveryCheckpoint' => [
+            'path' => '/disaster_recovery/{planId}/items/{itemId}/checkpoints/{checkpointId}',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'planId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'itemId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'checkpointId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'ListTagResources' => [
             'path' => '/resourceTag/list',
             'methods' => [
@@ -2720,6 +3374,56 @@
                 ],
             ],
         ],
+        'TagResources' => [
+            'path' => '/resourceTag/create',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'regionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'resourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'resourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'tag',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'UntagResources' => [
             'path' => '/resourceTag/delete',
             'methods' => [
@@ -2774,56 +3478,6 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'TagResources' => [
-            'path' => '/resourceTag/create',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'regionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'resourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'resourceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'tag',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],

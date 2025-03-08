@@ -4692,6 +4692,73 @@
                         'maxItems' => 5,
                     ],
                 ],
+                [
+                    'name' => 'MetricType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HybridMonitorNamespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HybridMetrics',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Expression' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'MetricName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Statistic' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Dimensions' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'DimensionKey' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'DimensionValue' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 10,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'DeleteScalingRule' => [
@@ -4943,6 +5010,73 @@
                             ],
                         ],
                         'maxItems' => 5,
+                    ],
+                ],
+                [
+                    'name' => 'MetricType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HybridMonitorNamespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HybridMetrics',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Expression' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'MetricName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Statistic' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Dimensions' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'DimensionKey' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'DimensionValue' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 10,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],

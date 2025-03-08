@@ -1494,6 +1494,22 @@
                     ],
                 ],
             ],
+            'ListUserRegionsResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'Regions' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Region' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'LiveChannel' => [
                 'type' => 'object',
                 'properties' => [
@@ -10219,11 +10235,26 @@
                     ],
                 ],
                 [
+                    'name' => 'x-oss-process',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
                     'name' => 'body',
                     'in' => 'body',
+                    'style' => 'xml',
                     'schema' => [
-                        '$ref' => '#/components/schemas/SelectRequest',
-                        'required' => true,
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'SelectRequest' => [
+                                '$ref' => '#/components/schemas/SelectRequest',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -10276,11 +10307,26 @@
                     ],
                 ],
                 [
+                    'name' => 'x-oss-process',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
                     'name' => 'body',
                     'in' => 'body',
+                    'style' => 'xml',
                     'schema' => [
-                        '$ref' => '#/components/schemas/SelectMetaRequest',
+                        'type' => 'object',
                         'required' => false,
+                        'properties' => [
+                            'CsvMetaRequest' => [
+                                '$ref' => '#/components/schemas/SelectMetaRequest',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

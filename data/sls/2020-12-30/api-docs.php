@@ -1140,7 +1140,7 @@
                     ],
                     'odpsTunnelEndpoint' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                     'odpsProject' => [
                         'type' => 'string',

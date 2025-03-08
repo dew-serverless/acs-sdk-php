@@ -2554,6 +2554,14 @@
                                     ],
                                 ],
                             ],
+                            'security_group_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'timezone' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

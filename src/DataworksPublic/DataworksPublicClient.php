@@ -623,6 +623,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getInstanceConsumeTimeRankAsync($arguments = []) {@deprecated 2020-05-18}
  * @method \Dew\Acs\Result getInstanceErrorRank(array $arguments = []) {@deprecated 2020-05-18}
  * @method \Http\Promise\Promise getInstanceErrorRankAsync($arguments = []) {@deprecated 2020-05-18}
+ * @method \Dew\Acs\Result importCertificate(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise importCertificateAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result getCertificate(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise getCertificateAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result listCertificates(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise listCertificatesAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result deleteCertificate(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise deleteCertificateAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result updateProject(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise updateProjectAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result deleteProject(array $arguments = []) {@since 2024-05-18}
@@ -635,6 +643,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise revokeMemberProjectRolesAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result getProjectMember(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise getProjectMemberAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result testDataSourceConnectivity(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise testDataSourceConnectivityAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result cloneDataSource(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise cloneDataSourceAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result getDataSource(array $arguments = []) {@since 2024-05-18}

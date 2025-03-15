@@ -369,6 +369,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Token',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RefreshAdvisorResource' => [

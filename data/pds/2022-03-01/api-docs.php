@@ -6891,6 +6891,13 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'thumbnail_processes' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    '$ref' => '#/components/schemas/ImageProcess',
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -9542,6 +9549,13 @@
                             'fields' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'thumbnail_processes' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    '$ref' => '#/components/schemas/ImageProcess',
+                                ],
                             ],
                         ],
                     ],

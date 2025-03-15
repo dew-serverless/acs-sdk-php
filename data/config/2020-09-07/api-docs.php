@@ -4860,6 +4860,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'FilterType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'ALL',
+                            'UNCOVERED_RESOURCE',
+                        ],
+                    ],
+                ],
             ],
         ],
         'GetManagedRule' => [

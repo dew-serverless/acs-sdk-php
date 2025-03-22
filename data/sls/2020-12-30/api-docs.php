@@ -1505,6 +1505,133 @@
                     ],
                 ],
             ],
+            'S3Ingestion' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'displayName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'schedule' => [
+                        '$ref' => '#/components/schemas/Schedule',
+                        'required' => true,
+                    ],
+                    'configuration' => [
+                        '$ref' => '#/components/schemas/S3IngestionConfigurationSource',
+                        'required' => true,
+                    ],
+                    'createTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'scheduleId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'S3IngestionConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'logstore' => [
+                        'type' => 'string',
+                    ],
+                    'source' => [
+                        '$ref' => '#/components/schemas/S3IngestionConfigurationSource',
+                    ],
+                ],
+            ],
+            'S3IngestionConfigurationSource' => [
+                'type' => 'object',
+                'properties' => [
+                    'awsRegion' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'awsAccessKey' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'awsAccessKeySecret' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'bucket' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'compressionCodec' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'encoding' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'format' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'additionalProperties' => [
+                            'type' => 'any',
+                        ],
+                    ],
+                    'interval' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'pattern' => [
+                        'type' => 'string',
+                    ],
+                    'prefix' => [
+                        'type' => 'string',
+                    ],
+                    'awsUseSQS' => [
+                        'type' => 'boolean',
+                    ],
+                    'awsSQSQueueUrl' => [
+                        'type' => 'string',
+                    ],
+                    'useAwsSQSOnly' => [
+                        'type' => 'boolean',
+                    ],
+                    'tagPackId' => [
+                        'type' => 'boolean',
+                    ],
+                    'startTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'endTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'timeField' => [
+                        'type' => 'string',
+                    ],
+                    'timeFormat' => [
+                        'type' => 'string',
+                    ],
+                    'timePattern' => [
+                        'type' => 'string',
+                    ],
+                    'timeZone' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'SavedSearch' => [
                 'type' => 'object',
                 'properties' => [
@@ -11718,6 +11845,68 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateS3Ingestion' => [
+            'path' => '/s3ingestions/{s3IngestionName}',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 's3IngestionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'description' => [
+                                'type' => 'string',
+                            ],
+                            'displayName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'schedule' => [
+                                '$ref' => '#/components/schemas/Schedule',
+                            ],
+                            'configuration' => [
+                                '$ref' => '#/components/schemas/S3IngestionConfiguration',
+                            ],
+                        ],
                     ],
                 ],
             ],

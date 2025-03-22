@@ -343,6 +343,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise submitVideoTranslationJobAsync($arguments = [])
  * @method \Dew\Acs\Result submitHighlightExtractionJob(array $arguments = [])
  * @method \Http\Promise\Promise submitHighlightExtractionJobAsync($arguments = [])
+ * @method \Dew\Acs\Result submitSegmentationJob(array $arguments = [])
+ * @method \Http\Promise\Promise submitSegmentationJobAsync($arguments = [])
  * @method \Dew\Acs\Result getSmartHandleJob(array $arguments = [])
  * @method \Http\Promise\Promise getSmartHandleJobAsync($arguments = [])
  * @method \Dew\Acs\Result deleteSmartJob(array $arguments = [])

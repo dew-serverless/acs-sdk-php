@@ -191,6 +191,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise setKeyPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result setSecretPolicy(array $arguments = [])
  * @method \Http\Promise\Promise setSecretPolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result releaseKmsInstance(array $arguments = [])
+ * @method \Http\Promise\Promise releaseKmsInstanceAsync($arguments = [])
  */
 final class KmsClient extends AcsClient
 {

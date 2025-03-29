@@ -825,6 +825,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateCasterResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result tagLiveResources(array $arguments = [])
  * @method \Http\Promise\Promise tagLiveResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result unTagLiveResources(array $arguments = [])
+ * @method \Http\Promise\Promise unTagLiveResourcesAsync($arguments = [])
  */
 final class LiveClient extends AcsClient
 {

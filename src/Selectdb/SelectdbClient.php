@@ -73,6 +73,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise enDisableScalingRulesAsync($arguments = [])
  * @method \Dew\Acs\Result createElasticRule(array $arguments = [])
  * @method \Http\Promise\Promise createElasticRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRegions(array $arguments = [])
+ * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  */
 final class SelectdbClient extends AcsClient
 {

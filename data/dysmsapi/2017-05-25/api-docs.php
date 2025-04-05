@@ -797,6 +797,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'TemplateType',
@@ -847,6 +848,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'TemplateType',
@@ -905,7 +907,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'TemplateCode',

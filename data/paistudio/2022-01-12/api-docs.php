@@ -164,6 +164,27 @@
                     ],
                 ],
             ],
+            'BindingPolicy' => [
+                'type' => 'object',
+                'properties' => [
+                    'NodeSpecCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'IncludeNodes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'ExcludeNodes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'Channel' => [
                 'type' => 'object',
                 'properties' => [
@@ -883,6 +904,9 @@
                     'Count' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'BindingPolicy' => [
+                        '$ref' => '#/components/schemas/BindingPolicy',
                     ],
                 ],
             ],
@@ -5456,6 +5480,14 @@
                 ],
                 [
                     'name' => 'FilterByResourceGroupIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MachineGroupIds',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

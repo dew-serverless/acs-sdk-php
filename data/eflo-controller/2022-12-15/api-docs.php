@@ -1369,6 +1369,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ResourceId',
                     'in' => 'query',
                     'schema' => [

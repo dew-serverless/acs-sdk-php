@@ -9026,6 +9026,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                         'enum' => [
                             'on',
                             'off',
@@ -9157,6 +9158,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                         'enum' => [
                             'on',
                             'off',
@@ -12458,7 +12460,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [

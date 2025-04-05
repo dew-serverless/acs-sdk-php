@@ -1527,6 +1527,13 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'FaultInjectToPrimaryAz',
+                            'FaultInjectToDbNode',
+                            'FaultInjection',
+                            '0',
+                            '1',
+                        ],
                     ],
                 ],
                 [
@@ -1577,6 +1584,7 @@
                         'required' => false,
                         'enum' => [
                             'CrashSQLInjection',
+                            'StopContainer',
                         ],
                     ],
                 ],
@@ -7888,6 +7896,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'InterfaceVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyMaskingRules' => [
@@ -7920,6 +7936,8 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'minLength' => 0,
+                        'maxLength' => 8192,
                     ],
                 ],
                 [
@@ -7928,6 +7946,8 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'minLength' => 0,
+                        'maxLength' => 8192,
                     ],
                 ],
                 [
@@ -7948,6 +7968,14 @@
                 ],
                 [
                     'name' => 'RuleVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InterfaceVersion',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7986,6 +8014,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InterfaceVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

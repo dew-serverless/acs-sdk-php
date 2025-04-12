@@ -1789,6 +1789,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyBinarySecurityPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result getInstallCodeForUuid(array $arguments = [])
  * @method \Http\Promise\Promise getInstallCodeForUuidAsync($arguments = [])
+ * @method \Dew\Acs\Result updatePostPaidBindRel(array $arguments = [])
+ * @method \Http\Promise\Promise updatePostPaidBindRelAsync($arguments = [])
  */
 final class SasClient extends AcsClient
 {

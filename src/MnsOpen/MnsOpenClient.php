@@ -47,6 +47,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise revokeEndpointAclAsync($arguments = [])
  * @method \Dew\Acs\Result authorizeEndpointAcl(array $arguments = [])
  * @method \Http\Promise\Promise authorizeEndpointAclAsync($arguments = [])
+ * @method \Dew\Acs\Result createEventRule(array $arguments = [])
+ * @method \Http\Promise\Promise createEventRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteEventRule(array $arguments = [])
+ * @method \Http\Promise\Promise deleteEventRuleAsync($arguments = [])
  */
 final class MnsOpenClient extends AcsClient
 {

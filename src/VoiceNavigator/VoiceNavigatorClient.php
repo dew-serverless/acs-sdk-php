@@ -81,8 +81,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createDownloadUrlAsync($arguments = [])
  * @method \Dew\Acs\Result listDownloadTasks(array $arguments = [])
  * @method \Http\Promise\Promise listDownloadTasksAsync($arguments = [])
- * @method \Dew\Acs\Result generateUploadUrl(array $arguments = [])
- * @method \Http\Promise\Promise generateUploadUrlAsync($arguments = [])
  * @method \Dew\Acs\Result modifyAsrConfig(array $arguments = [])
  * @method \Http\Promise\Promise modifyAsrConfigAsync($arguments = [])
  * @method \Dew\Acs\Result getAsrConfig(array $arguments = [])

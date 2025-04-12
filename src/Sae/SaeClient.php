@@ -263,6 +263,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getWebshellTokenAsync($arguments = [])
  * @method \Dew\Acs\Result listAppServices(array $arguments = [])
  * @method \Http\Promise\Promise listAppServicesAsync($arguments = [])
+ * @method \Dew\Acs\Result unbindNlb(array $arguments = [])
+ * @method \Http\Promise\Promise unbindNlbAsync($arguments = [])
  */
 final class SaeClient extends AcsClient
 {

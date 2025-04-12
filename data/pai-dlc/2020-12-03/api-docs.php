@@ -463,29 +463,27 @@
             'ExtraPodSpec' => [
                 'type' => 'object',
                 'properties' => [
-                    'SideCarContainers' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/ContainerSpec',
-                        ],
-                    ],
                     'InitContainers' => [
                         'type' => 'array',
                         'items' => [
                             '$ref' => '#/components/schemas/ContainerSpec',
                         ],
                     ],
-                    'PodLabels' => [
+                    'PodAnnotations' => [
                         'type' => 'object',
+                        'deprecated' => true,
                         'additionalProperties' => [
                             'type' => 'string',
                         ],
                     ],
-                    'PodAnnotations' => [
-                        'type' => 'object',
-                        'additionalProperties' => [
-                            'type' => 'string',
+                    'SideCarContainers' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ContainerSpec',
                         ],
+                    ],
+                    'Lifecycle' => [
+                        '$ref' => '#/components/schemas/Lifecycle',
                     ],
                     'SharedVolumeMountPaths' => [
                         'type' => 'array',
@@ -493,8 +491,12 @@
                             'type' => 'string',
                         ],
                     ],
-                    'Lifecycle' => [
-                        '$ref' => '#/components/schemas/Lifecycle',
+                    'PodLabels' => [
+                        'type' => 'object',
+                        'deprecated' => true,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -1148,25 +1150,7 @@
             'PodItem' => [
                 'type' => 'object',
                 'properties' => [
-                    'Type' => [
-                        'type' => 'string',
-                    ],
-                    'PodId' => [
-                        'type' => 'string',
-                    ],
-                    'PodUid' => [
-                        'type' => 'string',
-                    ],
                     'Status' => [
-                        'type' => 'string',
-                    ],
-                    'Ip' => [
-                        'type' => 'string',
-                    ],
-                    'GmtCreateTime' => [
-                        'type' => 'string',
-                    ],
-                    'GmtStartTime' => [
                         'type' => 'string',
                     ],
                     'GmtFinishTime' => [
@@ -1177,6 +1161,30 @@
                         'items' => [
                             '$ref' => '#/components/schemas/PodItem',
                         ],
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'GmtStartTime' => [
+                        'type' => 'string',
+                    ],
+                    'PodUid' => [
+                        'type' => 'string',
+                    ],
+                    'NodeName' => [
+                        'type' => 'string',
+                    ],
+                    'Ip' => [
+                        'type' => 'string',
+                    ],
+                    'PodId' => [
+                        'type' => 'string',
+                    ],
+                    'SubStatus' => [
+                        'type' => 'string',
+                    ],
+                    'GmtCreateTime' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1348,6 +1356,33 @@
                     'CheckNumber' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                ],
+            ],
+            'SeccompProfile' => [
+                'type' => 'object',
+                'properties' => [
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'LocalhostProfile' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SecurityContext' => [
+                'type' => 'object',
+                'properties' => [
+                    'RunAsUser' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'RunAsGroup' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SeccompProfile' => [
+                        '$ref' => '#/components/schemas/SeccompProfile',
                     ],
                 ],
             ],

@@ -95,6 +95,32 @@
                     ],
                 ],
             ],
+            'DynamicMount' => [
+                'type' => 'object',
+                'properties' => [
+                    'Enable' => [
+                        'type' => 'boolean',
+                    ],
+                    'MountPoints' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DynamicMountPoint',
+                        ],
+                    ],
+                ],
+            ],
+            'DynamicMountPoint' => [
+                'type' => 'object',
+                'properties' => [
+                    'RootPath' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'Options' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ForwardInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -256,13 +282,25 @@
                                             'type' => 'string',
                                             'required' => false,
                                         ],
-                                        'MountPath' => [
+                                        'DatasetVersion' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
                                         'Uri' => [
                                             'type' => 'string',
                                             'required' => false,
+                                        ],
+                                        'MountPath' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'MountAccess' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'RW',
+                                                'RO',
+                                            ],
                                         ],
                                         'Options' => [
                                             'type' => 'string',
@@ -273,13 +311,9 @@
                                             'deprecated' => true,
                                             'required' => false,
                                         ],
-                                        'MountAccess' => [
-                                            'type' => 'string',
+                                        'Dynamic' => [
+                                            'type' => 'boolean',
                                             'required' => false,
-                                            'enum' => [
-                                                'RW',
-                                                'RO',
-                                            ],
                                         ],
                                     ],
                                 ],
@@ -469,6 +503,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'DynamicMount' => [
+                                '$ref' => '#/components/schemas/DynamicMount',
+                                'required' => false,
+                            ],
                             'Tag' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -566,45 +604,6 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'Datasets' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'DatasetId' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'MountPath' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Uri' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Options' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'OptionType' => [
-                                            'type' => 'string',
-                                            'deprecated' => true,
-                                            'required' => false,
-                                        ],
-                                        'MountAccess' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                            'enum' => [
-                                                'RW',
-                                                'RO',
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
                             'UserVpc' => [
                                 'type' => 'object',
                                 'required' => false,
@@ -646,6 +645,53 @@
                             'Accessibility' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'Datasets' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'DatasetId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'DatasetVersion' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Uri' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'MountPath' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'MountAccess' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'RW',
+                                                'RO',
+                                            ],
+                                        ],
+                                        'Options' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'OptionType' => [
+                                            'type' => 'string',
+                                            'deprecated' => true,
+                                            'required' => false,
+                                        ],
+                                        'Dynamic' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
                             ],
                             'DisassociateDatasets' => [
                                 'type' => 'boolean',
@@ -750,6 +796,10 @@
                             ],
                             'ImageAuth' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'DynamicMount' => [
+                                '$ref' => '#/components/schemas/DynamicMount',
                                 'required' => false,
                             ],
                         ],

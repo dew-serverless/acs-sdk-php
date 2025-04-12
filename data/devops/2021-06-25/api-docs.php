@@ -7516,6 +7516,7 @@
                                     'bitbucket',
                                     'docker_register_aliyun',
                                     'ess',
+                                    'Codeup',
                                 ],
                             ],
                             'connectionName' => [

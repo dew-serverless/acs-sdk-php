@@ -11161,10 +11161,6 @@
             'endpoint' => 'ess.ap-northeast-2.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'ess.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-2',
             'endpoint' => 'ess.ap-southeast-2.aliyuncs.com',
         ],
@@ -11179,14 +11175,6 @@
         [
             'regionId' => 'ap-southeast-6',
             'endpoint' => 'ess.ap-southeast-6.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'ess.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'ess.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',
@@ -11235,6 +11223,18 @@
         [
             'regionId' => 'na-south-1',
             'endpoint' => 'ess.na-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'ess.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'ess.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'ess.ap-southeast-1.aliyuncs.com',
         ],
     ],
 ];

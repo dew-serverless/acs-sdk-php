@@ -1789,6 +1789,96 @@
                 ],
             ],
         ],
+        'CreateDialogAnalysisTask' => [
+            'path' => '/{workspaceId}/api/virtualHuman/dialog/analysis/submit',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'metaData' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'playCode' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'analysisNodes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'requestId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'conversationList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'dialogueList' => [
+                                            'type' => 'array',
+                                            'required' => true,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'content' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'role' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'RunAgent' => [
             'path' => '/{workspaceId}/api/bot/thread/run',
             'methods' => [

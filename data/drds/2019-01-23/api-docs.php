@@ -1939,6 +1939,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DrdsInstanceId',
                     'in' => 'query',
                     'schema' => [

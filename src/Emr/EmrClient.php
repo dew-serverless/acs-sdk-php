@@ -139,8 +139,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDoctorHDFSClusterAsync($arguments = [])
  * @method \Dew\Acs\Result getDoctorApplication(array $arguments = [])
  * @method \Http\Promise\Promise getDoctorApplicationAsync($arguments = [])
- * @method \Dew\Acs\Result getDoctorHDFSUGI(array $arguments = [])
- * @method \Http\Promise\Promise getDoctorHDFSUGIAsync($arguments = [])
  * @method \Dew\Acs\Result createUsers(array $arguments = [])
  * @method \Http\Promise\Promise createUsersAsync($arguments = [])
  * @method \Dew\Acs\Result deleteUsers(array $arguments = [])

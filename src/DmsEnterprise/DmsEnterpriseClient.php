@@ -555,6 +555,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise analyzeSQLLineageAsync($arguments = [])
  * @method \Dew\Acs\Result updateTaskContentV2(array $arguments = [])
  * @method \Http\Promise\Promise updateTaskContentV2Async($arguments = [])
+ * @method \Dew\Acs\Result tryRunTaskFlow(array $arguments = [])
+ * @method \Http\Promise\Promise tryRunTaskFlowAsync($arguments = [])
  */
 final class DmsEnterpriseClient extends AcsClient
 {

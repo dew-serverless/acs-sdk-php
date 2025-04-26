@@ -369,6 +369,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise refreshTokenAsync($arguments = [])
  * @method \Dew\Acs\Result describeRegions(array $arguments = [])
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
+ * @method \Dew\Acs\Result updateS3Ingestion(array $arguments = [])
+ * @method \Http\Promise\Promise updateS3IngestionAsync($arguments = [])
  */
 final class SlsClient extends AcsClient
 {

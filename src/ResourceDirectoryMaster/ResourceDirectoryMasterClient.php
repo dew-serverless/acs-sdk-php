@@ -65,6 +65,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise bindSecureMobilePhoneAsync($arguments = [])
  * @method \Dew\Acs\Result setMemberDeletionPermission(array $arguments = [])
  * @method \Http\Promise\Promise setMemberDeletionPermissionAsync($arguments = [])
+ * @method \Dew\Acs\Result setMemberDisplayNameSyncStatus(array $arguments = [])
+ * @method \Http\Promise\Promise setMemberDisplayNameSyncStatusAsync($arguments = [])
  * @method \Dew\Acs\Result checkAccountDelete(array $arguments = [])
  * @method \Http\Promise\Promise checkAccountDeleteAsync($arguments = [])
  * @method \Dew\Acs\Result getAccountDeletionCheckResult(array $arguments = [])

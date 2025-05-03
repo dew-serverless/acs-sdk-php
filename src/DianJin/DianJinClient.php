@@ -49,6 +49,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getHistoryListByBizTypeAsync($arguments = [])
  * @method \Dew\Acs\Result invokePlugin(array $arguments = [])
  * @method \Http\Promise\Promise invokePluginAsync($arguments = [])
+ * @method \Dew\Acs\Result createDialogAnalysisTask(array $arguments = [])
+ * @method \Http\Promise\Promise createDialogAnalysisTaskAsync($arguments = [])
  * @method \Dew\Acs\Result runAgent(array $arguments = [])
  * @method \Http\Promise\Promise runAgentAsync($arguments = [])
  * @method \Dew\Acs\Result getDialogAnalysisResult(array $arguments = [])

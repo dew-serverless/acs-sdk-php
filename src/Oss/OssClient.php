@@ -312,6 +312,18 @@ use Override;
  * @method \Http\Promise\Promise getVodPlaylistAsync($arguments = [])
  * @method \Dew\Acs\Result postVodPlaylist(array $arguments = [])
  * @method \Http\Promise\Promise postVodPlaylistAsync($arguments = [])
+ * @method \Dew\Acs\Result putChannel(array $arguments = [])
+ * @method \Http\Promise\Promise putChannelAsync($arguments = [])
+ * @method \Dew\Acs\Result putBucketHash(array $arguments = [])
+ * @method \Http\Promise\Promise putBucketHashAsync($arguments = [])
+ * @method \Dew\Acs\Result putBucketCommonHeader(array $arguments = [])
+ * @method \Http\Promise\Promise putBucketCommonHeaderAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteBucketCommonHeader(array $arguments = [])
+ * @method \Http\Promise\Promise deleteBucketCommonHeaderAsync($arguments = [])
+ * @method \Dew\Acs\Result putProcessConfiguration(array $arguments = [])
+ * @method \Http\Promise\Promise putProcessConfigurationAsync($arguments = [])
+ * @method \Dew\Acs\Result getBucketEventNotification(array $arguments = [])
+ * @method \Http\Promise\Promise getBucketEventNotificationAsync($arguments = [])
  */
 final class OssClient extends AcsClient
 {

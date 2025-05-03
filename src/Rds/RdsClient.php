@@ -615,6 +615,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeBackupDatabaseAsync($arguments = [])
  * @method \Dew\Acs\Result copyDatabase(array $arguments = [])
  * @method \Http\Promise\Promise copyDatabaseAsync($arguments = [])
+ * @method \Dew\Acs\Result migrateDBNodes(array $arguments = [])
+ * @method \Http\Promise\Promise migrateDBNodesAsync($arguments = [])
  */
 final class RdsClient extends AcsClient
 {

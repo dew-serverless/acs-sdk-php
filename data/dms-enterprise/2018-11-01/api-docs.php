@@ -3582,6 +3582,15 @@
                         'minimum' => '0',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDataLakeDatabase' => [
@@ -3634,6 +3643,15 @@
                         'maximum' => '9223372036854775807',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListDataLakeCatalog' => [
@@ -3678,6 +3696,14 @@
                         'maximum' => '9223372036854775807',
                     ],
                 ],
+                [
+                    'name' => 'SessionToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDataLakeCatalog' => [
@@ -3720,6 +3746,15 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3803,6 +3838,15 @@
                         'maximum' => '9223372036854775807',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDataLakeTable' => [
@@ -3861,6 +3905,15 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3951,6 +4004,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateDataLakeTable' => [
@@ -4019,6 +4081,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateDataLakePartition' => [
@@ -4079,6 +4150,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4158,6 +4238,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4251,6 +4340,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListDataLakeTable' => [
@@ -4337,6 +4435,15 @@
                         'minimum' => '0',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListDataLakePartitionName' => [
@@ -4413,6 +4520,15 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4499,6 +4615,15 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4592,6 +4717,15 @@
                         'minimum' => '0',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDataLakePartition' => [
@@ -4663,6 +4797,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDataLakeTable' => [
@@ -4715,6 +4858,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4801,6 +4953,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDataLakeDatabase' => [
@@ -4845,6 +5006,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4905,6 +5075,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4995,6 +5174,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateDataLakeDatabase' => [
@@ -5074,6 +5262,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'BatchUpdateDataLakePartitions' => [
@@ -5138,6 +5335,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -5222,6 +5428,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -5581,6 +5796,15 @@
                         'minimum' => '0',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListDataLakeFunctionName' => [
@@ -5657,6 +5881,15 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -17847,6 +18080,32 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'TryRunTaskFlow' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DagId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
                     ],
                 ],
             ],

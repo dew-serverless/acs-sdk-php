@@ -8382,6 +8382,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'VcExtraInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UninstallManagedPrometheus' => [

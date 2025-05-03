@@ -3035,6 +3035,19 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'Endpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'OrgId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'RepoId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'DockerfilePath' => [
@@ -3261,6 +3274,19 @@
                                     ],
                                     'Branch' => [
                                         'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Endpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'OrgId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'RepoId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
                                         'required' => false,
                                     ],
                                 ],

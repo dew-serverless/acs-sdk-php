@@ -1508,6 +1508,10 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'agency.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'agency.ap-southeast-1.aliyuncs.com',
         ],

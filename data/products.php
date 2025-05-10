@@ -1036,14 +1036,6 @@
         'defaultVersion' => '2019-01-01',
     ],
     [
-        'code' => 'Premiumpics',
-        'style' => 'RPC',
-        'versions' => [
-            '2020-05-05',
-        ],
-        'defaultVersion' => '2020-05-05',
-    ],
-    [
         'code' => 'aiccs',
         'style' => 'RPC',
         'versions' => [

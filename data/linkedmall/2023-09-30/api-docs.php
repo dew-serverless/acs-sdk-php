@@ -2112,6 +2112,9 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'skuAlias' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'SkuQueryParam' => [

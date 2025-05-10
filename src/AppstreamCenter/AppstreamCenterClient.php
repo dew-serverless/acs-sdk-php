@@ -37,6 +37,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise buySessionPackageAsync($arguments = [])
  * @method \Dew\Acs\Result listRegions(array $arguments = [])
  * @method \Http\Promise\Promise listRegionsAsync($arguments = [])
+ * @method \Dew\Acs\Result listNodes(array $arguments = [])
+ * @method \Http\Promise\Promise listNodesAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyNodePoolAmount(array $arguments = [])
+ * @method \Http\Promise\Promise modifyNodePoolAmountAsync($arguments = [])
  * @method \Dew\Acs\Result listNodeInstanceType(array $arguments = [])
  * @method \Http\Promise\Promise listNodeInstanceTypeAsync($arguments = [])
  * @method \Dew\Acs\Result getResourcePrice(array $arguments = [])
@@ -91,6 +95,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listTenantConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyTenantConfig(array $arguments = [])
  * @method \Http\Promise\Promise modifyTenantConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result listTagCloudResources(array $arguments = [])
+ * @method \Http\Promise\Promise listTagCloudResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result tagCloudResources(array $arguments = [])
+ * @method \Http\Promise\Promise tagCloudResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result untagCloudResources(array $arguments = [])
+ * @method \Http\Promise\Promise untagCloudResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result listPublishedAppInfo(array $arguments = []) {@since 2021-09-03}
  * @method \Http\Promise\Promise listPublishedAppInfoAsync($arguments = []) {@since 2021-09-03}
  * @method \Dew\Acs\Result listRunningApps(array $arguments = []) {@since 2021-09-03}

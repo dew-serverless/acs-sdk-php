@@ -407,6 +407,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listRemoteADBDataSourcesAsync($arguments = [])
  * @method \Dew\Acs\Result modifyRemoteADBDataSource(array $arguments = [])
  * @method \Http\Promise\Promise modifyRemoteADBDataSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result getStatementResult(array $arguments = [])
+ * @method \Http\Promise\Promise getStatementResultAsync($arguments = [])
  */
 final class GpdbClient extends AcsClient
 {

@@ -30,6 +30,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -38,6 +39,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -46,6 +48,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -171,6 +174,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -179,6 +183,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -187,6 +192,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -1430,6 +1436,10 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'enableDr' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                         ],
@@ -2195,6 +2205,216 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'QueryTunnelMetricDetail' => [
+            'path' => '/api/v1/observations/tunnel/{metric}/detail',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'startTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'metric',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'quotaNickname' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'project' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'tableList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'operationList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'groupList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'orderColumn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ascOrder' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'limit' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'QueryTunnelMetric' => [
+            'path' => '/api/v1/observations/tunnel/{metric}',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'startTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'metric',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'strategy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'quotaNickname' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'project' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'tableList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'operationList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'codeList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                            ],
+                            'groupList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'topN' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

@@ -7,6 +7,28 @@
     ],
     'components' => [
         'schemas' => [
+            'AcceleratePaths' => [
+                'type' => 'object',
+                'properties' => [
+                    'DefaultCachePolicy' => [
+                        'type' => 'string',
+                    ],
+                    'Path' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                                'CachePolicy' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'AccessControlList' => [
                 'type' => 'object',
                 'properties' => [
@@ -109,6 +131,57 @@
                     ],
                 ],
             ],
+            'AsyncFetchTaskConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'Url' => [
+                        'type' => 'string',
+                    ],
+                    'Object' => [
+                        'type' => 'string',
+                    ],
+                    'Host' => [
+                        'type' => 'string',
+                    ],
+                    'ContentMD5' => [
+                        'type' => 'string',
+                    ],
+                    'Callback' => [
+                        'type' => 'string',
+                    ],
+                    'StorageClass' => [
+                        'type' => 'string',
+                    ],
+                    'IgnoreSameKey' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'AsyncFetchTaskInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'TaskId' => [
+                        'type' => 'string',
+                    ],
+                    'State' => [
+                        'type' => 'string',
+                    ],
+                    'ErrorMsg' => [
+                        'type' => 'string',
+                    ],
+                    'TaskInfo' => [
+                        '$ref' => '#/components/schemas/AsyncFetchTaskConfiguration',
+                    ],
+                ],
+            ],
+            'AsyncFetchTaskResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'TaskId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Bucket' => [
                 'type' => 'object',
                 'properties' => [
@@ -197,6 +270,40 @@
                                 'type' => 'array',
                                 'items' => [
                                     'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'BucketChannelConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'version' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'DebugInfo' => [
+                        'type' => 'string',
+                    ],
+                    'RuleList' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Rule' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'RuleName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'RuleRegex' => [
+                                            'type' => 'string',
+                                        ],
+                                        'FrontContent' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],
@@ -339,6 +446,29 @@
                     'LoggingEnabled' => [
                         '$ref' => '#/components/schemas/LoggingEnabled',
                         'required' => true,
+                    ],
+                ],
+            ],
+            'BucketProcessConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'CompliedHost' => [
+                        'type' => 'string',
+                    ],
+                    'OssDomainSupportAtProcess' => [
+                        'type' => 'string',
+                    ],
+                    'SourceFileProtect' => [
+                        'type' => 'string',
+                    ],
+                    'SourceFileProtectSuffix' => [
+                        'type' => 'string',
+                    ],
+                    'BucketChannelConfig' => [
+                        '$ref' => '#/components/schemas/BucketChannelConfig',
+                    ],
+                    'StyleDelimiters' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -581,6 +711,106 @@
                     ],
                 ],
             ],
+            'CacheBaseInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'AvailableZone' => [
+                        'type' => 'string',
+                    ],
+                    'QuotaConfiguration' => [
+                        '$ref' => '#/components/schemas/CacheQuotaConfiguration',
+                    ],
+                    'CreationDate' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'CacheBucketInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'CachePolicy' => [
+                        'type' => 'string',
+                    ],
+                    'AcceleratePaths' => [
+                        '$ref' => '#/components/schemas/AcceleratePaths',
+                    ],
+                ],
+            ],
+            'CacheConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'Caches' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Cache' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'AvailableZone' => [
+                                        'type' => 'string',
+                                    ],
+                                    'CacheName' => [
+                                        'type' => 'string',
+                                    ],
+                                    'CachePolicy' => [
+                                        'type' => 'string',
+                                    ],
+                                    'AcceleratePaths' => [
+                                        '$ref' => '#/components/schemas/AcceleratePaths',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'CacheDetailInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'AvailableZone' => [
+                        'type' => 'string',
+                    ],
+                    'QuotaConfiguration' => [
+                        '$ref' => '#/components/schemas/CacheQuotaConfiguration',
+                    ],
+                    'CreationDate' => [
+                        'type' => 'string',
+                    ],
+                    'Buckets' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Bucket' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/CacheBucketInfo',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'CacheQuotaConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'QuotaDesc' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Quota' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'CallbackPolicy' => [
                 'type' => 'object',
                 'properties' => [
@@ -623,6 +853,64 @@
                     ],
                     'DeleteCertificate' => [
                         'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'Channel' => [
+                'type' => 'object',
+                'properties' => [
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'OrigPicForbidden' => [
+                        'type' => 'boolean',
+                    ],
+                    'UseStyleOnly' => [
+                        'type' => 'boolean',
+                    ],
+                    'AutoSetContentType' => [
+                        'type' => 'boolean',
+                    ],
+                    'UseSrcFormat' => [
+                        'type' => 'boolean',
+                    ],
+                    'SetAttachName' => [
+                        'type' => 'boolean',
+                    ],
+                    'Default404Pic' => [
+                        'type' => 'string',
+                    ],
+                    'StyleDelimiters' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ChannelInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'OrigPicForbidden' => [
+                        'type' => 'boolean',
+                    ],
+                    'UseSrcFormat' => [
+                        'type' => 'boolean',
+                    ],
+                    'SetAttachName' => [
+                        'type' => 'boolean',
+                    ],
+                    'UseStyleOnly' => [
+                        'type' => 'boolean',
+                    ],
+                    'AutoSetContentType' => [
+                        'type' => 'boolean',
+                    ],
+                    'StyleDelimiters' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -700,6 +988,33 @@
                     ],
                     'ExpireTime' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'CommentConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'CommonHeaders' => [
+                'type' => 'object',
+                'properties' => [
+                    'Header' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -797,8 +1112,456 @@
                     ],
                 ],
             ],
+            'CreateCacheConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'AvailableZone' => [
+                        'type' => 'string',
+                    ],
+                    'QuotaConfiguration' => [
+                        '$ref' => '#/components/schemas/CacheQuotaConfiguration',
+                    ],
+                ],
+            ],
+            'CreateDataLakeCachePrefetchJob' => [
+                'type' => 'object',
+                'properties' => [
+                    'Includes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'Tag' => [
+                        'type' => 'string',
+                    ],
+                    'Excludes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateDataLakeStorageTransferJob' => [
+                'type' => 'object',
+                'properties' => [
+                    'Includes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'ExecutorRoleId' => [
+                        'type' => 'string',
+                    ],
+                    'LogBaseDir' => [
+                        'type' => 'string',
+                    ],
+                    'Tag' => [
+                        'type' => 'string',
+                    ],
+                    'NeedVerify' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'CreateFileGroup' => [
+                'type' => 'object',
+                'properties' => [
+                    'Part' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'PartNumber' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'PartName' => [
+                                    'type' => 'string',
+                                ],
+                                'ETag' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'CreateFileGroupResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'Bucket' => [
+                        'type' => 'string',
+                    ],
+                    'Key' => [
+                        'type' => 'string',
+                    ],
+                    'ETag' => [
+                        'type' => 'string',
+                    ],
+                    'Size' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'CreateLargeReservedCapacityResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'Owner' => [
+                        '$ref' => '#/components/schemas/Owner',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Region' => [
+                        'type' => 'string',
+                    ],
+                    'ID' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'CreateObjectLinkResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'Bucket' => [
+                        'type' => 'string',
+                    ],
+                    'Key' => [
+                        'type' => 'string',
+                    ],
+                    'ETag' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'CreateSelectMetaProcess' => [
                 'type' => 'string',
+            ],
+            'DataAccelerator' => [
+                'type' => 'object',
+                'properties' => [
+                    'BasicInfomation' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AcceleratePaths' => [
+                                '$ref' => '#/components/schemas/AcceleratePaths',
+                            ],
+                            'FlowCapFlag' => [
+                                'type' => 'boolean',
+                            ],
+                            'CreationDate' => [
+                                'type' => 'string',
+                            ],
+                            'FlowCap' => [
+                                'type' => 'string',
+                            ],
+                            'Quota' => [
+                                'type' => 'string',
+                            ],
+                            'Version' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'BucketName' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DataAcceleratorConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'Quota' => [
+                        'type' => 'string',
+                    ],
+                    'AcceleratePaths' => [
+                        '$ref' => '#/components/schemas/AcceleratePaths',
+                    ],
+                ],
+            ],
+            'DataLakeCachePrefetchJob' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'HistoryId' => [
+                        'type' => 'string',
+                    ],
+                    'Bucket' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'LastModifyTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Rule' => [
+                        '$ref' => '#/components/schemas/DataLakeCachePrefetchJobRule',
+                    ],
+                ],
+            ],
+            'DataLakeCachePrefetchJobHistory' => [
+                'type' => 'object',
+                'properties' => [
+                    'JobId' => [
+                        'type' => 'string',
+                    ],
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'StartTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'EndTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'TotalCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SucceedCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'DataLakeCachePrefetchJobRule' => [
+                'type' => 'object',
+                'properties' => [
+                    'PrefixFilter' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Includes' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Include' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Excludes' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Exclude' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Tag' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DataLakeStorageTransferJob' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'HistoryId' => [
+                        'type' => 'string',
+                    ],
+                    'Bucket' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'LastModifyTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Rule' => [
+                        '$ref' => '#/components/schemas/DataLakeStorageTransferJobRule',
+                    ],
+                    'ProgressInfo' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Percent' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'DataLakeStorageTransferJobHistory' => [
+                'type' => 'object',
+                'properties' => [
+                    'JobId' => [
+                        'type' => 'string',
+                    ],
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'StartTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'EndTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'TotalCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SucceedCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DetailInfo' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'HDFSTransferJobId' => [
+                                'type' => 'string',
+                            ],
+                            'HDFSTransferDataDir' => [
+                                'type' => 'string',
+                            ],
+                            'HDFSTransferImportMetaDir' => [
+                                'type' => 'string',
+                            ],
+                            'HDFSTransferErrInfoDir' => [
+                                'type' => 'string',
+                            ],
+                            'LogBaseDir' => [
+                                'type' => 'string',
+                            ],
+                            'HDFSFailedCount' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'ErrorMsg' => [
+                                'type' => 'string',
+                            ],
+                            'VerifyTotalCount' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'VerifyStatus' => [
+                                'type' => 'string',
+                            ],
+                            'VerifyErrInfoDir' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'DataLakeStorageTransferJobHistoryId' => [
+                'type' => 'object',
+                'properties' => [
+                    'HistoryId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DataLakeStorageTransferJobId' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DataLakeStorageTransferJobRule' => [
+                'type' => 'object',
+                'properties' => [
+                    'PrefixFilter' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Includes' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Include' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Tag' => [
+                        'type' => 'string',
+                    ],
+                    'ExecutorRoleId' => [
+                        'type' => 'string',
+                    ],
+                    'LogBaseDir' => [
+                        'type' => 'string',
+                    ],
+                    'NeedVerify' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'DataLakeStorageTransferJobs' => [
+                'type' => 'object',
+                'properties' => [
+                    'Truncated' => [
+                        'type' => 'string',
+                    ],
+                    'NextMarkerBucket' => [
+                        'type' => 'string',
+                    ],
+                    'NextMarkerJobId' => [
+                        'type' => 'string',
+                    ],
+                    'DataLakeStorageTransferJob' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DataLakeStorageTransferJob',
+                        ],
+                    ],
+                ],
             ],
             'DataRedundancyType' => [
                 'type' => 'string',
@@ -897,6 +1660,17 @@
                     ],
                 ],
             ],
+            'EventNotificationConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'FunctionComputeConfiguration' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/FunctionComputeConfiguration',
+                        ],
+                    ],
+                ],
+            ],
             'ExtendWormConfiguration' => [
                 'type' => 'object',
                 'properties' => [
@@ -906,12 +1680,98 @@
                     ],
                 ],
             ],
+            'FileGroupInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'FilePart' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Part' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'PartNumber' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                        ],
+                                        'PartName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'ETag' => [
+                                            'type' => 'string',
+                                        ],
+                                        'PartSize' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Bucket' => [
+                        'type' => 'string',
+                    ],
+                    'Key' => [
+                        'type' => 'string',
+                    ],
+                    'ETag' => [
+                        'type' => 'string',
+                    ],
+                    'FileLength' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
             'FileHeaderInfo' => [
                 'type' => 'string',
                 'enum' => [
                     'USE',
                     'IGNORE',
                     'NONE',
+                ],
+            ],
+            'FunctionComputeConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'ID' => [
+                        'type' => 'string',
+                    ],
+                    'Event' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'Filter' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Key' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Prefix' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Suffix' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Function' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Arn' => [
+                                'type' => 'string',
+                            ],
+                            'AssumeRole' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'GetAccessPointResult' => [
@@ -960,6 +1820,111 @@
                     ],
                 ],
             ],
+            'GetBucketProcessConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'Version' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'CompliedHost' => [
+                        'type' => 'string',
+                    ],
+                    'SourceFileProtect' => [
+                        'type' => 'string',
+                    ],
+                    'SourceFileProtectSuffix' => [
+                        'type' => 'string',
+                    ],
+                    'StyleDelimiters' => [
+                        'type' => 'string',
+                    ],
+                    'BucketChannelConfig' => [
+                        '$ref' => '#/components/schemas/BucketChannelConfig',
+                    ],
+                    'LastModified' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'GetChannelResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'OrigPicForbidden' => [
+                        'type' => 'boolean',
+                    ],
+                    'UseSrcFormat' => [
+                        'type' => 'boolean',
+                    ],
+                    'SetAttachName' => [
+                        'type' => 'boolean',
+                    ],
+                    'UseStyleOnly' => [
+                        'type' => 'boolean',
+                    ],
+                    'AutoSetContentType' => [
+                        'type' => 'boolean',
+                    ],
+                    'Default404Pic' => [
+                        'type' => 'string',
+                    ],
+                    'StyleDelimiters' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'LastModifyTime' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'GetObjectInfoResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'Bucket' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'Key' => [
+                        'type' => 'string',
+                    ],
+                    'EncryptFlag' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'LastModified' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'ETag' => [
+                        'type' => 'string',
+                    ],
+                    'HashCrc64ecma' => [
+                        'type' => 'string',
+                    ],
+                    'StorageClass' => [
+                        'type' => 'string',
+                    ],
+                    'Content-Type' => [
+                        'type' => 'string',
+                    ],
+                    'Size' => [
+                        'type' => 'string',
+                    ],
+                    'UploadId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'GetResourcePoolInfoResp' => [
                 'type' => 'object',
                 'properties' => [
@@ -995,6 +1960,29 @@
                                 'required' => true,
                             ],
                             'TLSVersion' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'CipherSuite' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Enable' => [
+                                'type' => 'boolean',
+                            ],
+                            'StrongCipherSuite' => [
+                                'type' => 'boolean',
+                            ],
+                            'CustomCipherSuite' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'TLS13CustomCipherSuite' => [
                                 'type' => 'array',
                                 'items' => [
                                     'type' => 'string',
@@ -1399,6 +2387,40 @@
                     ],
                 ],
             ],
+            'ListAllMyCacheResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'Caches' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Cache' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/CacheBaseInfo',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Owner' => [
+                        '$ref' => '#/components/schemas/Owner',
+                    ],
+                    'Prefix' => [
+                        'type' => 'string',
+                    ],
+                    'Marker' => [
+                        'type' => 'string',
+                    ],
+                    'MaxKeys' => [
+                        'type' => 'string',
+                    ],
+                    'IsTruncated' => [
+                        'type' => 'boolean',
+                    ],
+                    'NextMarker' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ListBucketRequesterQoSInfosResult' => [
                 'type' => 'object',
                 'properties' => [
@@ -1418,6 +2440,28 @@
                         'type' => 'array',
                         'items' => [
                             '$ref' => '#/components/schemas/RequesterQoSInfo',
+                        ],
+                    ],
+                ],
+            ],
+            'ListDataLakeCachePrefetchJobHistory' => [
+                'type' => 'object',
+                'properties' => [
+                    'DataLakeCachePrefetchJobHistory' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DataLakeCachePrefetchJobHistory',
+                        ],
+                    ],
+                ],
+            ],
+            'ListDataLakeStorageTransferJobHistory' => [
+                'type' => 'object',
+                'properties' => [
+                    'DataLakeStorageTransferJobHistory' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DataLakeStorageTransferJobHistory',
                         ],
                     ],
                 ],
@@ -1506,6 +2550,17 @@
                                     'type' => 'string',
                                 ],
                             ],
+                        ],
+                    ],
+                ],
+            ],
+            'ListVirtualBucketResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'VirtualBucket' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/VirtualBucket',
                         ],
                     ],
                 ],
@@ -1701,7 +2756,7 @@
                     ],
                     'Query' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                     'Sort' => [
                         'type' => 'string',
@@ -1720,6 +2775,20 @@
                             ],
                         ],
                     ],
+                    'MediaTypes' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'MediaType' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'SimpleQuery' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'MetaQueryAggregation' => [
@@ -1730,6 +2799,41 @@
                     ],
                     'Operation' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'MetaQueryAggregationsResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'Field' => [
+                        'type' => 'string',
+                    ],
+                    'Operation' => [
+                        'type' => 'string',
+                    ],
+                    'Value' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'Groups' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Group' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Value' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Count' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -1793,6 +2897,122 @@
                             ],
                         ],
                     ],
+                    'URI' => [
+                        'type' => 'string',
+                    ],
+                    'ProduceTime' => [
+                        'type' => 'string',
+                    ],
+                    'ContentType' => [
+                        'type' => 'string',
+                    ],
+                    'MediaType' => [
+                        'type' => 'string',
+                    ],
+                    'LatLong' => [
+                        'type' => 'string',
+                    ],
+                    'Title' => [
+                        'type' => 'string',
+                    ],
+                    'OSSExpiration' => [
+                        'type' => 'string',
+                    ],
+                    'AccessControlAllowOrigin' => [
+                        'type' => 'string',
+                    ],
+                    'AccessControlRequestMethod' => [
+                        'type' => 'string',
+                    ],
+                    'ServerSideDataEncryption' => [
+                        'type' => 'string',
+                    ],
+                    'ServerSideEncryptionKeyId' => [
+                        'type' => 'string',
+                    ],
+                    'CacheControl' => [
+                        'type' => 'string',
+                    ],
+                    'ContentDisposition' => [
+                        'type' => 'string',
+                    ],
+                    'ContentEncoding' => [
+                        'type' => 'string',
+                    ],
+                    'ContentLanguage' => [
+                        'type' => 'string',
+                    ],
+                    'ImageHeight' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ImageWidth' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'VideoWidth' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'VideoHeight' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Bitrate' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Artist' => [
+                        'type' => 'string',
+                    ],
+                    'AlbumArtist' => [
+                        'type' => 'string',
+                    ],
+                    'Composer' => [
+                        'type' => 'string',
+                    ],
+                    'Performer' => [
+                        'type' => 'string',
+                    ],
+                    'Album' => [
+                        'type' => 'string',
+                    ],
+                    'Duration' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'VideoStreams' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'VideoStream' => [
+                                '$ref' => '#/components/schemas/MetaQueryRespVideoStream',
+                            ],
+                        ],
+                    ],
+                    'AudioStreams' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AudioStream' => [
+                                '$ref' => '#/components/schemas/MetaQueryRespAudioStream',
+                            ],
+                        ],
+                    ],
+                    'Subtitles' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Subtitle' => [
+                                '$ref' => '#/components/schemas/MetaQueryRespSubtitle',
+                            ],
+                        ],
+                    ],
+                    'Addresses' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Address' => [
+                                '$ref' => '#/components/schemas/MetaQueryRespAddress',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'MetaQueryOrder' => [
@@ -1800,6 +3020,157 @@
                 'enum' => [
                     'asc',
                     'desc',
+                ],
+            ],
+            'MetaQueryResp' => [
+                'type' => 'object',
+                'properties' => [
+                    'NextToken' => [
+                        'type' => 'string',
+                    ],
+                    'Files' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'File' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/MetaQueryFile',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Aggregations' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Aggregation' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/MetaQueryAggregationsResult',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'MetaQueryRespAddress' => [
+                'type' => 'object',
+                'properties' => [
+                    'AddressLine' => [
+                        'type' => 'string',
+                    ],
+                    'City' => [
+                        'type' => 'string',
+                    ],
+                    'District' => [
+                        'type' => 'string',
+                    ],
+                    'Language' => [
+                        'type' => 'string',
+                    ],
+                    'Province' => [
+                        'type' => 'string',
+                    ],
+                    'Township' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'MetaQueryRespAudioStream' => [
+                'type' => 'object',
+                'properties' => [
+                    'CodecName' => [
+                        'type' => 'string',
+                    ],
+                    'Bitrate' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SampleRate' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'StartTime' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'Duration' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'Channels' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Language' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'MetaQueryRespSubtitle' => [
+                'type' => 'object',
+                'properties' => [
+                    'CodecName' => [
+                        'type' => 'string',
+                    ],
+                    'Language' => [
+                        'type' => 'string',
+                    ],
+                    'StartTime' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'Duration' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                ],
+            ],
+            'MetaQueryRespVideoStream' => [
+                'type' => 'object',
+                'properties' => [
+                    'CodecName' => [
+                        'type' => 'string',
+                    ],
+                    'Language' => [
+                        'type' => 'string',
+                    ],
+                    'Bitrate' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'FrameRate' => [
+                        'type' => 'string',
+                    ],
+                    'StartTime' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'Duration' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'FrameCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'BitDepth' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'PixelFormat' => [
+                        'type' => 'string',
+                    ],
+                    'ColorSpace' => [
+                        'type' => 'string',
+                    ],
+                    'Height' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Width' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'MetaQueryTagging' => [
@@ -1824,6 +3195,23 @@
                     ],
                 ],
             ],
+            'NotificationConfiguration' => [
+                'type' => 'object',
+                'required' => false,
+                'properties' => [
+                    'TopicConfiguration' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'ObjectACL' => [
                 'type' => 'string',
                 'enum' => [
@@ -1831,6 +3219,17 @@
                     'public-read',
                     'public-read-write',
                     'default',
+                ],
+            ],
+            'ObjectHashConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'ObjectHashFunction' => [
+                        'type' => 'string',
+                    ],
+                    'DisplayObjectHash' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'ObjectIdentifier' => [
@@ -1842,6 +3241,26 @@
                     ],
                     'VersionId' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'ObjectLinkInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'Part' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'PartNumber' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'PartName' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -2050,11 +3469,56 @@
                     ],
                 ],
             ],
+            'PromoteDataLakeCacheReq' => [
+                'type' => 'object',
+                'properties' => [
+                    'Object' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'ObjectName' => [
+                                'type' => 'string',
+                            ],
+                            'Range' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'PublicAccessBlockConfiguration' => [
                 'type' => 'object',
                 'properties' => [
                     'BlockPublicAccess' => [
                         'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'PutChannelConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'OrigPicForbidden' => [
+                        'type' => 'boolean',
+                    ],
+                    'UseSrcFormat' => [
+                        'type' => 'boolean',
+                    ],
+                    'SetAttachName' => [
+                        'type' => 'boolean',
+                    ],
+                    'UseStyleOnly' => [
+                        'type' => 'boolean',
+                    ],
+                    'AutoSetContentType' => [
+                        'type' => 'boolean',
+                    ],
+                    'Default404Pic' => [
+                        'type' => 'string',
+                    ],
+                    'StyleDelimiters' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2425,6 +3889,114 @@
                     ],
                     'QoSConfiguration' => [
                         '$ref' => '#/components/schemas/QoSConfiguration',
+                    ],
+                ],
+            ],
+            'ReservedCapacityCreateConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Region' => [
+                        'type' => 'string',
+                    ],
+                    'Capacity' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DataRedundancyType' => [
+                        'type' => 'string',
+                    ],
+                    'Years' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'ReservedCapacityRecord' => [
+                'type' => 'object',
+                'properties' => [
+                    'Owner' => [
+                        '$ref' => '#/components/schemas/Owner',
+                    ],
+                    'ID' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Region' => [
+                        'type' => 'string',
+                    ],
+                    'Version' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Capacity' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'LastModifyTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'LastExpansionCapacity' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ExpansionTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DueTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Years' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'FirstTimeEnabled' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'DataRedundancyType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ReservedCapacityRecordList' => [
+                'type' => 'object',
+                'properties' => [
+                    'ReservedCapacityRecord' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ReservedCapacityRecord',
+                        ],
+                    ],
+                ],
+            ],
+            'ReservedCapacityUpdateConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'Capacity' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Years' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -3095,6 +4667,44 @@
                 'properties' => [
                     'Status' => [
                         '$ref' => '#/components/schemas/BucketVersioningStatus',
+                    ],
+                ],
+            ],
+            'VirtualBucket' => [
+                'type' => 'object',
+                'properties' => [
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'RealBucket' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                                'Status' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'VirtualBucketConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'RealBucket' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -7201,6 +8811,14 @@
                     ],
                 ],
                 [
+                    'name' => 'mode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'body',
                     'in' => 'body',
                     'style' => 'xml',
@@ -7222,23 +8840,7 @@
                         'type' => 'object',
                         'properties' => [
                             'MetaQuery' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'NextToken' => [
-                                        'type' => 'string',
-                                    ],
-                                    'Files' => [
-                                        'type' => 'object',
-                                        'properties' => [
-                                            'File' => [
-                                                'type' => 'array',
-                                                'items' => [
-                                                    '$ref' => '#/components/schemas/MetaQueryFile',
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
+                                '$ref' => '#/components/schemas/MetaQueryResp',
                             ],
                         ],
                     ],
@@ -7273,6 +8875,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'mode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -12153,6 +13763,432 @@
             'responses' => [
                 200 => [],
                 '5XX' => [],
+            ],
+        ],
+        'PutChannel' => [
+            'path' => '/?img',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'xml',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Channel' => [
+                                '$ref' => '#/components/schemas/Channel',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [],
+            ],
+        ],
+        'PutBucketHash' => [
+            'path' => '/?objectHash',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'xml',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ObjectHashConfiguration' => [
+                                '$ref' => '#/components/schemas/ObjectHashConfiguration',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [],
+            ],
+        ],
+        'PutBucketCommonHeader' => [
+            'path' => '/?x-oss-common-header',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'xml',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'CommonHeaders' => [
+                                '$ref' => '#/components/schemas/CommonHeaders',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [],
+            ],
+        ],
+        'DeleteBucketCommonHeader' => [
+            'path' => '/?x-oss-common-header',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [],
+            ],
+        ],
+        'PutProcessConfiguration' => [
+            'path' => '/?processConfiguration',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'xml',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'BucketProcessConfiguration' => [
+                                '$ref' => '#/components/schemas/BucketProcessConfiguration',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [],
+            ],
+        ],
+        'GetBucketEventNotification' => [
+            'path' => '/?eventNotification',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'NotificationConfiguration' => [
+                                '$ref' => '#/components/schemas/EventNotificationConfiguration',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'PutDataLakeCachePrefetchJob' => [
+            'path' => '/?x-oss-datalake-cache-prefetch-job',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'x-oss-datalake-job-id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'xml',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'CreateDataLakeCachePrefetchJob' => [
+                                '$ref' => '#/components/schemas/CreateDataLakeCachePrefetchJob',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'DataLakeCachePrefetchJobID' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'ID' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'StartDataLakeCachePrefetchJob' => [
+            'path' => '/?x-oss-datalake-cache-prefetch-job&x-oss-datalake-job-start',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'x-oss-datalake-job-id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [],
+            ],
+        ],
+        'ListDataLakeStorageTransferJob' => [
+            'path' => '/?x-oss-datalake-storage-transfer-job',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'bucket',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'DataLakeStorageTransferJobs' => [
+                                '$ref' => '#/components/schemas/DataLakeStorageTransferJobs',
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
     ],

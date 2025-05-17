@@ -9,31 +9,6 @@
         'schemas' => [],
     ],
     'apis' => [
-        'GetAsyncJobResult' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'JobId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'SegmentVideoBody' => [
             'methods' => [
                 'post',
@@ -51,6 +26,31 @@
             'parameters' => [
                 [
                     'name' => 'VideoUrl',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetAsyncJobResult' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'JobId',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

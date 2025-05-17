@@ -4903,6 +4903,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Registrar',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ScrollDomainList' => [

@@ -9,6 +9,38 @@
         'schemas' => [],
     ],
     'apis' => [
+        'GetOwnRequestLog' => [
+            'path' => '/getOwnRequestLog',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+                'application/x-www-form-urlencoded',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'logRequestId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'GetErrorCodeSolutions' => [
             'path' => '/getErrorCodeSolutions',
             'methods' => [
@@ -96,42 +128,18 @@
                 ],
             ],
         ],
-        'GetOwnRequestLog' => [
-            'path' => '/getOwnRequestLog',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-                'application/x-www-form-urlencoded',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'logRequestId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shanghai',
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'openapiexplorer.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'openapiexplorer.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-qingdao',
             'endpoint' => 'openapiexplorer.aliyuncs.com',
         ],
     ],

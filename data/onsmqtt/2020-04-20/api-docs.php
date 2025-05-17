@@ -182,6 +182,30 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'DeleteGroupId' => [
@@ -239,6 +263,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],
@@ -2404,80 +2452,108 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'onsmqtt.cn-shanghai-finance-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-qingdao',
             'endpoint' => 'onsmqtt.cn-qingdao.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'onsmqtt.cn-beijing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'onsmqtt.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'onsmqtt.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'onsmqtt.cn-hangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'onsmqtt.cn-shanghai.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'onsmqtt.cn-shenzhen.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'onsmqtt.cn-hongkong.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'onsmqtt.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'onsmqtt.ap-southeast-2.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'onsmqtt.ap-southeast-3.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-5',
             'endpoint' => 'onsmqtt.ap-southeast-5.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'onsmqtt.ap-northeast-1.aliyuncs.com',
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'onsmqtt.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'onsmqtt.us-west-1.aliyuncs.com',
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'onsmqtt.ap-southeast-6.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'onsmqtt.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'onsmqtt.cn-shanghai-finance-1.aliyuncs.com',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'onsmqtt.cn-zhangjiakou.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'onsmqtt.cn-shenzhen-finance-1.aliyuncs.com',
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'onsmqtt.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'onsmqtt.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'onsmqtt.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'onsmqtt.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'onsmqtt.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'onsmqtt.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'onsmqtt.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'mq-internet-access',
+            'endpoint' => 'onsmqtt.mq-internet-access.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'onsmqtt.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'onsmqtt.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'onsmqtt.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'onsmqtt.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'onsmqtt.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'onsmqtt.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'onsmqtt.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'onsmqtt.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'onsmqtt.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'onsmqtt.cn-guangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou-finance',
             'endpoint' => 'onsmqtt.cn-hangzhou-finance.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-north-2-gov-1',
-            'endpoint' => 'onsmqtt.cn-north-2-gov-1.aliyuncs.com',
         ],
     ],
 ];

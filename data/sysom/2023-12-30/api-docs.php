@@ -9,10 +9,10 @@
         'schemas' => [],
     ],
     'apis' => [
-        'AuthDiagnosis' => [
-            'path' => '/api/v1/openapi/diagnosis/auth',
+        'UpdateFuncSwitchRecord' => [
+            'path' => '/api/v1/func-switch/update-service-func-switch',
             'methods' => [
-                'post',
+                'get',
             ],
             'schemes' => [
                 'https',
@@ -31,113 +31,91 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'body',
-                    'in' => 'body',
+                    'name' => 'params',
+                    'in' => 'query',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
-                        'required' => false,
+                        'required' => true,
                         'properties' => [
-                            'instances' => [
-                                'type' => 'array',
+                            'function_name' => [
+                                'type' => 'string',
                                 'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'instance' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'region' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
+                            ],
+                            'instance' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'uid' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'op' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'args' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'add_cmd' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'mem' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'locks' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'java_store_path' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_profiling' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'cpu' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'loop' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'pid' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'duration' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
                                     ],
                                 ],
                             ],
-                            'autoCreateRole' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'autoInstallAgent' => [
-                                'type' => 'boolean',
+                            'region' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
                     ],
                 ],
-            ],
-        ],
-        'InvokeDiagnosis' => [
-            'path' => '/api/v1/openapi/diagnosis/invoke_diagnosis',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
                 [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
+                    'name' => 'service_name',
+                    'in' => 'query',
                     'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'service_name' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'channel' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'params' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
-            ],
-        ],
-        'GetDiagnosisResult' => [
-            'path' => '/api/v1/openapi/diagnosis/get_diagnosis_results',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
                 [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'task_id',
+                    'name' => 'channel',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -146,46 +124,8 @@
                 ],
             ],
         ],
-        'GenerateCopilotResponse' => [
-            'path' => '/api/v1/copilot/generate_copilot_response',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'llmParamString' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetAbnormalEventsCount' => [
-            'path' => '/api/v1/openapi/cluster_health/range/abnormaly_events_count',
+        'GetServiceFuncStatus' => [
+            'path' => '/api/v1/func-switch/get-service-func-status',
             'methods' => [
                 'get',
             ],
@@ -206,356 +146,48 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'cluster',
+                    'name' => 'params',
                     'in' => 'query',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'instance',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
+                        'type' => 'object',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'pod',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'start',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'end',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'showPod',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetHealthPercentage' => [
-            'path' => '/api/v1/openapi/cluster_health/range/health_percentage',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'instance',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'start',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'end',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GenerateCopilotStreamResponse' => [
-            'path' => '/api/v1/copilot/generate_copilot_stream_response',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-                'sse',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [],
-            'produces' => [],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
                         'properties' => [
-                            'llmParamString' => [
+                            'function_name' => [
                                 'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetAgent' => [
-            'path' => '/api/v1/am/agent/get_agent',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'agent_id',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetAgentTask' => [
-            'path' => '/api/v1/am/agent/get_agent_task',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'task_id',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetAIQueryResult' => [
-            'path' => '/api/v1/app_observ/aiAnalysis/query_result',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'analysisId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetCopilotHistory' => [
-            'path' => '/api/v1/copilot/get_copilot_history',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'count' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
                                 'required' => true,
                             ],
+                            'instance' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'uid' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
-            ],
-        ],
-        'GetHostCount' => [
-            'path' => '/api/v1/openapi/cluster_health/range/host_count',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
                 [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster',
+                    'name' => 'service_name',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
-                    'name' => 'instance',
+                    'name' => 'channel',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'start',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'end',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
         ],
-        'GetHotspotAnalysis' => [
-            'path' => '/api/v1/openapi/proxy/post/livetrace_hotspot_analysis',
+        'GetHotSpotUniqList' => [
+            'path' => '/api/v1/livetrace_proxy/hotspot_uniq_list',
             'methods' => [
                 'post',
             ],
@@ -583,7 +215,11 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'appType' => [
+                            'uniq' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'instance' => [
                                 'type' => 'string',
                                 'required' => true,
                             ],
@@ -591,6 +227,58 @@
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,
+                            ],
+                            'table' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'beg_start' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'beg_end' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetHotspotTracking' => [
+            'path' => '/api/v1/openapi/proxy/post/livetrace_hotspot_tracking',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'table' => [
+                                'type' => 'string',
+                                'required' => true,
                             ],
                             'instance' => [
                                 'type' => 'string',
@@ -606,9 +294,114 @@
                                 'format' => 'int64',
                                 'required' => true,
                             ],
+                            'pid' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'hot_type' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetHotspotPidList' => [
+            'path' => '/api/v1/openapi/proxy/post/livetrace_hotspot_pid_list',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
                             'table' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
+                            ],
+                            'instance' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'beg_start' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'beg_end' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetHotspotInstanceList' => [
+            'path' => '/api/v1/openapi/proxy/post/livetrace_hotspot_instance_list',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'table' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'beg_start' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'beg_end' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
                             ],
                         ],
                     ],
@@ -695,8 +488,8 @@
                 ],
             ],
         ],
-        'GetHotspotInstanceList' => [
-            'path' => '/api/v1/openapi/proxy/post/livetrace_hotspot_instance_list',
+        'GetHotspotAnalysis' => [
+            'path' => '/api/v1/openapi/proxy/post/livetrace_hotspot_analysis',
             'methods' => [
                 'post',
             ],
@@ -724,172 +517,7 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'table' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'beg_start' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'beg_end' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetHotspotPidList' => [
-            'path' => '/api/v1/openapi/proxy/post/livetrace_hotspot_pid_list',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'table' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'instance' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'beg_start' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'beg_end' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetHotspotTracking' => [
-            'path' => '/api/v1/openapi/proxy/post/livetrace_hotspot_tracking',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'table' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'instance' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'beg_start' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'beg_end' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                            ],
-                            'pid' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'hot_type' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetHotSpotUniqList' => [
-            'path' => '/api/v1/livetrace_proxy/hotspot_uniq_list',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'uniq' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'instance' => [
+                            'appType' => [
                                 'type' => 'string',
                                 'required' => true,
                             ],
@@ -898,9 +526,9 @@
                                 'format' => 'int64',
                                 'required' => false,
                             ],
-                            'table' => [
+                            'instance' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'beg_start' => [
                                 'type' => 'integer',
@@ -912,15 +540,19 @@
                                 'format' => 'int64',
                                 'required' => true,
                             ],
+                            'table' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
             ],
         ],
-        'GetInstantScore' => [
-            'path' => '/api/v1/openapi/cluster_health/instant/score',
+        'StartAIAnalysis' => [
+            'path' => '/api/v1/openapi/proxy/post/start_ai_analysis',
             'methods' => [
-                'get',
+                'post',
             ],
             'schemes' => [
                 'https',
@@ -939,19 +571,43 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'cluster',
-                    'in' => 'query',
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'object',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'instance',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
+                        'properties' => [
+                            'instance' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'region' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'timeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'pids' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'comms' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'channel' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'analysisTool' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -997,10 +653,10 @@
                 ],
             ],
         ],
-        'GetProblemPercentage' => [
-            'path' => '/api/v1/openapi/cluster_health/range/problem_percentage',
+        'GetAIQueryResult' => [
+            'path' => '/api/v1/app_observ/aiAnalysis/query_result',
             'methods' => [
-                'get',
+                'post',
             ],
             'schemes' => [
                 'https',
@@ -1019,94 +675,18 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'cluster',
-                    'in' => 'query',
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'object',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'instance',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'start',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'end',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GetRangeScore' => [
-            'path' => '/api/v1/openapi/cluster_health/range/score',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'instance',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'start',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'end',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
+                        'properties' => [
+                            'analysisId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -1158,258 +738,8 @@
                 ],
             ],
         ],
-        'GetServiceFuncStatus' => [
-            'path' => '/api/v1/func-switch/get-service-func-status',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'params',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'function_name' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'instance' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'uid' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'service_name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'channel',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'InitialSysom' => [
-            'path' => '/api/v1/openapi/initial',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'check_only' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'InstallAgent' => [
-            'path' => '/api/v1/am/agent/install_agent',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'instances' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => true,
-                                    'properties' => [
-                                        'instance' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'region' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'install_type' => [
-                                'type' => 'string',
-                                'required' => true,
-                                'enum' => [
-                                    'InstallAndUpgrade',
-                                    'OnlyInstallNotHasAgent',
-                                    'OnlyUpgradeHasAgent',
-                                ],
-                            ],
-                            'agent_id' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'agent_version' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'InstallAgentForCluster' => [
-            'path' => '/api/v1/am/agent/install_agent_by_cluster',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'cluster_id' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'agent_id' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'agent_version' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'grayscale_config' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'InvokeAnomalyDiagnosis' => [
-            'path' => '/api/v1/openapi/cluster_health/diagnosis/invoke_anomaly_diagnose',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'uuid',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListAbnormalyEvents' => [
-            'path' => '/api/v1/openapi/cluster_health/range/abnormaly_events',
+        'GetHostCount' => [
+            'path' => '/api/v1/openapi/cluster_health/range/host_count',
             'methods' => [
                 'get',
             ],
@@ -1455,22 +785,6 @@
                     ],
                 ],
                 [
-                    'name' => 'pod',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'end',
                     'in' => 'query',
                     'schema' => [
@@ -1479,47 +793,12 @@
                         'required' => false,
                     ],
                 ],
-                [
-                    'name' => 'level',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'showPod',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'current',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
-        'ListAgentInstallRecords' => [
-            'path' => '/api/v1/am/agent/list_agent_install_list',
+        'InitialSysom' => [
+            'path' => '/api/v1/openapi/initial',
             'methods' => [
-                'get',
+                'post',
             ],
             'schemes' => [
                 'https',
@@ -1538,175 +817,18 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'current',
-                    'in' => 'query',
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                        'type' => 'object',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'instance_id',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'plugin_id',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'plugin_version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListAgents' => [
-            'path' => '/api/v1/am/agent/list_agents',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'current',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListClusterAgentInstallRecords' => [
-            'path' => '/api/v1/am/agent/list_cluster_agent_install_list',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'current',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'plugin_id',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'plugin_version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
+                        'properties' => [
+                            'check_only' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -1803,146 +925,6 @@
                 ],
             ],
         ],
-        'ListDiagnosis' => [
-            'path' => '/api/v1/openapi/diagnosis/list_diagnosis',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'current',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'service_name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'params',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListInstanceHealth' => [
-            'path' => '/api/v1/openapi/cluster_health/range/instance_health_list',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'instance',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'start',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'end',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'current',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'ListInstances' => [
             'path' => '/api/v1/am/instance/list_instances',
             'methods' => [
@@ -2016,8 +998,8 @@
                 ],
             ],
         ],
-        'ListInstancesEcsInfoList' => [
-            'path' => '/api/v1/am/instance/listInstancesEcsInfoList',
+        'ListPluginsInstances' => [
+            'path' => '/api/v1/am/agent/listPluginsInstances',
             'methods' => [
                 'get',
             ],
@@ -2038,6 +1020,22 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'operation_type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'plugin_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
                     'name' => 'region',
                     'in' => 'query',
                     'schema' => [
@@ -2046,15 +1044,7 @@
                     ],
                 ],
                 [
-                    'name' => 'info_type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'managed_type',
+                    'name' => 'instance_id_name',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2062,7 +1052,7 @@
                     ],
                 ],
                 [
-                    'name' => 'instance_id',
+                    'name' => 'instance_tag',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2070,17 +1060,27 @@
                     ],
                 ],
                 [
-                    'name' => 'plugin_id',
+                    'name' => 'current',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
             ],
         ],
-        'ListInstanceStatus' => [
-            'path' => '/api/v1/am/instance/list_instance_status',
+        'ListPodsOfInstance' => [
+            'path' => '/api/v1/am/instance/list_pod_of_instance',
             'methods' => [
                 'get',
             ],
@@ -2119,6 +1119,14 @@
                     ],
                 ],
                 [
+                    'name' => 'cluster_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'instance',
                     'in' => 'query',
                     'schema' => [
@@ -2126,23 +1134,241 @@
                         'required' => false,
                     ],
                 ],
+            ],
+        ],
+        'UpgradeAgentForCluster' => [
+            'path' => '/api/v1/am/agent/upgrade_agent_by_cluster',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
                 [
-                    'name' => 'status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
+                    'AK' => [],
                 ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
                 [
-                    'name' => 'region',
-                    'in' => 'query',
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'object',
                         'required' => false,
+                        'properties' => [
+                            'cluster_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'agent_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'agent_version' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
+        ],
+        'UpgradeAgent' => [
+            'path' => '/api/v1/am/agent/upgrade_agent',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'instances' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'instance' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'region' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'agent_id' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'agent_version' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UninstallAgentForCluster' => [
+            'path' => '/api/v1/am/agent/uninstall_agent_by_cluster',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'cluster_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'agent_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'agent_version' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UninstallAgent' => [
+            'path' => '/api/v1/am/agent/uninstall_agent',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'instances' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'instance' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'region' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'agent_id' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'agent_version' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListRegions' => [
+            'path' => '/api/v1/am/instance/list_regions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [],
         ],
         'ListInstancesWithEcsInfo' => [
             'path' => '/api/v1/am/instance/listInstancesWithEcsInfo',
@@ -2301,8 +1527,8 @@
                 ],
             ],
         ],
-        'ListPluginsInstances' => [
-            'path' => '/api/v1/am/agent/listPluginsInstances',
+        'ListInstanceStatus' => [
+            'path' => '/api/v1/am/instance/list_instance_status',
             'methods' => [
                 'get',
             ],
@@ -2323,46 +1549,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'operation_type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'plugin_id',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'region',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'instance_id_name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'instance_tag',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'current',
                     'in' => 'query',
                     'schema' => [
@@ -2380,10 +1566,97 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'instance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
-        'ListPodsOfInstance' => [
-            'path' => '/api/v1/am/instance/list_pod_of_instance',
+        'ListInstancesEcsInfoList' => [
+            'path' => '/api/v1/am/instance/listInstancesEcsInfoList',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'info_type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'managed_type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instance_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'plugin_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListClusterAgentInstallRecords' => [
+            'path' => '/api/v1/am/agent/list_cluster_agent_install_list',
             'methods' => [
                 'get',
             ],
@@ -2430,7 +1703,15 @@
                     ],
                 ],
                 [
-                    'name' => 'instance',
+                    'name' => 'plugin_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'plugin_version',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2439,8 +1720,8 @@
                 ],
             ],
         ],
-        'ListRegions' => [
-            'path' => '/api/v1/am/instance/list_regions',
+        'ListAgentInstallRecords' => [
+            'path' => '/api/v1/am/agent/list_agent_install_list',
             'methods' => [
                 'get',
             ],
@@ -2459,10 +1740,61 @@
                 'application/json',
             ],
             'deprecated' => false,
-            'parameters' => [],
+            'parameters' => [
+                [
+                    'name' => 'current',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instance_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'plugin_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'plugin_version',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
         ],
-        'StartAIAnalysis' => [
-            'path' => '/api/v1/openapi/proxy/post/start_ai_analysis',
+        'InstallAgentForCluster' => [
+            'path' => '/api/v1/am/agent/install_agent_by_cluster',
             'methods' => [
                 'post',
             ],
@@ -2490,32 +1822,19 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'instance' => [
+                            'cluster_id' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'region' => [
+                            'agent_id' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'timeout' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'pids' => [
+                            'agent_version' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'comms' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'channel' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'analysisTool' => [
+                            'grayscale_config' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -2524,8 +1843,8 @@
                 ],
             ],
         ],
-        'UninstallAgent' => [
-            'path' => '/api/v1/am/agent/uninstall_agent',
+        'InstallAgent' => [
+            'path' => '/api/v1/am/agent/install_agent',
             'methods' => [
                 'post',
             ],
@@ -2571,6 +1890,15 @@
                                     ],
                                 ],
                             ],
+                            'install_type' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'InstallAndUpgrade',
+                                    'OnlyInstallNotHasAgent',
+                                    'OnlyUpgradeHasAgent',
+                                ],
+                            ],
                             'agent_id' => [
                                 'type' => 'string',
                                 'required' => true,
@@ -2584,10 +1912,10 @@
                 ],
             ],
         ],
-        'UninstallAgentForCluster' => [
-            'path' => '/api/v1/am/agent/uninstall_agent_by_cluster',
+        'ListAgents' => [
+            'path' => '/api/v1/am/agent/list_agents',
             'methods' => [
-                'post',
+                'get',
             ],
             'schemes' => [
                 'https',
@@ -2606,26 +1934,99 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
+                    'name' => 'current',
+                    'in' => 'query',
                     'schema' => [
-                        'type' => 'object',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
-                        'properties' => [
-                            'cluster_id' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'agent_id' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'agent_version' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetAgentTask' => [
+            'path' => '/api/v1/am/agent/get_agent_task',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'task_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetAgent' => [
+            'path' => '/api/v1/am/agent/get_agent',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'agent_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2653,7 +2054,7 @@
             'parameters' => [
                 [
                     'name' => 'body',
-                    'in' => 'query',
+                    'in' => 'body',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
@@ -2677,8 +2078,8 @@
                 ],
             ],
         ],
-        'UpdateFuncSwitchRecord' => [
-            'path' => '/api/v1/func-switch/update-service-func-switch',
+        'ListAbnormalyEvents' => [
+            'path' => '/api/v1/openapi/cluster_health/range/abnormaly_events',
             'methods' => [
                 'get',
             ],
@@ -2699,69 +2100,439 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'params',
+                    'name' => 'cluster',
                     'in' => 'query',
-                    'style' => 'json',
                     'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'function_name' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'instance' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'uid' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'op' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'args' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'add_cmd' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'mem' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'locks' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'java_store_path' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'system_profiling' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'cpu' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'loop' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                        ],
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'service_name',
+                    'name' => 'instance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pod',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'end',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'level',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'showPod',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'current',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListInstanceHealth' => [
+            'path' => '/api/v1/openapi/cluster_health/range/instance_health_list',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'end',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'current',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'InvokeAnomalyDiagnosis' => [
+            'path' => '/api/v1/openapi/cluster_health/diagnosis/invoke_anomaly_diagnose',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'uuid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetRangeScore' => [
+            'path' => '/api/v1/openapi/cluster_health/range/score',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'end',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetProblemPercentage' => [
+            'path' => '/api/v1/openapi/cluster_health/range/problem_percentage',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'end',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetInstantScore' => [
+            'path' => '/api/v1/openapi/cluster_health/instant/score',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetHealthPercentage' => [
+            'path' => '/api/v1/openapi/cluster_health/range/health_percentage',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instance',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'end',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetAbnormalEventsCount' => [
+            'path' => '/api/v1/openapi/cluster_health/range/abnormaly_events_count',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instance',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2769,7 +2540,138 @@
                     ],
                 ],
                 [
-                    'name' => 'channel',
+                    'name' => 'pod',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'start',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'end',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'showPod',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListDiagnosis' => [
+            'path' => '/api/v1/openapi/diagnosis/list_diagnosis',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'current',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'service_name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'params',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetDiagnosisResult' => [
+            'path' => '/api/v1/openapi/diagnosis/get_diagnosis_results',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'task_id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2778,8 +2680,54 @@
                 ],
             ],
         ],
-        'UpgradeAgent' => [
-            'path' => '/api/v1/am/agent/upgrade_agent',
+        'InvokeDiagnosis' => [
+            'path' => '/api/v1/openapi/diagnosis/invoke_diagnosis',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'service_name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'channel' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'params' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'AuthDiagnosis' => [
+            'path' => '/api/v1/openapi/diagnosis/auth',
             'methods' => [
                 'post',
             ],
@@ -2812,34 +2760,34 @@
                                 'required' => true,
                                 'items' => [
                                     'type' => 'object',
-                                    'required' => true,
+                                    'required' => false,
                                     'properties' => [
                                         'instance' => [
                                             'type' => 'string',
-                                            'required' => true,
+                                            'required' => false,
                                         ],
                                         'region' => [
                                             'type' => 'string',
-                                            'required' => true,
+                                            'required' => false,
                                         ],
                                     ],
                                 ],
                             ],
-                            'agent_id' => [
-                                'type' => 'string',
-                                'required' => true,
+                            'autoCreateRole' => [
+                                'type' => 'boolean',
+                                'required' => false,
                             ],
-                            'agent_version' => [
-                                'type' => 'string',
-                                'required' => true,
+                            'autoInstallAgent' => [
+                                'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'UpgradeAgentForCluster' => [
-            'path' => '/api/v1/am/agent/upgrade_agent_by_cluster',
+        'GetCopilotHistory' => [
+            'path' => '/api/v1/copilot/get_copilot_history',
             'methods' => [
                 'post',
             ],
@@ -2867,17 +2815,129 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'cluster_id' => [
+                            'count' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GenerateCopilotStreamResponse' => [
+            'path' => '/api/v1/copilot/generate_copilot_stream_response',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'llmParamString' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'agent_id' => [
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GenerateCopilotResponse' => [
+            'path' => '/api/v1/copilot/generate_copilot_response',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'llmParamString' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'agent_version' => [
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CheckInstanceSupport' => [
+            'path' => '/api/v1/am/supportInstanceList/checkInstanceSupport',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'region' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'instances' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],

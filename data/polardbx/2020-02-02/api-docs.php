@@ -48,6 +48,8 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '99',
                     ],
                 ],
                 [
@@ -207,16 +209,22 @@
                     'name' => 'CNNodeCount',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '99',
                     ],
                 ],
                 [
                     'name' => 'DNNodeCount',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '99',
                     ],
                 ],
                 [
@@ -1055,8 +1063,11 @@
                     'name' => 'DbInstanceNodeCount',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '99',
                     ],
                 ],
                 [
@@ -1071,16 +1082,22 @@
                     'name' => 'CNNodeCount',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '99',
                     ],
                 ],
                 [
                     'name' => 'DNNodeCount',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '99',
                     ],
                 ],
                 [

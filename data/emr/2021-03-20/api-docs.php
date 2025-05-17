@@ -1633,59 +1633,17 @@
             'NodeGroupConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'NodeGroupType' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'NodeGroupName' => [
-                        'type' => 'string',
-                    ],
-                    'PaymentType' => [
-                        'type' => 'string',
-                    ],
-                    'SubscriptionConfig' => [
-                        '$ref' => '#/components/schemas/SubscriptionConfig',
-                    ],
-                    'SpotStrategy' => [
-                        'type' => 'string',
-                    ],
-                    'SpotBidPrices' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/SpotBidPrice',
-                        ],
-                        'maxItems' => 100,
-                    ],
-                    'VSwitchIds' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                        'maxItems' => 20,
-                    ],
                     'WithPublicIp' => [
                         'type' => 'boolean',
                     ],
-                    'AdditionalSecurityGroupIds' => [
+                    'SpotInstanceRemedy' => [
+                        'type' => 'boolean',
+                    ],
+                    'ComponentTags' => [
                         'type' => 'array',
                         'items' => [
                             'type' => 'string',
                         ],
-                        'maxItems' => 5,
-                    ],
-                    'InstanceTypes' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                        'maxItems' => 100,
-                    ],
-                    'NodeCount' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'SystemDisk' => [
-                        '$ref' => '#/components/schemas/SystemDisk',
                     ],
                     'DataDisks' => [
                         'type' => 'array',
@@ -1694,35 +1652,77 @@
                         ],
                         'maxItems' => 1,
                     ],
-                    'GracefulShutdown' => [
-                        'type' => 'boolean',
-                    ],
-                    'SpotInstanceRemedy' => [
-                        'type' => 'boolean',
-                    ],
                     'CompensateWithOnDemand' => [
                         'type' => 'boolean',
                     ],
-                    'NodeResizeStrategy' => [
+                    'SystemDisk' => [
+                        '$ref' => '#/components/schemas/SystemDisk',
+                    ],
+                    'PrivatePoolOptions' => [
+                        '$ref' => '#/components/schemas/PrivatePoolOptions',
+                    ],
+                    'NodeGroupType' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'PaymentType' => [
                         'type' => 'string',
                     ],
-                    'CostOptimizedConfig' => [
-                        '$ref' => '#/components/schemas/CostOptimizedConfig',
-                    ],
-                    'DeploymentSetStrategy' => [
-                        'type' => 'string',
-                    ],
-                    'ComponentTags' => [
+                    'InstanceTypes' => [
                         'type' => 'array',
                         'items' => [
                             'type' => 'string',
                         ],
+                        'maxItems' => 100,
+                    ],
+                    'CostOptimizedConfig' => [
+                        '$ref' => '#/components/schemas/CostOptimizedConfig',
+                    ],
+                    'GracefulShutdown' => [
+                        'type' => 'boolean',
+                    ],
+                    'SpotStrategy' => [
+                        'type' => 'string',
+                    ],
+                    'NodeGroupName' => [
+                        'type' => 'string',
+                    ],
+                    'NodeCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'VSwitchIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                        'maxItems' => 20,
+                    ],
+                    'SpotBidPrices' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/SpotBidPrice',
+                        ],
+                        'maxItems' => 100,
+                    ],
+                    'NodeResizeStrategy' => [
+                        'type' => 'string',
                     ],
                     'AutoScalingPolicy' => [
                         '$ref' => '#/components/schemas/AutoScalingPolicy',
                     ],
-                    'PrivatePoolOptions' => [
-                        '$ref' => '#/components/schemas/PrivatePoolOptions',
+                    'SubscriptionConfig' => [
+                        '$ref' => '#/components/schemas/SubscriptionConfig',
+                    ],
+                    'AdditionalSecurityGroupIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                        'maxItems' => 5,
+                    ],
+                    'DeploymentSetStrategy' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2438,17 +2438,12 @@
             'ScalingRule' => [
                 'type' => 'object',
                 'properties' => [
-                    'RuleName' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
                     'TriggerType' => [
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'ActivityType' => [
-                        'type' => 'string',
-                        'required' => true,
+                    'MetricsTrigger' => [
+                        '$ref' => '#/components/schemas/MetricsTrigger',
                     ],
                     'AdjustmentValue' => [
                         'type' => 'integer',
@@ -2458,12 +2453,17 @@
                     'TimeTrigger' => [
                         '$ref' => '#/components/schemas/TimeTrigger',
                     ],
-                    'MetricsTrigger' => [
-                        '$ref' => '#/components/schemas/MetricsTrigger',
+                    'ActivityType' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                     'MinAdjustmentValue' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                    'RuleName' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -3302,6 +3302,19 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Promotions',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Promotion',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],
@@ -4297,6 +4310,14 @@
                         'maxItems' => 50,
                     ],
                 ],
+                [
+                    'name' => 'ZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetNodeGroup' => [
@@ -4442,6 +4463,19 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Promotions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Promotion',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],
@@ -4733,6 +4767,47 @@
                     'style' => 'flat',
                     'schema' => [
                         '$ref' => '#/components/schemas/ScalingConstraints',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'PutManagedScalingPolicy' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Constraints',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ManagedScalingConstraints',
                         'required' => false,
                     ],
                 ],
@@ -5559,6 +5634,13 @@
                             'type' => 'string',
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'ZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -7785,63 +7867,6 @@
                 ],
                 [
                     'name' => 'DateTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GetDoctorHDFSUGI' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'RegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DateTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

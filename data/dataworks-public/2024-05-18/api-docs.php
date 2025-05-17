@@ -7,6 +7,106 @@
     ],
     'components' => [
         'schemas' => [
+            'Catalog' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ModifyTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ParentMetaEntityId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'Column' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                    'TableId' => [
+                        'type' => 'string',
+                    ],
+                    'Position' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'PrimaryKey' => [
+                        'type' => 'boolean',
+                    ],
+                    'PartitionKey' => [
+                        'type' => 'boolean',
+                    ],
+                    'ForeignKey' => [
+                        'type' => 'boolean',
+                    ],
+                    'BusinessMetadata' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Description' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'CrawlerType' => [
+                'type' => 'object',
+                'properties' => [
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'DisplayName' => [
+                        'type' => 'string',
+                    ],
+                    'SupportedEntityTypes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Type' => [
+                                    'type' => 'string',
+                                ],
+                                'SubType' => [
+                                    'type' => 'string',
+                                ],
+                                'Optional' => [
+                                    'type' => 'boolean',
+                                ],
+                                'ParentSubType' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'DataQualityEvaluationTask' => [
                 'type' => 'object',
                 'properties' => [
@@ -636,9 +736,505 @@
                     ],
                 ],
             ],
+            'Database' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                    'LocationUri' => [
+                        'type' => 'string',
+                    ],
+                    'ParentMetaEntityId' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ModifyTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'LineageEntity' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Attributes' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'LineageRelationship' => [
+                'type' => 'object',
+                'properties' => [
+                    'SrcEntity' => [
+                        '$ref' => '#/components/schemas/LineageEntity',
+                    ],
+                    'DstEntity' => [
+                        '$ref' => '#/components/schemas/LineageEntity',
+                    ],
+                    'Task' => [
+                        '$ref' => '#/components/schemas/LineageTask',
+                    ],
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'LineageTask' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'Attributes' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'Partition' => [
+                'type' => 'object',
+                'properties' => [
+                    'TableId' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ModifyTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'RecordCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DataSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'Schema' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'ParentMetaEntityId' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ModifyTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'Table' => [
+                'type' => 'object',
+                'properties' => [
+                    'Id' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'Comment' => [
+                        'type' => 'string',
+                    ],
+                    'TableType' => [
+                        'type' => 'string',
+                    ],
+                    'PartitionKeys' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'ParentMetaEntityId' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ModifyTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'TechnicalMetadata' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Owner' => [
+                                'type' => 'string',
+                            ],
+                            'Location' => [
+                                'type' => 'string',
+                            ],
+                            'Compressed' => [
+                                'type' => 'boolean',
+                            ],
+                            'InputFormat' => [
+                                'type' => 'string',
+                            ],
+                            'OutputFormat' => [
+                                'type' => 'string',
+                            ],
+                            'SerializationLibrary' => [
+                                'type' => 'string',
+                            ],
+                            'Parameters' => [
+                                'type' => 'object',
+                                'additionalProperties' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'BusinessMetadata' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Readme' => [
+                                'type' => 'string',
+                            ],
+                            'Tags' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Categories' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'array',
+                                    'items' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'Id' => [
+                                                'type' => 'string',
+                                            ],
+                                            'Name' => [
+                                                'type' => 'string',
+                                            ],
+                                            'ParentId' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'UpstreamTasks' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Id' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                        ],
+                                        'Name' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Extension' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'ProjectId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                    'EnvType' => [
+                                        'type' => 'string',
+                                        'enum' => [
+                                            'Dev',
+                                            'Prod',
+                                        ],
+                                    ],
+                                    'ViewCount' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                    'ReadCount' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                    'FavorCount' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
     'apis' => [
+        'ImportCertificate' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CertificateFile',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetCertificate' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListCertificates' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CreateUser',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartCreateTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndCreateTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteCertificate' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'CreateProject' => [
             'methods' => [
                 'post',
@@ -1371,6 +1967,48 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'TestDataSourceConnectivity' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DataSourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -3319,6 +3957,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'ResourceFile',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteResource' => [
@@ -3393,6 +4039,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceFile',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3868,7 +4522,7 @@
                 ],
             ],
         ],
-        'CreateDeployment' => [
+        'CreatePipelineRun' => [
             'methods' => [
                 'post',
             ],
@@ -3925,7 +4579,7 @@
                 ],
             ],
         ],
-        'AbolishDeployment' => [
+        'AbolishPipelineRun' => [
             'methods' => [
                 'post',
             ],
@@ -3958,7 +4612,7 @@
                 ],
             ],
         ],
-        'ExecDeploymentStage' => [
+        'ExecPipelineRunStage' => [
             'methods' => [
                 'post',
             ],
@@ -3999,7 +4653,7 @@
                 ],
             ],
         ],
-        'GetDeployment' => [
+        'GetPipelineRun' => [
             'methods' => [
                 'get',
             ],
@@ -4032,7 +4686,7 @@
                 ],
             ],
         ],
-        'ListDeployments' => [
+        'ListPipelineRuns' => [
             'methods' => [
                 'get',
             ],
@@ -4156,6 +4810,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'JobType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -5768,6 +6430,1494 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListCrawlerTypes' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'ListCatalogs' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ParentMetaEntityId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Types',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CreateTime',
+                            'ModifyTime',
+                            'Name',
+                            'Type',
+                        ],
+                        'pattern' => '^[\\w.,;/@-]+$',
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Asc',
+                            'Desc',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'GetCatalog' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListDatabases' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ParentMetaEntityId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CreateTime',
+                            'ModifyTime',
+                            'Name',
+                        ],
+                        'pattern' => '^[\\w.,;/@-]+$',
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Asc',
+                            'Desc',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'GetDatabase' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListSchemas' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ParentMetaEntityId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Types',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CreateTime',
+                            'ModifyTime',
+                            'Name',
+                            'Type',
+                        ],
+                        'pattern' => '^[\\w.,;/@-]+$',
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Asc',
+                            'Desc',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'GetSchema' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListTables' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ParentMetaEntityId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TableTypes',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CreateTime',
+                            'ModifyTime',
+                            'Name',
+                            'TableType',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Asc',
+                            'Desc',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'GetTable' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'IncludeBusinessMetadata',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateTableBusinessMetadata' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Readme',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListColumns' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'TableId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Name',
+                            'Position',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Asc',
+                            'Desc',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'GetColumn' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateColumnBusinessMetadata' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListPartitions' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'TableId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CreateTime',
+                            'ModifyTime',
+                            'Name',
+                            'RecordCount',
+                            'DataSize',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Asc',
+                            'Desc',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'GetPartition' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'TableId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListLineageRelationships' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SrcEntityId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DstEntityId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SrcEntityName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DstEntityName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Name',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Asc',
+                            'Desc',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'GetLineageRelationship' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteLineageRelationship' => [
+            'methods' => [
+                'delete',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateLineageRelationship' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SrcEntity',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/LineageEntity',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DstEntity',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/LineageEntity',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Task',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/LineageTask',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListLineages' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SrcEntityId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DstEntityId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SrcEntityName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DstEntityName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NeedAttachRelationship',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Name',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Asc',
+                            'Desc',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'ListMetaCollections' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'Category',
+                            'Album',
+                            'AlbumCategory',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ParentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CreateUser',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Administrator',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateMetaCollection' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ParentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'Category',
+                            'Album',
+                            'AlbumCategory',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetMetaCollection' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateMetaCollection' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Administrators',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteMetaCollection' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListEntitiesInMetaCollection' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EntityType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EntityName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EntityDescription',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AddEntityIntoMetaCollection' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'MetaCollectionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Remark',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'RemoveEntityFromMetaCollection' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'MetaCollectionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -8310,7 +10460,7 @@
                                 'Id' => [
                                     'type' => 'integer',
                                     'format' => 'int64',
-                                    'required' => true,
+                                    'required' => false,
                                 ],
                                 'Name' => [
                                     'type' => 'string',
@@ -8621,6 +10771,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'T+1',
+                            'Immediately',
+                        ],
                     ],
                 ],
             ],
@@ -9351,7 +11513,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -9540,15 +11702,15 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
-                        'required' => false,
+                        'required' => true,
                         'properties' => [
                             'DatabaseType' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'TableGuid' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'PartitionSpec' => [
                                 'type' => 'string',
@@ -9716,7 +11878,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10402,7 +12564,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],
@@ -10452,7 +12614,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                         'minimum' => '1',
                         'maximum' => '200',
                     ],
@@ -10463,7 +12625,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -10535,7 +12697,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
-                        'required' => false,
+                        'required' => true,
                         'properties' => [
                             'Type' => [
                                 'type' => 'string',
@@ -10543,7 +12705,7 @@
                             ],
                             'DatabaseType' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'TableGuid' => [
                                 'type' => 'string',
@@ -10960,7 +13122,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],
@@ -11030,7 +13192,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -11218,7 +13380,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                         'minimum' => '1',
                         'maximum' => '200',
                     ],
@@ -11229,7 +13391,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -11324,7 +13486,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                         'minimum' => '1',
                         'maximum' => '200',
                     ],
@@ -11335,7 +13497,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -11398,7 +13560,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
-                        'required' => false,
+                        'required' => true,
                         'properties' => [
                             'Metric' => [
                                 'type' => 'string',
@@ -11406,7 +13568,7 @@
                             ],
                             'MetricParameters' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'SettingConfig' => [
                                 'type' => 'string',
@@ -11426,7 +13588,7 @@
                         'properties' => [
                             'Type' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'ReferencedSamplesFilter' => [
                                 'type' => 'string',
@@ -11582,7 +13744,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],
@@ -11615,7 +13777,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -11640,7 +13802,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                         'minimum' => '1',
                     ],
                 ],
@@ -11650,7 +13812,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                         'minimum' => '1',
                         'maximum' => '200',
                     ],
@@ -12251,20 +14413,12 @@
             'endpoint' => 'dataworks.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'dataworks.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'dataworks.cn-beijing.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-zhangjiakou',
             'endpoint' => 'dataworks.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'dataworks.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -12333,6 +14487,10 @@
         [
             'regionId' => 'me-central-1',
             'endpoint' => 'dataworks.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'dataworks.cn-wulanchabu.aliyuncs.com',
         ],
     ],
 ];

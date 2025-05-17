@@ -6481,6 +6481,118 @@
                 ],
             ],
         ],
+        'CreatePlayingListOAuth2' => [
+            'path' => '/v1.0/ssp/CreatePlayingListOAuth2',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'OAuth 2.0 Bearer Token' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpenCreatePlayingListRequest',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'PlayFrom' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ContentType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ContentList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'RawId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Source' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Index' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'NeedAlbumContinued' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'PlayMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ExtendInfo' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DeviceInfo',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'EncodeType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'EncodeKey' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'IdType' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'UNION_ID',
+                                    'OPEN_ID',
+                                ],
+                            ],
+                            'Id' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'OrganizationId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

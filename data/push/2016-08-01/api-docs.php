@@ -138,7 +138,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -276,6 +276,69 @@
                     ],
                 ],
                 [
+                    'name' => 'iOSLiveActivityEvent',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'start',
+                            'update',
+                            'end',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'iOSLiveActivityId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'iOSLiveActivityAttributesType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'iOSLiveActivityAttributes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'iOSLiveActivityContentState',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'iOSLiveActivityDismissalDate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'iOSLiveActivityStaleDate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'AndroidNotifyType',
                     'in' => 'query',
                     'schema' => [
@@ -389,6 +452,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -405,6 +469,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -1016,7 +1081,7 @@
                                 ],
                                 'Body' => [
                                     'type' => 'string',
-                                    'required' => true,
+                                    'required' => false,
                                 ],
                                 'Trim' => [
                                     'type' => 'boolean',
@@ -1084,6 +1149,41 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'iOSLiveActivityEvent' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'start',
+                                        'update',
+                                        'end',
+                                    ],
+                                ],
+                                'iOSLiveActivityId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSLiveActivityAttributesType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSLiveActivityAttributes' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSLiveActivityContentState' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'iOSLiveActivityDismissalDate' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'iOSLiveActivityStaleDate' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
                                 'AndroidNotifyType' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -1134,6 +1234,7 @@
                                 ],
                                 'AndroidXiaomiBigPictureUrl' => [
                                     'type' => 'string',
+                                    'deprecated' => true,
                                     'required' => false,
                                 ],
                                 'AndroidImageUrl' => [
@@ -1142,6 +1243,7 @@
                                 ],
                                 'AndroidXiaomiImageUrl' => [
                                     'type' => 'string',
+                                    'deprecated' => true,
                                     'required' => false,
                                 ],
                                 'AndroidInboxBody' => [

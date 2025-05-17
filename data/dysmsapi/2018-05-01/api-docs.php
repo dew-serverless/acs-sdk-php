@@ -520,5 +520,9 @@
             'regionId' => 'cn-huhehaote',
             'endpoint' => 'dysmsapi.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'dysmsapi.aliyuncs.com',
+        ],
     ],
 ];

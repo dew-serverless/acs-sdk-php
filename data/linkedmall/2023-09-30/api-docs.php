@@ -1090,19 +1090,6 @@
                             'required' => false,
                         ],
                     ],
-                    'images' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                    ],
-                    'quantity' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
                     'skus' => [
                         'type' => 'array',
                         'required' => false,
@@ -1111,31 +1098,14 @@
                             'required' => false,
                         ],
                     ],
-                    'productId' => [
+                    'lmItemId' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                     'canSell' => [
                         'type' => 'boolean',
                         'required' => false,
                     ],
-                    'productSpecs' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            '$ref' => '#/components/schemas/ProductSpec',
-                            'required' => false,
-                        ],
-                    ],
                     'fuzzyQuantity' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'productStatus' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'taxCode' => [
                         'type' => 'string',
                         'required' => false,
                     ],
@@ -1143,21 +1113,24 @@
                         'type' => 'string',
                         'required' => false,
                     ],
-                    'soldQuantity' => [
-                        'type' => 'string',
-                        'required' => false,
+                    'extendProperties' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ProductExtendProperty',
+                        ],
                     ],
-                    'divisionCode' => [
+                    'servicePromises' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'soldQuantity' => [
                         'type' => 'string',
                         'required' => false,
                     ],
                     'picUrl' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                    'taxRate' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
                         'required' => false,
                     ],
                     'categoryLeafId' => [
@@ -1169,13 +1142,12 @@
                         'type' => 'string',
                         'required' => false,
                     ],
-                    'descPath' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
                     'shopId' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                    'inGroup' => [
+                        'type' => 'boolean',
                     ],
                     'productType' => [
                         'type' => 'string',
@@ -1185,25 +1157,50 @@
                             'Virtual',
                         ],
                     ],
-                    'properties' => [
+                    'images' => [
                         'type' => 'array',
                         'required' => false,
                         'items' => [
-                            '$ref' => '#/components/schemas/ProductProperty',
+                            'type' => 'string',
                             'required' => false,
                         ],
                     ],
                     'brandName' => [
                         'type' => 'string',
                     ],
-                    'extendProperties' => [
+                    'quantity' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'productId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'productSpecs' => [
                         'type' => 'array',
+                        'required' => false,
                         'items' => [
-                            '$ref' => '#/components/schemas/ProductExtendProperty',
+                            '$ref' => '#/components/schemas/ProductSpec',
+                            'required' => false,
                         ],
                     ],
-                    'lmItemId' => [
+                    'productStatus' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                    'taxCode' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'divisionCode' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'taxRate' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
                     ],
                     'limitRules' => [
                         'type' => 'array',
@@ -1211,8 +1208,17 @@
                             '$ref' => '#/components/schemas/LimitRule',
                         ],
                     ],
-                    'inGroup' => [
-                        'type' => 'boolean',
+                    'descPath' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'properties' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/ProductProperty',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],
@@ -2112,6 +2118,9 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'skuAlias' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'SkuQueryParam' => [
@@ -2124,6 +2133,10 @@
                     'skuId' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                    'buyAmount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],
@@ -2176,6 +2189,9 @@
                     'skuId' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                    'canNotSellReason' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -3375,7 +3391,7 @@
         ],
         [
             'regionId' => 'cn-hangzhou',
-            'endpoint' => 'linkedmall.aliyuncs.com',
+            'endpoint' => 'linkedmall.cn-hangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',

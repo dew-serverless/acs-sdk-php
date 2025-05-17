@@ -556,6 +556,10 @@
                                 ],
                                 'maxItems' => 20,
                             ],
+                            'Level' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -1513,8 +1517,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'ehpcinstant.eu-central-1.aliyuncs.com',
+            'regionId' => 'us-west-1',
+            'endpoint' => 'ehpcinstant.us-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
@@ -1541,8 +1545,16 @@
             'endpoint' => 'ehpcinstant.cn-guangzhou.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'ehpcinstant.cn-hongkong.aliyuncs.com	',
+        ],
+        [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'ehpcinstant.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'ehpcinstant.eu-central-1.aliyuncs.com',
         ],
     ],
 ];

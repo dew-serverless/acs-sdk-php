@@ -327,6 +327,10 @@
                             ],
                         ],
                     ],
+                    'queryMaxLength' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'ETL' => [
@@ -1449,6 +1453,9 @@
                     'roleARN' => [
                         'type' => 'string',
                     ],
+                    'tagPackId' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'PolicyConfiguration' => [
@@ -1502,6 +1509,133 @@
                     'resourceGroupId' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+            'S3Ingestion' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'displayName' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'schedule' => [
+                        '$ref' => '#/components/schemas/Schedule',
+                        'required' => true,
+                    ],
+                    'configuration' => [
+                        '$ref' => '#/components/schemas/S3IngestionConfigurationSource',
+                        'required' => true,
+                    ],
+                    'createTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'scheduleId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'S3IngestionConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'logstore' => [
+                        'type' => 'string',
+                    ],
+                    'source' => [
+                        '$ref' => '#/components/schemas/S3IngestionConfigurationSource',
+                    ],
+                ],
+            ],
+            'S3IngestionConfigurationSource' => [
+                'type' => 'object',
+                'properties' => [
+                    'awsRegion' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'awsAccessKey' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'awsAccessKeySecret' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'bucket' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'compressionCodec' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'encoding' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'format' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'additionalProperties' => [
+                            'type' => 'any',
+                        ],
+                    ],
+                    'interval' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'pattern' => [
+                        'type' => 'string',
+                    ],
+                    'prefix' => [
+                        'type' => 'string',
+                    ],
+                    'awsUseSQS' => [
+                        'type' => 'boolean',
+                    ],
+                    'awsSQSQueueUrl' => [
+                        'type' => 'string',
+                    ],
+                    'useAwsSQSOnly' => [
+                        'type' => 'boolean',
+                    ],
+                    'tagPackId' => [
+                        'type' => 'boolean',
+                    ],
+                    'startTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'endTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'timeField' => [
+                        'type' => 'string',
+                    ],
+                    'timeFormat' => [
+                        'type' => 'string',
+                    ],
+                    'timePattern' => [
+                        'type' => 'string',
+                    ],
+                    'timeZone' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -6502,6 +6636,45 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'tags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'dashboardName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'displayName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateConsumerGroup' => [
@@ -10206,6 +10379,74 @@
                 ],
             ],
         ],
+        'ListAiTools' => [
+            'path' => '/ml/tool/list',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'CallAiTools' => [
+            'path' => '/ml/tool/call',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'toolName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'params' => [
+                                'type' => 'object',
+                                'additionalProperties' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'regionId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreateAnnotationLabel' => [
             'path' => '/ml/annotationlabel',
             'methods' => [
@@ -11718,6 +11959,337 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetMaxComputeExport' => [
+            'path' => '/maxcomputeexports/{mcExportName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'mcExportName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateMaxComputeExport' => [
+            'path' => '/maxcomputeexports',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'displayName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'configuration' => [
+                                '$ref' => '#/components/schemas/MaxComputeExportConfiguration',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteMaxComputeExport' => [
+            'path' => '/maxcomputeexports/{mcExportName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'mcExportName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListMaxComputeExports' => [
+            'path' => '/maxcomputeexports',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'logstore',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StartMaxComputeExport' => [
+            'path' => '/maxcomputeexports/{mcExportName}?action=START',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'mcExportName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'StopMaxComputeExport' => [
+            'path' => '/maxcomputeexports/{mcExportName}?action=STOP',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'mcExportName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateMaxComputeExport' => [
+            'path' => '/maxcomputeexports/{mcExportName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'mcExportName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'displayName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'configuration' => [
+                                '$ref' => '#/components/schemas/MaxComputeExportConfiguration',
+                                'required' => true,
+                            ],
+                        ],
                     ],
                 ],
             ],

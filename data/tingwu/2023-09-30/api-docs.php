@@ -403,12 +403,48 @@
                                                             'type' => 'string',
                                                             'required' => false,
                                                         ],
+                                                        'Identity' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
                                                     ],
                                                 ],
                                             ],
                                             'SpeakerMap' => [
                                                 'type' => 'object',
                                                 'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'IdentityRecognitionEnabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'IdentityRecognition' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'SceneIntroduction' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'IdentityContents' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'Name' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Description' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
                                             ],
                                         ],
                                     ],

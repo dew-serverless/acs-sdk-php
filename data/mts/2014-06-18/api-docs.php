@@ -2441,6 +2441,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'LabelCustomCategoryIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LabelCustomParamsConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'QuerySmarttagTemplateList' => [
@@ -2591,6 +2615,14 @@
                 ],
                 [
                     'name' => 'KeywordConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateConfig',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2954,7 +2986,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LabelPrompt',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4048,7 +4088,8 @@
                     'name' => 'StartTime',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -4056,7 +4097,8 @@
                     'name' => 'TotalTime',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -4216,7 +4258,8 @@
                     'name' => 'StartTime',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -4224,7 +4267,8 @@
                     'name' => 'TotalTime',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],

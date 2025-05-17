@@ -814,6 +814,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'BuildParameters',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetService' => [
@@ -2800,6 +2808,197 @@
                 ],
             ],
         ],
+        'ListServiceInstanceBill' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BillingCycle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Granularity',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BillingDate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListServiceInstanceLogs' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'LogSource',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Logstore',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Name' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'maxItems' => 20,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'SortOrder',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Descending',
+                            'Ascending',
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ListArtifactRisks' => [
             'methods' => [
                 'post',
@@ -3035,6 +3234,19 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'Endpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'OrgId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'RepoId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'DockerfilePath' => [
@@ -3261,6 +3473,19 @@
                                     ],
                                     'Branch' => [
                                         'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Endpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'OrgId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'RepoId' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
                                         'required' => false,
                                     ],
                                 ],
@@ -3896,7 +4121,6 @@
         'ListServiceUsages' => [
             'methods' => [
                 'get',
-                'post',
             ],
             'schemes' => [
                 'http',
@@ -4944,6 +5168,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SupportContacts',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Type' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'PushMeteringData' => [
@@ -5208,114 +5456,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListServiceInstanceLogs' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'RegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MaxResults',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'NextToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ServiceInstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'LogSource',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Logstore',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Filter',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Name' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'maxItems' => 20,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'SortOrder',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'Descending',
-                            'Ascending',
-                        ],
                     ],
                 ],
             ],

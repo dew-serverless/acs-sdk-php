@@ -2283,30 +2283,39 @@
                         'items' => [
                             'type' => 'object',
                             'properties' => [
-                                'URI' => [
+                                'ScaleType' => [
                                     'type' => 'string',
-                                    'required' => true,
                                 ],
-                                'Format' => [
+                                'Mode' => [
                                     'type' => 'string',
-                                    'required' => true,
                                 ],
                                 'StartTime' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                 ],
-                                'Interval' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                ],
-                                'Number' => [
+                                'TileHeight' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
+                                ],
+                                'URI' => [
+                                    'type' => 'string',
+                                    'required' => true,
                                 ],
                                 'ScaleWidth' => [
                                     'type' => 'number',
                                     'format' => 'float',
+                                ],
+                                'Pad' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'Format' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Number' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                 ],
                                 'ScaleHeight' => [
                                     'type' => 'number',
@@ -2316,60 +2325,18 @@
                                     'type' => 'integer',
                                     'format' => 'int32',
                                 ],
-                                'TileHeight' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                ],
-                                'Pad' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                ],
-                                'Margin' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                ],
-                                'ScaleType' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                        ],
-                    ],
-                    'Snapshots' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'object',
-                            'properties' => [
-                                'URI' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'Format' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'StartTime' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                ],
                                 'Interval' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => false,
                                 ],
-                                'Number' => [
+                                'Margin' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
                                 ],
-                                'Width' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                ],
-                                'Height' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                ],
-                                'ScaleType' => [
-                                    'type' => 'string',
+                                'Threshold' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                 ],
                             ],
                         ],
@@ -2379,19 +2346,34 @@
                         'items' => [
                             'type' => 'object',
                             'properties' => [
-                                'URI' => [
-                                    'type' => 'string',
-                                    'required' => true,
+                                'FrameRate' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
                                 ],
                                 'Format' => [
                                     'type' => 'string',
                                     'required' => true,
                                 ],
-                                'FrameRate' => [
+                                'Number' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'ScaleType' => [
+                                    'type' => 'string',
+                                ],
+                                'StartTime' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                 ],
-                                'StartTime' => [
+                                'Height' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                ],
+                                'URI' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Width' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                 ],
@@ -2400,11 +2382,29 @@
                                     'format' => 'double',
                                     'required' => false,
                                 ],
+                            ],
+                        ],
+                    ],
+                    'Snapshots' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Format' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
                                 'Number' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
                                 ],
-                                'Width' => [
+                                'ScaleType' => [
+                                    'type' => 'string',
+                                ],
+                                'Mode' => [
+                                    'type' => 'string',
+                                ],
+                                'StartTime' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                 ],
@@ -2412,8 +2412,22 @@
                                     'type' => 'number',
                                     'format' => 'double',
                                 ],
-                                'ScaleType' => [
+                                'URI' => [
                                     'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Width' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                ],
+                                'Interval' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                ],
+                                'Threshold' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                 ],
                             ],
                         ],
@@ -2452,49 +2466,59 @@
                     'DisableVideo' => [
                         'type' => 'boolean',
                     ],
-                    'Stream' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'integer',
-                            'format' => 'int32',
-                        ],
-                    ],
                     'TranscodeVideo' => [
                         'type' => 'object',
                         'properties' => [
-                            'Codec' => [
-                                'type' => 'string',
-                            ],
-                            'PixelFormat' => [
-                                'type' => 'string',
-                            ],
-                            'FrameRateOption' => [
-                                'type' => 'string',
-                            ],
                             'FrameRate' => [
                                 'type' => 'number',
                                 'format' => 'float',
                             ],
-                            'ResolutionOption' => [
+                            'FrameRateOption' => [
                                 'type' => 'string',
                             ],
-                            'Resolution' => [
-                                'type' => 'string',
-                            ],
-                            'AdaptiveResolutionDirection' => [
-                                'type' => 'boolean',
+                            'Refs' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                             ],
                             'ScaleType' => [
                                 'type' => 'string',
+                            ],
+                            'ResolutionOption' => [
+                                'type' => 'string',
+                            ],
+                            'BFrames' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                             ],
                             'Rotation' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
+                            'Bitrate' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'BufferSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'Codec' => [
+                                'type' => 'string',
+                            ],
+                            'CRF' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                            ],
                             'BitrateOption' => [
                                 'type' => 'string',
                             ],
-                            'Bitrate' => [
+                            'PixelFormat' => [
+                                'type' => 'string',
+                            ],
+                            'AdaptiveResolutionDirection' => [
+                                'type' => 'boolean',
+                            ],
+                            'MaxBitrate' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
@@ -2502,36 +2526,83 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
-                            'CRF' => [
-                                'type' => 'number',
-                                'format' => 'float',
-                            ],
-                            'BufferSize' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'MaxBitrate' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'BFrames' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'Refs' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
+                            'Resolution' => [
+                                'type' => 'string',
                             ],
                         ],
                     ],
                     'FilterVideo' => [
                         'type' => 'object',
                         'properties' => [
+                            'Delogos' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Dx' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
+                                        ],
+                                        'Dy' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
+                                        ],
+                                        'StartTime' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                        ],
+                                        'Duration' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                        ],
+                                        'Height' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
+                                        ],
+                                        'ReferPos' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Width' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Speed' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                            ],
                             'Watermarks' => [
                                 'type' => 'array',
                                 'items' => [
                                     'type' => 'object',
                                     'properties' => [
+                                        'StartTime' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                        ],
+                                        'FontColor' => [
+                                            'type' => 'string',
+                                        ],
+                                        'BorderColor' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Duration' => [
+                                            'type' => 'number',
+                                            'format' => 'double',
+                                        ],
+                                        'FontApha' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
+                                        ],
+                                        'BorderWidth' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                        'URI' => [
+                                            'type' => 'string',
+                                        ],
                                         'Type' => [
                                             'type' => 'string',
                                         ],
@@ -2543,16 +2614,9 @@
                                             'type' => 'number',
                                             'format' => 'float',
                                         ],
-                                        'StartTime' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                        ],
-                                        'Duration' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                        ],
-                                        'ReferPos' => [
-                                            'type' => 'string',
+                                        'FontSize' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
                                         ],
                                         'Content' => [
                                             'type' => 'string',
@@ -2560,63 +2624,6 @@
                                         'FontName' => [
                                             'type' => 'string',
                                         ],
-                                        'FontSize' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                        ],
-                                        'FontColor' => [
-                                            'type' => 'string',
-                                        ],
-                                        'FontApha' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                        ],
-                                        'BorderWidth' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                        ],
-                                        'BorderColor' => [
-                                            'type' => 'string',
-                                        ],
-                                        'URI' => [
-                                            'type' => 'string',
-                                        ],
-                                        'Width' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                        ],
-                                        'Height' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'Delogos' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'StartTime' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                        ],
-                                        'Duration' => [
-                                            'type' => 'number',
-                                            'format' => 'double',
-                                        ],
-                                        'Dx' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                        ],
-                                        'Dy' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                        ],
-                                        'Width' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                        ],
                                         'Height' => [
                                             'type' => 'number',
                                             'format' => 'float',
@@ -2624,9 +2631,20 @@
                                         'ReferPos' => [
                                             'type' => 'string',
                                         ],
+                                        'Width' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
+                                        ],
                                     ],
                                 ],
                             ],
+                        ],
+                    ],
+                    'Stream' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int32',
                         ],
                     ],
                 ],
@@ -7411,6 +7429,22 @@
                                             ],
                                         ],
                                     ],
+                                ],
+                                'Attached' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'AlignMode' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DisableVideo' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'DisableAudio' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
                                 ],
                             ],
                         ],

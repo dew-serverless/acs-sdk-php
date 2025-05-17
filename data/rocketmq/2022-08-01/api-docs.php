@@ -2786,6 +2786,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'instanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'filter',
                     'in' => 'query',
                     'schema' => [
@@ -3127,6 +3135,14 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'topicName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [

@@ -950,13 +950,16 @@
             'TableSummaryModel' => [
                 'type' => 'object',
                 'properties' => [
-                    'SchemaName' => [
-                        'type' => 'string',
-                    ],
                     'TableName' => [
                         'type' => 'string',
                     ],
+                    'Owner' => [
+                        'type' => 'string',
+                    ],
                     'TableType' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
                         'type' => 'string',
                     ],
                     'TableSize' => [
@@ -969,13 +972,192 @@
                     'UpdateTime' => [
                         'type' => 'string',
                     ],
+                    'MvDetailModel' => [
+                        '$ref' => '#/components/schemas/open_struct_MvDetailModel',
+                    ],
+                    'SchemaName' => [
+                        'type' => 'string',
+                    ],
                     'SQL' => [
                         'type' => 'string',
                     ],
+                ],
+            ],
+            'open_struct_MVRecommendResultModel' => [
+                'type' => 'object',
+                'properties' => [
+                    'BaseTables' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/open_struct_MvBaseTableDetailModel',
+                        ],
+                    ],
+                    'AcceleratedQueriesCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SupportIncrementalRefresh' => [
+                        'type' => 'boolean',
+                    ],
+                    'SubqueryId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SavedScanbytes' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Subquery' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'open_struct_MvBaseTableDetailModel' => [
+                'type' => 'object',
+                'properties' => [
+                    'TableName' => [
+                        'type' => 'string',
+                    ],
+                    'DataVolumn' => [
+                        'type' => 'string',
+                    ],
+                    'EnableBinlog' => [
+                        'type' => 'boolean',
+                    ],
+                    'SchemaName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'open_struct_MvDetailModel' => [
+                'type' => 'object',
+                'properties' => [
+                    'FirstRefreshTime' => [
+                        'type' => 'string',
+                    ],
+                    'QueryRewriteEnabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'ExplicitHit' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'BaseTableNames' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'array',
+                            'items' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'IsInactive' => [
+                        'type' => 'boolean',
+                    ],
+                    'RemoteSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'LocalSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'RefreshState' => [
+                        'type' => 'string',
+                    ],
+                    'RefreshInterval' => [
+                        'type' => 'string',
+                    ],
+                    'ImplicitHit' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'UpdatedAt' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceGroup' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'open_struct_MvRecommendSubTaskModel' => [
+                'type' => 'object',
+                'properties' => [
+                    'SubQueriesCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'EndTime' => [
+                        'type' => 'string',
+                    ],
+                    'StartTime' => [
+                        'type' => 'string',
+                    ],
+                    'SubtaskId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ScanQueriesCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'open_struct_MvRecommendTaskModel' => [
+                'type' => 'object',
+                'properties' => [
                     'Description' => [
                         'type' => 'string',
                     ],
-                    'Owner' => [
+                    'CreatedTime' => [
+                        'type' => 'string',
+                    ],
+                    'LastRunAt' => [
+                        'type' => 'string',
+                    ],
+                    'TaskName' => [
+                        'type' => 'string',
+                    ],
+                    'ScanQueriesRange' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'SchedulingSettings' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'open_struct_RefreshJobModel' => [
+                'type' => 'object',
+                'properties' => [
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'EndTime' => [
+                        'type' => 'string',
+                    ],
+                    'RefreshModel' => [
+                        'type' => 'string',
+                    ],
+                    'StartTime' => [
+                        'type' => 'string',
+                    ],
+                    'RefreshInterval' => [
+                        'type' => 'string',
+                    ],
+                    'Processid' => [
+                        'type' => 'string',
+                    ],
+                    'SchemaName' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceGroup' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1604,58 +1786,6 @@
                 ],
             ],
         ],
-        'DeleteProcessInstance' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'RegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DBClusterId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ProjectCode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ProcessInstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'DescribeClusterNetInfo' => [
             'methods' => [
                 'post',
@@ -1905,6 +2035,11 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'Cover',
+                            'Append',
+                            'Delete',
+                        ],
                     ],
                 ],
             ],
@@ -2099,6 +2234,73 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RayConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'HeadSpec' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Category' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'BASIC',
+                                    'HIGH_AVAILABILITY',
+                                ],
+                            ],
+                            'WorkerGroups' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'GroupName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'AllocateUnit' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'MaxWorkerQuantity' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'MinWorkerQuantity' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'WorkerDiskCapacity' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'WorkerSpecName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'WorkerSpecType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'CPU',
+                                                'GPU',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -2342,6 +2544,73 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RayConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'HeadSpec' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Category' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'BASIC',
+                                    'HIGH_AVAILABILITY',
+                                ],
+                            ],
+                            'WorkerGroups' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'AllocateUnit' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'GroupName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'MaxWorkerQuantity' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'MinWorkerQuantity' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'WorkerDiskCapacity' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'WorkerSpecName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'WorkerSpecType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'CPU',
+                                                'GPU',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -4803,7 +5072,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'DBClusterId',
@@ -5100,7 +5369,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'DBClusterId',
@@ -6510,6 +6779,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'ShowMvBaseTable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDatabaseObjects' => [
@@ -7094,6 +7371,7 @@
         'DescribeDiagnosisSQLInfo' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -13117,34 +13395,447 @@
                 ],
             ],
         ],
+        'DescribeInclinedTables' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TableType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '10',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '2147483647',
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeTableStatistics' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '30',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '2147483647',
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Keyword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SchemaName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeLLMAnswer' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Query',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeLLMSimilarQuestions' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Query',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeResourceGroupSpec' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAdbMySqlTableMeta' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Schema',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TableName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAdbMySqlIndexes' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Schema',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TableName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSQLWebSocketDomain' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-qingdao',
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'adb.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'adb.ap-northeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
             'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'adb.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'adb.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'adb.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'adb.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'adb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'adb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
+            'regionId' => 'cn-hangzhou-finance',
             'endpoint' => 'adb.aliyuncs.com',
         ],
         [
@@ -13152,16 +13843,12 @@
             'endpoint' => 'adb.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'adb.cn-hongkong.aliyuncs.com',
+            'regionId' => 'me-central-1',
+            'endpoint' => 'adb.me-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'adb.ap-northeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'adb.ap-northeast-2.aliyuncs.com',
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'adb.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',
@@ -13172,56 +13859,80 @@
             'endpoint' => 'adb.ap-southeast-2.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'adb.cn-hongkong.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'adb.ap-southeast-3.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'adb.ap-southeast-5.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-6',
-            'endpoint' => 'adb.ap-southeast-6.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'adb.us-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'adb.us-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'adb.eu-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'adb.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'adb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'adb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'adb.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-7',
             'endpoint' => 'adb.ap-southeast-7.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-finance-1',
+            'regionId' => 'us-east-1',
+            'endpoint' => 'adb.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-mybk',
             'endpoint' => 'adb.aliyuncs.com',
         ],
         [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'adb.me-central-1.aliyuncs.com',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'adb.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'adb.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'adb.ap-southeast-6.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'adb.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-north-2-gov-1',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'adb.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'adb.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'adb.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'adb.aliyuncs.com',
         ],
     ],
 ];

@@ -297,6 +297,125 @@
             ],
             'parameters' => [],
         ],
+        'DescribeMultiPrice' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'OrderItems',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Amount' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'ResourceType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PeriodUnit' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Components' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Key' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 100,
+                                ],
+                                'PromotionId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Period' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'InstanceIds' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'minItems' => 0,
+                                    'maxItems' => 100,
+                                ],
+                                'ResourceIds' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'minItems' => 0,
+                                    'maxItems' => 100,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'OrderType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PackageCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResellerOwnerUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

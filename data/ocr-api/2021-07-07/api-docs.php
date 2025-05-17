@@ -233,6 +233,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'Llm_rec' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -881,6 +885,14 @@
                 ],
                 [
                     'name' => 'OutputQualityInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Llm_rec',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',

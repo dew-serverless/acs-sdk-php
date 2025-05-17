@@ -111,6 +111,7 @@
                             'enterprise',
                             'vip',
                             'serverless',
+                            'provisioned',
                         ],
                     ],
                 ],
@@ -122,6 +123,7 @@
                         'required' => false,
                         'enum' => [
                             'onDemand',
+                            'provisioned',
                         ],
                     ],
                 ],
@@ -232,6 +234,27 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ProvisionedCapacity',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'shared',
+                            'dedicated',
+                        ],
+                    ],
+                ],
             ],
         ],
         'GetInstance' => [
@@ -313,6 +336,8 @@
                             'professional',
                             'enterprise',
                             'vip',
+                            'serverless',
+                            'provisioned',
                         ],
                     ],
                 ],
@@ -324,6 +349,7 @@
                         'required' => false,
                         'enum' => [
                             'onDemand',
+                            'provisioned',
                         ],
                     ],
                 ],
@@ -416,6 +442,27 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ProvisionedCapacity',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Edition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'shared',
+                            'dedicated',
+                        ],
                     ],
                 ],
             ],
@@ -1552,7 +1599,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],

@@ -1096,5 +1096,9 @@
             'regionId' => 'ap-southeast-7',
             'endpoint' => 'actiontrail.ap-southeast-7.aliyuncs.com',
         ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'actiontrail.na-south-1.aliyuncs.com',
+        ],
     ],
 ];

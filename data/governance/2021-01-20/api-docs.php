@@ -728,6 +728,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'LensCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListEvaluationScoreHistory' => [
@@ -836,6 +844,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SnapshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Scope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListEvaluationResults' => [
@@ -895,6 +919,30 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'SnapshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Scope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LensCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

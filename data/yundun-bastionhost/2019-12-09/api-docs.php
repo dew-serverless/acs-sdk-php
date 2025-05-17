@@ -1344,6 +1344,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PrefKex',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateDatabase' => [
@@ -6464,6 +6472,14 @@
                             'ssh',
                             'sftp',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'OperationNote',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

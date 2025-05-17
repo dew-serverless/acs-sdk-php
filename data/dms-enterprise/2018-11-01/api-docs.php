@@ -2468,6 +2468,72 @@
                 ],
             ],
         ],
+        'SimplyAddInstance' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Host',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Port',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DatabaseUser',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DatabasePassword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'GetOpLog' => [
             'methods' => [
                 'post',
@@ -3582,6 +3648,15 @@
                         'minimum' => '0',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDataLakeDatabase' => [
@@ -3634,6 +3709,15 @@
                         'maximum' => '9223372036854775807',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListDataLakeCatalog' => [
@@ -3678,6 +3762,15 @@
                         'maximum' => '9223372036854775807',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDataLakeCatalog' => [
@@ -3720,6 +3813,15 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3803,6 +3905,15 @@
                         'maximum' => '9223372036854775807',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDataLakeTable' => [
@@ -3861,6 +3972,15 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3951,6 +4071,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateDataLakeTable' => [
@@ -4019,6 +4148,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateDataLakePartition' => [
@@ -4079,6 +4217,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4158,6 +4305,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4251,6 +4407,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListDataLakeTable' => [
@@ -4337,6 +4502,15 @@
                         'minimum' => '0',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListDataLakePartitionName' => [
@@ -4413,6 +4587,15 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4499,6 +4682,15 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4592,6 +4784,15 @@
                         'minimum' => '0',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDataLakePartition' => [
@@ -4663,6 +4864,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDataLakeTable' => [
@@ -4715,6 +4925,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4801,6 +5020,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDataLakeDatabase' => [
@@ -4845,6 +5073,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4905,6 +5142,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -4995,6 +5241,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateDataLakeDatabase' => [
@@ -5074,6 +5329,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'BatchUpdateDataLakePartitions' => [
@@ -5138,6 +5402,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -5222,6 +5495,15 @@
                 ],
                 [
                     'name' => 'Tid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -5581,6 +5863,15 @@
                         'minimum' => '0',
                     ],
                 ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListDataLakeFunctionName' => [
@@ -5657,6 +5948,15 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '0',
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -11386,6 +11686,76 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GenerateSqlFromNL' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DbId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Knowledge',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Question',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Dialect',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Level',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'base',
+                            'medium',
+                            'complex',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Model',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -17250,6 +17620,65 @@
                 ],
             ],
         ],
+        'UpdateTaskContentV2' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NodeId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NodeContent',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'TryRunTaskFlow' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DagId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'CreateLakeHouseSpace' => [
             'methods' => [
                 'post',
@@ -17814,39 +18243,6 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '9223372036854775807',
-                    ],
-                ],
-            ],
-        ],
-        'UpdateTaskContentV2' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NodeId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NodeContent',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],

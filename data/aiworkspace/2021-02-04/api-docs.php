@@ -74,6 +74,81 @@
                     ],
                 ],
             ],
+            'Connection' => [
+                'type' => 'object',
+                'properties' => [
+                    'ConnectionType' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'Accessibility' => [
+                        'type' => 'string',
+                    ],
+                    'Secrets' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'WorkspaceId' => [
+                        'type' => 'string',
+                    ],
+                    'Creator' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceMeta' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'InstanceName' => [
+                                'type' => 'string',
+                            ],
+                            'InstanceId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'GmtModifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'ConnectionName' => [
+                        'type' => 'string',
+                    ],
+                    'ConnectionId' => [
+                        'type' => 'string',
+                    ],
+                    'Configs' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'Models' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Model' => [
+                                    'type' => 'string',
+                                ],
+                                'DisplayName' => [
+                                    'type' => 'string',
+                                ],
+                                'ModelType' => [
+                                    'type' => 'string',
+                                ],
+                                'ToolCall' => [
+                                    'type' => 'boolean',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'GmtCreateTime' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Dataset' => [
                 'type' => 'object',
                 'properties' => [
@@ -193,6 +268,29 @@
                     'Tags' => [
                         'type' => 'string',
                     ],
+                    'ThumbnailUrl' => [
+                        'type' => 'string',
+                    ],
+                    'MetaAttributes' => [
+                        'type' => 'string',
+                    ],
+                    'SemanticIndexJobId' => [
+                        'type' => 'string',
+                    ],
+                    'SemanticIndexUpdateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'FileCreateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'FileType' => [
+                        'type' => 'string',
+                    ],
+                    'ContentType' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'DatasetFileMetaConentUpdate' => [
@@ -235,6 +333,16 @@
                     'DatasetFileMetaId' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                    'SemanticIndexJobId' => [
+                        'type' => 'string',
+                    ],
+                    'SemanticIndexUpdateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'FileFingerPrint' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -283,6 +391,7 @@
                     ],
                     'Tags' => [
                         'type' => 'string',
+                        'deprecated' => false,
                     ],
                 ],
             ],
@@ -335,6 +444,20 @@
                     'DatasetFileMetaId' => [
                         'type' => 'string',
                     ],
+                    'FileDir' => [
+                        'type' => 'string',
+                    ],
+                    'TagUpdateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
+                    'SemanticIndexJobId' => [
+                        'type' => 'string',
+                    ],
+                    'SemanticIndexUpdateTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                    ],
                 ],
             ],
             'DatasetFileMetaResponse' => [
@@ -351,6 +474,18 @@
                     'Uri' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'DatasetFileMetasStat' => [
+                'type' => 'object',
+                'properties' => [
+                    'Key' => [
+                        'type' => 'string',
+                    ],
+                    'Count' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],
@@ -655,6 +790,12 @@
                             '$ref' => '#/components/schemas/Label',
                         ],
                     ],
+                    'Tags' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Label',
+                        ],
+                    ],
                     'OrderNumber' => [
                         'type' => 'integer',
                         'format' => 'int64',
@@ -789,6 +930,35 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+            ],
+            'Prompt' => [
+                'type' => 'object',
+                'properties' => [
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'ModifyTime' => [
+                        'type' => 'string',
+                    ],
+                    'PromptName' => [
+                        'type' => 'string',
+                    ],
+                    'FrameworkType' => [
+                        'type' => 'string',
+                    ],
+                    'FrameworkContent' => [
+                        'type' => 'string',
+                    ],
+                    'PromptId' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'Accessibility' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1895,6 +2065,14 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'SourceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SourceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2283,177 +2461,8 @@
                 ],
             ],
         ],
-        'CreateWorkspace' => [
-            'path' => '/api/v1/workspaces',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'WorkspaceName' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'Description' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'DisplayName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'EnvTypes' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                            ],
-                            'ResourceGroupId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListWorkspaces' => [
-            'path' => '/api/v1/workspaces',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SortBy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Order',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'WorkspaceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ModuleList',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Option',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Verbose',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Fields',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'WorkspaceIds',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetWorkspace' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}',
+        'ListPermissions' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/permissions',
             'methods' => [
                 'get',
             ],
@@ -2474,150 +2483,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Verbose',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteWorkspace' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateWorkspace' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'DisplayName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'Description' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetDefaultWorkspace' => [
-            'path' => '/api/v1/defaultWorkspaces',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Verbose',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateDefaultWorkspace' => [
-            'path' => '/api/v1/defaultWorkspaces',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'WorkspaceId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
                     ],
                 ],
             ],
@@ -2693,460 +2558,6 @@
                     'schema' => [
                         'type' => 'object',
                         'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListPermissions' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}/permissions',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ListWorkspaceUsers' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}/users',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'UserName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateMember' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}/members',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'Members' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'UserId' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'Roles' => [
-                                            'type' => 'array',
-                                            'required' => true,
-                                            'items' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListMembers' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}/members',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Roles',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MemberName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetMember' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}/member',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'UserId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MemberId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteMembers' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}/members',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MemberIds',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'AddMemberRole' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}/members/{MemberId}/roles/{RoleName}',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MemberId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RoleName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'RemoveMemberRole' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}/members/{MemberId}/roles/{RoleName}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MemberId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RoleName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateWorkspaceResource' => [
-            'path' => '/api/v1/workspaces/{WorkspaceId}/resources',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'Resources' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => true,
-                                    'properties' => [
-                                        'Name' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'ProductType' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'EnvType' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'WorkspaceId' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'IsDefault' => [
-                                            'type' => 'boolean',
-                                            'required' => false,
-                                        ],
-                                        'Quotas' => [
-                                            'type' => 'array',
-                                            'required' => false,
-                                            'items' => [
-                                                'type' => 'object',
-                                                'required' => false,
-                                                'properties' => [
-                                                    'Id' => [
-                                                        'type' => 'string',
-                                                        'required' => true,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                        'Spec' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                        ],
-                                        'GroupName' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'ResourceType' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Labels' => [
-                                            'type' => 'array',
-                                            'required' => false,
-                                            'items' => [
-                                                'type' => 'object',
-                                                'required' => false,
-                                                'properties' => [
-                                                    'Key' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
-                                                    'Value' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'Option' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
                     ],
                 ],
             ],
@@ -3424,6 +2835,1085 @@
                 ],
             ],
         ],
+        'CreateWorkspaceResource' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/resources',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Resources' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ProductType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'EnvType' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'WorkspaceId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'IsDefault' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'Quotas' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'Spec' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                        ],
+                                        'GroupName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ResourceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Labels' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Key' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Value' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Option' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'AddMemberRole' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/members/{MemberId}/roles/{RoleName}',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MemberId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RoleName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'RemoveMemberRole' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/members/{MemberId}/roles/{RoleName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MemberId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RoleName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteMembers' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/members',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MemberIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetMember' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/member',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MemberId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListMembers' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/members',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Roles',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MemberName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateMember' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/members',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Members' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'UserId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Roles' => [
+                                            'type' => 'array',
+                                            'required' => true,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateConfigs' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/configs',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Configs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'ConfigKey' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ConfigValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'CategoryName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Labels' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Key' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Value' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetConfig' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/config',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CategoryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Verbose',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListConfigs' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/configs',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CategoryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigKeys',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Labels',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Verbose',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteConfig' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/configs/{ConfigKey}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigKey',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CategoryName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Labels',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateConfig' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/config',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ConfigKey' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ConfigValue' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CategoryName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Labels' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListWorkspaces' => [
+            'path' => '/api/v1/workspaces',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ModuleList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Option',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Verbose',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Fields',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateWorkspace' => [
+            'path' => '/api/v1/workspaces',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'WorkspaceName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'DisplayName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'EnvTypes' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                            'ResourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetWorkspace' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Verbose',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteWorkspace' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateWorkspace' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'DisplayName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetDefaultWorkspace' => [
+            'path' => '/api/v1/defaultWorkspaces',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Verbose',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateDefaultWorkspace' => [
+            'path' => '/api/v1/defaultWorkspaces',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'WorkspaceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListWorkspaceUsers' => [
+            'path' => '/api/v1/workspaces/{WorkspaceId}/users',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'ListQuotas' => [
             'path' => '/api/v1/quotas',
             'methods' => [
@@ -3445,6 +3935,70 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetDatasetFileMetasStatistics' => [
+            'path' => '/api/v1/statistics/datasets/{DatasetId}/datasetfilemetas',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DatasetId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DatasetVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AggregateBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -4116,6 +4670,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -4158,6 +4713,117 @@
                     'schema' => [
                         'type' => 'string',
                         'format' => 'iso8601_normal',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'QueryImage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ThumbnailMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'QueryTagsIncludeAll',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'QueryTagsIncludeAny',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'QueryTagsExclude',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'QueryFileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'QueryFileDir',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'QueryFileTypeIncludeAny',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'StartTagUpdateTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'format' => 'iso8601_normal',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndTagUpdateTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'format' => 'iso8601_normal',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -5778,6 +6444,14 @@
                                     'required' => false,
                                 ],
                             ],
+                            'Tag' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/Label',
+                                    'required' => false,
+                                ],
+                            ],
                             'ModelDescription' => [
                                 'type' => 'string',
                                 'required' => false,
@@ -6074,6 +6748,29 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -6708,6 +7405,149 @@
                 ],
                 [
                     'name' => 'LabelKeys',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SetUserConfigs' => [
+            'path' => '/api/v1/userconfigs',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Configs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'ConfigKey' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ConfigValue' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'CategoryName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Scope' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteUserConfig' => [
+            'path' => '/api/v1/userconfigs/{CategoryName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ConfigKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CategoryName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Scope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListUserConfigs' => [
+            'path' => '/api/v1/userconfigs',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ConfigKeys',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CategoryNames',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

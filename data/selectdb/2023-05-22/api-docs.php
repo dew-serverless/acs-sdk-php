@@ -357,6 +357,59 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'DeployScheme',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'multi_az',
+                            'single_az',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MultiZone',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ZoneId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'VSwitchIds' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 3,
+                    ],
+                ],
+                [
+                    'name' => 'AddVPCIPs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeDBInstances' => [
@@ -900,6 +953,106 @@
                 ],
             ],
         ],
+        'CreateDBClusterBinding' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBClusterIdBak',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteDBClusterBinding' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBClusterIdBak',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'CreateDBCluster' => [
             'methods' => [
                 'post',
@@ -1227,6 +1380,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ModifyClusterChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2068,6 +2229,38 @@
                 ],
             ],
         ],
+        'DescribeRegions' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Region',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [
@@ -2088,7 +2281,7 @@
         ],
         [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'selectdb.aliyuncs.com',
+            'endpoint' => 'selectdb.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',
@@ -2104,7 +2297,7 @@
         ],
         [
             'regionId' => 'ap-southeast-1',
-            'endpoint' => 'selectdb.aliyuncs.com',
+            'endpoint' => 'selectdb.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -2161,6 +2354,10 @@
         [
             'regionId' => 'ap-northeast-2',
             'endpoint' => 'selectdb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'selectdb.cn-heyuan-acdr-1.aliyuncs.com',
         ],
     ],
 ];

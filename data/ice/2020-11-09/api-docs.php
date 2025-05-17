@@ -95,6 +95,9 @@
                                     'type' => 'string',
                                 ],
                             ],
+                            'CharBreak' => [
+                                'type' => 'boolean',
+                            ],
                             'EnableVoiceInterrupt' => [
                                 'type' => 'boolean',
                             ],
@@ -156,6 +159,12 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
+                            'AsrHotWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
                             'EnablePushToTalk' => [
                                 'type' => 'boolean',
                             ],
@@ -164,12 +173,6 @@
                     'VisionChat' => [
                         'type' => 'object',
                         'properties' => [
-                            'InterruptWords' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'string',
-                                ],
-                            ],
                             'Greeting' => [
                                 'type' => 'string',
                             ],
@@ -187,6 +190,36 @@
                                     ],
                                 ],
                             ],
+                            'WorkflowOverrideParams' => [
+                                'type' => 'string',
+                            ],
+                            'EnableIntelligentSegment' => [
+                                'type' => 'boolean',
+                            ],
+                            'VoiceIdList' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'CharBreak' => [
+                                'type' => 'boolean',
+                            ],
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                            ],
+                            'VoiceprintId' => [
+                                'type' => 'string',
+                            ],
+                            'GracefulShutdown' => [
+                                'type' => 'boolean',
+                            ],
+                            'InterruptWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
                             'UserOnlineTimeout' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
@@ -198,14 +231,8 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
-                            'WorkflowOverrideParams' => [
-                                'type' => 'string',
-                            ],
                             'LlmSystemPrompt' => [
                                 'type' => 'string',
-                            ],
-                            'EnableIntelligentSegment' => [
-                                'type' => 'boolean',
                             ],
                             'BailianAppParams' => [
                                 'type' => 'string',
@@ -229,18 +256,6 @@
                                 'type' => 'integer',
                                 'format' => 'int64',
                             ],
-                            'VoiceIdList' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                            'EnableVoiceInterrupt' => [
-                                'type' => 'boolean',
-                            ],
-                            'VoiceprintId' => [
-                                'type' => 'string',
-                            ],
                             'VoiceId' => [
                                 'type' => 'string',
                             ],
@@ -251,8 +266,11 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                             ],
-                            'GracefulShutdown' => [
-                                'type' => 'boolean',
+                            'AsrHotWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
                             ],
                             'EnablePushToTalk' => [
                                 'type' => 'boolean',
@@ -294,6 +312,9 @@
                             'AvatarId' => [
                                 'type' => 'string',
                             ],
+                            'CharBreak' => [
+                                'type' => 'boolean',
+                            ],
                             'EnableVoiceInterrupt' => [
                                 'type' => 'boolean',
                             ],
@@ -354,6 +375,12 @@
                             'MaxIdleTime' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                            ],
+                            'AsrHotWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
                             ],
                             'EnablePushToTalk' => [
                                 'type' => 'boolean',
@@ -790,6 +817,97 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+            ],
+            'LiveManifestConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'SegmentCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'AdMarkers' => [
+                        'type' => 'string',
+                    ],
+                    'MinVideoBitrate' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'MinBufferTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'PresentationDelay' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'StreamOrder' => [
+                        'type' => 'string',
+                    ],
+                    'MaxVideoBitrate' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'DateTimeInterval' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'SegmentTemplateFormat' => [
+                        'type' => 'string',
+                    ],
+                    'MinUpdatePeriod' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ManifestDuration' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
+            'LivePackagingConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'LiveManifestConfigs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/LiveManifestConfig',
+                        ],
+                    ],
+                    'UseAudioRenditionGroups' => [
+                        'type' => 'boolean',
+                    ],
+                    'DrmConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'SystemIds' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'RotatePeriod' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'ContentId' => [
+                                'type' => 'string',
+                            ],
+                            'EncryptionMethod' => [
+                                'type' => 'string',
+                            ],
+                            'IV' => [
+                                'type' => 'string',
+                            ],
+                            'Url' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'SegmentDuration' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],
@@ -2065,6 +2183,81 @@
                 ],
             ],
         ],
+        'QueryMediaIndexJob' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SearchLibName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MediaId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'SearchIndexJobRerun' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SearchLibName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MediaIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Task',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'InsertMediaToSearchLib' => [
             'methods' => [
                 'post',
@@ -2199,81 +2392,6 @@
                 ],
                 [
                     'name' => 'MsgBody',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'QueryMediaIndexJob' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SearchLibName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MediaId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'SearchIndexJobRerun' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'SearchLibName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MediaIds',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Task',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -9280,6 +9398,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TemplateConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetBatchMediaProducingJob' => [
@@ -9826,6 +9952,24 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Type',
                     'in' => 'query',
@@ -11141,6 +11285,64 @@
                 ],
             ],
         ],
+        'SubmitSegmentationJob' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InputConfig',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OutputConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'JobParams',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'GetSmartHandleJob' => [
             'methods' => [
                 'get',
@@ -11327,7 +11529,16 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [],
+            'parameters' => [
+                [
+                    'name' => 'VoiceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
         ],
         'StartAIAgentInstance' => [
             'methods' => [
@@ -11751,6 +11962,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AudioOssPath',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableAudioRecording',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeNotifyConfig' => [
@@ -11934,6 +12161,14 @@
                     ],
                 ],
                 [
+                    'name' => 'RoundLimit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'StartTime',
                     'in' => 'query',
                     'schema' => [
@@ -12007,6 +12242,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NodeId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -12300,9 +12543,21 @@
                                 'type' => 'string',
                                 'required' => true,
                             ],
+                            'Biz' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'IMS',
+                                    'VOD',
+                                ],
+                            ],
                             'Media' => [
                                 'type' => 'string',
                                 'required' => true,
+                            ],
+                            'OutputUrl' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -12770,7 +13025,8 @@
                     'name' => 'StartTime',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -12778,7 +13034,8 @@
                     'name' => 'TotalTime',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -13020,7 +13277,8 @@
                     'name' => 'StartTime',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -13028,7 +13286,8 @@
                     'name' => 'TotalTime',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -14538,6 +14797,10 @@
                                         ],
                                     ],
                                 ],
+                                'VideoCodecType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],
@@ -14897,6 +15160,10 @@
                                             ],
                                         ],
                                     ],
+                                ],
+                                'VideoCodecType' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -15415,6 +15682,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'InputName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateMediaConnectFlowInput' => [
@@ -15487,6 +15762,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InputName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

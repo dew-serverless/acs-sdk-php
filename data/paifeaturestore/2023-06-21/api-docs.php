@@ -1851,6 +1851,43 @@
                                                 'required' => false,
                                             ],
                                         ],
+                                        'Transform' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Type' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'LLMConfigId' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                    ],
+                                                    'Input' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'object',
+                                                            'required' => false,
+                                                            'properties' => [
+                                                                'Name' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                                'Type' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
                                     ],
                                 ],
                             ],

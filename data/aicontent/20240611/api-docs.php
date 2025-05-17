@@ -7,6 +7,31 @@
     ],
     'components' => [
         'schemas' => [
+            'AliyunConsoleServiceInfoDTO' => [
+                'type' => 'object',
+                'properties' => [
+                    'serviceCode' => [
+                        'type' => 'string',
+                    ],
+                    'serviceName' => [
+                        'type' => 'string',
+                    ],
+                    'freeCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'freeConcurrencyCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'documentUrl' => [
+                        'type' => 'string',
+                    ],
+                    'buyUrl' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'OpenApiMultiResponse' => [
                 'type' => 'object',
                 'properties' => [
@@ -151,6 +176,229 @@
                     ],
                 ],
             ],
+            'OralEvaluationStatisticsCallsCountRequest' => [
+                'type' => 'object',
+                'properties' => [
+                    'projectId' => [
+                        'type' => 'string',
+                    ],
+                    'startTime' => [
+                        'type' => 'string',
+                    ],
+                    'endTime' => [
+                        'type' => 'string',
+                    ],
+                    'granularity' => [
+                        'type' => 'string',
+                    ],
+                    'applicationAccessId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'OralEvaluationStatisticsCallsCountResponse' => [
+                'type' => 'object',
+                'properties' => [
+                    'projectId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'projectData' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'applicationInternalId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ApplicationData' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'applicationAccessId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Data' => [
+                                            'type' => 'array',
+                                            'items' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'name' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'count' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'OralEvaluationStatisticsConcurrentCountRequest' => [
+                'type' => 'object',
+                'properties' => [
+                    'projectId' => [
+                        'type' => 'string',
+                    ],
+                    'startTime' => [
+                        'type' => 'string',
+                    ],
+                    'endTime' => [
+                        'type' => 'string',
+                    ],
+                    'granularity' => [
+                        'type' => 'string',
+                    ],
+                    'applicationAccessId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'OralEvaluationStatisticsConcurrentCountResponse' => [
+                'type' => 'object',
+                'properties' => [
+                    'projectId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'projectData' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'applicationInternalId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ApplicationData' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'applicationAccessId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Data' => [
+                                            'type' => 'array',
+                                            'items' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'name' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'count' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'OralEvaluationStatisticsErrorCountRequest' => [
+                'type' => 'object',
+                'properties' => [
+                    'projectId' => [
+                        'type' => 'string',
+                    ],
+                    'startTime' => [
+                        'type' => 'string',
+                    ],
+                    'endTime' => [
+                        'type' => 'string',
+                    ],
+                    'granularity' => [
+                        'type' => 'string',
+                    ],
+                    'errorCode' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'applicationAccessId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'OralEvaluationStatisticsErrorCountResponse' => [
+                'type' => 'object',
+                'properties' => [
+                    'projectId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'ProjectData' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'applicationInternalId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ApplicationData' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'applicationAccessId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Data' => [
+                                            'type' => 'array',
+                                            'items' => [
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'ErrorCode' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'ErrorMessage' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'Data' => [
+                                                        'type' => 'array',
+                                                        'items' => [
+                                                            'type' => 'object',
+                                                            'properties' => [
+                                                                'name' => [
+                                                                    'type' => 'string',
+                                                                    'required' => true,
+                                                                ],
+                                                                'count' => [
+                                                                    'type' => 'integer',
+                                                                    'format' => 'int32',
+                                                                    'required' => true,
+                                                                ],
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'Personalizedtxt2imgAddInferenceJobCmd' => [
                 'type' => 'object',
                 'properties' => [
@@ -253,6 +501,291 @@
         ],
     ],
     'apis' => [
+        'ExecuteHundredThousandWhysDialogue' => [
+            'path' => '/pop/api/v1/intelligentAgent/tenWWhys/executeDialogue',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+                'application/octet-stream',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'chatId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'messages' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'role' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'enum' => [
+                                                'user',
+                                                'assistant',
+                                            ],
+                                        ],
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'ageGroup' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'CHILDREN',
+                                    'TEENAGER',
+                                ],
+                            ],
+                            'deviceId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'macAddress' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateAccessWarrant' => [
+            'path' => '/api/v1/aliyunConsole/createAccessWarrant',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'appId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'timestamp' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'userClientIp' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'requestSign' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'warrantAvailable' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'QueryApplicationAccessId' => [
+            'path' => '/api/v1/aliyunConsole/queryApplicationAccessId',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'applicationAccessId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'QueryProjectList' => [
+            'path' => '/api/v1/aliyunConsole/queryProjectList',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'QueryProject' => [
+            'path' => '/api/v1/aliyunConsole/queryProject',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'projectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateProject' => [
+            'path' => '/api/v1/aliyunConsole/createProject',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'projectName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'projectType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateProject' => [
+            'path' => '/api/v1/aliyunConsole/updateProject',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'projectId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'projectName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'QueryPurchasedService' => [
+            'path' => '/api/v1/aliyunConsole/queryPurchasedService',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
         'ExecuteAITeacherChineseCompositionTutoringWorkflowRun' => [
             'path' => '/pop/api/v1/intelligentAgent/chineseCompositionTutoring/workflowRun',
             'methods' => [
@@ -272,41 +805,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'callerUid',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'callerType',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'callerParentId',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'stsTokenCallerUid',
-                    'in' => 'header',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'body',
                     'in' => 'body',
                     'style' => 'json',
@@ -320,15 +818,19 @@
                             ],
                             'essayRequirements' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'essayTopic' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'essayType' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
+                                'enum' => [
+                                    'essay',
+                                    'outline',
+                                ],
                             ],
                             'essayWordCount' => [
                                 'type' => 'integer',
@@ -338,15 +840,18 @@
                             'grade' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'responseMode' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
+                                'enum' => [
+                                    'streaming',
+                                ],
                             ],
                             'userId' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                         ],
                     ],
@@ -568,6 +1073,86 @@
                 ],
             ],
         ],
+        'ListTextbookAssistantArticleDetails' => [
+            'path' => '/api/v1/textbookAssistant/teachingResource/ListArticleDetails',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'articleIdList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListTextbookAssistantSceneDetails' => [
+            'path' => '/api/v1/textbookAssistant/teachingResource/ListSceneDetails',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'sceneIdList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ExecuteTextbookAssistantStartConversation' => [
             'path' => '/api/v1/textbookAssistant/dialogue/StartConversation',
             'methods' => [
@@ -625,6 +1210,56 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'scenario' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'SYNC',
+                                    'EXPAND',
+                                ],
+                            ],
+                            'chatId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'userMessage' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'authToken' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExecuteTextbookAssistantSseDialogue' => [
+            'path' => '/api/v1/textbookAssistant/dialogue/ExecuteSseDialogue',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'produces' => [],
             'deprecated' => false,
             'parameters' => [
                 [
@@ -981,38 +1616,38 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'responseMode' => [
+                            'questionInfo' => [
                                 'type' => 'string',
-                                'required' => false,
-                            ],
-                            'userId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'content' => [
-                                'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'grade' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                                 'required' => false,
                             ],
-                            'questionInfo' => [
+                            'userAnswer' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'questionId' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'userAnswer' => [
+                            'content' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                             ],
                             'chatId' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'questionId' => [
+                            'userId' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
+                            ],
+                            'responseMode' => [
+                                'type' => 'string',
+                                'required' => true,
                             ],
                         ],
                     ],
@@ -1043,6 +1678,37 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
+                            'essayOutline' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [],
+                            ],
+                            'essayRequirements' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'essayTopic' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'essayType' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'essay',
+                                    'outline',
+                                ],
+                            ],
+                            'essayWordCount' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'grade' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
                             'responseMode' => [
                                 'type' => 'string',
                                 'required' => true,
@@ -1052,40 +1718,6 @@
                             ],
                             'userId' => [
                                 'type' => 'string',
-                                'required' => true,
-                            ],
-                            'essayTopic' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'essayRequirements' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'essayOutline' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'enum' => [
-                                    'outline',
-                                    'essay',
-                                ],
-                            ],
-                            'essayWordCount' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'essayType' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'enum' => [
-                                    'essay',
-                                    'outline',
-                                ],
-                            ],
-                            'grade' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
                                 'required' => true,
                             ],
                         ],
@@ -2019,8 +2651,8 @@
                 ],
             ],
         ],
-        'AliyunConsoleOpenApiQueryAliyunConsoleServcieList' => [
-            'path' => '/api/v1/aliyunconsole/queryAliyunConsoleServcieList',
+        'AliyunConsoleOpenApiQueryAliyunConsoleServiceList' => [
+            'path' => '/api/v1/aliyunConsole/queryAliyunConsoleServiceList',
             'methods' => [
                 'get',
             ],
@@ -2369,8 +3001,8 @@
                 ],
             ],
         ],
-        'AliyunConsoleOpenApiQueryAliyunConsoleServiceList' => [
-            'path' => '/api/v1/aliyunconsole/queryAliyunConsoleServiceList',
+        'AliyunConsoleOpenApiQueryAliyunConsoleServcieList' => [
+            'path' => '/api/v1/aliyunconsole/queryAliyunConsoleServcieList',
             'methods' => [
                 'get',
             ],
@@ -2385,6 +3017,96 @@
             'deprecated' => false,
             'parameters' => [],
         ],
+        'CountOralEvaluationStatisticsConcurrent' => [
+            'path' => '/api/v1/aliyunConsole/countOralEvaluationStatisticsConcurrent',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/OralEvaluationStatisticsConcurrentCountRequest',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CountOralEvaluationStatisticsCalls' => [
+            'path' => '/api/v1/aliyunConsole/countOralEvaluationStatisticsCalls',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/OralEvaluationStatisticsCallsCountRequest',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CountOralEvaluationStatisticsError' => [
+            'path' => '/api/v1/aliyunConsole/countOralEvaluationStatisticsError',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/OralEvaluationStatisticsErrorCountRequest',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [
@@ -2398,6 +3120,10 @@
         [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'aicontent.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'aicontent.cn-beijing.aliyuncs.com',
         ],
     ],
 ];

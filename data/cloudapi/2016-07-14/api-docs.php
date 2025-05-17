@@ -1684,6 +1684,14 @@
                     ],
                 ],
                 [
+                    'name' => 'SslOcspCacheEnable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ClientCertSDnPassThrough',
                     'in' => 'query',
                     'schema' => [
@@ -7421,6 +7429,14 @@
             'parameters' => [
                 [
                     'name' => 'DatasetIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DatasetName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

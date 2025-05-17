@@ -84,7 +84,7 @@
         ],
         [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'clickhouse.aliyuncs.com',
+            'endpoint' => 'clickhouse.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong-finance-pop',

@@ -3103,6 +3103,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AggreOverLineOps',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDiskMonitorDataList' => [
@@ -3871,7 +3879,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -3912,6 +3920,14 @@
                 [
                     'name' => 'RegionId',
                     'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

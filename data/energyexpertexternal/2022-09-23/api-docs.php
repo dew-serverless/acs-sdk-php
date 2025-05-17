@@ -30,6 +30,176 @@
                     ],
                 ],
             ],
+            'ChatDocumentPageNum' => [
+                'type' => 'object',
+                'properties' => [
+                    'pos' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'array',
+                            'items' => [
+                                '$ref' => '#/components/schemas/ChatRefDocPostion',
+                            ],
+                        ],
+                    ],
+                    'num' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
+            'ChatFolderItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'subFolders' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ChatFolderItem',
+                        ],
+                    ],
+                    'folderName' => [
+                        'type' => 'string',
+                    ],
+                    'folderId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ChatItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'question' => [
+                        'type' => 'string',
+                    ],
+                    'answer' => [
+                        'type' => 'string',
+                    ],
+                    'createTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'refDocList' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ChatRefDocItem',
+                        ],
+                    ],
+                    'folderName' => [
+                        'type' => 'string',
+                    ],
+                    'folderId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ChatRefDocInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'pages' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'pageListInfo' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ChatRefDocPageInfo',
+                        ],
+                    ],
+                ],
+            ],
+            'ChatRefDocItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'docName' => [
+                        'type' => 'string',
+                    ],
+                    'sourceType' => [
+                        'type' => 'string',
+                    ],
+                    'docUrl' => [
+                        'type' => 'string',
+                    ],
+                    'docInfo' => [
+                        '$ref' => '#/components/schemas/ChatRefDocInfo',
+                    ],
+                    'originDocName' => [
+                        'type' => 'string',
+                    ],
+                    'pageNum' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ChatDocumentPageNum',
+                        ],
+                    ],
+                    'originDocUrl' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ChatRefDocPageInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'imageWidth' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'imageUrl' => [
+                        'type' => 'string',
+                    ],
+                    'pageIdCurDoc' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'angle' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'excelParseResult' => [
+                        'type' => 'string',
+                    ],
+                    'wordParseResult' => [
+                        'type' => 'string',
+                    ],
+                    'pdfParseResult' => [
+                        'type' => 'string',
+                    ],
+                    'imageHeight' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
+            'ChatRefDocPageNum' => [
+                'type' => 'object',
+                'properties' => [
+                    'pos' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'array',
+                            'items' => [
+                                '$ref' => '#/components/schemas/ChatRefDocPostion',
+                            ],
+                        ],
+                    ],
+                    'num' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
+            'ChatRefDocPostion' => [
+                'type' => 'object',
+                'properties' => [
+                    'x' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'y' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
             'ConstituteItem' => [
                 'type' => 'object',
                 'properties' => [
@@ -2102,6 +2272,340 @@
                 ],
             ],
         ],
+        'SubmitDocExtractionTask' => [
+            'path' => '/api/v2/aidoc/document/submitDocExtractionTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'fileUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'templateId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'folderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'extractType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'rag',
+                            'longTextUnderstanding',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetDocExtractionResult' => [
+            'path' => '/api/v2/aidoc/document/getDocExtractionResult',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'taskId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'SubmitVLExtractionTask' => [
+            'path' => '/api/v2/aidoc/document/submitVLExtractionTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'fileUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'folderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetVLExtractionResult' => [
+            'path' => '/api/v2/aidoc/document/getVLExtractionResult',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'taskId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'SubmitDocParsingTask' => [
+            'path' => '/api/v2/aidoc/document/submitDocParsingTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'fileUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'folderId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'needAnalyzeImg',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetDocParsingResult' => [
+            'path' => '/api/v2/aidoc/document/getDocParsingResult',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'taskId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'returnFormat' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'md',
+                                    'json',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetDocumentAnalyzeResult' => [
+            'path' => '/api/v1/aidoc/document/getDocumentAnalyzeResult',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'jobId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'SubmitDocumentAnalyzeJob' => [
             'path' => '/api/v1/aidoc/document/submitDocumentAnalyzeJob',
             'methods' => [
@@ -2158,41 +2662,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetDocumentAnalyzeResult' => [
-            'path' => '/api/v1/aidoc/document/getDocumentAnalyzeResult',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'jobId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
                     ],
                 ],
             ],

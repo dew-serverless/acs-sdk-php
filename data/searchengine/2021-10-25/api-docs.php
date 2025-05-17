@@ -6491,6 +6491,537 @@
                 ],
             ],
         ],
+        'DeleteModel' => [
+            'path' => '/openapi/ha3/instances/{instanceId}/models/{modelName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'modelName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyModel' => [
+            'path' => '/openapi/ha3/instances/{instanceId}/models/{modelName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'modelName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'content' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'method' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'modelType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'dimension' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'request' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'header' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Authorization' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Content-Type' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                            'parameters' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'build' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'input_type' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                    'search' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'input_type' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                            'requestBody' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'urlParams' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'build' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                    ],
+                                                    'search' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'response' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'embeddings' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'url' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'status' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DebugModel' => [
+            'path' => '/openapi/ha3/instances/{instanceId}/models/{modelName}/actions/debug',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'modelName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'isOnline',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'input' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetModel' => [
+            'path' => '/openapi/ha3/instances/{instanceId}/models/{modelName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'modelName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListModels' => [
+            'path' => '/openapi/ha3/instances/{instanceId}/models',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateModel' => [
+            'path' => '/openapi/ha3/instances/{instanceId}/models',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'content' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'modelType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'dimension' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'url' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'method' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'request' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'header' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Authorization' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Content-Type' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                            'urlParams' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'build' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                    ],
+                                                    'search' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                            'parameters' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'build' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'input_type' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                    'search' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'input_type' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                            'requestBody' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'response' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'embeddings' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ModifySearcherReplica' => [
+            'path' => '/openapi/ha3/instances/{instanceId}/replica',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'replica' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'partition' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

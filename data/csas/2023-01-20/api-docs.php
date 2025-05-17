@@ -44,6 +44,18 @@
                         'type' => 'string',
                         'required' => false,
                     ],
+                    'NoticeContent' => [
+                        'type' => 'string',
+                    ],
+                    'NoticeContentEn' => [
+                        'type' => 'string',
+                    ],
+                    'AlertTitleEn' => [
+                        'type' => 'string',
+                    ],
+                    'AlertContentEn' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'PAL7Config' => [
@@ -240,6 +252,23 @@
                     ],
                 ],
             ],
+            'RiskSceneConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'OfficeChannel' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'DetectChannel' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'Rule' => [
                 'type' => 'object',
                 'properties' => [
@@ -316,6 +345,106 @@
         ],
     ],
     'apis' => [
+        'ListDynamicDisposalProcesses' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'CurrentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DisposalAction',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RecoveryType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DisposalProcessId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DevTag',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'UpdateApprovalStatus' => [
             'methods' => [
                 'post',
@@ -430,6 +559,14 @@
                                 'required' => false,
                             ],
                             'DlpSendSchemaId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'EndpointHardeningSchemaId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SoftwareHardeningSchemaId' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -1093,6 +1230,14 @@
                                 'required' => false,
                             ],
                             'PeripheralBlockSchemaId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'EndpointHardeningSchemaId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SoftwareHardeningSchemaId' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -2532,6 +2677,14 @@
                             'type' => 'string',
                             'required' => false,
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'Workshop',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4336,6 +4489,15 @@
                     ],
                 ],
                 [
+                    'name' => 'L7ProxyDomainPrivate',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'deprecated' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'L7Config',
                     'in' => 'formData',
                     'style' => 'json',
@@ -5927,7 +6089,7 @@
                         'format' => 'int32',
                         'required' => true,
                         'minimum' => '100',
-                        'maximum' => '5000',
+                        'maximum' => '10000',
                     ],
                 ],
                 [
@@ -5938,7 +6100,7 @@
                         'format' => 'int32',
                         'required' => true,
                         'minimum' => '100',
-                        'maximum' => '5000',
+                        'maximum' => '10000',
                     ],
                 ],
                 [
@@ -6438,7 +6600,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'IdpId',

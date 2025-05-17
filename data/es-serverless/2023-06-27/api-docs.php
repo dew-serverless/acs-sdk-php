@@ -204,6 +204,24 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'tags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -212,6 +230,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'clientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -545,6 +571,14 @@
                 ],
                 [
                     'name' => 'orderType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'tags',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1476,6 +1510,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

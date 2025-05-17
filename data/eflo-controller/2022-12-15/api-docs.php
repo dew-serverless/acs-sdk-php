@@ -113,6 +113,33 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'SystemDisk' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Size' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'PerformanceLevel' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Category' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'FileSystemMountEnabled' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'KeyPairName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],
@@ -554,6 +581,62 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'Amount' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'ChargeType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Period' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'AutoRenew' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'Hostnames' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                                'LoginPassword' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'NodeTag' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Key' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'VpcId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'VSwitchId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],
@@ -679,6 +762,10 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'Hostname' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
                                 ],
@@ -736,6 +823,32 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'maxLength' => 129,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'maxLength' => 129,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
             ],
         ],
         'ListClusterNodes' => [
@@ -780,6 +893,40 @@
                 ],
                 [
                     'name' => 'NodeGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'maxLength' => 129,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'maxLength' => 129,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -849,6 +996,245 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateNodeGroup' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NodeGroup',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Az' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'NodeGroupDescription' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'NodeGroupName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'MachineType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ImageId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'UserData' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SystemDisk' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Size' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'PerformanceLevel' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Category' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'FileSystemMountEnabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'KeyPairName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NodeUnit',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'any',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateNodeGroup' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NodeGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NewNodeGroupName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileSystemMountEnabled',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'KeyPairName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteNodeGroup' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NodeGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListNodeGroups' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NodeGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -933,6 +1319,45 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'maxLength' => 129,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'OperatingStates',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],
@@ -1047,6 +1472,239 @@
                 ],
                 [
                     'name' => 'UserData',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateVsc' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NodeId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'VscType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VscName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeVsc' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'VscId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteVsc' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'VscId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListVscs' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NextToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NodeIds',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'VscName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'maxLength' => 129,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -1227,7 +1885,7 @@
                     'style' => 'repeatList',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
@@ -1368,6 +2026,14 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ResourceId',
                     'in' => 'query',
@@ -1936,56 +2602,6 @@
                 ],
             ],
         ],
-        'ListNodeGroups' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'NodeGroupId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'NextToken',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MaxResults',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'StopNodes' => [
             'methods' => [
                 'post',
@@ -2057,6 +2673,31 @@
                 ],
                 [
                     'name' => 'Platform',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeDiagnosticResult' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DiagnosticId',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -2571,12 +3212,20 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'eflo-controller.cn-hangzhou.aliyuncs.com',
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'eflo-controller.cn-guangzhou.aliyuncs.com	',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'eflo-controller.cn-beijing.aliyuncs.com	',
         ],
         [
             'regionId' => 'cn-wulanchabu',
             'endpoint' => 'eflo-controller.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'eflo-controller.cn-hangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',

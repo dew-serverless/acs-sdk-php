@@ -1524,6 +1524,42 @@
                 ],
             ],
         ],
+        'DescribeRegions' => [
+            'path' => '/2021-04-06/regions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'zh-CN',
+                            'en-US',
+                            'ja',
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetAccountSettings' => [
             'path' => '/2021-04-06/account-settings',
             'methods' => [

@@ -22,7 +22,20 @@
                 ],
             ],
             'deprecated' => false,
-            'parameters' => [],
+            'parameters' => [
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'zh-CN',
+                            'en-US',
+                        ],
+                    ],
+                ],
+            ],
         ],
         'CreateFlow' => [
             'methods' => [

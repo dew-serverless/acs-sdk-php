@@ -4249,6 +4249,18 @@
                                             'required' => false,
                                         ],
                                     ],
+                                    'deploymentset_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'security_group_ids' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
                                 ],
                             ],
                             'kubernetes_config' => [
@@ -8206,6 +8218,374 @@
                 ],
             ],
         ],
+        'CreateClusterInspectConfig' => [
+            'path' => '/clusters/{clusterId}/inspectConfig',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'enabled' => [
+                                'type' => 'boolean',
+                                'required' => true,
+                            ],
+                            'recurrence' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'disabledCheckItems' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateClusterInspectConfig' => [
+            'path' => '/clusters/{clusterId}/inspectConfig',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'scheduleTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'disabledCheckItems' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetClusterInspectConfig' => [
+            'path' => '/clusters/{clusterId}/inspectConfig',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'RunClusterInspect' => [
+            'path' => '/clusters/{clusterId}/inspectReports',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListClusterInspectReports' => [
+            'path' => '/clusters/{clusterId}/inspectReports',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetClusterInspectReportDetail' => [
+            'path' => '/clusters/{clusterId}/inspectReports/{reportId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'reportId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'targetType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'level',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'enableFilter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteClusterInspectConfig' => [
+            'path' => '/clusters/{clusterId}/inspectConfig',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'DescribeUserQuota' => [
             'path' => '/quota',
             'methods' => [
@@ -8875,120 +9255,64 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'cs.cn-huhehaote.aliyuncs.com',
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'cs.cn-qingdao.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'cs.cn-heyuan.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'cs.ap-northeast-2.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'cs.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-north-2-gov-1',
-            'endpoint' => 'cs.cn-north-2-gov-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-3',
-            'endpoint' => 'cs.ap-southeast-3.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'cs.ap-south-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-finance-1',
-            'endpoint' => 'cs.cn-beijing-finance-1.aliyuncs.com',
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'cs.cn-beijing.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-zhangjiakou',
             'endpoint' => 'cs.cn-zhangjiakou.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'cs.us-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'cs.ap-southeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-zhengzhou-jva',
             'endpoint' => 'cs.cn-zhengzhou-jva.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'cs.cn-guangzhou.aliyuncs.com',
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'cs.cn-huhehaote.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-qingdao-acdr-ut-1',
-            'endpoint' => 'cs.cn-qingdao-acdr-ut-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'cs.ap-southeast-7.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'cs.cn-shanghai-finance-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-fuzhou',
-            'endpoint' => 'cs.cn-fuzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'cs.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'cs.ap-southeast-5.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'cs.cn-wuhan-lr.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'cs.cn-shenzhen-finance-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'cs.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'cs.me-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'rus-west-1',
-            'endpoint' => 'cs.rus-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'cs.cn-shenzhen.aliyuncs.com',
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'cs.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'cs.cn-hangzhou.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'cs.eu-west-1.aliyuncs.com',
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'cs.cn-shanghai.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-chengdu-acdr-ut-1',
-            'endpoint' => 'cs.cn-chengdu-acdr-ut-1.aliyuncs.com',
+            'regionId' => 'cn-nanjing',
+            'endpoint' => 'cs.cn-nanjing.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'cs.eu-central-1.aliyuncs.com',
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'cs.cn-fuzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'cs.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'cs.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'cs.cn-guangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'cs.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'cs.cn-wuhan-lr.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
@@ -8999,28 +9323,44 @@
             'endpoint' => 'cs.ap-northeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'cs.cn-qingdao.aliyuncs.com',
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'cs.ap-northeast-2.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-nanjing',
-            'endpoint' => 'cs.cn-nanjing.aliyuncs.com',
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'cs.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'cs.ap-southeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'cs.ap-southeast-3.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'cs.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'cs.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',
             'endpoint' => 'cs.us-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'cs.cn-shanghai.aliyuncs.com',
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'cs.eu-west-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'cs.cn-beijing.aliyuncs.com',
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'cs.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-heyuan-acdr-1',
-            'endpoint' => 'cs.cn-heyuan-acdr-1.aliyuncs.com',
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'cs.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'me-east-1',
@@ -9029,6 +9369,34 @@
         [
             'regionId' => 'cn-hangzhou-finance',
             'endpoint' => 'cs.cn-hangzhou-finance.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'cs.cn-shanghai-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'cs.cn-shenzhen-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'cs.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'cs.cn-beijing-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'cs.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'cs.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'cs.na-south-1.aliyuncs.com',
         ],
     ],
 ];

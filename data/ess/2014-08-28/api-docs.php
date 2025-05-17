@@ -3439,6 +3439,29 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ResourcePoolOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Strategy' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PrivatePoolIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteScalingConfiguration' => [
@@ -4351,6 +4374,29 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ResourcePoolOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Strategy' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PrivatePoolIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeScalingConfigurations' => [
@@ -4759,6 +4805,22 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'AlarmOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Period' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteScalingRule' => [
@@ -5077,6 +5139,22 @@
                             ],
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'AlarmOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Period' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -5512,6 +5590,29 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LifecycleHookContext',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'DisableLifecycleHook' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'IgnoredLifecycleHookIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -10725,7 +10826,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -10733,7 +10834,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -10742,6 +10843,20 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 20,
                     ],
                 ],
             ],
@@ -11161,10 +11276,6 @@
             'endpoint' => 'ess.ap-northeast-2.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'ess.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-2',
             'endpoint' => 'ess.ap-southeast-2.aliyuncs.com',
         ],
@@ -11179,14 +11290,6 @@
         [
             'regionId' => 'ap-southeast-6',
             'endpoint' => 'ess.ap-southeast-6.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'ess.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'ess.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',
@@ -11235,6 +11338,18 @@
         [
             'regionId' => 'na-south-1',
             'endpoint' => 'ess.na-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'ess.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'ess.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'ess.ap-southeast-1.aliyuncs.com',
         ],
     ],
 ];

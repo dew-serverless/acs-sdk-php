@@ -447,6 +447,7 @@
                             'PL1',
                             'PL2',
                             'PL3',
+                            'PL0',
                         ],
                     ],
                 ],
@@ -1117,6 +1118,20 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ProductVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'BasicVersion',
+                            'EnterpriseVersion',
+                            'basic_version',
+                            'enterprise_version',
+                        ],
+                    ],
+                ],
             ],
         ],
         'AttachUserENI' => [
@@ -1302,6 +1317,59 @@
                 ],
                 [
                     'name' => 'ShardNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReservedNodeSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReservedNodeCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ProductVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ProductForm',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'IntegrationForm',
+                            'LegacyForm',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SecondaryZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SecondaryVSwitchId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3727,6 +3795,29 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteAccount' => [
@@ -3869,6 +3960,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
                     ],
                 ],
                 [
@@ -6337,6 +6452,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SchemaName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeExcessivePrimaryKeys' => [
@@ -8374,6 +8497,73 @@
                 ],
             ],
         ],
+        'ModifyDBClusterShardNumber' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'NewShardNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SwitchTimeMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SwitchTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DeleteBackups' => [
             'methods' => [
                 'get',
@@ -8451,31 +8641,27 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-qingdao',
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'adb.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'adb.ap-northeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
             'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'adb.ap-south-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'adb.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'adb.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'adb.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'adb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'adb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
+            'regionId' => 'cn-hangzhou-finance',
             'endpoint' => 'adb.aliyuncs.com',
         ],
         [
@@ -8483,16 +8669,12 @@
             'endpoint' => 'adb.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'adb.cn-hongkong.aliyuncs.com',
+            'regionId' => 'me-central-1',
+            'endpoint' => 'adb.me-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'adb.ap-northeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'adb.ap-northeast-2.aliyuncs.com',
+            'regionId' => 'ap-southeast-5',
+            'endpoint' => 'adb.ap-southeast-5.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',
@@ -8503,56 +8685,80 @@
             'endpoint' => 'adb.ap-southeast-2.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'adb.cn-hongkong.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-3',
             'endpoint' => 'adb.ap-southeast-3.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-5',
-            'endpoint' => 'adb.ap-southeast-5.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-6',
-            'endpoint' => 'adb.ap-southeast-6.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'adb.us-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'adb.us-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'adb.eu-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'adb.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'adb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'adb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'adb.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-7',
             'endpoint' => 'adb.ap-southeast-7.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-finance-1',
+            'regionId' => 'us-east-1',
+            'endpoint' => 'adb.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-mybk',
             'endpoint' => 'adb.aliyuncs.com',
         ],
         [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'adb.me-central-1.aliyuncs.com',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'adb.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'adb.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'adb.ap-southeast-6.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'adb.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-north-2-gov-1',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'adb.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'adb.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'adb.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'adb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'adb.aliyuncs.com',
         ],
     ],
 ];

@@ -2,7 +2,7 @@
     'version' => '1.0',
     'info' => [
         'style' => 'RPC',
-        'product' => 'schedulerx3',
+        'product' => 'SchedulerX3',
         'version' => '2024-06-24',
     ],
     'components' => [
@@ -859,6 +859,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'ChildJobId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateJob' => [
@@ -1121,6 +1129,14 @@
                             '2',
                             '3',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'ChildJobId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2457,12 +2473,12 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'schedulerx3.cn-shenzhen.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'schedulerx3.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'schedulerx3.cn-zhangjiakou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -2471,6 +2487,38 @@
         [
             'regionId' => 'cn-shanghai',
             'endpoint' => 'schedulerx3.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'schedulerx3.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'schedulerx3.cn-guangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'schedulerx3.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'schedulerx3.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'schedulerx3.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'schedulerx3.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'schedulerx3.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'schedulerx3.cn-shanghai-finance-1.aliyuncs.com',
         ],
     ],
 ];

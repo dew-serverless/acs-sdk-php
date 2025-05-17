@@ -208,5 +208,10 @@
             ],
         ],
     ],
-    'endpoints' => [],
+    'endpoints' => [
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'metaspace.aliyuncs.com',
+        ],
+    ],
 ];

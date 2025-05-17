@@ -5847,6 +5847,7 @@
         'QueryZnodeDetail' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -7228,6 +7229,457 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListWebFlowRules' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceSearchKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Resource',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageIndex',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateWebFlowRule' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Threshold',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Enable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Resource',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Burst',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ControlBehavior',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '2',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MaxQueueingTimeMs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                        'enum' => [
+                            '0',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ParamItem',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MetricType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'StatIntervalMs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                            '2',
+                            '4',
+                            '3',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteWebFlowRules' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Ids',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AppName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateWebFlowRule' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Threshold',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Enable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Burst',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ControlBehavior',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxQueueingTimeMs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ParamItem',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MetricType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StatIntervalMs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -9253,6 +9705,30 @@
                     ],
                 ],
                 [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 20,
+                    ],
+                ],
+                [
                     'name' => 'AcceptLanguage',
                     'in' => 'query',
                     'schema' => [
@@ -9423,6 +9899,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'minItems' => 0,
                     ],
                 ],
                 [
@@ -9627,6 +10127,7 @@
         'QueryGovernanceKubernetesCluster' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -9843,6 +10344,30 @@
                     ],
                 ],
                 [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'minItems' => 0,
+                    ],
+                ],
+                [
                     'name' => 'AcceptLanguage',
                     'in' => 'query',
                     'schema' => [
@@ -9882,6 +10407,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'minItems' => 0,
                     ],
                 ],
                 [
@@ -10828,7 +11377,7 @@
                 ],
                 [
                     'name' => 'Config',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -10928,7 +11477,7 @@
                 ],
                 [
                     'name' => 'Config',
-                    'in' => 'query',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -11520,19 +12069,34 @@
                     ],
                 ],
                 [
-                    'name' => 'SlbSpec',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'Vpc',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ZoneInfo',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ZoneId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'VSwitchId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 [
@@ -11544,11 +12108,50 @@
                     ],
                 ],
                 [
+                    'name' => 'VSwitchId2',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChargeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'PREPAY',
+                            'POSTPAY',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MserVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'mse_premium',
+                            'mse_pro',
+                            'mse_serverless',
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'Spec',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'MSE_GTW_2_4_200_c',
+                            'MSE_GTW_4_8_200_c',
+                            'MSE_GTW_8_16_200_c',
+                            'MSE_GTW_16_32_200_c',
+                        ],
                     ],
                 ],
                 [
@@ -11561,18 +12164,59 @@
                     ],
                 ],
                 [
-                    'name' => 'InternetSlbSpec',
+                    'name' => 'ManagedEntryNetworkType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'pubnet',
+                            'privatenet',
+                            'privatepubnet',
+                        ],
                     ],
                 ],
                 [
-                    'name' => 'VSwitchId2',
+                    'name' => 'NlbNetworkType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'pubnet',
+                            'privatenet',
+                            'privatepubnet',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ClbNetworkType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'pubnet',
+                            'privatenet',
+                            'privatepubnet',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SlbSpec',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'deprecated' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InternetSlbSpec',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -11650,61 +12294,6 @@
                 ],
                 [
                     'name' => 'RequestPars',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ZoneInfo',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'ZoneId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'VSwitchId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'ChargeType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MserVersion',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'NlbNetworkType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClbNetworkType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -13527,6 +14116,10 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                ],
+                                'SaeAppId' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -18690,6 +19283,55 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateGatewayConfig' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GatewayUniqueId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
                 [

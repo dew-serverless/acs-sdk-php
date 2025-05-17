@@ -63,6 +63,7 @@
                             '6.0',
                             '7.0',
                             '3.4',
+                            '8.0',
                         ],
                     ],
                 ],
@@ -413,6 +414,7 @@
                             '5.0',
                             '6.0',
                             '7.0',
+                            '8.0',
                         ],
                     ],
                 ],
@@ -1650,6 +1652,7 @@
                             '5.0',
                             '6.0',
                             '7.0',
+                            '8.0',
                         ],
                     ],
                 ],
@@ -2315,6 +2318,30 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeDBInstanceSpecInfo' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'InstanceClass',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -6943,6 +6970,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'PreserveOneEachHour',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeBackupPolicy' => [
@@ -7763,6 +7798,40 @@
                 ],
             ],
         ],
+        'ModifyDBInstanceAttribute' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceReleaseProtection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [
@@ -7900,6 +7969,10 @@
         [
             'regionId' => 'me-central-1',
             'endpoint' => 'mongodb.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'mongodb.cn-wuhan-lr.aliyuncs.com',
         ],
     ],
 ];

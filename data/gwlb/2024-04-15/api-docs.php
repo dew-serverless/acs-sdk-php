@@ -220,6 +220,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TrafficMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateLoadBalancerZones' => [
@@ -433,6 +441,14 @@
                     ],
                 ],
                 [
+                    'name' => 'TrafficMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Tag',
                     'in' => 'formData',
                     'style' => 'flat',
@@ -565,6 +581,18 @@
                             '5TCH',
                             '3TCH',
                             '2TCH',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ServerFailoverMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'NoRebalance',
+                            'Rebalance',
                         ],
                     ],
                 ],
@@ -757,6 +785,18 @@
                             '5TCH',
                             '3TCH',
                             '2TCH',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ServerFailoverMode',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'NoRebalance',
+                            'Rebalance',
                         ],
                     ],
                 ],

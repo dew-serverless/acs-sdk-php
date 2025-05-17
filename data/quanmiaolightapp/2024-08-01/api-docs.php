@@ -95,6 +95,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'apiKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RunMarketingInformationExtract' => [
@@ -337,7 +345,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'maxLength' => 5000,
+                        'maxLength' => 9000,
                     ],
                 ],
                 [
@@ -505,6 +513,450 @@
                 ],
             ],
         ],
+        'SubmitVideoAnalysisTask' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/videoAnalysis/submitVideoAnalysisTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'videoUrl',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'videoModelId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'videoModelCustomPromptTemplate',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'modelId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'modelCustomPromptTemplateId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'modelCustomPromptTemplate',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'generateOptions',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'videoExtraInfo',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'snapshotInterval',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'splitInterval',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'frameSampleMethod',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'methodName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'interval' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                                'required' => false,
+                            ],
+                            'pixel' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'videoRoles',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'roleName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'roleInfo' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'urls' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'textProcessTasks',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'modelId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'modelCustomPromptTemplate' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'modelCustomPromptTemplateId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'faceIdentitySimilarityMinScore',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'videoShotFaceIdentityCount',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'deduplicationId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'excludeGenerateOptions',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'videoCaptionInfo',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'videoCaptions' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'startTime' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'endTime' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'text' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'speaker' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetVideoAnalysisTask' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/videoAnalysis/getVideoAnalysisTask',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateVideoAnalysisTask' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/videoAnalysis/updateVideoAnalysisTask',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'taskStatus',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateVideoAnalysisConfig' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/videoAnalysis/updateVideoAnalysisConfig',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'asyncConcurrency',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetVideoAnalysisConfig' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/videoAnalysis/getVideoAnalysisConfig',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'RunVideoAnalysis' => [
             'path' => '/{workspaceId}/quanmiao/lightapp/runVideoAnalysis',
             'methods' => [
@@ -630,6 +1082,15 @@
                     ],
                 ],
                 [
+                    'name' => 'splitInterval',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'language',
                     'in' => 'formData',
                     'schema' => [
@@ -693,450 +1154,58 @@
                         ],
                     ],
                 ],
-            ],
-        ],
-        'SubmitVideoAnalysisTask' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/videoAnalysis/submitVideoAnalysisTask',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
                 [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'videoUrl',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'videoModelId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'videoModelCustomPromptTemplate',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'modelId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'modelCustomPromptTemplateId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'modelCustomPromptTemplate',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'generateOptions',
+                    'name' => 'textProcessTasks',
                     'in' => 'formData',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
                         'required' => false,
                         'items' => [
-                            'type' => 'string',
+                            'type' => 'object',
                             'required' => false,
+                            'properties' => [
+                                'modelId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'modelCustomPromptTemplate' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'modelCustomPromptTemplateId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                         ],
                     ],
                 ],
                 [
-                    'name' => 'videoExtraInfo',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'snapshotInterval',
+                    'name' => 'faceIdentitySimilarityMinScore',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'number',
-                        'format' => 'double',
+                        'format' => 'float',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'language',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'frameSampleMethod',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'methodName' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'interval' => [
-                                'type' => 'number',
-                                'format' => 'double',
-                                'required' => false,
-                            ],
-                            'pixel' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'videoRoles',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'roleName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'roleInfo' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'urls' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetVideoAnalysisTask' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/videoAnalysis/getVideoAnalysisTask',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'taskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateVideoAnalysisConfig' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/videoAnalysis/updateVideoAnalysisConfig',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'asyncConcurrency',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GetVideoAnalysisConfig' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/videoAnalysis/getVideoAnalysisConfig',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GenerateBroadcastNews' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/GenerateBroadcastNews',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'prompt',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ListHotTopicSummaries' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/listHotTopicSummaries',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'category',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'hotTopic',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'hotTopicVersion',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'nextToken',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'maxResults',
+                    'name' => 'videoShotFaceIdentityCount',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'minimum' => '0',
-                        'exclusiveMinimum' => true,
-                        'maximum' => '1000',
-                    ],
-                ],
-            ],
-        ],
-        'RunHotTopicSummary' => [
-            'path' => '/{workspaceId}/quanmiao/lightapp/runHotTopicSummary',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-                'sse',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/octet-stream',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
                 [
-                    'name' => 'hotTopicVersion',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'topicIds',
+                    'name' => 'excludeGenerateOptions',
                     'in' => 'formData',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
@@ -1144,25 +1213,40 @@
                     ],
                 ],
                 [
-                    'name' => 'stepForCustomSummaryStyleConfig',
+                    'name' => 'videoCaptionInfo',
                     'in' => 'formData',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
-                        'required' => true,
+                        'required' => false,
                         'properties' => [
-                            'summaryImageCount' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
+                            'videoCaptions' => [
+                                'type' => 'array',
                                 'required' => false,
-                            ],
-                            'summaryModel' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'summaryPrompt' => [
-                                'type' => 'string',
-                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'startTime' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'endTime' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                        'text' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'speaker' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -1362,6 +1446,524 @@
                 ],
             ],
         ],
+        'RunHotTopicSummary' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/runHotTopicSummary',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/octet-stream',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'hotTopicVersion',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'topicIds',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'stepForCustomSummaryStyleConfig',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'summaryImageCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'summaryPrompt' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'RunEnterpriseVocAnalysis' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/runEnterpriseVocAnalysis',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/octet-stream',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'taskDescription',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'modelId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'extraInfo',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'outputFormat',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'content',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'tags',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'tagName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'tagDefinePrompt' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'filterTags',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'tagName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'tagDefinePrompt' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'apiKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'akProxy',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SubmitEnterpriseVocAnalysisTask' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/submitEnterpriseVocAnalysisTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskDescription',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'extraInfo',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'outputFormat',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'modelId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'tags',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'tagName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'tagDefinePrompt' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'filterTags',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'tagName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'tagDefinePrompt' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'contents',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'text' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'id' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'url',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fileKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'apiKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetEnterpriseVocAnalysisTask' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/getEnterpriseVocAnalysisTask',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ExportAnalysisTagDetailByTaskId' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/exportAnalysisTagDetailByTaskId',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'categories',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListAnalysisTagDetailByTaskId' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/listAnalysisTagDetailByTaskId',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'GenerateOutputFormat' => [
             'path' => '/{workspaceId}/quanmiao/lightapp/generateOutputFormat',
             'methods' => [
@@ -1549,6 +2151,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'apiKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'RunNetworkContentAudit' => [
@@ -1650,6 +2260,53 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'apiKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GenerateBroadcastNews' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/GenerateBroadcastNews',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'prompt',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -1770,6 +2427,89 @@
                         'maxItems' => 1000,
                     ],
                 ],
+                [
+                    'name' => 'apiKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListHotTopicSummaries' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/listHotTopicSummaries',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'hotTopic',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'hotTopicVersion',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'nextToken',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                        'exclusiveMinimum' => true,
+                        'maximum' => '1000',
+                    ],
+                ],
             ],
         ],
         'GetTagMiningAnalysisTask' => [
@@ -1804,6 +2544,45 @@
                 [
                     'name' => 'workspaceId',
                     'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CancelAsyncTask' => [
+            'path' => '/{workspaceId}/quanmiao/lightapp/cancelAsyncTask',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

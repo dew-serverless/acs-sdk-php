@@ -782,6 +782,17 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Ipv6AddressCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '10',
+                    ],
+                ],
             ],
         ],
         'CreateInstance' => [
@@ -2002,6 +2013,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'WithDataDisks',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ExportImage' => [
@@ -2696,6 +2715,19 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'InstanceBillingCycle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Hour',
+                            'Day',
+                            'Month',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteDisk' => [
@@ -3121,6 +3153,19 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceBillingCycle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Hour',
+                            'Day',
+                            'Month',
+                        ],
                     ],
                 ],
             ],
@@ -3881,6 +3926,14 @@
                         'maxLength' => 256,
                     ],
                 ],
+                [
+                    'name' => 'SourceCidrBlock',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteEnsRouteEntry' => [
@@ -3970,6 +4023,7 @@
                         'enum' => [
                             'Instance',
                             'HaVip',
+                            'NetworkPeer',
                         ],
                     ],
                 ],
@@ -5034,6 +5088,7 @@
                         'enum' => [
                             '95BandwidthByMonth',
                             'FlowoutByDay',
+                            'AverageDayBandwidthByMonth',
                         ],
                     ],
                 ],
@@ -5055,6 +5110,7 @@
                             'cmcc',
                             'unicom',
                             'telecom',
+                            'overseas',
                         ],
                     ],
                 ],
@@ -5182,6 +5238,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Force',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyEnsEipAddressAttribute' => [
@@ -5289,6 +5353,10 @@
                         'required' => false,
                         'enum' => [
                             'SlbInstance',
+                            'EnsInstance',
+                            'Nat',
+                            'NetworkInterface',
+                            'HaVip',
                         ],
                     ],
                 ],
@@ -5314,6 +5382,20 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionIds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
                 [
@@ -5384,7 +5466,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -5395,6 +5477,10 @@
                         'required' => false,
                         'enum' => [
                             'enat.default',
+                            'enat.s1.small',
+                            'enat.s1.medium',
+                            'enat.s2.small',
+                            'enat.s2.medium',
                         ],
                     ],
                 ],
@@ -5422,6 +5508,18 @@
                         'maxItems' => 20,
                     ],
                 ],
+                [
+                    'name' => 'InstanceBillingCycle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Hour',
+                            'Month',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteNatGateway' => [
@@ -5446,6 +5544,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ForceDelete',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -5503,6 +5609,33 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NatGatewayIds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionIds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
                     ],
                 ],
                 [
@@ -5694,6 +5827,51 @@
                         'maximum' => '65535',
                     ],
                 ],
+                [
+                    'name' => 'ExternalIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExternalPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InternalIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InternalPort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpProtocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'TCP',
+                            'UDP',
+                            'Any',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeForwardTableEntries' => [
@@ -5871,6 +6049,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EipAffinity',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteSnatEntry' => [
@@ -5953,6 +6139,20 @@
                         'type' => 'string',
                         'required' => false,
                         'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'SnatIps',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
                 [
@@ -6373,7 +6573,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'minLength' => 2,
                         'maxLength' => 128,
                     ],
                 ],
@@ -8998,6 +9197,20 @@
                     ],
                 ],
                 [
+                    'name' => 'EnsRegionIds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
                     'name' => 'PageNumber',
                     'in' => 'query',
                     'schema' => [
@@ -9192,6 +9405,19 @@
                             'Available',
                             'InUse',
                             'Deleting',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'EnsRegionIds',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
                         ],
                     ],
                 ],
@@ -12422,6 +12648,38 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Cidr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'RenewARMServerInstance' => [
@@ -13150,227 +13408,6 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'GetDeviceInternetPort' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NatType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RuleId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteDeviceInternetPort' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RuleId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NatType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'AddDeviceInternetPort' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InternalIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RegionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InternalPort',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'NatType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ISP',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'RestartDeviceInstance' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ResetDeviceInstance' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ImageId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],
@@ -14142,6 +14179,7 @@
                             'network',
                             'natgateway',
                             'vswitch',
+                            'armserver',
                         ],
                     ],
                 ],
@@ -14250,6 +14288,7 @@
                             'vswitch',
                             'network',
                             'natgateway',
+                            'armserver',
                         ],
                     ],
                 ],
@@ -14284,6 +14323,7 @@
                             'network',
                             'natgateway',
                             'vswitch',
+                            'armserver',
                         ],
                     ],
                 ],
@@ -15490,6 +15530,19 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'BillingCycle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Month',
+                            'Day',
+                            'Hour',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeInstanceBandwidthDetail' => [
@@ -15696,6 +15749,31 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AssociateType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RouteTableName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 128,
+                    ],
+                ],
             ],
         ],
         'DeleteHaVips' => [
@@ -15724,7 +15802,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 10,
+                        'maxItems' => 100,
                     ],
                 ],
             ],
@@ -15767,6 +15845,22 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EipAffinity',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SnatIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -15856,6 +15950,207 @@
             ],
             'deprecated' => false,
             'parameters' => [],
+        ],
+        'DescribeInstanceBootConfiguration' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BootType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BootSet',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DiskSet',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ImportImage' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ImageName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ComputeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'ens_vm',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OSSRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'OSSBucket',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OSSObject',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OSType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'linux',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Platform',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'ImageFormat',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'qcow2',
+                            'raw',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Architecture',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'x86_64',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OSVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DiskDeviceMapping',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'OSSRegion' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OSSBucket' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OSSObject' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TargetOSSRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'cn-beijing',
+                            'ap-southeast-1',
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
     'endpoints' => [

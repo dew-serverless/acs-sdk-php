@@ -274,7 +274,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -282,7 +282,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -401,7 +401,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -409,7 +409,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1109,7 +1109,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1117,7 +1117,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2137,13 +2137,6 @@
                     ],
                 ],
                 [
-                    'name' => 'SourceIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
                     'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
@@ -2302,7 +2295,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2310,7 +2303,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2567,7 +2560,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -2688,19 +2680,17 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceManagerResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -4070,7 +4060,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4078,7 +4068,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -4340,7 +4330,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4405,7 +4395,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4539,7 +4529,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -4597,7 +4587,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -6056,7 +6046,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [
@@ -6064,7 +6053,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -6113,7 +6101,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [
@@ -6121,7 +6108,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -6170,7 +6156,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [
@@ -6178,7 +6163,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -6219,7 +6203,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [
@@ -6227,7 +6210,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -6292,7 +6274,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [
@@ -6300,7 +6281,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -9048,6 +9028,519 @@
                 ],
             ],
         ],
+        'DescribeNetworkFlowTimeSeriesMetric' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'DateRange' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'StartDate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => true,
+                                    ],
+                                    'EndDate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'Conditions' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'OpValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Values' => [
+                                            'type' => 'any',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Metric',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceManagerResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSecurityEventTopNMetric' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'DateRange' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'StartDate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => true,
+                                    ],
+                                    'EndDate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'Conditions' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'OpValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Values' => [
+                                            'type' => 'any',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Limit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Metric',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceManagerResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSecurityEventTimeSeriesMetric' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'DateRange' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'StartDate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => true,
+                                    ],
+                                    'EndDate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'Conditions' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'OpValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Values' => [
+                                            'type' => 'any',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Metric',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceManagerResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSecurityEventLogs' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'DateRange' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'StartDate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => true,
+                                    ],
+                                    'EndDate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'Conditions' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'OpValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Values' => [
+                                            'type' => 'any',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceManagerResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeNetworkFlowTopNMetric' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'DateRange' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'StartDate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => true,
+                                    ],
+                                    'EndDate' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'Conditions' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'OpValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Values' => [
+                                            'type' => 'any',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Limit',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Metric',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceManagerResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeFlowChart' => [
             'methods' => [
                 'post',
@@ -10014,7 +10507,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -10022,7 +10515,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -10811,7 +11304,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [
@@ -11486,7 +11978,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceManagerResourceGroupId',
+                    'name' => 'RegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11494,7 +11986,7 @@
                     ],
                 ],
                 [
-                    'name' => 'RegionId',
+                    'name' => 'ResourceManagerResourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -11830,13 +12322,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SourceIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
                     ],
                 ],
             ],

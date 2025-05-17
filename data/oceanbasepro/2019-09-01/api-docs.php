@@ -738,6 +738,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WithOBCloudInstances',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeInstanceTopology' => [
@@ -1783,13 +1791,11 @@
                 ],
             ],
         ],
-        'DescribeInstanceCreatableZone' => [
+        'DescribeInstanceAvailableZones' => [
             'methods' => [
                 'post',
-                'get',
             ],
             'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -3264,6 +3270,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'ByObSessionId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeProcessStatsComposition' => [
@@ -3343,6 +3357,14 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MergeDynamicSql',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -4133,6 +4155,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'CustomColumns',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeOasSlowSQLList' => [
@@ -4458,6 +4488,72 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSqlAuditStat' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TenantId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -7663,8 +7759,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -7713,8 +7809,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -7738,8 +7834,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -7812,7 +7908,7 @@
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
                         'items' => [
                             'type' => 'object',
                             'required' => false,
@@ -8137,6 +8233,1200 @@
                                                     'PartitionLifeCycle' => [
                                                         'type' => 'string',
                                                         'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TransferMapping',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Mode' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'SPECIFIC',
+                                    'WILDCARD',
+                                    'COMPLEX',
+                                ],
+                            ],
+                            'Databases' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Id' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'MappedName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ClusterName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'TenantName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Tables' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                    'ObkvPartitionConfig' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PartitionType' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                                'enum' => [
+                                                                    'KEY',
+                                                                    'RANGE',
+                                                                    'NONE',
+                                                                ],
+                                                            ],
+                                                            'VirtualColumn' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionSize' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int32',
+                                                                'required' => false,
+                                                                'minimum' => '1',
+                                                                'maximum' => '1024',
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'Views' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'SpecificTables' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'SpecificViews' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'DatabasesBlack' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Id' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'MappedName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ClusterName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'TenantName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Tables' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'Views' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'SpecificTables' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'SpecificViews' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'TableAndViewWhiteList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'TableAndViewBlackList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'WhiteTableRules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'SchemaMapping' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MappedName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'ObjectMapping' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MappedName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'WhiteViewRules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'SchemaMapping' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MappedName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'ObjectMapping' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MappedName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'BlackTableRules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'SchemaMapping' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MappedName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'ObjectMapping' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MappedName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'BlackViewRules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'SchemaMapping' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MappedName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'ObjectMapping' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'MappedName' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Schemas' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Id' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'MappedName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ClusterName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'TenantName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Tables' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                    'ObkvPartitionConfig' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PartitionType' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                                'enum' => [
+                                                                    'KEY',
+                                                                    'RANGE',
+                                                                    'NONE',
+                                                                ],
+                                                            ],
+                                                            'VirtualColumn' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionSize' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int32',
+                                                                'required' => false,
+                                                                'minimum' => '1',
+                                                                'maximum' => '1024',
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'Views' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'SpecificTables' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'SpecificViews' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'Name' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'MappedName' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'Id' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'WhereClause' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'FilterColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'ShardColumns' => [
+                                                        'type' => 'array',
+                                                        'required' => false,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                    'AdbTableSchema' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'PrimaryKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'DistributedKeys' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
+                                                            'PartitionStatement' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'PartitionLifeCycle' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
                                                     ],
                                                 ],
                                             ],
@@ -9405,6 +10695,32 @@
         'DescribeProxyService' => [
             'methods' => [
                 'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeInstanceCreatableZone' => [
+            'methods' => [
+                'post',
+                'get',
             ],
             'schemes' => [
                 'http',

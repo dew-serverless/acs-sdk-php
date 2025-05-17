@@ -229,6 +229,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createReverseDtsJobAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDtsJobEndpoint(array $arguments = [])
  * @method \Http\Promise\Promise modifyDtsJobEndpointAsync($arguments = [])
+ * @method \Dew\Acs\Result skipFullJobTable(array $arguments = [])
+ * @method \Http\Promise\Promise skipFullJobTableAsync($arguments = [])
+ * @method \Dew\Acs\Result describeFullProcessList(array $arguments = [])
+ * @method \Http\Promise\Promise describeFullProcessListAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyGadInstanceName(array $arguments = [])
+ * @method \Http\Promise\Promise modifyGadInstanceNameAsync($arguments = [])
+ * @method \Dew\Acs\Result describePreCheckCreateGadOrderResult(array $arguments = [])
+ * @method \Http\Promise\Promise describePreCheckCreateGadOrderResultAsync($arguments = [])
+ * @method \Dew\Acs\Result detachGadInstanceDbMember(array $arguments = [])
+ * @method \Http\Promise\Promise detachGadInstanceDbMemberAsync($arguments = [])
+ * @method \Dew\Acs\Result preCheckCreateGadOrder(array $arguments = [])
+ * @method \Http\Promise\Promise preCheckCreateGadOrderAsync($arguments = [])
+ * @method \Dew\Acs\Result describeGadInstances(array $arguments = [])
+ * @method \Http\Promise\Promise describeGadInstancesAsync($arguments = [])
  */
 final class DtsClient extends AcsClient
 {

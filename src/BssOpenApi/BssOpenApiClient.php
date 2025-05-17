@@ -199,6 +199,36 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCostBudgetsSummaryAsync($arguments = [])
  * @method \Dew\Acs\Result renewChangeInstance(array $arguments = [])
  * @method \Http\Promise\Promise renewChangeInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result setFundAccountLowAvailableAmountAlarm(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise setFundAccountLowAvailableAmountAlarmAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result getFundAccountCanWithdrawAmount(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise getFundAccountCanWithdrawAmountAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result getFundAccountAvailableAmount(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise getFundAccountAvailableAmountAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result getFundAccountLowAvailableAmountAlarm(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise getFundAccountLowAvailableAmountAlarmAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result listFundAccount(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise listFundAccountAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result cancelFundAccountLowAvailableAmountAlarm(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise cancelFundAccountLowAvailableAmountAlarmAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result getFundAccountCanAllocateCreditAmount(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise getFundAccountCanAllocateCreditAmountAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result listFundAccountPayRelation(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise listFundAccountPayRelationAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result getFundAccountCanRecycleAmount(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise getFundAccountCanRecycleAmountAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result createFundAccountTransfer(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise createFundAccountTransferAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result getFundAccountTransactionDetails(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise getFundAccountTransactionDetailsAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result setFundAccountCreditAmount(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise setFundAccountCreditAmountAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result getFundAccountCanTransferAmount(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise getFundAccountCanTransferAmountAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result describeCoupon(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise describeCouponAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result describeCouponItemList(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise describeCouponItemListAsync($arguments = []) {@since 2023-09-30}
  */
 final class BssOpenApiClient extends AcsClient
 {

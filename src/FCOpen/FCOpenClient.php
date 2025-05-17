@@ -9,6 +9,8 @@ use Dew\Acs\AcsClient;
 /**
  * @method \Dew\Acs\Result listReservedCapacities(array $arguments = [])
  * @method \Http\Promise\Promise listReservedCapacitiesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRegions(array $arguments = [])
+ * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result getAccountSettings(array $arguments = [])
  * @method \Http\Promise\Promise getAccountSettingsAsync($arguments = [])
  * @method \Dew\Acs\Result createService(array $arguments = [])

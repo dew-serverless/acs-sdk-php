@@ -91,6 +91,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getConsumerListAsync($arguments = [])
  * @method \Dew\Acs\Result getConsumerProgress(array $arguments = [])
  * @method \Http\Promise\Promise getConsumerProgressAsync($arguments = [])
+ * @method \Dew\Acs\Result listRebalanceInfo(array $arguments = [])
+ * @method \Http\Promise\Promise listRebalanceInfoAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result untagResources(array $arguments = [])

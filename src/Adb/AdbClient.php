@@ -289,12 +289,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInclinedNodesAsync($arguments = [])
  * @method \Dew\Acs\Result describeOversizeNonPartitionTableInfos(array $arguments = [])
  * @method \Http\Promise\Promise describeOversizeNonPartitionTableInfosAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyDBClusterShardNumber(array $arguments = [])
+ * @method \Http\Promise\Promise modifyDBClusterShardNumberAsync($arguments = [])
  * @method \Dew\Acs\Result deleteBackups(array $arguments = [])
  * @method \Http\Promise\Promise deleteBackupsAsync($arguments = [])
  * @method \Dew\Acs\Result describeDBClusterShardNumber(array $arguments = [])
  * @method \Http\Promise\Promise describeDBClusterShardNumberAsync($arguments = [])
- * @method \Dew\Acs\Result deleteProcessInstance(array $arguments = []) {@since 2021-12-01}
- * @method \Http\Promise\Promise deleteProcessInstanceAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeClusterNetInfo(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeClusterNetInfoAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeClusterAccessWhiteList(array $arguments = []) {@since 2021-12-01}
@@ -353,8 +353,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describePerformanceViewAttributeAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result deletePerformanceView(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise deletePerformanceViewAsync($arguments = []) {@since 2021-12-01}
- * @method \Dew\Acs\Result existRunningSQLEngine(array $arguments = []) {@since 2021-12-01}
- * @method \Http\Promise\Promise existRunningSQLEngineAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result existRunningSQLEngine(array $arguments = []) {@deprecated 2021-12-01} {@since 2021-12-01}
+ * @method \Http\Promise\Promise existRunningSQLEngineAsync($arguments = []) {@deprecated 2021-12-01} {@since 2021-12-01}
  * @method \Dew\Acs\Result preloadSparkAppMetrics(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise preloadSparkAppMetricsAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result getSparkAppMetrics(array $arguments = []) {@since 2021-12-01}
@@ -371,8 +371,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise setSparkAppLogRootPathAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result getSparkConfigLogPath(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise getSparkConfigLogPathAsync($arguments = []) {@since 2021-12-01}
- * @method \Dew\Acs\Result startSparkSQLEngine(array $arguments = []) {@since 2021-12-01}
- * @method \Http\Promise\Promise startSparkSQLEngineAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result startSparkSQLEngine(array $arguments = []) {@deprecated 2021-12-01} {@since 2021-12-01}
+ * @method \Http\Promise\Promise startSparkSQLEngineAsync($arguments = []) {@deprecated 2021-12-01} {@since 2021-12-01}
  * @method \Dew\Acs\Result killSparkSQLEngine(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise killSparkSQLEngineAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result getSparkSQLEngineState(array $arguments = []) {@since 2021-12-01}
@@ -553,6 +553,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise executeSparkWarehouseBatchSQLAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result modifyUserEniVswitchOptions(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise modifyUserEniVswitchOptionsAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeLLMAnswer(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeLLMAnswerAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeLLMSimilarQuestions(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeLLMSimilarQuestionsAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeResourceGroupSpec(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeResourceGroupSpecAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeAdbMySqlTableMeta(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeAdbMySqlTableMetaAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeAdbMySqlIndexes(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeAdbMySqlIndexesAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result describeSQLWebSocketDomain(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise describeSQLWebSocketDomainAsync($arguments = []) {@since 2021-12-01}
  */
 final class AdbClient extends AcsClient
 {

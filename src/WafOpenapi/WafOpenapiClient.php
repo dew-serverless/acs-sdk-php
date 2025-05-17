@@ -299,6 +299,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeApisecMatchedHostsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeApisecEvents(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeApisecEventsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeNetworkFlowTimeSeriesMetric(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeNetworkFlowTimeSeriesMetricAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeSecurityEventTopNMetric(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeSecurityEventTopNMetricAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeSecurityEventTimeSeriesMetric(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeSecurityEventTimeSeriesMetricAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeSecurityEventLogs(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeSecurityEventLogsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeNetworkFlowTopNMetric(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeNetworkFlowTopNMetricAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeFlowChart(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeFlowChartAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describePeakTrend(array $arguments = []) {@since 2021-10-01}

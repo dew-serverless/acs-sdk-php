@@ -29,6 +29,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteVocabAsync($arguments = [])
  * @method \Dew\Acs\Result getVocab(array $arguments = [])
  * @method \Http\Promise\Promise getVocabAsync($arguments = [])
+ * @method \Dew\Acs\Result analyzeAudioSync(array $arguments = [])
+ * @method \Http\Promise\Promise analyzeAudioSyncAsync($arguments = [])
  */
 final class ContactCenterAIClient extends AcsClient
 {

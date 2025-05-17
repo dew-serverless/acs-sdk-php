@@ -91,6 +91,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise detectFaceAttributesAsync($arguments = [])
  * @method \Dew\Acs\Result aIGCFaceVerify(array $arguments = [])
  * @method \Http\Promise\Promise aIGCFaceVerifyAsync($arguments = [])
+ * @method \Dew\Acs\Result id2MetaVerifyWithOCR(array $arguments = [])
+ * @method \Http\Promise\Promise id2MetaVerifyWithOCRAsync($arguments = [])
+ * @method \Dew\Acs\Result credentialVerifyV2(array $arguments = [])
+ * @method \Http\Promise\Promise credentialVerifyV2Async($arguments = [])
  * @method \Dew\Acs\Result describeSmsDetail(array $arguments = []) {@since 2020-06-18}
  * @method \Http\Promise\Promise describeSmsDetailAsync($arguments = []) {@since 2020-06-18}
  * @method \Dew\Acs\Result sendSms(array $arguments = []) {@since 2020-06-18}

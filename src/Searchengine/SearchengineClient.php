@@ -221,6 +221,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result listQueryResult(array $arguments = [])
  * @method \Http\Promise\Promise listQueryResultAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteModel(array $arguments = [])
+ * @method \Http\Promise\Promise deleteModelAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyModel(array $arguments = [])
+ * @method \Http\Promise\Promise modifyModelAsync($arguments = [])
+ * @method \Dew\Acs\Result debugModel(array $arguments = [])
+ * @method \Http\Promise\Promise debugModelAsync($arguments = [])
+ * @method \Dew\Acs\Result getModel(array $arguments = [])
+ * @method \Http\Promise\Promise getModelAsync($arguments = [])
+ * @method \Dew\Acs\Result listModels(array $arguments = [])
+ * @method \Http\Promise\Promise listModelsAsync($arguments = [])
+ * @method \Dew\Acs\Result createModel(array $arguments = [])
+ * @method \Http\Promise\Promise createModelAsync($arguments = [])
+ * @method \Dew\Acs\Result modifySearcherReplica(array $arguments = [])
+ * @method \Http\Promise\Promise modifySearcherReplicaAsync($arguments = [])
  */
 final class SearchengineClient extends AcsClient
 {

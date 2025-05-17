@@ -123,6 +123,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listOpsItemsAsync($arguments = [])
  * @method \Dew\Acs\Result updateOpsItem(array $arguments = [])
  * @method \Http\Promise\Promise updateOpsItemAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteOpsItems(array $arguments = [])
+ * @method \Http\Promise\Promise deleteOpsItemsAsync($arguments = [])
  * @method \Dew\Acs\Result setServiceSettings(array $arguments = [])
  * @method \Http\Promise\Promise setServiceSettingsAsync($arguments = [])
  * @method \Dew\Acs\Result getServiceSettings(array $arguments = [])

@@ -313,8 +313,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createActivationCodeAsync($arguments = [])
  * @method \Dew\Acs\Result describeActivationCodeDetails(array $arguments = [])
  * @method \Http\Promise\Promise describeActivationCodeDetailsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeHistoryTasks(array $arguments = [])
+ * @method \Http\Promise\Promise describeHistoryTasksAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBClusterArch(array $arguments = [])
  * @method \Http\Promise\Promise modifyDBClusterArchAsync($arguments = [])
+ * @method \Dew\Acs\Result createGlobalDataNetwork(array $arguments = [])
+ * @method \Http\Promise\Promise createGlobalDataNetworkAsync($arguments = [])
+ * @method \Dew\Acs\Result describeGlobalDataNetworkList(array $arguments = [])
+ * @method \Http\Promise\Promise describeGlobalDataNetworkListAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteGlobalDataNetwork(array $arguments = [])
+ * @method \Http\Promise\Promise deleteGlobalDataNetworkAsync($arguments = [])
  */
 final class PolardbClient extends AcsClient
 {

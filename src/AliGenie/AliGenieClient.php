@@ -185,6 +185,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getScheduleTaskAsync($arguments = []) {@since ssp_1.0}
  * @method \Dew\Acs\Result getWeather(array $arguments = []) {@since ssp_1.0}
  * @method \Http\Promise\Promise getWeatherAsync($arguments = []) {@since ssp_1.0}
+ * @method \Dew\Acs\Result createPlayingListOAuth2(array $arguments = []) {@since ssp_1.0}
+ * @method \Http\Promise\Promise createPlayingListOAuth2Async($arguments = []) {@since ssp_1.0}
  * @method \Dew\Acs\Result getRelationProductList(array $arguments = []) {@since ip_1.0}
  * @method \Http\Promise\Promise getRelationProductListAsync($arguments = []) {@since ip_1.0}
  * @method \Dew\Acs\Result createHotel(array $arguments = []) {@since ip_1.0}

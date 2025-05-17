@@ -53,6 +53,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getTensorboardAsync($arguments = [])
  * @method \Dew\Acs\Result getTensorboardSharedUrl(array $arguments = [])
  * @method \Http\Promise\Promise getTensorboardSharedUrlAsync($arguments = [])
+ * @method \Dew\Acs\Result getRayDashboard(array $arguments = [])
+ * @method \Http\Promise\Promise getRayDashboardAsync($arguments = [])
  */
 final class PaiDlcClient extends AcsClient
 {

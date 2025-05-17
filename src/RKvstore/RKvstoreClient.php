@@ -63,8 +63,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeRoleZoneInfoAsync($arguments = [])
  * @method \Dew\Acs\Result describeClusterMemberInfo(array $arguments = [])
  * @method \Http\Promise\Promise describeClusterMemberInfoAsync($arguments = [])
- * @method \Dew\Acs\Result describeTasks(array $arguments = [])
- * @method \Http\Promise\Promise describeTasksAsync($arguments = [])
  * @method \Dew\Acs\Result describeDBInstanceNetInfo(array $arguments = [])
  * @method \Http\Promise\Promise describeDBInstanceNetInfoAsync($arguments = [])
  * @method \Dew\Acs\Result describeDBNodeDirectVipInfo(array $arguments = [])
@@ -261,6 +259,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyInstanceBandwidthAsync($arguments = [])
  * @method \Dew\Acs\Result modifyTaskInfo(array $arguments = [])
  * @method \Http\Promise\Promise modifyTaskInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyBackupExpireTime(array $arguments = [])
+ * @method \Http\Promise\Promise modifyBackupExpireTimeAsync($arguments = [])
  */
 final class RKvstoreClient extends AcsClient
 {

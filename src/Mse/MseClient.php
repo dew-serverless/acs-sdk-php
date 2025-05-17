@@ -195,6 +195,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listCircuitBreakerRulesAsync($arguments = [])
  * @method \Dew\Acs\Result updateCircuitBreakerRule(array $arguments = [])
  * @method \Http\Promise\Promise updateCircuitBreakerRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result listWebFlowRules(array $arguments = [])
+ * @method \Http\Promise\Promise listWebFlowRulesAsync($arguments = [])
+ * @method \Dew\Acs\Result createWebFlowRule(array $arguments = [])
+ * @method \Http\Promise\Promise createWebFlowRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteWebFlowRules(array $arguments = [])
+ * @method \Http\Promise\Promise deleteWebFlowRulesAsync($arguments = [])
+ * @method \Dew\Acs\Result updateWebFlowRule(array $arguments = [])
+ * @method \Http\Promise\Promise updateWebFlowRuleAsync($arguments = [])
  * @method \Dew\Acs\Result listAuthPolicy(array $arguments = [])
  * @method \Http\Promise\Promise listAuthPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result updateAuthPolicy(array $arguments = [])
@@ -479,6 +487,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result updateNacosGrayConfig(array $arguments = [])
  * @method \Http\Promise\Promise updateNacosGrayConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result updateGatewayConfig(array $arguments = [])
+ * @method \Http\Promise\Promise updateGatewayConfigAsync($arguments = [])
  */
 final class MseClient extends AcsClient
 {

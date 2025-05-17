@@ -683,6 +683,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise kickLiveMessageGroupUserAsync($arguments = [])
  * @method \Dew\Acs\Result modifyLiveMessageUserInfo(array $arguments = [])
  * @method \Http\Promise\Promise modifyLiveMessageUserInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result startRtcCloudRecording(array $arguments = [])
+ * @method \Http\Promise\Promise startRtcCloudRecordingAsync($arguments = [])
+ * @method \Dew\Acs\Result updateRtcCloudRecording(array $arguments = [])
+ * @method \Http\Promise\Promise updateRtcCloudRecordingAsync($arguments = [])
+ * @method \Dew\Acs\Result stopRtcCloudRecording(array $arguments = [])
+ * @method \Http\Promise\Promise stopRtcCloudRecordingAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRtcCloudRecordingFiles(array $arguments = [])
+ * @method \Http\Promise\Promise describeRtcCloudRecordingFilesAsync($arguments = [])
  * @method \Dew\Acs\Result describeChannelParticipants(array $arguments = [])
  * @method \Http\Promise\Promise describeChannelParticipantsAsync($arguments = [])
  * @method \Dew\Acs\Result describeChannelUsers(array $arguments = [])
@@ -825,6 +833,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateCasterResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result tagLiveResources(array $arguments = [])
  * @method \Http\Promise\Promise tagLiveResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result unTagLiveResources(array $arguments = [])
+ * @method \Http\Promise\Promise unTagLiveResourcesAsync($arguments = [])
  */
 final class LiveClient extends AcsClient
 {

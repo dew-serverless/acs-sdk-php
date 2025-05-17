@@ -39,6 +39,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise registerInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result updateInstance(array $arguments = [])
  * @method \Http\Promise\Promise updateInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result simplyAddInstance(array $arguments = [])
+ * @method \Http\Promise\Promise simplyAddInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result getOpLog(array $arguments = [])
  * @method \Http\Promise\Promise getOpLogAsync($arguments = [])
  * @method \Dew\Acs\Result listInstanceLoginAuditLog(array $arguments = [])
@@ -319,6 +321,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getDBTaskSQLJobLogAsync($arguments = [])
  * @method \Dew\Acs\Result getOnlineDDLProgress(array $arguments = [])
  * @method \Http\Promise\Promise getOnlineDDLProgressAsync($arguments = [])
+ * @method \Dew\Acs\Result generateSqlFromNL(array $arguments = [])
+ * @method \Http\Promise\Promise generateSqlFromNLAsync($arguments = [])
  * @method \Dew\Acs\Result setOwners(array $arguments = [])
  * @method \Http\Promise\Promise setOwnersAsync($arguments = [])
  * @method \Dew\Acs\Result listInstanceUserPermissions(array $arguments = [])
@@ -531,6 +535,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise stopTaskFlowInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result createTask(array $arguments = [])
  * @method \Http\Promise\Promise createTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result updateTaskContentV2(array $arguments = [])
+ * @method \Http\Promise\Promise updateTaskContentV2Async($arguments = [])
+ * @method \Dew\Acs\Result tryRunTaskFlow(array $arguments = [])
+ * @method \Http\Promise\Promise tryRunTaskFlowAsync($arguments = [])
  * @method \Dew\Acs\Result createLakeHouseSpace(array $arguments = [])
  * @method \Http\Promise\Promise createLakeHouseSpaceAsync($arguments = [])
  * @method \Dew\Acs\Result getLhSpaceByName(array $arguments = [])
@@ -553,8 +561,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise buyPayAsYouGoOrderAsync($arguments = [])
  * @method \Dew\Acs\Result analyzeSQLLineage(array $arguments = [])
  * @method \Http\Promise\Promise analyzeSQLLineageAsync($arguments = [])
- * @method \Dew\Acs\Result updateTaskContentV2(array $arguments = [])
- * @method \Http\Promise\Promise updateTaskContentV2Async($arguments = [])
  */
 final class DmsEnterpriseClient extends AcsClient
 {

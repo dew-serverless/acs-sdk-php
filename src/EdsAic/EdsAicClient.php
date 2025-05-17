@@ -7,6 +7,20 @@ namespace Dew\Acs\EdsAic;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result createCloudPhoneNode(array $arguments = [])
+ * @method \Http\Promise\Promise createCloudPhoneNodeAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCloudPhoneNodes(array $arguments = [])
+ * @method \Http\Promise\Promise describeCloudPhoneNodesAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyCloudPhoneNode(array $arguments = [])
+ * @method \Http\Promise\Promise modifyCloudPhoneNodeAsync($arguments = [])
+ * @method \Dew\Acs\Result renewCloudPhoneNodes(array $arguments = [])
+ * @method \Http\Promise\Promise renewCloudPhoneNodesAsync($arguments = [])
+ * @method \Dew\Acs\Result changeCloudPhoneNode(array $arguments = [])
+ * @method \Http\Promise\Promise changeCloudPhoneNodeAsync($arguments = [])
+ * @method \Dew\Acs\Result expandDataVolume(array $arguments = [])
+ * @method \Http\Promise\Promise expandDataVolumeAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteCloudPhoneNodes(array $arguments = [])
+ * @method \Http\Promise\Promise deleteCloudPhoneNodesAsync($arguments = [])
  * @method \Dew\Acs\Result describeRegions(array $arguments = [])
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result describeSpec(array $arguments = [])
@@ -25,6 +39,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise downgradeAndroidInstanceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result renewAndroidInstanceGroups(array $arguments = [])
  * @method \Http\Promise\Promise renewAndroidInstanceGroupsAsync($arguments = [])
+ * @method \Dew\Acs\Result updateInstanceGroupImage(array $arguments = [])
+ * @method \Http\Promise\Promise updateInstanceGroupImageAsync($arguments = [])
  * @method \Dew\Acs\Result deleteAndroidInstanceGroup(array $arguments = [])
  * @method \Http\Promise\Promise deleteAndroidInstanceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result describeAndroidInstances(array $arguments = [])
@@ -43,6 +59,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise resetAndroidInstancesInGroupAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceChargeType(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceChargeTypeAsync($arguments = [])
+ * @method \Dew\Acs\Result updateInstanceImage(array $arguments = [])
+ * @method \Http\Promise\Promise updateInstanceImageAsync($arguments = [])
  * @method \Dew\Acs\Result batchGetAcpConnectionTicket(array $arguments = [])
  * @method \Http\Promise\Promise batchGetAcpConnectionTicketAsync($arguments = [])
  * @method \Dew\Acs\Result disconnectAndroidInstance(array $arguments = [])
@@ -65,8 +83,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createCustomImageAsync($arguments = [])
  * @method \Dew\Acs\Result describeImageList(array $arguments = [])
  * @method \Http\Promise\Promise describeImageListAsync($arguments = [])
- * @method \Dew\Acs\Result updateInstanceGroupImage(array $arguments = [])
- * @method \Http\Promise\Promise updateInstanceGroupImageAsync($arguments = [])
  * @method \Dew\Acs\Result updateCustomImageName(array $arguments = [])
  * @method \Http\Promise\Promise updateCustomImageNameAsync($arguments = [])
  * @method \Dew\Acs\Result distributeImage(array $arguments = [])
@@ -119,6 +135,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeTasksAsync($arguments = [])
  * @method \Dew\Acs\Result setAdbSecure(array $arguments = [])
  * @method \Http\Promise\Promise setAdbSecureAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyDisplayConfig(array $arguments = [])
+ * @method \Http\Promise\Promise modifyDisplayConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDisplayConfig(array $arguments = [])
+ * @method \Http\Promise\Promise describeDisplayConfigAsync($arguments = [])
  */
 final class EdsAicClient extends AcsClient
 {

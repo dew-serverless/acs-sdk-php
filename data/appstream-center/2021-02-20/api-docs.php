@@ -580,7 +580,11 @@
     'endpoints' => [
         [
             'regionId' => 'cn-shanghai',
-            'endpoint' => 'appstream-center.aliyuncs.com',
+            'endpoint' => 'appstream-center.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'appstream-center.ap-southeast-1.aliyuncs.com',
         ],
     ],
 ];

@@ -1514,6 +1514,9 @@
                     'data_hash_name' => [
                         'type' => 'string',
                     ],
+                    'store_redundancy_type' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'DomainAppConfig' => [
@@ -2925,6 +2928,93 @@
                     'total_size' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                ],
+            ],
+            'ReceivedMsg' => [
+                'type' => 'object',
+                'properties' => [
+                    'msg_id' => [
+                        'type' => 'string',
+                    ],
+                    'msg_category' => [
+                        'type' => 'string',
+                    ],
+                    'msg_sub_category' => [
+                        'type' => 'string',
+                    ],
+                    'msg_content' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'msg_data' => [
+                                'type' => 'object',
+                                'additionalProperties' => [
+                                    'type' => 'any',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'msg_type' => [
+                        'type' => 'string',
+                    ],
+                    'has_read' => [
+                        'type' => 'boolean',
+                    ],
+                    'read_at' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'publish_at' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'RecentActedFile' => [
+                'type' => 'object',
+                'properties' => [
+                    'drive_id' => [
+                        'type' => 'string',
+                    ],
+                    'drive_name' => [
+                        'type' => 'string',
+                    ],
+                    'drive_owner_id' => [
+                        'type' => 'string',
+                    ],
+                    'drive_owner_type' => [
+                        'type' => 'string',
+                    ],
+                    'drive_is_handover' => [
+                        'type' => 'boolean',
+                    ],
+                    'file_id' => [
+                        'type' => 'string',
+                    ],
+                    'file_name' => [
+                        'type' => 'string',
+                    ],
+                    'size' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'category' => [
+                        'type' => 'string',
+                    ],
+                    'thumbnail' => [
+                        'type' => 'string',
+                    ],
+                    'trashed' => [
+                        'type' => 'boolean',
+                    ],
+                    'deleted' => [
+                        'type' => 'boolean',
+                    ],
+                    'action_list' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -6882,13 +6972,19 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
-                            'fields' => [
-                                'type' => 'string',
-                                'deprecated' => true,
-                                'required' => false,
-                            ],
                             'recursive' => [
                                 'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'thumbnail_processes' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    '$ref' => '#/components/schemas/ImageProcess',
+                                ],
+                            ],
+                            'fields' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -7095,8 +7191,8 @@
                 'get',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -7626,6 +7722,10 @@
                             ],
                             'response_content_type' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'static_url' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],
@@ -9542,6 +9642,13 @@
                             'fields' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'thumbnail_processes' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    '$ref' => '#/components/schemas/ImageProcess',
+                                ],
                             ],
                         ],
                     ],
@@ -11559,6 +11666,67 @@
                                         ],
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'AuditLogExport' => [
+            'path' => '/v2/audit_log/export',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+                [
+                    'BearerToken' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'domain_id',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'query' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'order_by' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'file_name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'language' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],

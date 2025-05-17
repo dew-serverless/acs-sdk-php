@@ -164,6 +164,27 @@
                     ],
                 ],
             ],
+            'BindingPolicy' => [
+                'type' => 'object',
+                'properties' => [
+                    'NodeSpecCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'IncludeNodes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'ExcludeNodes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'Channel' => [
                 'type' => 'object',
                 'properties' => [
@@ -795,6 +816,20 @@
                     ],
                 ],
             ],
+            'NodeOperationResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'NodeName' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'NodePodInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -883,6 +918,9 @@
                     'Count' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'BindingPolicy' => [
+                        '$ref' => '#/components/schemas/BindingPolicy',
                     ],
                 ],
             ],
@@ -1661,6 +1699,20 @@
                     ],
                     'GpuType' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'ResourceLimitDetails' => [
+                'type' => 'object',
+                'properties' => [
+                    'GCLevel' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceLimit' => [
+                        'type' => 'object',
+                    ],
+                    'ShouldIgnoreResourceCheck' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],
@@ -2608,6 +2660,14 @@
                 ],
                 [
                     'name' => 'OrderInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MachineGroupIDs',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5456,6 +5516,22 @@
                 ],
                 [
                     'name' => 'FilterByResourceGroupIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MachineGroupIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ReasonCodes',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

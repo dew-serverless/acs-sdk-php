@@ -29,6 +29,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -37,6 +38,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -57,11 +59,21 @@
                     ],
                 ],
                 [
+                    'name' => 'AccountId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'AccountName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -95,7 +107,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'IsAuthAdmin',
@@ -971,7 +983,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -3760,7 +3772,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'ApiId',
@@ -3841,6 +3853,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -3850,6 +3863,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -4424,6 +4438,7 @@
                 'post',
             ],
             'schemes' => [
+                'http',
                 'https',
             ],
             'security' => [
@@ -4462,24 +4477,36 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'quickbi-public.cn-shanghai-finance-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'quickbi-public.cn-hangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'quickbi-public.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'quickbi-public.cn-hongkong.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'quickbi-public.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'quickbi-public.ap-southeast-3.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-5',
             'endpoint' => 'quickbi-public.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'quickbi-public.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'quickbi-public.cn-shanghai-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'quickbi-public.me-central-1.aliyuncs.com',
         ],
     ],
 ];

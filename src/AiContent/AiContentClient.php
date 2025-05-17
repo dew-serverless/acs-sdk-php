@@ -7,6 +7,22 @@ namespace Dew\Acs\AiContent;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result executeHundredThousandWhysDialogue(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeHundredThousandWhysDialogueAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result createAccessWarrant(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise createAccessWarrantAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result queryApplicationAccessId(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise queryApplicationAccessIdAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result queryProjectList(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise queryProjectListAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result queryProject(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise queryProjectAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result createProject(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise createProjectAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result updateProject(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise updateProjectAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result queryPurchasedService(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise queryPurchasedServiceAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result executeAITeacherChineseCompositionTutoringWorkflowRun(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise executeAITeacherChineseCompositionTutoringWorkflowRunAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result getTextbookAssistantToken(array $arguments = []) {@since 20240611}
@@ -19,10 +35,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listTextbookAssistantBookDirectoriesAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result listTextbookAssistantArticles(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise listTextbookAssistantArticlesAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result listTextbookAssistantArticleDetails(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise listTextbookAssistantArticleDetailsAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result listTextbookAssistantSceneDetails(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise listTextbookAssistantSceneDetailsAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result executeTextbookAssistantStartConversation(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise executeTextbookAssistantStartConversationAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result executeTextbookAssistantDialogue(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise executeTextbookAssistantDialogueAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result executeTextbookAssistantSseDialogue(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise executeTextbookAssistantSseDialogueAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result executeTextbookAssistantTranslate(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise executeTextbookAssistantTranslateAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result executeTextbookAssistantSuggestion(array $arguments = []) {@since 20240611}
@@ -59,8 +81,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise executeAITeacherExpansionDialogueRefineAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result executeAITeacherGrammarCheck(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise executeAITeacherGrammarCheckAsync($arguments = []) {@since 20240611}
- * @method \Dew\Acs\Result aliyunConsoleOpenApiQueryAliyunConsoleServcieList(array $arguments = []) {@since 20240611}
- * @method \Http\Promise\Promise aliyunConsoleOpenApiQueryAliyunConsoleServcieListAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result aliyunConsoleOpenApiQueryAliyunConsoleServiceList(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise aliyunConsoleOpenApiQueryAliyunConsoleServiceListAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result personalizedTextToImageQueryPreModelInferenceJobInfo(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise personalizedTextToImageQueryPreModelInferenceJobInfoAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result personalizedTextToImageAddInferenceJob(array $arguments = []) {@since 20240611}
@@ -79,8 +101,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise personalizedtxt2imgQueryModelTrainJobListAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result personalizedtxt2imgQueryModelTrainStatus(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise personalizedtxt2imgQueryModelTrainStatusAsync($arguments = []) {@since 20240611}
- * @method \Dew\Acs\Result aliyunConsoleOpenApiQueryAliyunConsoleServiceList(array $arguments = []) {@since 20240611}
- * @method \Http\Promise\Promise aliyunConsoleOpenApiQueryAliyunConsoleServiceListAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result aliyunConsoleOpenApiQueryAliyunConsoleServcieList(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise aliyunConsoleOpenApiQueryAliyunConsoleServcieListAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result countOralEvaluationStatisticsConcurrent(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise countOralEvaluationStatisticsConcurrentAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result countOralEvaluationStatisticsCalls(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise countOralEvaluationStatisticsCallsAsync($arguments = []) {@since 20240611}
+ * @method \Dew\Acs\Result countOralEvaluationStatisticsError(array $arguments = []) {@since 20240611}
+ * @method \Http\Promise\Promise countOralEvaluationStatisticsErrorAsync($arguments = []) {@since 20240611}
  */
 final class AiContentClient extends AcsClient
 {

@@ -7,6 +7,8 @@ namespace Dew\Acs\Aiccs;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result llmSmartCallEncrypt(array $arguments = [])
+ * @method \Http\Promise\Promise llmSmartCallEncryptAsync($arguments = [])
  * @method \Dew\Acs\Result hangupOperate(array $arguments = [])
  * @method \Http\Promise\Promise hangupOperateAsync($arguments = [])
  * @method \Dew\Acs\Result llmSmartCall(array $arguments = [])

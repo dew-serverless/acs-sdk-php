@@ -8263,6 +8263,10 @@
             'endpoint' => 'alb.cn-zhangjiakou.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-zhengzhou-jva',
+            'endpoint' => 'alb.cn-zhengzhou-jva.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-wulanchabu',
             'endpoint' => 'alb.cn-wulanchabu.aliyuncs.com',
         ],
@@ -8275,12 +8279,32 @@
             'endpoint' => 'alb.cn-shanghai.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-nanjing',
+            'endpoint' => 'alb.cn-nanjing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'alb.cn-fuzhou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'alb.cn-shenzhen.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'alb.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'alb.cn-guangzhou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-chengdu',
             'endpoint' => 'alb.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'alb.cn-wuhan-lr.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
@@ -8291,8 +8315,16 @@
             'endpoint' => 'alb.ap-northeast-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'alb.ap-northeast-2.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'alb.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'alb.ap-southeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',
@@ -8301,6 +8333,10 @@
         [
             'regionId' => 'ap-southeast-5',
             'endpoint' => 'alb.ap-southeast-5.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
+            'endpoint' => 'alb.ap-southeast-6.aliyuncs.com',
         ],
         [
             'regionId' => 'us-east-1',
@@ -8319,28 +8355,12 @@
             'endpoint' => 'alb.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'alb.ap-northeast-2.aliyuncs.com',
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'alb.ap-south-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'alb.cn-guangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-nanjing',
-            'endpoint' => 'alb.cn-nanjing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'alb.ap-southeast-7.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-6',
-            'endpoint' => 'alb.ap-southeast-6.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-fuzhou',
-            'endpoint' => 'alb.cn-fuzhou.aliyuncs.com',
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'alb.cn-hangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',
@@ -8351,6 +8371,10 @@
             'endpoint' => 'alb.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'alb.ap-southeast-7.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'alb.cn-beijing-finance-1.aliyuncs.com',
         ],
@@ -8359,16 +8383,12 @@
             'endpoint' => 'alb.me-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'alb.cn-wuhan-lr.aliyuncs.com',
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'alb.cn-heyuan-acdr-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'alb.cn-hangzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'alb.cn-heyuan.aliyuncs.com',
+            'regionId' => 'na-south-1',
+            'endpoint' => 'alb.na-south-1.aliyuncs.com',
         ],
     ],
 ];

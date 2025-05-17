@@ -7,6 +7,8 @@ namespace Dew\Acs\BrainIndustrial;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result aicsOpenApiInvoke(array $arguments = [])
+ * @method \Http\Promise\Promise aicsOpenApiInvokeAsync($arguments = [])
  * @method \Dew\Acs\Result listUserResources(array $arguments = [])
  * @method \Http\Promise\Promise listUserResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result listLicenses(array $arguments = [])

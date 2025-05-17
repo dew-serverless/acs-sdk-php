@@ -159,6 +159,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDBInstance' => [
@@ -1256,6 +1264,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DBInstanceNetType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyDBInstanceConnectionString' => [
@@ -1311,6 +1327,17 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DBInstanceNetType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Public',
+                        ],
                     ],
                 ],
             ],
@@ -1786,7 +1813,7 @@
         ],
         [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'clickhouse.aliyuncs.com',
+            'endpoint' => 'clickhouse.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong-finance-pop',

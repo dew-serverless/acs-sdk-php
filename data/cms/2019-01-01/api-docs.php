@@ -5835,6 +5835,19 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AgentGroup',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'PC',
+                            'MOBILE',
+                            'FC',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeSiteMonitorLog' => [
@@ -12187,6 +12200,10 @@
             'endpoint' => 'metrics.cn-chengdu.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'metrics.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'metrics.cn-hongkong.aliyuncs.com',
         ],
@@ -12201,6 +12218,10 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'metrics.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'metrics.ap-southeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',
@@ -12261,6 +12282,10 @@
         [
             'regionId' => 'cn-heyuan-acdr-1',
             'endpoint' => 'metrics.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'metrics.na-south-1.aliyuncs.com',
         ],
     ],
 ];

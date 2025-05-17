@@ -77,8 +77,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeAvailableMemResourceAsync($arguments = [])
  * @method \Dew\Acs\Result describeCharset(array $arguments = [])
  * @method \Http\Promise\Promise describeCharsetAsync($arguments = [])
- * @method \Dew\Acs\Result describeInstanceCreatableZone(array $arguments = [])
- * @method \Http\Promise\Promise describeInstanceCreatableZoneAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInstanceAvailableZones(array $arguments = [])
+ * @method \Http\Promise\Promise describeInstanceAvailableZonesAsync($arguments = [])
  * @method \Dew\Acs\Result describeTenantZonesRead(array $arguments = [])
  * @method \Http\Promise\Promise describeTenantZonesReadAsync($arguments = [])
  * @method \Dew\Acs\Result describeTimeZones(array $arguments = [])
@@ -161,6 +161,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeRecommendIndexAsync($arguments = [])
  * @method \Dew\Acs\Result describeSQLTuningAdvices(array $arguments = [])
  * @method \Http\Promise\Promise describeSQLTuningAdvicesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSqlAuditStat(array $arguments = [])
+ * @method \Http\Promise\Promise describeSqlAuditStatAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceSSL(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceSSLAsync($arguments = [])
  * @method \Dew\Acs\Result describeInstanceSSL(array $arguments = [])
@@ -279,6 +281,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeStandbyCreateModeAsync($arguments = [])
  * @method \Dew\Acs\Result describeProxyService(array $arguments = [])
  * @method \Http\Promise\Promise describeProxyServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInstanceCreatableZone(array $arguments = [])
+ * @method \Http\Promise\Promise describeInstanceCreatableZoneAsync($arguments = [])
  */
 final class OceanBaseProClient extends AcsClient
 {

@@ -9,6 +9,70 @@
         'schemas' => [],
     ],
     'apis' => [
+        'UpdateDocumentChunk' => [
+            'path' => '/{workspaceId}/api/library/updateDocumentChunk',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'libraryId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'chunks' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'chunkId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'chunkText' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetAppConfig' => [
             'path' => '/{workspaceId}/api/app/config',
             'methods' => [
@@ -1860,8 +1924,8 @@
                 ],
             ],
         ],
-        'GetDialogAnalysisResult' => [
-            'path' => '/{workspaceId}/api/virtualHuman/dialog/analysis',
+        'CreateDialog' => [
+            'path' => '/{workspaceId}/api/virtualHuman/dialog/create',
             'methods' => [
                 'post',
             ],
@@ -1897,7 +1961,19 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'sessionIds' => [
+                            'playCode' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'channel' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'metaData' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'qaLibraryList' => [
                                 'type' => 'array',
                                 'required' => false,
                                 'items' => [
@@ -1905,19 +1981,15 @@
                                     'required' => false,
                                 ],
                             ],
-                            'useUrl' => [
+                            'requestId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'enableLibrary' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
-                            'startTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'endTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'asc' => [
+                            'selfDirected' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
@@ -1944,6 +2016,7 @@
                 'application/json',
             ],
             'produces' => [
+                'text/event-stream',
                 'application/json',
             ],
             'deprecated' => false,
@@ -2063,13 +2136,163 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'opType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
             ],
         ],
-        'CreateDialog' => [
-            'path' => '/{workspaceId}/api/virtualHuman/dialog/create',
+        'RealtimeDialogAssist' => [
+            'path' => '/{workspaceId}/api/realtime/dialog/assist',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'text/event-stream',
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'requestId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'bizType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'analysis' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'metaData' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'conversationModel' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'role' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                        'customerServiceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'customerServiceId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'customerId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'dialogMemoryTurns' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'hangUpDialog' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetDialogDetail' => [
+            'path' => '/{workspaceId}/api/virtualHuman/dialog/detail',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'sessionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateDialogAnalysisTask' => [
+            'path' => '/{workspaceId}/api/virtualHuman/dialog/analysis/submit',
             'methods' => [
                 'post',
             ],
@@ -2105,19 +2328,15 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'playCode' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'channel' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
                             'metaData' => [
                                 'type' => 'object',
                                 'required' => false,
                             ],
-                            'qaLibraryList' => [
+                            'playCode' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'analysisNodes' => [
                                 'type' => 'array',
                                 'required' => false,
                                 'items' => [
@@ -2129,11 +2348,97 @@
                                 'type' => 'string',
                                 'required' => true,
                             ],
-                            'enableLibrary' => [
+                            'conversationList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'dialogueList' => [
+                                            'type' => 'array',
+                                            'required' => true,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'content' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'role' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetDialogAnalysisResult' => [
+            'path' => '/{workspaceId}/api/virtualHuman/dialog/analysis',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'sessionIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'useUrl' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
-                            'selfDirected' => [
+                            'startTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'endTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'asc' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
@@ -2186,6 +2491,166 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'EvictTask' => [
+            'path' => '/{workspaceId}/api/task/evict',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetTaskStatus' => [
+            'path' => '/{workspaceId}/api/task/status',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateDocsSummaryTask' => [
+            'path' => '/{workspaceId}/api/task/summary/docs',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'docInfos' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'docId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'endPage' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'libraryId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'startPage' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'enableTable' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'instruction' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'modelId' => [
+                                'type' => 'string',
+                                'required' => true,
                             ],
                         ],
                     ],
@@ -2288,8 +2753,184 @@
                 ],
             ],
         ],
-        'GetQualityCheckTaskResult' => [
-            'path' => '/{workspaceId}/api/qualitycheck/task/query',
+        'CreatePdfTranslateTask' => [
+            'path' => '/{workspaceId}/api/task/pdfTranslate',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'docId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'knowledge' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'libraryId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'modelId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'translateTo' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateFinReportSummaryTask' => [
+            'path' => '/{workspaceId}/api/task/summary',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'docId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'enableTable' => [
+                                'type' => 'boolean',
+                                'required' => true,
+                            ],
+                            'endPage' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'instruction' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'libraryId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'modelId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'startPage' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'taskType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetSummaryTaskResult' => [
+            'path' => '/{workspaceId}/api/task/summary/result',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetTaskResult' => [
+            'path' => '/{workspaceId}/api/task/result',
             'methods' => [
                 'get',
             ],
@@ -2473,90 +3114,8 @@
                 ],
             ],
         ],
-        'CreateDocsSummaryTask' => [
-            'path' => '/{workspaceId}/api/task/summary/docs',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'docInfos' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'docId' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'endPage' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'libraryId' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'startPage' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'enableTable' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'instruction' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'modelId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetTaskResult' => [
-            'path' => '/{workspaceId}/api/task/result',
+        'GetQualityCheckTaskResult' => [
+            'path' => '/{workspaceId}/api/qualitycheck/task/query',
             'methods' => [
                 'get',
             ],
@@ -2590,68 +3149,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreatePdfTranslateTask' => [
-            'path' => '/{workspaceId}/api/task/pdfTranslate',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'docId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'knowledge' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'libraryId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'modelId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'translateTo' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
                     ],
                 ],
             ],
@@ -2794,374 +3291,6 @@
                             'intentionDomainCode' => [
                                 'type' => 'string',
                                 'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'CreateFinReportSummaryTask' => [
-            'path' => '/{workspaceId}/api/task/summary',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'docId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'enableTable' => [
-                                'type' => 'boolean',
-                                'required' => true,
-                            ],
-                            'endPage' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'instruction' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'libraryId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'modelId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'startPage' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'taskType' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetTaskStatus' => [
-            'path' => '/{workspaceId}/api/task/status',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'taskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'GetSummaryTaskResult' => [
-            'path' => '/{workspaceId}/api/task/summary/result',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'taskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'EvictTask' => [
-            'path' => '/{workspaceId}/api/task/evict',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'taskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'RunChatResultGeneration' => [
-            'path' => '/{workspaceId}/api/run/chat/generation',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-                'sse',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'inferenceParameters' => [
-                                'type' => 'object',
-                                'required' => false,
-                            ],
-                            'messages' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'content' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'role' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'modelId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'sessionId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'stream' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'tools' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'function' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'description' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'name' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'parameters' => [
-                                                    'type' => 'object',
-                                                    'required' => false,
-                                                    'properties' => [
-                                                        'properties' => [
-                                                            'type' => 'object',
-                                                            'required' => false,
-                                                        ],
-                                                        'type' => [
-                                                            'type' => 'string',
-                                                            'required' => false,
-                                                        ],
-                                                    ],
-                                                ],
-                                                'required' => [
-                                                    'type' => 'array',
-                                                    'required' => false,
-                                                    'items' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
-                                        'type' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetChatQuestionResp' => [
-            'path' => '/{workspaceId}/api/virtualHuman/chat/query',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'workspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'sessionId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'batchId' => [
-                                'type' => 'string',
-                                'required' => true,
                             ],
                         ],
                     ],
@@ -3384,6 +3513,182 @@
                             'requestId' => [
                                 'type' => 'string',
                                 'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetChatQuestionResp' => [
+            'path' => '/{workspaceId}/api/virtualHuman/chat/query',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'batchId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'RunChatResultGeneration' => [
+            'path' => '/{workspaceId}/api/run/chat/generation',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'inferenceParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'messages' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'content' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'role' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'modelId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'stream' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'tools' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'function' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'description' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'name' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'parameters' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'properties' => [
+                                                            'type' => 'object',
+                                                            'required' => false,
+                                                        ],
+                                                        'type' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                                'required' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],

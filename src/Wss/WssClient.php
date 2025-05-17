@@ -15,6 +15,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyInstancePropertiesAsync($arguments = [])
  * @method \Dew\Acs\Result describeDeliveryAddress(array $arguments = [])
  * @method \Http\Promise\Promise describeDeliveryAddressAsync($arguments = [])
+ * @method \Dew\Acs\Result describeMultiPrice(array $arguments = [])
+ * @method \Http\Promise\Promise describeMultiPriceAsync($arguments = [])
  */
 final class WssClient extends AcsClient
 {

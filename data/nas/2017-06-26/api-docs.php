@@ -23,13 +23,13 @@
                     'AK' => [],
                 ],
                 [
-                    'APP' => [],
-                ],
-                [
                     'PrivateKey' => [],
                 ],
                 [
                     'BearerToken' => [],
+                ],
+                [
+                    'APP' => [],
                 ],
             ],
             'deprecated' => false,
@@ -306,6 +306,30 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
                     ],
                 ],
             ],
@@ -2728,7 +2752,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                         'enum' => [
                             'DEFAULT_ATIME_14',
                             'DEFAULT_ATIME_30',
@@ -2747,6 +2771,8 @@
                         'enum' => [
                             'InfrequentAccess',
                             'Archive',
+                            'Capacity',
+                            'Performance',
                         ],
                     ],
                 ],
@@ -2845,7 +2871,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                         'enum' => [
                             'DEFAULT_ATIME_14',
                             'DEFAULT_ATIME_30',
@@ -2864,6 +2890,8 @@
                         'enum' => [
                             'InfrequentAccess',
                             'Archive',
+                            'Capacity',
+                            'Performance',
                         ],
                     ],
                 ],
@@ -2964,6 +2992,8 @@
                         'enum' => [
                             'InfrequentAccess',
                             'Archive',
+                            'Capacity',
+                            'Performance',
                         ],
                     ],
                 ],
@@ -6345,106 +6375,6 @@
                         'required' => false,
                         'minLength' => 1,
                         'maxLength' => 64,
-                    ],
-                ],
-            ],
-        ],
-        'AddTags' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'FileSystemId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Tag',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 10,
-                    ],
-                ],
-            ],
-        ],
-        'RemoveTags' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'FileSystemId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Tag',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 10,
                     ],
                 ],
             ],

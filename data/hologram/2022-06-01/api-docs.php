@@ -130,6 +130,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'storageType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

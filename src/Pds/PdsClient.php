@@ -219,6 +219,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise csiGetFileInfoAsync($arguments = [])
  * @method \Dew\Acs\Result batch(array $arguments = [])
  * @method \Http\Promise\Promise batchAsync($arguments = [])
+ * @method \Dew\Acs\Result auditLogExport(array $arguments = [])
+ * @method \Http\Promise\Promise auditLogExportAsync($arguments = [])
  * @method \Dew\Acs\Result getDomainQuota(array $arguments = [])
  * @method \Http\Promise\Promise getDomainQuotaAsync($arguments = [])
  * @method \Dew\Acs\Result groupUpdateName(array $arguments = [])

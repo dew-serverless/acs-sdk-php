@@ -29,6 +29,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise increaseInstanceAsync($arguments = []) {@since 2020-12-14}
  * @method \Dew\Acs\Result increaseList(array $arguments = []) {@since 2020-12-14}
  * @method \Http\Promise\Promise increaseListAsync($arguments = []) {@since 2020-12-14}
+ * @method \Dew\Acs\Result searchImageByText(array $arguments = []) {@since 2020-12-14}
+ * @method \Http\Promise\Promise searchImageByTextAsync($arguments = []) {@since 2020-12-14}
  * @method \Dew\Acs\Result updateImage(array $arguments = []) {@since 2020-12-14}
  * @method \Http\Promise\Promise updateImageAsync($arguments = []) {@since 2020-12-14}
  * @method \Dew\Acs\Result searchByUrl(array $arguments = []) {@since 2021-05-01}

@@ -7,6 +7,8 @@ namespace Dew\Acs\Csas;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result listDynamicDisposalProcesses(array $arguments = [])
+ * @method \Http\Promise\Promise listDynamicDisposalProcessesAsync($arguments = [])
  * @method \Dew\Acs\Result updateApprovalStatus(array $arguments = [])
  * @method \Http\Promise\Promise updateApprovalStatusAsync($arguments = [])
  * @method \Dew\Acs\Result updateApprovalProcess(array $arguments = [])
@@ -203,8 +205,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createWmExtractTaskAsync($arguments = [])
  * @method \Dew\Acs\Result createWmEmbedTask(array $arguments = [])
  * @method \Http\Promise\Promise createWmEmbedTaskAsync($arguments = [])
- * @method \Dew\Acs\Result revokeUserSession(array $arguments = [])
- * @method \Http\Promise\Promise revokeUserSessionAsync($arguments = [])
+ * @method \Dew\Acs\Result revokeUserSession(array $arguments = []) {@deprecated 2023-01-20}
+ * @method \Http\Promise\Promise revokeUserSessionAsync($arguments = []) {@deprecated 2023-01-20}
  * @method \Dew\Acs\Result listPopTrafficStatistics(array $arguments = [])
  * @method \Http\Promise\Promise listPopTrafficStatisticsAsync($arguments = [])
  */

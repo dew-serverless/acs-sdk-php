@@ -5426,6 +5426,10 @@
                                             'format' => 'int64',
                                             'required' => true,
                                         ],
+                                        'Remark' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
                             ],

@@ -941,6 +941,25 @@
                 'type' => 'object',
                 'required' => false,
                 'properties' => [
+                    'disk' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '20',
+                        'maximum' => '20480',
+                    ],
+                    'performanceLevel' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'PL0',
+                            'PL1',
+                            'PL2',
+                            'PL3',
+                            'CPL0',
+                            'CPL1',
+                        ],
+                    ],
                     'diskType' => [
                         'type' => 'string',
                         'required' => false,
@@ -949,6 +968,17 @@
                             'cloud_efficiency',
                             'cloud_ssd',
                         ],
+                    ],
+                    'diskPreference' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'high_availability',
+                            'high_cost_performance',
+                        ],
+                    ],
+                    'diskEncryption' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                     'spec' => [
                         'type' => 'string',
@@ -994,27 +1024,6 @@
                             'elasticsearch.d1.4xlarge',
                             'elasticsearch.n4.small',
                             'elasticsearch.ic5.large',
-                        ],
-                    ],
-                    'disk' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '20',
-                        'maximum' => '20480',
-                    ],
-                    'diskEncryption' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                    'performanceLevel' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'PL0',
-                            'PL1',
-                            'PL2',
-                            'PL3',
                         ],
                     ],
                 ],

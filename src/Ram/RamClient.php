@@ -133,6 +133,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getSecurityPreferenceAsync($arguments = [])
  * @method \Dew\Acs\Result decodeDiagnosticMessage(array $arguments = [])
  * @method \Http\Promise\Promise decodeDiagnosticMessageAsync($arguments = [])
+ * @method \Dew\Acs\Result tagResources(array $arguments = [])
+ * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result untagResources(array $arguments = [])
+ * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result listTagResources(array $arguments = [])
+ * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
  */
 final class RamClient extends AcsClient
 {

@@ -496,6 +496,14 @@
                     ],
                 ],
                 [
+                    'name' => 'MonitorEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ArgoCDHAEnabled',
                     'in' => 'query',
                     'schema' => [
@@ -550,6 +558,14 @@
                 ],
                 [
                     'name' => 'CostInsightsEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FluidEnabled',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',

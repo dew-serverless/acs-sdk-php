@@ -100,6 +100,7 @@
                             ],
                             'DisableReplication' => [
                                 'type' => 'boolean',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                         ],

@@ -7,6 +7,24 @@ namespace Dew\Acs\Dysmsapi;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result submitSmsQualification(array $arguments = [])
+ * @method \Http\Promise\Promise submitSmsQualificationAsync($arguments = [])
+ * @method \Dew\Acs\Result querySmsQualificationRecord(array $arguments = [])
+ * @method \Http\Promise\Promise querySmsQualificationRecordAsync($arguments = [])
+ * @method \Dew\Acs\Result querySingleSmsQualification(array $arguments = [])
+ * @method \Http\Promise\Promise querySingleSmsQualificationAsync($arguments = [])
+ * @method \Dew\Acs\Result updateSmsQualification(array $arguments = [])
+ * @method \Http\Promise\Promise updateSmsQualificationAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteSmsQualification(array $arguments = [])
+ * @method \Http\Promise\Promise deleteSmsQualificationAsync($arguments = [])
+ * @method \Dew\Acs\Result requiredPhoneCode(array $arguments = [])
+ * @method \Http\Promise\Promise requiredPhoneCodeAsync($arguments = [])
+ * @method \Dew\Acs\Result validPhoneCode(array $arguments = [])
+ * @method \Http\Promise\Promise validPhoneCodeAsync($arguments = [])
+ * @method \Dew\Acs\Result createSmsAuthorizationLetter(array $arguments = [])
+ * @method \Http\Promise\Promise createSmsAuthorizationLetterAsync($arguments = [])
+ * @method \Dew\Acs\Result querySmsAuthorizationLetter(array $arguments = [])
+ * @method \Http\Promise\Promise querySmsAuthorizationLetterAsync($arguments = [])
  * @method \Dew\Acs\Result createSmsSign(array $arguments = [])
  * @method \Http\Promise\Promise createSmsSignAsync($arguments = [])
  * @method \Dew\Acs\Result getSmsSign(array $arguments = [])
@@ -17,6 +35,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateSmsSignAsync($arguments = [])
  * @method \Dew\Acs\Result deleteSmsSign(array $arguments = [])
  * @method \Http\Promise\Promise deleteSmsSignAsync($arguments = [])
+ * @method \Dew\Acs\Result changeSignatureQualification(array $arguments = [])
+ * @method \Http\Promise\Promise changeSignatureQualificationAsync($arguments = [])
  * @method \Dew\Acs\Result addSmsSign(array $arguments = [])
  * @method \Http\Promise\Promise addSmsSignAsync($arguments = [])
  * @method \Dew\Acs\Result modifySmsSign(array $arguments = [])
@@ -33,12 +53,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateSmsTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result deleteSmsTemplate(array $arguments = [])
  * @method \Http\Promise\Promise deleteSmsTemplateAsync($arguments = [])
- * @method \Dew\Acs\Result addSmsTemplate(array $arguments = [])
- * @method \Http\Promise\Promise addSmsTemplateAsync($arguments = [])
- * @method \Dew\Acs\Result modifySmsTemplate(array $arguments = [])
- * @method \Http\Promise\Promise modifySmsTemplateAsync($arguments = [])
- * @method \Dew\Acs\Result querySmsTemplate(array $arguments = [])
- * @method \Http\Promise\Promise querySmsTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result addSmsTemplate(array $arguments = []) {@deprecated 2017-05-25}
+ * @method \Http\Promise\Promise addSmsTemplateAsync($arguments = []) {@deprecated 2017-05-25}
+ * @method \Dew\Acs\Result modifySmsTemplate(array $arguments = []) {@deprecated 2017-05-25}
+ * @method \Http\Promise\Promise modifySmsTemplateAsync($arguments = []) {@deprecated 2017-05-25}
+ * @method \Dew\Acs\Result querySmsTemplate(array $arguments = []) {@deprecated 2017-05-25}
+ * @method \Http\Promise\Promise querySmsTemplateAsync($arguments = []) {@deprecated 2017-05-25}
  * @method \Dew\Acs\Result sendSms(array $arguments = [])
  * @method \Http\Promise\Promise sendSmsAsync($arguments = [])
  * @method \Dew\Acs\Result sendBatchSms(array $arguments = [])
@@ -69,6 +89,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise sendCardSmsAsync($arguments = [])
  * @method \Dew\Acs\Result sendBatchCardSms(array $arguments = [])
  * @method \Http\Promise\Promise sendBatchCardSmsAsync($arguments = [])
+ * @method \Dew\Acs\Result getQualificationOssInfo(array $arguments = [])
+ * @method \Http\Promise\Promise getQualificationOssInfoAsync($arguments = [])
  * @method \Dew\Acs\Result getOSSInfoForUploadFile(array $arguments = [])
  * @method \Http\Promise\Promise getOSSInfoForUploadFileAsync($arguments = [])
  * @method \Dew\Acs\Result smsConversionIntl(array $arguments = [])

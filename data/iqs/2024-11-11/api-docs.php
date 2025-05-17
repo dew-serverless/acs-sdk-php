@@ -98,6 +98,91 @@
                     ],
                 ],
             ],
+            'GlobalPageItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'snippet' => [
+                        'type' => 'string',
+                    ],
+                    'link' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'title' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'GlobalQueryContext' => [
+                'type' => 'object',
+                'properties' => [
+                    'originalQuery' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'query' => [
+                                'type' => 'string',
+                            ],
+                            'page' => [
+                                'type' => 'string',
+                            ],
+                            'timeRange' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'GlobalSceneItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'detail' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'GlobalSearchInformation' => [
+                'type' => 'object',
+                'properties' => [
+                    'total' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'searchTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'GlobalSearchResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'queryContext' => [
+                        '$ref' => '#/components/schemas/GlobalQueryContext',
+                    ],
+                    'pageItems' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/GlobalPageItem',
+                        ],
+                    ],
+                    'sceneItems' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/GlobalSceneItem',
+                        ],
+                    ],
+                    'searchInformation' => [
+                        '$ref' => '#/components/schemas/GlobalSearchInformation',
+                    ],
+                ],
+            ],
             'IncludeImage' => [
                 'type' => 'object',
                 'properties' => [
@@ -150,6 +235,23 @@
                     ],
                 ],
             ],
+            'RequestContents' => [
+                'type' => 'object',
+                'properties' => [
+                    'summary' => [
+                        'type' => 'boolean',
+                    ],
+                    'rerankScore' => [
+                        'type' => 'boolean',
+                    ],
+                    'markdownText' => [
+                        'type' => 'boolean',
+                    ],
+                    'mainText' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
             'SceneItem' => [
                 'type' => 'object',
                 'properties' => [
@@ -165,6 +267,9 @@
                 'type' => 'object',
                 'properties' => [
                     'snippet' => [
+                        'type' => 'string',
+                    ],
+                    'summary' => [
                         'type' => 'string',
                     ],
                     'publishTime' => [
@@ -239,6 +344,15 @@
                     ],
                 ],
             ],
+            'SearchCredits' => [
+                'type' => 'object',
+                'properties' => [
+                    'genericTextSearch' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
             'SearchInformation' => [
                 'type' => 'object',
                 'properties' => [
@@ -249,6 +363,188 @@
                     'searchTime' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                ],
+            ],
+            'UnifiedCostCredits' => [
+                'type' => 'object',
+                'properties' => [
+                    'search' => [
+                        '$ref' => '#/components/schemas/SearchCredits',
+                    ],
+                    'valueAdded' => [
+                        '$ref' => '#/components/schemas/ValueAddedCredits',
+                    ],
+                ],
+            ],
+            'UnifiedOriginalQuery' => [
+                'type' => 'object',
+                'properties' => [
+                    'query' => [
+                        'type' => 'string',
+                    ],
+                    'timeRange' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'UnifiedPageItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'snippet' => [
+                        'type' => 'string',
+                    ],
+                    'summary' => [
+                        'type' => 'string',
+                    ],
+                    'hostLogo' => [
+                        'type' => 'string',
+                    ],
+                    'images' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'hostname' => [
+                        'type' => 'string',
+                    ],
+                    'rerankScore' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'publishedTime' => [
+                        'type' => 'string',
+                    ],
+                    'markdownText' => [
+                        'type' => 'string',
+                    ],
+                    'link' => [
+                        'type' => 'string',
+                    ],
+                    'mainText' => [
+                        'type' => 'string',
+                    ],
+                    'title' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'UnifiedQueryContext' => [
+                'type' => 'object',
+                'properties' => [
+                    'engineType' => [
+                        'type' => 'string',
+                    ],
+                    'originalQuery' => [
+                        '$ref' => '#/components/schemas/UnifiedOriginalQuery',
+                    ],
+                    'rewrite' => [
+                        '$ref' => '#/components/schemas/UnifiedRewrite',
+                    ],
+                ],
+            ],
+            'UnifiedRewrite' => [
+                'type' => 'object',
+                'properties' => [
+                    'enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'timeRange' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'UnifiedSceneItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'detail' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'UnifiedSearchInformation' => [
+                'type' => 'object',
+                'properties' => [
+                    'searchTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'UnifiedSearchInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'contents' => [
+                        '$ref' => '#/components/schemas/RequestContents',
+                    ],
+                    'query' => [
+                        'type' => 'string',
+                    ],
+                    'engineType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'Generic',
+                            'GenericAdvanced',
+                        ],
+                    ],
+                    'category' => [
+                        'type' => 'string',
+                    ],
+                    'timeRange' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'OneDay',
+                            'OneWeek',
+                            'OneMonth',
+                            'OneYear',
+                            'NoLimit',
+                        ],
+                    ],
+                ],
+            ],
+            'UnifiedSearchOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'queryContext' => [
+                        '$ref' => '#/components/schemas/UnifiedQueryContext',
+                    ],
+                    'pageItems' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/UnifiedPageItem',
+                        ],
+                    ],
+                    'sceneItems' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/UnifiedSceneItem',
+                        ],
+                    ],
+                    'costCredits' => [
+                        '$ref' => '#/components/schemas/UnifiedCostCredits',
+                    ],
+                    'searchInformation' => [
+                        '$ref' => '#/components/schemas/UnifiedSearchInformation',
+                    ],
+                ],
+            ],
+            'ValueAddedCredits' => [
+                'type' => 'object',
+                'properties' => [
+                    'summary' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'advanced' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],
@@ -292,6 +588,37 @@
         ],
     ],
     'apis' => [
+        'UnifiedSearch' => [
+            'path' => '/linked-retrieval/linked-retrieval-entry/v1/iqs/search/unified',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/UnifiedSearchInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'GenericSearch' => [
             'path' => '/linked-retrieval/linked-retrieval-entry/v2/linkedRetrieval/commands/genericSearch',
             'methods' => [
@@ -351,6 +678,38 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'returnMainText',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'returnMarkdownText',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'returnSummary',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'enableRerank',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -471,6 +830,63 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GlobalSearch' => [
+            'path' => '/linked-retrieval/linked-retrieval-entry/v1/iqs/search/global',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'query',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'timeRange',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'page',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],

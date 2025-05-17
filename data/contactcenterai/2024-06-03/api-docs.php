@@ -187,6 +187,28 @@
                                     'required' => false,
                                 ],
                             ],
+                            'variables' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'variableCode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'variableValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'responseFormatType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -274,6 +296,10 @@
                             ],
                             'Stream' => [
                                 'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'responseFormatType' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -566,6 +592,10 @@
                                 'required' => false,
                             ],
                             'customPrompt' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'responseFormatType' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -899,9 +929,53 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'roleIdentification' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'customPrompt' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'variables' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'variableCode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'variableValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'categoryTags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'tagName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'tagDesc' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'responseFormatType' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -980,6 +1054,10 @@
                                     ],
                                 ],
                             ],
+                            'responseFormatType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -1024,7 +1102,7 @@
                             ],
                             'description' => [
                                 'type' => 'string',
-                                'required' => true,
+                                'required' => false,
                             ],
                             'audioModelCode' => [
                                 'type' => 'string',
@@ -1238,6 +1316,247 @@
                             ],
                             'workspaceId' => [
                                 'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'AnalyzeAudioSync' => [
+            'path' => '/{workspaceId}/ccai/app/{appId}/analyzeAudioSync',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'sse',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+                'application/octet-stream',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'appId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'modelCode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'fields' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'code' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'desc' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'enumValues' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'desc' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'enumValue' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'resultTypes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                            'serviceInspection' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'inspectionContents' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'content' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'title' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'inspectionIntroduction' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'sceneIntroduction' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'templateIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'categoryTags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'tagName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'tagDesc' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'customPrompt' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'transcription' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'autoSplit' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'clientChannel' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'serviceChannel' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'fileName' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'voiceFileUrl' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'serviceChannelKeywords' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'asrModelCode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'vocabularyId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'level' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'variables' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'variableCode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'variableValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'responseFormatType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'stream' => [
+                                'type' => 'boolean',
                                 'required' => true,
                             ],
                         ],

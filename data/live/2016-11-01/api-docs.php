@@ -3063,24 +3063,15 @@
                     ],
                 ],
                 [
-                    'name' => 'NotifyType',
+                    'name' => 'SwitchNotifyUrl',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                        'enum' => [],
                     ],
                 ],
                 [
                     'name' => 'NotifyUrl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ExceptionNotifyType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3138,19 +3129,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NotifyType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'enum' => [
-                            'publish_callback',
-                            'publish_exception_callback',
-                            'function',
-                        ],
                     ],
                 ],
             ],
@@ -8845,6 +8823,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SplitType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'domain',
+                            'template',
+                        ],
                     ],
                 ],
             ],
@@ -19052,6 +19042,587 @@
                 ],
             ],
         ],
+        'StartRtcCloudRecording' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SubscribeParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'SubscribeUserIdList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'UserId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'StreamType' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                                '2',
+                                            ],
+                                        ],
+                                        'SourceType' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'minItems' => 1,
+                                'maxItems' => 17,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'RecordParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'RecordMode' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                                'enum' => [
+                                    '0',
+                                    '1',
+                                ],
+                            ],
+                            'StreamType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'enum' => [
+                                    '0',
+                                    '1',
+                                    '2',
+                                ],
+                            ],
+                            'MaxFileDuration' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                                'minimum' => '180',
+                                'maximum' => '7200',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'StorageParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'StorageType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                                'enum' => [
+                                    '1',
+                                ],
+                            ],
+                            'FileInfo' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Format' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'enum' => [
+                                                'HLS',
+                                                'MP4',
+                                                'MP3',
+                                            ],
+                                        ],
+                                        'FileNamePattern' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'SliceNamePattern' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'OSSParams' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'OSSEndpoint' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'OSSBucket' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MixTranscodeParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'FrameFillType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'enum' => [
+                                    '0',
+                                ],
+                            ],
+                            'AudioBitrate' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                                'minimum' => '8',
+                                'maximum' => '500',
+                            ],
+                            'AudioChannels' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                                'enum' => [
+                                    '1',
+                                    '2',
+                                ],
+                            ],
+                            'AudioSampleRate' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                                'enum' => [
+                                    '8000',
+                                    '16000',
+                                    '32000',
+                                    '44100',
+                                    '48000',
+                                ],
+                            ],
+                            'VideoCodec' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'H.264',
+                                    'H.265',
+                                ],
+                            ],
+                            'VideoBitrate' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '1',
+                                'maximum' => '10000',
+                            ],
+                            'VideoFramerate' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '1',
+                                'maximum' => '60',
+                            ],
+                            'VideoGop' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '1',
+                                'maximum' => '60',
+                            ],
+                            'VideoHeight' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '0',
+                                'maximum' => '1920',
+                            ],
+                            'VideoWidth' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '0',
+                                'maximum' => '1920',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MixLayoutParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'MixBackground' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'RenderMode' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                        'enum' => [
+                                            '0',
+                                            '1',
+                                        ],
+                                    ],
+                                    'Url' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                        'maxLength' => 2048,
+                                    ],
+                                ],
+                            ],
+                            'UserPanes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'UserId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'SourceType' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                            ],
+                                        ],
+                                        'Height' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Width' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'X' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Y' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ZOrder' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'SubBackground' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'RenderMode' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                    'enum' => [
+                                                        '0',
+                                                        '1',
+                                                    ],
+                                                ],
+                                                'Url' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                    'maxLength' => 2048,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'NotifyUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateRtcCloudRecording' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SubscribeParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'SubscribeUserIdList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'UserId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'StreamType' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                                '2',
+                                            ],
+                                        ],
+                                        'SourceType' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                                'minItems' => 1,
+                                'maxItems' => 17,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'MixLayoutParams',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'MixBackground' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'RenderMode' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                        'enum' => [
+                                            '0',
+                                            '1',
+                                        ],
+                                    ],
+                                    'Url' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                        'maxLength' => 2048,
+                                    ],
+                                ],
+                            ],
+                            'UserPanes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'UserId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'SourceType' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                            ],
+                                        ],
+                                        'Height' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Width' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'X' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Y' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ZOrder' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'SubBackground' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'RenderMode' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                    'enum' => [
+                                                        '0',
+                                                        '1',
+                                                    ],
+                                                ],
+                                                'Url' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                    'maxLength' => 2048,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'StopRtcCloudRecording' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRtcCloudRecordingFiles' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'DescribeChannelParticipants' => [
             'methods' => [
                 'post',
@@ -21953,6 +22524,7 @@
         'CreateLivePullToPush' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'https',
@@ -23692,6 +24264,72 @@
                             'DOMAIN',
                             'domain',
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'UnTagLiveResources' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 51,
+                    ],
+                ],
+                [
+                    'name' => 'TagKey',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'DOMAIN',
+                            'domain',
+                            'Domain',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'All',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

@@ -1539,6 +1539,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2890,6 +2891,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ScanType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetRepoTagScanStatus' => [
@@ -2942,6 +2951,14 @@
                 ],
                 [
                     'name' => 'Digest',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ScanType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

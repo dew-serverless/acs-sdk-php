@@ -3540,6 +3540,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 200,
                     ],
                 ],
                 [
@@ -4302,6 +4303,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'LastEditUser',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'EstablishRelationTableToBusiness' => [
@@ -4710,6 +4719,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 200,
                     ],
                 ],
                 [
@@ -5985,7 +5995,7 @@
                         'format' => 'int64',
                         'required' => true,
                         'minimum' => '1',
-                        'maximum' => '9999999999999999',
+                        'maximum' => '9223372036854775807',
                     ],
                 ],
             ],
@@ -16899,7 +16909,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -16908,7 +16918,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '0',
                         'maximum' => '999999',
                     ],
@@ -16949,11 +16959,11 @@
                             'properties' => [
                                 'Actions' => [
                                     'type' => 'string',
-                                    'required' => true,
+                                    'required' => false,
                                 ],
                                 'ColumnMetaList' => [
                                     'type' => 'array',
-                                    'required' => true,
+                                    'required' => false,
                                     'items' => [
                                         'type' => 'object',
                                         'required' => false,
@@ -16961,6 +16971,10 @@
                                             'Name' => [
                                                 'type' => 'string',
                                                 'required' => true,
+                                            ],
+                                            'Actions' => [
+                                                'type' => 'string',
+                                                'required' => false,
                                             ],
                                         ],
                                     ],
@@ -16973,6 +16987,28 @@
                             ],
                         ],
                         'maxItems' => 50,
+                    ],
+                ],
+                [
+                    'name' => 'ApplyType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'MaxComputeTable',
+                            'DLFSchema',
+                            'DLFTable',
+                            'DLFColumn',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CatalogName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -17050,7 +17086,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                         'minimum' => '1',
                         'maximum' => '1',
                         'enum' => [
@@ -17097,7 +17133,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                         'enum' => [
                             'odps',
                         ],
@@ -17129,11 +17165,38 @@
                         'format' => 'int32',
                         'required' => true,
                         'minimum' => '0',
-                        'maximum' => '1',
+                        'maximum' => '2',
                         'enum' => [
                             '0',
                             '1',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'ApplyType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'MaxComputeTable',
+                            'MaxComputeFunction',
+                            'MaxComputeResource',
+                            'DLFSchema',
+                            'DLFTable',
+                            'DLFColumn',
+                            'HologresTable',
+                            'StarRocksTable',
+                            'StarRocksSchema',
+                            'EmrSchema',
+                            'EmrTable',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'CatalogName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -20024,20 +20087,12 @@
             'endpoint' => 'dataworks.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'dataworks.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'dataworks.cn-beijing.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-zhangjiakou',
             'endpoint' => 'dataworks.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'dataworks.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -20106,6 +20161,10 @@
         [
             'regionId' => 'me-central-1',
             'endpoint' => 'dataworks.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'dataworks.cn-wulanchabu.aliyuncs.com',
         ],
     ],
 ];

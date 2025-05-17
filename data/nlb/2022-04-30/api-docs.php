@@ -2565,6 +2565,14 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'HealthCheckHttpVersion' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'HTTP1.0',
+                                    'HTTP1.1',
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -2983,6 +2991,14 @@
                             'HealthCheckExp' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'HealthCheckHttpVersion' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'HTTP1.0',
+                                    'HTTP1.1',
+                                ],
                             ],
                         ],
                     ],

@@ -46,11 +46,11 @@
                                 'properties' => [
                                     'Type' => [
                                         'type' => 'string',
-                                        'required' => false,
+                                        'required' => true,
                                     ],
                                     'Name' => [
                                         'type' => 'string',
-                                        'required' => false,
+                                        'required' => true,
                                     ],
                                     'Description' => [
                                         'type' => 'string',
@@ -95,11 +95,11 @@
                                         'properties' => [
                                             'Type' => [
                                                 'type' => 'string',
-                                                'required' => false,
+                                                'required' => true,
                                             ],
                                             'Name' => [
                                                 'type' => 'string',
-                                                'required' => false,
+                                                'required' => true,
                                             ],
                                             'Description' => [
                                                 'type' => 'string',
@@ -501,6 +501,122 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'SyncDepartment' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SyncDepartmentCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'DepartmentList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'DepartmentId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'DepartmentName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ParentDepartmentId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'SyncDepartmentUser' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SyncDepartmentUserCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'DeptUserMapping' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'SourceUserId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'DepartmentIdList' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -1807,6 +1923,637 @@
                                 'items' => [
                                     'type' => 'string',
                                     'required' => true,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteRowPermission' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DeleteRowPermissionCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'RowPermissionId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetAccountByRowPermissionId' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'GetAccountByRowPermissionIdQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'RowPermissionId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'RuleIds' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListRowPermission' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageRowPermissionQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Keyword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PageNum' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListRowPermissionByUserId' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListRowPermissionByUserIdQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Operator' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'PageNum' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateRowPermission' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UpdateRowPermissionCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'RowPermissionId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'RowPermissionName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'RowPermissionDesc' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'MappingColumns' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'ColumnName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ColumnType' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'enum' => [
+                                                'STRING',
+                                                'NUMBER',
+                                            ],
+                                        ],
+                                        'ColumnDesc' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Rules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'RuleName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ScopeType' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'enum' => [
+                                                'ALL_COLUMN',
+                                                'SELECT_COLUMN',
+                                            ],
+                                        ],
+                                        'IsDelete' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                            ],
+                                        ],
+                                        'Status' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                            ],
+                                        ],
+                                        'Expressions' => [
+                                            'type' => 'array',
+                                            'required' => true,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => true,
+                                                'properties' => [
+                                                    'MappingColumnName' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'Values' => [
+                                                        'type' => 'array',
+                                                        'required' => true,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => true,
+                                                        ],
+                                                    ],
+                                                    'Type' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                        'enum' => [
+                                                            'EXPRESSION',
+                                                            'RELATION',
+                                                        ],
+                                                    ],
+                                                    'SubConditions' => [
+                                                        'type' => 'array',
+                                                        'required' => true,
+                                                        'items' => [
+                                                            'type' => 'any',
+                                                            'required' => true,
+                                                        ],
+                                                    ],
+                                                    'Operator' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                        'enum' => [
+                                                            'EQUAL',
+                                                            'NOT_EQUAL',
+                                                            'IN',
+                                                            'NOT_IN',
+                                                            'LIKE',
+                                                            'NOT_LIKE',
+                                                            'GT',
+                                                            'LT',
+                                                            'GE',
+                                                            'LE',
+                                                            'OR',
+                                                            'AND',
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'UserMappingList' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => true,
+                                                'properties' => [
+                                                    'AccountType' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'Accounts' => [
+                                                        'type' => 'array',
+                                                        'required' => true,
+                                                        'items' => [
+                                                            'type' => 'object',
+                                                            'required' => true,
+                                                            'properties' => [
+                                                                'AccountId' => [
+                                                                    'type' => 'string',
+                                                                    'required' => true,
+                                                                ],
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Tables' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'MappingColumnName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ResourceId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ColumnName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateRowPermission' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CreateRowPermissionCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'RowPermissionName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'RowPermissionDesc' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'MappingColumns' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'ColumnName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ColumnType' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'enum' => [
+                                                'STRING',
+                                                'NUMBER',
+                                            ],
+                                        ],
+                                        'ColumnDesc' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Rules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'RuleName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ScopeType' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'enum' => [
+                                                'ALL_COLUMN',
+                                                'SELECT_COLUMN',
+                                            ],
+                                        ],
+                                        'IsDelete' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                            ],
+                                        ],
+                                        'Status' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                            'enum' => [
+                                                '0',
+                                                '1',
+                                            ],
+                                        ],
+                                        'Expressions' => [
+                                            'type' => 'array',
+                                            'required' => true,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => true,
+                                                'properties' => [
+                                                    'MappingColumnName' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'Values' => [
+                                                        'type' => 'array',
+                                                        'required' => true,
+                                                        'items' => [
+                                                            'type' => 'string',
+                                                            'required' => true,
+                                                        ],
+                                                    ],
+                                                    'Type' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                        'enum' => [
+                                                            'EXPRESSION',
+                                                            'RELATION',
+                                                        ],
+                                                    ],
+                                                    'SubConditions' => [
+                                                        'type' => 'array',
+                                                        'required' => true,
+                                                        'items' => [
+                                                            'type' => 'any',
+                                                            'required' => true,
+                                                        ],
+                                                    ],
+                                                    'Operator' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                        'enum' => [
+                                                            'EQUAL',
+                                                            'NOT_EQUAL',
+                                                            'IN',
+                                                            'NOT_IN',
+                                                            'LIKE',
+                                                            'NOT_LIKE',
+                                                            'GT',
+                                                            'LT',
+                                                            'GE',
+                                                            'LE',
+                                                            'OR',
+                                                            'AND',
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                        'UserMappingList' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'object',
+                                                'required' => true,
+                                                'properties' => [
+                                                    'AccountType' => [
+                                                        'type' => 'string',
+                                                        'required' => true,
+                                                    ],
+                                                    'Accounts' => [
+                                                        'type' => 'array',
+                                                        'required' => true,
+                                                        'enum' => [
+                                                            'PERSONAL',
+                                                            'PRODUCE',
+                                                            'USER_GROUP',
+                                                        ],
+                                                        'items' => [
+                                                            'type' => 'object',
+                                                            'required' => true,
+                                                            'properties' => [
+                                                                'AccountId' => [
+                                                                    'type' => 'string',
+                                                                    'required' => true,
+                                                                ],
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'Tables' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'MappingColumnName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ResourceId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ColumnName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],
@@ -5272,6 +6019,102 @@
                 ],
             ],
         ],
+        'GetTableLineageByTaskId' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TableLineageByTaskIdQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'TaskId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'TaskEnv' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'NeedNotExistObject' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetTableColumnLineageByTaskId' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TableColumnLineageByTaskIdQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'TaskId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'TaskEnv' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'NeedNotExistObject' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'GetInstanceUpDownStream' => [
             'methods' => [
                 'post',
@@ -7130,6 +7973,270 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateDataServiceApi' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CreateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ApiName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Version' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ApiType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'Mode' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'ApiGroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'ApiGroupName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RequestType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'BizProtocol' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => true,
+                                ],
+                            ],
+                            'Timeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'CacheTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'UpdateRate' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'CustomUpdateRate' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CallMode' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'ExecutionTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'ScriptDetails' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'Script' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'IsPaginated' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'SqlMode' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => true,
+                                    ],
+                                    'SortPriority' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'DatasourceType' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => true,
+                                    ],
+                                    'DatasourceID' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'ScriptRequestParameters' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => true,
+                                            'properties' => [
+                                                'ParameterName' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'ParameterDescription' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'ParameterValueType' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'ParameterDataType' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'ExampleValue' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'IsRequiredParameter' => [
+                                                    'type' => 'boolean',
+                                                    'required' => true,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'ScriptResponseParameters' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => true,
+                                            'properties' => [
+                                                'ParameterName' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'ParameterDescription' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'ParameterDataType' => [
+                                                    'type' => 'string',
+                                                    'required' => true,
+                                                ],
+                                                'ExampleValue' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListApiByApp' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Keyword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'PageNum' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'AppKey' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                        ],
                     ],
                 ],
             ],

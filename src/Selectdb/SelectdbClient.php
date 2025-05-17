@@ -37,6 +37,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise releaseInstancePublicConnectionAsync($arguments = [])
  * @method \Dew\Acs\Result deleteDBInstance(array $arguments = [])
  * @method \Http\Promise\Promise deleteDBInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result createDBClusterBinding(array $arguments = [])
+ * @method \Http\Promise\Promise createDBClusterBindingAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteDBClusterBinding(array $arguments = [])
+ * @method \Http\Promise\Promise deleteDBClusterBindingAsync($arguments = [])
  * @method \Dew\Acs\Result createDBCluster(array $arguments = [])
  * @method \Http\Promise\Promise createDBClusterAsync($arguments = [])
  * @method \Dew\Acs\Result getCreateBEClusterInquiry(array $arguments = [])
@@ -73,6 +77,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise enDisableScalingRulesAsync($arguments = [])
  * @method \Dew\Acs\Result createElasticRule(array $arguments = [])
  * @method \Http\Promise\Promise createElasticRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRegions(array $arguments = [])
+ * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  */
 final class SelectdbClient extends AcsClient
 {

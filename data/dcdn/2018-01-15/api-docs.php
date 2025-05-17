@@ -6573,6 +6573,8 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'maxLength' => 64,
+                        'pattern' => '^[0-9a-zA-Z_-]+$',
                     ],
                 ],
             ],
@@ -6596,7 +6598,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                         'maxLength' => 1024,
                     ],
                 ],
@@ -6606,6 +6608,8 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'maxLength' => 64,
+                        'pattern' => '^[0-9a-zA-Z_-]+$',
                     ],
                 ],
             ],
@@ -6630,6 +6634,8 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'maxLength' => 64,
+                        'pattern' => '^[0-9a-zA-Z_-]+$',
                     ],
                 ],
             ],

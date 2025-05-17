@@ -463,29 +463,27 @@
             'ExtraPodSpec' => [
                 'type' => 'object',
                 'properties' => [
-                    'SideCarContainers' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/ContainerSpec',
-                        ],
-                    ],
                     'InitContainers' => [
                         'type' => 'array',
                         'items' => [
                             '$ref' => '#/components/schemas/ContainerSpec',
                         ],
                     ],
-                    'PodLabels' => [
+                    'PodAnnotations' => [
                         'type' => 'object',
+                        'deprecated' => true,
                         'additionalProperties' => [
                             'type' => 'string',
                         ],
                     ],
-                    'PodAnnotations' => [
-                        'type' => 'object',
-                        'additionalProperties' => [
-                            'type' => 'string',
+                    'SideCarContainers' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ContainerSpec',
                         ],
+                    ],
+                    'Lifecycle' => [
+                        '$ref' => '#/components/schemas/Lifecycle',
                     ],
                     'SharedVolumeMountPaths' => [
                         'type' => 'array',
@@ -493,8 +491,12 @@
                             'type' => 'string',
                         ],
                     ],
-                    'Lifecycle' => [
-                        '$ref' => '#/components/schemas/Lifecycle',
+                    'PodLabels' => [
+                        'type' => 'object',
+                        'deprecated' => true,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -1087,19 +1089,22 @@
             'LogInfo' => [
                 'type' => 'object',
                 'properties' => [
-                    'PodId' => [
-                        'type' => 'string',
-                    ],
                     'PodUid' => [
                         'type' => 'string',
                     ],
-                    'Id' => [
+                    'Content' => [
                         'type' => 'string',
                     ],
                     'Time' => [
                         'type' => 'string',
                     ],
-                    'Content' => [
+                    'IsTruncated' => [
+                        'type' => 'boolean',
+                    ],
+                    'PodId' => [
+                        'type' => 'string',
+                    ],
+                    'Id' => [
                         'type' => 'string',
                     ],
                     'Source' => [
@@ -1148,25 +1153,7 @@
             'PodItem' => [
                 'type' => 'object',
                 'properties' => [
-                    'Type' => [
-                        'type' => 'string',
-                    ],
-                    'PodId' => [
-                        'type' => 'string',
-                    ],
-                    'PodUid' => [
-                        'type' => 'string',
-                    ],
                     'Status' => [
-                        'type' => 'string',
-                    ],
-                    'Ip' => [
-                        'type' => 'string',
-                    ],
-                    'GmtCreateTime' => [
-                        'type' => 'string',
-                    ],
-                    'GmtStartTime' => [
                         'type' => 'string',
                     ],
                     'GmtFinishTime' => [
@@ -1177,6 +1164,30 @@
                         'items' => [
                             '$ref' => '#/components/schemas/PodItem',
                         ],
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'GmtStartTime' => [
+                        'type' => 'string',
+                    ],
+                    'PodUid' => [
+                        'type' => 'string',
+                    ],
+                    'NodeName' => [
+                        'type' => 'string',
+                    ],
+                    'Ip' => [
+                        'type' => 'string',
+                    ],
+                    'PodId' => [
+                        'type' => 'string',
+                    ],
+                    'SubStatus' => [
+                        'type' => 'string',
+                    ],
+                    'GmtCreateTime' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1348,6 +1359,33 @@
                     'CheckNumber' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                ],
+            ],
+            'SeccompProfile' => [
+                'type' => 'object',
+                'properties' => [
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'LocalhostProfile' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'SecurityContext' => [
+                'type' => 'object',
+                'properties' => [
+                    'RunAsUser' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'RunAsGroup' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SeccompProfile' => [
+                        '$ref' => '#/components/schemas/SeccompProfile',
                     ],
                 ],
             ],
@@ -1713,6 +1751,10 @@
                                             'required' => false,
                                         ],
                                         'DataSourceVersion' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'MountAccess' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
@@ -2179,6 +2221,14 @@
                 ],
                 [
                     'name' => 'PaymentType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'JobIds',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3396,6 +3446,58 @@
                 ],
             ],
         ],
+        'GetRayDashboard' => [
+            'path' => '/api/v1/jobs/{jobId}/rayDashboard',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'jobId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'isShared',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                        'enum' => [
+                            'true',
+                            'false',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'token',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [
@@ -3445,6 +3547,10 @@
         [
             'regionId' => 'us-east-1',
             'endpoint' => 'pai-dlc.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'pai-dlc.us-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',

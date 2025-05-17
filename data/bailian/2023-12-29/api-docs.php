@@ -317,6 +317,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'OriginalFileUrl',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ApplyFileUploadLease' => [
@@ -392,6 +400,14 @@
                             'UNSTRUCTURED',
                             'SESSION_FILE',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'UseInternalEndpoint',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -823,6 +839,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'chunkMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetIndexJobStatus' => [
@@ -1000,6 +1024,40 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'ChunkMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Separator',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChunkSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OverlapSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'Retrieve' => [
@@ -1171,6 +1229,29 @@
                         'items' => [
                             'type' => 'string',
                             'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'QueryHistory',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'role' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'content' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                         ],
                     ],
                 ],

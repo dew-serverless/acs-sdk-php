@@ -7,6 +7,8 @@ namespace Dew\Acs\Fc;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result describeRegions(array $arguments = [])
+ * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result createCustomDomain(array $arguments = [])
  * @method \Http\Promise\Promise createCustomDomainAsync($arguments = [])
  * @method \Dew\Acs\Result deleteCustomDomain(array $arguments = [])
@@ -37,6 +39,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise invokeFunctionAsync($arguments = [])
  * @method \Dew\Acs\Result updateFunction(array $arguments = [])
  * @method \Http\Promise\Promise updateFunctionAsync($arguments = [])
+ * @method \Dew\Acs\Result enableFunctionInvocation(array $arguments = [])
+ * @method \Http\Promise\Promise enableFunctionInvocationAsync($arguments = [])
+ * @method \Dew\Acs\Result disableFunctionInvocation(array $arguments = [])
+ * @method \Http\Promise\Promise disableFunctionInvocationAsync($arguments = [])
  * @method \Dew\Acs\Result deleteAlias(array $arguments = [])
  * @method \Http\Promise\Promise deleteAliasAsync($arguments = [])
  * @method \Dew\Acs\Result getAlias(array $arguments = [])

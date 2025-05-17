@@ -439,16 +439,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDataDownloadURLAsync($arguments = [])
  * @method \Dew\Acs\Result describeDataDistResult(array $arguments = [])
  * @method \Http\Promise\Promise describeDataDistResultAsync($arguments = [])
- * @method \Dew\Acs\Result getDeviceInternetPort(array $arguments = [])
- * @method \Http\Promise\Promise getDeviceInternetPortAsync($arguments = [])
- * @method \Dew\Acs\Result deleteDeviceInternetPort(array $arguments = [])
- * @method \Http\Promise\Promise deleteDeviceInternetPortAsync($arguments = [])
- * @method \Dew\Acs\Result addDeviceInternetPort(array $arguments = [])
- * @method \Http\Promise\Promise addDeviceInternetPortAsync($arguments = [])
- * @method \Dew\Acs\Result restartDeviceInstance(array $arguments = [])
- * @method \Http\Promise\Promise restartDeviceInstanceAsync($arguments = [])
- * @method \Dew\Acs\Result resetDeviceInstance(array $arguments = [])
- * @method \Http\Promise\Promise resetDeviceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result distApplicationData(array $arguments = [])
  * @method \Http\Promise\Promise distApplicationDataAsync($arguments = [])
  * @method \Dew\Acs\Result createApplication(array $arguments = [])
@@ -555,6 +545,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyEnsRouteEntryAsync($arguments = [])
  * @method \Dew\Acs\Result listProductAbilities(array $arguments = [])
  * @method \Http\Promise\Promise listProductAbilitiesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInstanceBootConfiguration(array $arguments = [])
+ * @method \Http\Promise\Promise describeInstanceBootConfigurationAsync($arguments = [])
+ * @method \Dew\Acs\Result importImage(array $arguments = [])
+ * @method \Http\Promise\Promise importImageAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

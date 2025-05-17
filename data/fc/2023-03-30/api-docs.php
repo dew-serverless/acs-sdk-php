@@ -352,6 +352,9 @@
                         'required' => false,
                         'maxLength' => 300,
                     ],
+                    'disableOndemand' => [
+                        'type' => 'boolean',
+                    ],
                     'tracingConfig' => [
                         '$ref' => '#/components/schemas/TracingConfig',
                         'required' => false,
@@ -378,6 +381,9 @@
                     'internetAccess' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                    'enableLongLiving' => [
+                        'type' => 'boolean',
                     ],
                     'layers' => [
                         'type' => 'array',
@@ -411,6 +417,9 @@
                     'gpuConfig' => [
                         '$ref' => '#/components/schemas/GPUConfig',
                         'required' => false,
+                    ],
+                    'sessionAffinity' => [
+                        'type' => 'string',
                     ],
                     'cpu' => [
                         'type' => 'number',
@@ -763,6 +772,30 @@
                     ],
                 ],
             ],
+            'DescribeRegionsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'Regions' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Region' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'RegionId' => [
+                                            'type' => 'string',
+                                        ],
+                                        'LocalName' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'Destination' => [
                 'type' => 'object',
                 'properties' => [
@@ -922,6 +955,9 @@
                         'type' => 'string',
                         'required' => false,
                     ],
+                    'disableOndemand' => [
+                        'type' => 'boolean',
+                    ],
                     'tracingConfig' => [
                         '$ref' => '#/components/schemas/TracingConfig',
                         'required' => false,
@@ -977,6 +1013,9 @@
                         'type' => 'boolean',
                         'required' => false,
                     ],
+                    'enableLongLiving' => [
+                        'type' => 'boolean',
+                    ],
                     'layers' => [
                         'type' => 'array',
                         'required' => false,
@@ -1020,6 +1059,9 @@
                         '$ref' => '#/components/schemas/GPUConfig',
                         'required' => false,
                     ],
+                    'sessionAffinity' => [
+                        'type' => 'string',
+                    ],
                     'cpu' => [
                         'type' => 'number',
                         'format' => 'float',
@@ -1043,6 +1085,9 @@
                         'items' => [
                             '$ref' => '#/components/schemas/Tag',
                         ],
+                    ],
+                    'invocationRestriction' => [
+                        '$ref' => '#/components/schemas/FunctionRestriction',
                     ],
                     'memorySize' => [
                         'type' => 'integer',
@@ -1081,6 +1126,20 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'FunctionRestriction' => [
+                'type' => 'object',
+                'properties' => [
+                    'reason' => [
+                        'type' => 'string',
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'disable' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],
@@ -1352,6 +1411,12 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                    'command' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -2667,25 +2732,30 @@
             'UpdateFunctionInput' => [
                 'type' => 'object',
                 'properties' => [
+                    'handler' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
                     'code' => [
                         '$ref' => '#/components/schemas/InputCodeLocation',
                         'required' => false,
                     ],
-                    'cpu' => [
-                        'type' => 'number',
-                        'format' => 'float',
+                    'role' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 300,
+                    ],
+                    'disableOndemand' => [
+                        'type' => 'boolean',
+                    ],
+                    'tracingConfig' => [
+                        '$ref' => '#/components/schemas/TracingConfig',
                         'required' => false,
                     ],
-                    'customContainerConfig' => [
-                        '$ref' => '#/components/schemas/CustomContainerConfig',
-                        'required' => false,
-                    ],
-                    'customDNS' => [
-                        '$ref' => '#/components/schemas/CustomDNS',
-                        'required' => false,
-                    ],
-                    'customRuntimeConfig' => [
-                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
+                    'nasConfig' => [
+                        '$ref' => '#/components/schemas/NASConfig',
                         'required' => false,
                     ],
                     'description' => [
@@ -2693,40 +2763,22 @@
                         'required' => false,
                         'maxLength' => 256,
                     ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
                     'diskSize' => [
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
                     ],
-                    'environmentVariables' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'gpuConfig' => [
-                        '$ref' => '#/components/schemas/GPUConfig',
-                        'required' => false,
-                    ],
-                    'handler' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'minLength' => 1,
-                        'maxLength' => 128,
-                    ],
-                    'instanceConcurrency' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'instanceLifecycleConfig' => [
-                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
-                        'required' => false,
-                    ],
                     'internetAccess' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                    'enableLongLiving' => [
+                        'type' => 'boolean',
                     ],
                     'layers' => [
                         'type' => 'array',
@@ -2735,8 +2787,45 @@
                             'type' => 'string',
                         ],
                     ],
+                    'ossMountConfig' => [
+                        '$ref' => '#/components/schemas/OSSMountConfig',
+                        'required' => false,
+                    ],
+                    'customRuntimeConfig' => [
+                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
+                        'required' => false,
+                    ],
                     'logConfig' => [
                         '$ref' => '#/components/schemas/LogConfig',
+                        'required' => false,
+                    ],
+                    'instanceLifecycleConfig' => [
+                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
+                        'required' => false,
+                    ],
+                    'gpuConfig' => [
+                        '$ref' => '#/components/schemas/GPUConfig',
+                        'required' => false,
+                    ],
+                    'sessionAffinity' => [
+                        'type' => 'string',
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                    'runtime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'customContainerConfig' => [
+                        '$ref' => '#/components/schemas/CustomContainerConfig',
+                        'required' => false,
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                     'memorySize' => [
@@ -2744,31 +2833,16 @@
                         'format' => 'int32',
                         'required' => false,
                     ],
-                    'nasConfig' => [
-                        '$ref' => '#/components/schemas/NASConfig',
+                    'customDNS' => [
+                        '$ref' => '#/components/schemas/CustomDNS',
                         'required' => false,
                     ],
-                    'ossMountConfig' => [
-                        '$ref' => '#/components/schemas/OSSMountConfig',
+                    'environmentVariables' => [
+                        'type' => 'object',
                         'required' => false,
-                    ],
-                    'role' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'maxLength' => 300,
-                    ],
-                    'runtime' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'timeout' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'tracingConfig' => [
-                        '$ref' => '#/components/schemas/TracingConfig',
-                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                     'vpcConfig' => [
                         '$ref' => '#/components/schemas/VPCConfig',
@@ -2870,33 +2944,45 @@
                     ],
                 ],
             ],
-            'open_struct_DescribeRegionsOutput' => [
-                'type' => 'object',
-                'properties' => [
-                    'Regions' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'Region' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'RegionId' => [
-                                            'type' => 'string',
-                                        ],
-                                        'LocalName' => [
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                ],
-                            ],
+        ],
+    ],
+    'apis' => [
+        'DescribeRegions' => [
+            'path' => '/2023-03-30/regions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'zh-CN',
+                            'en-US',
+                            'ja',
                         ],
                     ],
                 ],
             ],
         ],
-    ],
-    'apis' => [
         'CreateCustomDomain' => [
             'path' => '/2023-03-30/custom-domains',
             'methods' => [
@@ -3422,6 +3508,51 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'tags',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Tag',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'runtime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'gpuType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'functionName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'InvokeFunction' => [
@@ -3533,6 +3664,89 @@
                     'schema' => [
                         '$ref' => '#/components/schemas/UpdateFunctionInput',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'EnableFunctionInvocation' => [
+            'path' => '/2023-03-30/functions/{functionName}/invoke/enable',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'functionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DisableFunctionInvocation' => [
+            'path' => '/2023-03-30/functions/{functionName}/invoke/disable',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'reason' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'abortOngoingRequest' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'functionName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -5411,10 +5625,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'fcv3.ap-southeast-7.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-qingdao',
             'endpoint' => 'fcv3.cn-qingdao.aliyuncs.com',
         ],
@@ -5489,6 +5699,34 @@
         [
             'regionId' => 'ap-south-1',
             'endpoint' => 'fcv3.ap-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'cn-hangzhou-finance.fc.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'cn-shanghai-finance-1.fc.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'fcv3.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'me-central-1.fc.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'cn-heyuan-acdr-1.fc.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'fcv3.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'fcv3.ap-northeast-2.aliyuncs.com',
         ],
     ],
 ];

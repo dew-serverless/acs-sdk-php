@@ -177,6 +177,14 @@
                     ],
                 ],
                 [
+                    'name' => 'FolderId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Description',
                     'in' => 'formData',
                     'schema' => [
@@ -1930,6 +1938,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -1938,6 +1947,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -1946,6 +1956,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => false,
                         'required' => false,
                         'enum' => [
                             'AND',
@@ -2187,6 +2198,14 @@
                         'maxItems' => 21,
                     ],
                 ],
+                [
+                    'name' => 'ResourceNameScope',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateConfigRule' => [
@@ -2344,6 +2363,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -2352,6 +2372,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -2360,6 +2381,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => false,
                         'required' => false,
                         'enum' => [
                             'AND',
@@ -2451,6 +2473,14 @@
                             ],
                         ],
                         'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceNameScope',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3381,6 +3411,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -3389,6 +3420,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -3397,6 +3429,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => false,
                         'required' => false,
                         'enum' => [
                             'AND',
@@ -3533,6 +3566,14 @@
                             ],
                         ],
                         'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceNameScope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3700,6 +3741,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -3708,6 +3750,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -3770,6 +3813,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => false,
                         'required' => false,
                         'enum' => [
                             'AND',
@@ -3831,6 +3875,14 @@
                             ],
                         ],
                         'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceNameScope',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -4858,6 +4910,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FilterType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'ALL',
+                            'UNCOVERED_RESOURCE',
+                        ],
                     ],
                 ],
             ],
@@ -6691,6 +6755,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MultiFiles',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],

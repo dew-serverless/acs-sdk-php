@@ -1644,6 +1644,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'LoadMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ReleaseRenderingDataPackage' => [

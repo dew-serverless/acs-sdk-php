@@ -217,10 +217,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyProtocolMountTargetAsync($arguments = [])
  * @method \Dew\Acs\Result describeProtocolMountTarget(array $arguments = [])
  * @method \Http\Promise\Promise describeProtocolMountTargetAsync($arguments = [])
- * @method \Dew\Acs\Result addTags(array $arguments = []) {@deprecated 2017-06-26}
- * @method \Http\Promise\Promise addTagsAsync($arguments = []) {@deprecated 2017-06-26}
- * @method \Dew\Acs\Result removeTags(array $arguments = []) {@deprecated 2017-06-26}
- * @method \Http\Promise\Promise removeTagsAsync($arguments = []) {@deprecated 2017-06-26}
  * @method \Dew\Acs\Result addClientToBlackList(array $arguments = []) {@deprecated 2017-06-26}
  * @method \Http\Promise\Promise addClientToBlackListAsync($arguments = []) {@deprecated 2017-06-26}
  * @method \Dew\Acs\Result describeBlackListClients(array $arguments = []) {@deprecated 2017-06-26}

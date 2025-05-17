@@ -376,34 +376,20 @@
             'Service' => [
                 'type' => 'object',
                 'properties' => [
-                    'RequestId' => [
+                    'QuotaId' => [
                         'type' => 'string',
                     ],
-                    'Region' => [
+                    'Message' => [
                         'type' => 'string',
                     ],
-                    'CallerUid' => [
+                    'ServiceGroup' => [
                         'type' => 'string',
                     ],
-                    'ParentUid' => [
-                        'type' => 'string',
+                    'Memory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                     'CurrentVersion' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'Cpu' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'Gpu' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'Image' => [
-                        'type' => 'string',
-                    ],
-                    'PendingInstance' => [
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
@@ -411,80 +397,117 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
-                    'TotalInstance' => [
+                    'WorkspaceId' => [
+                        'type' => 'string',
+                    ],
+                    'Cpu' => [
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
-                    'InternetEndpoint' => [
+                    'Image' => [
                         'type' => 'string',
                     ],
-                    'IntranetEndpoint' => [
-                        'type' => 'string',
-                    ],
-                    'LatestVersion' => [
+                    'Gpu' => [
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
-                    'Memory' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'Message' => [
-                        'type' => 'string',
-                    ],
-                    'Namespace' => [
+                    'CallerUid' => [
                         'type' => 'string',
                     ],
                     'Reason' => [
                         'type' => 'string',
                     ],
-                    'Resource' => [
+                    'Source' => [
                         'type' => 'string',
                     ],
-                    'ResourceAlias' => [
+                    'ServiceId' => [
+                        'type' => 'string',
+                    ],
+                    'TotalInstance' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'AppVersion' => [
                         'type' => 'string',
                     ],
                     'ServiceConfig' => [
                         'type' => 'string',
                     ],
-                    'ServiceName' => [
+                    'AccessToken' => [
                         'type' => 'string',
                     ],
-                    'ServiceGroup' => [
+                    'Gateway' => [
+                        'type' => 'string',
+                    ],
+                    'AppSpecName' => [
+                        'type' => 'string',
+                    ],
+                    'InternetEndpoint' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceAlias' => [
                         'type' => 'string',
                     ],
                     'Status' => [
                         'type' => 'string',
                     ],
+                    'AppConfig' => [
+                        'type' => 'string',
+                    ],
+                    'TrafficState' => [
+                        'type' => 'string',
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                    ],
                     'CreateTime' => [
                         'type' => 'string',
                     ],
-                    'UpdateTime' => [
+                    'Resource' => [
+                        'type' => 'string',
+                    ],
+                    'SecondaryInternetEndpoint' => [
+                        'type' => 'string',
+                    ],
+                    'Labels' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'LabelValue' => [
+                                    'type' => 'string',
+                                ],
+                                'LabelKey' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'ExtraData' => [
+                        'type' => 'string',
+                    ],
+                    'Namespace' => [
                         'type' => 'string',
                     ],
                     'Weight' => [
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
-                    'ServiceId' => [
-                        'type' => 'string',
-                    ],
-                    'ServiceUid' => [
-                        'type' => 'string',
-                    ],
-                    'AccessToken' => [
-                        'type' => 'string',
-                    ],
-                    'Source' => [
-                        'type' => 'string',
-                    ],
-                    'ExtraData' => [
-                        'type' => 'string',
-                    ],
                     'Role' => [
                         'type' => 'string',
                     ],
-                    'RoleAttrs' => [
+                    'SecondaryIntranetEndpoint' => [
+                        'type' => 'string',
+                    ],
+                    'PendingInstance' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'LatestVersion' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ServiceName' => [
                         'type' => 'string',
                     ],
                     'SafetyLock' => [
@@ -495,42 +518,25 @@
                             'all',
                         ],
                     ],
-                    'SecondaryInternetEndpoint' => [
+                    'UpdateTime' => [
                         'type' => 'string',
                     ],
-                    'SecondaryIntranetEndpoint' => [
+                    'ServiceUid' => [
                         'type' => 'string',
                     ],
-                    'Labels' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'object',
-                            'properties' => [
-                                'LabelKey' => [
-                                    'type' => 'string',
-                                ],
-                                'LabelValue' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                        ],
-                    ],
-                    'WorkspaceId' => [
+                    'Region' => [
                         'type' => 'string',
                     ],
                     'AppType' => [
                         'type' => 'string',
                     ],
-                    'AppConfig' => [
+                    'ParentUid' => [
                         'type' => 'string',
                     ],
-                    'AppSpecName' => [
+                    'IntranetEndpoint' => [
                         'type' => 'string',
                     ],
-                    'AppVersion' => [
-                        'type' => 'string',
-                    ],
-                    'TrafficState' => [
+                    'RoleAttrs' => [
                         'type' => 'string',
                     ],
                 ],
@@ -3136,6 +3142,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -3165,6 +3172,38 @@
                 ],
                 [
                     'name' => 'Role',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IncludeNoWorkspace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceAliasName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3617,6 +3656,10 @@
                             'ChargeType' => [
                                 'type' => 'string',
                                 'required' => false,
+                                'enum' => [
+                                    'PrePaid',
+                                    'PostPaid',
+                                ],
                             ],
                             'AutoRenewal' => [
                                 'type' => 'boolean',
@@ -3684,6 +3727,10 @@
                                     'type' => 'string',
                                 ],
                             ],
+                            'ResourceName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -3702,6 +3749,12 @@
                 [
                     'AK' => [],
                 ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
             ],
             'deprecated' => false,
             'parameters' => [
@@ -3748,9 +3801,14 @@
                             'ChargeType' => [
                                 'type' => 'string',
                                 'required' => true,
+                                'enum' => [
+                                    'PrePaid',
+                                    'PostPaid',
+                                ],
                             ],
                             'UserData' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'AutoRenewal' => [
@@ -5713,6 +5771,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EnableAuthoritativeDns',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AccountId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListGatewayIntranetLinkedVpc' => [
@@ -6068,6 +6142,26 @@
                 ],
             ],
         ],
+        'DescribeRegions' => [
+            'path' => '/api/v2/regions',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
         'ReinstallTenantAddon' => [
             'path' => '/api/v2/tenantaddons/{ClusterId}/{TenantAddonName}/reinstall',
             'methods' => [
@@ -6119,6 +6213,64 @@
             ],
             'deprecated' => false,
             'parameters' => [],
+        ],
+        'UpdateGroup' => [
+            'path' => '/api/v2/groups/{ClusterId}/{GroupName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'GroupName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'TrafficMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'auto',
+                                    'customized',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
     'endpoints' => [
@@ -6189,6 +6341,14 @@
         [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'pai-eas.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'pai-eas.ap-northeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-3',
+            'endpoint' => 'pai-eas.ap-southeast-3.aliyuncs.com',
         ],
     ],
 ];

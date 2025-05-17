@@ -85,6 +85,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getServiceInstanceSubscriptionEstimateCostAsync($arguments = [])
  * @method \Dew\Acs\Result renewServiceInstanceResources(array $arguments = [])
  * @method \Http\Promise\Promise renewServiceInstanceResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result listServiceInstanceBill(array $arguments = [])
+ * @method \Http\Promise\Promise listServiceInstanceBillAsync($arguments = [])
  * @method \Dew\Acs\Result checkServiceDeployable(array $arguments = [])
  * @method \Http\Promise\Promise checkServiceDeployableAsync($arguments = [])
  */

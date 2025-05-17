@@ -6,7 +6,140 @@
         'version' => '2020-04-01',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'SinkBaiLianParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'Before' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'Context' => [
+                        'type' => 'any',
+                    ],
+                    'ApplicationType' => [
+                        'type' => 'string',
+                    ],
+                    'Op' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'Partition' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'Extend' => [
+                        'type' => 'any',
+                    ],
+                    'WorkspaceId' => [
+                        'type' => 'string',
+                    ],
+                    'After' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'Offset' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Form' => [
+                                'type' => 'string',
+                            ],
+                            'Value' => [
+                                'type' => 'string',
+                            ],
+                            'Template' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'SourceMySQLParameters' => [
+                'type' => 'object',
+                'properties' => [
+                    'IncludeSchemaChanges' => [
+                        'type' => 'string',
+                    ],
+                    'User' => [
+                        'type' => 'string',
+                    ],
+                    'VSwitchIds' => [
+                        'type' => 'string',
+                    ],
+                    'SnapshotMode' => [
+                        'type' => 'string',
+                    ],
+                    'SecurityGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'Port' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'DatabaseName' => [
+                        'type' => 'string',
+                    ],
+                    'VpcId' => [
+                        'type' => 'string',
+                    ],
+                    'NetworkType' => [
+                        'type' => 'string',
+                    ],
+                    'TableNames' => [
+                        'type' => 'string',
+                    ],
+                    'RegionId' => [
+                        'type' => 'string',
+                    ],
+                    'HostName' => [
+                        'type' => 'string',
+                    ],
+                    'Password' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+        ],
     ],
     'apis' => [
         'CreateEventBus' => [
@@ -1745,6 +1878,30 @@
                     ],
                 ],
                 [
+                    'name' => 'Tags',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
                     'name' => 'SourceArn',
                     'in' => 'formData',
                     'schema' => [
@@ -2355,6 +2512,60 @@
                                     ],
                                 ],
                             ],
+                            'SourceOpenSourceRabbitMQParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Endpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VirtualHostName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'QueueName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'BodyDataType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Username' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Password' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'AuthType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'SourceMySQLParameters' => [
+                                '$ref' => '#/components/schemas/SourceMySQLParameters',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2749,6 +2960,24 @@
                                         ],
                                     ],
                                     'Topic' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Headers' => [
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [
@@ -3954,6 +4183,136 @@
                                     ],
                                 ],
                             ],
+                            'SinkOpenSourceRabbitMQParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Endpoint' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VirtualHostName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'TargetType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Exchange' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'QueueName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Username' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Password' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'AuthType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'RoutingKey' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Body' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'MessageId' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Properties' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SinkBaiLianParameters' => [
+                                '$ref' => '#/components/schemas/SinkBaiLianParameters',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -3999,6 +4358,22 @@
                                 'required' => false,
                                 'properties' => [
                                     'Arn' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Network' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
@@ -4575,6 +4950,10 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'AuthType' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'SourceEventBusParameters' => [
@@ -4590,6 +4969,10 @@
                                         'required' => false,
                                     ],
                                 ],
+                            ],
+                            'SourceMySQLParameters' => [
+                                '$ref' => '#/components/schemas/SourceMySQLParameters',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -4907,6 +5290,24 @@
                                         ],
                                     ],
                                     'Value' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Headers' => [
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [
@@ -6170,6 +6571,14 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'Exchange' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'QueueName' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                     'Username' => [
                                         'type' => 'string',
                                         'required' => false,
@@ -6194,41 +6603,9 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
-                                    'Exchange' => [
-                                        'type' => 'object',
+                                    'AuthType' => [
+                                        'type' => 'string',
                                         'required' => false,
-                                        'properties' => [
-                                            'Form' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Value' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Template' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                    'QueueName' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'Form' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Value' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'Template' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
                                     ],
                                     'RoutingKey' => [
                                         'type' => 'object',
@@ -6304,6 +6681,10 @@
                                     ],
                                 ],
                             ],
+                            'SinkBaiLianParameters' => [
+                                '$ref' => '#/components/schemas/SinkBaiLianParameters',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -6352,6 +6733,22 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'Network' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'BatchWindow' => [
@@ -6390,6 +6787,30 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
                     ],
                 ],
             ],
@@ -7545,6 +7966,31 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'CheckServiceLinkedRoleForProduct' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProductName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

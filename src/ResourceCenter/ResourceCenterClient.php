@@ -71,6 +71,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise associateDefaultFilterAsync($arguments = [])
  * @method \Dew\Acs\Result disassociateDefaultFilter(array $arguments = [])
  * @method \Http\Promise\Promise disassociateDefaultFilterAsync($arguments = [])
+ * @method \Dew\Acs\Result listMultiAccountResourceRelationships(array $arguments = [])
+ * @method \Http\Promise\Promise listMultiAccountResourceRelationshipsAsync($arguments = [])
+ * @method \Dew\Acs\Result listResourceRelationships(array $arguments = [])
+ * @method \Http\Promise\Promise listResourceRelationshipsAsync($arguments = [])
  */
 final class ResourceCenterClient extends AcsClient
 {

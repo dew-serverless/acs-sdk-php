@@ -1515,5 +1515,21 @@
             'regionId' => 'ap-southeast-7',
             'endpoint' => 'resourcesharing.ap-southeast-7.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'resourcesharing.cn-wulanchabu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'resourcesharing.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'resourcesharing.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'resourcesharing.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
     ],
 ];

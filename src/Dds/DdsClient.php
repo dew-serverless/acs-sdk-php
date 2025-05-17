@@ -57,6 +57,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise transformToPrePaidAsync($arguments = [])
  * @method \Dew\Acs\Result renewDBInstance(array $arguments = [])
  * @method \Http\Promise\Promise renewDBInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDBInstanceSpecInfo(array $arguments = [])
+ * @method \Http\Promise\Promise describeDBInstanceSpecInfoAsync($arguments = [])
  * @method \Dew\Acs\Result describeReplicaSetRole(array $arguments = [])
  * @method \Http\Promise\Promise describeReplicaSetRoleAsync($arguments = [])
  * @method \Dew\Acs\Result describeKernelReleaseNotes(array $arguments = [])
@@ -241,6 +243,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise checkServiceLinkedRoleAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBInstanceConfig(array $arguments = [])
  * @method \Http\Promise\Promise modifyDBInstanceConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyDBInstanceAttribute(array $arguments = [])
+ * @method \Http\Promise\Promise modifyDBInstanceAttributeAsync($arguments = [])
  */
 final class DdsClient extends AcsClient
 {

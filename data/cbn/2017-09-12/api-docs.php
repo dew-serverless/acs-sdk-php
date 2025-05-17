@@ -3404,6 +3404,23 @@
                     ],
                 ],
                 [
+                    'name' => 'AutoRenew',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoRenewDuration',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Tag',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -8360,6 +8377,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Force',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateTrafficMarkingPolicyAttribute' => [
@@ -12062,6 +12087,10 @@
         ],
         [
             'regionId' => 'cn-hangzhou',
+            'endpoint' => 'cbn.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
             'endpoint' => 'cbn.aliyuncs.com',
         ],
     ],

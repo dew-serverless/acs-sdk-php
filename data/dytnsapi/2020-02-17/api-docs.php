@@ -1070,6 +1070,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'OutId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'InvalidPhoneNumberFilter' => [

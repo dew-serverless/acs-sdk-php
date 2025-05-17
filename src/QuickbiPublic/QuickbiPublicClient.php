@@ -9,8 +9,8 @@ use Dew\Acs\AcsClient;
 /**
  * @method \Dew\Acs\Result addUser(array $arguments = [])
  * @method \Http\Promise\Promise addUserAsync($arguments = [])
- * @method \Dew\Acs\Result batchAddFeishuUsers(array $arguments = [])
- * @method \Http\Promise\Promise batchAddFeishuUsersAsync($arguments = [])
+ * @method \Dew\Acs\Result batchAddFeishuUsers(array $arguments = []) {@deprecated 2022-01-01}
+ * @method \Http\Promise\Promise batchAddFeishuUsersAsync($arguments = []) {@deprecated 2022-01-01}
  * @method \Dew\Acs\Result deleteUser(array $arguments = [])
  * @method \Http\Promise\Promise deleteUserAsync($arguments = [])
  * @method \Dew\Acs\Result updateUser(array $arguments = [])
@@ -199,8 +199,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryDataAsync($arguments = [])
  * @method \Dew\Acs\Result queryDataServiceList(array $arguments = [])
  * @method \Http\Promise\Promise queryDataServiceListAsync($arguments = [])
- * @method \Dew\Acs\Result queryDataService(array $arguments = [])
- * @method \Http\Promise\Promise queryDataServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result queryDataService(array $arguments = []) {@deprecated 2022-01-01}
+ * @method \Http\Promise\Promise queryDataServiceAsync($arguments = []) {@deprecated 2022-01-01}
  * @method \Dew\Acs\Result createTicket(array $arguments = [])
  * @method \Http\Promise\Promise createTicketAsync($arguments = [])
  * @method \Dew\Acs\Result deleteTicket(array $arguments = [])

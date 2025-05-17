@@ -1765,7 +1765,7 @@
         ],
         [
             'regionId' => 'cn-hangzhou',
-            'endpoint' => 'linkedmall.aliyuncs.com',
+            'endpoint' => 'linkedmall.cn-hangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',

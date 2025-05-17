@@ -2688,6 +2688,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ScaledSidecarResource',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ResourceCalculationStrategy' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ContainerRef' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ResourcePercentage' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'UpdateIstioInjectionConfig' => [

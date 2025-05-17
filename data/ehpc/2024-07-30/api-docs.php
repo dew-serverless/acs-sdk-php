@@ -2992,12 +2992,64 @@
                 ],
             ],
         ],
+        'AttachNodes' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'QueueName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ComputeNode',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'InstanceIds' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'ImageId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
-        [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'ehpc.cn-guangzhou.aliyuncs.com	',
-        ],
         [
             'regionId' => 'cn-qingdao',
             'endpoint' => 'ehpc.cn-qingdao.aliyuncs.com',
@@ -3035,8 +3087,16 @@
             'endpoint' => 'ehpc.cn-heyuan.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'ehpc.cn-guangzhou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-chengdu',
             'endpoint' => 'ehpc.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'ehpc.cn-wuhan-lr.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
@@ -3049,6 +3109,10 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'ehpc.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'ehpc.ap-southeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-5',

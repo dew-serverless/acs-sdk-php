@@ -225,12 +225,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeEipAddressesAsync($arguments = [])
  * @method \Dew\Acs\Result describeEipGatewayInfo(array $arguments = [])
  * @method \Http\Promise\Promise describeEipGatewayInfoAsync($arguments = [])
- * @method \Dew\Acs\Result allocateEipSegmentAddress(array $arguments = [])
- * @method \Http\Promise\Promise allocateEipSegmentAddressAsync($arguments = [])
+ * @method \Dew\Acs\Result allocateEipSegmentAddress(array $arguments = []) {@deprecated 2016-04-28}
+ * @method \Http\Promise\Promise allocateEipSegmentAddressAsync($arguments = []) {@deprecated 2016-04-28}
  * @method \Dew\Acs\Result describeEipSegment(array $arguments = [])
  * @method \Http\Promise\Promise describeEipSegmentAsync($arguments = [])
  * @method \Dew\Acs\Result releaseEipSegmentAddress(array $arguments = [])
  * @method \Http\Promise\Promise releaseEipSegmentAddressAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyEipForwardMode(array $arguments = [])
+ * @method \Http\Promise\Promise modifyEipForwardModeAsync($arguments = [])
  * @method \Dew\Acs\Result associateEipAddress(array $arguments = [])
  * @method \Http\Promise\Promise associateEipAddressAsync($arguments = [])
  * @method \Dew\Acs\Result associateEipAddressBatch(array $arguments = [])
@@ -383,10 +385,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteVbrHaAsync($arguments = [])
  * @method \Dew\Acs\Result describeVbrHa(array $arguments = [])
  * @method \Http\Promise\Promise describeVbrHaAsync($arguments = [])
- * @method \Dew\Acs\Result createVirtualBorderRouter(array $arguments = [])
- * @method \Http\Promise\Promise createVirtualBorderRouterAsync($arguments = [])
  * @method \Dew\Acs\Result associatePhysicalConnectionToVirtualBorderRouter(array $arguments = [])
  * @method \Http\Promise\Promise associatePhysicalConnectionToVirtualBorderRouterAsync($arguments = [])
+ * @method \Dew\Acs\Result createVirtualBorderRouter(array $arguments = [])
+ * @method \Http\Promise\Promise createVirtualBorderRouterAsync($arguments = [])
  * @method \Dew\Acs\Result deleteVirtualBorderRouter(array $arguments = [])
  * @method \Http\Promise\Promise deleteVirtualBorderRouterAsync($arguments = [])
  * @method \Dew\Acs\Result unassociatePhysicalConnectionFromVirtualBorderRouter(array $arguments = [])
@@ -783,8 +785,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise moveResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
- * @method \Dew\Acs\Result modifyEipForwardMode(array $arguments = [])
- * @method \Http\Promise\Promise modifyEipForwardModeAsync($arguments = [])
  */
 final class VpcClient extends AcsClient
 {

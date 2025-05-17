@@ -1694,6 +1694,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Bandwidth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeAccelerator' => [
@@ -1905,6 +1914,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Bandwidth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateAcceleratorConfirm' => [
@@ -2004,7 +2022,8 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -2012,7 +2031,8 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'deprecated' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -2020,6 +2040,37 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DdosConfigList',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'DdosRegionId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DdosId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -2054,6 +2105,37 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DdosConfigList',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'DdosId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DdosRegionId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -2793,6 +2875,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AccessMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetIpsetsBandwidthLimit' => [
@@ -3128,6 +3218,10 @@
                                             ],
                                         ],
                                     ],
+                                ],
+                                'HealthCheckHost' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -4286,6 +4380,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'HealthCheckHost',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeEndpointGroup' => [
@@ -4654,6 +4756,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HealthCheckHost',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -5198,6 +5308,10 @@
                                     ],
                                     'maxItems' => 20,
                                 ],
+                                'HealthCheckHost' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 200,
@@ -5385,6 +5499,10 @@
                                 'EndpointGroupId' => [
                                     'type' => 'string',
                                     'required' => true,
+                                ],
+                                'HealthCheckHost' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],

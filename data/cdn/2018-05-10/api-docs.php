@@ -3090,22 +3090,6 @@
                         'required' => false,
                     ],
                 ],
-                [
-                    'name' => 'IspNameEn',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'LocationNameEn',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
         'DescribeDomainRealTimeSrcTrafficData' => [
@@ -3747,6 +3731,11 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'enum' => [
+                            'valid',
+                            'closed',
+                            'exhaust',
+                        ],
                     ],
                 ],
             ],

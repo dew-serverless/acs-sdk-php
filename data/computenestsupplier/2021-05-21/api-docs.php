@@ -2084,6 +2084,24 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'ResponseInfo' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'UpdateResponse' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'ErrorCode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ErrorMessage' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],

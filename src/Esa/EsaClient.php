@@ -575,6 +575,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getUserDeliveryTaskAsync($arguments = [])
  * @method \Dew\Acs\Result getSiteDeliveryTask(array $arguments = [])
  * @method \Http\Promise\Promise getSiteDeliveryTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSiteLogs(array $arguments = [])
+ * @method \Http\Promise\Promise describeSiteLogsAsync($arguments = [])
  * @method \Dew\Acs\Result purchaseRatePlan(array $arguments = [])
  * @method \Http\Promise\Promise purchaseRatePlanAsync($arguments = [])
  * @method \Dew\Acs\Result updateRatePlanSpec(array $arguments = [])

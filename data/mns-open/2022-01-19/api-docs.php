@@ -751,6 +751,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'StsRoleArn',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SetSubscriptionAttributes' => [

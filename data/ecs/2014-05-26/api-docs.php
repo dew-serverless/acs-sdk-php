@@ -10608,6 +10608,24 @@
                         'maximum' => '100',
                     ],
                 ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                    ],
+                ],
             ],
         ],
         'CreateSnapshotGroup' => [
@@ -12352,6 +12370,16 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'VirtualFunctionTotalQueueNumber' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'VirtualFunctionQuantity' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -12845,6 +12873,16 @@
                             ],
                             'EnableRss' => [
                                 'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'VirtualFunctionTotalQueueNumber' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'VirtualFunctionQuantity' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                                 'required' => false,
                             ],
                         ],

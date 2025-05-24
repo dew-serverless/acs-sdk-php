@@ -12775,10 +12775,6 @@
             'endpoint' => 'alidns.cn-beijing.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-finance-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing-finance-pop',
             'endpoint' => 'dns.aliyuncs.com',
         ],
@@ -12809,10 +12805,6 @@
         [
             'regionId' => 'cn-hangzhou-bj-b01',
             'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'alidns.cn-hangzhou-finance.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou-internal-prod-1',
@@ -12875,10 +12867,6 @@
             'endpoint' => 'dns.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'alidns.cn-shanghai-finance-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-shanghai-inner',
             'endpoint' => 'dns.aliyuncs.com',
         ],
@@ -12889,10 +12877,6 @@
         [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'alidns.cn-shenzhen.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'alidns.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shenzhen-inner',
@@ -12965,6 +12949,10 @@
         [
             'regionId' => 'us-west-1',
             'endpoint' => 'alidns.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'public',
+            'endpoint' => 'alidns.aliyuncs.com',
         ],
     ],
 ];

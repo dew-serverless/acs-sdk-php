@@ -627,6 +627,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryRecommendByCodeAsync($arguments = [])
  * @method \Dew\Acs\Result createOrderForDeleteDBNodes(array $arguments = [])
  * @method \Http\Promise\Promise createOrderForDeleteDBNodesAsync($arguments = [])
+ * @method \Dew\Acs\Result createDiagnosticReport(array $arguments = [])
+ * @method \Http\Promise\Promise createDiagnosticReportAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDiagnosticReportList(array $arguments = []) {@deprecated 2014-08-15}
+ * @method \Http\Promise\Promise describeDiagnosticReportListAsync($arguments = []) {@deprecated 2014-08-15}
  */
 final class RdsClient extends AcsClient
 {

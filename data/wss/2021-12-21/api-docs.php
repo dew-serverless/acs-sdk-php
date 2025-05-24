@@ -92,6 +92,10 @@
                                     ],
                                     'maxItems' => 100,
                                 ],
+                                'BuyChange' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 20,

@@ -81,6 +81,14 @@
                     ],
                 ],
             ],
+            'AutoScalingSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'ScalingStrategy' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'CodeSourceItem' => [
                 'type' => 'object',
                 'properties' => [
@@ -947,54 +955,17 @@
             'JobSettings' => [
                 'type' => 'object',
                 'properties' => [
-                    'BusinessUserId' => [
-                        'type' => 'string',
-                    ],
-                    'Caller' => [
-                        'type' => 'string',
-                    ],
-                    'Tags' => [
-                        'type' => 'object',
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'PipelineId' => [
-                        'type' => 'string',
-                    ],
-                    'EnableTideResource' => [
-                        'type' => 'boolean',
-                    ],
-                    'EnableErrorMonitoringInAIMaster' => [
-                        'type' => 'boolean',
-                    ],
-                    'ErrorMonitoringArgs' => [
-                        'type' => 'string',
-                    ],
                     'EnableRDMA' => [
                         'type' => 'boolean',
                     ],
                     'EnableOssAppend' => [
                         'type' => 'boolean',
                     ],
-                    'OversoldType' => [
-                        'type' => 'string',
-                    ],
-                    'AdvancedSettings' => [
-                        'type' => 'object',
-                    ],
-                    'Driver' => [
-                        'type' => 'string',
-                    ],
-                    'EnableSanityCheck' => [
+                    'AllocateAllRDMADevices' => [
                         'type' => 'boolean',
                     ],
-                    'SanityCheckArgs' => [
-                        'type' => 'string',
-                    ],
-                    'JobReservedMinutes' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
+                    'EnableTideResource' => [
+                        'type' => 'boolean',
                     ],
                     'JobReservedPolicy' => [
                         'type' => 'string',
@@ -1004,10 +975,50 @@
                             'OnSucceed',
                         ],
                     ],
+                    'ErrorMonitoringArgs' => [
+                        'type' => 'string',
+                    ],
+                    'JobReservedMinutes' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Driver' => [
+                        'type' => 'string',
+                    ],
+                    'SanityCheckArgs' => [
+                        'type' => 'string',
+                    ],
+                    'EnableErrorMonitoringInAIMaster' => [
+                        'type' => 'boolean',
+                    ],
+                    'AdvancedSettings' => [
+                        'type' => 'object',
+                    ],
+                    'Caller' => [
+                        'type' => 'string',
+                    ],
+                    'PipelineId' => [
+                        'type' => 'string',
+                    ],
+                    'BusinessUserId' => [
+                        'type' => 'string',
+                    ],
                     'EnableCPUAffinity' => [
                         'type' => 'boolean',
                     ],
+                    'OversoldType' => [
+                        'type' => 'string',
+                    ],
+                    'Tags' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
                     'DisableEcsStockCheck' => [
+                        'type' => 'boolean',
+                    ],
+                    'EnableSanityCheck' => [
                         'type' => 'boolean',
                     ],
                 ],
@@ -1015,37 +1026,55 @@
             'JobSpec' => [
                 'type' => 'object',
                 'properties' => [
-                    'Type' => [
-                        'type' => 'string',
-                    ],
-                    'Image' => [
-                        'type' => 'string',
-                    ],
                     'ImageConfig' => [
                         '$ref' => '#/components/schemas/ImageConfig',
-                    ],
-                    'PodCount' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'EcsSpec' => [
-                        'type' => 'string',
-                    ],
-                    'ExtraPodSpec' => [
-                        '$ref' => '#/components/schemas/ExtraPodSpec',
-                    ],
-                    'ResourceConfig' => [
-                        '$ref' => '#/components/schemas/ResourceConfig',
                     ],
                     'UseSpotInstance' => [
                         'type' => 'boolean',
                         'deprecated' => true,
                     ],
-                    'SpotSpec' => [
-                        '$ref' => '#/components/schemas/SpotSpec',
+                    'ServiceSpec' => [
+                        '$ref' => '#/components/schemas/ServiceSpec',
+                    ],
+                    'EcsSpec' => [
+                        'type' => 'string',
                     ],
                     'AssignNodeSpec' => [
                         '$ref' => '#/components/schemas/AssignNodeSpec',
+                    ],
+                    'RestartPolicy' => [
+                        'type' => 'string',
+                    ],
+                    'Image' => [
+                        'type' => 'string',
+                    ],
+                    'PodCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'SpotSpec' => [
+                        '$ref' => '#/components/schemas/SpotSpec',
+                    ],
+                    'IsCheif' => [
+                        'type' => 'boolean',
+                    ],
+                    'ResourceConfig' => [
+                        '$ref' => '#/components/schemas/ResourceConfig',
+                    ],
+                    'AutoScalingSpec' => [
+                        '$ref' => '#/components/schemas/AutoScalingSpec',
+                    ],
+                    'LocalMountSpecs' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/LocalMountSpec',
+                        ],
+                    ],
+                    'ExtraPodSpec' => [
+                        '$ref' => '#/components/schemas/ExtraPodSpec',
                     ],
                 ],
             ],
@@ -1083,6 +1112,20 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+            ],
+            'LocalMountSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'MountPath' => [
+                        'type' => 'string',
+                    ],
+                    'MountMode' => [
+                        'type' => 'string',
+                    ],
+                    'LocalPath' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1380,12 +1423,51 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'Privileged' => [
+                        'type' => 'boolean',
+                    ],
+                    'Capabilities' => [
+                        '$ref' => '#/components/schemas/SecurityContextCapabilities',
+                    ],
                     'RunAsGroup' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
                     'SeccompProfile' => [
                         '$ref' => '#/components/schemas/SeccompProfile',
+                    ],
+                ],
+            ],
+            'SecurityContextCapabilities' => [
+                'type' => 'object',
+                'properties' => [
+                    'Add' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'Drop' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'ServiceSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'ExtraPorts' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ServiceMode' => [
+                        'type' => 'string',
+                    ],
+                    'DefaultPort' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],

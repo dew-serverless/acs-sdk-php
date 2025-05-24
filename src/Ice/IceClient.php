@@ -373,10 +373,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise sendAIAgentDataChannelMessageAsync($arguments = [])
  * @method \Dew\Acs\Result sendAIAgentText(array $arguments = [])
  * @method \Http\Promise\Promise sendAIAgentTextAsync($arguments = [])
- * @method \Dew\Acs\Result setNotifyConfig(array $arguments = [])
- * @method \Http\Promise\Promise setNotifyConfigAsync($arguments = [])
- * @method \Dew\Acs\Result describeNotifyConfig(array $arguments = [])
- * @method \Http\Promise\Promise describeNotifyConfigAsync($arguments = [])
  * @method \Dew\Acs\Result generateMessageChatToken(array $arguments = [])
  * @method \Http\Promise\Promise generateMessageChatTokenAsync($arguments = [])
  * @method \Dew\Acs\Result generateAIAgentCall(array $arguments = [])
@@ -661,6 +657,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateRtcRobotInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result describeRtcRobotInstance(array $arguments = [])
  * @method \Http\Promise\Promise describeRtcRobotInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result setNotifyConfig(array $arguments = [])
+ * @method \Http\Promise\Promise setNotifyConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result describeNotifyConfig(array $arguments = [])
+ * @method \Http\Promise\Promise describeNotifyConfigAsync($arguments = [])
  */
 final class IceClient extends AcsClient
 {

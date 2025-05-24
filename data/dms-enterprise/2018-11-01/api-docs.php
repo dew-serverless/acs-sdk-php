@@ -8132,6 +8132,14 @@
                         'maximum' => '9223372036854775807',
                     ],
                 ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateFreeLockCorrectOrder' => [

@@ -637,6 +637,7 @@
                         'required' => true,
                         'enum' => [
                             'xxljob',
+                            'dify_workflow',
                         ],
                     ],
                 ],
@@ -1984,6 +1985,14 @@
                 ],
                 [
                     'name' => 'Event',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EventType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

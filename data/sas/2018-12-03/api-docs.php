@@ -3550,7 +3550,7 @@
                             'required' => false,
                         ],
                         'minItems' => 1,
-                        'maxItems' => 100,
+                        'maxItems' => 500,
                     ],
                 ],
                 [

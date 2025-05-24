@@ -569,50 +569,32 @@
             'MachineGroup' => [
                 'type' => 'object',
                 'properties' => [
-                    'MachineGroupID' => [
-                        'type' => 'string',
-                    ],
-                    'ResourceGroupID' => [
+                    'Status' => [
                         'type' => 'string',
                     ],
                     'EcsCount' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'PaymentDuration' => [
+                    'GmtStartedTime' => [
                         'type' => 'string',
                     ],
-                    'EcsSpec' => [
+                    'ResourceGroupID' => [
                         'type' => 'string',
                     ],
                     'GmtCreatedTime' => [
                         'type' => 'string',
                     ],
-                    'GmtExpiredTime' => [
-                        'type' => 'string',
-                    ],
-                    'GmtModifiedTime' => [
-                        'type' => 'string',
-                    ],
-                    'GmtStartedTime' => [
-                        'type' => 'string',
-                    ],
-                    'PaymentType' => [
-                        'type' => 'string',
-                    ],
-                    'PaymentDurationUnit' => [
-                        'type' => 'string',
-                    ],
-                    'Status' => [
+                    'CreatorID' => [
                         'type' => 'string',
                     ],
                     'ReasonMessage' => [
                         'type' => 'string',
                     ],
-                    'ReasonCode' => [
+                    'PaymentDurationUnit' => [
                         'type' => 'string',
                     ],
-                    'CreatorID' => [
+                    'EcsSpec' => [
                         'type' => 'string',
                     ],
                     'SupportedDrivers' => [
@@ -621,10 +603,35 @@
                             'type' => 'string',
                         ],
                     ],
-                    'DefaultDriver' => [
+                    'PaymentDuration' => [
+                        'type' => 'string',
+                    ],
+                    'ReasonCode' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'DiskCapacity' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'GmtExpiredTime' => [
                         'type' => 'string',
                     ],
                     'OrderInstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'DefaultDriver' => [
+                        'type' => 'string',
+                    ],
+                    'MachineGroupID' => [
+                        'type' => 'string',
+                    ],
+                    'PaymentType' => [
+                        'type' => 'string',
+                    ],
+                    'DiskPL' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1061,69 +1068,75 @@
             'QueueInfo' => [
                 'type' => 'object',
                 'properties' => [
-                    'WorkloadId' => [
+                    'Status' => [
                         'type' => 'string',
                     ],
-                    'WorkloadType' => [
+                    'QuotaId' => [
+                        'type' => 'string',
+                    ],
+                    'UserName' => [
+                        'type' => 'string',
+                    ],
+                    'WorkloadId' => [
                         'type' => 'string',
                     ],
                     'Position' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'GmtEnqueuedTime' => [
+                        'type' => 'string',
+                    ],
                     'Priority' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'GmtCreatedTime' => [
+                        'type' => 'string',
+                    ],
+                    'WorkloadType' => [
+                        'type' => 'string',
+                    ],
                     'WorkspaceId' => [
-                        'type' => 'string',
-                    ],
-                    'QuotaId' => [
-                        'type' => 'string',
-                    ],
-                    'GmtEnqueuedTime' => [
-                        'type' => 'string',
-                    ],
-                    'GmtPositionModifiedTime' => [
-                        'type' => 'string',
-                    ],
-                    'QueueStrategy' => [
-                        'type' => 'string',
-                    ],
-                    'Name' => [
-                        'type' => 'string',
-                    ],
-                    'Code' => [
-                        'type' => 'string',
-                    ],
-                    'CodeType' => [
-                        'type' => 'string',
-                    ],
-                    'Reason' => [
-                        'type' => 'string',
-                    ],
-                    'Status' => [
                         'type' => 'string',
                     ],
                     'Resource' => [
                         '$ref' => '#/components/schemas/ResourceAmount',
                     ],
-                    'UserId' => [
+                    'Code' => [
                         'type' => 'string',
                     ],
-                    'GmtDequeuedTime' => [
+                    'Reason' => [
+                        'type' => 'string',
+                    ],
+                    'UseOversoldResource' => [
+                        'type' => 'boolean',
+                    ],
+                    'Name' => [
                         'type' => 'string',
                     ],
                     'WorkloadStatus' => [
                         'type' => 'string',
                     ],
-                    'UserName' => [
-                        'type' => 'string',
-                    ],
                     'WorkloadName' => [
                         'type' => 'string',
                     ],
-                    'GmtCreatedTime' => [
+                    'UserId' => [
+                        'type' => 'string',
+                    ],
+                    'GmtPositionModifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'CodeType' => [
+                        'type' => 'string',
+                    ],
+                    'GmtDequeuedTime' => [
+                        'type' => 'string',
+                    ],
+                    'WorkspaceName' => [
+                        'type' => 'string',
+                    ],
+                    'QueueStrategy' => [
                         'type' => 'string',
                     ],
                 ],

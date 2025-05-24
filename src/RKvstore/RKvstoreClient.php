@@ -261,6 +261,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyTaskInfoAsync($arguments = [])
  * @method \Dew\Acs\Result modifyBackupExpireTime(array $arguments = [])
  * @method \Http\Promise\Promise modifyBackupExpireTimeAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteBackup(array $arguments = [])
+ * @method \Http\Promise\Promise deleteBackupAsync($arguments = [])
  */
 final class RKvstoreClient extends AcsClient
 {

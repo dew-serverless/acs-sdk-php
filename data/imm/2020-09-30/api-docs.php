@@ -2573,6 +2573,37 @@
                                 'type' => 'number',
                                 'format' => 'float',
                             ],
+                            'Desensitization' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'LicensePlate' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'MinSize' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                            'Confidence' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                            ],
+                                        ],
+                                    ],
+                                    'Face' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'MinSize' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                            'Confidence' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
                             'Watermarks' => [
                                 'type' => 'array',
                                 'items' => [

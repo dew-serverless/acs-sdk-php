@@ -421,6 +421,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise revokeCoordinatePrivilegeAsync($arguments = [])
  * @method \Dew\Acs\Result createBandwidthResourcePackages(array $arguments = [])
  * @method \Http\Promise\Promise createBandwidthResourcePackagesAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyTemplateBaseInfo(array $arguments = [])
+ * @method \Http\Promise\Promise modifyTemplateBaseInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise modifyTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result createTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise createTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result describeTemplates(array $arguments = [])
+ * @method \Http\Promise\Promise describeTemplatesAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteTemplates(array $arguments = [])
+ * @method \Http\Promise\Promise deleteTemplatesAsync($arguments = [])
  * @method \Dew\Acs\Result describeGlobalDesktops(array $arguments = []) {@since 2020-10-02}
  * @method \Http\Promise\Promise describeGlobalDesktopsAsync($arguments = []) {@since 2020-10-02}
  * @method \Dew\Acs\Result describeUserResources(array $arguments = []) {@since 2020-10-02}

@@ -2496,6 +2496,10 @@
                                 '$ref' => '#/components/schemas/AuthConfig',
                                 'required' => false,
                             ],
+                            'onlyChangeConfig' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

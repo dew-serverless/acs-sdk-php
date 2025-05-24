@@ -1292,6 +1292,40 @@
                     ],
                 ],
             ],
+            'NodeExecutionContextDTO' => [
+                'type' => 'object',
+                'properties' => [
+                    'context' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'NodeExecutionStatusDTO' => [
+                'type' => 'object',
+                'properties' => [
+                    'executionId' => [
+                        'type' => 'string',
+                    ],
+                    'workspace' => [
+                        'type' => 'string',
+                    ],
+                    'resourceId' => [
+                        'type' => 'string',
+                    ],
+                    'namespace' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'PeriodicSchedulingPolicy' => [
                 'type' => 'object',
                 'properties' => [

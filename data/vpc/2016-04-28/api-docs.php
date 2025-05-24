@@ -2268,6 +2268,14 @@
                         'maxItems' => 16,
                     ],
                 ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateRouteEntries' => [
@@ -2345,6 +2353,14 @@
                             ],
                         ],
                         'maxItems' => 200,
+                    ],
+                ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2585,6 +2601,14 @@
                         'maxItems' => 8,
                     ],
                 ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteRouteEntries' => [
@@ -2649,6 +2673,14 @@
                             ],
                         ],
                         'maxItems' => 200,
+                    ],
+                ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2888,6 +2920,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

@@ -9582,6 +9582,7 @@
         'DescribeNetworkAcls' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -9850,6 +9851,16 @@
                         'required' => true,
                         'minimum' => '1',
                         'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'DestinationCidrBlock',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 100,
                     ],
                 ],
             ],

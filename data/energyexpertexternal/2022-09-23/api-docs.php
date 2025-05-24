@@ -54,7 +54,7 @@
                     'subFolders' => [
                         'type' => 'array',
                         'items' => [
-                            '$ref' => '#/components/schemas/ChatFolderItem',
+                            '$ref' => '#/components/schemas/ChatItem',
                         ],
                     ],
                     'folderName' => [
@@ -2225,8 +2225,8 @@
                 ],
             ],
         ],
-        'AnalyzeVlRealtime' => [
-            'path' => '/api/v1/aidoc/document/analyzeVlRealtime',
+        'SubmitDocParsingTask' => [
+            'path' => '/api/v2/aidoc/document/submitDocParsingTask',
             'methods' => [
                 'post',
             ],
@@ -2255,7 +2255,15 @@
                     ],
                 ],
                 [
-                    'name' => 'templateId',
+                    'name' => 'fileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'folderId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2263,11 +2271,57 @@
                     ],
                 ],
                 [
-                    'name' => 'language',
+                    'name' => 'needAnalyzeImg',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetDocParsingResult' => [
+            'path' => '/api/v2/aidoc/document/getDocParsingResult',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'taskId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'returnFormat' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'md',
+                                    'json',
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -2470,8 +2524,8 @@
                 ],
             ],
         ],
-        'SubmitDocParsingTask' => [
-            'path' => '/api/v2/aidoc/document/submitDocParsingTask',
+        'AnalyzeVlRealtime' => [
+            'path' => '/api/v1/aidoc/document/analyzeVlRealtime',
             'methods' => [
                 'post',
             ],
@@ -2500,15 +2554,7 @@
                     ],
                 ],
                 [
-                    'name' => 'fileName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'folderId',
+                    'name' => 'templateId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2516,17 +2562,39 @@
                     ],
                 ],
                 [
-                    'name' => 'needAnalyzeImg',
+                    'name' => 'language',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'boolean',
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
             ],
         ],
-        'GetDocParsingResult' => [
-            'path' => '/api/v2/aidoc/document/getDocParsingResult',
+        'GetChatFolderList' => [
+            'path' => '/api/v2/aidoc/document/chat/folder/list',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'CreateChatSession' => [
+            'path' => '/api/v2/aidoc/document/chat/session/create',
             'methods' => [
                 'post',
             ],
@@ -2554,17 +2622,105 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'taskId' => [
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'folderId' => [
                                 'type' => 'string',
                                 'required' => true,
                             ],
-                            'returnFormat' => [
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetChatList' => [
+            'path' => '/api/v2/aidoc/document/chat/list',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'currentPage' => [
                                 'type' => 'string',
                                 'required' => false,
-                                'enum' => [
-                                    'md',
-                                    'json',
-                                ],
+                            ],
+                            'pageSize' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'Chat' => [
+            'path' => '/api/v2/aidoc/document/chat',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'sessionId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'question' => [
+                                'type' => 'string',
+                                'required' => true,
                             ],
                         ],
                     ],

@@ -13824,7 +13824,7 @@
         ],
         [
             'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-south-1',

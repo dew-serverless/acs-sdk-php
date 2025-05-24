@@ -1376,6 +1376,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DryRun',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateDBResourcePool' => [
@@ -8650,7 +8658,7 @@
         ],
         [
             'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-south-1',

@@ -1217,6 +1217,14 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'mt.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'mt.ap-southeast-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'mt.cn-hangzhou.aliyuncs.com',
         ],
@@ -1233,19 +1241,11 @@
             'endpoint' => 'mt.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'mt.ap-southeast-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-2',
             'endpoint' => 'mt.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',
-            'endpoint' => 'mt.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-5',
             'endpoint' => 'mt.aliyuncs.com',
         ],
         [
@@ -1418,7 +1418,7 @@
         ],
         [
             'regionId' => 'me-east-1',
-            'endpoint' => 'mt.aliyuncs.com',
+            'endpoint' => 'alimt.me-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'rus-west-1-pop',

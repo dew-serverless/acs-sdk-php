@@ -7515,6 +7515,10 @@
                                 'type' => 'string',
                                 'required' => true,
                             ],
+                            'crc64_hash' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -7722,10 +7726,6 @@
                             ],
                             'response_content_type' => [
                                 'type' => 'string',
-                                'required' => false,
-                            ],
-                            'static_url' => [
-                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],

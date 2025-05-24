@@ -1687,6 +1687,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'VscName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'BindVscMountPointAlias' => [

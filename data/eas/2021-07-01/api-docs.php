@@ -2221,6 +2221,64 @@
                 ],
             ],
         ],
+        'UpdateGroup' => [
+            'path' => '/api/v2/groups/{ClusterId}/{GroupName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'GroupName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'TrafficMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'auto',
+                                    'customized',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ReleaseService' => [
             'path' => '/api/v2/services/{ClusterId}/{ServiceName}/release',
             'methods' => [
@@ -6213,64 +6271,6 @@
             ],
             'deprecated' => false,
             'parameters' => [],
-        ],
-        'UpdateGroup' => [
-            'path' => '/api/v2/groups/{ClusterId}/{GroupName}',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'GroupName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'TrafficMode' => [
-                                'type' => 'string',
-                                'required' => false,
-                                'enum' => [
-                                    'auto',
-                                    'customized',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
         ],
     ],
     'endpoints' => [

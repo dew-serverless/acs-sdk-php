@@ -532,6 +532,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'ResourceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

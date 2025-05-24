@@ -613,39 +613,10 @@
             'Template' => [
                 'type' => 'object',
                 'properties' => [
-                    'sparkDriverCores' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                    'sparkDriverMemory' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                    'sparkExecutorMemory' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                    'sparkVersion' => [
+                    'templateType' => [
                         'type' => 'string',
-                        'required' => true,
-                    ],
-                    'sparkLogLevel' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'sparkExecutorCores' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
                     ],
                     'gmtModified' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'sparkLogPath' => [
                         'type' => 'string',
                         'required' => true,
                     ],
@@ -654,13 +625,27 @@
                         'format' => 'int64',
                         'required' => true,
                     ],
+                    'sparkLogLevel' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
                     'gmtCreated' => [
                         'type' => 'string',
+                        'required' => true,
+                    ],
+                    'sparkDriverMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                         'required' => true,
                     ],
                     'modifier' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => true,
+                    ],
+                    'sparkExecutorCores' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => true,
                     ],
                     'sparkConf' => [
@@ -669,13 +654,37 @@
                             '$ref' => '#/components/schemas/SparkConf',
                         ],
                     ],
-                    'templateType' => [
+                    'sparkVersion' => [
                         'type' => 'string',
+                        'required' => true,
+                    ],
+                    'sparkExecutorMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
                     ],
                     'fusion' => [
                         'type' => 'boolean',
                     ],
+                    'isDefault' => [
+                        'type' => 'boolean',
+                    ],
+                    'sparkDriverCores' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
                     'displaySparkVersion' => [
+                        'type' => 'string',
+                    ],
+                    'sparkLogPath' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'bizId' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1047,6 +1056,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'publicEndpointEnabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -1308,6 +1321,14 @@
                 ],
                 [
                     'name' => 'regionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateBizId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3407,12 +3428,16 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'emr-serverless-spark.cn-beijing.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-zhangjiakou',
             'endpoint' => 'emr-serverless-spark.cn-zhangjiakou.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'emr-serverless-spark.cn-beijing.aliyuncs.com',
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'emr-serverless-spark.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou',
@@ -3427,8 +3452,16 @@
             'endpoint' => 'emr-serverless-spark.cn-shenzhen.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'emr-serverless-spark.cn-wulanchabu.aliyuncs.com',
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'emr-serverless-spark.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'emr-serverless-spark.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'emr-serverless-spark.ap-northeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',

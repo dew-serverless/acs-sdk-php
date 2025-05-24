@@ -65,6 +65,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateServiceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result updateAppService(array $arguments = [])
  * @method \Http\Promise\Promise updateAppServiceAsync($arguments = [])
+ * @method \Dew\Acs\Result updateGroup(array $arguments = [])
+ * @method \Http\Promise\Promise updateGroupAsync($arguments = [])
  * @method \Dew\Acs\Result releaseService(array $arguments = [])
  * @method \Http\Promise\Promise releaseServiceAsync($arguments = [])
  * @method \Dew\Acs\Result describeService(array $arguments = [])
@@ -205,8 +207,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise reinstallTenantAddonAsync($arguments = [])
  * @method \Dew\Acs\Result listTenantAddons(array $arguments = [])
  * @method \Http\Promise\Promise listTenantAddonsAsync($arguments = [])
- * @method \Dew\Acs\Result updateGroup(array $arguments = [])
- * @method \Http\Promise\Promise updateGroupAsync($arguments = [])
  */
 final class EasClient extends AcsClient
 {

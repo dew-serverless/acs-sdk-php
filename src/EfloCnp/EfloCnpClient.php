@@ -27,6 +27,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listExperimentsAsync($arguments = [])
  * @method \Dew\Acs\Result getExperimentResultData(array $arguments = [])
  * @method \Http\Promise\Promise getExperimentResultDataAsync($arguments = [])
+ * @method \Dew\Acs\Result checkServiceLinkedRoleEfloCnpForDeleting(array $arguments = [])
+ * @method \Http\Promise\Promise checkServiceLinkedRoleEfloCnpForDeletingAsync($arguments = [])
  * @method \Dew\Acs\Result createExperimentPlanTemplate(array $arguments = [])
  * @method \Http\Promise\Promise createExperimentPlanTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result updateExperimentPlanTemplate(array $arguments = [])
@@ -57,8 +59,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
  * @method \Http\Promise\Promise listTagResourcesAsync($arguments = [])
- * @method \Dew\Acs\Result checkServiceLinkedRoleEfloCnpForDeleting(array $arguments = [])
- * @method \Http\Promise\Promise checkServiceLinkedRoleEfloCnpForDeletingAsync($arguments = [])
  */
 final class EfloCnpClient extends AcsClient
 {

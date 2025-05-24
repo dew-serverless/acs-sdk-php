@@ -751,6 +751,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getPipelineRunAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result listPipelineRuns(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise listPipelineRunsAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result listPipelineRunItems(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise listPipelineRunItemsAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result getDeploymentPackage(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise getDeploymentPackageAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result listDeploymentPackages(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise listDeploymentPackagesAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result listDeploymentPackageFiles(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise listDeploymentPackageFilesAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result getDIJobLog(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise getDIJobLogAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result listDIJobRunDetails(array $arguments = []) {@since 2024-05-18}

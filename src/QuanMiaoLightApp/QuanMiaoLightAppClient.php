@@ -63,6 +63,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getTagMiningAnalysisTaskAsync($arguments = [])
  * @method \Dew\Acs\Result cancelAsyncTask(array $arguments = [])
  * @method \Http\Promise\Promise cancelAsyncTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result hotNewsRecommend(array $arguments = [])
+ * @method \Http\Promise\Promise hotNewsRecommendAsync($arguments = [])
  */
 final class QuanMiaoLightAppClient extends AcsClient
 {

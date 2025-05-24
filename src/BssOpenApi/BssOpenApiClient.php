@@ -229,6 +229,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCouponAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result describeCouponItemList(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise describeCouponItemListAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result createReportDefinition(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise createReportDefinitionAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result listReportDefinitions(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise listReportDefinitionsAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result deleteReportDefinition(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise deleteReportDefinitionAsync($arguments = []) {@since 2023-09-30}
  */
 final class BssOpenApiClient extends AcsClient
 {

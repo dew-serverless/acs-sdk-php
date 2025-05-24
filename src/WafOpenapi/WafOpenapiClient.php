@@ -107,6 +107,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCloudResourceAccessedPortsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeCloudResourceAccessPortDetails(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeCloudResourceAccessPortDetailsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeAbnormalCloudResources(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeAbnormalCloudResourcesAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result reCreateCloudResource(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise reCreateCloudResourceAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeDomains(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeDomainsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeDomainDetail(array $arguments = []) {@since 2021-10-01}
@@ -155,8 +159,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDefenseResourceNamesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyDefenseResourceXff(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise modifyDefenseResourceXffAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result modifyPauseProtectionStatus(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise modifyPauseProtectionStatusAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describePauseProtectionStatus(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describePauseProtectionStatusAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyDefenseRuleCache(array $arguments = []) {@since 2021-10-01}
@@ -223,16 +225,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyApisecEventsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result deleteApisecEvents(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise deleteApisecEventsAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result describeApisecLogDeliveries(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise describeApisecLogDeliveriesAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result describeApisecSlsLogStores(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise describeApisecSlsLogStoresAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyApisecLogDeliveryStatus(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise modifyApisecLogDeliveryStatusAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result describeApisecSlsProjects(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise describeApisecSlsProjectsAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result modifyApisecLogDelivery(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise modifyApisecLogDeliveryAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result createApiExport(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise createApiExportAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeApiExports(array $arguments = []) {@since 2021-10-01}
@@ -399,6 +393,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyHybridCloudSdkPullinStatusAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeHybridCloudClusters(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeHybridCloudClustersAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeApisecLogDeliveries(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeApisecLogDeliveriesAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeApisecSlsLogStores(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeApisecSlsLogStoresAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeApisecSlsProjects(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeApisecSlsProjectsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result modifyApisecLogDelivery(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise modifyApisecLogDeliveryAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result modifyPauseProtectionStatus(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise modifyPauseProtectionStatusAsync($arguments = []) {@since 2021-10-01}
  */
 final class WafOpenapiClient extends AcsClient
 {

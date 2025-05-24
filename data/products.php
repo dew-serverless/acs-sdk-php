@@ -1698,6 +1698,14 @@
         'defaultVersion' => '2019-02-28',
     ],
     [
+        'code' => 'nls-filetrans',
+        'style' => 'RPC',
+        'versions' => [
+            '2018-08-17',
+        ],
+        'defaultVersion' => '2018-08-17',
+    ],
+    [
         'code' => 'opt',
         'style' => 'RPC',
         'versions' => [
@@ -2324,6 +2332,14 @@
             '2023-08-28',
         ],
         'defaultVersion' => '2023-08-28',
+    ],
+    [
+        'code' => 'appflow',
+        'style' => 'RPC',
+        'versions' => [
+            '2023-09-04',
+        ],
+        'defaultVersion' => '2023-09-04',
     ],
     [
         'code' => 'BDRC',

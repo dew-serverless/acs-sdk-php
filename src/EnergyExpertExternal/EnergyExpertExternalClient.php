@@ -91,6 +91,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getChatFolderListAsync($arguments = [])
  * @method \Dew\Acs\Result createChatSession(array $arguments = [])
  * @method \Http\Promise\Promise createChatSessionAsync($arguments = [])
+ * @method \Dew\Acs\Result getChatSessionList(array $arguments = [])
+ * @method \Http\Promise\Promise getChatSessionListAsync($arguments = [])
  * @method \Dew\Acs\Result getChatList(array $arguments = [])
  * @method \Http\Promise\Promise getChatListAsync($arguments = [])
  * @method \Dew\Acs\Result chat(array $arguments = [])

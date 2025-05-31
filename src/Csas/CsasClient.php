@@ -209,6 +209,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise revokeUserSessionAsync($arguments = []) {@deprecated 2023-01-20}
  * @method \Dew\Acs\Result listPopTrafficStatistics(array $arguments = [])
  * @method \Http\Promise\Promise listPopTrafficStatisticsAsync($arguments = [])
+ * @method \Dew\Acs\Result createEnterpriseAcceleratePolicy(array $arguments = [])
+ * @method \Http\Promise\Promise createEnterpriseAcceleratePolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteOtpConfig(array $arguments = [])
+ * @method \Http\Promise\Promise deleteOtpConfigAsync($arguments = [])
  */
 final class CsasClient extends AcsClient
 {

@@ -3208,6 +3208,20 @@
                                     'required' => false,
                                 ],
                             ],
+                            'mcpRouteConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'protocol' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'exposedUriPath' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],

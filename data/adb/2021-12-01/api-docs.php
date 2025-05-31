@@ -4388,6 +4388,14 @@
                         'maximum' => '2147483647',
                     ],
                 ],
+                [
+                    'name' => 'Remote',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeBackupPolicy' => [

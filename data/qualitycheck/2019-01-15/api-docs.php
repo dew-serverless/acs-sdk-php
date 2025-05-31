@@ -3651,6 +3651,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'JsonStr',
@@ -3685,6 +3686,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'JsonStr',
@@ -3719,7 +3721,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'JsonStr',
@@ -3754,7 +3756,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'JsonStr',
@@ -3789,6 +3791,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'JsonStr',

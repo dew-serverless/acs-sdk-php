@@ -59,6 +59,15 @@
                     ],
                 ],
                 [
+                    'name' => 'AccountId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'AccountName',
                     'in' => 'query',
                     'schema' => [
@@ -4300,6 +4309,14 @@
                 ],
                 [
                     'name' => 'ExpireDay',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CubeIds',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

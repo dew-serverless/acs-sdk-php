@@ -2882,6 +2882,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AppRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateDiskEncryptionService' => [
@@ -5586,6 +5594,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'UserGroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDesktopGroupDetail' => [
@@ -6868,6 +6884,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'UserGroupName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeUsersInGroup' => [
@@ -7229,6 +7253,14 @@
                 ],
                 [
                     'name' => 'UserOuPath',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserGroupName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -16759,17 +16791,80 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
-                                    'maxItems' => 100,
+                                    'maxItems' => 30,
                                 ],
                                 'NotificationTime' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
                                     'required' => false,
                                 ],
+                                'SegmentTimers' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'OperationType' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'StartCronExpression' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'EndCronExpression' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Interval' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'TriggerType' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'ProcessWhitelist' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'maxItems' => 30,
+                                            ],
+                                            'NotificationTime' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'TimerOrder' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'Timezone' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Enforce' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'ResetType' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 5,
+                                ],
                             ],
                         ],
                         'minItems' => 0,
-                        'maxItems' => 100,
+                        'maxItems' => 20,
                     ],
                 ],
             ],
@@ -17177,16 +17272,79 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
-                                    'maxItems' => 100,
+                                    'maxItems' => 30,
                                 ],
                                 'NotificationTime' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
                                     'required' => false,
                                 ],
+                                'SegmentTimers' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'OperationType' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'StartCronExpression' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'EndCronExpression' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Interval' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'TriggerType' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'ProcessWhitelist' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'maxItems' => 30,
+                                            ],
+                                            'NotificationTime' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'TimerOrder' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'Timezone' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Enforce' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'ResetType' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 5,
+                                ],
                             ],
                         ],
-                        'maxItems' => 100,
+                        'maxItems' => 20,
                     ],
                 ],
                 [

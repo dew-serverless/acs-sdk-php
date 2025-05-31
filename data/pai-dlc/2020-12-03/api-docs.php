@@ -1060,6 +1060,7 @@
                     ],
                     'IsCheif' => [
                         'type' => 'boolean',
+                        'deprecated' => true,
                     ],
                     'ResourceConfig' => [
                         '$ref' => '#/components/schemas/ResourceConfig',
@@ -1075,6 +1076,9 @@
                     ],
                     'ExtraPodSpec' => [
                         '$ref' => '#/components/schemas/ExtraPodSpec',
+                    ],
+                    'IsChief' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],

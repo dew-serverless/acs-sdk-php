@@ -47,6 +47,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listJobsAsync($arguments = [])
  * @method \Dew\Acs\Result getDesigateInfo(array $arguments = [])
  * @method \Http\Promise\Promise getDesigateInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result getJobExecution(array $arguments = [])
+ * @method \Http\Promise\Promise getJobExecutionAsync($arguments = [])
  * @method \Dew\Acs\Result operateStopJobExecution(array $arguments = [])
  * @method \Http\Promise\Promise operateStopJobExecutionAsync($arguments = [])
  * @method \Dew\Acs\Result operateDesignateExecutors(array $arguments = [])

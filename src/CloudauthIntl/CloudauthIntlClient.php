@@ -41,6 +41,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise fraudResultCallBackAsync($arguments = [])
  * @method \Dew\Acs\Result cardOcr(array $arguments = []) {@deprecated 2022-08-09}
  * @method \Http\Promise\Promise cardOcrAsync($arguments = []) {@deprecated 2022-08-09}
+ * @method \Dew\Acs\Result bankMetaVerifyIntl(array $arguments = [])
+ * @method \Http\Promise\Promise bankMetaVerifyIntlAsync($arguments = [])
  */
 final class CloudauthIntlClient extends AcsClient
 {

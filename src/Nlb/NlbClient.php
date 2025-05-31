@@ -97,6 +97,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listSystemSecurityPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result moveResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise moveResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result listAsynJobs(array $arguments = [])
+ * @method \Http\Promise\Promise listAsynJobsAsync($arguments = [])
  * @method \Dew\Acs\Result getJobStatus(array $arguments = [])
  * @method \Http\Promise\Promise getJobStatusAsync($arguments = [])
  * @method \Dew\Acs\Result tagResources(array $arguments = [])

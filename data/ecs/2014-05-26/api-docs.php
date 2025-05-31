@@ -17552,6 +17552,10 @@
                                     'type' => 'boolean',
                                     'required' => false,
                                 ],
+                                'KMSKeyId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 16,
@@ -17723,6 +17727,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SystemDisk.KMSKeyId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -18330,6 +18342,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'KMSKeyId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 16,
@@ -18501,6 +18517,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SystemDisk.KMSKeyId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

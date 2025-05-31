@@ -979,6 +979,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'callBackUrl' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

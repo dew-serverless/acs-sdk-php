@@ -1933,6 +1933,14 @@
                     ],
                 ],
                 [
+                    'name' => 'ShouldReplaceFile',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TextChunks',
                     'in' => 'formData',
                     'style' => 'json',
@@ -1949,6 +1957,14 @@
                                 ],
                                 'Metadata' => [
                                     'type' => 'object',
+                                    'required' => false,
+                                ],
+                                'Filter' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Id' => [
+                                    'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
@@ -2420,6 +2436,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UrlExpiration',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -4133,6 +4157,15 @@
                             'type' => 'string',
                             'required' => false,
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'Dimension',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -7069,6 +7102,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'CacheStorageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDBInstance' => [
@@ -7727,6 +7768,22 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServerlessResource',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CacheStorageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

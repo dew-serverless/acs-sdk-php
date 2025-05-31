@@ -97,6 +97,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise eventCenterQueryEventsAsync($arguments = [])
  * @method \Dew\Acs\Result checkServiceLinkedRoleForProduct(array $arguments = [])
  * @method \Http\Promise\Promise checkServiceLinkedRoleForProductAsync($arguments = [])
+ * @method \Dew\Acs\Result testEventSourceConfig(array $arguments = [])
+ * @method \Http\Promise\Promise testEventSourceConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result discoverEventSource(array $arguments = [])
+ * @method \Http\Promise\Promise discoverEventSourceAsync($arguments = [])
  */
 final class EventbridgeClient extends AcsClient
 {

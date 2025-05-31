@@ -161,6 +161,14 @@
         'defaultVersion' => '2019-03-20',
     ],
     [
+        'code' => 'servicemesh',
+        'style' => 'RPC',
+        'versions' => [
+            '2020-01-11',
+        ],
+        'defaultVersion' => '2020-01-11',
+    ],
+    [
         'code' => 'adcp',
         'style' => 'RPC',
         'versions' => [
@@ -691,14 +699,6 @@
             '2019-09-01',
         ],
         'defaultVersion' => '2019-09-01',
-    ],
-    [
-        'code' => 'servicemesh',
-        'style' => 'RPC',
-        'versions' => [
-            '2020-01-11',
-        ],
-        'defaultVersion' => '2020-01-11',
     ],
     [
         'code' => 'acm',
@@ -2396,6 +2396,14 @@
             '2024-08-15',
         ],
         'defaultVersion' => '2024-08-15',
+    ],
+    [
+        'code' => 'SasRasp',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-07-27',
+        ],
+        'defaultVersion' => '2024-07-27',
     ],
     [
         'code' => 'AIPodcast',

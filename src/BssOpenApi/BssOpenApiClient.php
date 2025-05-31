@@ -199,6 +199,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCostBudgetsSummaryAsync($arguments = [])
  * @method \Dew\Acs\Result renewChangeInstance(array $arguments = [])
  * @method \Http\Promise\Promise renewChangeInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result createFundAccountPayRelation(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise createFundAccountPayRelationAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result setFundAccountLowAvailableAmountAlarm(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise setFundAccountLowAvailableAmountAlarmAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result getFundAccountCanWithdrawAmount(array $arguments = []) {@since 2023-09-30}
@@ -235,6 +237,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listReportDefinitionsAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result deleteReportDefinition(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise deleteReportDefinitionAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result queryCostCenterResource(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise queryCostCenterResourceAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result createCostCenter(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise createCostCenterAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result modifyCostCenter(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise modifyCostCenterAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result queryCostCenter(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise queryCostCenterAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result deleteCostCenter(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise deleteCostCenterAsync($arguments = []) {@since 2023-09-30}
  */
 final class BssOpenApiClient extends AcsClient
 {

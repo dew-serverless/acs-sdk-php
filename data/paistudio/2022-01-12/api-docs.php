@@ -1054,6 +1054,17 @@
                     ],
                 ],
             ],
+            'OversoldUsageConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'DisabledBy' => [
+                        'type' => 'string',
+                    ],
+                    'Disabled' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Permission' => [
                 'type' => 'object',
                 'properties' => [
@@ -1224,14 +1235,17 @@
             'QuotaConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'SupportRDMA' => [
+                    'DefaultGPUDriver' => [
+                        'type' => 'string',
+                    ],
+                    'EnablePreemptSubquotaWorkloads' => [
                         'type' => 'boolean',
                     ],
                     'ClusterId' => [
                         'type' => 'string',
                     ],
-                    'UserVpc' => [
-                        '$ref' => '#/components/schemas/UserVpc',
+                    'EnableSubQuotaPreemption' => [
+                        'type' => 'boolean',
                     ],
                     'SupportGPUDrivers' => [
                         'type' => 'array',
@@ -1239,11 +1253,23 @@
                             'type' => 'string',
                         ],
                     ],
-                    'DefaultGPUDriver' => [
-                        'type' => 'string',
+                    'SelfQuotaPreemptionConfig' => [
+                        '$ref' => '#/components/schemas/SelfQuotaPreemptionConfig',
+                    ],
+                    'UserVpc' => [
+                        '$ref' => '#/components/schemas/UserVpc',
                     ],
                     'ACS' => [
                         '$ref' => '#/components/schemas/ACS',
+                    ],
+                    'EnableGPUShare' => [
+                        'type' => 'boolean',
+                    ],
+                    'SupportRDMA' => [
+                        'type' => 'boolean',
+                    ],
+                    'OversoldUsageInfo' => [
+                        '$ref' => '#/components/schemas/OversoldUsageConfig',
                     ],
                     'ResourceSpecs' => [
                         'type' => 'array',
@@ -1251,14 +1277,8 @@
                             '$ref' => '#/components/schemas/WorkspaceSpecs',
                         ],
                     ],
-                    'EnablePreemptSubquotaWorkloads' => [
-                        'type' => 'boolean',
-                    ],
                     'SubQuotaPreemptionConfig' => [
                         '$ref' => '#/components/schemas/SubQuotaPreemptionConfig',
-                    ],
-                    'EnableSubQuotaPreemption' => [
-                        'type' => 'boolean',
                     ],
                 ],
             ],
@@ -1810,6 +1830,35 @@
                     ],
                     'CronTab' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'SelfQuotaPreemptionConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'PreemptedPriorities' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int32',
+                            'minimum' => '1',
+                            'maximum' => '9',
+                        ],
+                    ],
+                    'PreemptedProducts' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'PreemptorPriorities' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int32',
+                            'minimum' => '1',
+                            'maximum' => '9',
+                        ],
                     ],
                 ],
             ],

@@ -3015,6 +3015,10 @@
                             'format' => 'float',
                         ],
                     ],
+                    'AppCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                 ],
             ],
             'PriceEstimateOutput' => [
@@ -6852,6 +6856,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'StartupProbe',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteApplication' => [
@@ -7834,6 +7846,14 @@
                 ],
                 [
                     'name' => 'GpuConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartupProbe',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

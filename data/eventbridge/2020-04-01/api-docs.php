@@ -1402,6 +1402,22 @@
                                             'type' => 'string',
                                             'required' => false,
                                         ],
+                                        'Network' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'VpcId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'VSwitchIds' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'SecurityGroupId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
                                 'ErrorsTolerance' => [
@@ -1539,6 +1555,22 @@
                                     'required' => false,
                                     'properties' => [
                                         'Arn' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Network' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'VpcId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'VSwitchIds' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'SecurityGroupId' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
@@ -3345,6 +3377,228 @@
                                     ],
                                 ],
                             ],
+                            'SinkDorisParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'QueryEndpoint' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'FeHttpEndpoint' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'BeHttpEndpoint' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'UserName' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Password' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Database' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Data' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Table' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
                             'SinkRocketMQCheckpointParameters' => [
                                 'type' => 'object',
                                 'required' => false,
@@ -4394,6 +4648,31 @@
                                         'required' => false,
                                     ],
                                 ],
+                            ],
+                            'BusinessOption' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'BusinessMode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'MinCapacityUnitCount' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'MaxCapacityUnitCount' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'Throttling' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -5753,6 +6032,228 @@
                                     ],
                                 ],
                             ],
+                            'SinkDorisParameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'QueryEndpoint' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'FeHttpEndpoint' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'BeHttpEndpoint' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'UserName' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Password' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Database' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Table' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'Data' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'NetworkType' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'VpcId' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'VSwitchIds' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                    'SecurityGroupId' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Value' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Form' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'Template' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
                             'SinkRocketMQCheckpointParameters' => [
                                 'type' => 'object',
                                 'required' => false,
@@ -6766,6 +7267,31 @@
                                         'required' => false,
                                     ],
                                 ],
+                            ],
+                            'BusinessOption' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'BusinessMode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'MinCapacityUnitCount' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'MaxCapacityUnitCount' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'Throttling' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -7991,6 +8517,158 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'TestEventSourceConfig' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SourceMySQLParameters',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'RegionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'HostName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Port' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'DatabaseName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TableNames' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'User' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Password' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'NetworkType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VpcId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VSwitchIds' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SecurityGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DiscoverEventSource' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SourceMySQLParameters',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'RegionId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'HostName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Port' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'DatabaseName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TableName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'User' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Password' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'NetworkType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VpcId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'VSwitchIds' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SecurityGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Offset' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Limit' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

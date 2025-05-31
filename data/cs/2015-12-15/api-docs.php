@@ -1521,6 +1521,20 @@
                                     ],
                                 ],
                             ],
+                            'audit_log_config' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'sls_project_name' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -1604,6 +1618,352 @@
                                 'delete_mode' => [
                                     'type' => 'string',
                                     'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ModifyCluster' => [
+            'path' => '/api/v2/clusters/{ClusterId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'api_server_eip' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'api_server_eip_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'deletion_protection' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'instance_deletion_protection' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'ingress_domain_rebinding' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'ingress_loadbalancer_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'resource_group_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'maintenance_window' => [
+                                '$ref' => '#/components/schemas/maintenance_window',
+                                'required' => false,
+                            ],
+                            'enable_rrsa' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'access_control_list' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'cluster_name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'system_events_logging' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'logging_project' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'operation_policy' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'cluster_auto_upgrade' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'enabled' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'channel' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'api_server_custom_cert_sans' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'action' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                        'enum' => [
+                                            'append',
+                                            'overwrite',
+                                        ],
+                                    ],
+                                    'subject_alternative_names' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'vswitch_ids' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'control_plane_config' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'charge_type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'period' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'period_unit' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'auto_renew' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'auto_renew_period' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'instance_types' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'image_type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'image_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'key_pair' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'login_password' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_category' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_size' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_snapshot_policy_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_performance_level' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_provisioned_iops' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'system_disk_bursting_enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'deploymentset_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'cloud_monitor_flags' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'soc_enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'security_hardening_os' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'cpu_policy' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'runtime' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'node_port_range' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'size' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'security_group_id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'timezone' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpgradeCluster' => [
+            'path' => '/api/v2/clusters/{ClusterId}/upgrade',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'component_name' => [
+                                'type' => 'string',
+                                'deprecated' => true,
+                                'required' => false,
+                            ],
+                            'next_version' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'version' => [
+                                'type' => 'string',
+                                'deprecated' => true,
+                                'required' => false,
+                            ],
+                            'master_only' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'rolling_policy' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'max_parallelism' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                         ],
@@ -2006,297 +2366,10 @@
                 ],
             ],
         ],
-        'RunClusterCheck' => [
-            'path' => '/clusters/{cluster_id}/checks',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'type' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'target' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'options' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'additionalProperties' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListClusterChecks' => [
-            'path' => '/clusters/{cluster_id}/checks',
+        'DescribeUserQuota' => [
+            'path' => '/quota',
             'methods' => [
                 'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'target',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetClusterCheck' => [
-            'path' => '/clusters/{cluster_id}/checks/{check_id}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'check_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateClusterDiagnosis' => [
-            'path' => '/clusters/{cluster_id}/diagnosis',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'type' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'target' => [
-                                'type' => 'object',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetClusterDiagnosisResult' => [
-            'path' => '/clusters/{cluster_id}/diagnosis/{diagnosis_id}/result',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'diagnosis_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'language',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetClusterDiagnosisCheckItems' => [
-            'path' => '/clusters/{cluster_id}/diagnosis/{diagnosis_id}/check_items',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'diagnosis_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'language',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ModifyCluster' => [
-            'path' => '/api/v2/clusters/{ClusterId}',
-            'methods' => [
-                'put',
             ],
             'schemes' => [
                 'http',
@@ -2314,258 +2387,7 @@
                 'application/json',
             ],
             'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'api_server_eip' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'api_server_eip_id' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'deletion_protection' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'instance_deletion_protection' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'ingress_domain_rebinding' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'ingress_loadbalancer_id' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'resource_group_id' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'maintenance_window' => [
-                                '$ref' => '#/components/schemas/maintenance_window',
-                                'required' => false,
-                            ],
-                            'enable_rrsa' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'access_control_list' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'cluster_name' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'system_events_logging' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'enabled' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'logging_project' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'operation_policy' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'cluster_auto_upgrade' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'enabled' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'channel' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'api_server_custom_cert_sans' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'action' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                        'enum' => [
-                                            'append',
-                                            'overwrite',
-                                        ],
-                                    ],
-                                    'subject_alternative_names' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'vswitch_ids' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'control_plane_config' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'charge_type' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'period' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                    'period_unit' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'auto_renew' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'auto_renew_period' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                    'instance_types' => [
-                                        'type' => 'array',
-                                        'required' => false,
-                                        'items' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                    'image_type' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'image_id' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'key_pair' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'login_password' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_category' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_size' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_snapshot_policy_id' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_performance_level' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_provisioned_iops' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                    'system_disk_bursting_enabled' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'deploymentset_id' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'cloud_monitor_flags' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'soc_enabled' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'security_hardening_os' => [
-                                        'type' => 'boolean',
-                                        'required' => false,
-                                    ],
-                                    'cpu_policy' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'runtime' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'node_port_range' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'size' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                            'security_group_id' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'timezone' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
+            'parameters' => [],
         ],
         'MigrateCluster' => [
             'path' => '/clusters/{cluster_id}/migrate',
@@ -2823,6 +2645,60 @@
                 ],
             ],
         ],
+        'UpdateK8sClusterUserConfigExpire' => [
+            'path' => '/k8s/{ClusterId}/user_config/expire',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'expire_hour' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                                'minimum' => '0',
+                                'maximum' => '876000',
+                            ],
+                            'user' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'RevokeK8sClusterKubeConfig' => [
             'path' => '/k8s/{ClusterId}/certs',
             'methods' => [
@@ -2949,124 +2825,6 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateK8sClusterUserConfigExpire' => [
-            'path' => '/k8s/{ClusterId}/user_config/expire',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'expire_hour' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => true,
-                                'minimum' => '0',
-                                'maximum' => '876000',
-                            ],
-                            'user' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ScanClusterVuls' => [
-            'path' => '/clusters/{cluster_id}/vuls/scan',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeClusterVuls' => [
-            'path' => '/clusters/{cluster_id}/vuls',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -5476,142 +5234,6 @@
                 ],
             ],
         ],
-        'DescribeAddons' => [
-            'path' => '/clusters/components/metadata',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'region',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'cluster_type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'cluster_profile',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'cluster_spec',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'cluster_version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeClusterAddonsVersion' => [
-            'path' => '/clusters/{ClusterId}/components/version',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeClusterAddonInstance' => [
-            'path' => '/clusters/{ClusterID}/components/{AddonName}/instance',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'ClusterID',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'AddonName',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'ListAddons' => [
             'path' => '/addons',
             'methods' => [
@@ -5895,54 +5517,6 @@
                 ],
             ],
         ],
-        'DescribeClusterAddonMetadata' => [
-            'path' => '/clusters/{cluster_id}/components/{component_id}/metadata',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'component_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'version',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'UpgradeClusterAddons' => [
             'path' => '/clusters/{ClusterId}/components/upgrade',
             'methods' => [
@@ -6006,251 +5580,6 @@
                                 ],
                             ],
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'DescribeClusterAddonsUpgradeStatus' => [
-            'path' => '/clusters/{ClusterId}/components/upgradestatus',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'componentIds',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => true,
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpgradeCluster' => [
-            'path' => '/api/v2/clusters/{ClusterId}/upgrade',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'component_name' => [
-                                'type' => 'string',
-                                'deprecated' => true,
-                                'required' => false,
-                            ],
-                            'next_version' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'version' => [
-                                'type' => 'string',
-                                'deprecated' => true,
-                                'required' => false,
-                            ],
-                            'master_only' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'rolling_policy' => [
-                                'type' => 'object',
-                                'required' => false,
-                                'properties' => [
-                                    'max_parallelism' => [
-                                        'type' => 'integer',
-                                        'format' => 'int32',
-                                        'required' => false,
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetUpgradeStatus' => [
-            'path' => '/api/v2/clusters/{ClusterId}/upgrade/status',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'PauseClusterUpgrade' => [
-            'path' => '/api/v2/clusters/{ClusterId}/upgrade/pause',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CancelClusterUpgrade' => [
-            'path' => '/api/v2/clusters/{ClusterId}/upgrade/cancel',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ResumeUpgradeCluster' => [
-            'path' => '/api/v2/clusters/{ClusterId}/upgrade/resume',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
             ],
@@ -6485,6 +5814,1201 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'ScanClusterVuls' => [
+            'path' => '/clusters/{cluster_id}/vuls/scan',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeClusterVuls' => [
+            'path' => '/clusters/{cluster_id}/vuls',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateResourcesDeleteProtection' => [
+            'path' => '/clusters/{ClusterId}/resources/protection',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'namespace' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'resource_type' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'services',
+                                    'namespaces',
+                                ],
+                            ],
+                            'resources' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'enable' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DescribeResourcesDeleteProtection' => [
+            'path' => '/clusters/{ClusterId}/resources/{ResourceType}/protection',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'namespaces',
+                            'services',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resources',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeployPolicyInstance' => [
+            'path' => '/clusters/{cluster_id}/policies/{policy_name}',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'policy_name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'action' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'namespaces' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'parameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ModifyPolicyInstance' => [
+            'path' => '/clusters/{cluster_id}/policies/{policy_name}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'policy_name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'action' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'instance_name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'namespaces' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'parameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeletePolicyInstance' => [
+            'path' => '/clusters/{cluster_id}/policies/{policy_name}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'policy_name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'instance_name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribePolicies' => [
+            'path' => '/policies',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'DescribePolicyDetails' => [
+            'path' => '/policies/{policy_name}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'policy_name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribePolicyGovernanceInCluster' => [
+            'path' => '/clusters/{cluster_id}/policygovernance',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribePolicyInstances' => [
+            'path' => '/clusters/{cluster_id}/policies',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'policy_name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'instance_name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribePolicyInstancesStatus' => [
+            'path' => '/clusters/{cluster_id}/policies/status',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'RunClusterCheck' => [
+            'path' => '/clusters/{cluster_id}/checks',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'type' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'target' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'options' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListClusterChecks' => [
+            'path' => '/clusters/{cluster_id}/checks',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'target',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetClusterCheck' => [
+            'path' => '/clusters/{cluster_id}/checks/{check_id}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'check_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateClusterInspectConfig' => [
+            'path' => '/clusters/{clusterId}/inspectConfig',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'enabled' => [
+                                'type' => 'boolean',
+                                'required' => true,
+                            ],
+                            'recurrence' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'disabledCheckItems' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateClusterInspectConfig' => [
+            'path' => '/clusters/{clusterId}/inspectConfig',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'scheduleTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'disabledCheckItems' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetClusterInspectConfig' => [
+            'path' => '/clusters/{clusterId}/inspectConfig',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'RunClusterInspect' => [
+            'path' => '/clusters/{clusterId}/inspectReports',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'clientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListClusterInspectReports' => [
+            'path' => '/clusters/{clusterId}/inspectReports',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetClusterInspectReportDetail' => [
+            'path' => '/clusters/{clusterId}/inspectReports/{reportId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'reportId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'category',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'targetType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'level',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'enableFilter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteClusterInspectConfig' => [
+            'path' => '/clusters/{clusterId}/inspectConfig',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'clusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateClusterDiagnosis' => [
+            'path' => '/clusters/{cluster_id}/diagnosis',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'target' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetClusterDiagnosisResult' => [
+            'path' => '/clusters/{cluster_id}/diagnosis/{diagnosis_id}/result',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'diagnosis_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetClusterDiagnosisCheckItems' => [
+            'path' => '/clusters/{cluster_id}/diagnosis/{diagnosis_id}/check_items',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'diagnosis_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -7867,696 +8391,8 @@
                 ],
             ],
         ],
-        'DeletePolicyInstance' => [
-            'path' => '/clusters/{cluster_id}/policies/{policy_name}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'policy_name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'instance_name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ModifyPolicyInstance' => [
-            'path' => '/clusters/{cluster_id}/policies/{policy_name}',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'policy_name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'action' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'instance_name' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'namespaces' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'parameters' => [
-                                'type' => 'object',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DescribePolicies' => [
-            'path' => '/policies',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-        'DescribePolicyDetails' => [
-            'path' => '/policies/{policy_name}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'policy_name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribePolicyGovernanceInCluster' => [
-            'path' => '/clusters/{cluster_id}/policygovernance',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribePolicyInstances' => [
-            'path' => '/clusters/{cluster_id}/policies',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'policy_name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'instance_name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribePolicyInstancesStatus' => [
-            'path' => '/clusters/{cluster_id}/policies/status',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeployPolicyInstance' => [
-            'path' => '/clusters/{cluster_id}/policies/{policy_name}',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'cluster_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'policy_name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'action' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'namespaces' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'parameters' => [
-                                'type' => 'object',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'CreateClusterInspectConfig' => [
-            'path' => '/clusters/{clusterId}/inspectConfig',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'clusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'enabled' => [
-                                'type' => 'boolean',
-                                'required' => true,
-                            ],
-                            'recurrence' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'disabledCheckItems' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateClusterInspectConfig' => [
-            'path' => '/clusters/{clusterId}/inspectConfig',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'clusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'enabled' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                            'scheduleTime' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'disabledCheckItems' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'GetClusterInspectConfig' => [
-            'path' => '/clusters/{clusterId}/inspectConfig',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'clusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'RunClusterInspect' => [
-            'path' => '/clusters/{clusterId}/inspectReports',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'clusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'clientToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListClusterInspectReports' => [
-            'path' => '/clusters/{clusterId}/inspectReports',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'clusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'nextToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'maxResults',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetClusterInspectReportDetail' => [
-            'path' => '/clusters/{clusterId}/inspectReports/{reportId}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'clusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'reportId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'language',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'category',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'targetType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'level',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'enableFilter',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'nextToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'maxResults',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteClusterInspectConfig' => [
-            'path' => '/clusters/{clusterId}/inspectConfig',
+        'CancelOperationPlan' => [
+            'path' => '/operation/plans/{plan_id}',
             'methods' => [
                 'delete',
             ],
@@ -8577,37 +8413,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'clusterId',
+                    'name' => 'plan_id',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],
-        ],
-        'DescribeUserQuota' => [
-            'path' => '/quota',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [],
         ],
         'ListOperationPlans' => [
             'path' => '/operation/plans',
@@ -8648,109 +8461,13 @@
                 ],
             ],
         ],
-        'CancelOperationPlan' => [
-            'path' => '/operation/plans/{plan_id}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'plan_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateResourcesDeleteProtection' => [
-            'path' => '/clusters/{ClusterId}/resources/protection',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'ClusterId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'namespace' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'resource_type' => [
-                                'type' => 'string',
-                                'required' => true,
-                                'enum' => [
-                                    'services',
-                                    'namespaces',
-                                ],
-                            ],
-                            'resources' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'enable' => [
-                                'type' => 'boolean',
-                                'required' => false,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DescribeResourcesDeleteProtection' => [
-            'path' => '/clusters/{ClusterId}/resources/{ResourceType}/protection',
+        'GetUpgradeStatus' => [
+            'path' => '/api/v2/clusters/{ClusterId}/upgrade/status',
             'methods' => [
                 'get',
             ],
             'schemes' => [
+                'http',
                 'https',
             ],
             'security' => [
@@ -8764,7 +8481,319 @@
             'produces' => [
                 'application/json',
             ],
-            'deprecated' => false,
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'PauseClusterUpgrade' => [
+            'path' => '/api/v2/clusters/{ClusterId}/upgrade/pause',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CancelClusterUpgrade' => [
+            'path' => '/api/v2/clusters/{ClusterId}/upgrade/cancel',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ResumeUpgradeCluster' => [
+            'path' => '/api/v2/clusters/{ClusterId}/upgrade/resume',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAddons' => [
+            'path' => '/clusters/components/metadata',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'cluster_type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'cluster_profile',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'cluster_spec',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'cluster_version',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeClusterAddonsVersion' => [
+            'path' => '/clusters/{ClusterId}/components/version',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeClusterAddonInstance' => [
+            'path' => '/clusters/{ClusterID}/components/{AddonName}/instance',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'ClusterID',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AddonName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeClusterAddonMetadata' => [
+            'path' => '/clusters/{cluster_id}/components/{component_id}/metadata',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => true,
+            'parameters' => [
+                [
+                    'name' => 'cluster_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'component_id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'version',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeClusterAddonsUpgradeStatus' => [
+            'path' => '/clusters/{ClusterId}/components/upgradestatus',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'ClusterId',
@@ -8775,31 +8804,16 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceType',
-                    'in' => 'path',
+                    'name' => 'componentIds',
+                    'in' => 'query',
+                    'style' => 'json',
                     'schema' => [
-                        'type' => 'string',
+                        'type' => 'array',
                         'required' => true,
-                        'enum' => [
-                            'namespaces',
-                            'services',
+                        'items' => [
+                            'type' => 'string',
+                            'required' => true,
                         ],
-                    ],
-                ],
-                [
-                    'name' => 'namespace',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'resources',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],

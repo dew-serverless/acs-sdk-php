@@ -1540,6 +1540,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'AppManagePolicyId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyAndroidInstance' => [

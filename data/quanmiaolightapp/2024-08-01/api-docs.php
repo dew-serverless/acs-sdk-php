@@ -1651,6 +1651,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'sourceTrace',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SubmitEnterpriseVocAnalysisTask' => [
@@ -1804,6 +1812,14 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sourceTrace',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

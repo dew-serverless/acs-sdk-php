@@ -236,25 +236,25 @@
             'Binding' => [
                 'type' => 'object',
                 'properties' => [
+                    'Phase' => [
+                        'type' => 'string',
+                    ],
                     'ProjectName' => [
                         'type' => 'string',
                     ],
                     'DatasetName' => [
                         'type' => 'string',
                     ],
-                    'URI' => [
-                        'type' => 'string',
-                    ],
                     'State' => [
-                        'type' => 'string',
-                    ],
-                    'Phase' => [
                         'type' => 'string',
                     ],
                     'CreateTime' => [
                         'type' => 'string',
                     ],
                     'UpdateTime' => [
+                        'type' => 'string',
+                    ],
+                    'URI' => [
                         'type' => 'string',
                     ],
                     'Reason' => [

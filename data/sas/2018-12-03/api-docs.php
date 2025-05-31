@@ -3695,6 +3695,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyContainerDefenseRule' => [
@@ -9394,6 +9402,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ExtendInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CtdrCloudUserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteCloudVendorAccountAK' => [
@@ -9711,6 +9735,22 @@
                 ],
                 [
                     'name' => 'VendorAuthAlias',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExtendInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CtdrCloudUserId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

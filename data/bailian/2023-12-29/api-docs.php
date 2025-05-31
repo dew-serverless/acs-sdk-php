@@ -179,6 +179,14 @@
                         'maximum' => '500',
                     ],
                 ],
+                [
+                    'name' => 'CategoryName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'AddCategory' => [
@@ -2265,12 +2273,12 @@
             'endpoint' => 'bailian.cn-beijing.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'bailian.ap-southeast-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'bailian.cn-shanghai-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'bailian.ap-southeast-1.aliyuncs.com',
         ],
     ],
 ];

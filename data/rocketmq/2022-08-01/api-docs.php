@@ -726,8 +726,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -791,6 +791,11 @@
                                     ],
                                     'deadLetterTargetTopic' => [
                                         'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'fixedIntervalRetryTime' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
                                         'required' => false,
                                     ],
                                 ],
@@ -811,8 +816,8 @@
                 'patch',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -876,6 +881,11 @@
                                     ],
                                     'deadLetterTargetTopic' => [
                                         'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'fixedIntervalRetryTime' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
                                         'required' => false,
                                     ],
                                 ],

@@ -2284,6 +2284,19 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'EncryptType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 100,
+                        'enum' => [
+                            'SHA1',
+                            'NORMAL',
+                        ],
+                    ],
+                ],
             ],
         ],
         'GetCardSmsLink' => [

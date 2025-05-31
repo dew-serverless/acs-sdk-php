@@ -4041,6 +4041,10 @@
             'endpoint' => 'kms.cn-zhangjiakou.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-zhengzhou-jva',
+            'endpoint' => 'kms.cn-zhengzhou-jva.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-huhehaote',
             'endpoint' => 'kms.cn-huhehaote.aliyuncs.com',
         ],
@@ -4057,6 +4061,10 @@
             'endpoint' => 'kms.cn-shanghai.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'kms.cn-fuzhou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'kms.cn-shenzhen.aliyuncs.com',
         ],
@@ -4071,6 +4079,10 @@
         [
             'regionId' => 'cn-chengdu',
             'endpoint' => 'kms.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'kms.cn-wuhan-lr.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
@@ -4147,6 +4159,18 @@
         [
             'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'kms.cn-beijing-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'kms.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'kms.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'kms.na-south-1.aliyuncs.com',
         ],
     ],
 ];

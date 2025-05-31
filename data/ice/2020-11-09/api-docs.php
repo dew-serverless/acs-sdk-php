@@ -7,30 +7,296 @@
     ],
     'components' => [
         'schemas' => [
+            'AIAgentConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'Greeting' => [
+                        'type' => 'string',
+                    ],
+                    'AvatarConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AvatarId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'UserOnlineTimeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'InterruptConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'InterruptWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'UserOfflineTimeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'WorkflowOverrideParams' => [
+                        'type' => 'string',
+                    ],
+                    'TurnDetectionConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'TurnEndWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'EnableIntelligentSegment' => [
+                        'type' => 'boolean',
+                    ],
+                    'AvatarUrlType' => [
+                        'type' => 'string',
+                    ],
+                    'AsrConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AsrMaxSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'AsrLanguageId' => [
+                                'type' => 'string',
+                            ],
+                            'AsrHotWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'VadLevel' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'ExperimentalConfig' => [
+                        'type' => 'string',
+                    ],
+                    'WakeUpQuery' => [
+                        'type' => 'string',
+                    ],
+                    'AvatarUrl' => [
+                        'type' => 'string',
+                    ],
+                    'LlmConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'LlmHistoryLimit' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'LlmHistory' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Role' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Content' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'LlmSystemPrompt' => [
+                                'type' => 'string',
+                            ],
+                            'BailianAppParams' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'VoiceprintConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'VoiceprintId' => [
+                                'type' => 'string',
+                            ],
+                            'UseVoiceprint' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'Volume' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'TtsConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'VoiceIdList' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'VoiceId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'MaxIdleTime' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'GracefulShutdown' => [
+                        'type' => 'boolean',
+                    ],
+                    'EnablePushToTalk' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'AIAgentOutboundCallConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'AsrConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'AsrMaxSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'AsrLanguageId' => [
+                                'type' => 'string',
+                            ],
+                            'AsrHotWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'VadLevel' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'Greeting' => [
+                        'type' => 'string',
+                    ],
+                    'LlmConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'LlmHistoryLimit' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'LlmHistory' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Role' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Content' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'LlmSystemPrompt' => [
+                                'type' => 'string',
+                            ],
+                            'BailianAppParams' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'InterruptConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'InterruptWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'EnableVoiceInterrupt' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'TtsConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'VoiceIdList' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'VoiceId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'TurnDetectionConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'TurnEndWords' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'EnableIntelligentSegment' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
             'AIAgentRuntimeConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'AvatarChat3D' => [
+                    'VoiceChat' => [
                         'type' => 'object',
+                        'deprecated' => true,
                         'properties' => [
-                            'AgentUserId' => [
+                            'AuthToken' => [
                                 'type' => 'string',
                             ],
-                            'AuthToken' => [
+                            'AgentUserId' => [
                                 'type' => 'string',
                             ],
                             'ChannelId' => [
                                 'type' => 'string',
                             ],
                         ],
+                    ],
+                    'AuthToken' => [
+                        'type' => 'string',
+                    ],
+                    'AgentUserId' => [
+                        'type' => 'string',
                     ],
                     'VisionChat' => [
                         'type' => 'object',
+                        'deprecated' => true,
                         'properties' => [
-                            'AgentUserId' => [
+                            'AuthToken' => [
                                 'type' => 'string',
                             ],
-                            'AuthToken' => [
+                            'AgentUserId' => [
                                 'type' => 'string',
                             ],
                             'ChannelId' => [
@@ -38,13 +304,17 @@
                             ],
                         ],
                     ],
-                    'VoiceChat' => [
+                    'ChannelId' => [
+                        'type' => 'string',
+                    ],
+                    'AvatarChat3D' => [
                         'type' => 'object',
+                        'deprecated' => true,
                         'properties' => [
-                            'AgentUserId' => [
+                            'AuthToken' => [
                                 'type' => 'string',
                             ],
-                            'AuthToken' => [
+                            'AgentUserId' => [
                                 'type' => 'string',
                             ],
                             'ChannelId' => [
@@ -750,6 +1020,27 @@
                     ],
                 ],
             ],
+            'Hotword' => [
+                'type' => 'object',
+                'properties' => [
+                    'TranspositionResultList' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/TranspositionResult',
+                        ],
+                    ],
+                    'Language' => [
+                        'type' => 'string',
+                    ],
+                    'Text' => [
+                        'type' => 'string',
+                    ],
+                    'Weight' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
             'LicenseInstanceAppDTO' => [
                 'type' => 'object',
                 'properties' => [
@@ -1397,6 +1688,17 @@
                         'type' => 'string',
                     ],
                     'Arn' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'TranspositionResult' => [
+                'type' => 'object',
+                'properties' => [
+                    'TranslatedText' => [
+                        'type' => 'string',
+                    ],
+                    'TargetLanguage' => [
                         'type' => 'string',
                     ],
                 ],
@@ -10071,6 +10373,259 @@
                 ],
             ],
         ],
+        'DeleteHotwordLibrary' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'HotwordLibraryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetHotwordLibrary' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'HotwordLibraryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListHotwordLibraries' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UsageScenario',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateHotwordLibrary' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Hotwords',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Hotword',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'HotwordLibraryId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateHotwordLibrary' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UsageScenario',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Hotwords',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/Hotword',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreateAvatarTrainingJob' => [
             'methods' => [
                 'post',
@@ -11572,11 +12127,11 @@
                     ],
                 ],
                 [
-                    'name' => 'TemplateConfig',
+                    'name' => 'AgentConfig',
                     'in' => 'query',
                     'style' => 'json',
                     'schema' => [
-                        '$ref' => '#/components/schemas/AIAgentTemplateConfig',
+                        '$ref' => '#/components/schemas/AIAgentConfig',
                         'required' => false,
                     ],
                 ],
@@ -11613,6 +12168,16 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'TemplateConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/AIAgentTemplateConfig',
+                        'deprecated' => true,
+                        'required' => false,
                     ],
                 ],
             ],
@@ -11669,6 +12234,7 @@
                     'style' => 'json',
                     'schema' => [
                         '$ref' => '#/components/schemas/AIAgentTemplateConfig',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -11677,6 +12243,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AgentConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/AIAgentConfig',
                         'required' => false,
                     ],
                 ],
@@ -12002,6 +12577,7 @@
                     'style' => 'json',
                     'schema' => [
                         '$ref' => '#/components/schemas/AIAgentTemplateConfig',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -12038,6 +12614,15 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'AgentConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/AIAgentConfig',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -12226,6 +12811,218 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StartAIAgentOutboundCall' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AIAgentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CallerNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CalledNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Config',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/AIAgentOutboundCallConfig',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SessionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListAIAgentPhoneNumber' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SubmitAIAgentVideoAuditTask' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AIAgentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Input',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Media' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CallbackConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Url' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Token' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AuditInterval',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CapturePolicies',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'FrameCount' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'StartTime' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Duration' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Prompt' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -18728,6 +19525,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'LivePackagingConfig',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/LivePackagingConfig',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateLivePackageOriginEndpoint' => [
@@ -18822,6 +19628,15 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LivePackagingConfig',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/LivePackagingConfig',
                         'required' => false,
                     ],
                 ],

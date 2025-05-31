@@ -897,6 +897,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'dkimSelector',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteDomain' => [

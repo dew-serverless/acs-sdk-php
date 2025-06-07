@@ -126,6 +126,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'sourceLang',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
     ],

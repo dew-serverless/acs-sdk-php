@@ -1461,6 +1461,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'MaxPendingMinute',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateContainerGroup' => [

@@ -1412,6 +1412,47 @@
                 ],
             ],
         ],
+        'DescribeCloudRecordStatus' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'DescribeAppRecordingFiles' => [
             'methods' => [
                 'get',
@@ -1579,6 +1620,14 @@
                     ],
                 ],
                 [
+                    'name' => 'SubHighResolutionStream',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'StorageConfig',
                     'in' => 'query',
                     'style' => 'flat',
@@ -1631,6 +1680,14 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
+                                'VideoOrder' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'cameraFirst',
+                                        'screenFirst',
+                                    ],
+                                ],
                                 'SourceType' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -1641,39 +1698,6 @@
                                         'whiteboard',
                                     ],
                                 ],
-                                'VideoOrder' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                    'enum' => [
-                                        'cameraFirst',
-                                        'screenFirst',
-                                    ],
-                                ],
-                                'PaneId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'maximum' => '15',
-                                ],
-                                'Source' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'PaneCropMode' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '1',
-                                        '2',
-                                        '3',
-                                    ],
-                                ],
-                                'ReservePaneForOfflineUser' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
                                 'Images' => [
                                     'type' => 'array',
                                     'required' => false,
@@ -1681,19 +1705,6 @@
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [
-                                            'Url' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                                'minLength' => 1,
-                                                'maxLength' => 1024,
-                                            ],
-                                            'Alpha' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
-                                            ],
                                             'PaneImageCropMode' => [
                                                 'type' => 'integer',
                                                 'format' => 'int32',
@@ -1704,71 +1715,6 @@
                                                     '3',
                                                 ],
                                             ],
-                                            'X' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Y' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Width' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Height' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Layer' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '100',
-                                            ],
-                                            'Display' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                                'enum' => [
-                                                    'streamOnly',
-                                                    'backup',
-                                                    'always',
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                    'maxItems' => 3,
-                                ],
-                                'Backgrounds' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'Url' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                                'minLength' => 1,
-                                                'maxLength' => 1024,
-                                            ],
                                             'Alpha' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
@@ -1776,16 +1722,6 @@
                                                 'minimum' => '0',
                                                 'maximum' => '1',
                                             ],
-                                            'PaneBackgroundCropMode' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'enum' => [
-                                                    '1',
-                                                    '2',
-                                                    '3',
-                                                ],
-                                            ],
                                             'X' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
@@ -1802,7 +1738,7 @@
                                                 'exclusiveMinimum' => true,
                                                 'maximum' => '1',
                                             ],
-                                            'Width' => [
+                                            'Height' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
                                                 'required' => true,
@@ -1810,7 +1746,7 @@
                                                 'exclusiveMinimum' => true,
                                                 'maximum' => '1',
                                             ],
-                                            'Height' => [
+                                            'Width' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
                                                 'required' => true,
@@ -1824,6 +1760,12 @@
                                                 'required' => false,
                                                 'minimum' => '0',
                                                 'maximum' => '100',
+                                            ],
+                                            'Url' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                                'minLength' => 1,
+                                                'maxLength' => 1024,
                                             ],
                                             'Display' => [
                                                 'type' => 'string',
@@ -1845,11 +1787,86 @@
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [
+                                            'BoxBorderw' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'minimum' => '1',
+                                                'maximum' => '10',
+                                            ],
+                                            'FontColor' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'R' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'B' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'G' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                ],
+                                            ],
                                             'Texture' => [
                                                 'type' => 'string',
                                                 'required' => true,
                                                 'minLength' => 1,
                                                 'maxLength' => 128,
+                                            ],
+                                            'Layer' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '100',
+                                            ],
+                                            'Font' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '9',
+                                            ],
+                                            'BoxColor' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'R' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'B' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'G' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                ],
                                             ],
                                             'FontSize' => [
                                                 'type' => 'integer',
@@ -1865,40 +1882,6 @@
                                                 'minimum' => '0',
                                                 'maximum' => '1',
                                             ],
-                                            'FontColor' => [
-                                                'type' => 'object',
-                                                'required' => false,
-                                                'properties' => [
-                                                    'R' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'G' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'B' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                ],
-                                            ],
-                                            'Font' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '9',
-                                            ],
                                             'X' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
@@ -1906,11 +1889,112 @@
                                                 'minimum' => '0',
                                                 'maximum' => '1',
                                             ],
+                                            'HasBox' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
                                             'Y' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
                                                 'required' => true,
                                                 'minimum' => '0',
+                                                'maximum' => '1',
+                                            ],
+                                            'BoxAlpha' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '1',
+                                            ],
+                                            'Display' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                                'enum' => [
+                                                    'streamOnly',
+                                                    'backup',
+                                                    'always',
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 3,
+                                ],
+                                'PaneCropMode' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '1',
+                                        '2',
+                                        '3',
+                                    ],
+                                ],
+                                'PaneId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => true,
+                                    'minimum' => '0',
+                                    'maximum' => '15',
+                                ],
+                                'Source' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Backgrounds' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Alpha' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '1',
+                                            ],
+                                            'X' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
+                                                'maximum' => '1',
+                                            ],
+                                            'Y' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
+                                                'maximum' => '1',
+                                            ],
+                                            'PaneBackgroundCropMode' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'enum' => [
+                                                    '1',
+                                                    '2',
+                                                    '3',
+                                                ],
+                                            ],
+                                            'Height' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
+                                                'maximum' => '1',
+                                            ],
+                                            'Width' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
                                                 'maximum' => '1',
                                             ],
                                             'Layer' => [
@@ -1920,50 +2004,11 @@
                                                 'minimum' => '0',
                                                 'maximum' => '100',
                                             ],
-                                            'HasBox' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'BoxColor' => [
-                                                'type' => 'object',
-                                                'required' => false,
-                                                'properties' => [
-                                                    'R' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'G' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'B' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                ],
-                                            ],
-                                            'BoxAlpha' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
-                                            ],
-                                            'BoxBorderw' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '1',
-                                                'maximum' => '10',
+                                            'Url' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                                'minLength' => 1,
+                                                'maxLength' => 1024,
                                             ],
                                             'Display' => [
                                                 'type' => 'string',
@@ -1988,6 +2033,10 @@
                                         ],
                                     ],
                                 ],
+                                'ReservePaneForOfflineUser' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 16,
@@ -2004,28 +2053,12 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Url' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 1024,
-                                ],
                                 'Alpha' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => false,
                                     'minimum' => '0',
                                     'maximum' => '1',
-                                ],
-                                'ImageCropMode' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '1',
-                                        '2',
-                                        '3',
-                                    ],
                                 ],
                                 'X' => [
                                     'type' => 'number',
@@ -2043,7 +2076,7 @@
                                     'exclusiveMinimum' => true,
                                     'maximum' => '1',
                                 ],
-                                'Width' => [
+                                'Height' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
@@ -2051,7 +2084,17 @@
                                     'exclusiveMinimum' => true,
                                     'maximum' => '1',
                                 ],
-                                'Height' => [
+                                'ImageCropMode' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '1',
+                                        '2',
+                                        '3',
+                                    ],
+                                ],
+                                'Width' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
@@ -2065,6 +2108,12 @@
                                     'required' => false,
                                     'minimum' => '0',
                                     'maximum' => '100',
+                                ],
+                                'Url' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 1024,
                                 ],
                             ],
                         ],
@@ -2082,19 +2131,6 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Url' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 1024,
-                                ],
-                                'Alpha' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
                                 'BackgroundCropMode' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
@@ -2104,6 +2140,13 @@
                                         '2',
                                         '3',
                                     ],
+                                ],
+                                'Alpha' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
                                 ],
                                 'X' => [
                                     'type' => 'number',
@@ -2121,7 +2164,7 @@
                                     'exclusiveMinimum' => true,
                                     'maximum' => '1',
                                 ],
-                                'Width' => [
+                                'Height' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
@@ -2129,7 +2172,7 @@
                                     'exclusiveMinimum' => true,
                                     'maximum' => '1',
                                 ],
-                                'Height' => [
+                                'Width' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
@@ -2143,6 +2186,12 @@
                                     'required' => false,
                                     'minimum' => '0',
                                     'maximum' => '100',
+                                ],
+                                'Url' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 1024,
                                 ],
                             ],
                         ],
@@ -2160,11 +2209,39 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Texture' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 128,
+                                'BoxBorderw' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '1',
+                                    'maximum' => '10',
+                                ],
+                                'BoxColor' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'R' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'B' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                    ],
                                 ],
                                 'FontSize' => [
                                     'type' => 'integer',
@@ -2191,13 +2268,6 @@
                                             'minimum' => '0',
                                             'maximum' => '255',
                                         ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
                                         'B' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
@@ -2205,14 +2275,14 @@
                                             'minimum' => '0',
                                             'maximum' => '255',
                                         ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
                                     ],
-                                ],
-                                'Font' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '9',
                                 ],
                                 'X' => [
                                     'type' => 'number',
@@ -2221,12 +2291,22 @@
                                     'minimum' => '0',
                                     'maximum' => '1',
                                 ],
+                                'HasBox' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
                                 'Y' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
                                     'minimum' => '0',
                                     'maximum' => '1',
+                                ],
+                                'Texture' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 128,
                                 ],
                                 'Layer' => [
                                     'type' => 'integer',
@@ -2235,36 +2315,12 @@
                                     'minimum' => '0',
                                     'maximum' => '100',
                                 ],
-                                'HasBox' => [
-                                    'type' => 'boolean',
+                                'Font' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                     'required' => false,
-                                ],
-                                'BoxColor' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'R' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'B' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                    ],
+                                    'minimum' => '0',
+                                    'maximum' => '9',
                                 ],
                                 'BoxAlpha' => [
                                     'type' => 'number',
@@ -2272,13 +2328,6 @@
                                     'required' => false,
                                     'minimum' => '0',
                                     'maximum' => '1',
-                                ],
-                                'BoxBorderw' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '1',
-                                    'maximum' => '10',
                                 ],
                             ],
                         ],
@@ -2296,13 +2345,39 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Zone' => [
+                                'BoxBorderw' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
                                     'required' => false,
-                                    'minimum' => '-12',
-                                    'maximum' => '12',
-                                    'exclusiveMaximum' => true,
+                                    'minimum' => '1',
+                                    'maximum' => '10',
+                                ],
+                                'BoxColor' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'R' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'B' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                    ],
                                 ],
                                 'FontSize' => [
                                     'type' => 'integer',
@@ -2310,6 +2385,14 @@
                                     'required' => false,
                                     'minimum' => '0',
                                     'maximum' => '72',
+                                ],
+                                'Zone' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '-12',
+                                    'maximum' => '12',
+                                    'exclusiveMaximum' => true,
                                 ],
                                 'Alpha' => [
                                     'type' => 'number',
@@ -2329,14 +2412,14 @@
                                             'minimum' => '0',
                                             'maximum' => '255',
                                         ],
-                                        'G' => [
+                                        'B' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
                                             'required' => false,
                                             'minimum' => '0',
                                             'maximum' => '255',
                                         ],
-                                        'B' => [
+                                        'G' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
                                             'required' => false,
@@ -2345,19 +2428,16 @@
                                         ],
                                     ],
                                 ],
-                                'Font' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '9',
-                                ],
                                 'X' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
                                     'minimum' => '0',
                                     'maximum' => '1',
+                                ],
+                                'HasBox' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
                                 ],
                                 'Y' => [
                                     'type' => 'number',
@@ -2373,36 +2453,12 @@
                                     'minimum' => '0',
                                     'maximum' => '100',
                                 ],
-                                'HasBox' => [
-                                    'type' => 'boolean',
+                                'Font' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                     'required' => false,
-                                ],
-                                'BoxColor' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'R' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'B' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                    ],
+                                    'minimum' => '0',
+                                    'maximum' => '9',
                                 ],
                                 'BoxAlpha' => [
                                     'type' => 'number',
@@ -2410,13 +2466,6 @@
                                     'required' => false,
                                     'minimum' => '0',
                                     'maximum' => '1',
-                                ],
-                                'BoxBorderw' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '1',
-                                    'maximum' => '10',
                                 ],
                             ],
                         ],
@@ -2450,6 +2499,38 @@
                                 'format' => 'int32',
                                 'required' => false,
                                 'minimum' => '-1',
+                                'maximum' => '255',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'BgColor',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'R' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '0',
+                                'maximum' => '255',
+                            ],
+                            'G' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '0',
+                                'maximum' => '255',
+                            ],
+                            'B' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '0',
                                 'maximum' => '255',
                             ],
                         ],
@@ -3896,6 +3977,14 @@
                     ],
                 ],
                 [
+                    'name' => 'SubHighResolutionStream',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'StartWithoutChannel',
                     'in' => 'query',
                     'schema' => [
@@ -3923,11 +4012,6 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'SourceType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                    'enum' => [],
-                                ],
                                 'VideoOrder' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -3936,29 +4020,10 @@
                                         'screenFirst',
                                     ],
                                 ],
-                                'PaneId' => [
+                                'SourceType' => [
                                     'type' => 'string',
-                                    'required' => true,
+                                    'required' => false,
                                     'enum' => [],
-                                    'pattern' => '^\\d+$',
-                                ],
-                                'Source' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'PaneCropMode' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '1',
-                                        '2',
-                                        '3',
-                                    ],
-                                ],
-                                'ReservePaneForOfflineUser' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
                                 ],
                                 'Images' => [
                                     'type' => 'array',
@@ -3967,20 +4032,6 @@
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [
-                                            'Url' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                                'minLength' => 1,
-                                                'maxLength' => 1024,
-                                            ],
-                                            'Alpha' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => false,
-                                                'maximum' => '1',
-                                            ],
                                             'PaneImageCropMode' => [
                                                 'type' => 'integer',
                                                 'format' => 'int32',
@@ -3991,126 +4042,39 @@
                                                     '3',
                                                 ],
                                             ],
-                                            'X' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Y' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Width' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Height' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Layer' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '100',
-                                            ],
-                                            'Display' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                                'enum' => [
-                                                    'streamOnly',
-                                                    'backup',
-                                                    'always',
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                    'maxItems' => 3,
-                                ],
-                                'Backgrounds' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'Url' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                                'minLength' => 1,
-                                                'maxLength' => 1024,
-                                            ],
                                             'Alpha' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
                                                 'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
-                                            ],
-                                            'PaneBackgroundCropMode' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'enum' => [
-                                                    '1',
-                                                    '2',
-                                                    '3',
-                                                ],
                                             ],
                                             'X' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
                                                 'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
                                             ],
                                             'Y' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
                                                 'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Width' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
                                             ],
                                             'Height' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
                                                 'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
+                                            ],
+                                            'Width' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
                                             ],
                                             'Layer' => [
                                                 'type' => 'integer',
                                                 'format' => 'int32',
                                                 'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '100',
+                                            ],
+                                            'Url' => [
+                                                'type' => 'string',
+                                                'required' => true,
                                             ],
                                             'Display' => [
                                                 'type' => 'string',
@@ -4132,25 +4096,10 @@
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [
-                                            'Texture' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                                'minLength' => 1,
-                                                'maxLength' => 128,
-                                            ],
-                                            'FontSize' => [
+                                            'BoxBorderw' => [
                                                 'type' => 'integer',
                                                 'format' => 'int32',
                                                 'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '72',
-                                            ],
-                                            'Alpha' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
                                             ],
                                             'FontColor' => [
                                                 'type' => 'object',
@@ -4160,55 +4109,31 @@
                                                         'type' => 'integer',
                                                         'format' => 'int32',
                                                         'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'G' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
                                                     ],
                                                     'B' => [
                                                         'type' => 'integer',
                                                         'format' => 'int32',
                                                         'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
+                                                    ],
+                                                    'G' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
                                                     ],
                                                 ],
                                             ],
-                                            'Font' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '9',
-                                            ],
-                                            'X' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
+                                            'Texture' => [
+                                                'type' => 'string',
                                                 'required' => true,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
-                                            ],
-                                            'Y' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
                                             ],
                                             'Layer' => [
                                                 'type' => 'integer',
                                                 'format' => 'int32',
                                                 'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '100',
                                             ],
-                                            'HasBox' => [
-                                                'type' => 'boolean',
+                                            'Font' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
                                                 'required' => false,
                                             ],
                                             'BoxColor' => [
@@ -4219,38 +4144,131 @@
                                                         'type' => 'integer',
                                                         'format' => 'int32',
                                                         'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'G' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
                                                     ],
                                                     'B' => [
                                                         'type' => 'integer',
                                                         'format' => 'int32',
                                                         'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
+                                                    ],
+                                                    'G' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
                                                     ],
                                                 ],
+                                            ],
+                                            'FontSize' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'Alpha' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => false,
+                                            ],
+                                            'X' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                            ],
+                                            'HasBox' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'Y' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
                                             ],
                                             'BoxAlpha' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
                                                 'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
                                             ],
-                                            'BoxBorderw' => [
+                                            'Display' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                                'enum' => [
+                                                    'streamOnly',
+                                                    'backup',
+                                                    'always',
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 3,
+                                ],
+                                'PaneCropMode' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '1',
+                                        '2',
+                                        '3',
+                                    ],
+                                ],
+                                'PaneId' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'enum' => [],
+                                    'pattern' => '^\\d+$',
+                                ],
+                                'Source' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Backgrounds' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Alpha' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => false,
+                                            ],
+                                            'X' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                            ],
+                                            'Y' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                            ],
+                                            'PaneBackgroundCropMode' => [
                                                 'type' => 'integer',
                                                 'format' => 'int32',
                                                 'required' => false,
-                                                'minimum' => '1',
-                                                'maximum' => '10',
+                                                'enum' => [
+                                                    '1',
+                                                    '2',
+                                                    '3',
+                                                ],
+                                            ],
+                                            'Height' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                            ],
+                                            'Width' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                            ],
+                                            'Layer' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                            'Url' => [
+                                                'type' => 'string',
+                                                'required' => true,
                                             ],
                                             'Display' => [
                                                 'type' => 'string',
@@ -4275,6 +4293,10 @@
                                         ],
                                     ],
                                 ],
+                                'ReservePaneForOfflineUser' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 16,
@@ -4291,19 +4313,6 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Url' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 1024,
-                                ],
-                                'Alpha' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
                                 'BackgroundCropMode' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
@@ -4314,44 +4323,39 @@
                                         '3',
                                     ],
                                 ],
+                                'Alpha' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                ],
                                 'X' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
                                 ],
                                 'Y' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
-                                'Width' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
                                 ],
                                 'Height' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
+                                ],
+                                'Width' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
                                 ],
                                 'Layer' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
                                     'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '100',
+                                ],
+                                'Url' => [
+                                    'type' => 'string',
+                                    'required' => true,
                                 ],
                             ],
                         ],
@@ -4369,18 +4373,25 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Url' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 1024,
-                                ],
                                 'Alpha' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
+                                ],
+                                'X' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                ],
+                                'Y' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                ],
+                                'Height' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
                                 ],
                                 'ImageCropMode' => [
                                     'type' => 'integer',
@@ -4392,44 +4403,19 @@
                                         '3',
                                     ],
                                 ],
-                                'X' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
-                                'Y' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
                                 'Width' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
-                                ],
-                                'Height' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'exclusiveMinimum' => true,
-                                    'maximum' => '1',
                                 ],
                                 'Layer' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
                                     'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '100',
+                                ],
+                                'Url' => [
+                                    'type' => 'string',
+                                    'required' => true,
                                 ],
                             ],
                         ],
@@ -4447,83 +4433,9 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Texture' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 128,
-                                ],
-                                'FontSize' => [
+                                'BoxBorderw' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '72',
-                                ],
-                                'Alpha' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'FontColor' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'R' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'B' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                    ],
-                                ],
-                                'Font' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '9',
-                                ],
-                                'X' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'Y' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'Layer' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '100',
-                                ],
-                                'HasBox' => [
-                                    'type' => 'boolean',
                                     'required' => false,
                                 ],
                                 'BoxColor' => [
@@ -4534,38 +4446,82 @@
                                             'type' => 'integer',
                                             'format' => 'int32',
                                             'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
                                         ],
                                         'B' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
                                             'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
                                         ],
                                     ],
+                                ],
+                                'FontSize' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Alpha' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                ],
+                                'FontColor' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'R' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'B' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'X' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                ],
+                                'HasBox' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'Y' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                ],
+                                'Texture' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Layer' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Font' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
                                 ],
                                 'BoxAlpha' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'BoxBorderw' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '1',
-                                    'maximum' => '10',
                                 ],
                             ],
                         ],
@@ -4583,85 +4539,9 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Zone' => [
+                                'BoxBorderw' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '-12',
-                                    'maximum' => '12',
-                                    'exclusiveMaximum' => true,
-                                ],
-                                'FontSize' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '72',
-                                ],
-                                'Alpha' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'FontColor' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'R' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'B' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                    ],
-                                ],
-                                'Font' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '9',
-                                ],
-                                'X' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'Y' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => true,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'Layer' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '100',
-                                ],
-                                'HasBox' => [
-                                    'type' => 'boolean',
                                     'required' => false,
                                 ],
                                 'BoxColor' => [
@@ -4672,38 +4552,83 @@
                                             'type' => 'integer',
                                             'format' => 'int32',
                                             'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
                                         ],
                                         'B' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
                                             'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
                                         ],
                                     ],
+                                ],
+                                'FontSize' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Zone' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Alpha' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                ],
+                                'FontColor' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'R' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'B' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'X' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                ],
+                                'HasBox' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'Y' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => true,
+                                ],
+                                'Layer' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Font' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
                                 ],
                                 'BoxAlpha' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
-                                'BoxBorderw' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '1',
-                                    'maximum' => '10',
                                 ],
                             ],
                         ],
@@ -4737,6 +4662,38 @@
                                 'format' => 'int32',
                                 'required' => false,
                                 'minimum' => '-1',
+                                'maximum' => '255',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'BgColor',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'R' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '0',
+                                'maximum' => '255',
+                            ],
+                            'G' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '0',
+                                'maximum' => '255',
+                            ],
+                            'B' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '0',
                                 'maximum' => '255',
                             ],
                         ],
@@ -4826,6 +4783,20 @@
                     ],
                 ],
                 [
+                    'name' => 'CropMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                            '2',
+                            '3',
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'Panes',
                     'in' => 'query',
                     'style' => 'flat',
@@ -4836,6 +4807,14 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
+                                'VideoOrder' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'cameraFirst',
+                                        'screenFirst',
+                                    ],
+                                ],
                                 'SourceType' => [
                                     'type' => 'string',
                                     'required' => false,
@@ -4846,39 +4825,6 @@
                                         'whiteboard',
                                     ],
                                 ],
-                                'VideoOrder' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                    'enum' => [
-                                        'cameraFirst',
-                                        'screenFirst',
-                                    ],
-                                ],
-                                'PaneId' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '15',
-                                ],
-                                'Source' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'PaneCropMode' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '1',
-                                        '2',
-                                        '3',
-                                    ],
-                                ],
-                                'ReservePaneForOfflineUser' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
                                 'Images' => [
                                     'type' => 'array',
                                     'required' => false,
@@ -4886,19 +4832,6 @@
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [
-                                            'Url' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                                'minLength' => 1,
-                                                'maxLength' => 1024,
-                                            ],
-                                            'Alpha' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
-                                            ],
                                             'PaneImageCropMode' => [
                                                 'type' => 'integer',
                                                 'format' => 'int32',
@@ -4909,71 +4842,6 @@
                                                     '3',
                                                 ],
                                             ],
-                                            'X' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Y' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Width' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Height' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => true,
-                                                'minimum' => '0',
-                                                'exclusiveMinimum' => true,
-                                                'maximum' => '1',
-                                            ],
-                                            'Layer' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '100',
-                                            ],
-                                            'Display' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                                'enum' => [
-                                                    'streamOnly',
-                                                    'backup',
-                                                    'always',
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                    'maxItems' => 3,
-                                ],
-                                'Backgrounds' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'object',
-                                        'required' => false,
-                                        'properties' => [
-                                            'Url' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                                'minLength' => 1,
-                                                'maxLength' => 1024,
-                                            ],
                                             'Alpha' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
@@ -4981,16 +4849,6 @@
                                                 'minimum' => '0',
                                                 'maximum' => '1',
                                             ],
-                                            'PaneBackgroundCropMode' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'enum' => [
-                                                    '1',
-                                                    '2',
-                                                    '3',
-                                                ],
-                                            ],
                                             'X' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
@@ -5007,7 +4865,7 @@
                                                 'exclusiveMinimum' => true,
                                                 'maximum' => '1',
                                             ],
-                                            'Width' => [
+                                            'Height' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
                                                 'required' => true,
@@ -5015,7 +4873,7 @@
                                                 'exclusiveMinimum' => true,
                                                 'maximum' => '1',
                                             ],
-                                            'Height' => [
+                                            'Width' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
                                                 'required' => true,
@@ -5029,6 +4887,12 @@
                                                 'required' => false,
                                                 'minimum' => '0',
                                                 'maximum' => '100',
+                                            ],
+                                            'Url' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                                'minLength' => 1,
+                                                'maxLength' => 1024,
                                             ],
                                             'Display' => [
                                                 'type' => 'string',
@@ -5050,11 +4914,86 @@
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [
+                                            'BoxBorderw' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'minimum' => '1',
+                                                'maximum' => '10',
+                                            ],
+                                            'FontColor' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'R' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'B' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'G' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                ],
+                                            ],
                                             'Texture' => [
                                                 'type' => 'string',
                                                 'required' => true,
                                                 'minLength' => 1,
                                                 'maxLength' => 128,
+                                            ],
+                                            'Layer' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '100',
+                                            ],
+                                            'Font' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '9',
+                                            ],
+                                            'BoxColor' => [
+                                                'type' => 'object',
+                                                'required' => false,
+                                                'properties' => [
+                                                    'R' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'B' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                    'G' => [
+                                                        'type' => 'integer',
+                                                        'format' => 'int32',
+                                                        'required' => false,
+                                                        'minimum' => '0',
+                                                        'maximum' => '255',
+                                                    ],
+                                                ],
                                             ],
                                             'FontSize' => [
                                                 'type' => 'integer',
@@ -5070,40 +5009,6 @@
                                                 'minimum' => '0',
                                                 'maximum' => '1',
                                             ],
-                                            'FontColor' => [
-                                                'type' => 'object',
-                                                'required' => false,
-                                                'properties' => [
-                                                    'R' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'G' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'B' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                ],
-                                            ],
-                                            'Font' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '9',
-                                            ],
                                             'X' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
@@ -5111,11 +5016,112 @@
                                                 'minimum' => '0',
                                                 'maximum' => '1',
                                             ],
+                                            'HasBox' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
                                             'Y' => [
                                                 'type' => 'number',
                                                 'format' => 'double',
                                                 'required' => true,
                                                 'minimum' => '0',
+                                                'maximum' => '1',
+                                            ],
+                                            'BoxAlpha' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '1',
+                                            ],
+                                            'Display' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                                'enum' => [
+                                                    'streamOnly',
+                                                    'backup',
+                                                    'always',
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                    'maxItems' => 3,
+                                ],
+                                'PaneCropMode' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '1',
+                                        '2',
+                                        '3',
+                                    ],
+                                ],
+                                'PaneId' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '15',
+                                ],
+                                'Source' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Backgrounds' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Alpha' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => false,
+                                                'minimum' => '0',
+                                                'maximum' => '1',
+                                            ],
+                                            'X' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
+                                                'maximum' => '1',
+                                            ],
+                                            'Y' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
+                                                'maximum' => '1',
+                                            ],
+                                            'PaneBackgroundCropMode' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                                'enum' => [
+                                                    '1',
+                                                    '2',
+                                                    '3',
+                                                ],
+                                            ],
+                                            'Height' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
+                                                'maximum' => '1',
+                                            ],
+                                            'Width' => [
+                                                'type' => 'number',
+                                                'format' => 'double',
+                                                'required' => true,
+                                                'minimum' => '0',
+                                                'exclusiveMinimum' => true,
                                                 'maximum' => '1',
                                             ],
                                             'Layer' => [
@@ -5125,50 +5131,11 @@
                                                 'minimum' => '0',
                                                 'maximum' => '100',
                                             ],
-                                            'HasBox' => [
-                                                'type' => 'boolean',
-                                                'required' => false,
-                                            ],
-                                            'BoxColor' => [
-                                                'type' => 'object',
-                                                'required' => false,
-                                                'properties' => [
-                                                    'R' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'G' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                    'B' => [
-                                                        'type' => 'integer',
-                                                        'format' => 'int32',
-                                                        'required' => false,
-                                                        'minimum' => '0',
-                                                        'maximum' => '255',
-                                                    ],
-                                                ],
-                                            ],
-                                            'BoxAlpha' => [
-                                                'type' => 'number',
-                                                'format' => 'double',
-                                                'required' => false,
-                                                'minimum' => '0',
-                                                'maximum' => '1',
-                                            ],
-                                            'BoxBorderw' => [
-                                                'type' => 'integer',
-                                                'format' => 'int32',
-                                                'required' => false,
-                                                'minimum' => '1',
-                                                'maximum' => '10',
+                                            'Url' => [
+                                                'type' => 'string',
+                                                'required' => true,
+                                                'minLength' => 1,
+                                                'maxLength' => 1024,
                                             ],
                                             'Display' => [
                                                 'type' => 'string',
@@ -5193,6 +5160,10 @@
                                         ],
                                     ],
                                 ],
+                                'ReservePaneForOfflineUser' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 16,
@@ -5209,28 +5180,12 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Url' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 1024,
-                                ],
                                 'Alpha' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => false,
                                     'minimum' => '0',
                                     'maximum' => '1',
-                                ],
-                                'ImageCropMode' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'enum' => [
-                                        '1',
-                                        '2',
-                                        '3',
-                                    ],
                                 ],
                                 'X' => [
                                     'type' => 'number',
@@ -5248,7 +5203,7 @@
                                     'exclusiveMinimum' => true,
                                     'maximum' => '1',
                                 ],
-                                'Width' => [
+                                'Height' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
@@ -5256,7 +5211,17 @@
                                     'exclusiveMinimum' => true,
                                     'maximum' => '1',
                                 ],
-                                'Height' => [
+                                'ImageCropMode' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '1',
+                                        '2',
+                                        '3',
+                                    ],
+                                ],
+                                'Width' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
@@ -5270,6 +5235,12 @@
                                     'required' => false,
                                     'minimum' => '0',
                                     'maximum' => '100',
+                                ],
+                                'Url' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 1024,
                                 ],
                             ],
                         ],
@@ -5287,19 +5258,6 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Url' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 1024,
-                                ],
-                                'Alpha' => [
-                                    'type' => 'number',
-                                    'format' => 'double',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '1',
-                                ],
                                 'BackgroundCropMode' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
@@ -5309,6 +5267,13 @@
                                         '2',
                                         '3',
                                     ],
+                                ],
+                                'Alpha' => [
+                                    'type' => 'number',
+                                    'format' => 'double',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '1',
                                 ],
                                 'X' => [
                                     'type' => 'number',
@@ -5326,7 +5291,7 @@
                                     'exclusiveMinimum' => true,
                                     'maximum' => '1',
                                 ],
-                                'Width' => [
+                                'Height' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
@@ -5334,7 +5299,7 @@
                                     'exclusiveMinimum' => true,
                                     'maximum' => '1',
                                 ],
-                                'Height' => [
+                                'Width' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
@@ -5348,6 +5313,12 @@
                                     'required' => false,
                                     'minimum' => '0',
                                     'maximum' => '100',
+                                ],
+                                'Url' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 1024,
                                 ],
                             ],
                         ],
@@ -5365,11 +5336,39 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Texture' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                    'minLength' => 1,
-                                    'maxLength' => 128,
+                                'BoxBorderw' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '1',
+                                    'maximum' => '10',
+                                ],
+                                'BoxColor' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'R' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'B' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                    ],
                                 ],
                                 'FontSize' => [
                                     'type' => 'integer',
@@ -5396,13 +5395,6 @@
                                             'minimum' => '0',
                                             'maximum' => '255',
                                         ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
                                         'B' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
@@ -5410,14 +5402,14 @@
                                             'minimum' => '0',
                                             'maximum' => '255',
                                         ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
                                     ],
-                                ],
-                                'Font' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '9',
                                 ],
                                 'X' => [
                                     'type' => 'number',
@@ -5426,12 +5418,22 @@
                                     'minimum' => '0',
                                     'maximum' => '1',
                                 ],
+                                'HasBox' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
                                 'Y' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
                                     'minimum' => '0',
                                     'maximum' => '1',
+                                ],
+                                'Texture' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 128,
                                 ],
                                 'Layer' => [
                                     'type' => 'integer',
@@ -5440,36 +5442,12 @@
                                     'minimum' => '0',
                                     'maximum' => '100',
                                 ],
-                                'HasBox' => [
-                                    'type' => 'boolean',
+                                'Font' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                     'required' => false,
-                                ],
-                                'BoxColor' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'R' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'B' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                    ],
+                                    'minimum' => '0',
+                                    'maximum' => '9',
                                 ],
                                 'BoxAlpha' => [
                                     'type' => 'number',
@@ -5477,13 +5455,6 @@
                                     'required' => false,
                                     'minimum' => '0',
                                     'maximum' => '1',
-                                ],
-                                'BoxBorderw' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '1',
-                                    'maximum' => '10',
                                 ],
                             ],
                         ],
@@ -5501,13 +5472,39 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Zone' => [
+                                'BoxBorderw' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
                                     'required' => false,
-                                    'minimum' => '-12',
-                                    'maximum' => '12',
-                                    'exclusiveMaximum' => true,
+                                    'minimum' => '1',
+                                    'maximum' => '10',
+                                ],
+                                'BoxColor' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'R' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'B' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                        'G' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                            'maximum' => '255',
+                                        ],
+                                    ],
                                 ],
                                 'FontSize' => [
                                     'type' => 'integer',
@@ -5515,6 +5512,14 @@
                                     'required' => false,
                                     'minimum' => '0',
                                     'maximum' => '72',
+                                ],
+                                'Zone' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '-12',
+                                    'maximum' => '12',
+                                    'exclusiveMaximum' => true,
                                 ],
                                 'Alpha' => [
                                     'type' => 'number',
@@ -5534,14 +5539,14 @@
                                             'minimum' => '0',
                                             'maximum' => '255',
                                         ],
-                                        'G' => [
+                                        'B' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
                                             'required' => false,
                                             'minimum' => '0',
                                             'maximum' => '255',
                                         ],
-                                        'B' => [
+                                        'G' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
                                             'required' => false,
@@ -5550,19 +5555,16 @@
                                         ],
                                     ],
                                 ],
-                                'Font' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '9',
-                                ],
                                 'X' => [
                                     'type' => 'number',
                                     'format' => 'double',
                                     'required' => true,
                                     'minimum' => '0',
                                     'maximum' => '1',
+                                ],
+                                'HasBox' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
                                 ],
                                 'Y' => [
                                     'type' => 'number',
@@ -5578,36 +5580,12 @@
                                     'minimum' => '0',
                                     'maximum' => '100',
                                 ],
-                                'HasBox' => [
-                                    'type' => 'boolean',
+                                'Font' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                     'required' => false,
-                                ],
-                                'BoxColor' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'R' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'G' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                        'B' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                            'minimum' => '0',
-                                            'maximum' => '255',
-                                        ],
-                                    ],
+                                    'minimum' => '0',
+                                    'maximum' => '9',
                                 ],
                                 'BoxAlpha' => [
                                     'type' => 'number',
@@ -5616,16 +5594,73 @@
                                     'minimum' => '0',
                                     'maximum' => '1',
                                 ],
-                                'BoxBorderw' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '1',
-                                    'maximum' => '10',
-                                ],
                             ],
                         ],
                         'maxItems' => 3,
+                    ],
+                ],
+                [
+                    'name' => 'RegionColor',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'R' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '-1',
+                                'maximum' => '255',
+                            ],
+                            'G' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '-1',
+                                'maximum' => '255',
+                            ],
+                            'B' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '-1',
+                                'maximum' => '255',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'BgColor',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'R' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '-1',
+                                'maximum' => '255',
+                            ],
+                            'G' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '-1',
+                                'maximum' => '255',
+                            ],
+                            'B' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '-1',
+                                'maximum' => '255',
+                            ],
+                        ],
                     ],
                 ],
                 [
@@ -5698,6 +5733,254 @@
                         'minLength' => 1,
                         'maxLength' => 55,
                         'pattern' => '^[0-9a-zA-Z_-]+$',
+                    ],
+                ],
+            ],
+        ],
+        'CreateCloudNotePhrases' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Phrase',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 30,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'minLength' => 1,
+                                'maxLength' => 200,
+                            ],
+                            'WordWeights' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'Word' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Weight' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                                'minItems' => 1,
+                                'maxItems' => 300,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ModifyCloudNotePhrases' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Phrase',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Id' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 30,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'minLength' => 1,
+                                'maxLength' => 200,
+                            ],
+                            'WordWeights' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'Word' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'minLength' => 1,
+                                        ],
+                                        'Weight' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                            'minimum' => '-6',
+                                            'maximum' => '5',
+                                        ],
+                                    ],
+                                ],
+                                'minItems' => 1,
+                                'maxItems' => 300,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DescribeCloudNotePhrases' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageNum',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'Condition',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Id' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'minLength' => 1,
+                                'maxLength' => 30,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteCloudNotePhrases' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Phrase',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Id' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -5891,6 +6174,12 @@
                                     '2',
                                 ],
                             ],
+                            'PhraseId' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'minLength' => 1,
+                                'maxLength' => 50,
+                            ],
                         ],
                     ],
                 ],
@@ -6008,11 +6297,11 @@
                                     'type' => 'object',
                                     'required' => true,
                                     'properties' => [
-                                        'Title' => [
+                                        'Content' => [
                                             'type' => 'string',
                                             'required' => true,
                                         ],
-                                        'Content' => [
+                                        'Title' => [
                                             'type' => 'string',
                                             'required' => true,
                                         ],
@@ -6042,14 +6331,6 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'Name' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'Prompt' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
                                         'Model' => [
                                             'type' => 'string',
                                             'required' => false,
@@ -6059,6 +6340,10 @@
                                                 'qwen-max',
                                             ],
                                         ],
+                                        'Prompt' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
                                         'TransType' => [
                                             'type' => 'string',
                                             'required' => false,
@@ -6066,6 +6351,10 @@
                                                 'default',
                                                 'chat',
                                             ],
+                                        ],
+                                        'Name' => [
+                                            'type' => 'string',
+                                            'required' => true,
                                         ],
                                     ],
                                 ],

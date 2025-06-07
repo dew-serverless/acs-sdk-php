@@ -1285,6 +1285,18 @@
             'QuotaDetails' => [
                 'type' => 'object',
                 'properties' => [
+                    'SelfAllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
+                    'DescendantsAllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
+                    'AllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
+                    'AncestorsAllocatedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
                     'DesiredMinQuota' => [
                         '$ref' => '#/components/schemas/ResourceAmount',
                     ],
@@ -1294,19 +1306,10 @@
                     'RequestedQuota' => [
                         '$ref' => '#/components/schemas/ResourceAmount',
                     ],
+                    'SelfSubmittedQuota' => [
+                        '$ref' => '#/components/schemas/ResourceAmount',
+                    ],
                     'UsedQuota' => [
-                        '$ref' => '#/components/schemas/ResourceAmount',
-                    ],
-                    'AllocatedQuota' => [
-                        '$ref' => '#/components/schemas/ResourceAmount',
-                    ],
-                    'SelfAllocatedQuota' => [
-                        '$ref' => '#/components/schemas/ResourceAmount',
-                    ],
-                    'AncestorsAllocatedQuota' => [
-                        '$ref' => '#/components/schemas/ResourceAmount',
-                    ],
-                    'DescendantsAllocatedQuota' => [
                         '$ref' => '#/components/schemas/ResourceAmount',
                     ],
                 ],

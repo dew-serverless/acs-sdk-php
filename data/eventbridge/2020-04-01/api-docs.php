@@ -3489,7 +3489,7 @@
                                             ],
                                         ],
                                     ],
-                                    'Data' => [
+                                    'Body' => [
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [
@@ -6162,7 +6162,7 @@
                                             ],
                                         ],
                                     ],
-                                    'Data' => [
+                                    'Body' => [
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [
@@ -7326,11 +7326,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],

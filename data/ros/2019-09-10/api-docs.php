@@ -742,6 +742,20 @@
                         'maxItems' => 1,
                     ],
                 ],
+                [
+                    'name' => 'TaintResources',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'ContinueCreateStack' => [
@@ -1635,6 +1649,20 @@
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaintResources',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],
@@ -3776,6 +3804,20 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaintResources',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],
@@ -6822,7 +6864,15 @@
             'endpoint' => 'ros.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-zhengzhou-jva',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-huhehaote',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
             'endpoint' => 'ros.aliyuncs.com',
         ],
         [
@@ -6834,11 +6884,31 @@
             'endpoint' => 'ros.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-nanjing',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'ros.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-chengdu',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
             'endpoint' => 'ros.aliyuncs.com',
         ],
         [
@@ -6847,6 +6917,10 @@
         ],
         [
             'regionId' => 'ap-northeast-1',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
             'endpoint' => 'ros.aliyuncs.com',
         ],
         [
@@ -6863,6 +6937,10 @@
         ],
         [
             'regionId' => 'ap-southeast-5',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-6',
             'endpoint' => 'ros.aliyuncs.com',
         ],
         [
@@ -6899,6 +6977,22 @@
         ],
         [
             'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-central-1',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'ros.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
             'endpoint' => 'ros.aliyuncs.com',
         ],
     ],

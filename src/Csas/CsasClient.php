@@ -7,6 +7,28 @@ namespace Dew\Acs\Csas;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result deleteEnterpriseAcceleratePolicy(array $arguments = [])
+ * @method \Http\Promise\Promise deleteEnterpriseAcceleratePolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result disableEnterpriseAcceleratePolicy(array $arguments = [])
+ * @method \Http\Promise\Promise disableEnterpriseAcceleratePolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result listEnterpriseAcceleratePolicies(array $arguments = [])
+ * @method \Http\Promise\Promise listEnterpriseAcceleratePoliciesAsync($arguments = [])
+ * @method \Dew\Acs\Result listEnterpriseAccelerateTargets(array $arguments = [])
+ * @method \Http\Promise\Promise listEnterpriseAccelerateTargetsAsync($arguments = [])
+ * @method \Dew\Acs\Result listEnterpriseAccelerateLogs(array $arguments = [])
+ * @method \Http\Promise\Promise listEnterpriseAccelerateLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result importEnterpriseAccelerateTargets(array $arguments = [])
+ * @method \Http\Promise\Promise importEnterpriseAccelerateTargetsAsync($arguments = [])
+ * @method \Dew\Acs\Result createEnterpriseAccelerateTarget(array $arguments = [])
+ * @method \Http\Promise\Promise createEnterpriseAccelerateTargetAsync($arguments = [])
+ * @method \Dew\Acs\Result enableEnterpriseAcceleratePolicy(array $arguments = [])
+ * @method \Http\Promise\Promise enableEnterpriseAcceleratePolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteEnterpriseAccelerateTarget(array $arguments = [])
+ * @method \Http\Promise\Promise deleteEnterpriseAccelerateTargetAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyEnterpriseAcceleratePolicy(array $arguments = [])
+ * @method \Http\Promise\Promise modifyEnterpriseAcceleratePolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result createEnterpriseAcceleratePolicy(array $arguments = [])
+ * @method \Http\Promise\Promise createEnterpriseAcceleratePolicyAsync($arguments = [])
  * @method \Dew\Acs\Result listDynamicDisposalProcesses(array $arguments = [])
  * @method \Http\Promise\Promise listDynamicDisposalProcessesAsync($arguments = [])
  * @method \Dew\Acs\Result updateApprovalStatus(array $arguments = [])
@@ -209,8 +231,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise revokeUserSessionAsync($arguments = []) {@deprecated 2023-01-20}
  * @method \Dew\Acs\Result listPopTrafficStatistics(array $arguments = [])
  * @method \Http\Promise\Promise listPopTrafficStatisticsAsync($arguments = [])
- * @method \Dew\Acs\Result createEnterpriseAcceleratePolicy(array $arguments = [])
- * @method \Http\Promise\Promise createEnterpriseAcceleratePolicyAsync($arguments = [])
  * @method \Dew\Acs\Result deleteOtpConfig(array $arguments = [])
  * @method \Http\Promise\Promise deleteOtpConfigAsync($arguments = [])
  */

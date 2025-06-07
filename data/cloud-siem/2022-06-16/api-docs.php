@@ -4933,8 +4933,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -5043,6 +5043,14 @@
                 ],
                 [
                     'name' => 'RegionId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResponseRuleType',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

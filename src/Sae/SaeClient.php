@@ -287,6 +287,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeConfigurationPriceAsync($arguments = [])
  * @method \Dew\Acs\Result getWebshellToken(array $arguments = [])
  * @method \Http\Promise\Promise getWebshellTokenAsync($arguments = [])
+ * @method \Dew\Acs\Result bindNlb(array $arguments = [])
+ * @method \Http\Promise\Promise bindNlbAsync($arguments = [])
+ * @method \Dew\Acs\Result describeApplicationNlbs(array $arguments = [])
+ * @method \Http\Promise\Promise describeApplicationNlbsAsync($arguments = [])
  */
 final class SaeClient extends AcsClient
 {

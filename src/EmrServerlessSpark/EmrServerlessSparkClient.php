@@ -61,6 +61,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateProcessDefinitionWithScheduleAsync($arguments = [])
  * @method \Dew\Acs\Result createProcessDefinitionWithSchedule(array $arguments = [])
  * @method \Http\Promise\Promise createProcessDefinitionWithScheduleAsync($arguments = [])
+ * @method \Dew\Acs\Result listKyuubiToken(array $arguments = [])
+ * @method \Http\Promise\Promise listKyuubiTokenAsync($arguments = [])
+ * @method \Dew\Acs\Result listKyuubiServices(array $arguments = [])
+ * @method \Http\Promise\Promise listKyuubiServicesAsync($arguments = [])
  */
 final class EmrServerlessSparkClient extends AcsClient
 {

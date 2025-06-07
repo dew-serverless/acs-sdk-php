@@ -6763,6 +6763,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'BackupRetentionPeriod',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyBackupPolicy' => [

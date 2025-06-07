@@ -7273,6 +7273,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'EnableThinking' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

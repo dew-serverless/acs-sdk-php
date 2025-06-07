@@ -1534,6 +1534,54 @@
                 ],
             ],
         ],
+        'GenerateReport' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ReportConfigs',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Action' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Format' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'TemplateVersion' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Theme' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

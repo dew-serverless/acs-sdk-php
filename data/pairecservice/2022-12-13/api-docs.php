@@ -4848,6 +4848,10 @@
                                 'format' => 'int32',
                                 'required' => false,
                             ],
+                            'ResourceConfig' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -5125,6 +5129,10 @@
                             'PredictWorkerMemory' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'ResourceConfig' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],

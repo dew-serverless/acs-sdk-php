@@ -7,6 +7,168 @@
     ],
     'components' => [
         'schemas' => [
+            'Artifact' => [
+                'type' => 'object',
+                'required' => false,
+                'properties' => [
+                    'uid' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'kind' => [
+                        'type' => 'string',
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'updatedTime' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 64,
+                        'pattern' => '^[a-zA-Z_][a-zA-Z0-9_-]{0,63}$',
+                    ],
+                    'spec' => [
+                        '$ref' => '#/components/schemas/ArtifactSpec',
+                        'required' => false,
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'resourceVersion' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        '$ref' => '#/components/schemas/ArtifactStatus',
+                    ],
+                    'generation' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
+            'ArtifactCode' => [
+                'type' => 'object',
+                'properties' => [
+                    'checksum' => [
+                        'type' => 'string',
+                    ],
+                    'url' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ArtifactMeta' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'checksum' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ArtifactSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'runtime' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'uri' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+            'ArtifactStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'size' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'checksum' => [
+                        'type' => 'string',
+                    ],
+                    'arn' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ArtifactTempBucketToken' => [
+                'type' => 'object',
+                'properties' => [
+                    'ossObjectName' => [
+                        'type' => 'string',
+                    ],
+                    'ossBucketName' => [
+                        'type' => 'string',
+                    ],
+                    'ossRegion' => [
+                        'type' => 'string',
+                    ],
+                    'credentials' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'accessKeyId' => [
+                                'type' => 'string',
+                            ],
+                            'accessKeySecret' => [
+                                'type' => 'string',
+                            ],
+                            'securityToken' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'BranchFilter' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'BuildCacheConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'paths' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'keyPath' => [
+                        'type' => 'object',
+                    ],
+                ],
+            ],
+            'BuildConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'default' => [
+                        '$ref' => '#/components/schemas/DefaultBuilderConfig',
+                    ],
+                ],
+            ],
             'Checkout' => [
                 'type' => 'object',
                 'properties' => [
@@ -18,12 +180,14 @@
                     ],
                 ],
             ],
-            'CodeupEventPayload' => [
+            'CodeVersionReference' => [
                 'type' => 'object',
                 'properties' => [
-                    'originalPayload' => [
+                    'branch' => [
                         'type' => 'string',
-                        'format' => 'byte',
+                    ],
+                    'commitID' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -65,19 +229,11 @@
                             'type' => 'string',
                         ],
                     ],
-                    'resourceVersion' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
                     'description' => [
                         'type' => 'string',
                     ],
                     'status' => [
                         '$ref' => '#/components/schemas/ConnectionStatus',
-                    ],
-                    'generation' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
                     ],
                 ],
             ],
@@ -132,6 +288,2665 @@
                     ],
                 ],
             ],
+            'DefaultBuilderConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'cache' => [
+                        '$ref' => '#/components/schemas/BuildCacheConfig',
+                    ],
+                    'languages' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'rootPath' => [
+                        'type' => 'string',
+                    ],
+                    'steps' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'any',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteModelOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployCustomContainerAsyncOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployCustomContainerInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'role' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'modelConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'srcModelScopeModelID' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeModelRevision' => [
+                                'type' => 'string',
+                            ],
+                            'framework' => [
+                                'type' => 'string',
+                            ],
+                            'sourceType' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssRegion' => [
+                                'type' => 'string',
+                            ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeToken' => [
+                                'type' => 'string',
+                            ],
+                            'multiModelConfig' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/ModelConfig',
+                                ],
+                            ],
+                            'syncStrategy' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssPath' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'nasConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'groupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'userId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'concurrencyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'reservedConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'originalName' => [
+                        'type' => 'string',
+                    ],
+                    'accountID' => [
+                        'type' => 'string',
+                    ],
+                    'httpTrigger' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'triggerConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'methods' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'authType' => [
+                                        'type' => 'string',
+                                    ],
+                                    'dsableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'disableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'qualifier' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ossMountConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'bucketName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endpoint' => [
+                                            'type' => 'string',
+                                        ],
+                                        'bucketPath' => [
+                                            'type' => 'string',
+                                        ],
+                                        'mountDir' => [
+                                            'type' => 'string',
+                                        ],
+                                        'readOnly' => [
+                                            'type' => 'boolean',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'traceId' => [
+                        'type' => 'string',
+                    ],
+                    'logConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'enableRequestMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'enableInstanceMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'logBeginRule' => [
+                                'type' => 'string',
+                            ],
+                            'project' => [
+                                'type' => 'string',
+                            ],
+                            'logstore' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'gpuConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'gpuMemorySize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'gpuType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'customContainerConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'image' => [
+                                'type' => 'string',
+                            ],
+                            'role' => [
+                                'type' => 'string',
+                            ],
+                            'port' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'instanceLifecycleConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'preStop' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'handler' => [
+                                                'type' => 'string',
+                                            ],
+                                            'timeout' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                        ],
+                                    ],
+                                    'initializer' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'handler' => [
+                                                'type' => 'string',
+                                            ],
+                                            'timeout' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'entrypoint' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'command' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'instanceConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'healthCheckConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'failureThreshold' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'httpGetUrl' => [
+                                        'type' => 'string',
+                                    ],
+                                    'periodSeconds' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'timeoutSeconds' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                    'successThreshold' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'initialDelaySeconds' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'asyncInvokeConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'asyncTask' => [
+                                'type' => 'boolean',
+                            ],
+                            'maxAsyncEventAgeInSeconds' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'destinationConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'onFailure' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'destination' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                    'onSuccess' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'destination' => [
+                                                'type' => 'string',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'maxAsyncRetryAttempts' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                    'reportStatusURL' => [
+                        'type' => 'string',
+                    ],
+                    'provisionConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'scheduledActions' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'scheduleExpression' => [
+                                            'type' => 'string',
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                        ],
+                                        'timeZone' => [
+                                            'type' => 'string',
+                                        ],
+                                        'startTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'target' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'alwaysAllocateGPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'target' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'envName' => [
+                        'type' => 'string',
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                    ],
+                    'vpcConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'securityGroupId' => [
+                                'type' => 'string',
+                            ],
+                            'vSwitchIds' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'vpcId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'projectName' => [
+                        'type' => 'string',
+                    ],
+                    'region' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployCustomContainerOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'traceID' => [
+                                'type' => 'string',
+                            ],
+                            'vpcConfigStr' => [
+                                'type' => 'string',
+                            ],
+                            'urlInternet' => [
+                                'type' => 'string',
+                            ],
+                            'deploymentTaskID' => [
+                                'type' => 'string',
+                            ],
+                            'nasConfigStr' => [
+                                'type' => 'string',
+                            ],
+                            'errorMessage' => [
+                                'type' => 'string',
+                            ],
+                            'finished' => [
+                                'type' => 'boolean',
+                            ],
+                            'serviceName' => [
+                                'type' => 'string',
+                            ],
+                            'urlIntranet' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployEnvironmentOptions' => [
+                'type' => 'object',
+                'properties' => [
+                    'services' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'DeployHuggingFaceModelAsyncOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployHuggingFaceModelInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'role' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'modelConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'srcModelScopeModelID' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeModelRevision' => [
+                                'type' => 'string',
+                            ],
+                            'framework' => [
+                                'type' => 'string',
+                            ],
+                            'sourceType' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssRegion' => [
+                                'type' => 'string',
+                            ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeToken' => [
+                                'type' => 'string',
+                            ],
+                            'multiModelConfig' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/ModelConfig',
+                                ],
+                            ],
+                            'syncStrategy' => [
+                                'type' => 'string',
+                            ],
+                            'fmkHuggingFaceConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'task' => [
+                                        'type' => 'string',
+                                    ],
+                                    'framework' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'srcOssPath' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'nasConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'groupId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'userId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'concurrencyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'reservedConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'originalName' => [
+                        'type' => 'string',
+                    ],
+                    'accountID' => [
+                        'type' => 'string',
+                    ],
+                    'httpTrigger' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'triggerConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'methods' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'authType' => [
+                                        'type' => 'string',
+                                    ],
+                                    'dsableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'disableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'qualifier' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'traceId' => [
+                        'type' => 'string',
+                    ],
+                    'logConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'enableRequestMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'enableInstanceMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'logBeginRule' => [
+                                'type' => 'string',
+                            ],
+                            'project' => [
+                                'type' => 'string',
+                            ],
+                            'logstore' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'imageName' => [
+                        'type' => 'string',
+                    ],
+                    'gpuConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'gpuMemorySize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'gpuType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'reportStatusURL' => [
+                        'type' => 'string',
+                    ],
+                    'provisionConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'scheduledActions' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'scheduleExpression' => [
+                                            'type' => 'string',
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                        ],
+                                        'timeZone' => [
+                                            'type' => 'string',
+                                        ],
+                                        'startTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'target' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'alwaysAllocateGPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'target' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'envName' => [
+                        'type' => 'string',
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                    ],
+                    'vpcConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'securityGroupId' => [
+                                'type' => 'string',
+                            ],
+                            'vSwitchIds' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'vpcId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'projectName' => [
+                        'type' => 'string',
+                    ],
+                    'region' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployHuggingFaceModelOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'traceID' => [
+                                'type' => 'string',
+                            ],
+                            'taskType' => [
+                                'type' => 'string',
+                            ],
+                            'urlInternet' => [
+                                'type' => 'string',
+                            ],
+                            'deploymentTaskID' => [
+                                'type' => 'string',
+                            ],
+                            'errorMessage' => [
+                                'type' => 'string',
+                            ],
+                            'finished' => [
+                                'type' => 'boolean',
+                            ],
+                            'serviceName' => [
+                                'type' => 'string',
+                            ],
+                            'urlIntranet' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployModelScopeModelAsyncOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployModelScopeModelInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'role' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'modelConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'srcModelScopeModelID' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeModelRevision' => [
+                                'type' => 'string',
+                            ],
+                            'framework' => [
+                                'type' => 'string',
+                            ],
+                            'sourceType' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssRegion' => [
+                                'type' => 'string',
+                            ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeToken' => [
+                                'type' => 'string',
+                            ],
+                            'multiModelConfig' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/ModelConfig',
+                                ],
+                            ],
+                            'syncStrategy' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssPath' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'nasConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'groupId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'userId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'concurrencyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'reservedConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'originalName' => [
+                        'type' => 'string',
+                    ],
+                    'accountID' => [
+                        'type' => 'string',
+                    ],
+                    'httpTrigger' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'triggerConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'methods' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'authType' => [
+                                        'type' => 'string',
+                                    ],
+                                    'dsableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'disableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'qualifier' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'traceId' => [
+                        'type' => 'string',
+                    ],
+                    'logConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'enableRequestMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'enableInstanceMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'logBeginRule' => [
+                                'type' => 'string',
+                            ],
+                            'project' => [
+                                'type' => 'string',
+                            ],
+                            'logstore' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'imageName' => [
+                        'type' => 'string',
+                    ],
+                    'gpuConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'gpuMemorySize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'gpuType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'reportStatusURL' => [
+                        'type' => 'string',
+                    ],
+                    'provisionConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'scheduledActions' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'scheduleExpression' => [
+                                            'type' => 'string',
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                        ],
+                                        'timeZone' => [
+                                            'type' => 'string',
+                                        ],
+                                        'startTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'target' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'alwaysAllocateGPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'target' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'envName' => [
+                        'type' => 'string',
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                    ],
+                    'vpcConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'securityGroupId' => [
+                                'type' => 'string',
+                            ],
+                            'vSwitchIds' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'vpcId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'projectName' => [
+                        'type' => 'string',
+                    ],
+                    'region' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployModelScopeModelOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                    'data' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'taskType' => [
+                                'type' => 'string',
+                            ],
+                            'serviceName' => [
+                                'type' => 'string',
+                            ],
+                            'urlIntranet' => [
+                                'type' => 'string',
+                            ],
+                            'urlInternet' => [
+                                'type' => 'string',
+                            ],
+                            'traceID' => [
+                                'type' => 'string',
+                            ],
+                            'deploymentTaskID' => [
+                                'type' => 'string',
+                            ],
+                            'finished' => [
+                                'type' => 'boolean',
+                            ],
+                            'errorMessage' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'DeployOllamaModelAsyncOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployOllamaModelInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'role' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'modelConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'srcModelScopeModelID' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeModelRevision' => [
+                                'type' => 'string',
+                            ],
+                            'framework' => [
+                                'type' => 'string',
+                            ],
+                            'sourceType' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssRegion' => [
+                                'type' => 'string',
+                            ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeToken' => [
+                                'type' => 'string',
+                            ],
+                            'fmkOllamaConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'mirostat' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'seed' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'modelfileParams' => [
+                                        'type' => 'string',
+                                    ],
+                                    'modelfileFullTextPostfix' => [
+                                        'type' => 'string',
+                                    ],
+                                    'singleModelFile' => [
+                                        'type' => 'string',
+                                    ],
+                                    'modelfileTemplate' => [
+                                        'type' => 'string',
+                                    ],
+                                    'minP' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                    ],
+                                    'tfsZ' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                    ],
+                                    'stream' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'temperature' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                    ],
+                                    'quantize' => [
+                                        'type' => 'string',
+                                    ],
+                                    'numCtx' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'repeatPenalty' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                    ],
+                                    'numPredict' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'topK' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'mirostatEta' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                    ],
+                                    'modelfileAdditionalFromsString' => [
+                                        'type' => 'string',
+                                    ],
+                                    'topP' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                    ],
+                                    'modelName' => [
+                                        'type' => 'string',
+                                    ],
+                                    'stop' => [
+                                        'type' => 'string',
+                                    ],
+                                    'modelfileAdapter' => [
+                                        'type' => 'string',
+                                    ],
+                                    'modelfileSystem' => [
+                                        'type' => 'string',
+                                    ],
+                                    'splitedModelStartFile' => [
+                                        'type' => 'string',
+                                    ],
+                                    'mirostatTau' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                    ],
+                                    'repeatLastN' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                ],
+                            ],
+                            'multiModelConfig' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/ModelConfig',
+                                ],
+                            ],
+                            'syncStrategy' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssPath' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'nasConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'groupId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'userId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'concurrencyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'reservedConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'originalName' => [
+                        'type' => 'string',
+                    ],
+                    'accountID' => [
+                        'type' => 'string',
+                    ],
+                    'httpTrigger' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'triggerConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'methods' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'authType' => [
+                                        'type' => 'string',
+                                    ],
+                                    'dsableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'disableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'qualifier' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'traceId' => [
+                        'type' => 'string',
+                    ],
+                    'logConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'enableRequestMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'enableInstanceMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'logBeginRule' => [
+                                'type' => 'string',
+                            ],
+                            'project' => [
+                                'type' => 'string',
+                            ],
+                            'logstore' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'imageName' => [
+                        'type' => 'string',
+                    ],
+                    'gpuConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'gpuMemorySize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'gpuType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'reportStatusURL' => [
+                        'type' => 'string',
+                    ],
+                    'provisionConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'scheduledActions' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'scheduleExpression' => [
+                                            'type' => 'string',
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                        ],
+                                        'timeZone' => [
+                                            'type' => 'string',
+                                        ],
+                                        'startTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'target' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'alwaysAllocateGPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'target' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'envName' => [
+                        'type' => 'string',
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                    ],
+                    'vpcConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'securityGroupId' => [
+                                'type' => 'string',
+                            ],
+                            'vSwitchIds' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'vpcId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'projectName' => [
+                        'type' => 'string',
+                    ],
+                    'region' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployOllamaModelOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'traceID' => [
+                                'type' => 'string',
+                            ],
+                            'modelName' => [
+                                'type' => 'string',
+                            ],
+                            'urlInternet' => [
+                                'type' => 'string',
+                            ],
+                            'deploymentTaskID' => [
+                                'type' => 'string',
+                            ],
+                            'errorMessage' => [
+                                'type' => 'string',
+                            ],
+                            'finished' => [
+                                'type' => 'boolean',
+                            ],
+                            'serviceName' => [
+                                'type' => 'string',
+                            ],
+                            'urlIntranet' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeploySGLangModelAsyncOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeploySGLangModelInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'role' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'modelConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'fmkSGLangConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'fullTextPostfix' => [
+                                        'type' => 'string',
+                                    ],
+                                    'loadFormat' => [
+                                        'type' => 'string',
+                                    ],
+                                    'maxRunningRequests' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'servedModelName' => [
+                                        'type' => 'string',
+                                    ],
+                                    'memFractionStatic' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                    ],
+                                    'apiKey' => [
+                                        'type' => 'string',
+                                    ],
+                                    'chatTemplate' => [
+                                        'type' => 'string',
+                                    ],
+                                    'dtype' => [
+                                        'type' => 'string',
+                                    ],
+                                    'maxTotalTokens' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'quantization' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'srcModelScopeModelID' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeModelRevision' => [
+                                'type' => 'string',
+                            ],
+                            'framework' => [
+                                'type' => 'string',
+                            ],
+                            'sourceType' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssRegion' => [
+                                'type' => 'string',
+                            ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeToken' => [
+                                'type' => 'string',
+                            ],
+                            'multiModelConfig' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/ModelConfig',
+                                ],
+                            ],
+                            'syncStrategy' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssPath' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'nasConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'groupId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'enableTLS' => [
+                                            'type' => 'boolean',
+                                        ],
+                                        'serverAddr' => [
+                                            'type' => 'string',
+                                        ],
+                                        'mountDir' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'userId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'concurrencyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'reservedConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'originalName' => [
+                        'type' => 'string',
+                    ],
+                    'accountID' => [
+                        'type' => 'string',
+                    ],
+                    'httpTrigger' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'triggerConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'methods' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'authType' => [
+                                        'type' => 'string',
+                                    ],
+                                    'dsableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'disableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'qualifier' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'traceId' => [
+                        'type' => 'string',
+                    ],
+                    'logConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'enableRequestMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'enableInstanceMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'logBeginRule' => [
+                                'type' => 'string',
+                            ],
+                            'project' => [
+                                'type' => 'string',
+                            ],
+                            'logstore' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'imageName' => [
+                        'type' => 'string',
+                    ],
+                    'gpuConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'gpuMemorySize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'gpuType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'reportStatusURL' => [
+                        'type' => 'string',
+                    ],
+                    'provisionConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'scheduledActions' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'scheduleExpression' => [
+                                            'type' => 'string',
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                        ],
+                                        'timeZone' => [
+                                            'type' => 'string',
+                                        ],
+                                        'startTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'target' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'alwaysAllocateGPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'target' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'envName' => [
+                        'type' => 'string',
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                    ],
+                    'vpcConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'securityGroupId' => [
+                                'type' => 'string',
+                            ],
+                            'vSwitchIds' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'vpcId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'projectName' => [
+                        'type' => 'string',
+                    ],
+                    'region' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeploySGLangModelOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'traceID' => [
+                                'type' => 'string',
+                            ],
+                            'modelName' => [
+                                'type' => 'string',
+                            ],
+                            'urlInternet' => [
+                                'type' => 'string',
+                            ],
+                            'deploymentTaskID' => [
+                                'type' => 'string',
+                            ],
+                            'errorMessage' => [
+                                'type' => 'string',
+                            ],
+                            'finished' => [
+                                'type' => 'boolean',
+                            ],
+                            'serviceName' => [
+                                'type' => 'string',
+                            ],
+                            'urlIntranet' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployTensorRtModelAsyncOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployTensorRtModelInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'role' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'modelConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'srcModelScopeModelID' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeModelRevision' => [
+                                'type' => 'string',
+                            ],
+                            'framework' => [
+                                'type' => 'string',
+                            ],
+                            'sourceType' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssRegion' => [
+                                'type' => 'string',
+                            ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeToken' => [
+                                'type' => 'string',
+                            ],
+                            'multiModelConfig' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/ModelConfig',
+                                ],
+                            ],
+                            'syncStrategy' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssPath' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'nasConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'groupId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'enableTLS' => [
+                                            'type' => 'boolean',
+                                        ],
+                                        'serverAddr' => [
+                                            'type' => 'string',
+                                        ],
+                                        'mountDir' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'userId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'concurrencyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'reservedConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'originalName' => [
+                        'type' => 'string',
+                    ],
+                    'accountID' => [
+                        'type' => 'string',
+                    ],
+                    'httpTrigger' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'triggerConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'methods' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'authType' => [
+                                        'type' => 'string',
+                                    ],
+                                    'dsableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'disableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'qualifier' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'traceId' => [
+                        'type' => 'string',
+                    ],
+                    'logConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'enableRequestMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'enableInstanceMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'logBeginRule' => [
+                                'type' => 'string',
+                            ],
+                            'project' => [
+                                'type' => 'string',
+                            ],
+                            'logstore' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'imageName' => [
+                        'type' => 'string',
+                    ],
+                    'gpuConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'gpuMemorySize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'gpuType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'reportStatusURL' => [
+                        'type' => 'string',
+                    ],
+                    'provisionConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'scheduledActions' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'scheduleExpression' => [
+                                            'type' => 'string',
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                        ],
+                                        'timeZone' => [
+                                            'type' => 'string',
+                                        ],
+                                        'startTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'target' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'alwaysAllocateGPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'target' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'envName' => [
+                        'type' => 'string',
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                    ],
+                    'vpcConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'securityGroupId' => [
+                                'type' => 'string',
+                            ],
+                            'vSwitchIds' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'vpcId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'projectName' => [
+                        'type' => 'string',
+                    ],
+                    'region' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployTensorRtModelOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'traceID' => [
+                                'type' => 'string',
+                            ],
+                            'urlInternet' => [
+                                'type' => 'string',
+                            ],
+                            'deploymentTaskID' => [
+                                'type' => 'string',
+                            ],
+                            'errorMessage' => [
+                                'type' => 'string',
+                            ],
+                            'finished' => [
+                                'type' => 'boolean',
+                            ],
+                            'serviceName' => [
+                                'type' => 'string',
+                            ],
+                            'urlIntranet' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployVllmModelAsyncOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'string',
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployVllmModelInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'role' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'modelConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'srcModelScopeModelID' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeModelRevision' => [
+                                'type' => 'string',
+                            ],
+                            'framework' => [
+                                'type' => 'string',
+                            ],
+                            'sourceType' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssRegion' => [
+                                'type' => 'string',
+                            ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'fmkVllmConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'fullTextPostfix' => [
+                                        'type' => 'string',
+                                    ],
+                                    'loadFormat' => [
+                                        'type' => 'string',
+                                    ],
+                                    'servedModelName' => [
+                                        'type' => 'string',
+                                    ],
+                                    'gpuMemoryUtilization' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                    ],
+                                    'apiKey' => [
+                                        'type' => 'string',
+                                    ],
+                                    'chatTemplate' => [
+                                        'type' => 'string',
+                                    ],
+                                    'dtype' => [
+                                        'type' => 'string',
+                                    ],
+                                    'swapSpace' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'maxModelLen' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'maxParallelLoadingWorkers' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'blockSize' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                    ],
+                                    'quantization' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'srcModelScopeToken' => [
+                                'type' => 'string',
+                            ],
+                            'multiModelConfig' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/ModelConfig',
+                                ],
+                            ],
+                            'syncStrategy' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssPath' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'nasConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'groupId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'enableTLS' => [
+                                            'type' => 'boolean',
+                                        ],
+                                        'serverAddr' => [
+                                            'type' => 'string',
+                                        ],
+                                        'mountDir' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'userId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'concurrencyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'reservedConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'originalName' => [
+                        'type' => 'string',
+                    ],
+                    'accountID' => [
+                        'type' => 'string',
+                    ],
+                    'httpTrigger' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'triggerConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'methods' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'authType' => [
+                                        'type' => 'string',
+                                    ],
+                                    'dsableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'disableURLInternet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'qualifier' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'traceId' => [
+                        'type' => 'string',
+                    ],
+                    'logConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'enableRequestMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'enableInstanceMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'logBeginRule' => [
+                                'type' => 'string',
+                            ],
+                            'project' => [
+                                'type' => 'string',
+                            ],
+                            'logstore' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'imageName' => [
+                        'type' => 'string',
+                    ],
+                    'gpuConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'gpuMemorySize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'gpuType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'reportStatusURL' => [
+                        'type' => 'string',
+                    ],
+                    'provisionConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'scheduledActions' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'scheduleExpression' => [
+                                            'type' => 'string',
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                        ],
+                                        'timeZone' => [
+                                            'type' => 'string',
+                                        ],
+                                        'startTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'target' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'alwaysAllocateGPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'target' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'envName' => [
+                        'type' => 'string',
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                    ],
+                    'vpcConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'securityGroupId' => [
+                                'type' => 'string',
+                            ],
+                            'vSwitchIds' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'vpcId' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'projectName' => [
+                        'type' => 'string',
+                    ],
+                    'region' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DeployVllmModelOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'data' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'traceID' => [
+                                'type' => 'string',
+                            ],
+                            'modelName' => [
+                                'type' => 'string',
+                            ],
+                            'urlInternet' => [
+                                'type' => 'string',
+                            ],
+                            'deploymentTaskID' => [
+                                'type' => 'string',
+                            ],
+                            'errorMessage' => [
+                                'type' => 'string',
+                            ],
+                            'finished' => [
+                                'type' => 'boolean',
+                            ],
+                            'serviceName' => [
+                                'type' => 'string',
+                            ],
+                            'urlIntranet' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'DownloadModelOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'data' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'taskType' => [
+                                'type' => 'string',
+                            ],
+                            'modelPath' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'success' => [
+                        'type' => 'boolean',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Environment' => [
                 'type' => 'object',
                 'properties' => [
@@ -162,10 +2977,6 @@
                             'type' => 'string',
                         ],
                     ],
-                    'resourceVersion' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
                     'status' => [
                         '$ref' => '#/components/schemas/EnvironmentStatus',
                     ],
@@ -175,6 +2986,119 @@
                     'generation' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                ],
+            ],
+            'EnvironmentBaseline' => [
+                'type' => 'object',
+                'properties' => [
+                    'variables' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/Variable',
+                        ],
+                    ],
+                    'servicesInstances' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/ServiceInstance',
+                        ],
+                    ],
+                ],
+            ],
+            'EnvironmentChanges' => [
+                'type' => 'object',
+                'properties' => [
+                    'services' => [
+                        'type' => 'object',
+                    ],
+                ],
+            ],
+            'EnvironmentDeployment' => [
+                'type' => 'object',
+                'properties' => [
+                    'uid' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'kind' => [
+                        'type' => 'string',
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 63,
+                        'pattern' => '^(?![0-9]+$)(?!-)[a-zA-Z0-9-_]{0,63}(?<!-)$',
+                    ],
+                    'status' => [
+                        '$ref' => '#/components/schemas/EnvironmentDeploymentStatus',
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'spec' => [
+                        '$ref' => '#/components/schemas/EnvironmentDeploymentSpec',
+                    ],
+                ],
+            ],
+            'EnvironmentDeploymentSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'changes' => [
+                        '$ref' => '#/components/schemas/EnvironmentChanges',
+                    ],
+                    'baseline' => [
+                        '$ref' => '#/components/schemas/EnvironmentSnapshot',
+                    ],
+                    'target' => [
+                        '$ref' => '#/components/schemas/EnvironmentStagedConfigs',
+                    ],
+                    'skipRemoveResources' => [
+                        'type' => 'boolean',
+                    ],
+                    'webhookCodeContext' => [
+                        '$ref' => '#/components/schemas/WebhookCodeContext',
+                    ],
+                ],
+            ],
+            'EnvironmentDeploymentStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'phase' => [
+                        'type' => 'string',
+                    ],
+                    'pipelineName' => [
+                        'type' => 'string',
+                    ],
+                    'finishedTime' => [
+                        'type' => 'string',
+                    ],
+                    'serviceDeployments' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'EnvironmentSnapshot' => [
+                'type' => 'object',
+                'properties' => [
+                    'services' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/ServiceInstance',
+                        ],
                     ],
                 ],
             ],
@@ -189,45 +3113,48 @@
                             'Production',
                         ],
                     ],
-                    'alias' => [
-                        'type' => 'string',
-                    ],
                     'roleArn' => [
                         'type' => 'string',
                     ],
-                    'repositoryConfig' => [
-                        '$ref' => '#/components/schemas/RepositoryConfig',
+                    'stagedConfigs' => [
+                        '$ref' => '#/components/schemas/EnvironmentStagedConfigs',
                     ],
-                    'templateConfig' => [
-                        '$ref' => '#/components/schemas/TemplateConfig',
-                    ],
-                    'infraStackConfig' => [
-                        '$ref' => '#/components/schemas/InfraStackSpec',
-                    ],
-                    'serviceOverlay' => [
+                ],
+            ],
+            'EnvironmentStagedConfigs' => [
+                'type' => 'object',
+                'properties' => [
+                    'services' => [
                         'type' => 'object',
-                        'properties' => [
-                            'resources' => [
-                                'type' => 'object',
-                            ],
-                            'components' => [
-                                'type' => 'object',
-                            ],
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/ServiceConfig',
                         ],
                     ],
-                    'isAutoDeploy' => [
-                        'type' => 'boolean',
+                    'variables' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/Variable',
+                        ],
                     ],
                 ],
             ],
             'EnvironmentStatus' => [
                 'type' => 'object',
                 'properties' => [
-                    'infraStackStatus' => [
-                        '$ref' => '#/components/schemas/InfraStackStatus',
+                    'servicesInstances' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/ServiceInstance',
+                        ],
                     ],
-                    'latestReleaseDetail' => [
-                        '$ref' => '#/components/schemas/ReleaseDetail',
+                    'latestEnvironmentDeploymentName' => [
+                        'type' => 'string',
+                    ],
+                    'servicesWithPendingChanges' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                     'observedGeneration' => [
                         'type' => 'integer',
@@ -241,31 +3168,71 @@
             'EventFilterConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'push' => [
-                        '$ref' => '#/components/schemas/PushFilter',
-                    ],
-                    'pullRequest' => [
-                        '$ref' => '#/components/schemas/PullRequestFilter',
+                    'branch' => [
+                        '$ref' => '#/components/schemas/BranchFilter',
                     ],
                 ],
             ],
-            'EventPayload' => [
+            'FinalizeConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'github' => [
-                        '$ref' => '#/components/schemas/GithubEventPayload',
+                    'steps' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'any',
+                        ],
                     ],
-                    'gitlab' => [
-                        '$ref' => '#/components/schemas/GitlabEventPayload',
+                ],
+            ],
+            'GetModelStatusOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'requestId' => [
+                        'type' => 'string',
                     ],
-                    'codeup' => [
-                        '$ref' => '#/components/schemas/CodeupEventPayload',
+                    'data' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'fileSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'finished' => [
+                                'type' => 'boolean',
+                            ],
+                            'finishedTime' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'startTime' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'total' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'errMessage' => [
+                                'type' => 'string',
+                            ],
+                            'speed' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'currentBytes' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
                     ],
-                    'gitee' => [
-                        '$ref' => '#/components/schemas/GiteeEventPayload',
+                    'success' => [
+                        'type' => 'boolean',
                     ],
-                    'manual' => [
-                        '$ref' => '#/components/schemas/ManualEventPayload',
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -317,120 +3284,14 @@
                     ],
                 ],
             ],
-            'GiteeEventPayload' => [
+            'InitializeConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'originalPayload' => [
-                        'type' => 'string',
-                        'format' => 'byte',
-                    ],
-                ],
-            ],
-            'GithubEventPayload' => [
-                'type' => 'object',
-                'properties' => [
-                    'originalPayload' => [
-                        'type' => 'string',
-                        'format' => 'byte',
-                    ],
-                ],
-            ],
-            'GitlabEventPayload' => [
-                'type' => 'object',
-                'properties' => [
-                    'originalPayload' => [
-                        'type' => 'string',
-                        'format' => 'byte',
-                    ],
-                ],
-            ],
-            'InfraStackResourceState' => [
-                'type' => 'object',
-                'properties' => [
-                    'resources' => [
+                    'steps' => [
                         'type' => 'array',
                         'items' => [
-                            '$ref' => '#/components/schemas/ResourceDetail',
+                            'type' => 'any',
                         ],
-                    ],
-                    'resourceDrifts' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/ResourceDrift',
-                        ],
-                    ],
-                ],
-            ],
-            'InfraStackSpec' => [
-                'type' => 'object',
-                'required' => false,
-                'properties' => [
-                    'regionID' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'roleArn' => [
-                        'type' => 'string',
-                    ],
-                    'templateSpec' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'engine' => [
-                                'type' => 'string',
-                            ],
-                            'content' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                    'templateVariables' => [
-                        'type' => 'object',
-                    ],
-                    'templateName' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-            'InfraStackStatus' => [
-                'type' => 'object',
-                'properties' => [
-                    'phase' => [
-                        'type' => 'string',
-                    ],
-                    'message' => [
-                        'type' => 'string',
-                    ],
-                    'observedGeneration' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'observedTime' => [
-                        'type' => 'string',
-                    ],
-                    'templateOutputs' => [
-                        'type' => 'object',
-                    ],
-                    'templateStatus' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'variables' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    '$ref' => '#/components/schemas/TerraformInputVariable',
-                                ],
-                            ],
-                            'outputs' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    '$ref' => '#/components/schemas/TerraformOutputValue',
-                                ],
-                            ],
-                        ],
-                    ],
-                    'resourceState' => [
-                        '$ref' => '#/components/schemas/InfraStackResourceState',
                     ],
                 ],
             ],
@@ -448,20 +3309,297 @@
                     ],
                 ],
             ],
-            'ManualEventPayload' => [
+            'MCPInstallationConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'commitID' => [
+                    'mcpServers' => [
+                        '$ref' => '#/components/schemas/MCPServerInstallationConfig',
+                    ],
+                ],
+            ],
+            'MCPServerInstallationConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'args' => [
                         'type' => 'string',
                     ],
-                    'branch' => [
+                    'transportType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'stdio',
+                            'sse',
+                            'streamableHttp',
+                        ],
+                    ],
+                    'env' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'url' => [
                         'type' => 'string',
                     ],
-                    'tag' => [
+                    'command' => [
                         'type' => 'string',
                     ],
-                    'templateConfig' => [
-                        '$ref' => '#/components/schemas/TemplateConfig',
+                ],
+            ],
+            'ModelAsyncTask' => [
+                'type' => 'object',
+                'properties' => [
+                    'startTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'taskType' => [
+                        'type' => 'string',
+                    ],
+                    'finished' => [
+                        'type' => 'boolean',
+                    ],
+                    'finishedTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'result' => [
+                        'type' => 'any',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ModelConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'reversion' => [
+                        'type' => 'string',
+                    ],
+                    'bucket' => [
+                        'type' => 'string',
+                    ],
+                    'path' => [
+                        'type' => 'string',
+                    ],
+                    'framework' => [
+                        'type' => 'string',
+                    ],
+                    'prefix' => [
+                        'type' => 'string',
+                    ],
+                    'model' => [
+                        'type' => 'string',
+                    ],
+                    'multiModelConfig' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ModelConfig',
+                        ],
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'region' => [
+                        'type' => 'string',
+                    ],
+                    'token' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ModelFile' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'path' => [
+                        'type' => 'string',
+                    ],
+                    'isDir' => [
+                        'type' => 'boolean',
+                    ],
+                    'size' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'modeTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'ModelFilePreview' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'path' => [
+                        'type' => 'string',
+                    ],
+                    'isDir' => [
+                        'type' => 'boolean',
+                    ],
+                    'size' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'hash' => [
+                        'type' => 'string',
+                    ],
+                    'content' => [
+                        'type' => 'string',
+                    ],
+                    'isCompressedImage' => [
+                        'type' => 'boolean',
+                    ],
+                    'unpreviewable' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'ModelProvider' => [
+                'type' => 'object',
+                'properties' => [
+                    'uid' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'kind' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'ModelProviderAuthorization' => [
+                'type' => 'object',
+                'properties' => [
+                    'authConfig' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ModelProviderSchema' => [
+                'type' => 'object',
+                'properties' => [
+                    'detail' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ModelProviderSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'authorization' => [
+                        '$ref' => '#/components/schemas/ModelProviderAuthorization',
+                    ],
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ModelProviderSchema',
+                    ],
+                ],
+            ],
+            'ModelTask' => [
+                'type' => 'object',
+                'properties' => [
+                    'finishTime' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => true,
+                    ],
+                    'currentBytes' => [
+                        'type' => 'string',
+                    ],
+                    'errMsg' => [
+                        'type' => 'string',
+                    ],
+                    'finished' => [
+                        'type' => 'boolean',
+                    ],
+                    'updateTime' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'params' => [
+                        'type' => 'string',
+                    ],
+                    'speed' => [
+                        'type' => 'string',
+                    ],
+                    'result' => [
+                        'type' => 'any',
+                    ],
+                    'taskType' => [
+                        'type' => 'string',
+                    ],
+                    'total' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'deprecated' => true,
+                    ],
+                    'fileSize' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => true,
+                    ],
+                    'errCode' => [
+                        'type' => 'string',
+                    ],
+                    'extra' => [
+                        'type' => 'any',
+                    ],
+                    'finishedTime' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'totalBytes' => [
+                        'type' => 'string',
+                    ],
+                    'startTime' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'id' => [
+                        'type' => 'string',
+                    ],
+                    'taskId' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -489,6 +3627,38 @@
                         'required' => true,
                     ],
                     'refreshToken' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'OperationModelFileAction' => [
+                'type' => 'object',
+                'properties' => [
+                    'action' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'source' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'destination' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'target' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'OssSourceConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'bucket' => [
+                        'type' => 'string',
+                    ],
+                    'object' => [
                         'type' => 'string',
                     ],
                 ],
@@ -622,137 +3792,6 @@
                     ],
                 ],
             ],
-            'PipelineTrigger' => [
-                'type' => 'object',
-                'properties' => [
-                    'uid' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'generation' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'description' => [
-                        'type' => 'string',
-                    ],
-                    'kind' => [
-                        'type' => 'string',
-                    ],
-                    'createdTime' => [
-                        'type' => 'string',
-                    ],
-                    'name' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'minLength' => 1,
-                        'maxLength' => 63,
-                        'pattern' => '^(?![0-9]+$)(?!-)[a-zA-Z0-9-_]{0,63}(?<!-)$',
-                    ],
-                    'spec' => [
-                        '$ref' => '#/components/schemas/PipelineTriggerSpec',
-                    ],
-                    'labels' => [
-                        'type' => 'object',
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'resourceVersion' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                ],
-            ],
-            'PipelineTriggerEvent' => [
-                'type' => 'object',
-                'properties' => [
-                    'uid' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'generation' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'description' => [
-                        'type' => 'string',
-                    ],
-                    'kind' => [
-                        'type' => 'string',
-                    ],
-                    'createdTime' => [
-                        'type' => 'string',
-                    ],
-                    'name' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'minLength' => 1,
-                        'maxLength' => 63,
-                        'pattern' => '^(?![0-9]+$)(?!-)[a-zA-Z0-9-_]{0,63}(?<!-)$',
-                    ],
-                    'status' => [
-                        '$ref' => '#/components/schemas/PipelineTriggerEventStatus',
-                    ],
-                    'labels' => [
-                        'type' => 'object',
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'resourceVersion' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'spec' => [
-                        '$ref' => '#/components/schemas/PipelineTriggerEventSpec',
-                    ],
-                ],
-            ],
-            'PipelineTriggerEventSpec' => [
-                'type' => 'object',
-                'properties' => [
-                    'payload' => [
-                        '$ref' => '#/components/schemas/EventPayload',
-                    ],
-                    'triggerName' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-            'PipelineTriggerEventStatus' => [
-                'type' => 'object',
-                'properties' => [
-                    'status' => [
-                        'type' => 'string',
-                    ],
-                    'firedPipelineName' => [
-                        'type' => 'string',
-                    ],
-                    'releaseDetail' => [
-                        '$ref' => '#/components/schemas/ReleaseDetail',
-                    ],
-                    'errorMessage' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-            'PipelineTriggerSpec' => [
-                'type' => 'object',
-                'properties' => [
-                    'roleArn' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'eventFilter' => [
-                        '$ref' => '#/components/schemas/EventFilterConfig',
-                        'required' => true,
-                    ],
-                    'runPipeline' => [
-                        '$ref' => '#/components/schemas/RunPipelineConfig',
-                    ],
-                ],
-            ],
             'Project' => [
                 'type' => 'object',
                 'properties' => [
@@ -773,19 +3812,11 @@
                         'maxLength' => 40,
                         'pattern' => '[a-z](?!-)[a-z0-9-]{1,40}(?<!-)',
                     ],
-                    'spec' => [
-                        '$ref' => '#/components/schemas/ProjectSpec',
-                        'required' => false,
-                    ],
                     'labels' => [
                         'type' => 'object',
                         'additionalProperties' => [
                             'type' => 'string',
                         ],
-                    ],
-                    'resourceVersion' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
                     ],
                     'description' => [
                         'type' => 'string',
@@ -793,38 +3824,20 @@
                     'status' => [
                         '$ref' => '#/components/schemas/ProjectStatus',
                     ],
-                    'generation' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
                 ],
             ],
             'ProjectSpec' => [
                 'type' => 'object',
-                'properties' => [
-                    'templateConfig' => [
-                        '$ref' => '#/components/schemas/TemplateConfig',
-                    ],
-                    'roleArn' => [
-                        'type' => 'string',
-                    ],
-                    'token' => [
-                        'type' => 'string',
-                    ],
-                ],
+                'properties' => [],
             ],
             'ProjectStatus' => [
                 'type' => 'object',
                 'properties' => [
-                    'latestReleaseDetail' => [
-                        '$ref' => '#/components/schemas/ReleaseDetail',
-                    ],
-                    'observedGeneration' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'observedTime' => [
-                        'type' => 'string',
+                    'services' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ServiceMeta',
+                        ],
                     ],
                 ],
             ],
@@ -860,44 +3873,6 @@
                     ],
                 ],
             ],
-            'ReleaseDetail' => [
-                'type' => 'object',
-                'properties' => [
-                    'pipelineTriggerEventName' => [
-                        'type' => 'string',
-                    ],
-                    'bizStatus' => [
-                        'type' => 'string',
-                    ],
-                    'pipelineName' => [
-                        'type' => 'string',
-                    ],
-                    'templateConfigSnapshot' => [
-                        '$ref' => '#/components/schemas/TemplateConfig',
-                    ],
-                    'releaseOutputs' => [
-                        'type' => 'object',
-                    ],
-                    'finishedTime' => [
-                        'type' => 'string',
-                    ],
-                    'repositorySnapshot' => [
-                        '$ref' => '#/components/schemas/RepositorySpec',
-                    ],
-                    'gitEventSnapshot' => [
-                        '$ref' => '#/components/schemas/GitEventSnapshot',
-                    ],
-                    'message' => [
-                        'type' => 'string',
-                    ],
-                    'latestTaskExecError' => [
-                        '$ref' => '#/components/schemas/TaskExecError',
-                    ],
-                    'envName' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
             'Repository' => [
                 'type' => 'object',
                 'properties' => [
@@ -928,32 +3903,23 @@
                             'type' => 'string',
                         ],
                     ],
-                    'resourceVersion' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
                     'description' => [
                         'type' => 'string',
                     ],
-                    'generation' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
                 ],
             ],
-            'RepositoryConfig' => [
+            'RepositorySourceConfig' => [
                 'type' => 'object',
                 'properties' => [
                     'repositoryName' => [
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'branchName' => [
-                        'type' => 'string',
-                        'required' => true,
+                    'codeVersion' => [
+                        '$ref' => '#/components/schemas/CodeVersionReference',
                     ],
-                    'manifest' => [
-                        'type' => 'string',
+                    'filter' => [
+                        '$ref' => '#/components/schemas/EventFilterConfig',
                     ],
                 ],
             ],
@@ -986,60 +3952,6 @@
                     ],
                 ],
             ],
-            'ResourceDetail' => [
-                'type' => 'object',
-                'properties' => [
-                    'address' => [
-                        'type' => 'string',
-                    ],
-                    'mode' => [
-                        'type' => 'string',
-                    ],
-                    'type' => [
-                        'type' => 'string',
-                    ],
-                    'name' => [
-                        'type' => 'string',
-                    ],
-                    'attributeValues' => [
-                        'type' => 'object',
-                    ],
-                ],
-            ],
-            'ResourceDrift' => [
-                'type' => 'object',
-                'properties' => [
-                    'address' => [
-                        'type' => 'string',
-                    ],
-                    'mode' => [
-                        'type' => 'string',
-                    ],
-                    'type' => [
-                        'type' => 'string',
-                    ],
-                    'name' => [
-                        'type' => 'string',
-                    ],
-                    'change' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'actions' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                            'before' => [
-                                'type' => 'any',
-                            ],
-                            'after' => [
-                                'type' => 'any',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
             'RunAfter' => [
                 'type' => 'object',
                 'properties' => [
@@ -1048,47 +3960,214 @@
                     ],
                 ],
             ],
-            'RunPipelineConfig' => [
+            'ServiceBaseline' => [
                 'type' => 'object',
                 'properties' => [
-                    'yamlFilePath' => [
+                    'serviceInstance' => [
+                        '$ref' => '#/components/schemas/ServiceInstance',
+                    ],
+                ],
+            ],
+            'ServiceChanges' => [
+                'type' => 'object',
+                'properties' => [
+                    'merge' => [
+                        'type' => 'object',
+                    ],
+                ],
+            ],
+            'ServiceCommandStep' => [
+                'type' => 'object',
+                'properties' => [
+                    'run' => [
                         'type' => 'string',
                     ],
-                    'yamlFileContent' => [
+                    'path' => [
                         'type' => 'string',
                     ],
-                    'pipelineSpec' => [
-                        '$ref' => '#/components/schemas/PipelineSpec',
+                ],
+            ],
+            'ServiceComponentStep' => [
+                'type' => 'object',
+                'properties' => [
+                    'component' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ServiceConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'props' => [
+                        'type' => 'object',
+                    ],
+                    'source' => [
+                        '$ref' => '#/components/schemas/SourceConfig',
+                    ],
+                    'build' => [
+                        '$ref' => '#/components/schemas/BuildConfig',
                     ],
                     'variables' => [
-                        'type' => 'array',
-                        'items' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
                             '$ref' => '#/components/schemas/Variable',
+                        ],
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'component' => [
+                        'type' => 'string',
+                    ],
+                    'artifact' => [
+                        '$ref' => '#/components/schemas/ArtifactMeta',
+                    ],
+                ],
+            ],
+            'ServiceDeployment' => [
+                'type' => 'object',
+                'properties' => [
+                    'uid' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'kind' => [
+                        'type' => 'string',
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'environmentDeploymentName' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 63,
+                        'pattern' => '^(?![0-9]+$)(?!-)[a-zA-Z0-9-_]{0,63}(?<!-)$',
+                    ],
+                    'status' => [
+                        '$ref' => '#/components/schemas/ServiceDeploymentStatus',
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
                         ],
                     ],
                 ],
             ],
-            'ServiceSpec' => [
+            'ServiceDeploymentSpec' => [
                 'type' => 'object',
                 'properties' => [
-                    'environment' => [
-                        'type' => 'string',
-                        'required' => true,
+                    'changes' => [
+                        '$ref' => '#/components/schemas/ServiceChanges',
                     ],
-                    'roleArn' => [
+                    'baseline' => [
+                        '$ref' => '#/components/schemas/ServiceBaseline',
+                    ],
+                    'target' => [
+                        '$ref' => '#/components/schemas/ServiceBaseline',
+                    ],
+                    'skipRemoveResources' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'ServiceDeploymentStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'phase' => [
                         'type' => 'string',
                     ],
-                    'template' => [
+                    'pipelineName' => [
                         'type' => 'string',
-                        'required' => true,
                     ],
-                    'templateVariables' => [
+                    'startTime' => [
+                        'type' => 'string',
+                    ],
+                    'finishedTime' => [
+                        'type' => 'string',
+                    ],
+                    'taskName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ServiceInstance' => [
+                'type' => 'object',
+                'properties' => [
+                    'config' => [
+                        '$ref' => '#/components/schemas/ServiceConfig',
+                    ],
+                    'variables' => [
                         'type' => 'object',
-                        'required' => true,
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/Variable',
+                        ],
                     ],
-                    'templateVersion' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
+                    'outputs' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'any',
+                        ],
+                    ],
+                    'latestDeployment' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                            ],
+                            'startTime' => [
+                                'type' => 'string',
+                            ],
+                            'finishedTime' => [
+                                'type' => 'string',
+                            ],
+                            'phase' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'ServiceMeta' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ServicePluginStep' => [
+                'type' => 'object',
+                'properties' => [
+                    'plugin' => [
+                        'type' => 'string',
+                    ],
+                    'args' => [
+                        'type' => 'object',
+                    ],
+                ],
+            ],
+            'SourceConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'template' => [
+                        '$ref' => '#/components/schemas/TemplateSourceConfig',
+                    ],
+                    'repository' => [
+                        '$ref' => '#/components/schemas/RepositorySourceConfig',
+                    ],
+                    'oss' => [
+                        '$ref' => '#/components/schemas/OssSourceConfig',
                     ],
                 ],
             ],
@@ -1314,9 +4393,45 @@
                     ],
                 ],
             ],
+            'Template' => [
+                'type' => 'object',
+                'properties' => [
+                    'uid' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'kind' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'spec' => [
+                        '$ref' => '#/components/schemas/TemplateSpec',
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'status' => [
+                        '$ref' => '#/components/schemas/TemplateStatus',
+                    ],
+                ],
+            ],
             'TemplateConfig' => [
                 'type' => 'object',
                 'properties' => [
+                    'variableValues' => [
+                        '$ref' => '#/components/schemas/TemplateVariableValueMap',
+                    ],
                     'templateName' => [
                         'type' => 'string',
                         'required' => true,
@@ -1324,45 +4439,365 @@
                     'parameters' => [
                         'type' => 'object',
                         'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'serviceNameChanges' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
-            'TerraformInputVariable' => [
+            'TemplateParameterSchema' => [
                 'type' => 'object',
                 'properties' => [
-                    'defaultJson' => [
+                    'default' => [
+                        'type' => 'any',
+                    ],
+                    'pattern' => [
                         'type' => 'string',
                     ],
                     'description' => [
+                        'type' => 'string',
+                    ],
+                    'roleExtension' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'service' => [
+                                'type' => 'string',
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                            ],
+                            'authorities' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'sensitive' => [
+                        'type' => 'boolean',
+                    ],
+                    'title' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'string',
+                            'number',
+                            'integer',
+                            'boolean',
+                        ],
+                    ],
+                    'required' => [
+                        'type' => 'boolean',
+                    ],
+                    'enum' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'TemplateRevision' => [
+                'type' => 'object',
+                'properties' => [
+                    'uid' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'templateName' => [
+                        'type' => 'string',
+                    ],
+                    'kind' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'spec' => [
+                        '$ref' => '#/components/schemas/TemplateSpec',
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'status' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'phase' => [
+                                'type' => 'string',
+                            ],
+                            'pipelineName' => [
+                                'type' => 'string',
+                            ],
+                            'packageUrl' => [
+                                'type' => 'string',
+                            ],
+                            'templateUrl' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'TemplateServiceConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'artifact' => [
+                        '$ref' => '#/components/schemas/ArtifactMeta',
+                    ],
+                    'variables' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/TemplateParameterSchema',
+                        ],
+                    ],
+                    'component' => [
+                        'type' => 'string',
+                    ],
+                    'build' => [
+                        '$ref' => '#/components/schemas/BuildConfig',
+                    ],
+                    'source' => [
+                        '$ref' => '#/components/schemas/SourceConfig',
+                    ],
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                    'props' => [
+                        'type' => 'object',
+                    ],
+                ],
+            ],
+            'TemplateSourceConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'downloadUrl' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'TemplateSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'license' => [
+                        'type' => 'string',
+                    ],
+                    'registryToken' => [
+                        'type' => 'string',
+                    ],
+                    'variables' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/TemplateParameterSchema',
+                        ],
+                    ],
+                    'author' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'readme' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'source' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'repository' => [
+                                '$ref' => '#/components/schemas/RepositorySourceConfig',
+                            ],
+                        ],
+                    ],
+                    'services' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            '$ref' => '#/components/schemas/TemplateServiceConfig',
+                        ],
+                    ],
+                    'packageName' => [
+                        'type' => 'string',
+                    ],
+                    'category' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'version' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'TemplateStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'phase' => [
+                        'type' => 'string',
+                    ],
+                    'latestDeployment' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'phase' => [
+                                'type' => 'string',
+                            ],
+                            'pipelineName' => [
+                                'type' => 'string',
+                            ],
+                            'finishedTime' => [
+                                'type' => 'string',
+                            ],
+                            'startTime' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'latestVersion' => [
+                        'type' => 'string',
+                    ],
+                    'packageUrl' => [
+                        'type' => 'string',
+                    ],
+                    'templateUrl' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'TemplateVariableValueMap' => [
+                'type' => 'object',
+                'properties' => [
+                    'shared' => [
+                        'type' => 'object',
+                    ],
+                    'services' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'object',
+                            'additionalProperties' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'Tool' => [
+                'type' => 'object',
+                'properties' => [
+                    'toolId' => [
+                        'type' => 'string',
+                    ],
+                    'path' => [
+                        'type' => 'string',
+                    ],
+                    'method' => [
+                        'type' => 'string',
+                    ],
+                    'toolName' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'Toolset' => [
+                'type' => 'object',
+                'properties' => [
+                    'uid' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'kind' => [
                         'type' => 'string',
                     ],
                     'name' => [
                         'type' => 'string',
                         'required' => true,
                     ],
-                    'nullable' => [
-                        'type' => 'boolean',
+                    'createdTime' => [
+                        'type' => 'string',
                     ],
-                    'sensitive' => [
-                        'type' => 'boolean',
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'status' => [
+                        '$ref' => '#/components/schemas/ToolsetStatus',
+                    ],
+                ],
+            ],
+            'ToolsetAuthorization' => [
+                'type' => 'object',
+                'properties' => [
+                    'authConfig' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                     'type' => [
                         'type' => 'string',
                     ],
                 ],
             ],
-            'TerraformOutputValue' => [
+            'ToolsetSchema' => [
                 'type' => 'object',
                 'properties' => [
-                    'name' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'description' => [
+                    'detail' => [
                         'type' => 'string',
                     ],
-                    'sensitive' => [
-                        'type' => 'boolean',
+                    'type' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ToolsetSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'authorization' => [
+                        '$ref' => '#/components/schemas/ToolsetAuthorization',
+                    ],
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ToolsetSchema',
+                    ],
+                ],
+            ],
+            'ToolsetStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'phase' => [
+                        'type' => 'string',
+                    ],
+                    'outputs' => [
+                        'type' => 'object',
+                    ],
+                    'observedTime' => [
+                        'type' => 'string',
+                    ],
+                    'observedGeneration' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -1370,9 +4805,62 @@
                 'type' => 'object',
                 'properties' => [
                     'value' => [
+                        'type' => 'any',
+                    ],
+                    'sensitive' => [
+                        'type' => 'boolean',
+                    ],
+                    'encrypted' => [
+                        'type' => 'boolean',
+                    ],
+                ],
+            ],
+            'WebhookCodeContext' => [
+                'type' => 'object',
+                'properties' => [
+                    'description' => [
                         'type' => 'string',
                     ],
-                    'name' => [
+                    'message' => [
+                        'type' => 'string',
+                    ],
+                    'eventType' => [
+                        'type' => 'string',
+                    ],
+                    'commitID' => [
+                        'type' => 'string',
+                    ],
+                    'branch' => [
+                        'type' => 'string',
+                    ],
+                    'sourceBranch' => [
+                        'type' => 'string',
+                    ],
+                    'title' => [
+                        'type' => 'string',
+                    ],
+                    'tag' => [
+                        'type' => 'string',
+                    ],
+                    'prType' => [
+                        'type' => 'string',
+                    ],
+                    'targetBranch' => [
+                        'type' => 'string',
+                    ],
+                    'repoUrl' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'open_struct_OssSourceConfig' => [
+                'type' => 'object',
+                'deprecated' => true,
+                'properties' => [
+                    'bucket' => [
+                        'type' => 'string',
+                    ],
+                    'object' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1380,6 +4868,447 @@
         ],
     ],
     'apis' => [
+        'UpdateToolset' => [
+            'path' => '/2023-07-14/toolsets/{name}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/Toolset',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListToolsets' => [
+            'path' => '/2023-07-14/toolsets',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'labelSelector',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetToolset' => [
+            'path' => '/2023-07-14/toolsets/{name}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteToolset' => [
+            'path' => '/2023-07-14/toolsets/{name}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateToolset' => [
+            'path' => '/2023-07-14/toolsets',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/Toolset',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'RenderServicesByTemplate' => [
+            'path' => '/2023-07-14/templates/action/renderServices',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'templateName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'parameters' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'variableValues' => [
+                                '$ref' => '#/components/schemas/TemplateVariableValueMap',
+                                'required' => false,
+                            ],
+                            'serviceNameChanges' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'additionalProperties' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'projectName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'FetchArtifactDownloadUrl' => [
+            'path' => '/2023-07-14/artifacts/{name}/fetchCode',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'FetchArtifactTempBucketToken' => [
+            'path' => '/2023-07-14/artifacts/action/fetchTempBucketToken',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'GetArtifact' => [
+            'path' => '/2023-07-14/artifacts/{name}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'PutArtifact' => [
+            'path' => '/2023-07-14/artifacts/{name}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/Artifact',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'force',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteArtifact' => [
+            'path' => '/2023-07-14/artifacts/{name}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateArtifact' => [
+            'path' => '/2023-07-14/artifacts',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/Artifact',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'CreateProject' => [
             'path' => '/2023-07-14/projects',
             'methods' => [
@@ -1456,47 +5385,6 @@
         'UpdateProject' => [
             'path' => '/2023-07-14/projects/{name}',
             'methods' => [
-                'patch',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/Project',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'PutProject' => [
-            'path' => '/2023-07-14/projects/{name}',
-            'methods' => [
                 'put',
             ],
             'schemes' => [
@@ -1530,14 +5418,6 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'force',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -1633,8 +5513,213 @@
                 ],
             ],
         ],
+        'DeployEnvironment' => [
+            'path' => '/2023-07-14/projects/{projectName}/environments/{name}/deploy',
+            'methods' => [
+                'patch',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'projectName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/DeployEnvironmentOptions',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetEnvironmentDeployment' => [
+            'path' => '/2023-07-14/environmentdeployments/{name}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetServiceDeployment' => [
+            'path' => '/2023-07-14/servicedeployments/{name}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListServiceDeployments' => [
+            'path' => '/2023-07-14/servicedeployments',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'labelSelector',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'keyword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'PreviewEnvironment' => [
+            'path' => '/2023-07-14/projects/{projectName}/environments/{name}/preview',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'projectName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'CreateEnvironment' => [
-            'path' => '/2023-07-14/projects/{project}/environments',
+            'path' => '/2023-07-14/projects/{projectName}/environments',
             'methods' => [
                 'post',
             ],
@@ -1663,7 +5748,7 @@
                     ],
                 ],
                 [
-                    'name' => 'project',
+                    'name' => 'projectName',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
@@ -1673,7 +5758,7 @@
             ],
         ],
         'DeleteEnvironment' => [
-            'path' => '/2023-07-14/projects/{project}/environments/{name}',
+            'path' => '/2023-07-14/projects/{projectName}/environments/{name}',
             'methods' => [
                 'delete',
             ],
@@ -1694,7 +5779,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'project',
+                    'name' => 'projectName',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
@@ -1712,54 +5797,7 @@
             ],
         ],
         'UpdateEnvironment' => [
-            'path' => '/2023-07-14/projects/{project}/environments/{name}',
-            'methods' => [
-                'patch',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/Environment',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'project',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'PutEnvironment' => [
-            'path' => '/2023-07-14/projects/{project}/environments/{name}',
+            'path' => '/2023-07-14/projects/{projectName}/environments/{name}',
             'methods' => [
                 'put',
             ],
@@ -1788,7 +5826,7 @@
                     ],
                 ],
                 [
-                    'name' => 'project',
+                    'name' => 'projectName',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
@@ -1803,18 +5841,10 @@
                         'required' => true,
                     ],
                 ],
-                [
-                    'name' => 'force',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
         'ListEnvironments' => [
-            'path' => '/2023-07-14/projects/{project}/environments/',
+            'path' => '/2023-07-14/projects/{projectName}/environments/',
             'methods' => [
                 'get',
             ],
@@ -1835,6 +5865,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'projectName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
                     'name' => 'labelSelector',
                     'in' => 'query',
                     'style' => 'simple',
@@ -1845,14 +5883,6 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                    ],
-                ],
-                [
-                    'name' => 'project',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
                     ],
                 ],
                 [
@@ -1884,7 +5914,7 @@
             ],
         ],
         'GetEnvironment' => [
-            'path' => '/2023-07-14/projects/{project}/environments/{name}',
+            'path' => '/2023-07-14/projects/{projectName}/environments/{name}',
             'methods' => [
                 'get',
             ],
@@ -1905,7 +5935,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'project',
+                    'name' => 'projectName',
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
@@ -1918,39 +5948,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateConnection' => [
-            'path' => '/2023-07-14/connections',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/Connection',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -2056,196 +6053,6 @@
                 ],
             ],
         ],
-        'GetConnection' => [
-            'path' => '/2023-07-14/connections/{name}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'RefreshConnection' => [
-            'path' => '/2023-07-14/connections/{name}/refresh',
-            'methods' => [
-                'patch',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateRepository' => [
-            'path' => '/2023-07-14/repositories',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/Repository',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteRepository' => [
-            'path' => '/2023-07-14/repositories/{name}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListRepositories' => [
-            'path' => '/2023-07-14/repositories',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'labelSelector',
-                    'in' => 'query',
-                    'style' => 'simple',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'pageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'GetRepository' => [
             'path' => '/2023-07-14/repositories/{name}',
             'methods' => [
@@ -2262,406 +6069,6 @@
             ],
             'consumes' => [
                 'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreatePipelineTrigger' => [
-            'path' => '/2023-07-14/pipelinetriggers',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/PipelineTrigger',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeletePipelineTrigger' => [
-            'path' => '/2023-07-14/pipelinetriggers/{name}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdatePipelineTrigger' => [
-            'path' => '/2023-07-14/pipelinetriggers/{name}',
-            'methods' => [
-                'patch',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/PipelineTrigger',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'PutPipelineTrigger' => [
-            'path' => '/2023-07-14/pipelinetriggers/{name}',
-            'methods' => [
-                'put',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/PipelineTrigger',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'force',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListPipelineTriggers' => [
-            'path' => '/2023-07-14/pipelinetriggers',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'labelSelector',
-                    'in' => 'query',
-                    'style' => 'simple',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'pageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetPipelineTrigger' => [
-            'path' => '/2023-07-14/pipelinetriggers/{name}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreatePipelineTriggerEvent' => [
-            'path' => '/2023-07-14/pipelinetriggerevents',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'body',
-                    'in' => 'body',
-                    'style' => 'json',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/PipelineTriggerEvent',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeletePipelineTriggerEvent' => [
-            'path' => '/2023-07-14/pipelinetriggerevents/{name}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'name',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListPipelineTriggerEvents' => [
-            'path' => '/2023-07-14/pipelinetriggerevents',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'labelSelector',
-                    'in' => 'query',
-                    'style' => 'simple',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'pageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'pageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'GetPipelineTriggerEvent' => [
-            'path' => '/2023-07-14/pipelinetriggerevents/{name}',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
             ],
             'produces' => [
                 'application/json',
@@ -3158,6 +6565,89 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ActivateConnection' => [
+            'path' => '/2023-07-14/connections/{name}/activate',
+            'methods' => [
+                'patch',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'account' => [
+                                '$ref' => '#/components/schemas/GitAccount',
+                                'required' => false,
+                            ],
+                            'credential' => [
+                                '$ref' => '#/components/schemas/OAuthCredential',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'FetchConnectionCredential' => [
+            'path' => '/2023-07-14/connections/{name}/fetchCredential',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'name',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

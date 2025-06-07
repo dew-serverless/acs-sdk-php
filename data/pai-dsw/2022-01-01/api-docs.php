@@ -552,6 +552,10 @@
                                     ],
                                 ],
                             ],
+                            'OversoldType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -831,6 +835,10 @@
                             ],
                             'DynamicMount' => [
                                 '$ref' => '#/components/schemas/DynamicMount',
+                                'required' => false,
+                            ],
+                            'OversoldType' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -2012,6 +2020,14 @@
                 ],
                 [
                     'name' => 'Order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

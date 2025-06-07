@@ -3375,6 +3375,19 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'InstanceBillingCycle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Hour',
+                            'Day',
+                            'Month',
+                        ],
+                    ],
+                ],
             ],
         ],
         'CreateNetwork' => [
@@ -11520,6 +11533,35 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'LoadOpt',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'BlockRwSplit' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'BlockRwSplitSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Cache' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'CacheSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],

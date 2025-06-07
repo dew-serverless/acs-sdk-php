@@ -7,6 +7,18 @@
     ],
     'components' => [
         'schemas' => [
+            'InstanceMetadataOptions' => [
+                'type' => 'object',
+                'properties' => [
+                    'http_tokens' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'optional',
+                            'required',
+                        ],
+                    ],
+                ],
+            ],
             'addon' => [
                 'type' => 'object',
                 'properties' => [
@@ -2945,6 +2957,10 @@
                                                 'type' => 'boolean',
                                                 'required' => false,
                                             ],
+                                            'approval_required' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
                                     'auto_vul_fix' => [
@@ -3712,6 +3728,10 @@
                                         'required' => false,
                                         'properties' => [
                                             'restart_node' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                            'approval_required' => [
                                                 'type' => 'boolean',
                                                 'required' => false,
                                             ],
@@ -8391,37 +8411,6 @@
                 ],
             ],
         ],
-        'CancelOperationPlan' => [
-            'path' => '/operation/plans/{plan_id}',
-            'methods' => [
-                'delete',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'plan_id',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'ListOperationPlans' => [
             'path' => '/operation/plans',
             'methods' => [
@@ -8454,6 +8443,37 @@
                 [
                     'name' => 'type',
                     'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CancelOperationPlan' => [
+            'path' => '/operation/plans/{plan_id}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'plan_id',
+                    'in' => 'path',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

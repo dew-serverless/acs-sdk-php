@@ -199,6 +199,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCostBudgetsSummaryAsync($arguments = [])
  * @method \Dew\Acs\Result renewChangeInstance(array $arguments = [])
  * @method \Http\Promise\Promise renewChangeInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result listInvoiceTitle(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise listInvoiceTitleAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result listInvoiceCandidate(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise listInvoiceCandidateAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result createInvoice(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise createInvoiceAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result createFundAccountPayRelation(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise createFundAccountPayRelationAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result setFundAccountLowAvailableAmountAlarm(array $arguments = []) {@since 2023-09-30}
@@ -237,16 +243,26 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listReportDefinitionsAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result deleteReportDefinition(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise deleteReportDefinitionAsync($arguments = []) {@since 2023-09-30}
- * @method \Dew\Acs\Result queryCostCenterResource(array $arguments = []) {@since 2023-09-30}
- * @method \Http\Promise\Promise queryCostCenterResourceAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result createCostCenter(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise createCostCenterAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result modifyCostCenter(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise modifyCostCenterAsync($arguments = []) {@since 2023-09-30}
- * @method \Dew\Acs\Result queryCostCenter(array $arguments = []) {@since 2023-09-30}
- * @method \Http\Promise\Promise queryCostCenterAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result deleteCostCenter(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise deleteCostCenterAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result queryCostCenter(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise queryCostCenterAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result queryCostCenterResource(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise queryCostCenterResourceAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result createCostCenterRule(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise createCostCenterRuleAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result modifyCostCenterRule(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise modifyCostCenterRuleAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result deleteCostCenterRule(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise deleteCostCenterRuleAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result queryCostCenterRule(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise queryCostCenterRuleAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result allocateCostCenterResource(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise allocateCostCenterResourceAsync($arguments = []) {@since 2023-09-30}
  */
 final class BssOpenApiClient extends AcsClient
 {

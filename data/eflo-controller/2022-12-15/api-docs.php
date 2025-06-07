@@ -140,6 +140,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'LoginPassword' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],
@@ -1075,6 +1079,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'LoginPassword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -1157,6 +1165,14 @@
                 ],
                 [
                     'name' => 'ImageId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LoginPassword',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

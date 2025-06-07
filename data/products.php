@@ -821,6 +821,14 @@
         'defaultVersion' => '2019-03-15',
     ],
     [
+        'code' => 'Devs',
+        'style' => 'RPC',
+        'versions' => [
+            '2023-07-14',
+        ],
+        'defaultVersion' => '2023-07-14',
+    ],
+    [
         'code' => 'ROS',
         'style' => 'RPC',
         'versions' => [
@@ -2241,6 +2249,14 @@
             '2016-12-28',
         ],
         'defaultVersion' => '2016-12-28',
+    ],
+    [
+        'code' => 'Dms',
+        'style' => '',
+        'versions' => [
+            '2025-04-14',
+        ],
+        'defaultVersion' => '2025-04-14',
     ],
     [
         'code' => 'Agency',

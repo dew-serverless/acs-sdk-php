@@ -221,10 +221,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise cancelTaskAsync($arguments = [])
  * @method \Dew\Acs\Result describeClusterTasks(array $arguments = [])
  * @method \Http\Promise\Promise describeClusterTasksAsync($arguments = [])
- * @method \Dew\Acs\Result cancelOperationPlan(array $arguments = [])
- * @method \Http\Promise\Promise cancelOperationPlanAsync($arguments = [])
  * @method \Dew\Acs\Result listOperationPlans(array $arguments = [])
  * @method \Http\Promise\Promise listOperationPlansAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelOperationPlan(array $arguments = [])
+ * @method \Http\Promise\Promise cancelOperationPlanAsync($arguments = [])
  * @method \Dew\Acs\Result getUpgradeStatus(array $arguments = []) {@deprecated 2015-12-15}
  * @method \Http\Promise\Promise getUpgradeStatusAsync($arguments = []) {@deprecated 2015-12-15}
  * @method \Dew\Acs\Result pauseClusterUpgrade(array $arguments = []) {@deprecated 2015-12-15}

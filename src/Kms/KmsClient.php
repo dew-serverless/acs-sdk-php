@@ -193,6 +193,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise setSecretPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result releaseKmsInstance(array $arguments = [])
  * @method \Http\Promise\Promise releaseKmsInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result getDefaultKmsInstance(array $arguments = [])
+ * @method \Http\Promise\Promise getDefaultKmsInstanceAsync($arguments = [])
  */
 final class KmsClient extends AcsClient
 {

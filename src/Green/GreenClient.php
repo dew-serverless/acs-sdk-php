@@ -7,10 +7,10 @@ namespace Dew\Acs\Green;
 use Dew\Acs\AcsClient;
 
 /**
- * @method \Dew\Acs\Result textModeration(array $arguments = [])
- * @method \Http\Promise\Promise textModerationAsync($arguments = [])
  * @method \Dew\Acs\Result textModerationPlus(array $arguments = [])
  * @method \Http\Promise\Promise textModerationPlusAsync($arguments = [])
+ * @method \Dew\Acs\Result textModeration(array $arguments = [])
+ * @method \Http\Promise\Promise textModerationAsync($arguments = [])
  * @method \Dew\Acs\Result imageModeration(array $arguments = [])
  * @method \Http\Promise\Promise imageModerationAsync($arguments = [])
  * @method \Dew\Acs\Result imageAsyncModeration(array $arguments = [])

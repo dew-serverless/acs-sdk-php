@@ -564,14 +564,6 @@
                     ],
                 ],
                 [
-                    'name' => 'JobScheduler',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'SecurityPolicy',
                     'in' => 'query',
                     'style' => 'json',
@@ -889,6 +881,8 @@
                                         'Expired',
                                         'Deleting',
                                         'Deleted',
+                                        'Suspended',
+                                        'Restarting',
                                     ],
                                 ],
                             ],
@@ -1525,8 +1519,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'ehpcinstant.us-west-1.aliyuncs.com',
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'ehpcinstant.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
@@ -1559,6 +1553,10 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'ehpcinstant.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'ehpcinstant.us-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',

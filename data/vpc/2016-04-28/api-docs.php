@@ -30916,6 +30916,14 @@
                         'maxItems' => 10,
                     ],
                 ],
+                [
+                    'name' => 'VpcId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'AssociateRouteTablesWithVpcGatewayEndpoint' => [

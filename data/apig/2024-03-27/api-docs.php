@@ -4658,6 +4658,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'includeBuiltinAiGateway',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreatePluginAttachment' => [

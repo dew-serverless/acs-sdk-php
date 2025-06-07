@@ -1462,12 +1462,15 @@
             'ServiceSpec' => [
                 'type' => 'object',
                 'properties' => [
-                    'ExtraPorts' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
                     'ServiceMode' => [
                         'type' => 'string',
+                    ],
+                    'ExtraPorts' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int32',
+                        ],
                     ],
                     'DefaultPort' => [
                         'type' => 'integer',

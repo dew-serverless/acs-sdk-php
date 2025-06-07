@@ -364,6 +364,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'BuildId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetIssue' => [

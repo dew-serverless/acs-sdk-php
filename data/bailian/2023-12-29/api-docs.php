@@ -653,7 +653,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1304,6 +1304,14 @@
                 ],
                 [
                     'name' => 'DocumentName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableNameLike',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

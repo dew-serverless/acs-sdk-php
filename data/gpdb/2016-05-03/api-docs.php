@@ -13130,7 +13130,7 @@
         ],
         [
             'regionId' => 'cn-hongkong',
-            'endpoint' => 'gpdb.aliyuncs.com',
+            'endpoint' => 'gpdb.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',
@@ -13142,7 +13142,7 @@
         ],
         [
             'regionId' => 'ap-southeast-1',
-            'endpoint' => 'gpdb.aliyuncs.com',
+            'endpoint' => 'gpdb.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-2',

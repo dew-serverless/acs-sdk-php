@@ -233,6 +233,9 @@
                     'ImportInfo' => [
                         'type' => 'string',
                     ],
+                    'Edition' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'DatasetFileMeta' => [
@@ -5246,6 +5249,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'Edition' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -5330,6 +5337,10 @@
                                 'required' => false,
                             ],
                             'Options' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Edition' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

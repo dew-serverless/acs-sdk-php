@@ -53,6 +53,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise screenLCAsync($arguments = [])
  * @method \Dew\Acs\Result predictCVD(array $arguments = [])
  * @method \Http\Promise\Promise predictCVDAsync($arguments = [])
+ * @method \Dew\Acs\Result generateReport(array $arguments = [])
+ * @method \Http\Promise\Promise generateReportAsync($arguments = [])
  */
 final class ImageprocessClient extends AcsClient
 {

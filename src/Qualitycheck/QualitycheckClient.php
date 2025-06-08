@@ -57,6 +57,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteBusinessCategoryAsync($arguments = [])
  * @method \Dew\Acs\Result getBusinessCategoryList(array $arguments = [])
  * @method \Http\Promise\Promise getBusinessCategoryListAsync($arguments = [])
+ * @method \Dew\Acs\Result getSchemeTaskConfig(array $arguments = [])
+ * @method \Http\Promise\Promise getSchemeTaskConfigAsync($arguments = [])
  * @method \Dew\Acs\Result createSchemeTaskConfig(array $arguments = [])
  * @method \Http\Promise\Promise createSchemeTaskConfigAsync($arguments = [])
  * @method \Dew\Acs\Result updateSchemeTaskConfig(array $arguments = [])

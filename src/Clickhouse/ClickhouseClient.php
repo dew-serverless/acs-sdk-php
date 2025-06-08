@@ -169,6 +169,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeEndpointsAsync($arguments = []) {@since 2023-05-22}
  * @method \Dew\Acs\Result describeSlowLogTrend(array $arguments = []) {@since 2023-05-22}
  * @method \Http\Promise\Promise describeSlowLogTrendAsync($arguments = []) {@since 2023-05-22}
+ * @method \Dew\Acs\Result deleteBackupPolicy(array $arguments = []) {@since 2023-05-22}
+ * @method \Http\Promise\Promise deleteBackupPolicyAsync($arguments = []) {@since 2023-05-22}
  */
 final class ClickhouseClient extends AcsClient
 {

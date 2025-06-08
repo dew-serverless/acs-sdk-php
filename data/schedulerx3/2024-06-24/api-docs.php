@@ -638,6 +638,12 @@
                         'enum' => [
                             'xxljob',
                             'dify_workflow',
+                            'script_groovy',
+                            'script_shell',
+                            'script_python',
+                            'script_php',
+                            'script_nodejs',
+                            'script_powershell',
                         ],
                     ],
                 ],
@@ -694,9 +700,15 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
-                        'minLength' => 1,
-                        'maxLength' => 200,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Script',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -834,19 +846,6 @@
                     ],
                 ],
                 [
-                    'name' => 'Status',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'enum' => [
-                            '0',
-                            '1',
-                        ],
-                    ],
-                ],
-                [
                     'name' => 'ExecutorBlockStrategy',
                     'in' => 'formData',
                     'schema' => [
@@ -857,6 +856,19 @@
                             '1',
                             '2',
                             '3',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
                         ],
                     ],
                 ],
@@ -983,6 +995,14 @@
                         'type' => 'string',
                         'required' => false,
                         'maxLength' => 200,
+                    ],
+                ],
+                [
+                    'name' => 'Script',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1514,6 +1534,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'MseSessionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

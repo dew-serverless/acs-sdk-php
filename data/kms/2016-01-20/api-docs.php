@@ -4026,6 +4026,22 @@
                 ],
             ],
         ],
+        'GetDefaultKmsInstance' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
     ],
     'endpoints' => [
         [

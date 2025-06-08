@@ -373,10 +373,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getSparkConfigLogPathAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result startSparkSQLEngine(array $arguments = []) {@deprecated 2021-12-01} {@since 2021-12-01}
  * @method \Http\Promise\Promise startSparkSQLEngineAsync($arguments = []) {@deprecated 2021-12-01} {@since 2021-12-01}
- * @method \Dew\Acs\Result killSparkSQLEngine(array $arguments = []) {@since 2021-12-01}
- * @method \Http\Promise\Promise killSparkSQLEngineAsync($arguments = []) {@since 2021-12-01}
- * @method \Dew\Acs\Result getSparkSQLEngineState(array $arguments = []) {@since 2021-12-01}
- * @method \Http\Promise\Promise getSparkSQLEngineStateAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result killSparkSQLEngine(array $arguments = []) {@deprecated 2021-12-01} {@since 2021-12-01}
+ * @method \Http\Promise\Promise killSparkSQLEngineAsync($arguments = []) {@deprecated 2021-12-01} {@since 2021-12-01}
+ * @method \Dew\Acs\Result getSparkSQLEngineState(array $arguments = []) {@deprecated 2021-12-01} {@since 2021-12-01}
+ * @method \Http\Promise\Promise getSparkSQLEngineStateAsync($arguments = []) {@deprecated 2021-12-01} {@since 2021-12-01}
  * @method \Dew\Acs\Result describeSparkCodeOutput(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeSparkCodeOutputAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeSparkCodeLog(array $arguments = []) {@since 2021-12-01}

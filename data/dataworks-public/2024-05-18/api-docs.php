@@ -3515,6 +3515,14 @@
                     ],
                 ],
                 [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'PageNumber',
                     'in' => 'query',
                     'schema' => [
@@ -3902,6 +3910,14 @@
                     ],
                 ],
                 [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'PageNumber',
                     'in' => 'query',
                     'schema' => [
@@ -4209,6 +4225,14 @@
                     ],
                 ],
                 [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'PageNumber',
                     'in' => 'query',
                     'schema' => [
@@ -4492,6 +4516,14 @@
                 ],
                 [
                     'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -6842,7 +6874,6 @@
         ],
         'ListDeploymentPackageFiles' => [
             'methods' => [
-                'get',
                 'post',
             ],
             'schemes' => [

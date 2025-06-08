@@ -561,6 +561,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise buyPayAsYouGoOrderAsync($arguments = [])
  * @method \Dew\Acs\Result analyzeSQLLineage(array $arguments = [])
  * @method \Http\Promise\Promise analyzeSQLLineageAsync($arguments = [])
+ * @method \Dew\Acs\Result listTableColumns(array $arguments = [])
+ * @method \Http\Promise\Promise listTableColumnsAsync($arguments = [])
  */
 final class DmsEnterpriseClient extends AcsClient
 {

@@ -3257,7 +3257,8 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 100,
+                        'minItems' => 0,
+                        'maxItems' => 50,
                     ],
                 ],
                 [
@@ -3299,6 +3300,21 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AttackAppCategory',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'minItems' => 0,
+                        'maxItems' => 50,
                     ],
                 ],
             ],

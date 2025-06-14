@@ -2382,6 +2382,14 @@
         'defaultVersion' => '2024-03-11',
     ],
     [
+        'code' => 'Searchplat',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-04-01',
+        ],
+        'defaultVersion' => '2024-04-01',
+    ],
+    [
         'code' => 'AiContent',
         'style' => 'RPC',
         'versions' => [

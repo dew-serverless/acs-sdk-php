@@ -795,10 +795,6 @@
                                     ],
                                 ],
                             ],
-                            'videoCaptionFileUrl' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                         ],
                     ],
                 ],
@@ -1251,10 +1247,6 @@
                                         ],
                                     ],
                                 ],
-                            ],
-                            'videoCaptionFileUrl' => [
-                                'type' => 'string',
-                                'required' => false,
                             ],
                         ],
                     ],

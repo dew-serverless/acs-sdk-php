@@ -2616,6 +2616,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ImagesInput',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateMediaToSearchLib' => [
@@ -2929,6 +2937,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SearchMediaClipByFace' => [
@@ -3097,6 +3113,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SearchMediaByMultimodal' => [
@@ -3151,6 +3175,14 @@
                 ],
                 [
                     'name' => 'Text',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Namespace',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -3219,6 +3251,14 @@
                 ],
                 [
                     'name' => 'MediaId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Namespace',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -10254,24 +10294,6 @@
             ],
             'deprecated' => false,
             'parameters' => [
-                [
-                    'name' => 'PageNo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
                 [
                     'name' => 'Type',
                     'in' => 'query',

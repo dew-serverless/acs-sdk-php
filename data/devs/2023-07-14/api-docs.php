@@ -444,6 +444,9 @@
                             'triggerConfig' => [
                                 'type' => 'object',
                                 'properties' => [
+                                    'authConfig' => [
+                                        'type' => 'string',
+                                    ],
                                     'methods' => [
                                         'type' => 'array',
                                         'items' => [
@@ -931,6 +934,9 @@
                             'triggerConfig' => [
                                 'type' => 'object',
                                 'properties' => [
+                                    'authConfig' => [
+                                        'type' => 'string',
+                                    ],
                                     'methods' => [
                                         'type' => 'array',
                                         'items' => [
@@ -1247,6 +1253,9 @@
                             'triggerConfig' => [
                                 'type' => 'object',
                                 'properties' => [
+                                    'authConfig' => [
+                                        'type' => 'string',
+                                    ],
                                     'methods' => [
                                         'type' => 'array',
                                         'items' => [
@@ -1656,6 +1665,9 @@
                             'triggerConfig' => [
                                 'type' => 'object',
                                 'properties' => [
+                                    'authConfig' => [
+                                        'type' => 'string',
+                                    ],
                                     'methods' => [
                                         'type' => 'array',
                                         'items' => [
@@ -2021,6 +2033,9 @@
                             'triggerConfig' => [
                                 'type' => 'object',
                                 'properties' => [
+                                    'authConfig' => [
+                                        'type' => 'string',
+                                    ],
                                     'methods' => [
                                         'type' => 'array',
                                         'items' => [
@@ -2348,6 +2363,9 @@
                             'triggerConfig' => [
                                 'type' => 'object',
                                 'properties' => [
+                                    'authConfig' => [
+                                        'type' => 'string',
+                                    ],
                                     'methods' => [
                                         'type' => 'array',
                                         'items' => [
@@ -2718,6 +2736,9 @@
                             'triggerConfig' => [
                                 'type' => 'object',
                                 'properties' => [
+                                    'authConfig' => [
+                                        'type' => 'string',
+                                    ],
                                     'methods' => [
                                         'type' => 'array',
                                         'items' => [
@@ -3276,6 +3297,9 @@
             'GitLabConfig' => [
                 'type' => 'object',
                 'properties' => [
+                    'isFixedIP' => [
+                        'type' => 'boolean',
+                    ],
                     'uri' => [
                         'type' => 'string',
                     ],
@@ -4736,6 +4760,9 @@
                     'description' => [
                         'type' => 'string',
                     ],
+                    'spec' => [
+                        '$ref' => '#/components/schemas/ToolsetSpec',
+                    ],
                     'labels' => [
                         'type' => 'object',
                         'additionalProperties' => [
@@ -4775,9 +4802,6 @@
             'ToolsetSpec' => [
                 'type' => 'object',
                 'properties' => [
-                    'authorization' => [
-                        '$ref' => '#/components/schemas/ToolsetAuthorization',
-                    ],
                     'schema' => [
                         '$ref' => '#/components/schemas/ToolsetSchema',
                     ],

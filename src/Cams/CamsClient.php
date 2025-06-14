@@ -113,6 +113,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getChatappTemplateDetailAsync($arguments = [])
  * @method \Dew\Acs\Result deleteChatappTemplate(array $arguments = [])
  * @method \Http\Promise\Promise deleteChatappTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyChatappTemplateProperties(array $arguments = [])
+ * @method \Http\Promise\Promise modifyChatappTemplatePropertiesAsync($arguments = [])
  * @method \Dew\Acs\Result beeBotChat(array $arguments = [])
  * @method \Http\Promise\Promise beeBotChatAsync($arguments = [])
  * @method \Dew\Acs\Result beeBotAssociate(array $arguments = [])

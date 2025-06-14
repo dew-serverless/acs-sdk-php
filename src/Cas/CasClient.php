@@ -133,6 +133,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listClientCertificateAsync($arguments = []) {@since 2020-06-30}
  * @method \Dew\Acs\Result listRevokeCertificate(array $arguments = []) {@since 2020-06-30}
  * @method \Http\Promise\Promise listRevokeCertificateAsync($arguments = []) {@since 2020-06-30}
+ * @method \Dew\Acs\Result uploadPcaCertToCas(array $arguments = []) {@since 2020-06-30}
+ * @method \Http\Promise\Promise uploadPcaCertToCasAsync($arguments = []) {@since 2020-06-30}
  */
 final class CasClient extends AcsClient
 {

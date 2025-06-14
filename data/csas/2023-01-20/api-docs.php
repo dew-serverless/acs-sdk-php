@@ -22,12 +22,28 @@
             'DisposalContent' => [
                 'type' => 'object',
                 'properties' => [
+                    'NoticeContent' => [
+                        'type' => 'string',
+                    ],
+                    'NacDemotionPolicyIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
                     'ProhibitActions' => [
                         'type' => 'array',
                         'required' => false,
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                    'NoticeContentEn' => [
+                        'type' => 'string',
+                    ],
+                    'AlertTitle' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                     'NotifyActions' => [
                         'type' => 'array',
@@ -36,22 +52,12 @@
                             'type' => 'string',
                         ],
                     ],
-                    'AlertTitle' => [
+                    'AlertTitleEn' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                     'AlertContent' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                    'NoticeContent' => [
-                        'type' => 'string',
-                    ],
-                    'NoticeContentEn' => [
-                        'type' => 'string',
-                    ],
-                    'AlertTitleEn' => [
-                        'type' => 'string',
                     ],
                     'AlertContentEn' => [
                         'type' => 'string',
@@ -398,7 +404,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -422,7 +428,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -455,7 +461,9 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
+                        'minimum' => '1',
+                        'maximum' => '10000',
                     ],
                 ],
                 [
@@ -464,7 +472,9 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
+                        'minimum' => '1',
+                        'maximum' => '1000',
                     ],
                 ],
             ],
@@ -488,7 +498,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -497,7 +507,9 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
+                        'minimum' => '1',
+                        'maximum' => '10000',
                     ],
                 ],
                 [
@@ -506,7 +518,9 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
+                        'minimum' => '1',
+                        'maximum' => '1000',
                     ],
                 ],
                 [
@@ -585,6 +599,26 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'DstAddr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SearchMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Exact',
+                            'Fuzzy',
+                        ],
+                    ],
+                ],
             ],
         ],
         'ImportEnterpriseAccelerateTargets' => [
@@ -638,7 +672,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -647,7 +681,7 @@
                     'style' => 'flat',
                     'schema' => [
                         'type' => 'array',
-                        'required' => false,
+                        'required' => true,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
@@ -675,7 +709,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -699,7 +733,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -708,7 +742,7 @@
                     'style' => 'flat',
                     'schema' => [
                         'type' => 'array',
-                        'required' => false,
+                        'required' => true,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
@@ -760,7 +794,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -768,7 +802,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -777,7 +811,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -785,7 +819,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -875,7 +909,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -883,7 +917,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -892,7 +926,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -900,7 +934,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -6805,6 +6839,14 @@
                             'AigcVideo',
                             'PureDocument',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'IsClientEmbed',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
                 [

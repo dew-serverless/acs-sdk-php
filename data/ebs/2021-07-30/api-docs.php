@@ -3875,14 +3875,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'AppName',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'NextToken',
                     'in' => 'query',
                     'schema' => [

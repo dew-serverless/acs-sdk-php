@@ -185,6 +185,58 @@
                     ],
                 ],
             ],
+            'CacheInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'MountPoint' => [
+                        'type' => 'string',
+                    ],
+                    'Port' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'CacheService' => [
+                'type' => 'object',
+                'properties' => [
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'QuotaId' => [
+                        'type' => 'string',
+                    ],
+                    'TenantId' => [
+                        'type' => 'string',
+                    ],
+                    'SupportedClientQuotaIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'CreatedBy' => [
+                        'type' => 'string',
+                    ],
+                    'UserId' => [
+                        'type' => 'string',
+                    ],
+                    'CacheInfos' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/CacheInfo',
+                        ],
+                    ],
+                    'CacheServiceId' => [
+                        'type' => 'string',
+                    ],
+                    'GmtCreated' => [
+                        'type' => 'string',
+                    ],
+                    'UserVpc' => [
+                        '$ref' => '#/components/schemas/UserVpc',
+                    ],
+                ],
+            ],
             'Channel' => [
                 'type' => 'object',
                 'properties' => [

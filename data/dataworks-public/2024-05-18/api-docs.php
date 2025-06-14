@@ -13720,6 +13720,11 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'Priority' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

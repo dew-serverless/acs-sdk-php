@@ -195,6 +195,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeAppServiceDetailAsync($arguments = [])
  * @method \Dew\Acs\Result listAppServicesPage(array $arguments = [])
  * @method \Http\Promise\Promise listAppServicesPageAsync($arguments = [])
+ * @method \Dew\Acs\Result describeApplicationNlbs(array $arguments = [])
+ * @method \Http\Promise\Promise describeApplicationNlbsAsync($arguments = [])
+ * @method \Dew\Acs\Result bindNlb(array $arguments = [])
+ * @method \Http\Promise\Promise bindNlbAsync($arguments = [])
  * @method \Dew\Acs\Result describeApplicationSlbs(array $arguments = [])
  * @method \Http\Promise\Promise describeApplicationSlbsAsync($arguments = [])
  * @method \Dew\Acs\Result bindSlb(array $arguments = [])
@@ -287,10 +291,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeConfigurationPriceAsync($arguments = [])
  * @method \Dew\Acs\Result getWebshellToken(array $arguments = [])
  * @method \Http\Promise\Promise getWebshellTokenAsync($arguments = [])
- * @method \Dew\Acs\Result bindNlb(array $arguments = [])
- * @method \Http\Promise\Promise bindNlbAsync($arguments = [])
- * @method \Dew\Acs\Result describeApplicationNlbs(array $arguments = [])
- * @method \Http\Promise\Promise describeApplicationNlbsAsync($arguments = [])
+ * @method \Dew\Acs\Result updateAppMode(array $arguments = [])
+ * @method \Http\Promise\Promise updateAppModeAsync($arguments = [])
  */
 final class SaeClient extends AcsClient
 {

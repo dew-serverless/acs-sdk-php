@@ -924,66 +924,36 @@
             'File' => [
                 'type' => 'object',
                 'properties' => [
-                    'OwnerId' => [
+                    'ProduceTime' => [
                         'type' => 'string',
                     ],
-                    'ProjectName' => [
+                    'Timezone' => [
                         'type' => 'string',
                     ],
-                    'DatasetName' => [
+                    'Artist' => [
                         'type' => 'string',
                     ],
-                    'ObjectType' => [
-                        'type' => 'string',
-                    ],
-                    'ObjectId' => [
-                        'type' => 'string',
-                    ],
-                    'UpdateTime' => [
-                        'type' => 'string',
-                    ],
-                    'CreateTime' => [
-                        'type' => 'string',
-                    ],
-                    'URI' => [
-                        'type' => 'string',
-                    ],
-                    'OSSURI' => [
-                        'type' => 'string',
-                    ],
-                    'Filename' => [
-                        'type' => 'string',
-                    ],
-                    'MediaType' => [
+                    'ObjectACL' => [
                         'type' => 'string',
                     ],
                     'ContentType' => [
+                        'type' => 'string',
+                    ],
+                    'AccessControlRequestMethod' => [
                         'type' => 'string',
                     ],
                     'Size' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'FileHash' => [
+                    'Album' => [
                         'type' => 'string',
                     ],
-                    'FileModifiedTime' => [
+                    'ContentLanguage' => [
                         'type' => 'string',
                     ],
-                    'FileCreateTime' => [
-                        'type' => 'string',
-                    ],
-                    'FileAccessTime' => [
-                        'type' => 'string',
-                    ],
-                    'ProduceTime' => [
-                        'type' => 'string',
-                    ],
-                    'LatLong' => [
-                        'type' => 'string',
-                    ],
-                    'Timezone' => [
-                        'type' => 'string',
+                    'OSSTagging' => [
+                        'type' => 'object',
                     ],
                     'Addresses' => [
                         'type' => 'array',
@@ -991,71 +961,20 @@
                             '$ref' => '#/components/schemas/Address',
                         ],
                     ],
-                    'TravelClusterId' => [
-                        'type' => 'string',
-                    ],
-                    'Orientation' => [
+                    'StreamCount' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'Figures' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/Figure',
-                        ],
-                    ],
-                    'FigureCount' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'Labels' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/Label',
-                        ],
-                    ],
-                    'Title' => [
-                        'type' => 'string',
-                    ],
-                    'ImageWidth' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'ImageHeight' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'EXIF' => [
-                        'type' => 'string',
-                    ],
-                    'ImageScore' => [
-                        '$ref' => '#/components/schemas/ImageScore',
-                    ],
-                    'CroppingSuggestions' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/CroppingSuggestion',
-                        ],
-                    ],
-                    'OCRContents' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/OCRContents',
-                        ],
-                    ],
-                    'VideoWidth' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                    'CustomLabels' => [
+                        'type' => 'object',
                     ],
                     'VideoHeight' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'VideoStreams' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/VideoStream',
-                        ],
+                    'ImageWidth' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                     'Subtitles' => [
                         'type' => 'array',
@@ -1063,17 +982,103 @@
                             '$ref' => '#/components/schemas/SubtitleStream',
                         ],
                     ],
-                    'AudioStreams' => [
+                    'OSSStorageClass' => [
+                        'type' => 'string',
+                    ],
+                    'MediaType' => [
+                        'type' => 'string',
+                    ],
+                    'OSSDeleteMarker' => [
+                        'type' => 'string',
+                    ],
+                    'Insights' => [
+                        '$ref' => '#/components/schemas/Insights',
+                    ],
+                    'FormatLongName' => [
+                        'type' => 'string',
+                    ],
+                    'ProgramCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'StartTime' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'Filename' => [
+                        'type' => 'string',
+                    ],
+                    'Labels' => [
                         'type' => 'array',
                         'items' => [
-                            '$ref' => '#/components/schemas/AudioStream',
+                            '$ref' => '#/components/schemas/Label',
                         ],
                     ],
-                    'Artist' => [
+                    'Duration' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'Orientation' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'CroppingSuggestions' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/CroppingSuggestion',
+                        ],
+                    ],
+                    'EXIF' => [
                         'type' => 'string',
                     ],
-                    'AlbumArtist' => [
+                    'Performer' => [
                         'type' => 'string',
+                    ],
+                    'ImageHeight' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'PageCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'FigureCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ImageScore' => [
+                        '$ref' => '#/components/schemas/ImageScore',
+                    ],
+                    'ETag' => [
+                        'type' => 'string',
+                    ],
+                    'DatasetName' => [
+                        'type' => 'string',
+                    ],
+                    'FileHash' => [
+                        'type' => 'string',
+                    ],
+                    'CacheControl' => [
+                        'type' => 'string',
+                    ],
+                    'OSSVersionId' => [
+                        'type' => 'string',
+                    ],
+                    'FileAccessTime' => [
+                        'type' => 'string',
+                    ],
+                    'VideoStreams' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/VideoStream',
+                        ],
+                    ],
+                    'ProjectName' => [
+                        'type' => 'string',
+                    ],
+                    'VideoWidth' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                     'AudioCovers' => [
                         'type' => 'array',
@@ -1081,126 +1086,8 @@
                             '$ref' => '#/components/schemas/Image',
                         ],
                     ],
-                    'Composer' => [
-                        'type' => 'string',
-                    ],
-                    'Performer' => [
-                        'type' => 'string',
-                    ],
-                    'Language' => [
-                        'type' => 'string',
-                    ],
-                    'Album' => [
-                        'type' => 'string',
-                    ],
-                    'PageCount' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'ETag' => [
-                        'type' => 'string',
-                    ],
-                    'CacheControl' => [
-                        'type' => 'string',
-                    ],
-                    'ContentDisposition' => [
-                        'type' => 'string',
-                    ],
                     'ContentEncoding' => [
                         'type' => 'string',
-                    ],
-                    'ContentLanguage' => [
-                        'type' => 'string',
-                    ],
-                    'AccessControlAllowOrigin' => [
-                        'type' => 'string',
-                    ],
-                    'AccessControlRequestMethod' => [
-                        'type' => 'string',
-                    ],
-                    'ServerSideEncryptionCustomerAlgorithm' => [
-                        'type' => 'string',
-                    ],
-                    'ServerSideEncryption' => [
-                        'type' => 'string',
-                    ],
-                    'ServerSideDataEncryption' => [
-                        'type' => 'string',
-                    ],
-                    'ServerSideEncryptionKeyId' => [
-                        'type' => 'string',
-                    ],
-                    'OSSStorageClass' => [
-                        'type' => 'string',
-                    ],
-                    'OSSCRC64' => [
-                        'type' => 'string',
-                    ],
-                    'ObjectACL' => [
-                        'type' => 'string',
-                    ],
-                    'ContentMd5' => [
-                        'type' => 'string',
-                    ],
-                    'OSSUserMeta' => [
-                        'type' => 'object',
-                    ],
-                    'OSSTaggingCount' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'OSSTagging' => [
-                        'type' => 'object',
-                    ],
-                    'OSSExpiration' => [
-                        'type' => 'string',
-                    ],
-                    'OSSVersionId' => [
-                        'type' => 'string',
-                    ],
-                    'OSSDeleteMarker' => [
-                        'type' => 'string',
-                    ],
-                    'OSSObjectType' => [
-                        'type' => 'string',
-                    ],
-                    'CustomId' => [
-                        'type' => 'string',
-                    ],
-                    'CustomLabels' => [
-                        'type' => 'object',
-                    ],
-                    'StreamCount' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'ProgramCount' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'FormatName' => [
-                        'type' => 'string',
-                    ],
-                    'FormatLongName' => [
-                        'type' => 'string',
-                    ],
-                    'StartTime' => [
-                        'type' => 'number',
-                        'format' => 'double',
-                    ],
-                    'Bitrate' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'Duration' => [
-                        'type' => 'number',
-                        'format' => 'double',
-                    ],
-                    'SemanticTypes' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
                     ],
                     'Elements' => [
                         'type' => 'array',
@@ -1208,19 +1095,135 @@
                             '$ref' => '#/components/schemas/Element',
                         ],
                     ],
+                    'URI' => [
+                        'type' => 'string',
+                    ],
+                    'Reason' => [
+                        'type' => 'string',
+                    ],
+                    'AudioStreams' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/AudioStream',
+                        ],
+                    ],
+                    'ObjectStatus' => [
+                        'type' => 'string',
+                    ],
+                    'ObjectType' => [
+                        'type' => 'string',
+                    ],
                     'SceneElements' => [
                         'type' => 'array',
                         'items' => [
                             '$ref' => '#/components/schemas/SceneElement',
                         ],
                     ],
+                    'ServerSideEncryptionKeyId' => [
+                        'type' => 'string',
+                    ],
+                    'OwnerId' => [
+                        'type' => 'string',
+                    ],
+                    'FileModifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'Language' => [
+                        'type' => 'string',
+                    ],
+                    'FileCreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'SemanticTypes' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'ServerSideEncryption' => [
+                        'type' => 'string',
+                    ],
+                    'FormatName' => [
+                        'type' => 'string',
+                    ],
+                    'Composer' => [
+                        'type' => 'string',
+                    ],
+                    'ObjectId' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'Title' => [
+                        'type' => 'string',
+                    ],
+                    'TravelClusterId' => [
+                        'type' => 'string',
+                    ],
+                    'OSSExpiration' => [
+                        'type' => 'string',
+                    ],
+                    'Figures' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Figure',
+                        ],
+                    ],
+                    'ServerSideEncryptionCustomerAlgorithm' => [
+                        'type' => 'string',
+                    ],
+                    'Bitrate' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'AlbumArtist' => [
+                        'type' => 'string',
+                    ],
+                    'ContentMd5' => [
+                        'type' => 'string',
+                    ],
                     'OCRTexts' => [
                         'type' => 'string',
                     ],
-                    'Reason' => [
+                    'ContentDisposition' => [
                         'type' => 'string',
                     ],
-                    'ObjectStatus' => [
+                    'CustomId' => [
+                        'type' => 'string',
+                    ],
+                    'UpdateTime' => [
+                        'type' => 'string',
+                    ],
+                    'OSSUserMeta' => [
+                        'type' => 'object',
+                    ],
+                    'OCRContents' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/OCRContents',
+                        ],
+                    ],
+                    'AccessControlAllowOrigin' => [
+                        'type' => 'string',
+                    ],
+                    'OSSCRC64' => [
+                        'type' => 'string',
+                    ],
+                    'OSSTaggingCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'OSSURI' => [
+                        'type' => 'string',
+                    ],
+                    'ServerSideDataEncryption' => [
+                        'type' => 'string',
+                    ],
+                    'LatLong' => [
+                        'type' => 'string',
+                    ],
+                    'OSSObjectType' => [
                         'type' => 'string',
                     ],
                 ],
@@ -1336,6 +1339,17 @@
                     ],
                 ],
             ],
+            'ImageInsight' => [
+                'type' => 'object',
+                'properties' => [
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'Caption' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ImageScore' => [
                 'type' => 'object',
                 'properties' => [
@@ -1447,6 +1461,17 @@
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+            ],
+            'Insights' => [
+                'type' => 'object',
+                'properties' => [
+                    'Video' => [
+                        '$ref' => '#/components/schemas/VideoInsight',
+                    ],
+                    'Image' => [
+                        '$ref' => '#/components/schemas/ImageInsight',
                     ],
                 ],
             ],
@@ -2799,6 +2824,17 @@
                     ],
                 ],
             ],
+            'VideoInsight' => [
+                'type' => 'object',
+                'properties' => [
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'Caption' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'VideoStream' => [
                 'type' => 'object',
                 'properties' => [
@@ -2961,6 +2997,17 @@
                         'type' => 'string',
                     ],
                     'FillStyle' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'WorkflowParameter' => [
+                'type' => 'object',
+                'properties' => [
+                    'Value' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
                         'type' => 'string',
                     ],
                 ],
@@ -3463,6 +3510,19 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'WorkflowParameters',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WorkflowParameter',
+                            'required' => false,
+                        ],
+                    ],
+                ],
             ],
         ],
         'UpdateDataset' => [
@@ -3556,6 +3616,19 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkflowParameters',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/WorkflowParameter',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],

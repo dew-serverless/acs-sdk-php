@@ -49,6 +49,20 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateGlobalEventsStorageRegionAsync($arguments = [])
  * @method \Dew\Acs\Result enableInsight(array $arguments = [])
  * @method \Http\Promise\Promise enableInsightAsync($arguments = [])
+ * @method \Dew\Acs\Result describeUserAlertCount(array $arguments = [])
+ * @method \Http\Promise\Promise describeUserAlertCountAsync($arguments = [])
+ * @method \Dew\Acs\Result describeUserLogCount(array $arguments = [])
+ * @method \Http\Promise\Promise describeUserLogCountAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteAdvancedQueryTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise deleteAdvancedQueryTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result updateAdvancedQueryTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise updateAdvancedQueryTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAdvancedQueryTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise describeAdvancedQueryTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result createAdvancedQueryTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise createAdvancedQueryTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result getAdvancedQueryTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise getAdvancedQueryTemplateAsync($arguments = [])
  */
 final class ActiontrailClient extends AcsClient
 {

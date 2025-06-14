@@ -552,6 +552,22 @@
                                     ],
                                 ],
                             ],
+                            'UserCommand' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'OnStart' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Content' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
                             'OversoldType' => [
                                 'type' => 'string',
                                 'required' => false,
@@ -835,6 +851,34 @@
                             ],
                             'DynamicMount' => [
                                 '$ref' => '#/components/schemas/DynamicMount',
+                                'required' => false,
+                            ],
+                            'EnvironmentVariables' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'DisassociateEnvironmentVariables' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'UserCommand' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'OnStart' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Content' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'DisassociateUserCommand' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                             'OversoldType' => [

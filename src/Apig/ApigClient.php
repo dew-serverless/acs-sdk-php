@@ -93,6 +93,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createPluginAttachmentAsync($arguments = [])
  * @method \Dew\Acs\Result getPluginAttachment(array $arguments = [])
  * @method \Http\Promise\Promise getPluginAttachmentAsync($arguments = [])
+ * @method \Dew\Acs\Result listPluginAttachments(array $arguments = [])
+ * @method \Http\Promise\Promise listPluginAttachmentsAsync($arguments = [])
  * @method \Dew\Acs\Result updatePluginAttachment(array $arguments = [])
  * @method \Http\Promise\Promise updatePluginAttachmentAsync($arguments = [])
  * @method \Dew\Acs\Result deletePluginAttachment(array $arguments = [])

@@ -3516,6 +3516,20 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ScopeSet',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'DescribeCustomizedListHeaders' => [

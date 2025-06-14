@@ -13848,7 +13848,7 @@
         ],
         [
             'regionId' => 'cn-guangzhou',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.cn-guangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'me-central-1',

@@ -1547,6 +1547,16 @@
                                     ],
                                 ],
                             ],
+                            'auto_mode' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'enable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -3428,6 +3438,30 @@
                             'intranet' => [
                                 'type' => 'boolean',
                                 'required' => false,
+                            ],
+                            'eflo_node_group' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'cluster_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'group_id' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'auto_mode' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'enable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
                             ],
                         ],
                     ],

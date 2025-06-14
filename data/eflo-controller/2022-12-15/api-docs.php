@@ -3236,8 +3236,8 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'eflo-controller.cn-guangzhou.aliyuncs.com	',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'eflo-controller.cn-zhangjiakou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
@@ -3262,6 +3262,10 @@
         [
             'regionId' => 'cn-heyuan',
             'endpoint' => 'eflo-controller.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'eflo-controller.cn-guangzhou.aliyuncs.com	',
         ],
         [
             'regionId' => 'ap-southeast-1',

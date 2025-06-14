@@ -1440,6 +1440,80 @@
                 ],
             ],
         ],
+        'ModifyCollection' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NamespacePassword',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Namespace',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Collection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Metadata',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DeleteCollection' => [
             'methods' => [
                 'post',
@@ -1941,6 +2015,14 @@
                     ],
                 ],
                 [
+                    'name' => 'AllowInsertWithFilter',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TextChunks',
                     'in' => 'formData',
                     'style' => 'json',
@@ -1949,18 +2031,18 @@
                         'required' => false,
                         'items' => [
                             'type' => 'object',
-                            'required' => true,
+                            'required' => false,
                             'properties' => [
+                                'Filter' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'Content' => [
                                     'type' => 'string',
                                     'required' => true,
                                 ],
                                 'Metadata' => [
                                     'type' => 'object',
-                                    'required' => false,
-                                ],
-                                'Filter' => [
-                                    'type' => 'string',
                                     'required' => false,
                                 ],
                                 'Id' => [

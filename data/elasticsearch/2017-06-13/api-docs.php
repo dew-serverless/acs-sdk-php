@@ -3154,6 +3154,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeInstance' => [
@@ -5938,6 +5946,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'force',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateHotIkDicts' => [
@@ -6673,6 +6689,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'force',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
                 [

@@ -1414,6 +1414,37 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
+                    'mcpServerInfo' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'importInstanceId' => [
+                                'type' => 'string',
+                            ],
+                            'importNamespace' => [
+                                'type' => 'string',
+                            ],
+                            'importMcpServerId' => [
+                                'type' => 'string',
+                            ],
+                            'createFromType' => [
+                                'type' => 'string',
+                            ],
+                            'mcpServerConfig' => [
+                                'type' => 'string',
+                            ],
+                            'mcpRouteConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'protocol' => [
+                                        'type' => 'string',
+                                    ],
+                                    'exposedUriPath' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                     'gatewayStatus' => [
                         'type' => 'object',
                         'additionalProperties' => [
@@ -4748,6 +4779,97 @@
                     'in' => 'path',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListPluginAttachments' => [
+            'path' => '/v1/plugin-attachments',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'attachResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'attachResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'environmentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pluginId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'gatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'attachResourceTypes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'withParentResource',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

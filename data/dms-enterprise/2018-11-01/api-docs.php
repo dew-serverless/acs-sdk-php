@@ -37,6 +37,30 @@
                     ],
                 ],
             ],
+            'ColumnKnowledgeInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'ColumnName' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'ColumnType' => [
+                        'type' => 'string',
+                    ],
+                    'Position' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'AssetDescription' => [
+                        'type' => 'string',
+                    ],
+                    'AssetModifiedGmt' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'DLCatalog' => [
                 'type' => 'object',
                 'properties' => [
@@ -655,6 +679,32 @@
                         'type' => 'string',
                     ],
                     'Expiration' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'TableKnowledgeInfo' => [
+                'type' => 'object',
+                'properties' => [
+                    'TableName' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'AssetDescription' => [
+                        'type' => 'string',
+                    ],
+                    'Summary' => [
+                        'type' => 'string',
+                    ],
+                    'ColumnList' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ColumnKnowledgeInfo',
+                        ],
+                    ],
+                    'AssetModifiedGmt' => [
                         'type' => 'string',
                     ],
                 ],

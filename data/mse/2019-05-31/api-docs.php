@@ -3566,6 +3566,18 @@
                     ],
                 ],
                 [
+                    'name' => 'NetworkType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Private',
+                            'Public',
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'AcceptLanguage',
                     'in' => 'query',
                     'schema' => [

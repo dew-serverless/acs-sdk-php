@@ -1431,6 +1431,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'LabelConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyScriptVoiceConfig' => [
@@ -2058,6 +2066,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

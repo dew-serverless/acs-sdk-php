@@ -6,7 +6,34 @@
         'version' => '2018-12-01',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'RepoConfiguration' => [
+                'type' => 'object',
+                'properties' => [
+                    'TagImmutability' => [
+                        'type' => 'boolean',
+                        'required' => true,
+                    ],
+                    'RepoType' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'PRIVATE',
+                            'PUBLIC',
+                        ],
+                    ],
+                    'ArtifactBuildRuleParameters' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'ImageIndexOnly' => [
+                                'type' => 'boolean',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'apis' => [
         'UpdateArtifactSubscriptionRule' => [
@@ -2138,6 +2165,16 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DefaultRepoConfiguration',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/RepoConfiguration',
                         'required' => false,
                     ],
                 ],
@@ -2220,7 +2257,16 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'deprecated' => true,
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DefaultRepoConfiguration',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/RepoConfiguration',
                     ],
                 ],
             ],

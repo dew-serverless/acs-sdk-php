@@ -198,6 +198,7 @@
         'DescribeRenderingInstance' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',

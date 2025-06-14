@@ -24546,6 +24546,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PasswordName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'EndTerminalSession' => [

@@ -380,6 +380,14 @@
                                                                 'type' => 'string',
                                                                 'required' => false,
                                                             ],
+                                                            'Arg' => [
+                                                                'type' => 'array',
+                                                                'required' => false,
+                                                                'items' => [
+                                                                    'type' => 'string',
+                                                                    'required' => false,
+                                                                ],
+                                                            ],
                                                         ],
                                                     ],
                                                     'VM' => [
@@ -399,6 +407,10 @@
                                                                 'required' => false,
                                                             ],
                                                             'AppId' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'Password' => [
                                                                 'type' => 'string',
                                                                 'required' => false,
                                                             ],
@@ -424,6 +436,10 @@
                                                     ],
                                                     'MountOptions' => [
                                                         'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                    'ReadOnly' => [
+                                                        'type' => 'boolean',
                                                         'required' => false,
                                                     ],
                                                 ],
@@ -460,6 +476,14 @@
                                                                 'required' => false,
                                                             ],
                                                         ],
+                                                    ],
+                                                ],
+                                                'InstanceTypes' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
                                                     ],
                                                 ],
                                             ],
@@ -555,6 +579,15 @@
                                     ],
                                 ],
                                 'maxItems' => 20,
+                            ],
+                            'Pool' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Priority' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
                             ],
                             'Level' => [
                                 'type' => 'string',

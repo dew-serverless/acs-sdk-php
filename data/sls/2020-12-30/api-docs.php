@@ -7,6 +7,17 @@
     ],
     'components' => [
         'schemas' => [
+            'AgentInstanceConfigGrayConfigs' => [
+                'type' => 'object',
+                'properties' => [
+                    'condition' => [
+                        'type' => 'string',
+                    ],
+                    'content' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Alert' => [
                 'type' => 'object',
                 'properties' => [
@@ -644,6 +655,23 @@
                     ],
                     'condition' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'ListAgentInstanceConfigs' => [
+                'type' => 'array',
+                'items' => [
+                    'type' => 'object',
+                    'properties' => [
+                        'configType' => [
+                            'type' => 'string',
+                        ],
+                        'attributes' => [
+                            'type' => 'object',
+                            'additionalProperties' => [
+                                'type' => 'string',
+                            ],
+                        ],
                     ],
                 ],
             ],

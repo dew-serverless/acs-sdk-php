@@ -10670,6 +10670,88 @@
                 ],
             ],
         ],
+        'DescribeApplicationNlbs' => [
+            'path' => '/pop/v1/sam/app/nlb',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'BindNlb' => [
+            'path' => '/pop/v1/sam/app/nlb',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NlbId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Listeners',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ZoneMappings',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AddressType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeApplicationSlbs' => [
             'path' => '/pop/v1/sam/app/slb',
             'methods' => [
@@ -13657,10 +13739,10 @@
                 ],
             ],
         ],
-        'BindNlb' => [
-            'path' => '/pop/v1/sam/app/nlb',
+        'UpdateAppMode' => [
+            'path' => '/pop/v1/sam/app/updateAppMode',
             'methods' => [
-                'post',
+                'put',
             ],
             'schemes' => [
                 'https',
@@ -13681,59 +13763,10 @@
                     ],
                 ],
                 [
-                    'name' => 'NlbId',
+                    'name' => 'EnableIdle',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Listeners',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ZoneMappings',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeApplicationNlbs' => [
-            'path' => '/pop/v1/sam/app/nlb',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -13743,7 +13776,7 @@
     'endpoints' => [
         [
             'regionId' => 'cn-heyuan',
-            'endpoint' => 'sae.cn-heyuan.aliyuncs.com	',
+            'endpoint' => 'sae.cn-heyuan.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
@@ -13792,6 +13825,10 @@
         [
             'regionId' => 'us-west-1',
             'endpoint' => 'sae.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'sae.ap-northeast-1.aliyuncs.com',
         ],
     ],
 ];

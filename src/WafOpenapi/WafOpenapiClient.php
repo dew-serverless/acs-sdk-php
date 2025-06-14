@@ -85,6 +85,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result releaseInstance(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise releaseInstanceAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeAbnormalCloudResources(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeAbnormalCloudResourcesAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result reCreateCloudResource(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise reCreateCloudResourceAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result syncProductInstance(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise syncProductInstanceAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeCloudResources(array $arguments = []) {@since 2021-10-01}
@@ -157,6 +161,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDefenseResourceXffAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describePauseProtectionStatus(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describePauseProtectionStatusAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeIpAbroadCountryInfos(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeIpAbroadCountryInfosAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyDefenseRuleCache(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise modifyDefenseRuleCacheAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeDefenseResourceTemplates(array $arguments = []) {@since 2021-10-01}
@@ -399,10 +405,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyApisecLogDeliveryAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyPauseProtectionStatus(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise modifyPauseProtectionStatusAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result describeAbnormalCloudResources(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise describeAbnormalCloudResourcesAsync($arguments = []) {@since 2021-10-01}
- * @method \Dew\Acs\Result reCreateCloudResource(array $arguments = []) {@since 2021-10-01}
- * @method \Http\Promise\Promise reCreateCloudResourceAsync($arguments = []) {@since 2021-10-01}
  */
 final class WafOpenapiClient extends AcsClient
 {

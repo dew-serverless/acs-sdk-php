@@ -41,6 +41,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCollectionAsync($arguments = [])
  * @method \Dew\Acs\Result listCollections(array $arguments = [])
  * @method \Http\Promise\Promise listCollectionsAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyCollection(array $arguments = [])
+ * @method \Http\Promise\Promise modifyCollectionAsync($arguments = [])
  * @method \Dew\Acs\Result deleteCollection(array $arguments = [])
  * @method \Http\Promise\Promise deleteCollectionAsync($arguments = [])
  * @method \Dew\Acs\Result grantCollection(array $arguments = [])

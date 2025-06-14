@@ -123,6 +123,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise recoveryFileAsync($arguments = [])
  * @method \Dew\Acs\Result describeBackupFiles(array $arguments = [])
  * @method \Http\Promise\Promise describeBackupFilesAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteBackupFile(array $arguments = [])
+ * @method \Http\Promise\Promise deleteBackupFileAsync($arguments = [])
  * @method \Dew\Acs\Result createPolicyGroup(array $arguments = [])
  * @method \Http\Promise\Promise createPolicyGroupAsync($arguments = [])
  * @method \Dew\Acs\Result listPolicyGroups(array $arguments = [])

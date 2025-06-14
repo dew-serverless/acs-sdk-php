@@ -631,6 +631,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createDiagnosticReportAsync($arguments = [])
  * @method \Dew\Acs\Result describeDiagnosticReportList(array $arguments = []) {@deprecated 2014-08-15}
  * @method \Http\Promise\Promise describeDiagnosticReportListAsync($arguments = []) {@deprecated 2014-08-15}
+ * @method \Dew\Acs\Result modifyComputeBurstConfig(array $arguments = [])
+ * @method \Http\Promise\Promise modifyComputeBurstConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result describeComputeBurstConfig(array $arguments = [])
+ * @method \Http\Promise\Promise describeComputeBurstConfigAsync($arguments = [])
  */
 final class RdsClient extends AcsClient
 {

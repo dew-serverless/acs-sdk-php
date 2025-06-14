@@ -171,6 +171,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listMmsTaskLogsAsync($arguments = [])
  * @method \Dew\Acs\Result listComputeMetricsByInstance(array $arguments = [])
  * @method \Http\Promise\Promise listComputeMetricsByInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result queryStorageMetric(array $arguments = [])
+ * @method \Http\Promise\Promise queryStorageMetricAsync($arguments = [])
  */
 final class MaxComputeClient extends AcsClient
 {

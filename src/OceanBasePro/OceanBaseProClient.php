@@ -163,6 +163,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSQLTuningAdvicesAsync($arguments = [])
  * @method \Dew\Acs\Result describeSqlAuditStat(array $arguments = [])
  * @method \Http\Promise\Promise describeSqlAuditStatAsync($arguments = [])
+ * @method \Dew\Acs\Result createOasOutlineTask(array $arguments = [])
+ * @method \Http\Promise\Promise createOasOutlineTaskAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceSSL(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceSSLAsync($arguments = [])
  * @method \Dew\Acs\Result describeInstanceSSL(array $arguments = [])

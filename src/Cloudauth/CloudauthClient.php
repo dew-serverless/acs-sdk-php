@@ -95,6 +95,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise id2MetaVerifyWithOCRAsync($arguments = [])
  * @method \Dew\Acs\Result credentialVerifyV2(array $arguments = [])
  * @method \Http\Promise\Promise credentialVerifyV2Async($arguments = [])
+ * @method \Dew\Acs\Result mobile2MetaVerify(array $arguments = [])
+ * @method \Http\Promise\Promise mobile2MetaVerifyAsync($arguments = [])
+ * @method \Dew\Acs\Result initCardVerify(array $arguments = [])
+ * @method \Http\Promise\Promise initCardVerifyAsync($arguments = [])
+ * @method \Dew\Acs\Result describeCardVerify(array $arguments = [])
+ * @method \Http\Promise\Promise describeCardVerifyAsync($arguments = [])
+ * @method \Dew\Acs\Result credentialProductVerifyV2(array $arguments = [])
+ * @method \Http\Promise\Promise credentialProductVerifyV2Async($arguments = [])
  * @method \Dew\Acs\Result describeSmsDetail(array $arguments = []) {@since 2020-06-18}
  * @method \Http\Promise\Promise describeSmsDetailAsync($arguments = []) {@since 2020-06-18}
  * @method \Dew\Acs\Result sendSms(array $arguments = []) {@since 2020-06-18}

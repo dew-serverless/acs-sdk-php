@@ -697,6 +697,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeChannelUsersAsync($arguments = [])
  * @method \Dew\Acs\Result removeTerminals(array $arguments = [])
  * @method \Http\Promise\Promise removeTerminalsAsync($arguments = [])
+ * @method \Dew\Acs\Result createRTCWhipStreamAddress(array $arguments = [])
+ * @method \Http\Promise\Promise createRTCWhipStreamAddressAsync($arguments = [])
  * @method \Dew\Acs\Result createRoomRealTimeStreamAddress(array $arguments = [])
  * @method \Http\Promise\Promise createRoomRealTimeStreamAddressAsync($arguments = [])
  * @method \Dew\Acs\Result deleteChannel(array $arguments = [])

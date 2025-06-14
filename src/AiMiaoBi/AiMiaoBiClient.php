@@ -289,6 +289,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryAuditTaskAsync($arguments = [])
  * @method \Dew\Acs\Result deleteStyleLearningResult(array $arguments = [])
  * @method \Http\Promise\Promise deleteStyleLearningResultAsync($arguments = [])
+ * @method \Dew\Acs\Result getCustomSourceTopicAnalysisTask(array $arguments = [])
+ * @method \Http\Promise\Promise getCustomSourceTopicAnalysisTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result submitCustomSourceTopicAnalysis(array $arguments = [])
+ * @method \Http\Promise\Promise submitCustomSourceTopicAnalysisAsync($arguments = [])
+ * @method \Dew\Acs\Result exportCustomSourceAnalysisTask(array $arguments = [])
+ * @method \Http\Promise\Promise exportCustomSourceAnalysisTaskAsync($arguments = [])
  */
 final class AiMiaoBiClient extends AcsClient
 {

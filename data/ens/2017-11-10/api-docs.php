@@ -6425,6 +6425,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'BillingCycle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Hour',
+                            'Month',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LoadBalancerType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CLB',
+                            'InternetDR',
+                        ],
+                    ],
+                ],
             ],
         ],
         'ModifyLoadBalancerAttribute' => [
@@ -6645,6 +6669,18 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'LoadBalancerType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CLB',
+                            'InternetDR',
+                        ],
                     ],
                 ],
             ],

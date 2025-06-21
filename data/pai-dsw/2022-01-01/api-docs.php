@@ -2222,6 +2222,33 @@
                 ],
             ],
         ],
+        'GetUserCommand' => [
+            'path' => '/api/v2/usercommands/{UserCommandId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'UserCommandId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

@@ -1354,5 +1354,9 @@
             'regionId' => 'ap-northeast-2',
             'endpoint' => 'mns-open.ap-northeast-2.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'mns-open.cn-heyuan.aliyuncs.com',
+        ],
     ],
 ];

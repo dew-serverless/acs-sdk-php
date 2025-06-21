@@ -3293,6 +3293,11 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'SystemDiskSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

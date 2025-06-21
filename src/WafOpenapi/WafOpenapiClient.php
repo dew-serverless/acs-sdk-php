@@ -139,6 +139,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDefaultHttpsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeHybridCloudResources(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeHybridCloudResourcesAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result createDefenseResource(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise createDefenseResourceAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result deleteDefenseResource(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise deleteDefenseResourceAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result createDefenseResourceGroup(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise createDefenseResourceGroupAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyDefenseResourceGroup(array $arguments = []) {@since 2021-10-01}

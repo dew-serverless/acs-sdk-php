@@ -63,6 +63,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getTokenAsync($arguments = [])
  * @method \Dew\Acs\Result getMetrics(array $arguments = [])
  * @method \Http\Promise\Promise getMetricsAsync($arguments = [])
+ * @method \Dew\Acs\Result getUserCommand(array $arguments = [])
+ * @method \Http\Promise\Promise getUserCommandAsync($arguments = [])
  */
 final class PaiDswClient extends AcsClient
 {

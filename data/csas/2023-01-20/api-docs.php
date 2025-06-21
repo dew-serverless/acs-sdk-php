@@ -277,6 +277,49 @@
                     ],
                 ],
             ],
+            'ProcessGroup' => [
+                'type' => 'object',
+                'properties' => [
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'Processes' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ProcessItem',
+                        ],
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'ProcessGroupId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ProcessItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'BundleId' => [
+                        'type' => 'string',
+                    ],
+                    'DevType' => [
+                        'type' => 'string',
+                    ],
+                    'Process' => [
+                        'type' => 'string',
+                    ],
+                    'Directory' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'RecoveryContent' => [
                 'type' => 'object',
                 'properties' => [
@@ -5872,6 +5915,40 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TrustedProcessStatus',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TrustedProcessGroupIds',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TrustedSoftwareIds',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeletePrivateAccessPolicy' => [
@@ -6066,6 +6143,40 @@
                 ],
                 [
                     'name' => 'TriggerTemplateId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TrustedSoftwareIds',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TrustedProcessGroupIds',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TrustedProcessStatus',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -6750,6 +6861,142 @@
                         'required' => true,
                         'minimum' => '1',
                         'maximum' => '255',
+                    ],
+                ],
+                [
+                    'name' => 'ImageControl',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'TextVisibleControl' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'VisibleText' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Mode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Opacity' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'FontSize' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'FontColor' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Angle' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosAx' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'PosAy' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'Visible' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'LogoVisibleControl' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'LogoBase64' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Mode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Opacity' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'Angle' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosAx' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'PosAy' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'Visible' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

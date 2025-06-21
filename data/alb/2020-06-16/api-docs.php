@@ -8089,6 +8089,10 @@
                                     'type' => 'string',
                                     'required' => true,
                                 ],
+                                'Position' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'Enabled' => [
                                     'type' => 'boolean',
                                     'required' => false,

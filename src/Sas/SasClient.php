@@ -1017,8 +1017,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeUserBaselineAuthorizationAsync($arguments = [])
  * @method \Dew\Acs\Result describeStrategyDetail(array $arguments = [])
  * @method \Http\Promise\Promise describeStrategyDetailAsync($arguments = [])
- * @method \Dew\Acs\Result exportWarning(array $arguments = [])
- * @method \Http\Promise\Promise exportWarningAsync($arguments = [])
+ * @method \Dew\Acs\Result exportWarning(array $arguments = []) {@deprecated 2018-12-03}
+ * @method \Http\Promise\Promise exportWarningAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result describeStrategy(array $arguments = [])
  * @method \Http\Promise\Promise describeStrategyAsync($arguments = [])
  * @method \Dew\Acs\Result describeStrategyTarget(array $arguments = [])
@@ -1805,6 +1805,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getAttackPathEventStatisticsAsync($arguments = [])
  * @method \Dew\Acs\Result updatePostPaidBindRel(array $arguments = [])
  * @method \Http\Promise\Promise updatePostPaidBindRelAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAIAssetSummary(array $arguments = [])
+ * @method \Http\Promise\Promise describeAIAssetSummaryAsync($arguments = [])
+ * @method \Dew\Acs\Result describePluginSummary(array $arguments = [])
+ * @method \Http\Promise\Promise describePluginSummaryAsync($arguments = [])
  */
 final class SasClient extends AcsClient
 {

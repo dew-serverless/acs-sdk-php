@@ -51,6 +51,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createServiceAsync($arguments = [])
  * @method \Dew\Acs\Result listServices(array $arguments = [])
  * @method \Http\Promise\Promise listServicesAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteService(array $arguments = [])
+ * @method \Http\Promise\Promise deleteServiceAsync($arguments = [])
  * @method \Dew\Acs\Result updateGatewayName(array $arguments = [])
  * @method \Http\Promise\Promise updateGatewayNameAsync($arguments = [])
  * @method \Dew\Acs\Result updateGatewayFeature(array $arguments = [])

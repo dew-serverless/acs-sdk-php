@@ -2282,6 +2282,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ResourceGroup',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdateInstance' => [

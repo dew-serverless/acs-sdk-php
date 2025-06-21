@@ -875,6 +875,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getWorkflowAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result listWorkflows(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise listWorkflowsAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result getRerunWorkflowInstancesResult(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise getRerunWorkflowInstancesResultAsync($arguments = []) {@since 2024-05-18}
+ * @method \Dew\Acs\Result rerunWorkflowInstances(array $arguments = []) {@since 2024-05-18}
+ * @method \Http\Promise\Promise rerunWorkflowInstancesAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result createWorkflowInstances(array $arguments = []) {@since 2024-05-18}
  * @method \Http\Promise\Promise createWorkflowInstancesAsync($arguments = []) {@since 2024-05-18}
  * @method \Dew\Acs\Result getCreateWorkflowInstancesResult(array $arguments = []) {@since 2024-05-18}

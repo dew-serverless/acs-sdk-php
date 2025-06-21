@@ -645,6 +645,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listInstanceQuotasAsync($arguments = [])
  * @method \Dew\Acs\Result listInstanceQuotasWithUsage(array $arguments = [])
  * @method \Http\Promise\Promise listInstanceQuotasWithUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result tagResources(array $arguments = [])
+ * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  */
 final class EsaClient extends AcsClient
 {

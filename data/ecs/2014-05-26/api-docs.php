@@ -34204,5 +34204,9 @@
             'regionId' => 'na-south-1',
             'endpoint' => 'ecs.na-south-1.aliyuncs.com',
         ],
+        [
+            'regionId' => 'us-southeast-1',
+            'endpoint' => 'ecs.us-southeast-1.aliyuncs.com',
+        ],
     ],
 ];

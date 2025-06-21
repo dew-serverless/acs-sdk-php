@@ -37,6 +37,7 @@
                             'liveStream',
                             'video',
                             'app',
+                            'mixed_download',
                         ],
                     ],
                 ],

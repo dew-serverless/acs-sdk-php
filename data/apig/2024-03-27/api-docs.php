@@ -3805,6 +3805,37 @@
                 ],
             ],
         ],
+        'DeleteService' => [
+            'path' => '/v1/services/{serviceId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'serviceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'UpdateGatewayName' => [
             'path' => '/v1/gateways/{gatewayId}/name',
             'methods' => [

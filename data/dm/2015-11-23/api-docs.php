@@ -163,6 +163,7 @@
                     'AK' => [],
                 ],
             ],
+            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'PageNo',
@@ -208,8 +209,8 @@
         ],
         'SenderStatisticsByTagNameAndBatchID' => [
             'methods' => [
-                'post',
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -248,6 +249,30 @@
                 ],
                 [
                     'name' => 'TagName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DedicatedIpPoolId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DedicatedIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Esp',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -346,8 +371,8 @@
         ],
         'GetTrackList' => [
             'methods' => [
-                'post',
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -434,6 +459,30 @@
                 ],
                 [
                     'name' => 'TagName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DedicatedIpPoolId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DedicatedIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Esp',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -444,8 +493,8 @@
         ],
         'GetTrackListByMailFromAndTagName' => [
             'methods' => [
-                'post',
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -532,6 +581,30 @@
                 ],
                 [
                     'name' => 'TagName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DedicatedIpPoolId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DedicatedIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Esp',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -679,6 +752,38 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'IpPoolId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Attachments',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'AttachmentUrl' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AttachmentName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'BatchSendMail' => [
@@ -782,6 +887,14 @@
                 ],
                 [
                     'name' => 'Headers',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IpPoolId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

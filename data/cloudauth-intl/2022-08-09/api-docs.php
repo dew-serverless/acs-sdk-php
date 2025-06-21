@@ -282,6 +282,14 @@
                     ],
                 ],
                 [
+                    'name' => 'Pages',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'FacePictureBase64',
                     'in' => 'formData',
                     'schema' => [
@@ -1019,7 +1027,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -1040,6 +1048,14 @@
                 ],
                 [
                     'name' => 'IdThreshold',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IdSpoof',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

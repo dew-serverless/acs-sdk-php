@@ -73,6 +73,9 @@
                             'AsrLanguageId' => [
                                 'type' => 'string',
                             ],
+                            'CustomParams' => [
+                                'type' => 'string',
+                            ],
                             'AsrHotWords' => [
                                 'type' => 'array',
                                 'items' => [
@@ -141,6 +144,23 @@
                     'TtsConfig' => [
                         'type' => 'object',
                         'properties' => [
+                            'PronunciationRules' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Type' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Word' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Pronunciation' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
                             'VoiceIdList' => [
                                 'type' => 'array',
                                 'items' => [
@@ -175,6 +195,9 @@
                                 'format' => 'int32',
                             ],
                             'AsrLanguageId' => [
+                                'type' => 'string',
+                            ],
+                            'CustomParams' => [
                                 'type' => 'string',
                             ],
                             'AsrHotWords' => [
@@ -238,6 +261,23 @@
                     'TtsConfig' => [
                         'type' => 'object',
                         'properties' => [
+                            'PronunciationRules' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Type' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Word' => [
+                                            'type' => 'string',
+                                        ],
+                                        'Pronunciation' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
                             'VoiceIdList' => [
                                 'type' => 'array',
                                 'items' => [
@@ -1238,6 +1278,144 @@
                     ],
                 ],
             ],
+            'MediaConvertJob' => [
+                'type' => 'object',
+                'properties' => [
+                    'OutputDetails' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/MediaConvertOutputDetail',
+                        ],
+                    ],
+                    'RequestId' => [
+                        'type' => 'string',
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                    ],
+                    'UserData' => [
+                        'type' => 'string',
+                    ],
+                    'Percent' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Config' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'JobName' => [
+                                'type' => 'string',
+                            ],
+                            'Outputs' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/MediaConvertOutput',
+                                ],
+                            ],
+                            'OutputGroups' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/MediaConvertOutputGroup',
+                                ],
+                            ],
+                            'Inputs' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/MediaConvertInput',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'Code' => [
+                        'type' => 'string',
+                    ],
+                    'OutputGroupDetails' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/MediaConvertOutputGroupDetail',
+                        ],
+                    ],
+                    'FinishTime' => [
+                        'type' => 'string',
+                    ],
+                    'State' => [
+                        'type' => 'string',
+                    ],
+                    'PipelineId' => [
+                        'type' => 'string',
+                    ],
+                    'ClientToken' => [
+                        'type' => 'string',
+                    ],
+                    'JobId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'MediaConvertJobWithoutDetail' => [
+                'type' => 'object',
+                'properties' => [
+                    'RequestId' => [
+                        'type' => 'string',
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                    ],
+                    'FinishTime' => [
+                        'type' => 'string',
+                    ],
+                    'UserData' => [
+                        'type' => 'string',
+                    ],
+                    'Config' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Outputs' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/MediaConvertOutput',
+                                ],
+                            ],
+                            'JobName' => [
+                                'type' => 'string',
+                            ],
+                            'OutputGroups' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/MediaConvertOutputGroup',
+                                ],
+                            ],
+                            'Inputs' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/MediaConvertInput',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'State' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'PipelineId' => [
+                        'type' => 'string',
+                    ],
+                    'ClientToken' => [
+                        'type' => 'string',
+                    ],
+                    'Code' => [
+                        'type' => 'string',
+                    ],
+                    'JobId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'MediaConvertMuxConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -1284,11 +1462,215 @@
                     'Message' => [
                         'type' => 'string',
                     ],
+                    'FinishTime' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
                     'Code' => [
                         'type' => 'string',
                     ],
                     'Name' => [
                         'type' => 'string',
+                    ],
+                    'Result' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'OutputFile' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Type' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Media' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Url' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'OutFileMeta' => [
+                                '$ref' => '#/components/schemas/MediaConvertOutputDetailFileMeta',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'MediaConvertOutputDetailFileMeta' => [
+                'type' => 'object',
+                'properties' => [
+                    'VideoStreamInfoList' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Rotate' => [
+                                    'type' => 'string',
+                                ],
+                                'Codec_tag' => [
+                                    'type' => 'string',
+                                ],
+                                'Sar' => [
+                                    'type' => 'string',
+                                ],
+                                'Start_time' => [
+                                    'type' => 'string',
+                                ],
+                                'Fps' => [
+                                    'type' => 'string',
+                                ],
+                                'Index' => [
+                                    'type' => 'string',
+                                ],
+                                'Duration' => [
+                                    'type' => 'string',
+                                ],
+                                'Lang' => [
+                                    'type' => 'string',
+                                ],
+                                'Codec_long_name' => [
+                                    'type' => 'string',
+                                ],
+                                'PixFmt' => [
+                                    'type' => 'string',
+                                ],
+                                'Bit_rate' => [
+                                    'type' => 'string',
+                                ],
+                                'Profile' => [
+                                    'type' => 'string',
+                                ],
+                                'Has_b_frames' => [
+                                    'type' => 'string',
+                                ],
+                                'Codec_time_base' => [
+                                    'type' => 'string',
+                                ],
+                                'Dar' => [
+                                    'type' => 'string',
+                                ],
+                                'Avg_fps' => [
+                                    'type' => 'string',
+                                ],
+                                'Codec_tag_string' => [
+                                    'type' => 'string',
+                                ],
+                                'Codec_name' => [
+                                    'type' => 'string',
+                                ],
+                                'Height' => [
+                                    'type' => 'string',
+                                ],
+                                'Level' => [
+                                    'type' => 'string',
+                                ],
+                                'Time_base' => [
+                                    'type' => 'string',
+                                ],
+                                'Width' => [
+                                    'type' => 'string',
+                                ],
+                                'NumFrames' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'AudioStreamInfoList' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'CodecTag' => [
+                                    'type' => 'string',
+                                ],
+                                'CodecTimeBase' => [
+                                    'type' => 'string',
+                                ],
+                                'ChannelLayout' => [
+                                    'type' => 'string',
+                                ],
+                                'StartTime' => [
+                                    'type' => 'string',
+                                ],
+                                'Index' => [
+                                    'type' => 'string',
+                                ],
+                                'Duration' => [
+                                    'type' => 'string',
+                                ],
+                                'Lang' => [
+                                    'type' => 'string',
+                                ],
+                                'SampleFmt' => [
+                                    'type' => 'string',
+                                ],
+                                'CodecName' => [
+                                    'type' => 'string',
+                                ],
+                                'Bitrate' => [
+                                    'type' => 'string',
+                                ],
+                                'Channels' => [
+                                    'type' => 'string',
+                                ],
+                                'Timebase' => [
+                                    'type' => 'string',
+                                ],
+                                'CodecTagString' => [
+                                    'type' => 'string',
+                                ],
+                                'SampleRate' => [
+                                    'type' => 'string',
+                                ],
+                                'CodecLongName' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'FileBasicInfo' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'FileUrl' => [
+                                'type' => 'string',
+                            ],
+                            'FileStatus' => [
+                                'type' => 'string',
+                            ],
+                            'MediaId' => [
+                                'type' => 'string',
+                            ],
+                            'FileType' => [
+                                'type' => 'string',
+                            ],
+                            'FileName' => [
+                                'type' => 'string',
+                            ],
+                            'Region' => [
+                                'type' => 'string',
+                            ],
+                            'FormatName' => [
+                                'type' => 'string',
+                            ],
+                            'Duration' => [
+                                'type' => 'string',
+                            ],
+                            'Height' => [
+                                'type' => 'string',
+                            ],
+                            'Bitrate' => [
+                                'type' => 'string',
+                            ],
+                            'Width' => [
+                                'type' => 'string',
+                            ],
+                            'FileSize' => [
+                                'type' => 'string',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -1333,6 +1715,12 @@
                         'type' => 'string',
                     ],
                     'Message' => [
+                        'type' => 'string',
+                    ],
+                    'FinishTime' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
                         'type' => 'string',
                     ],
                     'Outputs' => [
@@ -10295,6 +10683,24 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Type',
                     'in' => 'query',
                     'schema' => [
@@ -12251,12 +12657,11 @@
                     ],
                 ],
                 [
-                    'name' => 'TemplateConfig',
+                    'name' => 'AgentConfig',
                     'in' => 'query',
                     'style' => 'json',
                     'schema' => [
-                        '$ref' => '#/components/schemas/AIAgentTemplateConfig',
-                        'deprecated' => true,
+                        '$ref' => '#/components/schemas/AIAgentConfig',
                         'required' => false,
                     ],
                 ],
@@ -12269,11 +12674,12 @@
                     ],
                 ],
                 [
-                    'name' => 'AgentConfig',
+                    'name' => 'TemplateConfig',
                     'in' => 'query',
                     'style' => 'json',
                     'schema' => [
-                        '$ref' => '#/components/schemas/AIAgentConfig',
+                        '$ref' => '#/components/schemas/AIAgentTemplateConfig',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -12594,16 +13000,6 @@
                     ],
                 ],
                 [
-                    'name' => 'TemplateConfig',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        '$ref' => '#/components/schemas/AIAgentTemplateConfig',
-                        'deprecated' => true,
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'UserData',
                     'in' => 'query',
                     'schema' => [
@@ -12616,6 +13012,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AgentConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/AIAgentConfig',
                         'required' => false,
                     ],
                 ],
@@ -12639,11 +13044,12 @@
                     ],
                 ],
                 [
-                    'name' => 'AgentConfig',
+                    'name' => 'TemplateConfig',
                     'in' => 'query',
                     'style' => 'json',
                     'schema' => [
-                        '$ref' => '#/components/schemas/AIAgentConfig',
+                        '$ref' => '#/components/schemas/AIAgentTemplateConfig',
+                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
@@ -15103,6 +15509,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SkipInputVerification',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -21153,6 +21567,81 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListMediaConvertJobs' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartOfCreateTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndOfCreateTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OrderBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextPageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

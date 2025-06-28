@@ -5933,6 +5933,7 @@
                             'cn-zhengzhou-jva',
                             'cn-wuhan-lr',
                             'cn-shanghai-cloudspe',
+                            'na-south-1',
                         ],
                     ],
                 ],
@@ -7405,7 +7406,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -7421,7 +7422,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -7429,11 +7430,27 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
                     'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Reserved',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ModifyType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

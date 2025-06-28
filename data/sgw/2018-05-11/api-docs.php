@@ -3169,10 +3169,6 @@
             'endpoint' => 'sgw.cn-shanghai.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-heyuan-acdr-1',
-            'endpoint' => 'sgw.cn-shanghai.aliyuncs.com',
-        ],
-        [
             'regionId' => 'eu-central-1',
             'endpoint' => 'sgw.eu-central-1.aliyuncs.com',
         ],

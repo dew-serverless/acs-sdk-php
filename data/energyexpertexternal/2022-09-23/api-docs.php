@@ -2267,7 +2267,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -2376,7 +2376,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -2473,7 +2473,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -2481,7 +2481,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2558,7 +2558,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -2725,11 +2725,13 @@
                                 'required' => true,
                             ],
                             'currentPage' => [
-                                'type' => 'string',
+                                'type' => 'integer',
+                                'format' => 'int32',
                                 'required' => false,
                             ],
                             'pageSize' => [
-                                'type' => 'string',
+                                'type' => 'integer',
+                                'format' => 'int32',
                                 'required' => false,
                             ],
                         ],
@@ -2861,7 +2863,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -2869,7 +2871,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],

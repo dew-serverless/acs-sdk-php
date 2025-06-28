@@ -1940,6 +1940,21 @@
                             'srcModelScopeModelID' => [
                                 'type' => 'string',
                             ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'workingDir' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'withPPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'skipDownload' => [
+                                'type' => 'boolean',
+                            ],
                             'srcModelScopeModelRevision' => [
                                 'type' => 'string',
                             ],
@@ -1950,12 +1965,6 @@
                                 'type' => 'string',
                             ],
                             'srcOssRegion' => [
-                                'type' => 'string',
-                            ],
-                            'prefix' => [
-                                'type' => 'string',
-                            ],
-                            'srcOssBucket' => [
                                 'type' => 'string',
                             ],
                             'srcModelScopeToken' => [
@@ -2062,6 +2071,34 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
+                    'ossMountConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'bucketName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endpoint' => [
+                                            'type' => 'string',
+                                        ],
+                                        'bucketPath' => [
+                                            'type' => 'string',
+                                        ],
+                                        'mountDir' => [
+                                            'type' => 'string',
+                                        ],
+                                        'readOnly' => [
+                                            'type' => 'boolean',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                     'traceId' => [
                         'type' => 'string',
                     ],
@@ -2103,6 +2140,14 @@
                     'cpu' => [
                         'type' => 'number',
                         'format' => 'float',
+                    ],
+                    'customContainerConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'role' => [
+                                'type' => 'string',
+                            ],
+                        ],
                     ],
                     'instanceConcurrency' => [
                         'type' => 'integer',
@@ -2597,6 +2642,21 @@
                             'srcModelScopeModelID' => [
                                 'type' => 'string',
                             ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'workingDir' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'withPPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'skipDownload' => [
+                                'type' => 'boolean',
+                            ],
                             'srcModelScopeModelRevision' => [
                                 'type' => 'string',
                             ],
@@ -2607,12 +2667,6 @@
                                 'type' => 'string',
                             ],
                             'srcOssRegion' => [
-                                'type' => 'string',
-                            ],
-                            'prefix' => [
-                                'type' => 'string',
-                            ],
-                            'srcOssBucket' => [
                                 'type' => 'string',
                             ],
                             'fmkVllmConfig' => [
@@ -2765,6 +2819,34 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
+                    'ossMountConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'bucketName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endpoint' => [
+                                            'type' => 'string',
+                                        ],
+                                        'bucketPath' => [
+                                            'type' => 'string',
+                                        ],
+                                        'mountDir' => [
+                                            'type' => 'string',
+                                        ],
+                                        'readOnly' => [
+                                            'type' => 'boolean',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                     'traceId' => [
                         'type' => 'string',
                     ],
@@ -2806,6 +2888,14 @@
                     'cpu' => [
                         'type' => 'number',
                         'format' => 'float',
+                    ],
+                    'customContainerConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'role' => [
+                                'type' => 'string',
+                            ],
+                        ],
                     ],
                     'instanceConcurrency' => [
                         'type' => 'integer',

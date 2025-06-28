@@ -9,6 +9,61 @@
         'schemas' => [],
     ],
     'apis' => [
+        'GenerateAlgorithmCustomizationScript' => [
+            'path' => '/api/v1/algorithmcustomizations/{AlgorithmCustomizationId}/action/generatescript',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AlgorithmCustomizationId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'InstanceId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ModuleFieldTypes' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'DeployMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'DeleteEngineConfig' => [
             'path' => '/api/v1/engineconfigs/{EngineConfigId}',
             'methods' => [

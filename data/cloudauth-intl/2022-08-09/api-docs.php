@@ -282,6 +282,14 @@
                     ],
                 ],
                 [
+                    'name' => 'Pages',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'FacePictureBase64',
                     'in' => 'formData',
                     'schema' => [
@@ -520,6 +528,14 @@
                 ],
                 [
                     'name' => 'UseNFC',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChameleonFrameEnable',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1019,7 +1035,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -1040,6 +1056,14 @@
                 ],
                 [
                     'name' => 'IdThreshold',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IdSpoof',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',

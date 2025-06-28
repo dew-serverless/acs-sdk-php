@@ -1045,6 +1045,78 @@
                 ],
             ],
         ],
+        'TagResources' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 51,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'UntagResources' => [
             'methods' => [
                 'post',
@@ -13859,6 +13931,10 @@
                                 'type' => 'any',
                                 'required' => false,
                             ],
+                            'MonitoringRegion' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -14125,6 +14201,10 @@
                             ],
                             'Header' => [
                                 'type' => 'any',
+                                'required' => false,
+                            ],
+                            'MonitoringRegion' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -15549,6 +15629,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Fallback',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'on',
+                            'off',
+                        ],
+                    ],
+                ],
             ],
         ],
         'UpdateRoutineRoute' => [
@@ -15634,6 +15726,18 @@
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Fallback',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'on',
+                            'off',
+                        ],
                     ],
                 ],
             ],
@@ -17816,7 +17920,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -18019,6 +18123,18 @@
                                     ],
                                 ],
                             ],
+                            'LogSplit' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'LastLogSplit' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'LogSplitWords' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -18090,6 +18206,14 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'FilterVer',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -18180,6 +18304,14 @@
                     'schema' => [
                         'type' => 'number',
                         'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FilterVer',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -18627,7 +18759,7 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -18800,39 +18932,12 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'MinBackoffMS' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
-                            'MaxBackoffMS' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                                'required' => false,
-                            ],
                             'Compress' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'LogSplit' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'LastLogSplit' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
                             'LogSplitWords' => [
                                 'type' => 'string',
-                                'required' => false,
-                            ],
-                            'ResponseBodyKey' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'SuccessCode' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
                                 'required' => false,
                             ],
                             'HeaderParam' => [
@@ -18860,6 +18965,14 @@
                                         ],
                                     ],
                                 ],
+                            ],
+                            'LogSplit' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'LastLogSplit' => [
+                                'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -18942,6 +19055,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'FilterVer',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteUserDeliveryTask' => [
@@ -19017,6 +19138,14 @@
                 ],
                 [
                     'name' => 'Details',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FilterVer',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -19604,6 +19733,283 @@
                         'type' => 'string',
                         'required' => true,
                         'enum' => [],
+                    ],
+                ],
+            ],
+        ],
+        'ListESAIPInfo' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'VipInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteUrlObservation' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListUrlObservations' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateUrlObservation' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ConfigId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SdkType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'automatic',
+                            'manual',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateUrlObservation' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Url',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [],
+                    ],
+                ],
+                [
+                    'name' => 'SdkType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'manual',
+                            'automatic',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DescribeUrlObservationData' => [
+            'path' => '/',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SiteId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Url',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClientPlatform',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'PC',
+                            'Mobile',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Metric',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

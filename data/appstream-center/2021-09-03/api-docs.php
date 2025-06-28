@@ -223,6 +223,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'AppPolicyId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListPublishedAppInfo' => [

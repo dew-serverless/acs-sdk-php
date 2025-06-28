@@ -27,6 +27,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateSiteCoverageAsync($arguments = [])
  * @method \Dew\Acs\Result updateSiteVanityNS(array $arguments = [])
  * @method \Http\Promise\Promise updateSiteVanityNSAsync($arguments = [])
+ * @method \Dew\Acs\Result tagResources(array $arguments = [])
+ * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result untagResources(array $arguments = [])
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result listTagResources(array $arguments = [])
@@ -645,6 +647,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listInstanceQuotasAsync($arguments = [])
  * @method \Dew\Acs\Result listInstanceQuotasWithUsage(array $arguments = [])
  * @method \Http\Promise\Promise listInstanceQuotasWithUsageAsync($arguments = [])
+ * @method \Dew\Acs\Result listESAIPInfo(array $arguments = [])
+ * @method \Http\Promise\Promise listESAIPInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteUrlObservation(array $arguments = [])
+ * @method \Http\Promise\Promise deleteUrlObservationAsync($arguments = [])
+ * @method \Dew\Acs\Result listUrlObservations(array $arguments = [])
+ * @method \Http\Promise\Promise listUrlObservationsAsync($arguments = [])
+ * @method \Dew\Acs\Result updateUrlObservation(array $arguments = [])
+ * @method \Http\Promise\Promise updateUrlObservationAsync($arguments = [])
+ * @method \Dew\Acs\Result createUrlObservation(array $arguments = [])
+ * @method \Http\Promise\Promise createUrlObservationAsync($arguments = [])
+ * @method \Dew\Acs\Result describeUrlObservationData(array $arguments = [])
+ * @method \Http\Promise\Promise describeUrlObservationDataAsync($arguments = [])
  */
 final class EsaClient extends AcsClient
 {

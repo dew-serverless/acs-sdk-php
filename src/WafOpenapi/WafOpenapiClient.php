@@ -111,6 +111,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCloudResourceAccessedPortsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeCloudResourceAccessPortDetails(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeCloudResourceAccessPortDetailsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeDomainUsedPorts(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeDomainUsedPortsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeDomains(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeDomainsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeDomainDetail(array $arguments = []) {@since 2021-10-01}
@@ -137,8 +139,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDefaultHttpsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyDefaultHttps(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise modifyDefaultHttpsAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result createCerts(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise createCertsAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeHybridCloudResources(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeHybridCloudResourcesAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result createDefenseResource(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise createDefenseResourceAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result deleteDefenseResource(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise deleteDefenseResourceAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result createDefenseResourceGroup(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise createDefenseResourceGroupAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyDefenseResourceGroup(array $arguments = []) {@since 2021-10-01}
@@ -157,6 +165,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDefenseResourcesAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describeDefenseResourceNames(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise describeDefenseResourceNamesAsync($arguments = []) {@since 2021-10-01}
+ * @method \Dew\Acs\Result describeDefenseResourceOwnerUid(array $arguments = []) {@since 2021-10-01}
+ * @method \Http\Promise\Promise describeDefenseResourceOwnerUidAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result modifyDefenseResourceXff(array $arguments = []) {@since 2021-10-01}
  * @method \Http\Promise\Promise modifyDefenseResourceXffAsync($arguments = []) {@since 2021-10-01}
  * @method \Dew\Acs\Result describePauseProtectionStatus(array $arguments = []) {@since 2021-10-01}

@@ -7,6 +7,22 @@ namespace Dew\Acs\Cams;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result updateChatGroup(array $arguments = [])
+ * @method \Http\Promise\Promise updateChatGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result listChatGroupParticipants(array $arguments = [])
+ * @method \Http\Promise\Promise listChatGroupParticipantsAsync($arguments = [])
+ * @method \Dew\Acs\Result listChatGroup(array $arguments = [])
+ * @method \Http\Promise\Promise listChatGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteChatGroupParticipants(array $arguments = [])
+ * @method \Http\Promise\Promise deleteChatGroupParticipantsAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteChatGroupInviteLink(array $arguments = [])
+ * @method \Http\Promise\Promise deleteChatGroupInviteLinkAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteChatGroup(array $arguments = [])
+ * @method \Http\Promise\Promise deleteChatGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result addChatGroup(array $arguments = [])
+ * @method \Http\Promise\Promise addChatGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result addChatGroupInviteLink(array $arguments = [])
+ * @method \Http\Promise\Promise addChatGroupInviteLinkAsync($arguments = [])
  * @method \Dew\Acs\Result triggerChatFlow(array $arguments = [])
  * @method \Http\Promise\Promise triggerChatFlowAsync($arguments = [])
  * @method \Dew\Acs\Result publishFlow(array $arguments = [])

@@ -695,6 +695,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise setNotifyConfigAsync($arguments = [])
  * @method \Dew\Acs\Result describeNotifyConfig(array $arguments = [])
  * @method \Http\Promise\Promise describeNotifyConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result listMediaConvertJobs(array $arguments = [])
+ * @method \Http\Promise\Promise listMediaConvertJobsAsync($arguments = [])
  */
 final class IceClient extends AcsClient
 {

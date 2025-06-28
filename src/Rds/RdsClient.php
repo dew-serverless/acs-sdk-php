@@ -337,6 +337,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSQLLogRecordsAsync($arguments = [])
  * @method \Dew\Acs\Result describeSQLCollectorRetention(array $arguments = [])
  * @method \Http\Promise\Promise describeSQLCollectorRetentionAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyBackupSetExpireTime(array $arguments = [])
+ * @method \Http\Promise\Promise modifyBackupSetExpireTimeAsync($arguments = [])
  * @method \Dew\Acs\Result createBackup(array $arguments = [])
  * @method \Http\Promise\Promise createBackupAsync($arguments = [])
  * @method \Dew\Acs\Result deleteBackup(array $arguments = [])
@@ -519,6 +521,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise switchReplicationLinkAsync($arguments = [])
  * @method \Dew\Acs\Result deleteReplicationLink(array $arguments = [])
  * @method \Http\Promise\Promise deleteReplicationLinkAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyComputeBurstConfig(array $arguments = [])
+ * @method \Http\Promise\Promise modifyComputeBurstConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result describeComputeBurstConfig(array $arguments = [])
+ * @method \Http\Promise\Promise describeComputeBurstConfigAsync($arguments = [])
  * @method \Dew\Acs\Result createSecret(array $arguments = [])
  * @method \Http\Promise\Promise createSecretAsync($arguments = [])
  * @method \Dew\Acs\Result deleteSecret(array $arguments = [])
@@ -587,6 +593,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeRCInstanceIpAddressAsync($arguments = [])
  * @method \Dew\Acs\Result describeRCInstanceDdosCount(array $arguments = [])
  * @method \Http\Promise\Promise describeRCInstanceDdosCountAsync($arguments = [])
+ * @method \Dew\Acs\Result createDiagnosticReport(array $arguments = [])
+ * @method \Http\Promise\Promise createDiagnosticReportAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDiagnosticReportList(array $arguments = []) {@deprecated 2014-08-15}
+ * @method \Http\Promise\Promise describeDiagnosticReportListAsync($arguments = []) {@deprecated 2014-08-15}
  * @method \Dew\Acs\Result describeHistoryEventsStat(array $arguments = [])
  * @method \Http\Promise\Promise describeHistoryEventsStatAsync($arguments = [])
  * @method \Dew\Acs\Result describeHistoryEvents(array $arguments = [])
@@ -627,14 +637,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryRecommendByCodeAsync($arguments = [])
  * @method \Dew\Acs\Result createOrderForDeleteDBNodes(array $arguments = [])
  * @method \Http\Promise\Promise createOrderForDeleteDBNodesAsync($arguments = [])
- * @method \Dew\Acs\Result createDiagnosticReport(array $arguments = [])
- * @method \Http\Promise\Promise createDiagnosticReportAsync($arguments = [])
- * @method \Dew\Acs\Result describeDiagnosticReportList(array $arguments = []) {@deprecated 2014-08-15}
- * @method \Http\Promise\Promise describeDiagnosticReportListAsync($arguments = []) {@deprecated 2014-08-15}
- * @method \Dew\Acs\Result modifyComputeBurstConfig(array $arguments = [])
- * @method \Http\Promise\Promise modifyComputeBurstConfigAsync($arguments = [])
- * @method \Dew\Acs\Result describeComputeBurstConfig(array $arguments = [])
- * @method \Http\Promise\Promise describeComputeBurstConfigAsync($arguments = [])
  */
 final class RdsClient extends AcsClient
 {

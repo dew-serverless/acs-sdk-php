@@ -55,6 +55,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteAppInstanceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result modifyAppPolicy(array $arguments = [])
  * @method \Http\Promise\Promise modifyAppPolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result listAuthorizedUserGroups(array $arguments = [])
+ * @method \Http\Promise\Promise listAuthorizedUserGroupsAsync($arguments = [])
  * @method \Dew\Acs\Result listAppInstances(array $arguments = [])
  * @method \Http\Promise\Promise listAppInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result deleteAppInstances(array $arguments = [])

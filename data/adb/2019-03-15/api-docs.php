@@ -6015,6 +6015,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'UserName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribePatternPerformance' => [

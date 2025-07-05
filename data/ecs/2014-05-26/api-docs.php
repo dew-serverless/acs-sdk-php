@@ -7077,11 +7077,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -17738,6 +17738,21 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ImageOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'LoginAsNonRoot' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeLaunchTemplates' => [
@@ -18526,6 +18541,21 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ImageOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'LoginAsNonRoot' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -19572,6 +19602,20 @@
                                 'properties' => [
                                     'LoginAsNonRoot' => [
                                         'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'SchedulerOptions' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'DedicatedHostId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'DedicatedHostClusterId' => [
+                                        'type' => 'string',
                                         'required' => false,
                                     ],
                                 ],
@@ -34203,6 +34247,10 @@
         [
             'regionId' => 'na-south-1',
             'endpoint' => 'ecs.na-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-southeast-1',
+            'endpoint' => 'ecs.us-southeast-1.aliyuncs.com',
         ],
     ],
 ];

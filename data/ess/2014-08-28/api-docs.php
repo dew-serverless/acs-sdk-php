@@ -2942,7 +2942,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 10,
+                        'maxItems' => 20,
                     ],
                 ],
                 [
@@ -3964,7 +3964,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 10,
+                        'maxItems' => 20,
                     ],
                 ],
                 [

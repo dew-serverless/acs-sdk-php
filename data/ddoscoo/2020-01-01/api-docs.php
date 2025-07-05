@@ -6596,6 +6596,15 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Interval',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDomainViewSourceCountries' => [

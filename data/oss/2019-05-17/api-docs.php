@@ -1253,20 +1253,19 @@
                             'AcceleratePaths' => [
                                 '$ref' => '#/components/schemas/AcceleratePaths',
                             ],
-                            'FlowCapFlag' => [
-                                'type' => 'boolean',
-                            ],
                             'CreationDate' => [
-                                'type' => 'string',
-                            ],
-                            'FlowCap' => [
-                                'type' => 'string',
+                                'type' => 'integer',
+                                'format' => 'int64',
                             ],
                             'Quota' => [
                                 'type' => 'string',
                             ],
-                            'Version' => [
+                            'AvailableZone' => [
                                 'type' => 'string',
+                            ],
+                            'QuotaFrozenUtil' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
                             ],
                         ],
                     ],
@@ -1281,6 +1280,9 @@
             'DataAcceleratorConfiguration' => [
                 'type' => 'object',
                 'properties' => [
+                    'AvailableZone' => [
+                        'type' => 'string',
+                    ],
                     'Quota' => [
                         'type' => 'string',
                     ],

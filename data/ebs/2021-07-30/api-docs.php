@@ -3111,6 +3111,19 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'GroupByLabels',
+                    'in' => 'query',
+                    'style' => 'simple',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeDiskMonitorDataList' => [

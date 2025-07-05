@@ -1718,6 +1718,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'agent_config_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListAgentInstallRecords' => [
@@ -1791,6 +1799,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'InstallAgentForCluster' => [
@@ -1835,6 +1851,10 @@
                                 'required' => false,
                             ],
                             'grayscale_config' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'config_id' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

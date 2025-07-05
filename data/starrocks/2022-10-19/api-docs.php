@@ -337,6 +337,14 @@
                         'maximum' => '100',
                     ],
                 ],
+                [
+                    'name' => 'PromotionOptionNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyCuPreCheck' => [
@@ -452,6 +460,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'PromotionOptionNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyDiskSize' => [
@@ -502,6 +518,14 @@
                         'required' => true,
                         'minimum' => '0',
                         'maximum' => '65000',
+                    ],
+                ],
+                [
+                    'name' => 'PromotionOptionNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -561,6 +585,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionOptionNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -628,6 +660,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionOptionNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

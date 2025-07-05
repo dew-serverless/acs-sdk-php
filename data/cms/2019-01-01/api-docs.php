@@ -12260,6 +12260,10 @@
             'endpoint' => 'metrics.me-east-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'cms.cn-hangzhou-finance.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'metrics.cn-shanghai-finance-1.aliyuncs.com',
         ],
@@ -12286,6 +12290,10 @@
         [
             'regionId' => 'na-south-1',
             'endpoint' => 'metrics.na-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-southeast-1',
+            'endpoint' => 'metrics.us-southeast-1.aliyuncs.com',
         ],
     ],
 ];

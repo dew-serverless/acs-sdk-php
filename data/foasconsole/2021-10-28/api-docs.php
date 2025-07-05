@@ -6,7 +6,79 @@
         'version' => '2021-10-28',
     ],
     'components' => [
-        'schemas' => [],
+        'schemas' => [
+            'FlussInstance' => [
+                'type' => 'object',
+                'properties' => [
+                    'TabletServerType' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'ConsoleUrl' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceExpiredTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'TabletServerNum' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ResourceCreateTime' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'InstanceName' => [
+                        'type' => 'string',
+                    ],
+                    'Uid' => [
+                        'type' => 'string',
+                    ],
+                    'VpcId' => [
+                        'type' => 'string',
+                    ],
+                    'TabletServerModel' => [
+                        'type' => 'string',
+                    ],
+                    'DiskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'VSwitches' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/FlussVswitch',
+                        ],
+                    ],
+                    'RegionId' => [
+                        'type' => 'string',
+                    ],
+                    'OrderState' => [
+                        'type' => 'string',
+                    ],
+                    'ClusterStatus' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'FlussVswitch' => [
+                'type' => 'object',
+                'properties' => [
+                    'ZoneId' => [
+                        'type' => 'string',
+                    ],
+                    'VSwitchIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'apis' => [
         'ModifyElasticResourceSpec' => [

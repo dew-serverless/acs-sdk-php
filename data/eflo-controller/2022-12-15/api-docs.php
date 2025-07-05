@@ -86,6 +86,33 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'DataDisk' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'DeleteWithNode' => [
+                                                            'type' => 'boolean',
+                                                            'required' => false,
+                                                        ],
+                                                        'Category' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Size' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int32',
+                                                            'required' => false,
+                                                        ],
+                                                        'PerformanceLevel' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
                                         ],
                                     ],
                                 ],
@@ -569,6 +596,33 @@
                                             'VSwitchId' => [
                                                 'type' => 'string',
                                                 'required' => false,
+                                            ],
+                                            'DataDisk' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'DeleteWithNode' => [
+                                                            'type' => 'boolean',
+                                                            'required' => false,
+                                                        ],
+                                                        'Category' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Size' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int32',
+                                                            'required' => false,
+                                                        ],
+                                                        'PerformanceLevel' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
                                             ],
                                         ],
                                     ],

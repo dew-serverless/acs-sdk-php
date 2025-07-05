@@ -922,5 +922,22 @@
             'parameters' => [],
         ],
     ],
-    'endpoints' => [],
+    'endpoints' => [
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'paillmtrace.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'paillmtrace.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'paillmtrace.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'paillmtrace.cn-shenzhen.aliyuncs.com',
+        ],
+    ],
 ];

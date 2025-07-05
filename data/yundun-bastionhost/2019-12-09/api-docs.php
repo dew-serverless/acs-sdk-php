@@ -2296,6 +2296,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PrivilegeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RotationMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetHostAccount' => [
@@ -2410,6 +2426,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'HostIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyHostAccount' => [
@@ -2485,6 +2509,22 @@
                 ],
                 [
                     'name' => 'HostShareKeyId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PrivilegeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RotationMode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

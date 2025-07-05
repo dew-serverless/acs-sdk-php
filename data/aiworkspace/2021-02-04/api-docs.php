@@ -8047,29 +8047,8 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'AutoRenew' => [
-                                            'type' => 'boolean',
-                                            'required' => false,
-                                        ],
-                                        'ProductCode' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'ChargeType' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
                                         'OrderType' => [
                                             'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'PricingCycle' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Duration' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
                                             'required' => false,
                                         ],
                                         'InstanceProperties' => [
@@ -8079,6 +8058,10 @@
                                                 'type' => 'object',
                                                 'required' => false,
                                                 'properties' => [
+                                                    'Value' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
                                                     'Code' => [
                                                         'type' => 'string',
                                                         'required' => false,
@@ -8087,12 +8070,29 @@
                                                         'type' => 'string',
                                                         'required' => false,
                                                     ],
-                                                    'Value' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
                                                 ],
                                             ],
+                                        ],
+                                        'ProductCode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ChargeType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'PricingCycle' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'AutoRenew' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'Duration' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
                                         ],
                                     ],
                                 ],

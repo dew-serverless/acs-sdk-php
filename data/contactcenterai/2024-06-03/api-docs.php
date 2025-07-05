@@ -933,6 +933,10 @@
                                         'type' => 'boolean',
                                         'required' => false,
                                     ],
+                                    'languageHints' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'customPrompt' => [

@@ -5616,6 +5616,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SimpleUserGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetDesktopGroupDetail' => [
@@ -5868,6 +5876,14 @@
                             'required' => false,
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'DesktopType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -6906,6 +6922,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SimpleUserGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeUsersInGroup' => [
@@ -7281,6 +7305,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SimpleUserGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateNetworkPackage' => [
@@ -7499,11 +7531,12 @@
                         'format' => 'int32',
                         'required' => true,
                         'minimum' => '60',
-                        'maximum' => '900',
+                        'maximum' => '3600',
                         'enum' => [
                             '60',
                             '300',
                             '900',
+                            '3600',
                         ],
                     ],
                 ],
@@ -13896,7 +13929,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 3,
+                        'maxItems' => 50,
                     ],
                 ],
                 [
@@ -14365,6 +14398,62 @@
                 ],
                 [
                     'name' => 'SafeMenu',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ScreenDisplayMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClientControlMenu',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileTransferSpeedLocation',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileTransferSpeed',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileTransferAddress',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CpdDriveClipboard',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UseTime',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -15167,7 +15256,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 3,
+                        'maxItems' => 50,
                     ],
                 ],
                 [
@@ -15575,6 +15664,62 @@
                 ],
                 [
                     'name' => 'SafeMenu',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ScreenDisplayMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClientControlMenu',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileTransferSpeedLocation',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileTransferSpeed',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileTransferAddress',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CpdDriveClipboard',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UseTime',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -18877,6 +19022,14 @@
                 ],
                 [
                     'name' => 'EndUserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CommandRole',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

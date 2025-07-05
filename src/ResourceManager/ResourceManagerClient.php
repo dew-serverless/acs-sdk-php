@@ -151,6 +151,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateAssociatedTransferSettingAsync($arguments = [])
  * @method \Dew\Acs\Result listAssociatedTransferSetting(array $arguments = [])
  * @method \Http\Promise\Promise listAssociatedTransferSettingAsync($arguments = [])
+ * @method \Dew\Acs\Result getResourceGroupResourceCounts(array $arguments = [])
+ * @method \Http\Promise\Promise getResourceGroupResourceCountsAsync($arguments = [])
  * @method \Dew\Acs\Result createRole(array $arguments = [])
  * @method \Http\Promise\Promise createRoleAsync($arguments = [])
  * @method \Dew\Acs\Result deleteRole(array $arguments = [])

@@ -237,6 +237,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise convertK8sResourceAsync($arguments = [])
  * @method \Dew\Acs\Result abortAndRollbackChangeOrder(array $arguments = [])
  * @method \Http\Promise\Promise abortAndRollbackChangeOrderAsync($arguments = [])
+ * @method \Dew\Acs\Result updateLocalitySetting(array $arguments = [])
+ * @method \Http\Promise\Promise updateLocalitySettingAsync($arguments = [])
  * @method \Dew\Acs\Result deleteServiceGroup(array $arguments = [])
  * @method \Http\Promise\Promise deleteServiceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result getServiceConsumersPage(array $arguments = [])

@@ -171,6 +171,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSlowLogTrendAsync($arguments = []) {@since 2023-05-22}
  * @method \Dew\Acs\Result deleteBackupPolicy(array $arguments = []) {@since 2023-05-22}
  * @method \Http\Promise\Promise deleteBackupPolicyAsync($arguments = []) {@since 2023-05-22}
+ * @method \Dew\Acs\Result modifyDBInstanceConfig(array $arguments = []) {@since 2023-05-22}
+ * @method \Http\Promise\Promise modifyDBInstanceConfigAsync($arguments = []) {@since 2023-05-22}
+ * @method \Dew\Acs\Result describeDBInstanceConfigChangeLog(array $arguments = []) {@since 2023-05-22}
+ * @method \Http\Promise\Promise describeDBInstanceConfigChangeLogAsync($arguments = []) {@since 2023-05-22}
+ * @method \Dew\Acs\Result describeDBInstanceConfig(array $arguments = []) {@since 2023-05-22}
+ * @method \Http\Promise\Promise describeDBInstanceConfigAsync($arguments = []) {@since 2023-05-22}
  */
 final class ClickhouseClient extends AcsClient
 {

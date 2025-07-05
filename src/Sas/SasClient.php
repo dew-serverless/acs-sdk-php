@@ -1017,8 +1017,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeUserBaselineAuthorizationAsync($arguments = [])
  * @method \Dew\Acs\Result describeStrategyDetail(array $arguments = [])
  * @method \Http\Promise\Promise describeStrategyDetailAsync($arguments = [])
- * @method \Dew\Acs\Result exportWarning(array $arguments = [])
- * @method \Http\Promise\Promise exportWarningAsync($arguments = [])
+ * @method \Dew\Acs\Result exportWarning(array $arguments = []) {@deprecated 2018-12-03}
+ * @method \Http\Promise\Promise exportWarningAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result describeStrategy(array $arguments = [])
  * @method \Http\Promise\Promise describeStrategyAsync($arguments = [])
  * @method \Dew\Acs\Result describeStrategyTarget(array $arguments = [])
@@ -1037,8 +1037,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCustomizedStrategyTargetsAsync($arguments = [])
  * @method \Dew\Acs\Result listCheckTypes(array $arguments = [])
  * @method \Http\Promise\Promise listCheckTypesAsync($arguments = [])
- * @method \Dew\Acs\Result createDynamicDict(array $arguments = [])
- * @method \Http\Promise\Promise createDynamicDictAsync($arguments = [])
+ * @method \Dew\Acs\Result createDynamicDict(array $arguments = []) {@deprecated 2018-12-03}
+ * @method \Http\Promise\Promise createDynamicDictAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result updateBaselineCheckWhiteRecord(array $arguments = [])
  * @method \Http\Promise\Promise updateBaselineCheckWhiteRecordAsync($arguments = [])
  * @method \Dew\Acs\Result deleteCustomizedDict(array $arguments = [])
@@ -1621,14 +1621,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeAgentlessSensitiveFileByKeyAsync($arguments = [])
  * @method \Dew\Acs\Result getCheckStructure(array $arguments = [])
  * @method \Http\Promise\Promise getCheckStructureAsync($arguments = [])
- * @method \Dew\Acs\Result describeDynamicDictUploadInfo(array $arguments = [])
- * @method \Http\Promise\Promise describeDynamicDictUploadInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDynamicDictUploadInfo(array $arguments = []) {@deprecated 2018-12-03}
+ * @method \Http\Promise\Promise describeDynamicDictUploadInfoAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result deleteCustomizeReport(array $arguments = [])
  * @method \Http\Promise\Promise deleteCustomizeReportAsync($arguments = [])
  * @method \Dew\Acs\Result describeCustomizeReportConfigDetail(array $arguments = [])
  * @method \Http\Promise\Promise describeCustomizeReportConfigDetailAsync($arguments = [])
- * @method \Dew\Acs\Result describeDynamicDict(array $arguments = [])
- * @method \Http\Promise\Promise describeDynamicDictAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDynamicDict(array $arguments = []) {@deprecated 2018-12-03}
+ * @method \Http\Promise\Promise describeDynamicDictAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result describeIdcProbeScanResultList(array $arguments = [])
  * @method \Http\Promise\Promise describeIdcProbeScanResultListAsync($arguments = [])
  * @method \Dew\Acs\Result describeSupervisonInfo(array $arguments = [])
@@ -1805,6 +1805,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getAttackPathEventStatisticsAsync($arguments = [])
  * @method \Dew\Acs\Result updatePostPaidBindRel(array $arguments = [])
  * @method \Http\Promise\Promise updatePostPaidBindRelAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAIAssetSummary(array $arguments = [])
+ * @method \Http\Promise\Promise describeAIAssetSummaryAsync($arguments = [])
+ * @method \Dew\Acs\Result describePluginSummary(array $arguments = [])
+ * @method \Http\Promise\Promise describePluginSummaryAsync($arguments = [])
  */
 final class SasClient extends AcsClient
 {

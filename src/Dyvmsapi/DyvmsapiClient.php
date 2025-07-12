@@ -77,8 +77,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryCallInPoolTransferConfigAsync($arguments = [])
  * @method \Dew\Acs\Result queryCallInTransferRecord(array $arguments = [])
  * @method \Http\Promise\Promise queryCallInTransferRecordAsync($arguments = [])
- * @method \Dew\Acs\Result listHotlineTransferNumber(array $arguments = [])
- * @method \Http\Promise\Promise listHotlineTransferNumberAsync($arguments = [])
  * @method \Dew\Acs\Result sendVerification(array $arguments = [])
  * @method \Http\Promise\Promise sendVerificationAsync($arguments = [])
  * @method \Dew\Acs\Result singleCallByVideo(array $arguments = [])

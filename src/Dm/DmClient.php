@@ -93,6 +93,22 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createUserSuppressionAsync($arguments = [])
  * @method \Dew\Acs\Result removeUserSuppression(array $arguments = [])
  * @method \Http\Promise\Promise removeUserSuppressionAsync($arguments = [])
+ * @method \Dew\Acs\Result dedicatedIpNonePoolList(array $arguments = [])
+ * @method \Http\Promise\Promise dedicatedIpNonePoolListAsync($arguments = [])
+ * @method \Dew\Acs\Result dedicatedIpChangeWarmupType(array $arguments = [])
+ * @method \Http\Promise\Promise dedicatedIpChangeWarmupTypeAsync($arguments = [])
+ * @method \Dew\Acs\Result dedicatedIpPoolCreate(array $arguments = [])
+ * @method \Http\Promise\Promise dedicatedIpPoolCreateAsync($arguments = [])
+ * @method \Dew\Acs\Result dedicatedIpPoolList(array $arguments = [])
+ * @method \Http\Promise\Promise dedicatedIpPoolListAsync($arguments = [])
+ * @method \Dew\Acs\Result dedicatedIpPoolUpdate(array $arguments = [])
+ * @method \Http\Promise\Promise dedicatedIpPoolUpdateAsync($arguments = [])
+ * @method \Dew\Acs\Result dedicatedIpAutoRenewal(array $arguments = [])
+ * @method \Http\Promise\Promise dedicatedIpAutoRenewalAsync($arguments = [])
+ * @method \Dew\Acs\Result dedicatedIpPoolDelete(array $arguments = [])
+ * @method \Http\Promise\Promise dedicatedIpPoolDeleteAsync($arguments = [])
+ * @method \Dew\Acs\Result dedicatedIpList(array $arguments = [])
+ * @method \Http\Promise\Promise dedicatedIpListAsync($arguments = [])
  */
 final class DmClient extends AcsClient
 {

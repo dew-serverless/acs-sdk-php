@@ -221,6 +221,15 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'StreamMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeCloudPhoneNodes' => [
@@ -315,6 +324,7 @@
             'path' => '',
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'https',
@@ -339,6 +349,15 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StreamMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -2041,13 +2060,21 @@
                     'style' => 'repeatList',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
                             'required' => false,
                             'pattern' => '^[^\';<>=|\\(\\)]+$',
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'EndUserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

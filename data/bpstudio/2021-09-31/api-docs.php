@@ -383,6 +383,14 @@
                     ],
                 ],
                 [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Instances',
                     'in' => 'formData',
                     'style' => 'json',
@@ -393,11 +401,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'NodeType' => [
+                                'NodeName' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'NodeName' => [
+                                'NodeType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -407,14 +415,6 @@
                                 ],
                             ],
                         ],
-                    ],
-                ],
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [
@@ -431,6 +431,18 @@
                 ],
                 [
                     'name' => 'Variables',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'any',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ProcessVariables',
                     'in' => 'formData',
                     'style' => 'json',
                     'schema' => [

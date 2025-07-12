@@ -59,6 +59,15 @@
                     ],
                 ],
                 [
+                    'name' => 'AccountId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'AccountName',
                     'in' => 'query',
                     'schema' => [
@@ -4068,6 +4077,22 @@
                 ],
                 [
                     'name' => 'OperatorTypes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserAccessDevice',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AccessSourceFlag',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

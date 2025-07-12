@@ -1633,6 +1633,7 @@
         'GetQueryOptimizeExecErrorSample' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -1681,6 +1682,7 @@
         'GetQueryOptimizeSolution' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -2049,10 +2051,11 @@
         'GetQueryOptimizeTag' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -2090,10 +2093,11 @@
         'GetQueryOptimizeShareUrl' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -6260,8 +6264,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [

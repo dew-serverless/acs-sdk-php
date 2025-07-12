@@ -703,6 +703,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RegionType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeInstanceSources' => [

@@ -10,23 +10,6 @@
             'AppInfoDTO' => [
                 'type' => 'object',
                 'properties' => [
-                    'ItemId' => [
-                        'type' => 'string',
-                    ],
-                    'AppName' => [
-                        'type' => 'string',
-                    ],
-                    'UserId' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'AppType' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'GmtCreate' => [
-                        'type' => 'string',
-                    ],
                     'Platforms' => [
                         'type' => 'array',
                         'items' => [
@@ -36,27 +19,53 @@
                                     'type' => 'integer',
                                     'format' => 'int64',
                                 ],
-                                'PlatformType' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                ],
-                                'PkgName' => [
-                                    'type' => 'string',
-                                ],
-                                'PkgSignature' => [
-                                    'type' => 'string',
-                                ],
-                                'ItemId' => [
-                                    'type' => 'string',
-                                ],
                                 'LicenseItemIds' => [
                                     'type' => 'array',
                                     'items' => [
                                         'type' => 'string',
                                     ],
                                 ],
+                                'PkgSignature' => [
+                                    'type' => 'string',
+                                ],
+                                'PlatformType' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'ItemId' => [
+                                    'type' => 'string',
+                                ],
+                                'PkgName' => [
+                                    'type' => 'string',
+                                ],
                             ],
                         ],
+                    ],
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'UserId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'CreationTime' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'ModificationTime' => [
+                        'type' => 'string',
+                    ],
+                    'ItemId' => [
+                        'type' => 'string',
+                    ],
+                    'AppType' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'AppName' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

@@ -491,6 +491,9 @@
                             'GenericAdvanced',
                         ],
                     ],
+                    'location' => [
+                        'type' => 'string',
+                    ],
                     'category' => [
                         'type' => 'string',
                     ],

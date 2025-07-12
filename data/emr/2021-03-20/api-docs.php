@@ -193,6 +193,17 @@
                     ],
                 ],
             ],
+            'AdviseSummary' => [
+                'type' => 'object',
+                'properties' => [
+                    'VcoreUtilizationRate' => [
+                        '$ref' => '#/components/schemas/DoubleMetric',
+                    ],
+                    'MemoryUtilizationRate' => [
+                        '$ref' => '#/components/schemas/DoubleMetric',
+                    ],
+                ],
+            ],
             'ApiTemplate' => [
                 'type' => 'object',
                 'properties' => [
@@ -301,6 +312,47 @@
                         'type' => 'string',
                     ],
                     'EffectiveActions' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ApplicationConfigurationFile' => [
+                'type' => 'object',
+                'properties' => [
+                    'ConfigFileName' => [
+                        'type' => 'string',
+                    ],
+                    'ApplicationName' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'ConfigFileFormat' => [
+                        'type' => 'string',
+                    ],
+                    'ClusterId' => [
+                        'type' => 'string',
+                    ],
+                    'ConfigFileMode' => [
+                        'type' => 'string',
+                    ],
+                    'NodeGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'ConfigFileOwner' => [
+                        'type' => 'string',
+                    ],
+                    'NodeId' => [
+                        'type' => 'string',
+                    ],
+                    'ConfigFilePath' => [
+                        'type' => 'string',
+                    ],
+                    'ConfigFileGroup' => [
+                        'type' => 'string',
+                    ],
+                    'ConfigFileLink' => [
                         'type' => 'string',
                     ],
                 ],
@@ -901,6 +953,63 @@
                     ],
                 ],
             ],
+            'CostInstanceType' => [
+                'type' => 'object',
+                'properties' => [
+                    'SystemDisk' => [
+                        '$ref' => '#/components/schemas/SystemDisk',
+                    ],
+                    'DataDisks' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/DataDisk',
+                        ],
+                    ],
+                    'Memory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Cpu' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'InstanceType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'CostNodeGroupConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'NodeCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'MinimalNodeCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'NodeGroupName' => [
+                        'type' => 'string',
+                    ],
+                    'NodeGroupType' => [
+                        'type' => 'string',
+                    ],
+                    'PaymentType' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceTypes' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/CostInstanceType',
+                        ],
+                    ],
+                    'MaximalNodeCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
             'CostOptimizedConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -1143,6 +1252,18 @@
                     ],
                 ],
             ],
+            'DoubleMetric' => [
+                'type' => 'object',
+                'properties' => [
+                    'Value' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                    ],
+                    'Unit' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'FailedReason' => [
                 'type' => 'object',
                 'properties' => [
@@ -1288,6 +1409,18 @@
                     'LocalStorageAmount' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                    ],
+                ],
+            ],
+            'IntegerMetric' => [
+                'type' => 'object',
+                'properties' => [
+                    'Value' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Unit' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2211,6 +2344,23 @@
                     ],
                 ],
             ],
+            'ResourceSummary' => [
+                'type' => 'object',
+                'properties' => [
+                    'VcoreUtilizationRate' => [
+                        '$ref' => '#/components/schemas/DoubleMetric',
+                    ],
+                    'OriginalTotalVcore' => [
+                        '$ref' => '#/components/schemas/IntegerMetric',
+                    ],
+                    'InefficientTaskRate' => [
+                        '$ref' => '#/components/schemas/DoubleMetric',
+                    ],
+                    'MemoryUtilizationRate' => [
+                        '$ref' => '#/components/schemas/DoubleMetric',
+                    ],
+                ],
+            ],
             'ScalingActivity' => [
                 'type' => 'object',
                 'properties' => [
@@ -2432,6 +2582,38 @@
                                 'type' => 'string',
                             ],
                         ],
+                    ],
+                ],
+            ],
+            'ScalingPolicy' => [
+                'type' => 'object',
+                'properties' => [
+                    'ScalingRules' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScalingRule',
+                        ],
+                    ],
+                    'ScalingPolicyId' => [
+                        'type' => 'string',
+                    ],
+                    'Constraints' => [
+                        '$ref' => '#/components/schemas/ManagedScalingConstraints',
+                    ],
+                    'NodeGroupName' => [
+                        'type' => 'string',
+                    ],
+                    'ClusterId' => [
+                        'type' => 'string',
+                    ],
+                    'NodeGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'ScalingPolicyType' => [
+                        'type' => 'string',
+                    ],
+                    'Disabled' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],

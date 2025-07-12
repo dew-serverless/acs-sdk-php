@@ -505,122 +505,6 @@
                 ],
             ],
         ],
-        'SyncDepartment' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'OpTenantId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SyncDepartmentCommand',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'DepartmentList' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => true,
-                                    'properties' => [
-                                        'DepartmentId' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'DepartmentName' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'ParentDepartmentId' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'SyncDepartmentUser' => [
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'OpTenantId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SyncDepartmentUserCommand',
-                    'in' => 'formData',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'object',
-                        'required' => true,
-                        'properties' => [
-                            'DeptUserMapping' => [
-                                'type' => 'array',
-                                'required' => true,
-                                'items' => [
-                                    'type' => 'object',
-                                    'required' => true,
-                                    'properties' => [
-                                        'SourceUserId' => [
-                                            'type' => 'string',
-                                            'required' => true,
-                                        ],
-                                        'DepartmentIdList' => [
-                                            'type' => 'array',
-                                            'required' => false,
-                                            'items' => [
-                                                'type' => 'string',
-                                                'required' => true,
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
         'AddTenantMembers' => [
             'methods' => [
                 'post',
@@ -5529,6 +5413,48 @@
                 ],
             ],
         ],
+        'GetStreamJobs' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Env',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'GetQueueEngineVersionByEnv' => [
             'methods' => [
                 'post',
@@ -6483,6 +6409,10 @@
                             'BizUnitId' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'FlowId' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],

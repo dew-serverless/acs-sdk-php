@@ -37,6 +37,7 @@
                             'liveStream',
                             'video',
                             'app',
+                            'mixed_download',
                         ],
                     ],
                 ],
@@ -1411,6 +1412,14 @@
                 ],
                 [
                     'name' => 'QueryHashkey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ConsistencyHash',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
@@ -4972,14 +4981,6 @@
                 ],
                 [
                     'name' => 'CertRegion',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Env',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

@@ -58,6 +58,15 @@
                             ],
                         ],
                     ],
+                    'CreationTime' => [
+                        'type' => 'string',
+                    ],
+                    'ModificationTime' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'LicenseInstanceAppDTO' => [

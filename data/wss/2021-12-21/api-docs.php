@@ -152,7 +152,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -218,6 +218,20 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceTypes',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
                     ],
                 ],
             ],

@@ -2262,6 +2262,14 @@
                     ],
                 ],
                 [
+                    'name' => 'Tags',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CurrentPage',
                     'in' => 'formData',
                     'schema' => [

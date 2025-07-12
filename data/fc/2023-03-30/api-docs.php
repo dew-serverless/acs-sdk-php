@@ -255,6 +255,34 @@
                     ],
                 ],
             ],
+            'ChangeResourceGroupInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceId' => [
+                        'type' => 'string',
+                    ],
+                    'newResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ChangeResourceGroupOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceId' => [
+                        'type' => 'string',
+                    ],
+                    'newResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'oldResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ConcurrencyConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -395,6 +423,9 @@
                     'ossMountConfig' => [
                         '$ref' => '#/components/schemas/OSSMountConfig',
                         'required' => false,
+                    ],
+                    'resourceGroupId' => [
+                        'type' => 'string',
                     ],
                     'customRuntimeConfig' => [
                         '$ref' => '#/components/schemas/CustomRuntimeConfig',
@@ -1030,6 +1061,9 @@
                     'createdTime' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                    'resourceGroupId' => [
+                        'type' => 'string',
                     ],
                     'state' => [
                         'type' => 'string',
@@ -2947,6 +2981,37 @@
         ],
     ],
     'apis' => [
+        'ChangeResourceGroup' => [
+            'path' => '/2023-03-30/resource-groups',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ChangeResourceGroupInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeRegions' => [
             'path' => '/2023-03-30/regions',
             'methods' => [
@@ -3547,6 +3612,14 @@
                 ],
                 [
                     'name' => 'functionName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

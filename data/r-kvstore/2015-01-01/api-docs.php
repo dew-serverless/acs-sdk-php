@@ -5121,6 +5121,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyAuditLogConfig' => [

@@ -17836,10 +17836,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'arms.ap-northeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-qingdao',
             'endpoint' => 'arms.cn-qingdao.aliyuncs.com',
         ],
@@ -17902,6 +17898,10 @@
         [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'arms.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'arms.ap-northeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',

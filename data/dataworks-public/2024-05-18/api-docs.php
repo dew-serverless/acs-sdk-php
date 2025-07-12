@@ -7255,6 +7255,7 @@
         'CreateDIJob' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'https',
@@ -7622,6 +7623,7 @@
         'UpdateDIJob' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'https',
@@ -13448,6 +13450,200 @@
                 ],
             ],
         ],
+        'GetRerunWorkflowInstancesResult' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OperationId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'RerunWorkflowInstances' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnvType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Prod',
+                            'Dev',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'WorkflowId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'ManualWorkflow',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartTriggerTime',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndTriggerTime',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Bizdate',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Success',
+                            'Failure',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Ids',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'integer',
+                            'format' => 'int64',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'RerunDownstreamEnabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'TaskIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                            ],
+                            'TaskName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TaskInstanceStatuses' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                    'enum' => [
+                                        'NotRun',
+                                        'Failure',
+                                        'Success',
+                                    ],
+                                ],
+                            ],
+                            'TaskTypes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'CreateWorkflowInstances' => [
             'methods' => [
                 'post',
@@ -13724,6 +13920,14 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                                 'required' => false,
+                            ],
+                            'PriorityWeightStrategy' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'Disable',
+                                    'Upstream',
+                                ],
                             ],
                         ],
                     ],

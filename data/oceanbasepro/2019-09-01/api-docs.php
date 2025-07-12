@@ -2112,6 +2112,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Iops',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyTenantSecurityIpGroup' => [
@@ -4557,6 +4565,13 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'OperatorType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
             ],
         ],
         'CreateOasOutlineTask' => [
@@ -5201,6 +5216,14 @@
                             'FULL',
                             'READONLY',
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'MetricScope',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

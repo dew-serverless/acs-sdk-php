@@ -1035,8 +1035,22 @@
                     'FirstRefreshTime' => [
                         'type' => 'string',
                     ],
-                    'QueryRewriteEnabled' => [
-                        'type' => 'boolean',
+                    'BaseTableInfos' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'TableName' => [
+                                    'type' => 'string',
+                                ],
+                                'BaseTableIsMv' => [
+                                    'type' => 'boolean',
+                                ],
+                                'SchemaName' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
                     ],
                     'ExplicitHit' => [
                         'type' => 'integer',
@@ -1051,12 +1065,22 @@
                             ],
                         ],
                     ],
-                    'IsInactive' => [
-                        'type' => 'boolean',
-                    ],
                     'RemoteSize' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'ImplicitHit' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'UpdatedAt' => [
+                        'type' => 'string',
+                    ],
+                    'QueryRewriteEnabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'IsInactive' => [
+                        'type' => 'boolean',
                     ],
                     'LocalSize' => [
                         'type' => 'integer',
@@ -1066,13 +1090,6 @@
                         'type' => 'string',
                     ],
                     'RefreshInterval' => [
-                        'type' => 'string',
-                    ],
-                    'ImplicitHit' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'UpdatedAt' => [
                         'type' => 'string',
                     ],
                     'ResourceGroup' => [
@@ -1149,6 +1166,9 @@
                         'type' => 'string',
                     ],
                     'Processid' => [
+                        'type' => 'string',
+                    ],
+                    'ScheduledStartTime' => [
                         'type' => 'string',
                     ],
                     'SchemaName' => [
@@ -8051,6 +8071,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'UserName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribePatternPerformance' => [
@@ -10657,6 +10685,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ApplyType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BuildImmediately',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'BatchApplyAdviceByIdList' => [
@@ -10705,6 +10749,22 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ApplyType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BuildImmediately',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -13813,6 +13873,31 @@
                 [
                     'name' => 'DBClusterId',
                     'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetADBSparkNecessaryRAMPermissions' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DBClusterId',
+                    'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,

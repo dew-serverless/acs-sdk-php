@@ -1376,16 +1376,16 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'bdrc.cn-shanghai-finance-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'bdrc.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
             'endpoint' => 'bdrc.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'bdrc.cn-shanghai-finance-1.aliyuncs.com',
         ],
     ],
 ];

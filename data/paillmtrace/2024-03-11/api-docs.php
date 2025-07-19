@@ -88,6 +88,42 @@
                     ],
                 ],
             ],
+            'QuestionAnswer' => [
+                'type' => 'object',
+                'properties' => [
+                    'Answer' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Text' => [
+                                'type' => 'string',
+                            ],
+                            'Contexts' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Question' => [
+                        'type' => 'string',
+                    ],
+                    'GroundTruth' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Text' => [
+                                'type' => 'string',
+                            ],
+                            'Contexts' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
     'apis' => [
@@ -755,10 +791,36 @@
                     ],
                 ],
                 [
+                    'name' => 'SpanName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'LlmAppName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MinDuration',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxDuration',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
                         'required' => false,
                     ],
                 ],
@@ -922,5 +984,22 @@
             'parameters' => [],
         ],
     ],
-    'endpoints' => [],
+    'endpoints' => [
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'paillmtrace.cn-hangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'paillmtrace.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'paillmtrace.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'paillmtrace.cn-shenzhen.aliyuncs.com',
+        ],
+    ],
 ];

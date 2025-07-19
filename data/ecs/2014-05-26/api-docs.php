@@ -1818,15 +1818,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'PerformanceLevel' => [
-                                    'type' => 'string',
+                                'BurstingEnabled' => [
+                                    'type' => 'boolean',
                                     'required' => false,
                                 ],
-                                'AutoSnapshotPolicyId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Encrypted' => [
+                                'StorageClusterId' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -1834,7 +1830,19 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'SnapshotId' => [
+                                'Category' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'KMSKeyId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PerformanceLevel' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Encrypted' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -1847,28 +1855,15 @@
                                     'format' => 'int32',
                                     'required' => false,
                                 ],
-                                'DiskName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Category' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'EncryptAlgorithm' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                                 'DeleteWithInstance' => [
                                     'type' => 'boolean',
                                     'required' => false,
                                 ],
-                                'KMSKeyId' => [
+                                'AutoSnapshotPolicyId' => [
                                     'type' => 'string',
                                     'required' => false,
-                                    'maxLength' => 64,
                                 ],
-                                'StorageClusterId' => [
+                                'DiskName' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -1876,10 +1871,13 @@
                                     'type' => 'integer',
                                     'format' => 'int64',
                                     'required' => false,
-                                    'minimum' => '0',
                                 ],
-                                'BurstingEnabled' => [
-                                    'type' => 'boolean',
+                                'EncryptAlgorithm' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SnapshotId' => [
+                                    'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
@@ -1898,17 +1896,17 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
+                                'AssumeRoleFor' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
                                 'RoleType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
                                 'Rolearn' => [
                                     'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'AssumeRoleFor' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
                                     'required' => false,
                                 ],
                             ],
@@ -1927,11 +1925,7 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'VSwitchId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'NetworkInterfaceName' => [
+                                'NetworkInterfaceTrafficMode' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -1939,7 +1933,19 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'DeleteOnRelease' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'VSwitchId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'SecurityGroupId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'NetworkInterfaceName' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -1947,11 +1953,14 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'QueueNumber' => [
+                                'NetworkCardIndex' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
                                     'required' => false,
-                                    'minimum' => '1',
+                                ],
+                                'NetworkInterfaceId' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                                 'SecurityGroupIds' => [
                                     'type' => 'array',
@@ -1962,11 +1971,26 @@
                                     ],
                                     'maxItems' => 51,
                                 ],
-                                'NetworkInterfaceTrafficMode' => [
-                                    'type' => 'string',
+                                'SourceDestCheck' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'QueueNumber' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                     'required' => false,
                                 ],
                                 'QueuePairNumber' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => false,
+                                ],
+                                'TxQueueSize' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'Ipv6AddressCount' => [
                                     'type' => 'integer',
                                     'format' => 'int64',
                                     'required' => false,
@@ -1975,9 +1999,9 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Ipv6AddressCount' => [
+                                'RxQueueSize' => [
                                     'type' => 'integer',
-                                    'format' => 'int64',
+                                    'format' => 'int32',
                                     'required' => false,
                                 ],
                                 'Ipv6Address' => [
@@ -1988,33 +2012,6 @@
                                         'required' => false,
                                     ],
                                     'maxItems' => 10,
-                                ],
-                                'NetworkCardIndex' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'DeleteOnRelease' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'NetworkInterfaceId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RxQueueSize' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'TxQueueSize' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'SourceDestCheck' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -2032,11 +2029,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -3760,19 +3757,19 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                                 'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
                                 'value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -7077,11 +7074,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -17738,6 +17735,21 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ImageOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'LoginAsNonRoot' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeLaunchTemplates' => [
@@ -18526,6 +18538,21 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ImageOptions',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'LoginAsNonRoot' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -19572,6 +19599,20 @@
                                 'properties' => [
                                     'LoginAsNonRoot' => [
                                         'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'SchedulerOptions' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'DedicatedHostId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'DedicatedHostClusterId' => [
+                                        'type' => 'string',
                                         'required' => false,
                                     ],
                                 ],
@@ -28037,6 +28078,14 @@
                         'maximum' => '100',
                     ],
                 ],
+                [
+                    'name' => 'QueryInventory',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDedicatedHostTypes' => [
@@ -34203,6 +34252,10 @@
         [
             'regionId' => 'na-south-1',
             'endpoint' => 'ecs.na-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-southeast-1',
+            'endpoint' => 'ecs.us-southeast-1.aliyuncs.com',
         ],
     ],
 ];

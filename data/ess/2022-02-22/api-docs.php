@@ -3147,7 +3147,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 10,
+                        'maxItems' => 20,
                     ],
                 ],
                 [
@@ -4224,7 +4224,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 10,
+                        'maxItems' => 20,
                     ],
                 ],
                 [
@@ -8549,6 +8549,14 @@
                 ],
                 [
                     'name' => 'ActivityMetadata',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExecutionMode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

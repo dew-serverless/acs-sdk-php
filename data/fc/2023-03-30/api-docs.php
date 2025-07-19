@@ -255,6 +255,34 @@
                     ],
                 ],
             ],
+            'ChangeResourceGroupInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceId' => [
+                        'type' => 'string',
+                    ],
+                    'newResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ChangeResourceGroupOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceId' => [
+                        'type' => 'string',
+                    ],
+                    'newResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'oldResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ConcurrencyConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -395,6 +423,9 @@
                     'ossMountConfig' => [
                         '$ref' => '#/components/schemas/OSSMountConfig',
                         'required' => false,
+                    ],
+                    'resourceGroupId' => [
+                        'type' => 'string',
                     ],
                     'customRuntimeConfig' => [
                         '$ref' => '#/components/schemas/CustomRuntimeConfig',
@@ -1031,6 +1062,9 @@
                         'type' => 'string',
                         'required' => false,
                     ],
+                    'resourceGroupId' => [
+                        'type' => 'string',
+                    ],
                     'state' => [
                         'type' => 'string',
                         'required' => false,
@@ -1189,6 +1223,14 @@
                         'additionalProperties' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+            ],
+            'GetScalingConfigStatusOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'scalingConfigStatus' => [
+                        '$ref' => '#/components/schemas/ScalingConfigStatus',
                     ],
                 ],
             ],
@@ -1577,6 +1619,34 @@
                         'items' => [
                             '$ref' => '#/components/schemas/ProvisionConfig',
                         ],
+                    ],
+                ],
+            ],
+            'ListResidentResourcePoolsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'nextToken' => [
+                        'type' => 'string',
+                    ],
+                    'residentResourcePools' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ResidentResourcePool',
+                        ],
+                    ],
+                ],
+            ],
+            'ListScalingConfigStatusOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'result' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScalingConfigStatus',
+                        ],
+                    ],
+                    'nextToken' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1994,6 +2064,34 @@
                     ],
                 ],
             ],
+            'PutScalingConfigInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'residentConfig' => [
+                        '$ref' => '#/components/schemas/ResidentConfig',
+                    ],
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'PutScalingConfigOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'functionName' => [
+                        'type' => 'string',
+                    ],
+                    'qualifier' => [
+                        'type' => 'string',
+                    ],
+                    'residentConfig' => [
+                        '$ref' => '#/components/schemas/ResidentConfig',
+                    ],
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'RegexRule' => [
                 'type' => 'object',
                 'properties' => [
@@ -2066,6 +2164,155 @@
                     'vpcId' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'ResidentConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'poolId' => [
+                        'type' => 'string',
+                    ],
+                    'count' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'ResidentResourceAllocation' => [
+                'type' => 'object',
+                'properties' => [
+                    'totalMemorySize' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalDiskSize' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'functionName' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'instanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'qualifier' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalGpuMemorySize' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalCpuCores' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                ],
+            ],
+            'ResidentResourceAllocationStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'lastAllocatedTime' => [
+                        'type' => 'string',
+                    ],
+                    'lastAllocation' => [
+                        '$ref' => '#/components/schemas/ResidentResourceAllocation',
+                    ],
+                ],
+            ],
+            'ResidentResourceCapacity' => [
+                'type' => 'object',
+                'properties' => [
+                    'totalGpuCards' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalMemorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalDiskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalGpuMemorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalCpuCores' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'gpuType' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                ],
+            ],
+            'ResidentResourcePool' => [
+                'type' => 'object',
+                'properties' => [
+                    'residentResourcePoolName' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'expireTime' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'resourcePoolConfig' => [
+                        '$ref' => '#/components/schemas/ResidentResourceCapacity',
+                        'deprecated' => false,
+                    ],
+                    'residentResourcePoolId' => [
+                        'type' => 'string',
+                    ],
+                    'resourcePoolCapacity' => [
+                        '$ref' => '#/components/schemas/ResidentResourceCapacity',
+                        'deprecated' => false,
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'allocationStatus' => [
+                        '$ref' => '#/components/schemas/ResidentResourceAllocationStatus',
+                        'deprecated' => false,
                     ],
                 ],
             ],
@@ -2199,6 +2446,38 @@
                     'project' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'ScalingConfigStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'scalingStatus' => [
+                        '$ref' => '#/components/schemas/ScalingStatus',
+                    ],
+                    'functionName' => [
+                        'type' => 'string',
+                    ],
+                    'qualifier' => [
+                        'type' => 'string',
+                    ],
+                    'residentConfig' => [
+                        '$ref' => '#/components/schemas/ResidentConfig',
+                    ],
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ScalingStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'currentError' => [
+                        'type' => 'string',
+                    ],
+                    'resourceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -2850,6 +3129,14 @@
                     ],
                 ],
             ],
+            'UpdateResidentResourcePoolInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'UpdateTriggerInput' => [
                 'type' => 'object',
                 'properties' => [
@@ -2947,6 +3234,37 @@
         ],
     ],
     'apis' => [
+        'ChangeResourceGroup' => [
+            'path' => '/2023-03-30/resource-groups',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ChangeResourceGroupInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeRegions' => [
             'path' => '/2023-03-30/regions',
             'methods' => [
@@ -3547,6 +3865,14 @@
                 ],
                 [
                     'name' => 'functionName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

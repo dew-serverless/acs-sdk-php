@@ -7,6 +7,59 @@
     ],
     'components' => [
         'schemas' => [
+            'AgentServiceConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'protocols' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'address' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'dashScopeConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'appCredentials' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'apiKey' => [
+                                            'type' => 'string',
+                                        ],
+                                        'appId' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'enableHealthCheck' => [
+                        'type' => 'boolean',
+                    ],
+                    'provider' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'difyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'botType' => [
+                                'type' => 'string',
+                            ],
+                            'apiKey' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'AiServiceConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -1837,6 +1890,9 @@
                     'aiServiceConfig' => [
                         '$ref' => '#/components/schemas/AiServiceConfig',
                     ],
+                    'agentServiceConfig' => [
+                        '$ref' => '#/components/schemas/AgentServiceConfig',
+                    ],
                 ],
             ],
             'ServiceHealthCheck' => [
@@ -2395,6 +2451,14 @@
                                     'required' => false,
                                 ],
                             ],
+                            'agentProtocols' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                             'deployConfigs' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -2409,6 +2473,14 @@
                             ],
                             'authConfig' => [
                                 '$ref' => '#/components/schemas/AuthConfig',
+                                'required' => false,
+                            ],
+                            'modelCategory' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'removeBasePathOnForward' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],
@@ -2511,6 +2583,14 @@
                                     'required' => false,
                                 ],
                             ],
+                            'agentProtocols' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                             'deployConfigs' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -2528,6 +2608,10 @@
                                 'required' => false,
                             ],
                             'onlyChangeConfig' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'removeBasePathOnForward' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
@@ -3704,6 +3788,10 @@
                                             '$ref' => '#/components/schemas/AiServiceConfig',
                                             'required' => false,
                                         ],
+                                        'agentServiceConfig' => [
+                                            '$ref' => '#/components/schemas/AgentServiceConfig',
+                                            'required' => false,
+                                        ],
                                         'dnsServers' => [
                                             'type' => 'array',
                                             'required' => false,
@@ -3798,6 +3886,37 @@
                 [
                     'name' => 'resourceGroupId',
                     'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteService' => [
+            'path' => '/v1/services/{serviceId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'serviceId',
+                    'in' => 'path',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4543,6 +4662,7 @@
                                     'Route',
                                     'Service',
                                     'ServicePort',
+                                    'LLMApi',
                                 ],
                             ],
                         ],

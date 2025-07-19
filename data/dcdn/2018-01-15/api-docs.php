@@ -4450,14 +4450,6 @@
                         'required' => false,
                     ],
                 ],
-                [
-                    'name' => 'Env',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
         'DescribeDcdnHttpsDomainList' => [

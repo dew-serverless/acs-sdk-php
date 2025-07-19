@@ -98,6 +98,61 @@
                     ],
                 ],
             ],
+            'GetIqsUsageResponse' => [
+                'type' => 'object',
+                'properties' => [
+                    'records' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'date' => [
+                                    'type' => 'string',
+                                ],
+                                'billingQps' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'totalCalls' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'valueAddedSummary' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'failedCalls' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'valueAddedAdvanced' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'subAccountId' => [
+                                    'type' => 'string',
+                                ],
+                                'engineType' => [
+                                    'type' => 'string',
+                                ],
+                                'ladderType' => [
+                                    'type' => 'string',
+                                ],
+                                'api' => [
+                                    'type' => 'string',
+                                ],
+                                'successCalls' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                ],
+                                'mainAccountId' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'GlobalPageItem' => [
                 'type' => 'object',
                 'properties' => [
@@ -490,6 +545,9 @@
                             'Generic',
                             'GenericAdvanced',
                         ],
+                    ],
+                    'location' => [
+                        'type' => 'string',
                     ],
                     'category' => [
                         'type' => 'string',
@@ -887,6 +945,45 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetIqsUsage' => [
+            'path' => '/linked-retrieval/linked-retrieval-admin/v1/iqs/usage',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'startDate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'endDate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

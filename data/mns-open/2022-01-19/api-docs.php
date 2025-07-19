@@ -409,6 +409,26 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'TenantRateLimitPolicy',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'MaxReceivesPerSecond' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'SetQueueAttributes' => [
@@ -505,6 +525,26 @@
                                 'required' => false,
                             ],
                             'MaxReceiveCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TenantRateLimitPolicy',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'MaxReceivesPerSecond' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
                                 'required' => false,
@@ -752,11 +792,84 @@
                     ],
                 ],
                 [
+                    'name' => 'TenantRateLimitPolicy',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'MaxReceivesPerSecond' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'StsRoleArn',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DmAttributes',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AccountName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Subject' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DysmsAttributes',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'TemplateCode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SignName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'KafkaAttributes',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'BusinessMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -815,6 +928,26 @@
                             ],
                             'DeadLetterTargetQueue' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TenantRateLimitPolicy',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'MaxReceivesPerSecond' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                                 'required' => false,
                             ],
                         ],
@@ -1206,6 +1339,26 @@
                         'maxItems' => 10,
                     ],
                 ],
+                [
+                    'name' => 'DeliveryMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'DIRECT',
+                            'BROADCAST',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteEventRule' => [
@@ -1353,6 +1506,10 @@
         [
             'regionId' => 'ap-northeast-2',
             'endpoint' => 'mns-open.ap-northeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'mns-open.cn-heyuan.aliyuncs.com',
         ],
     ],
 ];

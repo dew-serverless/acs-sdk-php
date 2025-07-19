@@ -5118,6 +5118,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Includes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateDataFlowSubTask' => [

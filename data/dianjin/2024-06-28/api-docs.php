@@ -1919,6 +1919,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'userInputs' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

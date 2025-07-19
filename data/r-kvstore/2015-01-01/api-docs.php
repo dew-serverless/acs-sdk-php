@@ -5121,6 +5121,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyAuditLogConfig' => [
@@ -8265,7 +8273,7 @@
         ],
         [
             'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'r-kvstore.aliyuncs.com',
+            'endpoint' => 'r-kvstore.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-huhehaote',

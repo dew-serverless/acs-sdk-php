@@ -240,6 +240,22 @@
                     ],
                 ],
                 [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Engine',
                     'in' => 'query',
                     'schema' => [
@@ -622,6 +638,14 @@
                             ],
                         ],
                         'maxItems' => 32,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -1802,6 +1826,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SwitchMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DestroyInstance' => [
@@ -1892,6 +1928,18 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'SwitchMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                        ],
                     ],
                 ],
             ],
@@ -3158,7 +3206,7 @@
                 ],
             ],
         ],
-        'DescribeHistoryTasksStat' => [
+        'DescribeHistoryTasks' => [
             'methods' => [
                 'post',
                 'get',
@@ -3179,7 +3227,37 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '10',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '2147483647',
+                    ],
+                ],
+                [
+                    'name' => 'InstanceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -3258,7 +3336,7 @@
                 ],
             ],
         ],
-        'DescribeHistoryTasks' => [
+        'DescribeHistoryTasksStat' => [
             'methods' => [
                 'post',
                 'get',
@@ -3279,37 +3357,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '10',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '2147483647',
-                    ],
-                ],
-                [
-                    'name' => 'InstanceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -5445,6 +5493,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SwitchMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                        ],
+                    ],
+                ],
             ],
         ],
         'CheckCloudResourceAuthorized' => [
@@ -5631,6 +5691,18 @@
                             'Open',
                             'Close',
                             'Update',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SwitchMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
                         ],
                     ],
                 ],
@@ -6566,6 +6638,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SwitchMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeParameterModificationHistory' => [
@@ -6677,6 +6757,7 @@
                             'cs',
                             'physical',
                             'mongos',
+                            'single',
                         ],
                     ],
                 ],
@@ -7844,66 +7925,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'mongodb.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhengzhou-jva',
-            'endpoint' => 'mongodb.cn-zhengzhou-jva.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'mongodb.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-nanjing',
-            'endpoint' => 'mongodb.cn-nanjing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-fuzhou',
-            'endpoint' => 'mongodb.cn-fuzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'mongodb.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'mongodb.cn-hongkong.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'mongodb.ap-northeast-1.aliyuncs.com',
         ],
@@ -7932,12 +7953,80 @@
             'endpoint' => 'mongodb.ap-southeast-6.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'mongodb.us-east-1.aliyuncs.com',
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'mongodb.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'mongodb.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'mongodb.cn-fuzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'mongodb.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'mongodb.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-nanjing',
+            'endpoint' => 'mongodb.cn-nanjing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'mongodb.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'mongodb.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhengzhou-jva',
+            'endpoint' => 'mongodb.cn-zhengzhou-jva.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',
             'endpoint' => 'mongodb.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'mongodb.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',
@@ -7948,40 +8037,32 @@
             'endpoint' => 'mongodb.eu-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'mongodb.ap-south-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-east-1',
             'endpoint' => 'mongodb.me-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'mongodb.ap-southeast-7.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-finance-1',
-            'endpoint' => 'mongodb.aliyuncs.com',
         ],
         [
             'regionId' => 'me-central-1',
             'endpoint' => 'mongodb.me-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'mongodb.cn-wuhan-lr.aliyuncs.com',
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'mongodb.ap-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'mongodb.cn-shenzhen-finance-1.aliyuncs.com',
         ],
     ],
 ];

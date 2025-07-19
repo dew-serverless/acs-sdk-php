@@ -6535,6 +6535,1147 @@
                 ],
             ],
         ],
+        'DescribeAppAgentFunctionStatus' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyAppAgentFunctionStatus' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyAppAgentTemplate' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ChatMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                            '2',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'InterruptMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                            '2',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Greeting',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AsrConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 128,
+                            ],
+                            'VocabularyId' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 100,
+                            ],
+                            'WordWeights' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'Word' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                            'minLength' => 1,
+                                        ],
+                                        'Weight' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                        'Lang' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'MaxSentenceSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LlmConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 128,
+                            ],
+                            'Vendor' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'aliyun',
+                                    'thirdparty',
+                                ],
+                            ],
+                            'Url' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 100,
+                            ],
+                            'ApiKey' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 200,
+                            ],
+                            'Temperature' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'TopP' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'MaxToken' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'HistoryDepth' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Prompt' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'minLength' => 1,
+                                'maxLength' => 5000,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TtsConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 128,
+                            ],
+                            'Vendor' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'aliyun',
+                                ],
+                            ],
+                            'ApiKey' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 200,
+                            ],
+                            'Voice' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'longwan',
+                                    'longcheng',
+                                    'longhua',
+                                    'longxiaochun',
+                                    'longxiaoxia',
+                                    'longxiaocheng',
+                                    'longxiaobai',
+                                    'longlaotie',
+                                    'longshu',
+                                    'longshuo',
+                                    'longjing',
+                                    'longmiao',
+                                    'longyue',
+                                    'longyuan',
+                                    'longfei',
+                                    'longjielidou',
+                                    'longtong',
+                                    'longxiang',
+                                    'loongstella',
+                                    'loongbella',
+                                ],
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Rate' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'Pitch' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'FilterBrackets' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '1',
+                                        '2',
+                                        '3',
+                                        '4',
+                                        '5',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAppAgentTemplates' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'PageNum',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'maximum' => '100',
+                    ],
+                ],
+            ],
+        ],
+        'DeleteAppAgentTemplate' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateAppAgentTemplate' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                ],
+                [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ChatMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                            '2',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'InterruptMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '1',
+                            '2',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Greeting',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AsrConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 128,
+                            ],
+                            'MaxSentenceSilence' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'WordWeights' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => true,
+                                    'properties' => [
+                                        'Word' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Weight' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                        'Lang' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LlmConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 128,
+                            ],
+                            'Vendor' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'aliyun',
+                                    'thirdparty',
+                                ],
+                            ],
+                            'Url' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 100,
+                            ],
+                            'ApiKey' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 200,
+                            ],
+                            'Temperature' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'TopP' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'MaxToken' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'HistoryDepth' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Prompt' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'minLength' => 1,
+                                'maxLength' => 5000,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TtsConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 128,
+                            ],
+                            'Vendor' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'aliyun',
+                                ],
+                            ],
+                            'ApiKey' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'minLength' => 1,
+                                'maxLength' => 200,
+                            ],
+                            'Voice' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'longcheng',
+                                    'longhua',
+                                    'longxiaochun',
+                                    'longxiaoxia',
+                                    'longxiaocheng',
+                                    'longxiaobai',
+                                    'longlaotie',
+                                    'longshu',
+                                    'longshuo',
+                                    'longjing',
+                                    'longmiao',
+                                    'longyue',
+                                    'longyuan',
+                                    'longfei',
+                                    'longjielidou',
+                                    'longtong',
+                                    'longxiang',
+                                    'loongstella',
+                                    'loongbella',
+                                    'longwan',
+                                ],
+                            ],
+                            'Volume' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Rate' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'Pitch' => [
+                                'type' => 'number',
+                                'format' => 'float',
+                                'required' => false,
+                            ],
+                            'FilterBrackets' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '1',
+                                        '2',
+                                        '3',
+                                        '4',
+                                        '5',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'StartAgent' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RtcConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'UserId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'TargetUserIds' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'VoiceChatConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ChatMode' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'InterruptMode' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Greeting' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ASRConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SourceLanguage' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'SemanticPunctuationEnabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'MaxSentenceSilence' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'VocabularyId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'LanguageHints' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'LLMConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Vendor' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Model' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ApiKey' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Temperature' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'TopP' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'MaxToken' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'HistoryDepth' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'Prompt' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Url' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'TTSConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Vendor' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Model' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ApiKey' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Voice' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Volume' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'Rate' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'Pitch' => [
+                                        'type' => 'number',
+                                        'format' => 'double',
+                                        'required' => false,
+                                    ],
+                                    'FilterBrackets' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetAgent' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateAgent' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'VoiceChatConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'InterruptMode' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'ChatMode' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'NotifyAgent' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Message',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Priority',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Interruptable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CustomAttribute',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StopAgent' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'DescribeCallList' => [
             'methods' => [
                 'post',

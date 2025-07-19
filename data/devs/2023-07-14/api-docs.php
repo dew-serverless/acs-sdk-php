@@ -7,6 +7,27 @@
     ],
     'components' => [
         'schemas' => [
+            'APIKeyAuthParameter' => [
+                'type' => 'object',
+                'properties' => [
+                    'encrypted' => [
+                        'type' => 'boolean',
+                    ],
+                    'in' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'header',
+                            'query',
+                        ],
+                    ],
+                    'value' => [
+                        'type' => 'string',
+                    ],
+                    'key' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'Artifact' => [
                 'type' => 'object',
                 'required' => false,
@@ -134,6 +155,27 @@
                             ],
                             'securityToken' => [
                                 'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'Authorization' => [
+                'type' => 'object',
+                'properties' => [
+                    'type' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'APIKey',
+                        ],
+                    ],
+                    'parameters' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'apiKeyParameter' => [
+                                '$ref' => '#/components/schemas/APIKeyAuthParameter',
                             ],
                         ],
                     ],
@@ -362,6 +404,21 @@
                             'srcModelScopeModelID' => [
                                 'type' => 'string',
                             ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'workingDir' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'withPPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'skipDownload' => [
+                                'type' => 'boolean',
+                            ],
                             'srcModelScopeModelRevision' => [
                                 'type' => 'string',
                             ],
@@ -372,12 +429,6 @@
                                 'type' => 'string',
                             ],
                             'srcOssRegion' => [
-                                'type' => 'string',
-                            ],
-                            'prefix' => [
-                                'type' => 'string',
-                            ],
-                            'srcOssBucket' => [
                                 'type' => 'string',
                             ],
                             'srcModelScopeToken' => [
@@ -841,6 +892,32 @@
                             'srcModelScopeModelID' => [
                                 'type' => 'string',
                             ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'workingDir' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'withPPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'fmkHuggingFaceConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'task' => [
+                                        'type' => 'string',
+                                    ],
+                                    'framework' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'skipDownload' => [
+                                'type' => 'boolean',
+                            ],
                             'srcModelScopeModelRevision' => [
                                 'type' => 'string',
                             ],
@@ -851,12 +928,6 @@
                                 'type' => 'string',
                             ],
                             'srcOssRegion' => [
-                                'type' => 'string',
-                            ],
-                            'prefix' => [
-                                'type' => 'string',
-                            ],
-                            'srcOssBucket' => [
                                 'type' => 'string',
                             ],
                             'srcModelScopeToken' => [
@@ -870,17 +941,6 @@
                             ],
                             'syncStrategy' => [
                                 'type' => 'string',
-                            ],
-                            'fmkHuggingFaceConfig' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'task' => [
-                                        'type' => 'string',
-                                    ],
-                                    'framework' => [
-                                        'type' => 'string',
-                                    ],
-                                ],
                             ],
                             'srcOssPath' => [
                                 'type' => 'string',
@@ -1490,6 +1550,21 @@
                             'srcModelScopeModelID' => [
                                 'type' => 'string',
                             ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'workingDir' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'withPPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'skipDownload' => [
+                                'type' => 'boolean',
+                            ],
                             'srcModelScopeModelRevision' => [
                                 'type' => 'string',
                             ],
@@ -1500,12 +1575,6 @@
                                 'type' => 'string',
                             ],
                             'srcOssRegion' => [
-                                'type' => 'string',
-                            ],
-                            'prefix' => [
-                                'type' => 'string',
-                            ],
-                            'srcOssBucket' => [
                                 'type' => 'string',
                             ],
                             'srcModelScopeToken' => [
@@ -1940,6 +2009,21 @@
                             'srcModelScopeModelID' => [
                                 'type' => 'string',
                             ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'workingDir' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'withPPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'skipDownload' => [
+                                'type' => 'boolean',
+                            ],
                             'srcModelScopeModelRevision' => [
                                 'type' => 'string',
                             ],
@@ -1950,12 +2034,6 @@
                                 'type' => 'string',
                             ],
                             'srcOssRegion' => [
-                                'type' => 'string',
-                            ],
-                            'prefix' => [
-                                'type' => 'string',
-                            ],
-                            'srcOssBucket' => [
                                 'type' => 'string',
                             ],
                             'srcModelScopeToken' => [
@@ -2062,6 +2140,34 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
+                    'ossMountConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'bucketName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endpoint' => [
+                                            'type' => 'string',
+                                        ],
+                                        'bucketPath' => [
+                                            'type' => 'string',
+                                        ],
+                                        'mountDir' => [
+                                            'type' => 'string',
+                                        ],
+                                        'readOnly' => [
+                                            'type' => 'boolean',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                     'traceId' => [
                         'type' => 'string',
                     ],
@@ -2103,6 +2209,14 @@
                     'cpu' => [
                         'type' => 'number',
                         'format' => 'float',
+                    ],
+                    'customContainerConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'role' => [
+                                'type' => 'string',
+                            ],
+                        ],
                     ],
                     'instanceConcurrency' => [
                         'type' => 'integer',
@@ -2597,6 +2711,21 @@
                             'srcModelScopeModelID' => [
                                 'type' => 'string',
                             ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'workingDir' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'withPPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'skipDownload' => [
+                                'type' => 'boolean',
+                            ],
                             'srcModelScopeModelRevision' => [
                                 'type' => 'string',
                             ],
@@ -2607,12 +2736,6 @@
                                 'type' => 'string',
                             ],
                             'srcOssRegion' => [
-                                'type' => 'string',
-                            ],
-                            'prefix' => [
-                                'type' => 'string',
-                            ],
-                            'srcOssBucket' => [
                                 'type' => 'string',
                             ],
                             'fmkVllmConfig' => [
@@ -2765,6 +2888,34 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
+                    'ossMountConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'bucketName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endpoint' => [
+                                            'type' => 'string',
+                                        ],
+                                        'bucketPath' => [
+                                            'type' => 'string',
+                                        ],
+                                        'mountDir' => [
+                                            'type' => 'string',
+                                        ],
+                                        'readOnly' => [
+                                            'type' => 'boolean',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                     'traceId' => [
                         'type' => 'string',
                     ],
@@ -2806,6 +2957,14 @@
                     'cpu' => [
                         'type' => 'number',
                         'format' => 'float',
+                    ],
+                    'customContainerConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'role' => [
+                                'type' => 'string',
+                            ],
+                        ],
                     ],
                     'instanceConcurrency' => [
                         'type' => 'integer',
@@ -3369,6 +3528,20 @@
                     ],
                 ],
             ],
+            'MCPToolMeta' => [
+                'type' => 'object',
+                'properties' => [
+                    'inputSchema' => [
+                        'type' => 'object',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ModelAsyncTask' => [
                 'type' => 'object',
                 'properties' => [
@@ -3556,6 +3729,156 @@
                     ],
                 ],
             ],
+            'ModelSet' => [
+                'type' => 'object',
+                'properties' => [
+                    'generation' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'uid' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'kind' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        '$ref' => '#/components/schemas/ModelSetStatus',
+                    ],
+                    'labels' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'ModelSetModelProfile' => [
+                'type' => 'object',
+                'properties' => [
+                    'sourceType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'customized',
+                            'predefined',
+                        ],
+                    ],
+                    'displayName' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'props' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'llmMode' => [
+                                'type' => 'string',
+                            ],
+                            'contextSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'ModelSetSpec' => [
+                'type' => 'object',
+                'properties' => [
+                    'features' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'toolCall' => [
+                                'type' => 'boolean',
+                            ],
+                            'vision' => [
+                                'type' => 'boolean',
+                            ],
+                            'agentThought' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
+                    ],
+                    'models' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            '$ref' => '#/components/schemas/ModelSetModelProfile',
+                        ],
+                    ],
+                    'baseUrl' => [
+                        'type' => 'string',
+                    ],
+                    'authConfig' => [
+                        '$ref' => '#/components/schemas/Authorization',
+                    ],
+                    'provider' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'OpenAI',
+                            'FunctionAI',
+                            'Tongyi',
+                            'Anthropic',
+                            'OpenAICompatible',
+                        ],
+                    ],
+                    'modelType' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'llm',
+                            'text-embedding',
+                            'tts',
+                            'rerank',
+                            'speech2text',
+                            'moderation',
+                        ],
+                    ],
+                    'apiInvokeType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'openai',
+                            'ollama',
+                            'anthropic',
+                            'dashscope',
+                        ],
+                    ],
+                ],
+            ],
+            'ModelSetStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'phase' => [
+                        'type' => 'string',
+                    ],
+                    'observedTime' => [
+                        'type' => 'string',
+                    ],
+                    'observedGeneration' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
             'ModelTask' => [
                 'type' => 'object',
                 'properties' => [
@@ -3651,6 +3974,23 @@
                         'required' => true,
                     ],
                     'refreshToken' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'OpenAPIToolMeta' => [
+                'type' => 'object',
+                'properties' => [
+                    'toolId' => [
+                        'type' => 'string',
+                    ],
+                    'path' => [
+                        'type' => 'string',
+                    ],
+                    'method' => [
+                        'type' => 'string',
+                    ],
+                    'toolName' => [
                         'type' => 'string',
                     ],
                 ],
@@ -4743,6 +5083,10 @@
             'Toolset' => [
                 'type' => 'object',
                 'properties' => [
+                    'generation' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                     'uid' => [
                         'type' => 'string',
                         'required' => false,
@@ -4805,6 +5149,9 @@
                     'schema' => [
                         '$ref' => '#/components/schemas/ToolsetSchema',
                     ],
+                    'authConfig' => [
+                        '$ref' => '#/components/schemas/Authorization',
+                    ],
                 ],
             ],
             'ToolsetStatus' => [
@@ -4815,6 +5162,51 @@
                     ],
                     'outputs' => [
                         'type' => 'object',
+                        'properties' => [
+                            'urls' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'internetUrl' => [
+                                        'type' => 'string',
+                                    ],
+                                    'intranetUrl' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'openApiTools' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/OpenAPIToolMeta',
+                                ],
+                            ],
+                            'mcpServerConfig' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'headers' => [
+                                        'type' => 'object',
+                                        'additionalProperties' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                    'transportType' => [
+                                        'type' => 'string',
+                                    ],
+                                    'url' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'tools' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/MCPToolMeta',
+                                ],
+                            ],
+                            'functionArn' => [
+                                'type' => 'string',
+                            ],
+                        ],
                     ],
                     'observedTime' => [
                         'type' => 'string',

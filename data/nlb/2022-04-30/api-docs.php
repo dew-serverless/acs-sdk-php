@@ -4325,5 +4325,9 @@
             'regionId' => 'na-south-1',
             'endpoint' => 'nlb.na-south-1.aliyuncs.com',
         ],
+        [
+            'regionId' => 'me-east-1',
+            'endpoint' => 'nlb.me-east-1.aliyuncs.com',
+        ],
     ],
 ];

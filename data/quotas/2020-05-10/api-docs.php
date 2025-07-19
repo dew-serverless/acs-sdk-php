@@ -523,6 +523,14 @@
                         'maxItems' => 5,
                     ],
                 ],
+                [
+                    'name' => 'OriginalContext',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteQuotaAlarm' => [

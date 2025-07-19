@@ -443,8 +443,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listEnhanhcedNatGatewayAvailableZonesAsync($arguments = [])
  * @method \Dew\Acs\Result updateNatGatewayNatType(array $arguments = []) {@deprecated 2016-04-28}
  * @method \Http\Promise\Promise updateNatGatewayNatTypeAsync($arguments = []) {@deprecated 2016-04-28}
- * @method \Dew\Acs\Result convertBandwidthPackage(array $arguments = [])
- * @method \Http\Promise\Promise convertBandwidthPackageAsync($arguments = [])
+ * @method \Dew\Acs\Result convertBandwidthPackage(array $arguments = []) {@deprecated 2016-04-28}
+ * @method \Http\Promise\Promise convertBandwidthPackageAsync($arguments = []) {@deprecated 2016-04-28}
  * @method \Dew\Acs\Result enableNatGatewayEcsMetric(array $arguments = []) {@deprecated 2016-04-28}
  * @method \Http\Promise\Promise enableNatGatewayEcsMetricAsync($arguments = []) {@deprecated 2016-04-28}
  * @method \Dew\Acs\Result disableNatGatewayEcsMetric(array $arguments = []) {@deprecated 2016-04-28}

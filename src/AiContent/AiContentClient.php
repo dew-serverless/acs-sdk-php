@@ -7,8 +7,6 @@ namespace Dew\Acs\AiContent;
 use Dew\Acs\AcsClient;
 
 /**
- * @method \Dew\Acs\Result executeHundredThousandWhysDialogue(array $arguments = []) {@since 20240611}
- * @method \Http\Promise\Promise executeHundredThousandWhysDialogueAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result createAccessWarrant(array $arguments = []) {@since 20240611}
  * @method \Http\Promise\Promise createAccessWarrantAsync($arguments = []) {@since 20240611}
  * @method \Dew\Acs\Result queryApplicationAccessId(array $arguments = []) {@since 20240611}

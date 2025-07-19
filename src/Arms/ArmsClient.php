@@ -103,6 +103,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateRumAppAsync($arguments = [])
  * @method \Dew\Acs\Result getRumExceptionStack(array $arguments = [])
  * @method \Http\Promise\Promise getRumExceptionStackAsync($arguments = [])
+ * @method \Dew\Acs\Result describeEnvDropMetricsRule(array $arguments = [])
+ * @method \Http\Promise\Promise describeEnvDropMetricsRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result updateEnvDropMetricsRule(array $arguments = [])
+ * @method \Http\Promise\Promise updateEnvDropMetricsRuleAsync($arguments = [])
  * @method \Dew\Acs\Result addTagToFlinkCluster(array $arguments = []) {@deprecated 2019-08-08}
  * @method \Http\Promise\Promise addTagToFlinkClusterAsync($arguments = []) {@deprecated 2019-08-08}
  * @method \Dew\Acs\Result createEnvironment(array $arguments = [])

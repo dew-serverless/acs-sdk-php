@@ -565,6 +565,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeAdbMySqlIndexesAsync($arguments = []) {@since 2021-12-01}
  * @method \Dew\Acs\Result describeSQLWebSocketDomain(array $arguments = []) {@since 2021-12-01}
  * @method \Http\Promise\Promise describeSQLWebSocketDomainAsync($arguments = []) {@since 2021-12-01}
+ * @method \Dew\Acs\Result getADBSparkNecessaryRAMPermissions(array $arguments = []) {@since 2021-12-01}
+ * @method \Http\Promise\Promise getADBSparkNecessaryRAMPermissionsAsync($arguments = []) {@since 2021-12-01}
  */
 final class AdbClient extends AcsClient
 {

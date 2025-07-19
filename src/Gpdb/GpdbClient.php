@@ -7,6 +7,22 @@ namespace Dew\Acs\Gpdb;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result modifySupabaseProjectSecurityIps(array $arguments = [])
+ * @method \Http\Promise\Promise modifySupabaseProjectSecurityIpsAsync($arguments = [])
+ * @method \Dew\Acs\Result resetSupabaseProjectPassword(array $arguments = [])
+ * @method \Http\Promise\Promise resetSupabaseProjectPasswordAsync($arguments = [])
+ * @method \Dew\Acs\Result createSupabaseProject(array $arguments = [])
+ * @method \Http\Promise\Promise createSupabaseProjectAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteSupabaseProject(array $arguments = [])
+ * @method \Http\Promise\Promise deleteSupabaseProjectAsync($arguments = [])
+ * @method \Dew\Acs\Result listSupabaseProjects(array $arguments = [])
+ * @method \Http\Promise\Promise listSupabaseProjectsAsync($arguments = [])
+ * @method \Dew\Acs\Result getSupabaseProject(array $arguments = [])
+ * @method \Http\Promise\Promise getSupabaseProjectAsync($arguments = [])
+ * @method \Dew\Acs\Result getSupabaseProjectDashboardAccount(array $arguments = [])
+ * @method \Http\Promise\Promise getSupabaseProjectDashboardAccountAsync($arguments = [])
+ * @method \Dew\Acs\Result getSupabaseProjectApiKeys(array $arguments = [])
+ * @method \Http\Promise\Promise getSupabaseProjectApiKeysAsync($arguments = [])
  * @method \Dew\Acs\Result executeStatement(array $arguments = [])
  * @method \Http\Promise\Promise executeStatementAsync($arguments = [])
  * @method \Dew\Acs\Result describeTable(array $arguments = [])

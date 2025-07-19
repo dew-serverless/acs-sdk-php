@@ -33,6 +33,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise id2MetaVerifyIntlAsync($arguments = [])
  * @method \Dew\Acs\Result credentialVerifyIntl(array $arguments = [])
  * @method \Http\Promise\Promise credentialVerifyIntlAsync($arguments = [])
+ * @method \Dew\Acs\Result keepaliveIntl(array $arguments = [])
+ * @method \Http\Promise\Promise keepaliveIntlAsync($arguments = [])
  * @method \Dew\Acs\Result deleteVerifyResult(array $arguments = [])
  * @method \Http\Promise\Promise deleteVerifyResultAsync($arguments = [])
  * @method \Dew\Acs\Result checkVerifyLog(array $arguments = [])
@@ -43,6 +45,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise cardOcrAsync($arguments = []) {@deprecated 2022-08-09}
  * @method \Dew\Acs\Result bankMetaVerifyIntl(array $arguments = [])
  * @method \Http\Promise\Promise bankMetaVerifyIntlAsync($arguments = [])
+ * @method \Dew\Acs\Result addressVerifyIntl(array $arguments = [])
+ * @method \Http\Promise\Promise addressVerifyIntlAsync($arguments = [])
  */
 final class CloudauthIntlClient extends AcsClient
 {

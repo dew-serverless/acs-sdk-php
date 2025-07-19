@@ -7,6 +7,8 @@ namespace Dew\Acs\Fc;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result describeRegions(array $arguments = [])
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result createCustomDomain(array $arguments = [])

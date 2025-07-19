@@ -549,6 +549,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceBootConfigurationAsync($arguments = [])
  * @method \Dew\Acs\Result importImage(array $arguments = [])
  * @method \Http\Promise\Promise importImageAsync($arguments = [])
+ * @method \Dew\Acs\Result removeSDGs(array $arguments = [])
+ * @method \Http\Promise\Promise removeSDGsAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

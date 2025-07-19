@@ -97,6 +97,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getChatListAsync($arguments = [])
  * @method \Dew\Acs\Result chat(array $arguments = [])
  * @method \Http\Promise\Promise chatAsync($arguments = [])
+ * @method \Dew\Acs\Result chatStream(array $arguments = [])
+ * @method \Http\Promise\Promise chatStreamAsync($arguments = [])
  * @method \Dew\Acs\Result getDocumentAnalyzeResult(array $arguments = [])
  * @method \Http\Promise\Promise getDocumentAnalyzeResultAsync($arguments = [])
  * @method \Dew\Acs\Result submitDocumentAnalyzeJob(array $arguments = [])

@@ -31,6 +31,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyAgentProfileAsync($arguments = [])
  * @method \Dew\Acs\Result getAgentProfileTemplate(array $arguments = [])
  * @method \Http\Promise\Promise getAgentProfileTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result importScript(array $arguments = [])
+ * @method \Http\Promise\Promise importScriptAsync($arguments = [])
  * @method \Dew\Acs\Result createGlobalQuestion(array $arguments = [])
  * @method \Http\Promise\Promise createGlobalQuestionAsync($arguments = [])
  * @method \Dew\Acs\Result createIntent(array $arguments = [])
@@ -337,12 +339,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyEmptyNumberNoMoreCallsInfoAsync($arguments = [])
  * @method \Dew\Acs\Result queryScriptWaveforms(array $arguments = [])
  * @method \Http\Promise\Promise queryScriptWaveformsAsync($arguments = [])
- * @method \Dew\Acs\Result importScript(array $arguments = [])
- * @method \Http\Promise\Promise importScriptAsync($arguments = [])
  * @method \Dew\Acs\Result deleteScriptWaveform(array $arguments = [])
  * @method \Http\Promise\Promise deleteScriptWaveformAsync($arguments = [])
  * @method \Dew\Acs\Result createScriptWaveform(array $arguments = [])
  * @method \Http\Promise\Promise createScriptWaveformAsync($arguments = [])
+ * @method \Dew\Acs\Result getAssignJobsAsyncResult(array $arguments = [])
+ * @method \Http\Promise\Promise getAssignJobsAsyncResultAsync($arguments = [])
+ * @method \Dew\Acs\Result assignJobsAsync(array $arguments = [])
+ * @method \Http\Promise\Promise assignJobsAsyncAsync($arguments = [])
  */
 final class OutboundBotClient extends AcsClient
 {

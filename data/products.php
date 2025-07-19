@@ -137,46 +137,6 @@
         'defaultVersion' => '2021-03-08',
     ],
     [
-        'code' => 'cr',
-        'style' => 'ROA',
-        'versions' => [
-            '2018-12-01',
-        ],
-        'defaultVersion' => '2018-12-01',
-    ],
-    [
-        'code' => 'CS',
-        'style' => 'ROA',
-        'versions' => [
-            '2015-12-15',
-        ],
-        'defaultVersion' => '2015-12-15',
-    ],
-    [
-        'code' => 'WebPlus',
-        'style' => 'ROA',
-        'versions' => [
-            '2019-03-20',
-        ],
-        'defaultVersion' => '2019-03-20',
-    ],
-    [
-        'code' => 'servicemesh',
-        'style' => 'RPC',
-        'versions' => [
-            '2020-01-11',
-        ],
-        'defaultVersion' => '2020-01-11',
-    ],
-    [
-        'code' => 'adcp',
-        'style' => 'RPC',
-        'versions' => [
-            '2022-01-01',
-        ],
-        'defaultVersion' => '2022-01-01',
-    ],
-    [
         'code' => 'DFS',
         'style' => 'RPC',
         'versions' => [
@@ -631,10 +591,9 @@
         'style' => 'RPC',
         'versions' => [
             '2019-03-07',
-            '2020-06-18',
             '2022-11-25',
         ],
-        'defaultVersion' => '2020-06-18',
+        'defaultVersion' => '2019-03-07',
     ],
     [
         'code' => 'Green',
@@ -968,7 +927,6 @@
         'code' => 'Config',
         'style' => 'RPC',
         'versions' => [
-            '2019-01-08',
             '2020-09-07',
         ],
         'defaultVersion' => '2020-09-07',
@@ -1191,6 +1149,14 @@
             '2023-05-22',
         ],
         'defaultVersion' => '2023-05-22',
+    ],
+    [
+        'code' => 'Dms',
+        'style' => '',
+        'versions' => [
+            '2025-04-14',
+        ],
+        'defaultVersion' => '2025-04-14',
     ],
     [
         'code' => 'Dts',
@@ -2000,9 +1966,9 @@
         'code' => 'aiccs',
         'style' => 'RPC',
         'versions' => [
-            '2019-10-15',
+            '2023-05-16',
         ],
-        'defaultVersion' => '2019-10-15',
+        'defaultVersion' => '2023-05-16',
     ],
     [
         'code' => 'Dytnsapi',
@@ -2234,6 +2200,46 @@
         'defaultVersion' => '2023-09-30',
     ],
     [
+        'code' => 'cr',
+        'style' => 'ROA',
+        'versions' => [
+            '2018-12-01',
+        ],
+        'defaultVersion' => '2018-12-01',
+    ],
+    [
+        'code' => 'CS',
+        'style' => 'ROA',
+        'versions' => [
+            '2015-12-15',
+        ],
+        'defaultVersion' => '2015-12-15',
+    ],
+    [
+        'code' => 'WebPlus',
+        'style' => 'ROA',
+        'versions' => [
+            '2019-03-20',
+        ],
+        'defaultVersion' => '2019-03-20',
+    ],
+    [
+        'code' => 'servicemesh',
+        'style' => 'RPC',
+        'versions' => [
+            '2020-01-11',
+        ],
+        'defaultVersion' => '2020-01-11',
+    ],
+    [
+        'code' => 'adcp',
+        'style' => 'RPC',
+        'versions' => [
+            '2022-01-01',
+        ],
+        'defaultVersion' => '2022-01-01',
+    ],
+    [
         'code' => 'BssOpenApi',
         'style' => 'RPC',
         'versions' => [
@@ -2249,14 +2255,6 @@
             '2016-12-28',
         ],
         'defaultVersion' => '2016-12-28',
-    ],
-    [
-        'code' => 'Dms',
-        'style' => '',
-        'versions' => [
-            '2025-04-14',
-        ],
-        'defaultVersion' => '2025-04-14',
     ],
     [
         'code' => 'Agency',
@@ -2406,12 +2404,28 @@
         'defaultVersion' => '2024-07-01',
     ],
     [
+        'code' => 'DlfNext',
+        'style' => 'RPC',
+        'versions' => [
+            '2025-03-10',
+        ],
+        'defaultVersion' => '2025-03-10',
+    ],
+    [
         'code' => 'IQS',
         'style' => 'RPC',
         'versions' => [
             '2024-11-11',
         ],
         'defaultVersion' => '2024-11-11',
+    ],
+    [
+        'code' => 'SpecTest15',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-07-31',
+        ],
+        'defaultVersion' => '2024-07-31',
     ],
     [
         'code' => 'TrafficFxOpen',

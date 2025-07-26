@@ -17,6 +17,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise genericAdvancedSearchAsync($arguments = [])
  * @method \Dew\Acs\Result globalSearch(array $arguments = [])
  * @method \Http\Promise\Promise globalSearchAsync($arguments = [])
+ * @method \Dew\Acs\Result getIqsUsage(array $arguments = [])
+ * @method \Http\Promise\Promise getIqsUsageAsync($arguments = [])
  */
 final class IqsClient extends AcsClient
 {

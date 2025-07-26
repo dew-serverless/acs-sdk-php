@@ -179,6 +179,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getPfsMetricTrendsAsync($arguments = [])
  * @method \Dew\Acs\Result getPfsSqlSummaries(array $arguments = [])
  * @method \Http\Promise\Promise getPfsSqlSummariesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeErrorLogRecords(array $arguments = [])
+ * @method \Http\Promise\Promise describeErrorLogRecordsAsync($arguments = [])
  * @method \Dew\Acs\Result getHDMAliyunResourceSyncResult(array $arguments = [])
  * @method \Http\Promise\Promise getHDMAliyunResourceSyncResultAsync($arguments = [])
  * @method \Dew\Acs\Result getEndpointSwitchTask(array $arguments = [])

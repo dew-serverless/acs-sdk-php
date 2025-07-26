@@ -49,6 +49,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise manualModerationAsync($arguments = [])
  * @method \Dew\Acs\Result manualModerationResult(array $arguments = [])
  * @method \Http\Promise\Promise manualModerationResultAsync($arguments = [])
+ * @method \Dew\Acs\Result multiModalGuard(array $arguments = [])
+ * @method \Http\Promise\Promise multiModalGuardAsync($arguments = [])
  */
 final class GreenClient extends AcsClient
 {

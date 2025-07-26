@@ -69,6 +69,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise detachVscMountPointAsync($arguments = [])
  * @method \Dew\Acs\Result describeVscMountPoints(array $arguments = [])
  * @method \Http\Promise\Promise describeVscMountPointsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeMountPointsVscAttachInfo(array $arguments = [])
+ * @method \Http\Promise\Promise describeMountPointsVscAttachInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result attachVscToMountPoints(array $arguments = [])
+ * @method \Http\Promise\Promise attachVscToMountPointsAsync($arguments = [])
  */
 final class DfsClient extends AcsClient
 {

@@ -107,6 +107,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise generateCopilotResponseAsync($arguments = [])
  * @method \Dew\Acs\Result checkInstanceSupport(array $arguments = [])
  * @method \Http\Promise\Promise checkInstanceSupportAsync($arguments = [])
+ * @method \Dew\Acs\Result startAIDiffAnalysis(array $arguments = [])
+ * @method \Http\Promise\Promise startAIDiffAnalysisAsync($arguments = [])
  */
 final class SysOMClient extends AcsClient
 {

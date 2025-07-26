@@ -375,6 +375,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise stopMaxComputeExportAsync($arguments = [])
  * @method \Dew\Acs\Result updateMaxComputeExport(array $arguments = [])
  * @method \Http\Promise\Promise updateMaxComputeExportAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteConsumeProcessor(array $arguments = [])
+ * @method \Http\Promise\Promise deleteConsumeProcessorAsync($arguments = [])
+ * @method \Dew\Acs\Result getConsumeProcessor(array $arguments = [])
+ * @method \Http\Promise\Promise getConsumeProcessorAsync($arguments = [])
+ * @method \Dew\Acs\Result listConsumeProcessors(array $arguments = [])
+ * @method \Http\Promise\Promise listConsumeProcessorsAsync($arguments = [])
+ * @method \Dew\Acs\Result putConsumeProcessor(array $arguments = [])
+ * @method \Http\Promise\Promise putConsumeProcessorAsync($arguments = [])
  */
 final class SlsClient extends AcsClient
 {

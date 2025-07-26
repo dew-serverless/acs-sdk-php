@@ -135,6 +135,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deletePolicyGroupAsync($arguments = [])
  * @method \Dew\Acs\Result describeTasks(array $arguments = [])
  * @method \Http\Promise\Promise describeTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result describeMetricLast(array $arguments = [])
+ * @method \Http\Promise\Promise describeMetricLastAsync($arguments = [])
  * @method \Dew\Acs\Result setAdbSecure(array $arguments = [])
  * @method \Http\Promise\Promise setAdbSecureAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDisplayConfig(array $arguments = [])

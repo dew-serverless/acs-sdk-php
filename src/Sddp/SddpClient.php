@@ -7,6 +7,8 @@ namespace Dew\Acs\Sddp;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result describeAuditLogs(array $arguments = [])
+ * @method \Http\Promise\Promise describeAuditLogsAsync($arguments = [])
  * @method \Dew\Acs\Result createSlrRole(array $arguments = [])
  * @method \Http\Promise\Promise createSlrRoleAsync($arguments = [])
  * @method \Dew\Acs\Result deleteDataLimit(array $arguments = [])

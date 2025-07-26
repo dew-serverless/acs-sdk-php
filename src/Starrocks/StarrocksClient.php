@@ -13,6 +13,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise releaseInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result updateInstanceName(array $arguments = [])
  * @method \Http\Promise\Promise updateInstanceNameAsync($arguments = [])
+ * @method \Dew\Acs\Result tagResources(array $arguments = [])
+ * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result upgradeVersion(array $arguments = [])
  * @method \Http\Promise\Promise upgradeVersionAsync($arguments = [])
  * @method \Dew\Acs\Result queryUpgradableVersions(array $arguments = [])

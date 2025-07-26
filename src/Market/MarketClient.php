@@ -61,6 +61,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDistributionProductsAsync($arguments = [])
  * @method \Dew\Acs\Result describeApiMetering(array $arguments = [])
  * @method \Http\Promise\Promise describeApiMeteringAsync($arguments = [])
+ * @method \Dew\Acs\Result describeFailedNotifications(array $arguments = [])
+ * @method \Http\Promise\Promise describeFailedNotificationsAsync($arguments = [])
+ * @method \Dew\Acs\Result confirmNotification(array $arguments = [])
+ * @method \Http\Promise\Promise confirmNotificationAsync($arguments = [])
  */
 final class MarketClient extends AcsClient
 {

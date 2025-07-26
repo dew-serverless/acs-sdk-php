@@ -51,6 +51,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createServiceAsync($arguments = [])
  * @method \Dew\Acs\Result listServices(array $arguments = [])
  * @method \Http\Promise\Promise listServicesAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteService(array $arguments = [])
+ * @method \Http\Promise\Promise deleteServiceAsync($arguments = [])
  * @method \Dew\Acs\Result updateGatewayName(array $arguments = [])
  * @method \Http\Promise\Promise updateGatewayNameAsync($arguments = [])
  * @method \Dew\Acs\Result updateGatewayFeature(array $arguments = [])
@@ -129,6 +131,34 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteEnvironmentAsync($arguments = []) {@deprecated 2024-03-27}
  * @method \Dew\Acs\Result listEnvironments(array $arguments = []) {@deprecated 2024-03-27}
  * @method \Http\Promise\Promise listEnvironmentsAsync($arguments = []) {@deprecated 2024-03-27}
+ * @method \Dew\Acs\Result createGateway(array $arguments = [])
+ * @method \Http\Promise\Promise createGatewayAsync($arguments = [])
+ * @method \Dew\Acs\Result getConsumerAuthorizationRule(array $arguments = [])
+ * @method \Http\Promise\Promise getConsumerAuthorizationRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result updateConsumerAuthorizationRule(array $arguments = [])
+ * @method \Http\Promise\Promise updateConsumerAuthorizationRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result createConsumerAuthorizationRule(array $arguments = [])
+ * @method \Http\Promise\Promise createConsumerAuthorizationRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result getConsumer(array $arguments = [])
+ * @method \Http\Promise\Promise getConsumerAsync($arguments = [])
+ * @method \Dew\Acs\Result updateConsumer(array $arguments = [])
+ * @method \Http\Promise\Promise updateConsumerAsync($arguments = [])
+ * @method \Dew\Acs\Result createConsumer(array $arguments = [])
+ * @method \Http\Promise\Promise createConsumerAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteConsumerAuthorizationRule(array $arguments = [])
+ * @method \Http\Promise\Promise deleteConsumerAuthorizationRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result listConsumers(array $arguments = [])
+ * @method \Http\Promise\Promise listConsumersAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteConsumer(array $arguments = [])
+ * @method \Http\Promise\Promise deleteConsumerAsync($arguments = [])
+ * @method \Dew\Acs\Result batchDeleteConsumerAuthorizationRule(array $arguments = [])
+ * @method \Http\Promise\Promise batchDeleteConsumerAuthorizationRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result createConsumerAuthorizationRules(array $arguments = [])
+ * @method \Http\Promise\Promise createConsumerAuthorizationRulesAsync($arguments = [])
+ * @method \Dew\Acs\Result queryConsumerAuthorizationRules(array $arguments = [])
+ * @method \Http\Promise\Promise queryConsumerAuthorizationRulesAsync($arguments = [])
+ * @method \Dew\Acs\Result removeConsumerAuthorizationRule(array $arguments = [])
+ * @method \Http\Promise\Promise removeConsumerAuthorizationRuleAsync($arguments = [])
  */
 final class ApigClient extends AcsClient
 {

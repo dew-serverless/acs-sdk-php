@@ -347,6 +347,19 @@
                     ],
                 ],
             ],
+            'EniCacheConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'Enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'CachePoolSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'maximum' => '255',
+                    ],
+                ],
+            ],
             'Features' => [
                 'type' => 'object',
                 'properties' => [
@@ -621,18 +634,9 @@
             'MachineGroup' => [
                 'type' => 'object',
                 'properties' => [
-                    'Status' => [
-                        'type' => 'string',
-                    ],
                     'EcsCount' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                    ],
-                    'GmtStartedTime' => [
-                        'type' => 'string',
-                    ],
-                    'ResourceGroupID' => [
-                        'type' => 'string',
                     ],
                     'GmtCreatedTime' => [
                         'type' => 'string',
@@ -640,7 +644,37 @@
                     'CreatorID' => [
                         'type' => 'string',
                     ],
+                    'Memory' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                     'ReasonMessage' => [
+                        'type' => 'string',
+                    ],
+                    'Cpu' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'PaymentDuration' => [
+                        'type' => 'string',
+                    ],
+                    'Gpu' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DefaultDriver' => [
+                        'type' => 'string',
+                    ],
+                    'PaymentType' => [
+                        'type' => 'string',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'GmtStartedTime' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceGroupID' => [
                         'type' => 'string',
                     ],
                     'PaymentDurationUnit' => [
@@ -655,7 +689,7 @@
                             'type' => 'string',
                         ],
                     ],
-                    'PaymentDuration' => [
+                    'ResourceType' => [
                         'type' => 'string',
                     ],
                     'ReasonCode' => [
@@ -663,6 +697,10 @@
                     ],
                     'GmtModifiedTime' => [
                         'type' => 'string',
+                    ],
+                    'GpuMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                     'DiskCapacity' => [
                         'type' => 'integer',
@@ -674,13 +712,10 @@
                     'OrderInstanceId' => [
                         'type' => 'string',
                     ],
-                    'DefaultDriver' => [
+                    'GpuType' => [
                         'type' => 'string',
                     ],
                     'MachineGroupID' => [
-                        'type' => 'string',
-                    ],
-                    'PaymentType' => [
                         'type' => 'string',
                     ],
                     'DiskPL' => [
@@ -719,65 +754,54 @@
             'Node' => [
                 'type' => 'object',
                 'properties' => [
-                    'CreatorId' => [
-                        'type' => 'string',
-                    ],
-                    'NodeName' => [
-                        'type' => 'string',
-                    ],
-                    'NodeType' => [
-                        'type' => 'string',
-                    ],
-                    'AcceleratorType' => [
-                        'type' => 'string',
-                    ],
-                    'CPU' => [
-                        'type' => 'string',
-                    ],
-                    'Memory' => [
-                        'type' => 'string',
-                    ],
-                    'GPU' => [
-                        'type' => 'string',
-                    ],
-                    'GPUType' => [
-                        'type' => 'string',
-                    ],
-                    'GPUMemory' => [
-                        'type' => 'string',
-                    ],
-                    'NodeStatus' => [
-                        'type' => 'string',
-                    ],
-                    'ReasonCode' => [
-                        'type' => 'string',
-                    ],
-                    'ReasonMessage' => [
-                        'type' => 'string',
-                    ],
-                    'OrderStatus' => [
+                    'LimitMemory' => [
                         'type' => 'string',
                     ],
                     'ResourceGroupId' => [
                         'type' => 'string',
                     ],
-                    'ResourceGroupName' => [
+                    'NodeName' => [
                         'type' => 'string',
+                    ],
+                    'Memory' => [
+                        'type' => 'string',
+                    ],
+                    'ReasonMessage' => [
+                        'type' => 'string',
+                    ],
+                    'LimitCPU' => [
+                        'type' => 'string',
+                    ],
+                    'CPU' => [
+                        'type' => 'string',
+                    ],
+                    'Users' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/UserInfo',
+                        ],
+                    ],
+                    'AcceleratorType' => [
+                        'type' => 'string',
+                    ],
+                    'GPU' => [
+                        'type' => 'string',
+                    ],
+                    'OrderStatus' => [
+                        'type' => 'string',
+                    ],
+                    'LimitGPU' => [
+                        'type' => 'string',
+                    ],
+                    'GPUType' => [
+                        'type' => 'string',
+                    ],
+                    'WorkloadNum' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                     'MachineGroupId' => [
                         'type' => 'string',
-                    ],
-                    'GmtCreateTime' => [
-                        'type' => 'string',
-                    ],
-                    'GmtModifiedTime' => [
-                        'type' => 'string',
-                    ],
-                    'GmtExpiredTime' => [
-                        'type' => 'string',
-                    ],
-                    'IsBound' => [
-                        'type' => 'boolean',
                     ],
                     'BoundQuotas' => [
                         'type' => 'array',
@@ -785,37 +809,54 @@
                             '$ref' => '#/components/schemas/QuotaIdName',
                         ],
                     ],
-                    'RequestCPU' => [
+                    'GPUMemory' => [
                         'type' => 'string',
                     ],
                     'RequestMemory' => [
                         'type' => 'string',
                     ],
-                    'RequestGPU' => [
+                    'CreatorId' => [
                         'type' => 'string',
                     ],
-                    'LimitCPU' => [
+                    'HyperZone' => [
                         'type' => 'string',
                     ],
-                    'LimitMemory' => [
+                    'AvailabilityZone' => [
                         'type' => 'string',
                     ],
-                    'LimitGPU' => [
+                    'ReasonCode' => [
                         'type' => 'string',
+                    ],
+                    'GmtModifiedTime' => [
+                        'type' => 'string',
+                    ],
+                    'IsBound' => [
+                        'type' => 'boolean',
                     ],
                     'PodNum' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'WorkloadNum' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                    'GmtExpiredTime' => [
+                        'type' => 'string',
                     ],
-                    'Users' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/UserInfo',
-                        ],
+                    'NodeType' => [
+                        'type' => 'string',
+                    ],
+                    'RequestGPU' => [
+                        'type' => 'string',
+                    ],
+                    'NodeStatus' => [
+                        'type' => 'string',
+                    ],
+                    'GmtCreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'RequestCPU' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceGroupName' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1311,6 +1352,9 @@
                     'UserVpc' => [
                         '$ref' => '#/components/schemas/UserVpc',
                     ],
+                    'EniCacheConfig' => [
+                        '$ref' => '#/components/schemas/EniCacheConfig',
+                    ],
                     'ACS' => [
                         '$ref' => '#/components/schemas/ACS',
                     ],
@@ -1331,6 +1375,9 @@
                     ],
                     'SubQuotaPreemptionConfig' => [
                         '$ref' => '#/components/schemas/SubQuotaPreemptionConfig',
+                    ],
+                    'SandboxCacheConfig' => [
+                        '$ref' => '#/components/schemas/SandboxCacheConfig',
                     ],
                 ],
             ],
@@ -1790,6 +1837,47 @@
                     ],
                 ],
             ],
+            'ResourceInfo' => [
+                'type' => 'object',
+                'properties' => [],
+            ],
+            'ResourceInfos' => [
+                'type' => 'object',
+                'properties' => [
+                    'UserName' => [
+                        'type' => 'string',
+                    ],
+                    'GpuCardType' => [
+                        'type' => 'string',
+                    ],
+                    'ClusterId' => [
+                        'type' => 'string',
+                    ],
+                    'UserId' => [
+                        'type' => 'string',
+                    ],
+                    'EcsSpec' => [
+                        'type' => 'string',
+                    ],
+                    'RegionId' => [
+                        'type' => 'string',
+                    ],
+                    'MaxQuota' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'UsedQuota' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'NetworkPodId' => [
+                        'type' => 'string',
+                    ],
+                    'MachineModel' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ResourceLimitDetails' => [
                 'type' => 'object',
                 'properties' => [
@@ -1867,6 +1955,14 @@
                 'properties' => [
                     'Scheduling' => [
                         '$ref' => '#/components/schemas/SchedulingRule',
+                    ],
+                ],
+            ],
+            'SandboxCacheConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'Enabled' => [
+                        'type' => 'boolean',
                     ],
                 ],
             ],
@@ -2489,6 +2585,14 @@
                 ],
                 [
                     'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupIDs',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5655,6 +5759,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'HyperZone',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AvailabilityZone',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetSpotPriceHistory' => [
@@ -5789,6 +5909,26 @@
         [
             'regionId' => 'eu-central-1',
             'endpoint' => 'pai.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'pai.cn-guangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'pai.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'pai.us-east-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'pai.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'pai.ap-northeast-2.aliyuncs.com',
         ],
     ],
 ];

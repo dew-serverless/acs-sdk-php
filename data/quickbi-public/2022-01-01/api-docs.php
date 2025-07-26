@@ -59,6 +59,15 @@
                     ],
                 ],
                 [
+                    'name' => 'AccountId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'AccountName',
                     'in' => 'query',
                     'schema' => [
@@ -2145,6 +2154,47 @@
                 ],
             ],
         ],
+        'QueryReadableResourcesListByUserIdV2' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'UserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'WorkType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'QueryReadableResourcesListByUserId' => [
             'methods' => [
                 'post',
@@ -2158,7 +2208,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'UserId',
@@ -4074,6 +4124,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'UserAccessDevice',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AccessSourceFlag',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateTicket4Copilot' => [
@@ -4482,6 +4548,10 @@
         [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'quickbi-public.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'quickbi-public.ap-northeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',

@@ -255,6 +255,34 @@
                     ],
                 ],
             ],
+            'ChangeResourceGroupInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceId' => [
+                        'type' => 'string',
+                    ],
+                    'newResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ChangeResourceGroupOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'resourceId' => [
+                        'type' => 'string',
+                    ],
+                    'newResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'oldResourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ConcurrencyConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -337,30 +365,25 @@
             'CreateFunctionInput' => [
                 'type' => 'object',
                 'properties' => [
-                    'handler' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'minLength' => 1,
-                        'maxLength' => 128,
-                    ],
                     'code' => [
                         '$ref' => '#/components/schemas/InputCodeLocation',
                         'required' => false,
                     ],
-                    'role' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'maxLength' => 300,
-                    ],
-                    'disableOndemand' => [
-                        'type' => 'boolean',
-                    ],
-                    'tracingConfig' => [
-                        '$ref' => '#/components/schemas/TracingConfig',
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
                         'required' => false,
                     ],
-                    'nasConfig' => [
-                        '$ref' => '#/components/schemas/NASConfig',
+                    'customContainerConfig' => [
+                        '$ref' => '#/components/schemas/CustomContainerConfig',
+                        'required' => false,
+                    ],
+                    'customDNS' => [
+                        '$ref' => '#/components/schemas/CustomDNS',
+                        'required' => false,
+                    ],
+                    'customRuntimeConfig' => [
+                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
                         'required' => false,
                     ],
                     'description' => [
@@ -368,90 +391,9 @@
                         'required' => false,
                         'maxLength' => 256,
                     ],
-                    'timeout' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
                     'diskSize' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'internetAccess' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                    'enableLongLiving' => [
-                        'type' => 'boolean',
-                    ],
-                    'layers' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'ossMountConfig' => [
-                        '$ref' => '#/components/schemas/OSSMountConfig',
-                        'required' => false,
-                    ],
-                    'customRuntimeConfig' => [
-                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
-                        'required' => false,
-                    ],
-                    'logConfig' => [
-                        '$ref' => '#/components/schemas/LogConfig',
-                        'required' => false,
-                    ],
-                    'functionName' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'minLength' => 1,
-                        'maxLength' => 128,
-                    ],
-                    'instanceLifecycleConfig' => [
-                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
-                        'required' => false,
-                    ],
-                    'gpuConfig' => [
-                        '$ref' => '#/components/schemas/GPUConfig',
-                        'required' => false,
-                    ],
-                    'sessionAffinity' => [
-                        'type' => 'string',
-                    ],
-                    'cpu' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => false,
-                    ],
-                    'runtime' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'customContainerConfig' => [
-                        '$ref' => '#/components/schemas/CustomContainerConfig',
-                        'required' => false,
-                    ],
-                    'instanceConcurrency' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'tags' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/Tag',
-                        ],
-                    ],
-                    'memorySize' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'customDNS' => [
-                        '$ref' => '#/components/schemas/CustomDNS',
                         'required' => false,
                     ],
                     'environmentVariables' => [
@@ -461,9 +403,107 @@
                             'type' => 'string',
                         ],
                     ],
+                    'functionName' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'gpuConfig' => [
+                        '$ref' => '#/components/schemas/GPUConfig',
+                        'required' => false,
+                    ],
+                    'handler' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'instanceLifecycleConfig' => [
+                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
+                        'required' => false,
+                    ],
+                    'internetAccess' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'layers' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'logConfig' => [
+                        '$ref' => '#/components/schemas/LogConfig',
+                        'required' => false,
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'nasConfig' => [
+                        '$ref' => '#/components/schemas/NASConfig',
+                        'required' => false,
+                    ],
+                    'ossMountConfig' => [
+                        '$ref' => '#/components/schemas/OSSMountConfig',
+                        'required' => false,
+                    ],
+                    'role' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 300,
+                    ],
+                    'runtime' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'tracingConfig' => [
+                        '$ref' => '#/components/schemas/TracingConfig',
+                        'required' => false,
+                    ],
                     'vpcConfig' => [
                         '$ref' => '#/components/schemas/VPCConfig',
                         'required' => false,
+                    ],
+                    'tags' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Tag',
+                        ],
+                    ],
+                    'disableOndemand' => [
+                        'type' => 'boolean',
+                    ],
+                    'sessionAffinity' => [
+                        'type' => 'string',
+                    ],
+                    'enableLongLiving' => [
+                        'type' => 'boolean',
+                        'deprecated' => true,
+                    ],
+                    'resourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'instanceIsolationMode' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'SHARE',
+                            'REQUEST_EXCLUSIVE',
+                            'SESSION_EXCLUSIVE',
+                        ],
                     ],
                 ],
             ],
@@ -943,42 +983,7 @@
             'Function' => [
                 'type' => 'object',
                 'properties' => [
-                    'handler' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'lastModifiedTime' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'role' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'disableOndemand' => [
-                        'type' => 'boolean',
-                    ],
-                    'tracingConfig' => [
-                        '$ref' => '#/components/schemas/TracingConfig',
-                        'required' => false,
-                    ],
-                    'lastUpdateStatusReasonCode' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'nasConfig' => [
-                        '$ref' => '#/components/schemas/NASConfig',
-                        'required' => false,
-                    ],
-                    'description' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'stateReasonCode' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'stateReason' => [
+                    'codeChecksum' => [
                         'type' => 'string',
                         'required' => false,
                     ],
@@ -987,87 +992,12 @@
                         'format' => 'int64',
                         'required' => false,
                     ],
-                    'timeout' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'codeChecksum' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'diskSize' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'functionId' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'lastUpdateStatusReason' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'internetAccess' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                    'enableLongLiving' => [
-                        'type' => 'boolean',
-                    ],
-                    'layers' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            '$ref' => '#/components/schemas/FunctionLayer',
-                        ],
-                    ],
-                    'ossMountConfig' => [
-                        '$ref' => '#/components/schemas/OSSMountConfig',
-                        'required' => false,
-                    ],
-                    'createdTime' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'state' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'functionArn' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'customRuntimeConfig' => [
-                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
-                        'required' => false,
-                    ],
-                    'logConfig' => [
-                        '$ref' => '#/components/schemas/LogConfig',
-                        'required' => false,
-                    ],
-                    'functionName' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'instanceLifecycleConfig' => [
-                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
-                        'required' => false,
-                    ],
-                    'gpuConfig' => [
-                        '$ref' => '#/components/schemas/GPUConfig',
-                        'required' => false,
-                    ],
-                    'sessionAffinity' => [
-                        'type' => 'string',
-                    ],
                     'cpu' => [
                         'type' => 'number',
                         'format' => 'float',
                         'required' => false,
                     ],
-                    'runtime' => [
+                    'createdTime' => [
                         'type' => 'string',
                         'required' => false,
                     ],
@@ -1075,27 +1005,21 @@
                         '$ref' => '#/components/schemas/CustomContainerConfig',
                         'required' => false,
                     ],
-                    'instanceConcurrency' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'tags' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/Tag',
-                        ],
-                    ],
-                    'invocationRestriction' => [
-                        '$ref' => '#/components/schemas/FunctionRestriction',
-                    ],
-                    'memorySize' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
                     'customDNS' => [
                         '$ref' => '#/components/schemas/CustomDNS',
+                        'required' => false,
+                    ],
+                    'customRuntimeConfig' => [
+                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
+                        'required' => false,
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                     'environmentVariables' => [
@@ -1105,13 +1029,141 @@
                             'type' => 'string',
                         ],
                     ],
+                    'functionArn' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'functionId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'functionName' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'gpuConfig' => [
+                        '$ref' => '#/components/schemas/GPUConfig',
+                        'required' => false,
+                    ],
+                    'handler' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'instanceLifecycleConfig' => [
+                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
+                        'required' => false,
+                    ],
+                    'internetAccess' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
                     'lastUpdateStatus' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                    'lastUpdateStatusReason' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'lastUpdateStatusReasonCode' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'layers' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/FunctionLayer',
+                        ],
+                    ],
+                    'logConfig' => [
+                        '$ref' => '#/components/schemas/LogConfig',
+                        'required' => false,
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'nasConfig' => [
+                        '$ref' => '#/components/schemas/NASConfig',
+                        'required' => false,
+                    ],
+                    'ossMountConfig' => [
+                        '$ref' => '#/components/schemas/OSSMountConfig',
+                        'required' => false,
+                    ],
+                    'role' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'runtime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'state' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'stateReason' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'stateReasonCode' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'tracingConfig' => [
+                        '$ref' => '#/components/schemas/TracingConfig',
                         'required' => false,
                     ],
                     'vpcConfig' => [
                         '$ref' => '#/components/schemas/VPCConfig',
                         'required' => false,
+                    ],
+                    'tags' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Tag',
+                        ],
+                    ],
+                    'disableOndemand' => [
+                        'type' => 'boolean',
+                    ],
+                    'invocationRestriction' => [
+                        '$ref' => '#/components/schemas/FunctionRestriction',
+                    ],
+                    'sessionAffinity' => [
+                        'type' => 'string',
+                    ],
+                    'enableLongLiving' => [
+                        'type' => 'boolean',
+                        'deprecated' => true,
+                    ],
+                    'resourceGroupId' => [
+                        'type' => 'string',
+                    ],
+                    'instanceIsolationMode' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'SHARE',
+                            'SESSION_EXCLUSIVE',
+                            'REQUEST_EXCLUSIVE',
+                        ],
                     ],
                 ],
             ],
@@ -1189,6 +1241,14 @@
                         'additionalProperties' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+            ],
+            'GetScalingConfigStatusOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'scalingConfigStatus' => [
+                        '$ref' => '#/components/schemas/ScalingConfigStatus',
                     ],
                 ],
             ],
@@ -1577,6 +1637,34 @@
                         'items' => [
                             '$ref' => '#/components/schemas/ProvisionConfig',
                         ],
+                    ],
+                ],
+            ],
+            'ListResidentResourcePoolsOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'nextToken' => [
+                        'type' => 'string',
+                    ],
+                    'residentResourcePools' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ResidentResourcePool',
+                        ],
+                    ],
+                ],
+            ],
+            'ListScalingConfigStatusOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'result' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ScalingConfigStatus',
+                        ],
+                    ],
+                    'nextToken' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1994,6 +2082,34 @@
                     ],
                 ],
             ],
+            'PutScalingConfigInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'residentConfig' => [
+                        '$ref' => '#/components/schemas/ResidentConfig',
+                    ],
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'PutScalingConfigOutput' => [
+                'type' => 'object',
+                'properties' => [
+                    'functionName' => [
+                        'type' => 'string',
+                    ],
+                    'qualifier' => [
+                        'type' => 'string',
+                    ],
+                    'residentConfig' => [
+                        '$ref' => '#/components/schemas/ResidentConfig',
+                    ],
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'RegexRule' => [
                 'type' => 'object',
                 'properties' => [
@@ -2066,6 +2182,155 @@
                     'vpcId' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'ResidentConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'poolId' => [
+                        'type' => 'string',
+                    ],
+                    'count' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'ResidentResourceAllocation' => [
+                'type' => 'object',
+                'properties' => [
+                    'totalMemorySize' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalDiskSize' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'functionName' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'instanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'qualifier' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalGpuMemorySize' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalCpuCores' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                ],
+            ],
+            'ResidentResourceAllocationStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'lastAllocatedTime' => [
+                        'type' => 'string',
+                    ],
+                    'lastAllocation' => [
+                        '$ref' => '#/components/schemas/ResidentResourceAllocation',
+                    ],
+                ],
+            ],
+            'ResidentResourceCapacity' => [
+                'type' => 'object',
+                'properties' => [
+                    'totalGpuCards' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalMemorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalDiskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalGpuMemorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'totalCpuCores' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'gpuType' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                ],
+            ],
+            'ResidentResourcePool' => [
+                'type' => 'object',
+                'properties' => [
+                    'residentResourcePoolName' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'lastModifiedTime' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'expireTime' => [
+                        'type' => 'string',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'resourcePoolConfig' => [
+                        '$ref' => '#/components/schemas/ResidentResourceCapacity',
+                        'deprecated' => false,
+                    ],
+                    'residentResourcePoolId' => [
+                        'type' => 'string',
+                    ],
+                    'resourcePoolCapacity' => [
+                        '$ref' => '#/components/schemas/ResidentResourceCapacity',
+                        'deprecated' => false,
+                    ],
+                    'createdTime' => [
+                        'type' => 'string',
+                        'format' => 'iso8601',
+                        'deprecated' => false,
+                        'pattern' => '',
+                    ],
+                    'allocationStatus' => [
+                        '$ref' => '#/components/schemas/ResidentResourceAllocationStatus',
+                        'deprecated' => false,
                     ],
                 ],
             ],
@@ -2199,6 +2464,38 @@
                     'project' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+            ],
+            'ScalingConfigStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'scalingStatus' => [
+                        '$ref' => '#/components/schemas/ScalingStatus',
+                    ],
+                    'functionName' => [
+                        'type' => 'string',
+                    ],
+                    'qualifier' => [
+                        'type' => 'string',
+                    ],
+                    'residentConfig' => [
+                        '$ref' => '#/components/schemas/ResidentConfig',
+                    ],
+                    'resourceType' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ScalingStatus' => [
+                'type' => 'object',
+                'properties' => [
+                    'currentError' => [
+                        'type' => 'string',
+                    ],
+                    'resourceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -2732,30 +3029,25 @@
             'UpdateFunctionInput' => [
                 'type' => 'object',
                 'properties' => [
-                    'handler' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'minLength' => 1,
-                        'maxLength' => 128,
-                    ],
                     'code' => [
                         '$ref' => '#/components/schemas/InputCodeLocation',
                         'required' => false,
                     ],
-                    'role' => [
-                        'type' => 'string',
-                        'required' => false,
-                        'maxLength' => 300,
-                    ],
-                    'disableOndemand' => [
-                        'type' => 'boolean',
-                    ],
-                    'tracingConfig' => [
-                        '$ref' => '#/components/schemas/TracingConfig',
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
                         'required' => false,
                     ],
-                    'nasConfig' => [
-                        '$ref' => '#/components/schemas/NASConfig',
+                    'customContainerConfig' => [
+                        '$ref' => '#/components/schemas/CustomContainerConfig',
+                        'required' => false,
+                    ],
+                    'customDNS' => [
+                        '$ref' => '#/components/schemas/CustomDNS',
+                        'required' => false,
+                    ],
+                    'customRuntimeConfig' => [
+                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
                         'required' => false,
                     ],
                     'description' => [
@@ -2763,78 +3055,9 @@
                         'required' => false,
                         'maxLength' => 256,
                     ],
-                    'timeout' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
                     'diskSize' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'internetAccess' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                    'enableLongLiving' => [
-                        'type' => 'boolean',
-                    ],
-                    'layers' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'ossMountConfig' => [
-                        '$ref' => '#/components/schemas/OSSMountConfig',
-                        'required' => false,
-                    ],
-                    'customRuntimeConfig' => [
-                        '$ref' => '#/components/schemas/CustomRuntimeConfig',
-                        'required' => false,
-                    ],
-                    'logConfig' => [
-                        '$ref' => '#/components/schemas/LogConfig',
-                        'required' => false,
-                    ],
-                    'instanceLifecycleConfig' => [
-                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
-                        'required' => false,
-                    ],
-                    'gpuConfig' => [
-                        '$ref' => '#/components/schemas/GPUConfig',
-                        'required' => false,
-                    ],
-                    'sessionAffinity' => [
-                        'type' => 'string',
-                    ],
-                    'cpu' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => false,
-                    ],
-                    'runtime' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                    'customContainerConfig' => [
-                        '$ref' => '#/components/schemas/CustomContainerConfig',
-                        'required' => false,
-                    ],
-                    'instanceConcurrency' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'memorySize' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                    'customDNS' => [
-                        '$ref' => '#/components/schemas/CustomDNS',
                         'required' => false,
                     ],
                     'environmentVariables' => [
@@ -2844,9 +3067,100 @@
                             'type' => 'string',
                         ],
                     ],
+                    'gpuConfig' => [
+                        '$ref' => '#/components/schemas/GPUConfig',
+                        'required' => false,
+                    ],
+                    'handler' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'minLength' => 1,
+                        'maxLength' => 128,
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'instanceLifecycleConfig' => [
+                        '$ref' => '#/components/schemas/InstanceLifecycleConfig',
+                        'required' => false,
+                    ],
+                    'internetAccess' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                    'layers' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'logConfig' => [
+                        '$ref' => '#/components/schemas/LogConfig',
+                        'required' => false,
+                    ],
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'nasConfig' => [
+                        '$ref' => '#/components/schemas/NASConfig',
+                        'required' => false,
+                    ],
+                    'ossMountConfig' => [
+                        '$ref' => '#/components/schemas/OSSMountConfig',
+                        'required' => false,
+                    ],
+                    'role' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 300,
+                    ],
+                    'runtime' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'timeout' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                    'tracingConfig' => [
+                        '$ref' => '#/components/schemas/TracingConfig',
+                        'required' => false,
+                    ],
                     'vpcConfig' => [
                         '$ref' => '#/components/schemas/VPCConfig',
                         'required' => false,
+                    ],
+                    'disableOndemand' => [
+                        'type' => 'boolean',
+                    ],
+                    'sessionAffinity' => [
+                        'type' => 'string',
+                    ],
+                    'enableLongLiving' => [
+                        'type' => 'boolean',
+                        'deprecated' => true,
+                    ],
+                    'instanceIsolationMode' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'SHARE',
+                            'REQUEST_EXCLUSIVE',
+                            'SESSION_EXCLUSIVE',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateResidentResourcePoolInput' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2947,6 +3261,37 @@
         ],
     ],
     'apis' => [
+        'ChangeResourceGroup' => [
+            'path' => '/2023-03-30/resource-groups',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'schema' => [
+                        '$ref' => '#/components/schemas/ChangeResourceGroupInput',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeRegions' => [
             'path' => '/2023-03-30/regions',
             'methods' => [
@@ -3547,6 +3892,14 @@
                 ],
                 [
                     'name' => 'functionName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceGroupId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

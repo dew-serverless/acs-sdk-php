@@ -10,23 +10,6 @@
             'AppInfoDTO' => [
                 'type' => 'object',
                 'properties' => [
-                    'ItemId' => [
-                        'type' => 'string',
-                    ],
-                    'AppName' => [
-                        'type' => 'string',
-                    ],
-                    'UserId' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'AppType' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'GmtCreate' => [
-                        'type' => 'string',
-                    ],
                     'Platforms' => [
                         'type' => 'array',
                         'items' => [
@@ -36,27 +19,53 @@
                                     'type' => 'integer',
                                     'format' => 'int64',
                                 ],
-                                'PlatformType' => [
-                                    'type' => 'integer',
-                                    'format' => 'int64',
-                                ],
-                                'PkgName' => [
-                                    'type' => 'string',
-                                ],
-                                'PkgSignature' => [
-                                    'type' => 'string',
-                                ],
-                                'ItemId' => [
-                                    'type' => 'string',
-                                ],
                                 'LicenseItemIds' => [
                                     'type' => 'array',
                                     'items' => [
                                         'type' => 'string',
                                     ],
                                 ],
+                                'PkgSignature' => [
+                                    'type' => 'string',
+                                ],
+                                'PlatformType' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                ],
+                                'ItemId' => [
+                                    'type' => 'string',
+                                ],
+                                'PkgName' => [
+                                    'type' => 'string',
+                                ],
                             ],
                         ],
+                    ],
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'UserId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'CreationTime' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'ModificationTime' => [
+                        'type' => 'string',
+                    ],
+                    'ItemId' => [
+                        'type' => 'string',
+                    ],
+                    'AppType' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'AppName' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -253,6 +262,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'PlayDomain',
                     'in' => 'query',
                     'schema' => [
@@ -285,6 +302,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'PlayDomain',
                     'in' => 'query',
@@ -408,6 +433,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -642,6 +675,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -869,6 +910,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'SSLPub',
                     'in' => 'query',
                     'schema' => [
@@ -901,6 +950,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'PageNumber',
                     'in' => 'query',
@@ -945,6 +1002,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -976,7 +1041,16 @@
                     'AK' => [],
                 ],
             ],
-            'parameters' => [],
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
         ],
         'VerifyLiveDomainOwner' => [
             'methods' => [
@@ -993,6 +1067,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -1027,6 +1109,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -1052,6 +1142,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -1065,6 +1163,155 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'TagLiveResources' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 51,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'DOMAIN',
+                            'domain',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UnTagLiveResources' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 51,
+                    ],
+                ],
+                [
+                    'name' => 'TagKey',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'DOMAIN',
+                            'domain',
+                            'Domain',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'All',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1084,6 +1331,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -1146,6 +1401,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -1236,6 +1499,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -1317,6 +1588,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -1382,6 +1661,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -1406,6 +1693,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -1447,6 +1742,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -1513,6 +1816,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -1546,6 +1857,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -1577,6 +1896,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -1688,6 +2015,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -1794,6 +2129,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -1885,6 +2228,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -1999,6 +2350,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -2124,6 +2483,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -2156,6 +2523,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -2190,6 +2565,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -2214,6 +2597,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -2256,6 +2647,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -2281,6 +2680,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -2305,6 +2712,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -2374,6 +2789,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -2452,6 +2875,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -2529,6 +2960,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -2577,6 +3016,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -2627,6 +3074,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -2667,6 +3122,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -2765,6 +3228,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -2814,6 +3285,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -2854,6 +3333,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -2913,6 +3400,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -2953,6 +3448,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -2996,6 +3499,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -3124,6 +3635,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -3149,6 +3668,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -3173,6 +3700,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -3261,6 +3796,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -3301,6 +3844,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -3371,6 +3922,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -3438,6 +3997,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -3462,6 +4029,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -3530,6 +4105,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -3570,6 +4153,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -3627,6 +4218,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -3845,6 +4444,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -4013,6 +4620,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -4207,6 +4822,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -4263,6 +4886,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -4474,6 +5105,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainTranscodeName',
                     'in' => 'query',
                     'schema' => [
@@ -4506,6 +5145,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -4581,6 +5228,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -4675,6 +5330,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -4760,6 +5423,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -4800,6 +5471,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -5042,6 +5721,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Command',
                     'in' => 'query',
@@ -5289,6 +5976,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'RecordId',
                     'in' => 'query',
@@ -5858,6 +6553,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -6057,6 +6760,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CreateTimestampList',
                     'in' => 'query',
@@ -6351,6 +7062,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -6376,6 +7095,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -6400,6 +7127,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -6450,6 +7185,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -6499,6 +7242,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -6540,6 +7291,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -6565,6 +7324,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -6589,6 +7356,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -6674,6 +7449,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -6758,6 +7541,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -6830,6 +7621,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -7250,6 +8049,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -7323,6 +8130,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -7363,6 +8178,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -7405,6 +8228,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -7429,6 +8260,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -7470,6 +8309,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -7544,6 +8391,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -7585,6 +8440,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -7609,6 +8472,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -7707,6 +8578,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -7760,6 +8639,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -7784,6 +8671,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -7854,6 +8749,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -7878,6 +8781,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -7955,6 +8866,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -8020,6 +8939,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -8084,6 +9011,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -8208,6 +9143,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -8281,6 +9224,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -8346,6 +9297,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -8410,6 +9369,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -8477,6 +9444,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -8526,6 +9501,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Stream',
                     'in' => 'query',
                     'schema' => [
@@ -8565,6 +9548,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -8623,6 +9614,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -8679,6 +9678,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -8793,6 +9800,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -8817,6 +9832,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -8854,6 +9877,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -8895,6 +9926,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'StartTime',
                     'in' => 'query',
@@ -8939,6 +9978,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -8989,6 +10036,14 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -9063,6 +10118,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -9104,6 +10167,89 @@
                 ],
             ],
         ],
+        'DescribeLiveUserStreamMetricData' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DomainName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AppName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StreamName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Protocol',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'DescribeLiveDomainRecordUsageData' => [
             'methods' => [
                 'post',
@@ -9119,6 +10265,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -9185,6 +10339,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -9225,6 +10387,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -9314,6 +10484,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -9406,6 +10584,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Region',
                     'in' => 'query',
                     'schema' => [
@@ -9462,6 +10648,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'StartTime',
                     'in' => 'query',
@@ -9528,6 +10722,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -9576,6 +10778,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -9649,6 +10859,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Region',
                     'in' => 'query',
@@ -9739,6 +10957,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -9812,6 +11038,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -9884,6 +11118,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'StartTime',
                     'in' => 'query',
@@ -9991,6 +11233,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -10052,6 +11302,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterName',
                     'in' => 'query',
@@ -10158,6 +11416,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -10331,6 +11597,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -10355,6 +11629,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -10489,6 +11771,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -10513,6 +11803,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterName',
                     'in' => 'query',
@@ -10555,6 +11853,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -10579,6 +11885,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -10605,6 +11919,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -10630,6 +11952,54 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CasterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateCasterResourceGroup' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NewResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -10654,6 +12024,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -10784,6 +12162,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -10816,6 +12202,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -10937,6 +12331,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -10961,6 +12363,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'VideoLayer',
                     'in' => 'query',
@@ -11094,6 +12504,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -11126,6 +12544,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'VideoLayer',
                     'in' => 'query',
@@ -11267,6 +12693,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -11299,6 +12733,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -11405,6 +12847,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -11437,6 +12887,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -11527,6 +12985,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -11559,6 +13025,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -11601,6 +13075,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -11641,6 +13123,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ComponentId',
                     'in' => 'query',
@@ -11697,6 +13187,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ComponentId',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -11752,6 +13250,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -11784,6 +13290,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'AudioLayer',
                     'in' => 'query',
@@ -11875,6 +13389,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -11907,6 +13429,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -11941,6 +13471,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -11973,6 +13511,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -12041,6 +13587,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -12065,6 +13619,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -12098,6 +13660,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -12139,6 +13709,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'showList',
                     'in' => 'query',
@@ -12288,6 +13866,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'showIdList',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -12342,6 +13928,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -12410,6 +14004,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -12434,6 +14036,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -12467,6 +14077,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ResourceIds',
                     'in' => 'query',
@@ -12535,6 +14153,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -12559,6 +14185,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -12627,6 +14261,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -12660,6 +14302,14 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -12714,6 +14364,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -12796,6 +14454,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -12828,6 +14494,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -12910,6 +14584,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -12942,6 +14624,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ComponentId',
                     'in' => 'query',
@@ -13030,6 +14720,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -13062,6 +14760,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ComponentId',
                     'in' => 'query',
@@ -13149,6 +14855,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Item',
                     'in' => 'query',
@@ -13240,6 +14954,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ProgramId',
                     'in' => 'query',
                     'schema' => [
@@ -13264,6 +14986,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ClientToken',
                     'in' => 'query',
@@ -13297,6 +15027,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Episode',
                     'in' => 'query',
@@ -13371,6 +15109,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -13456,6 +15202,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Episode',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -13534,6 +15288,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CasterId',
                     'in' => 'query',
                     'schema' => [
@@ -13558,6 +15320,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'CasterId',
                     'in' => 'query',
@@ -13608,6 +15378,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ProgramId',
                     'in' => 'query',
                     'schema' => [
@@ -13641,6 +15419,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ProgramId',
                     'in' => 'query',
                     'schema' => [
@@ -13673,6 +15459,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ProgramId',
                     'in' => 'query',
@@ -13715,6 +15509,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ProgramId',
                     'in' => 'query',
                     'schema' => [
@@ -13739,6 +15541,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ProgramId',
                     'in' => 'query',
@@ -13782,6 +15592,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ProgramId',
                     'in' => 'query',
@@ -13833,6 +15651,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ProgramId',
                     'in' => 'query',
                     'schema' => [
@@ -13857,6 +15683,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -13915,6 +15749,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -13963,6 +15805,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -14047,6 +15897,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -14096,6 +15954,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'CustomTemplate',
                     'in' => 'query',
                     'schema' => [
@@ -14129,6 +15995,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Template',
                     'in' => 'query',
                     'schema' => [
@@ -14153,6 +16027,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Template',
                     'in' => 'query',
@@ -14179,6 +16061,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'UserId',
                     'in' => 'query',
                     'schema' => [
@@ -14203,6 +16093,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Type',
                     'in' => 'query',
@@ -14324,6 +16222,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TemplateId',
                     'in' => 'query',
                     'schema' => [
@@ -14348,6 +16254,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'TemplateId',
                     'in' => 'query',
@@ -14460,6 +16374,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -14508,6 +16430,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -14559,6 +16489,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Name',
                     'in' => 'query',
@@ -14625,6 +16563,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -14673,6 +16619,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'RuleId',
                     'in' => 'query',
@@ -14723,6 +16677,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -14765,6 +16727,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ClusterId',
                     'in' => 'query',
@@ -14841,6 +16811,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ClusterId',
                     'in' => 'query',
                     'schema' => [
@@ -14873,6 +16851,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ClusterId',
                     'in' => 'query',
@@ -14931,6 +16917,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ClusterId',
                     'in' => 'query',
                     'schema' => [
@@ -14963,6 +16957,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ClusterId',
                     'in' => 'query',
@@ -15040,6 +17042,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ClusterId',
                     'in' => 'query',
                     'schema' => [
@@ -15072,6 +17082,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'ClusterId',
                     'in' => 'query',
@@ -15138,6 +17156,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ClusterId',
                     'in' => 'query',
                     'schema' => [
@@ -15171,6 +17197,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ClusterId',
                     'in' => 'query',
                     'schema' => [
@@ -15203,6 +17237,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -15227,6 +17269,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -15250,6 +17300,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Project',
                     'in' => 'query',
@@ -15299,6 +17357,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Project',
                     'in' => 'query',
                     'schema' => [
@@ -15346,6 +17412,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -15395,6 +17469,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -15419,6 +17501,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'LiveOpenapiReserve',
                     'in' => 'query',
                     'schema' => [
@@ -15442,6 +17532,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Project',
                     'in' => 'query',
@@ -15483,6 +17581,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'LiveOpenapiReserve',
                     'in' => 'query',
                     'schema' => [
@@ -15507,6 +17613,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -15566,6 +17680,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Project',
                     'in' => 'query',
                     'schema' => [
@@ -15606,6 +17728,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -15665,6 +17795,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'MonitorName',
                     'in' => 'query',
@@ -15754,6 +17892,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'MonitorId',
                     'in' => 'query',
@@ -15852,6 +17998,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'MonitorId',
                     'in' => 'query',
                     'schema' => [
@@ -15913,6 +18067,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'MonitorId',
                     'in' => 'query',
                     'schema' => [
@@ -15938,6 +18100,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'MonitorId',
                     'in' => 'query',
                     'schema' => [
@@ -15962,6 +18132,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'MonitorId',
                     'in' => 'query',
@@ -21274,6 +23452,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Mode',
                     'in' => 'query',
                     'schema' => [
@@ -21401,6 +23587,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TaskId',
                     'in' => 'query',
                     'schema' => [
@@ -21425,6 +23619,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'TaskId',
                     'in' => 'query',
@@ -21451,6 +23653,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TaskId',
                     'in' => 'query',
                     'schema' => [
@@ -21475,6 +23685,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'RulesId',
                     'in' => 'query',
@@ -21524,6 +23742,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -21589,6 +23815,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Domain',
                     'in' => 'query',
@@ -21687,6 +23921,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Domain',
                     'in' => 'query',
                     'schema' => [
@@ -21766,6 +24008,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'StudioName',
                     'in' => 'query',
@@ -21944,6 +24194,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'StudioId',
                     'in' => 'query',
                     'schema' => [
@@ -21967,6 +24225,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'StudioName',
                     'in' => 'query',
@@ -22145,6 +24411,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'StudioId',
                     'in' => 'query',
                     'schema' => [
@@ -22195,6 +24469,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'SubtitleName',
                     'in' => 'query',
@@ -22360,6 +24642,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'SubtitleId',
                     'in' => 'query',
                     'schema' => [
@@ -22392,6 +24682,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'SubtitleName',
                     'in' => 'query',
@@ -22557,6 +24855,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'SubtitleId',
                     'in' => 'query',
                     'schema' => [
@@ -22613,6 +24919,14 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Region',
                     'in' => 'query',
@@ -22773,6 +25087,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TaskId',
                     'in' => 'query',
                     'schema' => [
@@ -22882,6 +25204,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TaskId',
                     'in' => 'query',
                     'schema' => [
@@ -22926,6 +25256,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TaskId',
                     'in' => 'query',
                     'schema' => [
@@ -22969,6 +25307,14 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Region',
                     'in' => 'query',
@@ -23050,6 +25396,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Region',
                     'in' => 'query',
                     'schema' => [
@@ -23094,6 +25448,14 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'Region',
                     'in' => 'query',
@@ -23372,6 +25734,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -23404,6 +25774,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -23438,6 +25816,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DomainName',
                     'in' => 'query',
                     'schema' => [
@@ -23470,6 +25856,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -23538,6 +25932,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'IP',
                     'in' => 'query',
                     'schema' => [
@@ -23562,6 +25964,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'DomainName',
                     'in' => 'query',
@@ -23595,6 +26005,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'StartTime',
                     'in' => 'query',
@@ -23903,6 +26321,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'LiveOpenapiReserve',
                     'in' => 'query',
                     'schema' => [
@@ -23927,6 +26353,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'StartTime',
                     'in' => 'query',
@@ -23980,6 +26414,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'StartTime',
                     'in' => 'query',
@@ -24054,6 +26496,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'StartTime',
                     'in' => 'query',
                     'schema' => [
@@ -24091,6 +26541,55 @@
                 ],
             ],
         ],
+        'DescribeDomainWithIntegrity' => [
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Integrity',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'DescribeToutiaoLivePlay' => [
             'methods' => [
                 'post',
@@ -24106,6 +26605,14 @@
                 ],
             ],
             'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
                 [
                     'name' => 'StartTime',
                     'in' => 'query',
@@ -24164,6 +26671,14 @@
             ],
             'parameters' => [
                 [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'StartTime',
                     'in' => 'query',
                     'schema' => [
@@ -24201,212 +26716,6 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDomainWithIntegrity' => [
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'StartTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EndTime',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Integrity',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCasterResourceGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'NewResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CasterId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'TagLiveResources' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'ResourceId',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 51,
-                    ],
-                ],
-                [
-                    'name' => 'Tag',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 21,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'DOMAIN',
-                            'domain',
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UnTagLiveResources' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'ResourceId',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 51,
-                    ],
-                ],
-                [
-                    'name' => 'TagKey',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 21,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'enum' => [
-                            'DOMAIN',
-                            'domain',
-                            'Domain',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'All',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
                     ],
                 ],
             ],

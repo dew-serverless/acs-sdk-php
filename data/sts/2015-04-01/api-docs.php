@@ -64,6 +64,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SourceIdentity',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'AssumeRoleWithSAML' => [

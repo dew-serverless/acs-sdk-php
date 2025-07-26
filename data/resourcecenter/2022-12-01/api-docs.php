@@ -790,6 +790,72 @@
                 ],
             ],
         ],
+        'GetMultiAccountResourceCounts' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'GroupByKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'MatchType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'maxItems' => 200,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 10,
+                    ],
+                ],
+                [
+                    'name' => 'Scope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'ListExampleQueries' => [
             'methods' => [
                 'post',
@@ -1279,8 +1345,7 @@
             'deprecated' => false,
             'parameters' => [],
         ],
-        'ListMultiAccountResourceRelationships' => [
-            'path' => '',
+        'CreateDeliveryChannel' => [
             'methods' => [
                 'post',
                 'get',
@@ -1296,13 +1361,745 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'Scope',
+                    'name' => 'DeliveryChannelName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'DeliveryChannelDescription',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceSnapshotDelivery',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'DeliveryTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetArn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CustomExpression' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SlsProperties' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'OversizedDataOssTargetArn' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ResourceChangeDelivery',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'SlsProperties' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'OversizedDataOssTargetArn' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'TargetArn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DeliveryChannelFilter',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ResourceTypes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteDeliveryChannel' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DeliveryChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDeliveryChannel' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DeliveryChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetDeliveryChannelStatistics' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DeliveryChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListDeliveryChannels' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateDeliveryChannel' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DeliveryChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DeliveryChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DeliveryChannelDescription',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceSnapshotDelivery',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'DeliveryTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Enabled' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetArn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CustomExpression' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SlsProperties' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'OversizedDataOssTargetArn' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ResourceChangeDelivery',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SlsProperties' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'OversizedDataOssTargetArn' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'TargetArn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DeliveryChannelFilter',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ResourceTypes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateMultiAccountDeliveryChannel' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DeliveryChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DeliveryChannelDescription',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceSnapshotDelivery',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'DeliveryTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetArn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CustomExpression' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SlsProperties' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'OversizedDataOssTargetArn' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ResourceChangeDelivery',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'SlsProperties' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'OversizedDataOssTargetArn' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'TargetArn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DeliveryChannelFilter',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'AccountScopes' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                            'ResourceTypes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteMultiAccountDeliveryChannel' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DeliveryChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetMultiAccountDeliveryChannel' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DeliveryChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetMultiAccountDeliveryChannelStatistics' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DeliveryChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListMultiAccountDeliveryChannels' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateMultiAccountDeliveryChannel' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'DeliveryChannelId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DeliveryChannelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DeliveryChannelDescription',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceSnapshotDelivery',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'DeliveryTime' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Enabled' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetArn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CustomExpression' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SlsProperties' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'OversizedDataOssTargetArn' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ResourceChangeDelivery',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Enabled' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SlsProperties' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'OversizedDataOssTargetArn' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'TargetArn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TargetType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DeliveryChannelFilter',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AccountScopes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'ResourceTypes' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListResourceRelationships' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
                 [
                     'name' => 'RegionId',
                     'in' => 'query',
@@ -1382,7 +2179,7 @@
                 ],
             ],
         ],
-        'ListResourceRelationships' => [
+        'ListMultiAccountResourceRelationships' => [
             'path' => '',
             'methods' => [
                 'post',
@@ -1398,6 +2195,14 @@
             ],
             'deprecated' => false,
             'parameters' => [
+                [
+                    'name' => 'Scope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
                 [
                     'name' => 'RegionId',
                     'in' => 'query',

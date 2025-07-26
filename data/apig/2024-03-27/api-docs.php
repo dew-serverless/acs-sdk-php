@@ -7,6 +7,59 @@
     ],
     'components' => [
         'schemas' => [
+            'AgentServiceConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'protocols' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'address' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'dashScopeConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'appCredentials' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'apiKey' => [
+                                            'type' => 'string',
+                                        ],
+                                        'appId' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'enableHealthCheck' => [
+                        'type' => 'boolean',
+                    ],
+                    'provider' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'difyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'botType' => [
+                                'type' => 'string',
+                            ],
+                            'apiKey' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'AiServiceConfig' => [
                 'type' => 'object',
                 'properties' => [
@@ -1555,6 +1608,20 @@
                     ],
                 ],
             ],
+            'LabelDetail' => [
+                'type' => 'object',
+                'properties' => [
+                    'key' => [
+                        'type' => 'string',
+                    ],
+                    'values' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
             'ParentResourceInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -1836,6 +1903,15 @@
                     ],
                     'aiServiceConfig' => [
                         '$ref' => '#/components/schemas/AiServiceConfig',
+                    ],
+                    'labelDetails' => [
+                        '$ref' => '#/components/schemas/LabelDetail',
+                    ],
+                    'agentServiceConfig' => [
+                        '$ref' => '#/components/schemas/AgentServiceConfig',
+                    ],
+                    'expressType' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -2395,6 +2471,14 @@
                                     'required' => false,
                                 ],
                             ],
+                            'agentProtocols' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                             'deployConfigs' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -2409,6 +2493,14 @@
                             ],
                             'authConfig' => [
                                 '$ref' => '#/components/schemas/AuthConfig',
+                                'required' => false,
+                            ],
+                            'modelCategory' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'removeBasePathOnForward' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],
@@ -2511,6 +2603,14 @@
                                     'required' => false,
                                 ],
                             ],
+                            'agentProtocols' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
                             'deployConfigs' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -2528,6 +2628,10 @@
                                 'required' => false,
                             ],
                             'onlyChangeConfig' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'removeBasePathOnForward' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
@@ -3251,6 +3355,10 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'mcpStatisticsEnable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                         ],
@@ -3371,6 +3479,28 @@
                                 'items' => [
                                     '$ref' => '#/components/schemas/HttpApiDeployConfig',
                                     'required' => false,
+                                ],
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'mcpRouteConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'protocol' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'exposedUriPath' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'mcpStatisticsEnable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                         ],
@@ -3704,6 +3834,10 @@
                                             '$ref' => '#/components/schemas/AiServiceConfig',
                                             'required' => false,
                                         ],
+                                        'agentServiceConfig' => [
+                                            '$ref' => '#/components/schemas/AgentServiceConfig',
+                                            'required' => false,
+                                        ],
                                         'dnsServers' => [
                                             'type' => 'array',
                                             'required' => false,
@@ -3798,6 +3932,37 @@
                 [
                     'name' => 'resourceGroupId',
                     'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteService' => [
+            'path' => '/v1/services/{serviceId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'serviceId',
+                    'in' => 'path',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4320,6 +4485,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'attachResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'gatewayId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreatePolicy' => [
@@ -4543,6 +4724,7 @@
                                     'Route',
                                     'Service',
                                     'ServicePort',
+                                    'LLMApi',
                                 ],
                             ],
                         ],
@@ -5375,6 +5557,14 @@
                     ],
                 ],
                 [
+                    'name' => 'routeId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'source',
                     'in' => 'query',
                     'schema' => [
@@ -5751,6 +5941,799 @@
                 [
                     'name' => 'gatewayType',
                     'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateGateway' => [
+            'path' => '/v1/gateways',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'chargeType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'gatewayType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'spec' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'vpcId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'networkAccessConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'type' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'zoneConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'selectOption' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'vSwitchId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'zones' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'zoneId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'vSwitchId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'logConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'sls' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'enable' => [
+                                                'type' => 'boolean',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'resourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'tag' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetConsumerAuthorizationRule' => [
+            'path' => '/v1/consumers/{consumerId}/authorization-rules/{consumerAuthorizationRuleId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'consumerAuthorizationRuleId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consumerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateConsumerAuthorizationRule' => [
+            'path' => '/v1/consumers/{consumerId}/authorization-rules/{consumerAuthorizationRuleId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'consumerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'expireMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'expireTimestamp' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'authorizationResourceInfos' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/AuthorizationResourceInfo',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'consumerAuthorizationRuleId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateConsumerAuthorizationRule' => [
+            'path' => '/v1/consumers/{consumerId}/authorization-rules',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'consumerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'resourceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'parentResourceType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'authorizationResourceInfos' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/AuthorizationResourceInfo',
+                                    'required' => false,
+                                ],
+                            ],
+                            'expireMode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'expireTimestamp' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetConsumer' => [
+            'path' => '/v1/consumers/{consumerId}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'consumerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateConsumer' => [
+            'path' => '/v1/consumers/{consumerId}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'consumerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'jwtIdentityConfig' => [
+                                '$ref' => '#/components/schemas/JwtIdentityConfig',
+                                'required' => false,
+                            ],
+                            'akSkIdentityConfigs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/AkSkIdentityConfig',
+                                    'required' => false,
+                                ],
+                            ],
+                            'apikeyIdentityConfig' => [
+                                '$ref' => '#/components/schemas/ApiKeyIdentityConfig',
+                                'required' => false,
+                            ],
+                            'enable' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CreateConsumer' => [
+            'path' => '/v1/consumers',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'name' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'jwtIdentityConfig' => [
+                                '$ref' => '#/components/schemas/JwtIdentityConfig',
+                                'required' => false,
+                            ],
+                            'akSkIdentityConfigs' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/AkSkIdentityConfig',
+                                    'required' => false,
+                                ],
+                            ],
+                            'apikeyIdentityConfig' => [
+                                '$ref' => '#/components/schemas/ApiKeyIdentityConfig',
+                                'required' => false,
+                            ],
+                            'enable' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'gatewayType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteConsumerAuthorizationRule' => [
+            'path' => '/v1/consumers/{consumerId}/authorization-rules/{consumerAuthorizationRuleId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'consumerAuthorizationRuleId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consumerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListConsumers' => [
+            'path' => '/v1/consumers',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'nameLike',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'gatewayType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteConsumer' => [
+            'path' => '/v1/consumers/{consumerId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'consumerId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'BatchDeleteConsumerAuthorizationRule' => [
+            'path' => '/v1/authorization-rules',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'consumerAuthorizationRuleIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateConsumerAuthorizationRules' => [
+            'path' => '/v1/authorization-rules',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'authorizationRules' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'consumerId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'resourceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'resourceIdentifier' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'resourceId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'environmentId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'resources' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
+                                                ],
+                                                'parentResourceId' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                        'expireMode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'expireTimestamp' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'QueryConsumerAuthorizationRules' => [
+            'path' => '/v1/authorization-rules',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'apiNameLike',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consumerId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'environmentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'groupByApi',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'parentResourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consumerNameLike',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'resourceTypes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'RemoveConsumerAuthorizationRule' => [
+            'path' => '/v1/authorization-rules/{consumerAuthorizationRuleId}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'consumerAuthorizationRuleId',
+                    'in' => 'path',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

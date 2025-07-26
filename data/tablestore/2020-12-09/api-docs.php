@@ -785,6 +785,109 @@
                 ],
             ],
         ],
+        'CreateVCUInstance' => [
+            'path' => '/v2/openapi/createvcuinstance',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ClusterType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'VCU' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                                'minimum' => '0',
+                                'maximum' => '2000',
+                            ],
+                            'PeriodInMonth' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                                'minimum' => '1',
+                                'maximum' => '24',
+                            ],
+                            'EnableElasticVCU' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'AliasName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'InstanceDescription' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Tags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'ResourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'EnableAutoRenew' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'AutoRenewPeriodInMonth' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                                'minimum' => '1',
+                                'maximum' => '24',
+                            ],
+                            'DryRun' => [
+                                'type' => 'boolean',
+                                'deprecated' => true,
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

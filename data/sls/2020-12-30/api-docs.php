@@ -344,6 +344,37 @@
                     ],
                 ],
             ],
+            'DeleteLogStoreLogsTask' => [
+                'type' => 'object',
+                'properties' => [
+                    'progress' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'taskId' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'query' => [
+                        'type' => 'string',
+                    ],
+                    'errorCode' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'from' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'to' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'errorMessage' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ETL' => [
                 'type' => 'object',
                 'properties' => [
@@ -11849,6 +11880,199 @@
                             ],
                             'configuration' => [
                                 '$ref' => '#/components/schemas/MaxComputeExportConfiguration',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteConsumeProcessor' => [
+            'path' => '/consumeprocessors/{processorName}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'processorName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetConsumeProcessor' => [
+            'path' => '/consumeprocessors/{processorName}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'processorName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListConsumeProcessors' => [
+            'path' => '/consumeprocessors',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'processorName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'displayName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'offset',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'size',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+        ],
+        'PutConsumeProcessor' => [
+            'path' => '/consumeprocessors/{processorName}',
+            'methods' => [
+                'put',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'project',
+                    'in' => 'host',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'processorName',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'displayName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'description' => [
+                                'type' => 'string',
+                            ],
+                            'configuration' => [
+                                '$ref' => '#/components/schemas/ConsumeProcessorConfiguration',
                                 'required' => true,
                             ],
                         ],

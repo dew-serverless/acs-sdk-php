@@ -683,7 +683,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -783,7 +783,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
-                        'format' => 'int32',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -792,7 +792,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
-                        'format' => 'int32',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],

@@ -113,6 +113,25 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'extra',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'deepThink' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'onlineSearch' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'CreateTextFile' => [

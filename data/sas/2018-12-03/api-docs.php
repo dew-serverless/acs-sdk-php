@@ -10933,32 +10933,6 @@
                 ],
             ],
         ],
-        'DescribePropertyUsageNewest' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'DescribePropertySoftwareItem' => [
             'methods' => [
                 'post',
@@ -14514,6 +14488,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RuleTag',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeImageGroupedVulList' => [
@@ -14715,6 +14697,14 @@
                             'required' => false,
                         ],
                         'maxItems' => 2,
+                    ],
+                ],
+                [
+                    'name' => 'RuleTag',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -20675,6 +20665,14 @@
                         'maxItems' => 1000,
                     ],
                 ],
+                [
+                    'name' => 'Param',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListVirusScanMachine' => [
@@ -20991,46 +20989,6 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CheckQuaraFileId' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => true,
-            'parameters' => [
-                [
-                    'name' => 'Uuid',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'QuaraFileIds',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => true,
-                        ],
-                        'maxItems' => 100,
                     ],
                 ],
             ],
@@ -25741,6 +25699,15 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RaspDefend',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeEmgVulItem' => [
@@ -25978,6 +25945,15 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RaspDefend',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -26267,6 +26243,15 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RaspDefend',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -28171,7 +28156,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'SourceIp',
@@ -28827,7 +28812,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'SourceIp',
@@ -38404,40 +38389,6 @@
                 ],
             ],
         ],
-        'ListQueryRaspAppInfo' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Uuids',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'DeleteServiceTrail' => [
             'methods' => [
                 'post',
@@ -42882,6 +42833,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Override',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeContainerFieldStatistics' => [
@@ -43481,7 +43440,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'SourceIp',
@@ -43575,7 +43534,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'SourceIp',
@@ -47587,6 +47546,57 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAIAssetSummary' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
+        'DescribePluginSummary' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'PluginName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

@@ -383,6 +383,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'BusinessKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreatePowerForecastJob' => [
@@ -512,6 +520,14 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'BusinessKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -694,6 +710,14 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'BusinessKey',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

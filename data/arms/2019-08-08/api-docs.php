@@ -4224,6 +4224,90 @@
                 ],
             ],
         ],
+        'DescribeEnvDropMetricsRule' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnvironmentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateEnvDropMetricsRule' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AliyunLang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnvironmentId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DropMetrics',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'AddTagToFlinkCluster' => [
             'methods' => [
                 'get',
@@ -13590,6 +13674,14 @@
                         'maxItems' => 1,
                     ],
                 ],
+                [
+                    'name' => 'BizRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateOrUpdateContact' => [
@@ -17836,10 +17928,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'arms.ap-northeast-2.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-qingdao',
             'endpoint' => 'arms.cn-qingdao.aliyuncs.com',
         ],
@@ -17902,6 +17990,10 @@
         [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'arms.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'arms.ap-northeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',

@@ -59,6 +59,61 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
+                                'SystemDisk' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Category' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Size' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'PerformanceLevel' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'NodeGroupDescription' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'KeyPairName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FileSystemMountEnabled' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'NodeGroupName' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ZoneId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'UserData' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'VirtualGpuEnabled' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'MachineType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'ImageId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'Nodes' => [
                                     'type' => 'array',
                                     'required' => false,
@@ -66,6 +121,41 @@
                                         'type' => 'object',
                                         'required' => false,
                                         'properties' => [
+                                            'DataDisk' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'DeleteWithNode' => [
+                                                            'type' => 'boolean',
+                                                            'required' => false,
+                                                        ],
+                                                        'Category' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Size' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int32',
+                                                            'required' => false,
+                                                        ],
+                                                        'PerformanceLevel' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                            'VpcId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                            'VSwitchId' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                             'NodeId' => [
                                                 'type' => 'string',
                                                 'required' => false,
@@ -78,67 +168,8 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
-                                            'VSwitchId' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
-                                            'VpcId' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
                                         ],
                                     ],
-                                ],
-                                'NodeGroupName' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'NodeGroupDescription' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'MachineType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ImageId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'ZoneId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'UserData' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'SystemDisk' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'Size' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                            'required' => false,
-                                        ],
-                                        'PerformanceLevel' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Category' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                    ],
-                                ],
-                                'FileSystemMountEnabled' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'KeyPairName' => [
-                                    'type' => 'string',
-                                    'required' => false,
                                 ],
                                 'LoginPassword' => [
                                     'type' => 'string',
@@ -211,11 +242,11 @@
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
-                                                'SubnetType' => [
+                                                'ZoneId' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
-                                                'ZoneId' => [
+                                                'SubnetType' => [
                                                     'type' => 'string',
                                                     'required' => false,
                                                 ],
@@ -249,34 +280,6 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'BondPolicy' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'properties' => [
-                                                'BondDefaultSubnet' => [
-                                                    'type' => 'string',
-                                                    'required' => false,
-                                                ],
-                                                'Bonds' => [
-                                                    'type' => 'array',
-                                                    'required' => false,
-                                                    'items' => [
-                                                        'type' => 'object',
-                                                        'required' => false,
-                                                        'properties' => [
-                                                            'Name' => [
-                                                                'type' => 'string',
-                                                                'required' => false,
-                                                            ],
-                                                            'Subnet' => [
-                                                                'type' => 'string',
-                                                                'required' => false,
-                                                            ],
-                                                        ],
-                                                    ],
-                                                ],
-                                            ],
-                                        ],
                                         'MachineTypePolicy' => [
                                             'type' => 'array',
                                             'required' => false,
@@ -291,11 +294,11 @@
                                                             'type' => 'object',
                                                             'required' => false,
                                                             'properties' => [
-                                                                'Name' => [
+                                                                'Subnet' => [
                                                                     'type' => 'string',
                                                                     'required' => false,
                                                                 ],
-                                                                'Subnet' => [
+                                                                'Name' => [
                                                                     'type' => 'string',
                                                                     'required' => false,
                                                                 ],
@@ -306,6 +309,34 @@
                                                         'type' => 'string',
                                                         'required' => false,
                                                     ],
+                                                ],
+                                            ],
+                                        ],
+                                        'BondPolicy' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'Bonds' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'Subnet' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                            'Name' => [
+                                                                'type' => 'string',
+                                                                'required' => false,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                                'BondDefaultSubnet' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
                                                 ],
                                             ],
                                         ],
@@ -323,11 +354,11 @@
                                                             'type' => 'object',
                                                             'required' => false,
                                                             'properties' => [
-                                                                'Name' => [
+                                                                'Subnet' => [
                                                                     'type' => 'string',
                                                                     'required' => false,
                                                                 ],
-                                                                'Subnet' => [
+                                                                'Name' => [
                                                                     'type' => 'string',
                                                                     'required' => false,
                                                                 ],
@@ -378,11 +409,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -569,6 +600,33 @@
                                             'VSwitchId' => [
                                                 'type' => 'string',
                                                 'required' => false,
+                                            ],
+                                            'DataDisk' => [
+                                                'type' => 'array',
+                                                'required' => false,
+                                                'items' => [
+                                                    'type' => 'object',
+                                                    'required' => false,
+                                                    'properties' => [
+                                                        'DeleteWithNode' => [
+                                                            'type' => 'boolean',
+                                                            'required' => false,
+                                                        ],
+                                                        'Category' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                        'Size' => [
+                                                            'type' => 'integer',
+                                                            'format' => 'int32',
+                                                            'required' => false,
+                                                        ],
+                                                        'PerformanceLevel' => [
+                                                            'type' => 'string',
+                                                            'required' => false,
+                                                        ],
+                                                    ],
+                                                ],
                                             ],
                                         ],
                                     ],
@@ -1072,6 +1130,10 @@
                                 ],
                             ],
                             'FileSystemMountEnabled' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'VirtualGpuEnabled' => [
                                 'type' => 'boolean',
                                 'required' => false,
                             ],

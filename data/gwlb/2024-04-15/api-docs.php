@@ -1348,6 +1348,15 @@
                     ],
                 ],
                 [
+                    'name' => 'TcpIdleTimeout',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'DryRun',
                     'in' => 'formData',
                     'schema' => [
@@ -1425,6 +1434,15 @@
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TcpIdleTimeout',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],

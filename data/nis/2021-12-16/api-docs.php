@@ -1475,6 +1475,15 @@
                         'maxItems' => 10,
                     ],
                 ],
+                [
+                    'name' => 'StepMinutes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'StartNisInspectionTask' => [

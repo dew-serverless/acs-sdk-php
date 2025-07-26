@@ -8089,6 +8089,10 @@
                                     'type' => 'string',
                                     'required' => true,
                                 ],
+                                'Position' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                                 'Enabled' => [
                                     'type' => 'boolean',
                                     'required' => false,
@@ -8359,6 +8363,10 @@
             'endpoint' => 'alb.ap-south-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'me-east-1',
+            'endpoint' => 'alb.me-east-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hangzhou-finance',
             'endpoint' => 'alb.cn-hangzhou.aliyuncs.com',
         ],
@@ -8389,6 +8397,10 @@
         [
             'regionId' => 'na-south-1',
             'endpoint' => 'alb.na-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-southeast-1',
+            'endpoint' => 'alb.us-southeast-1.aliyuncs.com',
         ],
     ],
 ];

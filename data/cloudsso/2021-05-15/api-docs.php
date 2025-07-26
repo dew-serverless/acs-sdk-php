@@ -346,11 +346,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -2032,11 +2032,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],

@@ -151,6 +151,69 @@
                 ],
             ],
         ],
+        'TagResources' => [
+            'path' => '/webapi/tags',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ResourceType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'RegionId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ResourceId' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'Tag' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'UpgradeVersion' => [
             'path' => '/webapi/starrocks/upgradeVersion',
             'methods' => [
@@ -337,6 +400,14 @@
                         'maximum' => '100',
                     ],
                 ],
+                [
+                    'name' => 'PromotionOptionNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyCuPreCheck' => [
@@ -452,6 +523,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'PromotionOptionNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyDiskSize' => [
@@ -502,6 +581,14 @@
                         'required' => true,
                         'minimum' => '0',
                         'maximum' => '65000',
+                    ],
+                ],
+                [
+                    'name' => 'PromotionOptionNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -561,6 +648,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionOptionNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -628,6 +723,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PromotionOptionNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

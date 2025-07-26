@@ -97,7 +97,7 @@
                                 'properties' => [
                                     'msgProcessSpec' => [
                                         'type' => 'string',
-                                        'required' => true,
+                                        'required' => false,
                                     ],
                                     'sendReceiveRatio' => [
                                         'type' => 'number',
@@ -2606,6 +2606,10 @@
                                             'type' => 'string',
                                             'required' => false,
                                         ],
+                                        'consumerGroupId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
                             ],
@@ -2760,6 +2764,10 @@
                                             ],
                                         ],
                                         'securityGroupId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'consumerGroupId' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
@@ -2920,6 +2928,7 @@
                                         ],
                                         'consumerGroupId' => [
                                             'type' => 'string',
+                                            'deprecated' => true,
                                             'required' => false,
                                         ],
                                         'deliveryOrderType' => [
@@ -3000,6 +3009,7 @@
                                         ],
                                         'consumerGroupId' => [
                                             'type' => 'string',
+                                            'deprecated' => true,
                                             'required' => false,
                                         ],
                                         'deliveryOrderType' => [

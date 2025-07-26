@@ -277,11 +277,11 @@
                                         'properties' => [
                                             'departure_city' => [
                                                 'type' => 'string',
-                                                'required' => false,
+                                                'required' => true,
                                             ],
                                             'arrival_city' => [
                                                 'type' => 'string',
-                                                'required' => false,
+                                                'required' => true,
                                             ],
                                             'departure_airport' => [
                                                 'type' => 'string',
@@ -293,7 +293,7 @@
                                             ],
                                             'departure_time' => [
                                                 'type' => 'string',
-                                                'required' => false,
+                                                'required' => true,
                                             ],
                                             'marketing_flight_no' => [
                                                 'type' => 'string',

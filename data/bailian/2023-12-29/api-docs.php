@@ -335,6 +335,115 @@
                 ],
             ],
         ],
+        'AddFilesFromAuthorizedOss' => [
+            'path' => '/{WorkspaceId}/datacenter/file/fromoss',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CategoryId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CategoryType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'enum' => [
+                            'UNSTRUCTURED',
+                            'SESSION_FILE',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'OssRegionId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'OssBucketName',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FileDetails',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => true,
+                            'properties' => [
+                                'FileName' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 123,
+                                ],
+                                'OssKey' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                    'minLength' => 1,
+                                    'maxLength' => 256,
+                                ],
+                            ],
+                        ],
+                        'minItems' => 1,
+                        'maxItems' => 10,
+                    ],
+                ],
+                [
+                    'name' => 'Tags',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ApplyFileUploadLease' => [
             'path' => '/{WorkspaceId}/datacenter/category/{CategoryId}',
             'methods' => [

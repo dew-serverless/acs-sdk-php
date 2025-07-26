@@ -1958,14 +1958,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'cn-hangzhou.mgw.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'cn-shanghai.mgw.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing',
             'endpoint' => 'cn-beijing.mgw.aliyuncs.com',
         ],
@@ -1974,8 +1966,20 @@
             'endpoint' => 'cn-wulanchabu.mgw.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'cn-hangzhou.mgw.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'cn-shanghai.mgw.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'cn-shenzhen.mgw.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'cn-chengdu.mgw.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hongkong',
@@ -1990,16 +1994,12 @@
             'endpoint' => 'ap-southeast-1.mgw.aliyuncs.com',
         ],
         [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'eu-central-1.mgw.aliyuncs.com',
-        ],
-        [
             'regionId' => 'us-east-1',
             'endpoint' => 'us-east-1.mgw.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'cn-chengdu.mgw.aliyuncs.com',
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'eu-central-1.mgw.aliyuncs.com',
         ],
     ],
 ];

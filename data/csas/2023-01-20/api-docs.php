@@ -19,6 +19,75 @@
                     ],
                 ],
             ],
+            'CommonConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'Idp' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Feishu' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'HomePage' => [
+                                        'type' => 'string',
+                                    ],
+                                    'EventLabel' => [
+                                        'type' => 'string',
+                                    ],
+                                    'EventCallbackBase' => [
+                                        'type' => 'string',
+                                    ],
+                                    'LoginRedirect' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'ApOidcCallbackUrl' => [
+                                'type' => 'string',
+                            ],
+                            'Idaas2' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'EventLabel' => [
+                                        'type' => 'string',
+                                    ],
+                                    'EventCallbackBase' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'Saml' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Acs' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Metadata' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                            'Dingtalk' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'HomePage' => [
+                                        'type' => 'string',
+                                    ],
+                                    'EventLabel' => [
+                                        'type' => 'string',
+                                    ],
+                                    'EventCallbackBase' => [
+                                        'type' => 'string',
+                                    ],
+                                    'LoginRedirect' => [
+                                        'type' => 'string',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'DisposalContent' => [
                 'type' => 'object',
                 'properties' => [
@@ -61,6 +130,562 @@
                     ],
                     'AlertContentEn' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'IdpAttrMapConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'MapItems' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/IdpAttrMapConfigItem',
+                        ],
+                    ],
+                ],
+            ],
+            'IdpAttrMapConfigItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'Target' => [
+                        'type' => 'string',
+                    ],
+                    'TargetType' => [
+                        'type' => 'string',
+                    ],
+                    'Source' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'IdpConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'IdaasConfig' => [
+                        '$ref' => '#/components/schemas/IdpIdaas2SubConfig',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'SyncStatus' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'disabled',
+                            'running',
+                            'success',
+                            'failed',
+                        ],
+                    ],
+                    'Enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'SyncConfig' => [
+                        '$ref' => '#/components/schemas/IdpSyncConfig',
+                    ],
+                    'IdpConfigId' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'LdapConfig' => [
+                        '$ref' => '#/components/schemas/IdpLdapSubConfig',
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'AttrMapConfig' => [
+                        '$ref' => '#/components/schemas/IdpAttrMapConfig',
+                    ],
+                    'LastSyncTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'LoginConfig' => [
+                        '$ref' => '#/components/schemas/IdpLoginConfig',
+                    ],
+                    'FeishuConfig' => [
+                        '$ref' => '#/components/schemas/IdpFeishuSubConfig',
+                    ],
+                    'ConnectConfig' => [
+                        '$ref' => '#/components/schemas/IdpConnectConfig',
+                    ],
+                    'WuyingConfig' => [
+                        '$ref' => '#/components/schemas/OpenStructIdpWuyingSubConfig',
+                    ],
+                    'WeixinConfig' => [
+                        '$ref' => '#/components/schemas/IdpWeixin2SubConfig',
+                    ],
+                    'DingtalkConfig' => [
+                        '$ref' => '#/components/schemas/IdpDingtalkSubConfig',
+                    ],
+                ],
+            ],
+            'IdpConnectConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'UseConnector' => [
+                        'type' => 'boolean',
+                    ],
+                    'ConnectorId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'IdpCustomField' => [
+                'type' => 'object',
+                'properties' => [
+                    'Type' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'string',
+                            'integer',
+                            'boolean',
+                            'float',
+                        ],
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'Value' => [
+                        'type' => 'string',
+                    ],
+                    'Key' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'IdpDingtalkSubConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'CorpId' => [
+                        'type' => 'string',
+                    ],
+                    'EventLabel' => [
+                        'type' => 'string',
+                    ],
+                    'Exclusive' => [
+                        'type' => 'boolean',
+                    ],
+                    'AppKey' => [
+                        'type' => 'string',
+                    ],
+                    'RedirectUri' => [
+                        'type' => 'string',
+                    ],
+                    'EventVerifyToken' => [
+                        'type' => 'string',
+                    ],
+                    'EventAesKey' => [
+                        'type' => 'string',
+                    ],
+                    'AppSecret' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'IdpFeishuSubConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'CorpId' => [
+                        'type' => 'string',
+                    ],
+                    'EventLabel' => [
+                        'type' => 'string',
+                    ],
+                    'AppId' => [
+                        'type' => 'string',
+                    ],
+                    'RedirectUri' => [
+                        'type' => 'string',
+                    ],
+                    'EventVerifyToken' => [
+                        'type' => 'string',
+                    ],
+                    'EventAesKey' => [
+                        'type' => 'string',
+                    ],
+                    'AppSecret' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'IdpIdaas2SubConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'SamlMetadata' => [
+                        'type' => 'string',
+                    ],
+                    'EventLabel' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'ClientSecret' => [
+                        'type' => 'string',
+                    ],
+                    'ClientId' => [
+                        'type' => 'string',
+                    ],
+                    'Region' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'cn-hangzhou',
+                            'ap-southeast-1',
+                        ],
+                    ],
+                    'EventAesKey' => [
+                        'type' => 'string',
+                    ],
+                    'ApplicationId' => [
+                        'type' => 'string',
+                    ],
+                    'PublicKeyEndpoint' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'IdpLdapSubConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'ServerType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'openldap',
+                            'windows_ad',
+                        ],
+                    ],
+                    'GroupBaseDn' => [
+                        'type' => 'string',
+                    ],
+                    'UserDn' => [
+                        'type' => 'string',
+                    ],
+                    'ServerAddr' => [
+                        'type' => 'string',
+                    ],
+                    'GroupFilter' => [
+                        'type' => 'string',
+                    ],
+                    'UserFilter' => [
+                        'type' => 'string',
+                    ],
+                    'UserPassword' => [
+                        'type' => 'string',
+                    ],
+                    'UseSsl' => [
+                        'type' => 'boolean',
+                    ],
+                    'GroupMembershipAttr' => [
+                        'type' => 'string',
+                    ],
+                    'BaseDn' => [
+                        'type' => 'string',
+                    ],
+                    'LoginNameAttr' => [
+                        'type' => 'string',
+                    ],
+                    'ServerPort' => [
+                        'type' => 'string',
+                    ],
+                    'GroupNameAttr' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'IdpLoginConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'TotpCorpVerifyUrl' => [
+                        'type' => 'string',
+                    ],
+                    'PcLoginType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'password',
+                            'non-password',
+                        ],
+                    ],
+                    'MobileMfaTypes' => [
+                        'type' => 'string',
+                    ],
+                    'TotpCorpVerifyToken' => [
+                        'type' => 'string',
+                    ],
+                    'PcMfaTypes' => [
+                        'type' => 'string',
+                    ],
+                    'MobileLoginType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'password',
+                            'non-password',
+                        ],
+                    ],
+                    'TotpCorpVerifyAesKey' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'IdpLoginOrderItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'Desc' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'Enabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'Class' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'idp',
+                            'ap',
+                        ],
+                    ],
+                    'ConfigId' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'IdpSyncConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'UserSyncEnabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'ScheduleSyncIntervalSecond' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'AutoSyncEnabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'IdpDepartmentInfos' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Id' => [
+                                    'type' => 'string',
+                                ],
+                                'Name' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'IdpWeixin2SubConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'AppSchema' => [
+                        'type' => 'string',
+                    ],
+                    'CorpId' => [
+                        'type' => 'string',
+                    ],
+                    'EventLabel' => [
+                        'type' => 'string',
+                    ],
+                    'RedirectUri' => [
+                        'type' => 'string',
+                    ],
+                    'EventVerifyToken' => [
+                        'type' => 'string',
+                    ],
+                    'AgentId' => [
+                        'type' => 'string',
+                    ],
+                    'EventAesKey' => [
+                        'type' => 'string',
+                    ],
+                    'AppSecret' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'OpenStructIdpSyncRecord' => [
+                'type' => 'object',
+                'properties' => [
+                    'Action' => [
+                        'type' => 'string',
+                    ],
+                    'IdpResourceId' => [
+                        'type' => 'string',
+                    ],
+                    'SaseRawJson' => [
+                        'type' => 'string',
+                    ],
+                    'RecordType' => [
+                        'type' => 'string',
+                    ],
+                    'SyncRecordId' => [
+                        'type' => 'string',
+                    ],
+                    'SaseResourceId' => [
+                        'type' => 'string',
+                    ],
+                    'SyncTaskId' => [
+                        'type' => 'string',
+                    ],
+                    'TimeUnix' => [
+                        'type' => 'string',
+                    ],
+                    'Success' => [
+                        'type' => 'boolean',
+                    ],
+                    'IdpRawJson' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'OpenStructIdpSyncTask' => [
+                'type' => 'object',
+                'properties' => [
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'UserFailed' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DepartmentFailed' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'DepartmentTotal' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'StartTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'EndTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'UserTotal' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SyncTaskId' => [
+                        'type' => 'string',
+                    ],
+                    'UpdateTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'FailType' => [
+                        'type' => 'string',
+                    ],
+                    'IdpConfigId' => [
+                        'type' => 'string',
+                        'format' => 'byte',
+                    ],
+                ],
+            ],
+            'OpenStructIdpWuyingSubConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'Aliuids' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+            ],
+            'OpenStructSaseDepartment' => [
+                'type' => 'object',
+                'properties' => [
+                    'DepartmentId' => [
+                        'type' => 'string',
+                    ],
+                    'ParentDepartmentId' => [
+                        'type' => 'string',
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'FullDn' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'OpenStructSaseUser' => [
+                'type' => 'object',
+                'properties' => [
+                    'Departments' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/OpenStructSaseDepartment',
+                        ],
+                    ],
+                    'Email' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'Telephone' => [
+                        'type' => 'string',
+                    ],
+                    'Title' => [
+                        'type' => 'string',
+                    ],
+                    'LeaveTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SaseUserId' => [
+                        'type' => 'string',
+                    ],
+                    'UpdateTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'SyncTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'IdpConfigId' => [
+                        'type' => 'string',
+                    ],
+                    'CustomFields' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/IdpCustomField',
+                        ],
+                    ],
+                    'Username' => [
+                        'type' => 'string',
+                    ],
+                    'WorkStatus' => [
+                        'type' => 'string',
+                    ],
+                    'SaseUserStatus' => [
+                        'type' => 'string',
+                    ],
+                    'LoginTimeUnix' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -274,6 +899,49 @@
                             'sase_client_ip',
                             'sase_client_port',
                         ],
+                    ],
+                ],
+            ],
+            'ProcessGroup' => [
+                'type' => 'object',
+                'properties' => [
+                    'GmtCreate' => [
+                        'type' => 'string',
+                    ],
+                    'Description' => [
+                        'type' => 'string',
+                    ],
+                    'GmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'Processes' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/ProcessItem',
+                        ],
+                    ],
+                    'Name' => [
+                        'type' => 'string',
+                    ],
+                    'ProcessGroupId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ProcessItem' => [
+                'type' => 'object',
+                'properties' => [
+                    'BundleId' => [
+                        'type' => 'string',
+                    ],
+                    'DevType' => [
+                        'type' => 'string',
+                    ],
+                    'Process' => [
+                        'type' => 'string',
+                    ],
+                    'Directory' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -3325,6 +3993,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SnSystem',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ExportUserDevices' => [
@@ -4637,6 +5313,7 @@
         'ListPrivateAccessApplications' => [
             'methods' => [
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -5872,6 +6549,40 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TrustedProcessStatus',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TrustedProcessGroupIds',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TrustedSoftwareIds',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeletePrivateAccessPolicy' => [
@@ -6066,6 +6777,40 @@
                 ],
                 [
                     'name' => 'TriggerTemplateId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TrustedSoftwareIds',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TrustedProcessGroupIds',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TrustedProcessStatus',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -6750,6 +7495,142 @@
                         'required' => true,
                         'minimum' => '1',
                         'maximum' => '255',
+                    ],
+                ],
+                [
+                    'name' => 'ImageControl',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'TextVisibleControl' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'VisibleText' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Mode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Opacity' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'FontSize' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'FontColor' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Angle' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosAx' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'PosAy' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'Visible' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'LogoVisibleControl' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'LogoBase64' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Mode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Opacity' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'Angle' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosAx' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'PosAy' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'Visible' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

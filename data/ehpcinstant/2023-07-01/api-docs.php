@@ -156,7 +156,20 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AdditionalRegionIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
                     ],
                 ],
             ],
@@ -597,6 +610,14 @@
                     ],
                 ],
                 [
+                    'name' => 'JobScheduler',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'SecurityPolicy',
                     'in' => 'query',
                     'style' => 'json',
@@ -802,6 +823,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'JobScheduler',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListJobExecutors' => [
@@ -927,6 +956,14 @@
                             'TimeCreatedAfter' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'VswitchId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Image' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],

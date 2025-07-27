@@ -17,6 +17,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise addCategoryAsync($arguments = [])
  * @method \Dew\Acs\Result addFile(array $arguments = [])
  * @method \Http\Promise\Promise addFileAsync($arguments = [])
+ * @method \Dew\Acs\Result addFilesFromAuthorizedOss(array $arguments = [])
+ * @method \Http\Promise\Promise addFilesFromAuthorizedOssAsync($arguments = [])
  * @method \Dew\Acs\Result applyFileUploadLease(array $arguments = [])
  * @method \Http\Promise\Promise applyFileUploadLeaseAsync($arguments = [])
  * @method \Dew\Acs\Result deleteFile(array $arguments = [])

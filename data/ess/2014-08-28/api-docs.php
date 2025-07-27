@@ -2942,7 +2942,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 10,
+                        'maxItems' => 20,
                     ],
                 ],
                 [
@@ -3964,7 +3964,7 @@
                             'type' => 'string',
                             'required' => false,
                         ],
-                        'maxItems' => 10,
+                        'maxItems' => 20,
                     ],
                 ],
                 [
@@ -10492,6 +10492,10 @@
                                 'format' => 'float',
                                 'required' => false,
                             ],
+                            'UserData' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                             'ContainerOverride' => [
                                 'type' => 'array',
                                 'required' => false,
@@ -10499,8 +10503,17 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'Name' => [
-                                            'type' => 'string',
+                                        'Command' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                        'Memory' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
                                             'required' => false,
                                         ],
                                         'Arg' => [
@@ -10511,13 +10524,10 @@
                                                 'required' => false,
                                             ],
                                         ],
-                                        'Command' => [
-                                            'type' => 'array',
+                                        'Cpu' => [
+                                            'type' => 'number',
+                                            'format' => 'float',
                                             'required' => false,
-                                            'items' => [
-                                                'type' => 'string',
-                                                'required' => false,
-                                            ],
                                         ],
                                         'EnvironmentVar' => [
                                             'type' => 'array',
@@ -10526,25 +10536,19 @@
                                                 'type' => 'object',
                                                 'required' => false,
                                                 'properties' => [
-                                                    'Key' => [
+                                                    'Value' => [
                                                         'type' => 'string',
                                                         'required' => false,
                                                     ],
-                                                    'Value' => [
+                                                    'Key' => [
                                                         'type' => 'string',
                                                         'required' => false,
                                                     ],
                                                 ],
                                             ],
                                         ],
-                                        'Cpu' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
-                                            'required' => false,
-                                        ],
-                                        'Memory' => [
-                                            'type' => 'number',
-                                            'format' => 'float',
+                                        'Name' => [
+                                            'type' => 'string',
                                             'required' => false,
                                         ],
                                     ],
@@ -10578,6 +10582,14 @@
                 ],
                 [
                     'name' => 'ActivityMetadata',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExecutionMode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

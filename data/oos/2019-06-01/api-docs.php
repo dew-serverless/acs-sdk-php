@@ -5062,6 +5062,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DeployedRevisionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetApplicationGroup' => [

@@ -582,10 +582,6 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
-                            'region' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                             'timeout' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
@@ -602,6 +598,47 @@
                             'channel' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'iteration_mod' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'iteration_func' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'uid' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'created_by' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'instance_type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'region' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'iteration_range' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                            ],
+                            'analysis_params' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                             'analysisTool' => [
                                 'type' => 'string',
@@ -1718,6 +1755,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'agent_config_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListAgentInstallRecords' => [
@@ -1791,6 +1836,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'region',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'InstallAgentForCluster' => [
@@ -1835,6 +1888,10 @@
                                 'required' => false,
                             ],
                             'grayscale_config' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'config_id' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -2937,6 +2994,96 @@
                                 'items' => [
                                     'type' => 'string',
                                     'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'StartAIDiffAnalysis' => [
+            'path' => '/api/v1/appObserv/aiAnalysis/diffAnalysis',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'task1' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'analysisId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'pids' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'step_start' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'step_end' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'task2' => [
+                                'type' => 'object',
+                                'required' => true,
+                                'properties' => [
+                                    'analysisId' => [
+                                        'type' => 'string',
+                                        'required' => true,
+                                    ],
+                                    'pids' => [
+                                        'type' => 'array',
+                                        'required' => true,
+                                        'items' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                    'step_start' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => true,
+                                    ],
+                                    'step_end' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => true,
+                                    ],
                                 ],
                             ],
                         ],

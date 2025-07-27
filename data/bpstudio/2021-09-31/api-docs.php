@@ -149,6 +149,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'deprecated' => true,
                         'required' => false,
                         'minimum' => '0',
                         'maximum' => '9223372036854775807',
@@ -160,6 +161,29 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -383,6 +407,14 @@
                     ],
                 ],
                 [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Instances',
                     'in' => 'formData',
                     'style' => 'json',
@@ -393,11 +425,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'NodeType' => [
+                                'NodeName' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'NodeName' => [
+                                'NodeType' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -407,14 +439,6 @@
                                 ],
                             ],
                         ],
-                    ],
-                ],
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
                 [
@@ -431,6 +455,18 @@
                 ],
                 [
                     'name' => 'Variables',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'any',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ProcessVariables',
                     'in' => 'formData',
                     'style' => 'json',
                     'schema' => [

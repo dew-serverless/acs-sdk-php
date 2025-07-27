@@ -65,6 +65,7 @@
                                     'Follower',
                                     'Warehouse',
                                     'Shared',
+                                    'Serverless',
                                 ],
                             ],
                             'cpu' => [

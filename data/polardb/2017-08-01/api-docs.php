@@ -9543,46 +9543,6 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'polardb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'polardb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'polardb.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'polardb.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'polardb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'polardb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'polardb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'polardb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'polardb.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'polardb.cn-hongkong.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'polardb.ap-northeast-1.aliyuncs.com',
         ],
@@ -9611,12 +9571,56 @@
             'endpoint' => 'polardb.ap-southeast-6.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'polardb.us-east-1.aliyuncs.com',
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'polardb.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'polardb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'polardb.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'polardb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'polardb.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'polardb.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'polardb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'polardb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'polardb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'polardb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'polardb.cn-zhangjiakou.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',
             'endpoint' => 'polardb.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-east-1',
+            'endpoint' => 'polardb.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',
@@ -9631,23 +9635,23 @@
             'endpoint' => 'polardb.me-east-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'polardb.aliyuncs.com',
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'polardb.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',
             'endpoint' => 'polardb.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shenzhen-finance-1',
+            'regionId' => 'cn-hangzhou-finance',
             'endpoint' => 'polardb.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'polardb.ap-southeast-7.aliyuncs.com',
+            'regionId' => 'cn-beijing-finance-1',
+            'endpoint' => 'polardb.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing-finance-1',
+            'regionId' => 'cn-guangzhou',
             'endpoint' => 'polardb.aliyuncs.com',
         ],
     ],

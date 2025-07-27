@@ -9,6 +9,49 @@
         'schemas' => [],
     ],
     'apis' => [
+        'DescribeAttackProtectionCount' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'StartTimestamp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTimestamp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AgentType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'DescribeAttacks' => [
             'methods' => [
                 'post',
@@ -186,6 +229,10 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'sasrasp.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'sasrasp.cn-hangzhou.aliyuncs.com',
         ],
     ],
 ];

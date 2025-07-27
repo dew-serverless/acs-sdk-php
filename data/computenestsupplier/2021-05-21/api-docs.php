@@ -3293,6 +3293,15 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'SystemDiskSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'EnableGpu' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -3532,6 +3541,15 @@
                             ],
                             'SourceContainerImage' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'SystemDiskSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'EnableGpu' => [
+                                'type' => 'boolean',
                                 'required' => false,
                             ],
                         ],

@@ -313,6 +313,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'QuotationId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -677,8 +681,8 @@
         ],
         'CreateServiceInstance' => [
             'methods' => [
-                'post',
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -896,6 +900,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'QuotationId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -904,6 +912,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceInstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

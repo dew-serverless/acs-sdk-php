@@ -176,49 +176,35 @@
             'Resource' => [
                 'type' => 'object',
                 'properties' => [
-                    'ResourceId' => [
+                    'Status' => [
                         'type' => 'string',
-                    ],
-                    'ResourceName' => [
-                        'type' => 'string',
-                    ],
-                    'ResourceType' => [
-                        'type' => 'string',
-                    ],
-                    'ClusterId' => [
-                        'type' => 'string',
-                    ],
-                    'CreateTime' => [
-                        'type' => 'string',
-                    ],
-                    'UpdateTime' => [
-                        'type' => 'string',
-                    ],
-                    'InstanceCount' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
                     ],
                     'PrePaidInstanceCount' => [
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
+                    'Message' => [
+                        'type' => 'string',
+                    ],
+                    'ClusterId' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceName' => [
+                        'type' => 'string',
+                    ],
+                    'Memory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'ResourceType' => [
+                        'type' => 'string',
+                    ],
                     'PostPaidInstanceCount' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                    ],
-                    'CpuCount' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'GpuCount' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'Status' => [
-                        'type' => 'string',
-                    ],
-                    'Message' => [
-                        'type' => 'string',
                     ],
                     'ExtraData' => [
                         'type' => 'object',
@@ -229,6 +215,54 @@
                             'ECS',
                             'BareMetal',
                         ],
+                    ],
+                    'InstanceCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'CpuCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'InstanceMaxAllocatableCPU' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'ResourceId' => [
+                        'type' => 'string',
+                    ],
+                    'UpdateTime' => [
+                        'type' => 'string',
+                    ],
+                    'InstanceMaxAllocatableGPU' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'InstanceMaxAllocatableMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'MemoryUsed' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Features' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'GpuCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'GpuUsed' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
+                    'CpuUsed' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                 ],
             ],
@@ -376,29 +410,12 @@
             'Service' => [
                 'type' => 'object',
                 'properties' => [
-                    'QuotaId' => [
-                        'type' => 'string',
-                    ],
-                    'Message' => [
-                        'type' => 'string',
-                    ],
                     'ServiceGroup' => [
                         'type' => 'string',
                     ],
                     'Memory' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                    ],
-                    'CurrentVersion' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'RunningInstance' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'WorkspaceId' => [
-                        'type' => 'string',
                     ],
                     'Cpu' => [
                         'type' => 'integer',
@@ -411,36 +428,15 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
-                    'CallerUid' => [
-                        'type' => 'string',
-                    ],
-                    'Reason' => [
-                        'type' => 'string',
-                    ],
-                    'Source' => [
-                        'type' => 'string',
-                    ],
-                    'ServiceId' => [
-                        'type' => 'string',
-                    ],
                     'TotalInstance' => [
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
-                    'AppVersion' => [
-                        'type' => 'string',
-                    ],
-                    'ServiceConfig' => [
-                        'type' => 'string',
-                    ],
                     'AccessToken' => [
                         'type' => 'string',
                     ],
-                    'Gateway' => [
-                        'type' => 'string',
-                    ],
-                    'AppSpecName' => [
-                        'type' => 'string',
+                    'ResourceBurstable' => [
+                        'type' => 'boolean',
                     ],
                     'InternetEndpoint' => [
                         'type' => 'string',
@@ -451,16 +447,10 @@
                     'Status' => [
                         'type' => 'string',
                     ],
-                    'AppConfig' => [
-                        'type' => 'string',
-                    ],
                     'TrafficState' => [
                         'type' => 'string',
                     ],
                     'RequestId' => [
-                        'type' => 'string',
-                    ],
-                    'CreateTime' => [
                         'type' => 'string',
                     ],
                     'Resource' => [
@@ -483,9 +473,6 @@
                             ],
                         ],
                     ],
-                    'ExtraData' => [
-                        'type' => 'string',
-                    ],
                     'Namespace' => [
                         'type' => 'string',
                     ],
@@ -503,10 +490,6 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
-                    'LatestVersion' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
                     'ServiceName' => [
                         'type' => 'string',
                     ],
@@ -518,22 +501,107 @@
                             'all',
                         ],
                     ],
-                    'UpdateTime' => [
-                        'type' => 'string',
-                    ],
-                    'ServiceUid' => [
-                        'type' => 'string',
-                    ],
                     'Region' => [
                         'type' => 'string',
                     ],
                     'AppType' => [
                         'type' => 'string',
                     ],
-                    'ParentUid' => [
-                        'type' => 'string',
+                    'InstanceCountInResource' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Quota' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'Public' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'Dedicated' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
                     ],
                     'IntranetEndpoint' => [
+                        'type' => 'string',
+                    ],
+                    'QuotaId' => [
+                        'type' => 'string',
+                    ],
+                    'Message' => [
+                        'type' => 'string',
+                    ],
+                    'CurrentVersion' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'RunningInstance' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'WorkspaceId' => [
+                        'type' => 'string',
+                    ],
+                    'CallerUid' => [
+                        'type' => 'string',
+                    ],
+                    'Reason' => [
+                        'type' => 'string',
+                    ],
+                    'Source' => [
+                        'type' => 'string',
+                    ],
+                    'ServiceId' => [
+                        'type' => 'string',
+                    ],
+                    'AppVersion' => [
+                        'type' => 'string',
+                    ],
+                    'CronscalerEnabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'ServiceConfig' => [
+                        'type' => 'string',
+                    ],
+                    'Gateway' => [
+                        'type' => 'string',
+                    ],
+                    'AppSpecName' => [
+                        'type' => 'string',
+                    ],
+                    'GPUCorePercentage' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'GPUMemory' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'AppConfig' => [
+                        'type' => 'string',
+                    ],
+                    'CreateTime' => [
+                        'type' => 'string',
+                    ],
+                    'AutoscalerEnabled' => [
+                        'type' => 'boolean',
+                    ],
+                    'ExtraData' => [
+                        'type' => 'string',
+                    ],
+                    'LatestVersion' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'UpdateTime' => [
+                        'type' => 'string',
+                    ],
+                    'ServiceUid' => [
+                        'type' => 'string',
+                    ],
+                    'ParentUid' => [
                         'type' => 'string',
                     ],
                     'RoleAttrs' => [
@@ -3265,6 +3333,30 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceBurstable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CronscalerEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AutoscalerEnabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

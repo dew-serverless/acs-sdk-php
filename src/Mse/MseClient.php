@@ -489,6 +489,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateNacosGrayConfigAsync($arguments = [])
  * @method \Dew\Acs\Result updateGatewayConfig(array $arguments = [])
  * @method \Http\Promise\Promise updateGatewayConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result createSentinelBlockFallbackDefinition(array $arguments = [])
+ * @method \Http\Promise\Promise createSentinelBlockFallbackDefinitionAsync($arguments = [])
  */
 final class MseClient extends AcsClient
 {

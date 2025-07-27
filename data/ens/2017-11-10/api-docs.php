@@ -793,6 +793,14 @@
                         'maximum' => '10',
                     ],
                 ],
+                [
+                    'name' => 'DeletionProtection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'CreateInstance' => [
@@ -1185,6 +1193,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DeletionProtection',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
@@ -6425,6 +6441,30 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'BillingCycle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Hour',
+                            'Month',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LoadBalancerType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CLB',
+                            'InternetDR',
+                        ],
+                    ],
+                ],
             ],
         ],
         'ModifyLoadBalancerAttribute' => [
@@ -6645,6 +6685,18 @@
                         'required' => false,
                         'minimum' => '1',
                         'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'LoadBalancerType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'CLB',
+                            'InternetDR',
+                        ],
                     ],
                 ],
             ],
@@ -12554,6 +12606,7 @@
                         'required' => true,
                         'enum' => [
                             'PrePaid',
+                            'PostPaid',
                         ],
                     ],
                 ],
@@ -12648,7 +12701,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -12656,7 +12709,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
@@ -12731,6 +12784,18 @@
                             ],
                         ],
                         'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceBillingCycle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Hour',
+                            'Day',
+                        ],
                     ],
                 ],
             ],
@@ -16121,6 +16186,7 @@
                         'required' => true,
                         'enum' => [
                             'linux',
+                            'windows',
                         ],
                     ],
                 ],
@@ -16129,7 +16195,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                         'enum' => [],
                     ],
                 ],
@@ -16200,6 +16266,61 @@
                         'enum' => [
                             'cn-beijing',
                             'ap-southeast-1',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'LicenseType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'Aliyun',
+                            'BYOL',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'RemoveSDGs' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'SdgIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
                         ],
                     ],
                 ],

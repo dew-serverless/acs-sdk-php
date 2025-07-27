@@ -898,6 +898,18 @@
                     ],
                 ],
                 [
+                    'name' => 'InstanceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'VPC_SHARED',
+                            'VPC_DEDICATED',
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'EnableTagAuthorization',
                     'in' => 'query',
                     'schema' => [
@@ -5204,6 +5216,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Disabled',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

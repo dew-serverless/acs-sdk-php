@@ -199,6 +199,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeCostBudgetsSummaryAsync($arguments = [])
  * @method \Dew\Acs\Result renewChangeInstance(array $arguments = [])
  * @method \Http\Promise\Promise renewChangeInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result getOrders(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise getOrdersAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result listInvoiceTitle(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise listInvoiceTitleAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result listInvoiceCandidate(array $arguments = []) {@since 2023-09-30}

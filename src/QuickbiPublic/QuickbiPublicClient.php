@@ -121,8 +121,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryWorksByOrganizationAsync($arguments = [])
  * @method \Dew\Acs\Result queryWorksByWorkspace(array $arguments = [])
  * @method \Http\Promise\Promise queryWorksByWorkspaceAsync($arguments = [])
- * @method \Dew\Acs\Result queryReadableResourcesListByUserId(array $arguments = [])
- * @method \Http\Promise\Promise queryReadableResourcesListByUserIdAsync($arguments = [])
+ * @method \Dew\Acs\Result queryReadableResourcesListByUserIdV2(array $arguments = [])
+ * @method \Http\Promise\Promise queryReadableResourcesListByUserIdV2Async($arguments = [])
+ * @method \Dew\Acs\Result queryReadableResourcesListByUserId(array $arguments = []) {@deprecated 2022-01-01}
+ * @method \Http\Promise\Promise queryReadableResourcesListByUserIdAsync($arguments = []) {@deprecated 2022-01-01}
  * @method \Dew\Acs\Result checkReadable(array $arguments = [])
  * @method \Http\Promise\Promise checkReadableAsync($arguments = [])
  * @method \Dew\Acs\Result queryEmbeddedInfo(array $arguments = [])

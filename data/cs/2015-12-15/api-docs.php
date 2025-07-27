@@ -957,6 +957,7 @@
                             ],
                             'custom_san' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'encryption_provider_key' => [
@@ -1329,6 +1330,7 @@
                             ],
                             'enable_rrsa' => [
                                 'type' => 'boolean',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'resource_group_id' => [
@@ -1555,6 +1557,24 @@
                                         'type' => 'boolean',
                                         'required' => false,
                                     ],
+                                ],
+                            ],
+                            'rrsa_config' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'enabled' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
+                            ],
+                            'extra_sans' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],

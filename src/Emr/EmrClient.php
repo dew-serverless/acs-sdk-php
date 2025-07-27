@@ -55,6 +55,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise putManagedScalingPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result getAutoScalingPolicy(array $arguments = [])
  * @method \Http\Promise\Promise getAutoScalingPolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result getManagedScalingPolicy(array $arguments = [])
+ * @method \Http\Promise\Promise getManagedScalingPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result removeAutoScalingPolicy(array $arguments = [])
  * @method \Http\Promise\Promise removeAutoScalingPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result listAutoScalingActivities(array $arguments = [])

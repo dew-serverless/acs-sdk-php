@@ -35,6 +35,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result updateInstanceElasticVCUUpperLimit(array $arguments = [])
  * @method \Http\Promise\Promise updateInstanceElasticVCUUpperLimitAsync($arguments = [])
+ * @method \Dew\Acs\Result createVCUInstance(array $arguments = [])
+ * @method \Http\Promise\Promise createVCUInstanceAsync($arguments = [])
  */
 final class TablestoreClient extends AcsClient
 {

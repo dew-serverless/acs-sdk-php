@@ -1543,6 +1543,10 @@
                                         'format' => 'int32',
                                         'required' => false,
                                     ],
+                                    'scene' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'extend' => [
@@ -5717,6 +5721,10 @@
                                         ],
                                     ],
                                 ],
+                            ],
+                            'scene' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],

@@ -77,10 +77,10 @@
             'Connection' => [
                 'type' => 'object',
                 'properties' => [
-                    'ConnectionType' => [
+                    'Description' => [
                         'type' => 'string',
                     ],
-                    'Description' => [
+                    'ConnectionType' => [
                         'type' => 'string',
                     ],
                     'Accessibility' => [
@@ -102,6 +102,9 @@
                         'type' => 'object',
                         'properties' => [
                             'InstanceName' => [
+                                'type' => 'string',
+                            ],
+                            'Extra' => [
                                 'type' => 'string',
                             ],
                             'InstanceId' => [
@@ -129,6 +132,9 @@
                         'items' => [
                             'type' => 'object',
                             'properties' => [
+                                'ToolCall' => [
+                                    'type' => 'boolean',
+                                ],
                                 'Model' => [
                                     'type' => 'string',
                                 ],
@@ -137,9 +143,6 @@
                                 ],
                                 'ModelType' => [
                                     'type' => 'string',
-                                ],
-                                'ToolCall' => [
-                                    'type' => 'boolean',
                                 ],
                             ],
                         ],
@@ -787,18 +790,6 @@
                     'LatestVersion' => [
                         '$ref' => '#/components/schemas/ModelVersion',
                     ],
-                    'Labels' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/Label',
-                        ],
-                    ],
-                    'Tags' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/Label',
-                        ],
-                    ],
                     'OrderNumber' => [
                         'type' => 'integer',
                         'format' => 'int64',
@@ -818,10 +809,29 @@
                     'Provider' => [
                         'type' => 'string',
                     ],
+                    'ModelType' => [
+                        'type' => 'string',
+                    ],
+                    'Labels' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Label',
+                        ],
+                    ],
+                    'Tags' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/Label',
+                        ],
+                    ],
                     'ExtraInfo' => [
                         'type' => 'object',
                     ],
-                    'ModelType' => [
+                    'ParameterSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'GmtLatestVersionModifiedTime' => [
                         'type' => 'string',
                     ],
                 ],
@@ -850,12 +860,6 @@
                     'VersionDescription' => [
                         'type' => 'string',
                     ],
-                    'Labels' => [
-                        'type' => 'array',
-                        'items' => [
-                            '$ref' => '#/components/schemas/Label',
-                        ],
-                    ],
                     'FormatType' => [
                         'type' => 'string',
                     ],
@@ -864,6 +868,29 @@
                     ],
                     'Options' => [
                         'type' => 'string',
+                    ],
+                    'SourceType' => [
+                        'type' => 'string',
+                    ],
+                    'SourceId' => [
+                        'type' => 'string',
+                    ],
+                    'ApprovalStatus' => [
+                        'type' => 'string',
+                    ],
+                    'Labels' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'Value' => [
+                                    'type' => 'string',
+                                ],
+                                'Key' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
                     ],
                     'Metrics' => [
                         'type' => 'object',
@@ -880,16 +907,10 @@
                     'CompressionSpec' => [
                         'type' => 'object',
                     ],
-                    'SourceType' => [
-                        'type' => 'string',
-                    ],
-                    'SourceId' => [
-                        'type' => 'string',
-                    ],
-                    'ApprovalStatus' => [
-                        'type' => 'string',
-                    ],
                     'ExtraInfo' => [
+                        'type' => 'object',
+                    ],
+                    'DistillationSpec' => [
                         'type' => 'object',
                     ],
                 ],
@@ -3915,6 +3936,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'UserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListQuotas' => [
@@ -6173,6 +6202,10 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
+                                    'Extra' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                             'Models' => [
@@ -6461,6 +6494,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Creator',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -6903,6 +6944,11 @@
                                 'type' => 'object',
                                 'required' => false,
                             ],
+                            'ParameterSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -6985,6 +7031,11 @@
                             ],
                             'ExtraInfo' => [
                                 'type' => 'object',
+                                'required' => false,
+                            ],
+                            'ParameterSize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
                                 'required' => false,
                             ],
                         ],
@@ -7183,6 +7234,33 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'Conditions',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Operator' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Column' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'DeleteModel' => [
@@ -7315,6 +7393,10 @@
                                 'type' => 'object',
                                 'required' => false,
                             ],
+                            'DistillationSpec' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -7399,6 +7481,10 @@
                                 'required' => false,
                             ],
                             'ExtraInfo' => [
+                                'type' => 'object',
+                                'required' => false,
+                            ],
+                            'DistillationSpec' => [
                                 'type' => 'object',
                                 'required' => false,
                             ],
@@ -8047,29 +8133,8 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'AutoRenew' => [
-                                            'type' => 'boolean',
-                                            'required' => false,
-                                        ],
-                                        'ProductCode' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'ChargeType' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
                                         'OrderType' => [
                                             'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'PricingCycle' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'Duration' => [
-                                            'type' => 'integer',
-                                            'format' => 'int64',
                                             'required' => false,
                                         ],
                                         'InstanceProperties' => [
@@ -8079,6 +8144,10 @@
                                                 'type' => 'object',
                                                 'required' => false,
                                                 'properties' => [
+                                                    'Value' => [
+                                                        'type' => 'string',
+                                                        'required' => false,
+                                                    ],
                                                     'Code' => [
                                                         'type' => 'string',
                                                         'required' => false,
@@ -8087,12 +8156,29 @@
                                                         'type' => 'string',
                                                         'required' => false,
                                                     ],
-                                                    'Value' => [
-                                                        'type' => 'string',
-                                                        'required' => false,
-                                                    ],
                                                 ],
                                             ],
+                                        ],
+                                        'ProductCode' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ChargeType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'PricingCycle' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'AutoRenew' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
+                                        'Duration' => [
+                                            'type' => 'integer',
+                                            'format' => 'int64',
+                                            'required' => false,
                                         ],
                                     ],
                                 ],

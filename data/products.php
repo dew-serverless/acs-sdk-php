@@ -587,6 +587,14 @@
         'defaultVersion' => '2019-05-21',
     ],
     [
+        'code' => 'xtee',
+        'style' => 'RPC',
+        'versions' => [
+            '2021-09-10',
+        ],
+        'defaultVersion' => '2021-09-10',
+    ],
+    [
         'code' => 'Cloudauth',
         'style' => 'RPC',
         'versions' => [

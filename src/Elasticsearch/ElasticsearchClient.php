@@ -399,6 +399,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listKibanaPvlNetworkAsync($arguments = [])
  * @method \Dew\Acs\Result enableKibanaPvlNetwork(array $arguments = [])
  * @method \Http\Promise\Promise enableKibanaPvlNetworkAsync($arguments = [])
+ * @method \Dew\Acs\Result turnOnZone(array $arguments = [])
+ * @method \Http\Promise\Promise turnOnZoneAsync($arguments = [])
+ * @method \Dew\Acs\Result turnOffZone(array $arguments = [])
+ * @method \Http\Promise\Promise turnOffZoneAsync($arguments = [])
  */
 final class ElasticsearchClient extends AcsClient
 {

@@ -27,6 +27,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createPowerForecastJobAsync($arguments = [])
  * @method \Dew\Acs\Result createEssOptJob(array $arguments = [])
  * @method \Http\Promise\Promise createEssOptJobAsync($arguments = [])
+ * @method \Dew\Acs\Result createLoadForecastByFileUrlJob(array $arguments = [])
+ * @method \Http\Promise\Promise createLoadForecastByFileUrlJobAsync($arguments = [])
+ * @method \Dew\Acs\Result createPowerForecastByFileUrlJob(array $arguments = [])
+ * @method \Http\Promise\Promise createPowerForecastByFileUrlJobAsync($arguments = [])
  * @method \Dew\Acs\Result getAivppAlgoJob(array $arguments = [])
  * @method \Http\Promise\Promise getAivppAlgoJobAsync($arguments = [])
  */

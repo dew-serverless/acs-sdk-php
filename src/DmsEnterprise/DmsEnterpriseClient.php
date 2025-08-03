@@ -577,6 +577,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise removeTableFromCategoryAsync($arguments = [])
  * @method \Dew\Acs\Result analyzeSQLLineage(array $arguments = [])
  * @method \Http\Promise\Promise analyzeSQLLineageAsync($arguments = [])
+ * @method \Dew\Acs\Result createWorkspace(array $arguments = [])
+ * @method \Http\Promise\Promise createWorkspaceAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteWorkspace(array $arguments = [])
+ * @method \Http\Promise\Promise deleteWorkspaceAsync($arguments = [])
+ * @method \Dew\Acs\Result getWorkspace(array $arguments = [])
+ * @method \Http\Promise\Promise getWorkspaceAsync($arguments = [])
+ * @method \Dew\Acs\Result listWorkspaces(array $arguments = [])
+ * @method \Http\Promise\Promise listWorkspacesAsync($arguments = [])
+ * @method \Dew\Acs\Result updateWorkspace(array $arguments = [])
+ * @method \Http\Promise\Promise updateWorkspaceAsync($arguments = [])
  */
 final class DmsEnterpriseClient extends AcsClient
 {

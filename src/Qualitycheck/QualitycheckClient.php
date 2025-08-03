@@ -187,6 +187,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listUsersAsync($arguments = [])
  * @method \Dew\Acs\Result updateUser(array $arguments = [])
  * @method \Http\Promise\Promise updateUserAsync($arguments = [])
+ * @method \Dew\Acs\Result createMiningTask(array $arguments = [])
+ * @method \Http\Promise\Promise createMiningTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getMiningTaskResult(array $arguments = [])
+ * @method \Http\Promise\Promise getMiningTaskResultAsync($arguments = [])
  */
 final class QualitycheckClient extends AcsClient
 {

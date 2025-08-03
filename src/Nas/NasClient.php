@@ -219,10 +219,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeProtocolMountTargetAsync($arguments = [])
  * @method \Dew\Acs\Result detachVscFromFilesystems(array $arguments = [])
  * @method \Http\Promise\Promise detachVscFromFilesystemsAsync($arguments = [])
- * @method \Dew\Acs\Result describeFilesystemsVscAttachInfo(array $arguments = [])
- * @method \Http\Promise\Promise describeFilesystemsVscAttachInfoAsync($arguments = [])
  * @method \Dew\Acs\Result attachVscToFilesystems(array $arguments = [])
  * @method \Http\Promise\Promise attachVscToFilesystemsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeFilesystemsVscAttachInfo(array $arguments = [])
+ * @method \Http\Promise\Promise describeFilesystemsVscAttachInfoAsync($arguments = [])
  * @method \Dew\Acs\Result addClientToBlackList(array $arguments = []) {@deprecated 2017-06-26}
  * @method \Http\Promise\Promise addClientToBlackListAsync($arguments = []) {@deprecated 2017-06-26}
  * @method \Dew\Acs\Result describeBlackListClients(array $arguments = []) {@deprecated 2017-06-26}

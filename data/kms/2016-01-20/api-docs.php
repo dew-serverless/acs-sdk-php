@@ -1088,7 +1088,7 @@
                 ],
             ],
         ],
-        'GetKeyPolicy' => [
+        'SetKeyPolicy' => [
             'methods' => [
                 'post',
                 'get',
@@ -1119,9 +1119,17 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'Policy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
             ],
         ],
-        'GetSecretPolicy' => [
+        'GetKeyPolicy' => [
             'methods' => [
                 'post',
                 'get',
@@ -1137,7 +1145,7 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'SecretName',
+                    'name' => 'KeyId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2563,47 +2571,6 @@
                 ],
             ],
         ],
-        'SetKeyPolicy' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'KeyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PolicyName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Policy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
         'SetSecretPolicy' => [
             'methods' => [
                 'post',
@@ -2640,6 +2607,39 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetSecretPolicy' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SecretName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PolicyName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

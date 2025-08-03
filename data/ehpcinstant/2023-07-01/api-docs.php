@@ -501,6 +501,36 @@
                                                 ],
                                             ],
                                         ],
+                                        'RetryPolicy' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'RetryCount' => [
+                                                    'type' => 'integer',
+                                                    'format' => 'int32',
+                                                    'required' => false,
+                                                ],
+                                                'ExitCodeActions' => [
+                                                    'type' => 'array',
+                                                    'required' => false,
+                                                    'items' => [
+                                                        'type' => 'object',
+                                                        'required' => false,
+                                                        'properties' => [
+                                                            'ExitCode' => [
+                                                                'type' => 'integer',
+                                                                'format' => 'int64',
+                                                                'required' => true,
+                                                            ],
+                                                            'Action' => [
+                                                                'type' => 'string',
+                                                                'required' => true,
+                                                            ],
+                                                        ],
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
                                     ],
                                 ],
                                 'ExecutorPolicy' => [
@@ -610,14 +640,6 @@
                     ],
                 ],
                 [
-                    'name' => 'JobScheduler',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'SecurityPolicy',
                     'in' => 'query',
                     'style' => 'json',
@@ -635,6 +657,41 @@
                                         'items' => [
                                             'type' => 'string',
                                             'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'DependencyPolicy',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'JobDependency' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Type' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'AfterSucceeded',
+                                                'AfterFailed',
+                                                'AfterAny',
+                                                'AfterCorresponding',
+                                            ],
+                                        ],
+                                        'JobId' => [
+                                            'type' => 'string',
+                                            'required' => true,
                                         ],
                                     ],
                                 ],

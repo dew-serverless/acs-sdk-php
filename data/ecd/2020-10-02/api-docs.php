@@ -1722,6 +1722,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AvailableFeatures',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
             ],
         ],
         'RefreshLoginToken' => [

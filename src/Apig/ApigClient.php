@@ -131,8 +131,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteEnvironmentAsync($arguments = []) {@deprecated 2024-03-27}
  * @method \Dew\Acs\Result listEnvironments(array $arguments = []) {@deprecated 2024-03-27}
  * @method \Http\Promise\Promise listEnvironmentsAsync($arguments = []) {@deprecated 2024-03-27}
+ * @method \Dew\Acs\Result updateAndAttachPolicy(array $arguments = [])
+ * @method \Http\Promise\Promise updateAndAttachPolicyAsync($arguments = [])
+ * @method \Dew\Acs\Result createAndAttachPolicy(array $arguments = [])
+ * @method \Http\Promise\Promise createAndAttachPolicyAsync($arguments = [])
  * @method \Dew\Acs\Result createGateway(array $arguments = [])
  * @method \Http\Promise\Promise createGatewayAsync($arguments = [])
+ * @method \Dew\Acs\Result listPolicies(array $arguments = [])
+ * @method \Http\Promise\Promise listPoliciesAsync($arguments = [])
  * @method \Dew\Acs\Result getConsumerAuthorizationRule(array $arguments = [])
  * @method \Http\Promise\Promise getConsumerAuthorizationRuleAsync($arguments = [])
  * @method \Dew\Acs\Result updateConsumerAuthorizationRule(array $arguments = [])

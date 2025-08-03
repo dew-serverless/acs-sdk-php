@@ -85,6 +85,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise readSchedulerxDesignateInfoAsync($arguments = [])
  * @method \Dew\Acs\Result readSchedulerxDesignateDetail(array $arguments = [])
  * @method \Http\Promise\Promise readSchedulerxDesignateDetailAsync($arguments = [])
+ * @method \Dew\Acs\Result manageSchedulerxJobSync(array $arguments = [])
+ * @method \Http\Promise\Promise manageSchedulerxJobSyncAsync($arguments = [])
  * @method \Dew\Acs\Result stopInstance(array $arguments = [])
  * @method \Http\Promise\Promise stopInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result getJobInstance(array $arguments = [])

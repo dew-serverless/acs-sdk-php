@@ -327,6 +327,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeHistoryTasksAsync($arguments = [])
  * @method \Dew\Acs\Result describeHALogs(array $arguments = [])
  * @method \Http\Promise\Promise describeHALogsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAIDBClusterPerformance(array $arguments = [])
+ * @method \Http\Promise\Promise describeAIDBClusterPerformanceAsync($arguments = [])
  */
 final class PolardbClient extends AcsClient
 {

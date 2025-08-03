@@ -11729,6 +11729,33 @@
                     ],
                 ],
                 [
+                    'name' => 'TlsCipherSuitesConfigJSON',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ConfigType' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'DEFAULT',
+                                    'CUSTOM',
+                                ],
+                            ],
+                            'TlsCipherSuites' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'AcceptLanguage',
                     'in' => 'query',
                     'schema' => [
@@ -11910,6 +11937,29 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TlsCipherSuitesConfigJSON',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'ConfigType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TlsCipherSuites' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 [

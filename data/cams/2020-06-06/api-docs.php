@@ -4018,7 +4018,7 @@
             'parameters' => [
                 [
                     'name' => 'ChannelType',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -4026,7 +4026,7 @@
                 ],
                 [
                     'name' => 'TemplateCode',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4034,7 +4034,7 @@
                 ],
                 [
                     'name' => 'Language',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -4042,7 +4042,7 @@
                 ],
                 [
                     'name' => 'From',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -4050,16 +4050,15 @@
                 ],
                 [
                     'name' => 'CustWabaId',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
                 [
                     'name' => 'FallBackId',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4067,7 +4066,7 @@
                 ],
                 [
                     'name' => 'FallBackContent',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4075,7 +4074,7 @@
                 ],
                 [
                     'name' => 'TaskId',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4083,24 +4082,37 @@
                 ],
                 [
                     'name' => 'SenderList',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'array',
-                        'required' => true,
+                        'required' => false,
                         'items' => [
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'To' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
                                 'TemplateParams' => [
                                     'type' => 'object',
                                     'required' => false,
                                     'additionalProperties' => [
                                         'type' => 'string',
+                                    ],
+                                ],
+                                'FlowAction' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'FlowActionData' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'additionalProperties' => [
+                                                'type' => 'any',
+                                            ],
+                                        ],
+                                        'FlowToken' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
                                 'Payload' => [
@@ -4110,8 +4122,10 @@
                                         'type' => 'string',
                                         'required' => false,
                                     ],
-                                    'minItems' => 0,
-                                    'maxItems' => 3,
+                                ],
+                                'To' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                                 'ProductAction' => [
                                     'type' => 'object',
@@ -4151,30 +4165,13 @@
                                         ],
                                     ],
                                 ],
-                                'FlowAction' => [
-                                    'type' => 'object',
-                                    'required' => false,
-                                    'properties' => [
-                                        'FlowToken' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
-                                        'FlowActionData' => [
-                                            'type' => 'object',
-                                            'required' => false,
-                                            'additionalProperties' => [
-                                                'type' => 'any',
-                                            ],
-                                        ],
-                                    ],
-                                ],
                             ],
                         ],
                     ],
                 ],
                 [
                     'name' => 'IsvCode',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4182,7 +4179,7 @@
                 ],
                 [
                     'name' => 'CustSpaceId',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4190,7 +4187,7 @@
                 ],
                 [
                     'name' => 'Ttl',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
@@ -4199,7 +4196,7 @@
                 ],
                 [
                     'name' => 'Label',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4207,7 +4204,7 @@
                 ],
                 [
                     'name' => 'Tag',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4215,18 +4212,16 @@
                 ],
                 [
                     'name' => 'FallBackDuration',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'minimum' => '10',
-                        'maximum' => '43200',
                     ],
                 ],
                 [
                     'name' => 'FallBackRule',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4234,7 +4229,7 @@
                 ],
                 [
                     'name' => 'TemplateName',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4263,7 +4258,7 @@
             'parameters' => [
                 [
                     'name' => 'ChannelType',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -4271,7 +4266,7 @@
                 ],
                 [
                     'name' => 'Type',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -4279,7 +4274,7 @@
                 ],
                 [
                     'name' => 'MessageType',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4287,7 +4282,7 @@
                 ],
                 [
                     'name' => 'TemplateCode',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4295,7 +4290,7 @@
                 ],
                 [
                     'name' => 'Language',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4303,7 +4298,7 @@
                 ],
                 [
                     'name' => 'From',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -4311,7 +4306,7 @@
                 ],
                 [
                     'name' => 'To',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
@@ -4319,7 +4314,7 @@
                 ],
                 [
                     'name' => 'TemplateParams',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
@@ -4352,16 +4347,15 @@
                 ],
                 [
                     'name' => 'CustWabaId',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'deprecated' => true,
                         'required' => false,
                     ],
                 ],
                 [
                     'name' => 'FallBackId',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4369,7 +4363,7 @@
                 ],
                 [
                     'name' => 'FallBackContent',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4377,7 +4371,7 @@
                 ],
                 [
                     'name' => 'IsvCode',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4385,15 +4379,15 @@
                 ],
                 [
                     'name' => 'CustSpaceId',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
                     'name' => 'ContextMessageId',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4401,7 +4395,7 @@
                 ],
                 [
                     'name' => 'TrackingData',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4409,7 +4403,7 @@
                 ],
                 [
                     'name' => 'Label',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4417,7 +4411,7 @@
                 ],
                 [
                     'name' => 'Ttl',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
@@ -4426,7 +4420,7 @@
                 ],
                 [
                     'name' => 'Tag',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4434,7 +4428,7 @@
                 ],
                 [
                     'name' => 'TaskId',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4442,18 +4436,16 @@
                 ],
                 [
                     'name' => 'FallBackDuration',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
                         'required' => false,
-                        'minimum' => '10',
-                        'maximum' => '43200',
                     ],
                 ],
                 [
                     'name' => 'ProductAction',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
@@ -4496,7 +4488,7 @@
                 ],
                 [
                     'name' => 'FallBackRule',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4504,16 +4496,12 @@
                 ],
                 [
                     'name' => 'FlowAction',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'style' => 'json',
                     'schema' => [
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
-                            'FlowToken' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                             'FlowActionData' => [
                                 'type' => 'object',
                                 'required' => false,
@@ -4521,12 +4509,16 @@
                                     'type' => 'any',
                                 ],
                             ],
+                            'FlowToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
                 [
                     'name' => 'TemplateName',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -4534,7 +4526,7 @@
                 ],
                 [
                     'name' => 'RecipientType',
-                    'in' => 'formData',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

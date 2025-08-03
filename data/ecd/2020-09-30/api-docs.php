@@ -472,6 +472,14 @@
                     ],
                 ],
                 [
+                    'name' => 'PromotionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ResellerOwnerUid',
                     'in' => 'query',
                     'schema' => [
@@ -560,6 +568,14 @@
                         'required' => false,
                         'minimum' => '2',
                         'maximum' => '1000',
+                    ],
+                ],
+                [
+                    'name' => 'PromotionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
@@ -3354,6 +3370,14 @@
                 ],
                 [
                     'name' => 'MultiResource',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IncludeAutoSnapshotPolicy',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',

@@ -139,6 +139,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result convertInstanceResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise convertInstanceResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDocParserJobResult(array $arguments = [])
+ * @method \Http\Promise\Promise describeDocParserJobResultAsync($arguments = [])
+ * @method \Dew\Acs\Result createDocParserJob(array $arguments = [])
+ * @method \Http\Promise\Promise createDocParserJobAsync($arguments = [])
  * @method \Dew\Acs\Result countJobByCondition(array $arguments = [])
  * @method \Http\Promise\Promise countJobByConditionAsync($arguments = [])
  * @method \Dew\Acs\Result createDtsInstance(array $arguments = [])
@@ -243,6 +247,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise preCheckCreateGadOrderAsync($arguments = [])
  * @method \Dew\Acs\Result describeGadInstances(array $arguments = [])
  * @method \Http\Promise\Promise describeGadInstancesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDocParserJobStatus(array $arguments = [])
+ * @method \Http\Promise\Promise describeDocParserJobStatusAsync($arguments = [])
  */
 final class DtsClient extends AcsClient
 {

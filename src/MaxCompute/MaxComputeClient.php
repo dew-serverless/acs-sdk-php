@@ -121,6 +121,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getStorageSummaryComparedAsync($arguments = [])
  * @method \Dew\Acs\Result listStorageProjectsInfo(array $arguments = [])
  * @method \Http\Promise\Promise listStorageProjectsInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result sumStorageMetricsByDate(array $arguments = [])
+ * @method \Http\Promise\Promise sumStorageMetricsByDateAsync($arguments = [])
  * @method \Dew\Acs\Result listJobInfos(array $arguments = [])
  * @method \Http\Promise\Promise listJobInfosAsync($arguments = [])
  * @method \Dew\Acs\Result listJobSnapshotInfos(array $arguments = [])

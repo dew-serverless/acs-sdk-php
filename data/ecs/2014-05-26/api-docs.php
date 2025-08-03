@@ -979,31 +979,35 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
+                                'StartHour' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
                                 'RecurrenceType' => [
                                     'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EndHour' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                     'required' => false,
                                 ],
                                 'RecurrenceValue' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'StartHour' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '24',
-                                ],
-                                'EndHour' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '24',
-                                ],
                             ],
                         ],
                         'maxItems' => 20,
+                    ],
+                ],
+                [
+                    'name' => 'SchedulerOptions.DeploymentSetStrategy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2123,6 +2127,10 @@
                             ],
                             'EnableNetworkEncryption' => [
                                 'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'BandwidthWeighting' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -11456,6 +11464,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'autoSnapshotPolicyId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -21194,11 +21210,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -22864,11 +22880,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -22902,6 +22918,14 @@
                     ],
                 ],
                 [
+                    'name' => 'OssOutputDelivery',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ResourceTag',
                     'in' => 'query',
                     'style' => 'repeatList',
@@ -22912,11 +22936,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -23228,11 +23252,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -23260,11 +23284,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -23291,6 +23315,14 @@
                 ],
                 [
                     'name' => 'WorkingDir',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OssOutputDelivery',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -23465,11 +23497,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -23614,11 +23646,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -34114,6 +34146,40 @@
                             ],
                         ],
                         'maxItems' => 20,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyInstanceNetworkOptions' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BandwidthWeighting',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

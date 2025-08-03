@@ -880,7 +880,7 @@
                             ],
                             'DryRun' => [
                                 'type' => 'boolean',
-                                'deprecated' => true,
+                                'deprecated' => false,
                                 'required' => false,
                             ],
                         ],

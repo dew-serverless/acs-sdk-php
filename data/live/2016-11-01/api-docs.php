@@ -3210,6 +3210,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'LiveMerger',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MergeParameters',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeLiveStreamMerge' => [

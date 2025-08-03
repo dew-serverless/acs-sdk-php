@@ -297,6 +297,22 @@
                     ],
                 ],
             ],
+            'CookieSessionAffinityConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'sessionConcurrencyPerInstance' => [
+                        'type' => 'string',
+                    ],
+                    'sessionIdleTimeoutInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'sessionTTLInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
             'CreateAliasInput' => [
                 'type' => 'object',
                 'properties' => [
@@ -504,6 +520,9 @@
                             'REQUEST_EXCLUSIVE',
                             'SESSION_EXCLUSIVE',
                         ],
+                    ],
+                    'sessionAffinityConfig' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1147,12 +1166,13 @@
                     'invocationRestriction' => [
                         '$ref' => '#/components/schemas/FunctionRestriction',
                     ],
-                    'sessionAffinity' => [
-                        'type' => 'string',
-                    ],
                     'enableLongLiving' => [
                         'type' => 'boolean',
                         'deprecated' => true,
+                    ],
+                    'sessionAffinity' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                     'resourceGroupId' => [
                         'type' => 'string',
@@ -1164,6 +1184,9 @@
                             'SESSION_EXCLUSIVE',
                             'REQUEST_EXCLUSIVE',
                         ],
+                    ],
+                    'sessionAffinityConfig' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -1286,6 +1309,27 @@
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+            ],
+            'HeaderFieldSessionAffinityConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'sessionIdleTimeoutInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'sessionTTLInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'sessionConcurrencyPerInstance' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'affinityHeaderFieldName' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1776,6 +1820,18 @@
                         'type' => 'string',
                         'required' => false,
                         'maxLength' => 63,
+                    ],
+                ],
+            ],
+            'MCPSSESessionAffinityConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'sseEndpointPath' => [
+                        'type' => 'string',
+                    ],
+                    'sessionConcurrencyPerInstance' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -3153,6 +3209,9 @@
                             'REQUEST_EXCLUSIVE',
                             'SESSION_EXCLUSIVE',
                         ],
+                    ],
+                    'sessionAffinityConfig' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

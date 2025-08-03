@@ -792,6 +792,19 @@
                     ],
                 ],
                 [
+                    'name' => 'TableIds',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'DataSource',
                     'in' => 'query',
                     'style' => 'json',
@@ -958,6 +971,22 @@
                 ],
                 [
                     'name' => 'chunkMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableRewrite',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CreateIndexType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1172,6 +1201,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableHeaders',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
                         'required' => false,
                     ],
                 ],

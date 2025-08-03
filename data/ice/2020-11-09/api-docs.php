@@ -108,6 +108,19 @@
                             'VoiceId' => [
                                 'type' => 'string',
                             ],
+                            'Emotion' => [
+                                'type' => 'string',
+                            ],
+                            'ModelId' => [
+                                'type' => 'string',
+                            ],
+                            'LanguageId' => [
+                                'type' => 'string',
+                            ],
+                            'SpeechRate' => [
+                                'type' => 'number',
+                                'format' => 'double',
+                            ],
                         ],
                     ],
                     'LlmConfig' => [
@@ -355,6 +368,19 @@
                             ],
                             'VoiceId' => [
                                 'type' => 'string',
+                            ],
+                            'Emotion' => [
+                                'type' => 'string',
+                            ],
+                            'ModelId' => [
+                                'type' => 'string',
+                            ],
+                            'LanguageId' => [
+                                'type' => 'string',
+                            ],
+                            'SpeechRate' => [
+                                'type' => 'number',
+                                'format' => 'double',
                             ],
                         ],
                     ],
@@ -10851,24 +10877,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'PageNo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'Type',
                     'in' => 'query',
                     'schema' => [
@@ -17294,6 +17302,147 @@
                 ],
                 [
                     'name' => 'NextPageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ForbidMediaConnectFlowOutput' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'FlowId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OutputName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ResumeMediaConnectFlowOutput' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'FlowId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'OutputName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetMediaConnectFlowAllOutputName' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'FlowId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CloseMediaConnectFlowFailover' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'FlowId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'OpenMediaConnectFlowFailover' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'FlowId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

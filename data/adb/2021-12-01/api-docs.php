@@ -126,6 +126,16 @@
             'Detail' => [
                 'type' => 'object',
                 'properties' => [
+                    'DurationInMillis' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'LogRootPath' => [
+                        'type' => 'string',
+                    ],
+                    'DBClusterId' => [
+                        'type' => 'string',
+                    ],
                     'Data' => [
                         'type' => 'string',
                     ],
@@ -133,11 +143,28 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'LogRootPath' => [
-                        'type' => 'string',
+                    'LastUpdatedTimeInMillis' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'RunningStartTimeInMillis' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                     'LastAttemptId' => [
                         'type' => 'string',
+                    ],
+                    'TerminatedTimeInMillis' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ResourceProvisioningDurationInMillis' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ExecutionDurationInMillis' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                     'WebUiAddress' => [
                         'type' => 'string',
@@ -150,25 +177,10 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'LastUpdatedTimeInMillis' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'TerminatedTimeInMillis' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'DBClusterId' => [
+                    'AppType' => [
                         'type' => 'string',
                     ],
                     'ResourceGroupName' => [
-                        'type' => 'string',
-                    ],
-                    'DurationInMillis' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'AppType' => [
                         'type' => 'string',
                     ],
                 ],
@@ -13880,6 +13892,135 @@
                 ],
             ],
         ],
+        'DescribeHistoryTasks' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '10',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '2147483647',
+                    ],
+                ],
+                [
+                    'name' => 'InstanceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaskType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FromStartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ToStartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FromExecTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ToExecTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'ModifyDBClusterSSL' => [
             'methods' => [
                 'post',
@@ -14059,7 +14200,7 @@
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.cn-shanghai-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-chengdu',

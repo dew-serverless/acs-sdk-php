@@ -359,6 +359,10 @@
                     'auto_scaling' => [
                         'type' => 'object',
                         'properties' => [
+                            'eip_internet_charge_type' => [
+                                'type' => 'string',
+                                'deprecated' => true,
+                            ],
                             'enable' => [
                                 'type' => 'boolean',
                                 'required' => true,
@@ -376,17 +380,13 @@
                             'type' => [
                                 'type' => 'string',
                             ],
-                            'is_bond_eip' => [
-                                'type' => 'boolean',
-                                'deprecated' => true,
-                            ],
-                            'eip_internet_charge_type' => [
-                                'type' => 'string',
-                                'deprecated' => true,
-                            ],
                             'eip_bandwidth' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                                'deprecated' => true,
+                            ],
+                            'is_bond_eip' => [
+                                'type' => 'boolean',
                                 'deprecated' => true,
                             ],
                         ],
@@ -394,23 +394,17 @@
                     'kubernetes_config' => [
                         'type' => 'object',
                         'properties' => [
-                            'cms_enabled' => [
-                                'type' => 'boolean',
+                            'runtime_version' => [
+                                'type' => 'string',
+                                'required' => true,
                             ],
                             'cpu_policy' => [
                                 'type' => 'string',
                             ],
-                            'labels' => [
-                                'type' => 'array',
-                                'items' => [
-                                    '$ref' => '#/components/schemas/tag',
-                                ],
+                            'cms_enabled' => [
+                                'type' => 'boolean',
                             ],
                             'runtime' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'runtime_version' => [
                                 'type' => 'string',
                                 'required' => true,
                             ],
@@ -426,18 +420,24 @@
                             'node_name_mode' => [
                                 'type' => 'string',
                             ],
+                            'labels' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/tag',
+                                ],
+                            ],
                         ],
                     ],
                     'nodepool_info' => [
                         'type' => 'object',
                         'properties' => [
-                            'name' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
                             'resource_group_id' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                            'name' => [
+                                'type' => 'string',
+                                'required' => true,
                             ],
                             'type' => [
                                 'type' => 'string',
@@ -447,26 +447,6 @@
                     'scaling_group' => [
                         'type' => 'object',
                         'properties' => [
-                            'auto_renew' => [
-                                'type' => 'boolean',
-                            ],
-                            'auto_renew_period' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                            ],
-                            'data_disks' => [
-                                'type' => 'array',
-                                'items' => [
-                                    '$ref' => '#/components/schemas/data_disk',
-                                ],
-                            ],
-                            'image_id' => [
-                                'type' => 'string',
-                            ],
-                            'instance_charge_type' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
                             'instance_types' => [
                                 'type' => 'array',
                                 'required' => true,
@@ -474,57 +454,49 @@
                                     'type' => 'string',
                                 ],
                             ],
-                            'key_pair' => [
+                            'system_disk_encrypt_algorithm' => [
                                 'type' => 'string',
-                                'required' => false,
                             ],
-                            'login_password' => [
+                            'on_demand_percentage_above_base_capacity' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'internet_charge_type' => [
                                 'type' => 'string',
-                                'required' => false,
                             ],
-                            'login_as_non_root' => [
-                                'type' => 'boolean',
-                            ],
-                            'period' => [
+                            'system_disk_provisioned_iops' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                             ],
                             'period_unit' => [
                                 'type' => 'string',
                             ],
-                            'platform' => [
-                                'type' => 'string',
-                                'deprecated' => true,
-                                'required' => false,
+                            'instance_metadata_options' => [
+                                '$ref' => '#/components/schemas/InstanceMetadataOptions',
                             ],
-                            'rds_instances' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                            'spot_strategy' => [
+                            'system_disk_kms_key_id' => [
                                 'type' => 'string',
                             ],
-                            'spot_price_limit' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'instance_type' => [
-                                            'type' => 'string',
-                                        ],
-                                        'price_limit' => [
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'scaling_policy' => [
+                            'deploymentset_id' => [
                                 'type' => 'string',
                             ],
                             'security_group_id' => [
                                 'type' => 'string',
+                                'required' => false,
+                            ],
+                            'multi_az_policy' => [
+                                'type' => 'string',
+                            ],
+                            'on_demand_base_capacity' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'login_as_non_root' => [
+                                'type' => 'boolean',
+                            ],
+                            'platform' => [
+                                'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'security_group_ids' => [
@@ -533,8 +505,26 @@
                                     'type' => 'string',
                                 ],
                             ],
-                            'system_disk_category' => [
+                            'spot_instance_pools' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'system_disk_bursting_enabled' => [
+                                'type' => 'boolean',
+                            ],
+                            'data_disks' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/data_disk',
+                                ],
+                            ],
+                            'instance_charge_type' => [
                                 'type' => 'string',
+                                'required' => true,
+                            ],
+                            'login_password' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                             'system_disk_categories' => [
                                 'type' => 'array',
@@ -544,42 +534,15 @@
                                 ],
                                 'maxItems' => 10,
                             ],
-                            'system_disk_size' => [
+                            'compensate_with_on_demand' => [
+                                'type' => 'boolean',
+                            ],
+                            'desired_size' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                             ],
-                            'system_disk_performance_level' => [
+                            'ram_role_name' => [
                                 'type' => 'string',
-                            ],
-                            'system_disk_encrypted' => [
-                                'type' => 'boolean',
-                            ],
-                            'system_disk_kms_key_id' => [
-                                'type' => 'string',
-                            ],
-                            'system_disk_encrypt_algorithm' => [
-                                'type' => 'string',
-                            ],
-                            'system_disk_provisioned_iops' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                            ],
-                            'system_disk_bursting_enabled' => [
-                                'type' => 'boolean',
-                            ],
-                            'tags' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'key' => [
-                                            'type' => 'string',
-                                        ],
-                                        'value' => [
-                                            'type' => 'string',
-                                        ],
-                                    ],
-                                ],
                             ],
                             'vswitch_ids' => [
                                 'type' => 'array',
@@ -588,56 +551,96 @@
                                     'type' => 'string',
                                 ],
                             ],
-                            'multi_az_policy' => [
+                            'image_type' => [
                                 'type' => 'string',
                             ],
-                            'on_demand_base_capacity' => [
+                            'auto_renew_period' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                             ],
-                            'on_demand_percentage_above_base_capacity' => [
+                            'period' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                             ],
-                            'spot_instance_pools' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                            ],
-                            'spot_instance_remedy' => [
-                                'type' => 'boolean',
-                            ],
-                            'compensate_with_on_demand' => [
-                                'type' => 'boolean',
-                            ],
-                            'internet_charge_type' => [
+                            'key_pair' => [
                                 'type' => 'string',
+                                'required' => false,
                             ],
                             'internet_max_bandwidth_out' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
                             ],
-                            'image_type' => [
+                            'spot_strategy' => [
                                 'type' => 'string',
                             ],
-                            'deploymentset_id' => [
-                                'type' => 'string',
+                            'system_disk_encrypted' => [
+                                'type' => 'boolean',
                             ],
-                            'desired_size' => [
+                            'system_disk_size' => [
                                 'type' => 'integer',
                                 'format' => 'int64',
+                            ],
+                            'tags' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'value' => [
+                                            'type' => 'string',
+                                        ],
+                                        'key' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'spot_price_limit' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'price_limit' => [
+                                            'type' => 'string',
+                                        ],
+                                        'instance_type' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'spot_instance_remedy' => [
+                                'type' => 'boolean',
+                            ],
+                            'auto_renew' => [
+                                'type' => 'boolean',
+                            ],
+                            'system_disk_category' => [
+                                'type' => 'string',
+                            ],
+                            'rds_instances' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                            'system_disk_performance_level' => [
+                                'type' => 'string',
                             ],
                             'private_pool_options' => [
                                 'type' => 'object',
                                 'properties' => [
-                                    'id' => [
+                                    'match_criteria' => [
                                         'type' => 'string',
                                     ],
-                                    'match_criteria' => [
+                                    'id' => [
                                         'type' => 'string',
                                     ],
                                 ],
                             ],
-                            'ram_role_name' => [
+                            'image_id' => [
+                                'type' => 'string',
+                            ],
+                            'scaling_policy' => [
                                 'type' => 'string',
                             ],
                         ],
@@ -654,19 +657,18 @@
                     'management' => [
                         'type' => 'object',
                         'properties' => [
-                            'enable' => [
-                                'type' => 'boolean',
-                            ],
-                            'auto_repair' => [
-                                'type' => 'boolean',
+                            'auto_upgrade_policy' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'auto_upgrade_kubelet' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
                             ],
                             'upgrade_config' => [
                                 'type' => 'object',
                                 'deprecated' => true,
                                 'properties' => [
-                                    'auto_upgrade' => [
-                                        'type' => 'boolean',
-                                    ],
                                     'surge' => [
                                         'type' => 'integer',
                                         'format' => 'int64',
@@ -679,7 +681,27 @@
                                         'type' => 'integer',
                                         'format' => 'int64',
                                     ],
+                                    'auto_upgrade' => [
+                                        'type' => 'boolean',
+                                    ],
                                 ],
+                            ],
+                            'auto_repair' => [
+                                'type' => 'boolean',
+                            ],
+                            'auto_vul_fix_policy' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'vul_level' => [
+                                        'type' => 'string',
+                                    ],
+                                    'restart_node' => [
+                                        'type' => 'boolean',
+                                    ],
+                                ],
+                            ],
+                            'enable' => [
+                                'type' => 'boolean',
                             ],
                             'auto_repair_policy' => [
                                 'type' => 'object',
@@ -689,30 +711,11 @@
                                     ],
                                 ],
                             ],
-                            'auto_vul_fix' => [
-                                'type' => 'boolean',
-                            ],
-                            'auto_vul_fix_policy' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'restart_node' => [
-                                        'type' => 'boolean',
-                                    ],
-                                    'vul_level' => [
-                                        'type' => 'string',
-                                    ],
-                                ],
-                            ],
                             'auto_upgrade' => [
                                 'type' => 'boolean',
                             ],
-                            'auto_upgrade_policy' => [
-                                'type' => 'object',
-                                'properties' => [
-                                    'auto_upgrade_kubelet' => [
-                                        'type' => 'boolean',
-                                    ],
-                                ],
+                            'auto_vul_fix' => [
+                                'type' => 'boolean',
                             ],
                         ],
                     ],
@@ -728,7 +731,12 @@
                         'type' => 'object',
                         'deprecated' => true,
                         'properties' => [
-                            'cen_id' => [
+                            'bandwidth' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'deprecated' => true,
+                            ],
+                            'ccn_region_id' => [
                                 'type' => 'string',
                                 'deprecated' => true,
                             ],
@@ -736,13 +744,8 @@
                                 'type' => 'string',
                                 'deprecated' => true,
                             ],
-                            'ccn_region_id' => [
+                            'cen_id' => [
                                 'type' => 'string',
-                                'deprecated' => true,
-                            ],
-                            'bandwidth' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
                                 'deprecated' => true,
                             ],
                             'improved_period' => [
@@ -1531,6 +1534,10 @@
                                     'size' => [
                                         'type' => 'integer',
                                         'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'instance_metadata_options' => [
+                                        '$ref' => '#/components/schemas/InstanceMetadataOptions',
                                         'required' => false,
                                     ],
                                 ],
@@ -3329,6 +3336,10 @@
                                     ],
                                     'ram_role_name' => [
                                         'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'instance_metadata_options' => [
+                                        '$ref' => '#/components/schemas/InstanceMetadataOptions',
                                         'required' => false,
                                     ],
                                 ],

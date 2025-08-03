@@ -2760,7 +2760,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -2778,7 +2778,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -3919,7 +3919,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -3935,7 +3935,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -4751,7 +4751,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -5007,7 +5007,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -5015,7 +5015,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -5065,58 +5065,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreateOutboundCallNumber' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Number',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RateLimitPeriod',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RateLimitCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
                         'required' => true,
                     ],
                 ],
@@ -7446,40 +7394,6 @@
                 ],
             ],
         ],
-        'GetEffectiveDays' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'EntryId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyLevel',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'QueryJobsWithResult' => [
             'methods' => [
                 'post',
@@ -7637,7 +7551,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -7680,7 +7594,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -7751,7 +7665,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -7798,7 +7712,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -7889,7 +7803,7 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int32',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -8704,67 +8618,6 @@
                 ],
             ],
         ],
-        'CreateNumberDistrictInfoParsingTask' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'FilePath',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FileSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateNumberDistrictInfoDownloadUrl' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'VersionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'GetNumberDistrictInfoTemplateDownloadUrl' => [
             'methods' => [
                 'post',
@@ -8782,76 +8635,7 @@
             'deprecated' => false,
             'parameters' => [],
         ],
-        'ApplyNumberDistrictInfoParsingResult' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'VersionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DismissNumberDistrictInfoParsingResult' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'VersionId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
         'DeleteAllNumberDistrictInfo' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-        'DescribeNumberDistrictInfoStatus' => [
             'methods' => [
                 'post',
                 'get',
@@ -8936,7 +8720,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
                 [
@@ -9212,7 +8996,7 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
+                        'required' => true,
                     ],
                 ],
             ],
@@ -9455,33 +9239,6 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListSchedulerInstances' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'InstanceOwnerId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],

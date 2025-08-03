@@ -689,6 +689,30 @@
                                         'required' => false,
                                     ],
                                 ],
+                                'isAutoRecognition' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'timeIntervals' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'startTime' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => false,
+                                            ],
+                                            'endTime' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -795,11 +819,15 @@
                                     ],
                                 ],
                             ],
-                            'videoCaptionFileUrl' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'autoRoleRecognitionVideoUrl',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1154,6 +1182,30 @@
                                         'required' => false,
                                     ],
                                 ],
+                                'isAutoRecognition' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'timeIntervals' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'startTime' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => false,
+                                            ],
+                                            'endTime' => [
+                                                'type' => 'integer',
+                                                'format' => 'int64',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -1252,11 +1304,15 @@
                                     ],
                                 ],
                             ],
-                            'videoCaptionFileUrl' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'autoRoleRecognitionVideoUrl',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

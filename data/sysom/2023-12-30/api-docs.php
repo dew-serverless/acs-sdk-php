@@ -865,6 +865,10 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'source' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

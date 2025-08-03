@@ -3230,6 +3230,65 @@
                 ],
             ],
         ],
+        'SumStorageMetricsByDate' => [
+            'path' => '/api/v1/storageMetrics/sumByDate',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+                'http',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'userId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'region' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'projectNames' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'startDate' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'endDate' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'statsType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ListJobInfos' => [
             'path' => '/api/v1/jobs',
             'methods' => [

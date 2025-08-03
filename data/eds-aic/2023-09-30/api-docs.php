@@ -318,6 +318,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'UseTemplate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeCloudPhoneNodes' => [
@@ -2388,6 +2396,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AutoInstall',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'FetchFile' => [
@@ -2702,6 +2718,38 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'InstanceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ImageBizTags',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'UpdateCustomImageName' => [
@@ -2733,6 +2781,7 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxLength' => 30,
                     ],
                 ],
             ],
@@ -4371,6 +4420,447 @@
                     'schema' => [
                         'type' => 'array',
                         'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSystemPropertyTemplate' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'TemplateName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SystemPropertyInfo',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'RoBuildFingerprint' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoProductModel' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoProductManufacturer' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoProductBrand' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildUser' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBootloader' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildTags' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoProductBoard' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoProductDevice' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildProduct' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildHost' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildDisplayId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RwRoSerialNo' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CustomPropertyInfos' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'PropertyName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'PropertyValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'maxItems' => 100,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'FilePath',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 512,
+                    ],
+                ],
+                [
+                    'name' => 'EnableAuto',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SendSystemPropertyTemplate' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'TemplateId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AndroidInstanceIds',
+                    'in' => 'formData',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 200,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSystemPropertyTemplates' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'MaxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '0',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'NextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetInstanceProperties' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifySystemPropertyTemplate' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'TemplateId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TemplateName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SystemPropertyInfo',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'RoBuildFingerprint' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoProductModel' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoProductManufacturer' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoProductBrand' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildUser' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBootloader' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildTags' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoProductBoard' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoProductDevice' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildProduct' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildHost' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RoBuildDisplayId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RwRoSerialNo' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'CustomPropertyInfos' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'PropertyName' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'PropertyValue' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                                'maxItems' => 100,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'FilePath',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxLength' => 512,
+                    ],
+                ],
+                [
+                    'name' => 'EnableAuto',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSystemPropertyTemplates' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'TemplateIds',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
                         'items' => [
                             'type' => 'string',
                             'required' => false,

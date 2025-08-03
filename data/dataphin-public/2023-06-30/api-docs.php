@@ -9,6 +9,628 @@
         'schemas' => [],
     ],
     'apis' => [
+        'CheckProjectHasDependency' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetProject' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Env',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetProjectByName' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'AddProjectMember' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AddCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'UserList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'UserId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'RoleList' => [
+                                            'type' => 'array',
+                                            'required' => true,
+                                            'items' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => true,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetProjectWhiteLists' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListProjectMembers' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PageNo' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListProjects' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Keyword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'TagList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'Mode' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PageNo' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'RemoveProjectMember' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RemoveCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'UserIdList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ReplaceProjectWhiteLists' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ReplaceCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'WhiteLists' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Description' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Ip' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Port' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateProjectMember' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UpdateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Env' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'UserList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'UserId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'RoleList' => [
+                                            'type' => 'array',
+                                            'required' => true,
+                                            'items' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => true,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateTenantComputeEngine' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UpdateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Version' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ClusterUrlList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => true,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetDataSourceDependencies' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'CreateDataSource' => [
             'methods' => [
                 'post',
@@ -460,6 +1082,361 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CheckComputeSourceConnectivity' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CheckCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ConfigList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'CheckComputeSourceConnectivityById' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListComputeSources' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'BindProject' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'Keyword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PageNo' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'UpdateComputeSource' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UpdateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Id' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ConfigList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetComputeSource' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteComputeSource' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateComputeSource' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CreateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ConfigList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -5658,6 +6635,640 @@
                 ],
             ],
         ],
+        'GetResource' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetResourceByVersion' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'VersionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateResource' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UpdateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Id' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'StorageAddress' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Comment' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'ComputeEngineType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetFileStorageCredential' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UseVpcEndpoint',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Purpose',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteResource' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateResource' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CreateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Directory' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ResourceType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'StorageAddress' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Comment' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ComputeEngineType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetUdf' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetUdfByVersion' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'VersionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateUdf' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UpdateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Id' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'RefResourceIdList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => true,
+                                ],
+                            ],
+                            'ClassName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Category' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'CommandHelp' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Comment' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DeleteUdf' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateUdf' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'CreateCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Name' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ProjectId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'ComputeEngineType' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Directory' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'RefResourceIdList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'integer',
+                                    'format' => 'int64',
+                                    'required' => true,
+                                ],
+                            ],
+                            'ClassName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Category' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'Description' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'CommandHelp' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Comment' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ListSubmitRecords' => [
             'methods' => [
                 'post',
@@ -7903,6 +9514,1388 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'RevokeDataServiceApi' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RevokeCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'AppId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'ApiId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'Reason' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'PublishDataServiceApi' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ApiId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'VersionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ListDataServicePublishedApis' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'GroupId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'ApiName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PageNo' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListDataServiceMyAppPermissions' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'Keyword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PageNo' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListDataServiceMyApiPermissions' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Keyword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PageNo' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListDataServiceAuthorizedApps' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Keyword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'PageNo' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListDataServiceApiImpacts' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'PageNo' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'StartTime' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'EndTime' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ApiId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'OrderColumn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'OrderType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'AppName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListDataServiceApiCalls' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'PageNo' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'AppKey' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'ApiName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ApiId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'StartTime' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'EndTime' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ClientIp' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Successful' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListDataServiceApiCallStatistics' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ListQuery',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'OrderColumn' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'OrderType' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Keyword' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'StartTime' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'EndTime' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'PageNo' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GrantDataServiceApi' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'GrantCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ExpireDate' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Reason' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ApiId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'AppId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'ProdFieldList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Id' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'DevFieldList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Id' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceProjectAddableUsers' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceMyProjects' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceAuthorizedProjects' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceAuthorizedAppsByGroupId' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'GroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceAppsByGroupId' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'GroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceAppGroups' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceAppAuthorizedUsers' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceApiGroups' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceApiErrorImpact' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceApiDocument' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'VersionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceApiCallTrend' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'GetDataServiceApiCallSummary' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ApplyDataServiceApp' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ApplyCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ExpireDate' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Reason' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'AppId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ApplyDataServiceApi' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ApplyCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ExpireDate' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Reason' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'ApiId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => true,
+                            ],
+                            'AppId' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => true,
+                            ],
+                            'ProdFieldList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Id' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'DevFieldList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Id' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'AddDataServiceProjectMember' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'OpTenantId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ProjectId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'AddCommand',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => true,
+                        'properties' => [
+                            'ProjectMemberList' => [
+                                'type' => 'array',
+                                'required' => true,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Role' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => true,
+                                        ],
+                                        'UserId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'DisplayName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'AccountName' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
             ],

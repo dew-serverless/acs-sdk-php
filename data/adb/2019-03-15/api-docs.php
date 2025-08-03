@@ -8892,7 +8892,7 @@
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'adb.aliyuncs.com',
+            'endpoint' => 'adb.cn-shanghai-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-chengdu',

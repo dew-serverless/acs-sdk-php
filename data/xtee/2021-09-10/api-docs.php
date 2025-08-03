@@ -2,14 +2,1096 @@
     'version' => '1.0',
     'info' => [
         'style' => 'RPC',
-        'product' => 'Alidns',
-        'version' => '2015-01-09',
+        'product' => 'xtee',
+        'version' => '2021-09-10',
     ],
     'components' => [
         'schemas' => [],
     ],
     'apis' => [
-        'DescribeDnsProductInstance' => [
+        'RecallRuleAudit' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAuditDetails' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyRulePriority' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consoleRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'priority',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateRule' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'memo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleExpressions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'logicExpression',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleActions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consoleRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleVersionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleBody',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateAudit' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'auditStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'auditMsg',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'auditRelationType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteRule' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consoleRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleVersionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateRule' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'memo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleExpressions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'logicExpression',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleActions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consoleRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleBody',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyRuleStatus' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'applyUserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'applyUserName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'auditUserId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'auditUserName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleAuditType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'auditRemark',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleVersionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consoleRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeUserInfo' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRulePageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleAuthType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sort',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAuditPageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'auditStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRuleVersionList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consoleRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAuditConfig' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'auditRelationType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateRuleBase' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consoleRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'memo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRuleDetailByRuleId' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consoleRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleVersionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ExpressionTest' => [
             'methods' => [
                 'post',
                 'get',
@@ -34,7 +1116,24 @@
                     ],
                 ],
                 [
-                    'name' => 'UserClientIp',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'expressionVariableIds',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -42,7 +1141,23 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'scene',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expression',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expressionVariable',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -51,10 +1166,10 @@
                 ],
             ],
         ],
-        'DescribeDnsProductInstances' => [
+        'DescribeAllRootVariable' => [
             'methods' => [
-                'post',
                 'get',
+                'post',
             ],
             'schemes' => [
                 'http',
@@ -68,6 +1183,14 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'SourceIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
@@ -76,36 +1199,16 @@
                     ],
                 ],
                 [
-                    'name' => 'UserClientIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
+                    'name' => 'id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
-                        'minimum' => '1',
                     ],
                 ],
                 [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '1000',
-                    ],
-                ],
-                [
-                    'name' => 'VersionCode',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -113,7 +1216,7 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainType',
+                    'name' => 'eventCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -121,15 +1224,43 @@
                     ],
                 ],
                 [
-                    'name' => 'OrderBy',
+                    'name' => 'nativeVariableIds',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                        'maxItems' => 201,
                     ],
                 ],
                 [
-                    'name' => 'Direction',
+                    'name' => 'deviceVariableIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxItems' => 201,
+                    ],
+                ],
+                [
+                    'name' => 'expressionVariableIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxItems' => 201,
+                    ],
+                ],
+                [
+                    'name' => 'velocityVariableIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'maxItems' => 201,
+                    ],
+                ],
+                [
+                    'name' => 'queryVariableIds',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -138,7 +1269,146 @@
                 ],
             ],
         ],
-        'DescribeInstanceDomains' => [
+        'DescribeDetailStart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'appKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'service',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'startDs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'endDs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeServiceAppKey' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeBasicStart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'appKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'service',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'startDs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'endDs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteQueryVariable' => [
             'methods' => [
                 'post',
                 'get',
@@ -163,25 +1433,93 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeQueryVariableDetail' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'PageSize',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAllDataSource' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -190,7 +1528,7 @@
                 ],
             ],
         ],
-        'AddDomain' => [
+        'DescribeDataSourceFields' => [
             'methods' => [
                 'post',
                 'get',
@@ -202,9 +1540,6 @@
             'security' => [
                 [
                     'AK' => [],
-                ],
-                [
-                    'BearerToken' => [],
                 ],
             ],
             'deprecated' => false,
@@ -218,7 +1553,7 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -226,52 +1561,7 @@
                     ],
                 ],
                 [
-                    'name' => 'GroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteDomain' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-                [
-                    'BearerToken' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
+                    'name' => 'dataSourceCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -280,7 +1570,7 @@
                 ],
             ],
         ],
-        'DescribeDomains' => [
+        'SwitchQueryVariable' => [
             'methods' => [
                 'post',
                 'get',
@@ -292,9 +1582,6 @@
             'security' => [
                 [
                     'AK' => [],
-                ],
-                [
-                    'BearerToken' => [],
                 ],
             ],
             'deprecated' => false,
@@ -308,7 +1595,50 @@
                     ],
                 ],
                 [
-                    'name' => 'KeyWord',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeQueryVariablePageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -316,7 +1646,15 @@
                     ],
                 ],
                 [
-                    'name' => 'GroupId',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -324,28 +1662,59 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
-                        'minimum' => '1',
                     ],
                 ],
                 [
-                    'name' => 'PageSize',
+                    'name' => 'pageSize',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
                     ],
                 ],
+            ],
+        ],
+        'UpdateQueryVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
                 [
-                    'name' => 'SearchMode',
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -353,7 +1722,48 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceGroupId',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'description',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -361,16 +1771,4300 @@
                     ],
                 ],
                 [
-                    'name' => 'Starmark',
+                    'name' => 'outputs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'outlier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expression',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expressionTitle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expressionVariable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeDataSourcePageList' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'SourceIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateQueryVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'outputs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'outlier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expression',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expressionTitle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expressionVariable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeDataSourceDataDownloadUrl' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateDataSource' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ossKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateDataSource' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ossKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeOssPolicy' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'scene',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteDataSource' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateAnalysisConditionFavorite' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventBeginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventEndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'fieldName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fieldValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateAnalysisExportTask' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'scope',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'fileFormat',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'columns',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventBeginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventEndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'conditions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fieldName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fieldValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteAnalysisConditionFavorite' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAdvanceSearchPageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventBeginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventEndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fieldName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fieldValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAnalysisColumnFieldList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAnalysisColumnList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAnalysisConditionFavoriteList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAnalysisExportTaskDownloadUrl' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeBasicSearchPageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventBeginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventEndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'fieldName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fieldValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventDetailByRequestId' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'sRequestId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventVariableList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'refObjType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'refObjId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'filterDTO',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRuleListByEventCodesList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'SaveAnalysisColumn' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'columns',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateAnalysisConditionFavorite' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventBeginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventEndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fieldName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fieldValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAdvanceSearchLeftVariableList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'scene',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeOperatorListByType' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAuthRulePageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ruleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAuthSceneList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAuthScenePageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'sceneName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'QueryAuthRuleDetailByRuleId' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ruleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'consoleRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleVersionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateAuthRule' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ruleExpressions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'consoleRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ruleVersionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleActions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeHitRuleTrend' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeDecisionResultTrend' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeHighRiskPieChart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeDecisionResultFluctuation' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeHitRuleFluctuation' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeTagsFluctuation' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeResultCount' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRequestPeakReport' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventTotalCountReport' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventResultBarChart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventResultList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRuleBarChart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAvgExecuteCostReport' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeTagsTrend' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'result',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRiskLineChart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeTagsBarChart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'result',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteByPassShuntEvent' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeByPassShuntEvent' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeHitRuleList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeScoreSectionNumLineChart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'mainEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'byPassEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'shuntEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeScoreSectionPieChart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeScoreSectionRatioLineChart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'mainEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'byPassEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'shuntEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeTagsNumLineChart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'mainEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'byPassEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'shuntEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeTagsRatioLineChart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'mainEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'byPassEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'shuntEventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'beginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'SaveByPassOrShuntEvent' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StartOrStopByPassShuntEvent' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SwitchToOnline' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateByPassShuntEvent' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateSampleBatch' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'versions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'tags',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSample' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sampleType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sampleValues',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sampleTag',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'uploadType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'clientPath',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'clientFileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fileType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeOssAuthStatus' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeApi' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'apiRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'apiId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'apiType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeGroupPage' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'timeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSampleList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sampleType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sampleValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyAppKey' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'appKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'memo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRegions' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeExcuteNum' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'SourceIp',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Code',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'StartDate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndDate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Degree',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeGroupConditionList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeApis' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'apiRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'apiGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'apiType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSampleBatch' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'versions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSafConsole' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'service',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'content',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeOssToken' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'uploadType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeApiVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSampleInfo' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'versions',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSampleTagList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeMarkPage' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'isPage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'taskLogId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
-        'DescribeDomainInfo' => [
+        'DescribeGroupTrend' => [
             'methods' => [
                 'post',
                 'get',
@@ -394,24 +6088,162 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'NeedDetailAttributes',
+                    'name' => 'day',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeGroupStatisticsByToday' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeGroupAccountPage' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'order',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'direction',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'isPage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'communityNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fieldKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fieldVal',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
-        'AddDomainBackup' => [
+        'DescribeApiGroups' => [
             'methods' => [
                 'post',
                 'get',
@@ -435,7 +6267,7 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
+                    'name' => 'apiRegionId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -443,16 +6275,16 @@
                     ],
                 ],
                 [
-                    'name' => 'PeriodType',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
             ],
         ],
-        'ChangeDomainOfDnsProduct' => [
+        'DescribeTemplateDownload' => [
             'methods' => [
                 'post',
                 'get',
@@ -476,7 +6308,32 @@
                     ],
                 ],
                 [
-                    'name' => 'UserClientIp',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeExistScene' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -484,7 +6341,318 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SceneName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSampleDataList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sampleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'scene',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'queryContent',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'deleteTag',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ImportTemplateEvent' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventTemplateIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRecommendVariablesVelocity' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'variableIdsStr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSampleData' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'scene',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'riskValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'storePath',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'storeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'encryptType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StopSimulationTask' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -492,7 +6660,32 @@
                     ],
                 ],
                 [
-                    'name' => 'NewDomain',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSimulationPreditInfo' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -500,16 +6693,1521 @@
                     ],
                 ],
                 [
-                    'name' => 'Force',
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'rulesStr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSampleSceneList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSampleData' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSampleDemoDownloadUrl' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'scene',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeTaskLogList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CurrentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IsPage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaskLogId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
-        'ModifyHichinaDomainDNS' => [
+        'DescribeSampleDownloadUrl' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sampleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRecommendSceneVariables' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sampleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSupportRuleList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'StartSimulationTask' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSimulationTaskList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventTaskHistory' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateRecommendEventRule' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'recommendRuleIdsStr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRecommendVelocities' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSimulationTask' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'startTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'runTask',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'filtersStr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'rulesStr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRecommendTaskDetail' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeOperationLogPageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'startDate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'endDate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeTemplatePageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateSearchItem',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateRecommendTask' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'sampleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'variablesStr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'velocitiesStr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSimulationTaskCount' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'startTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dataSourceConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'filtersStr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRecommendTaskPageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'taskName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventLogDetail' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'reqIdByLog',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeMenuPermission' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'permissionType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyEventStatus' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'fromEventSatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'toEventSatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'OpenConsoleSls' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'scene',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeLoanTaskList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'monitorStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'batchNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSelectItem' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSlsUrlConfig' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeMonitorTaskLimit' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSDKDownloadList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'deviceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'listType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CheckFieldLimit' => [
             'methods' => [
                 'post',
                 'get',
@@ -534,7 +8232,7 @@
                     ],
                 ],
                 [
-                    'name' => 'UserClientIp',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -542,49 +8240,7 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateDomainRemark' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
+                    'name' => 'source',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -593,7 +8249,7 @@
                 ],
             ],
         ],
-        'GetMainDomainName' => [
+        'DescribeLoanExecList' => [
             'methods' => [
                 'post',
                 'get',
@@ -617,33 +8273,7 @@
                     ],
                 ],
                 [
-                    'name' => 'InputString',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDomainNs' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'currentPage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -651,33 +8281,7 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'SetDomainDnssecStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'pageSize',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -685,41 +8289,7 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDomainDnssecInfo' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'batchNo',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -727,33 +8297,7 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'BindInstanceDomains' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'monitorObj',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -761,41 +8305,7 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DomainNames',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UnbindInstanceDomains' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'monitorStatus',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -803,150 +8313,16 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainNames',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'OperateBatchDomain' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
                     ],
                 ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DomainRecordInfo',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Type' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Ttl' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'Domain' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'Line' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'NewRr' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Rr' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Priority' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'NewType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'NewValue' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 1000,
-                    ],
-                ],
             ],
         ],
-        'AddDomainGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'GroupName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDomainGroups' => [
+        'DescribeSafTagList' => [
             'methods' => [
                 'post',
                 'get',
@@ -970,7 +8346,7 @@
                     ],
                 ],
                 [
-                    'name' => 'KeyWord',
+                    'name' => 'currentPage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -978,44 +8354,244 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'apiId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TagName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAppKeyPage' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventUploadPolicy' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSafStartSteps' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'language',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'aliyunServer',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'serverRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'deviceTypesStr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyEvent' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'memo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'bizVersion',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
-                        'format' => 'int64',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'maximum' => '110',
-                    ],
-                ],
-            ],
-        ],
-        'DeleteDomainGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1023,33 +8599,7 @@
                     ],
                 ],
                 [
-                    'name' => 'GroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateDomainGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'createType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1057,41 +8607,7 @@
                     ],
                 ],
                 [
-                    'name' => 'GroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'GroupName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'ChangeDomainGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'templateType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1099,15 +8615,15 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
+                    'name' => 'inputFieldsStr',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'GroupId',
+                    'name' => 'eventName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1116,7 +8632,7 @@
                 ],
             ],
         ],
-        'TransferDomain' => [
+        'DescribeApiNameList' => [
             'methods' => [
                 'post',
                 'get',
@@ -1140,148 +8656,16 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainNames',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TargetUserId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'RetrieveDomain' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeTransferDomains' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'TransferType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FromUserId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TargetUserId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
             ],
         ],
-        'DescribeDomainStatistics' => [
+        'DescribeAuthStatus' => [
             'methods' => [
                 'post',
                 'get',
@@ -1305,31 +8689,7 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainType',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1338,7 +8698,7 @@
                 ],
             ],
         ],
-        'DescribeDomainStatisticsSummary' => [
+        'DescribeSampleUploadPolicy' => [
             'methods' => [
                 'post',
                 'get',
@@ -1362,71 +8722,16 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SearchMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Threshold',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '0',
                     ],
                 ],
             ],
         ],
-        'DescribeRecordStatistics' => [
+        'DescribeSafOrder' => [
             'methods' => [
                 'post',
                 'get',
@@ -1450,282 +8755,25 @@
                     ],
                 ],
                 [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Rr',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DomainType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeRecordStatisticsSummary' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
+                    'name' => 'pageSize',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
-                        'format' => 'int64',
+                        'format' => 'int32',
                         'required' => false,
-                        'minimum' => '1',
                     ],
                 ],
                 [
-                    'name' => 'PageSize',
+                    'name' => 'currentPage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SearchMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Threshold',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDNSSLBSubDomains' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'UserClientIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'Rr',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDomainLogs' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'KeyWord',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'GroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
+                    'name' => 'startDate',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1741,7 +8789,15 @@
                     ],
                 ],
                 [
-                    'name' => 'Type',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'exactProductCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1750,7 +8806,7 @@
                 ],
             ],
         ],
-        'AddDomainRecord' => [
+        'DescribeApiLimit' => [
             'methods' => [
                 'post',
                 'get',
@@ -1763,11 +8819,7 @@
                 [
                     'AK' => [],
                 ],
-                [
-                    'BearerToken' => [],
-                ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'Lang',
@@ -1778,7 +8830,32 @@
                     ],
                 ],
                 [
-                    'name' => 'UserClientIp',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventLogPage' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1786,61 +8863,237 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'RR',
+                    'name' => 'currentPage',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => true,
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'Type',
+                    'name' => 'pageSize',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'string',
-                        'required' => true,
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'Value',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'TTL',
+                    'name' => 'beginTime',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '86400',
                     ],
                 ],
                 [
-                    'name' => 'Priority',
+                    'name' => 'endTime',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
-                        'minimum' => '0',
-                        'maximum' => '65535',
                     ],
                 ],
                 [
-                    'name' => 'Line',
+                    'name' => 'reqIdPBS',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'serviceABS',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'accountIdPRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'nickNamePRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'mobilePRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'emailPRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ipPRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'userNameTypeLRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'loginTypeLRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'registerIpPRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'loginResultARP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'failReasonLRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'userAgentPRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'referPRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'umidPDI',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'macPRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'deviceTypeLRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'operateSourceLRP',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'tagsLBS',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'scoreSBS',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'scoreEBS',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'condition1AL',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'condition2AL',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'condition3AL',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -1849,7 +9102,7 @@
                 ],
             ],
         ],
-        'DeleteDomainRecord' => [
+        'RemoveEvent' => [
             'methods' => [
                 'post',
                 'get',
@@ -1862,11 +9115,7 @@
                 [
                     'AK' => [],
                 ],
-                [
-                    'BearerToken' => [],
-                ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'Lang',
@@ -1877,172 +9126,40 @@
                     ],
                 ],
                 [
-                    'name' => 'UserClientIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecordId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteSubDomainRecords' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'UserClientIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RR',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateDomainRecord' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-                [
-                    'BearerToken' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'UserClientIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecordId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'RR',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Value',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'TTL',
+                    'name' => 'id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '86400',
                     ],
                 ],
                 [
-                    'name' => 'Priority',
+                    'name' => 'templateCode',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                        'type' => 'string',
                         'required' => false,
-                        'minimum' => '0',
-                        'maximum' => '65535',
                     ],
                 ],
                 [
-                    'name' => 'Line',
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2051,7 +9168,7 @@
                 ],
             ],
         ],
-        'UpdateDomainRecordRemark' => [
+        'DescribeDownloadUrl' => [
             'methods' => [
                 'post',
                 'get',
@@ -2065,255 +9182,12 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'UserClientIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecordId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'SetDomainRecordStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'UserClientIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecordId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDomainRecordInfo' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-                [
-                    'BearerToken' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'UserClientIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecordId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDomainRecords' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-                [
-                    'BearerToken' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '500',
-                    ],
-                ],
-                [
-                    'name' => 'KeyWord',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RRKeyWord',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TypeKeyWord',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ValueKeyWord',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'OrderBy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Direction',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SearchMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'GroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
@@ -2326,7 +9200,16 @@
                     ],
                 ],
                 [
-                    'name' => 'Line',
+                    'name' => 'TaskId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2334,7 +9217,7 @@
                     ],
                 ],
                 [
-                    'name' => 'Status',
+                    'name' => 'RegId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2343,7 +9226,7 @@
                 ],
             ],
         ],
-        'DescribeRecordLogs' => [
+        'DescribeRuleHit' => [
             'methods' => [
                 'post',
                 'get',
@@ -2357,7 +9240,6 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'Lang',
@@ -2368,7 +9250,7 @@
                     ],
                 ],
                 [
-                    'name' => 'UserClientIp',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2376,7 +9258,164 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
+                    'name' => 'sRequestId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleSnapshotId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'requestTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeUsedService' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeAuthEventNameList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateAppKey' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRequestHit' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sRequestId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2384,28 +9423,32 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                        'type' => 'string',
                         'required' => false,
-                        'minimum' => '1',
                     ],
                 ],
+            ],
+        ],
+        'DescribeAllEventNameAndCode' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
                 [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
+                    'AK' => [],
                 ],
+            ],
+            'parameters' => [
                 [
-                    'name' => 'KeyWord',
+                    'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2413,7 +9456,163 @@
                     ],
                 ],
                 [
-                    'name' => 'StartDate',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateEvent' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'memo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'inputFieldsStr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSafDeOrder' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'startDate',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2430,7 +9629,7 @@
                 ],
             ],
         ],
-        'DescribeSubDomainRecords' => [
+        'DescribeRuleSnapshot' => [
             'methods' => [
                 'post',
                 'get',
@@ -2444,7 +9643,6 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'Lang',
@@ -2455,7 +9653,7 @@
                     ],
                 ],
                 [
-                    'name' => 'UserClientIp',
+                    'name' => 'ruleId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2463,36 +9661,7 @@
                     ],
                 ],
                 [
-                    'name' => 'SubDomain',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '500',
-                    ],
-                ],
-                [
-                    'name' => 'Type',
+                    'name' => 'snapshotVersion',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2500,15 +9669,7 @@
                     ],
                 ],
                 [
-                    'name' => 'Line',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2517,7 +9678,7 @@
                 ],
             ],
         ],
-        'GetTxtRecordForVerify' => [
+        'DescribeServiceList' => [
             'methods' => [
                 'post',
                 'get',
@@ -2530,8 +9691,254 @@
                 [
                     'AK' => [],
                 ],
+            ],
+            'parameters' => [
                 [
-                    'BearerToken' => [],
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribePocTaskList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSafStartConfig' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventCount' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventPageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeFieldById' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
                 ],
             ],
             'deprecated' => false,
@@ -2545,7 +9952,41 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SwitchExpressionVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2553,7 +9994,33 @@
                     ],
                 ],
                 [
-                    'name' => 'Type',
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'status',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2562,7 +10029,196 @@
                 ],
             ],
         ],
-        'AddCustomLine' => [
+        'DescribeFieldPage' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'classify',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'source',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CheckUsageVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteNameList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ids',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeExistName' => [
             'methods' => [
                 'post',
                 'get',
@@ -2587,7 +10243,140 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeCustVariablePage' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'BindVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'defineId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2595,7 +10384,7 @@
                     ],
                 ],
                 [
-                    'name' => 'LineName',
+                    'name' => 'title',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2603,32 +10392,1973 @@
                     ],
                 ],
                 [
-                    'name' => 'IpSegment',
+                    'name' => 'params',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'apiType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'apiRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'outputField',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'outputType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'exceptionValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'paramsList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'defineIds',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteField' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeNameListLimit' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'OperateFavoriteVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'operate',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyField' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'enumData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'classify',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventVariableTemplateBind' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'inputs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteNameListData' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'variableId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateExpressionVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'outputs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'outlier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expression',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expressionTitle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expressionVariable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeVariableList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'value',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'refObjId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'typesStr',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeHasRuleNameByEventCode' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'excludeRuleId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeFieldList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'inputs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'SwitchField' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'source',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'SwitchVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dataVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CheckCustVariableLimit' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CheckExpressionVariableLimit' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CreateCustVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'velocityFC',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'historyValueType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'outputs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'timeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'twCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'velocityTW',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'subject',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'object',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateField' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'enumData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'classify',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'source',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteCustVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'variableId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dataVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteExpressionVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeCustVariableConfigList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'bizType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'timeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeCustVariableDetail' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventBaseInfoByEventCode' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventsVariableList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'scene',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'filterDTO',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeExpressionVariableDetail' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeExpressionVariableFunctionList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeExpressionVariablePage' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'value',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'outputs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeNameList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'variableId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'value',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeOperatorList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeParamByEventCodes' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'parma',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRuleCountByUserId' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeVariableBindDetail' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'defineId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeVariableDetail' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeVariableFee' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ids',
                     'in' => 'query',
                     'style' => 'repeatList',
                     'schema' => [
                         'type' => 'array',
                         'required' => true,
                         'items' => [
-                            'type' => 'object',
+                            'type' => 'integer',
+                            'format' => 'int64',
                             'required' => false,
-                            'properties' => [
-                                'EndIp' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'StartIp' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
                         ],
-                        'maxItems' => 500,
+                        'maxItems' => 201,
                     ],
                 ],
             ],
         ],
-        'DeleteCustomLines' => [
+        'DescribeVariableMarketList' => [
             'methods' => [
                 'post',
                 'get',
@@ -2642,7 +12372,6 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'Lang',
@@ -2653,33 +12382,7 @@
                     ],
                 ],
                 [
-                    'name' => 'LineIds',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCustomLine' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'scenesStr',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2687,75 +12390,65 @@
                     ],
                 ],
                 [
-                    'name' => 'LineName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'LineId',
+                    'name' => 'currentPage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'IpSegment',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
+                        'format' => 'int32',
                         'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'EndIp' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'StartIp' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 500,
                     ],
                 ],
-            ],
-        ],
-        'DescribeCustomLine' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
                 [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'LineId',
+                    'name' => 'pageSize',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
-                        'format' => 'int64',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'Lang',
+                    'name' => 'queryContent',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'chargingMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'source',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'paging',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2764,7 +12457,7 @@
                 ],
             ],
         ],
-        'DescribeCustomLines' => [
+        'DescribeVariableSceneList' => [
             'methods' => [
                 'post',
                 'get',
@@ -2778,7 +12471,6 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'Lang',
@@ -2789,51 +12481,7 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeSupportLines' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'currentPage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2841,7 +12489,7 @@
                     ],
                 ],
                 [
-                    'name' => 'UserClientIp',
+                    'name' => 'pageSize',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2849,49 +12497,7 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'SetDNSSLBStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'UserClientIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SubDomain',
+                    'name' => 'bizType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2899,15 +12505,368 @@
                     ],
                 ],
                 [
-                    'name' => 'Open',
+                    'name' => 'configKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'paging',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ImportNameList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
+                    'name' => 'variableId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'importType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'data',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'nameListType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'memo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyCustVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'condition',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'outputs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ModifyExpressionVariable' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'dataVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'outputs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'outlier',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expression',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expressionTitle',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'expressionVariable',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreatePocEv' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tab',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2923,7 +12882,63 @@
                     ],
                 ],
                 [
-                    'name' => 'Line',
+                    'name' => 'TaskName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'FileType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DateFormat',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2932,444 +12947,7 @@
                 ],
             ],
         ],
-        'UpdateDNSSLBWeight' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'UserClientIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecordId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Weight',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeBatchResultCount' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TaskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'BatchType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeBatchResultDetail' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TaskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'BatchType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeTags' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListTagResources' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NextToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Tag',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 21,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceId',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 51,
-                    ],
-                ],
-            ],
-        ],
-        'TagResources' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Tag',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 21,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceId',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 51,
-                    ],
-                ],
-            ],
-        ],
-        'UntagResources' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'All',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceId',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 51,
-                    ],
-                ],
-                [
-                    'name' => 'TagKey',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 21,
-                    ],
-                ],
-            ],
-        ],
-        'MoveDomainResourceGroup' => [
+        'DescribeListPoc' => [
             'methods' => [
                 'post',
                 'get',
@@ -3386,1658 +12964,6 @@
             'parameters' => [
                 [
                     'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NewResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'AddDnsCacheDomain' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-                [
-                    'BearerToken' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CacheTtlMin',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                        'minimum' => '30',
-                        'maximum' => '86400',
-                    ],
-                ],
-                [
-                    'name' => 'CacheTtlMax',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                        'minimum' => '30',
-                        'maximum' => '86400',
-                    ],
-                ],
-                [
-                    'name' => 'SourceProtocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'SourceEdns',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SourceDnsServer',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Host' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'Port' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateDnsCacheDomain' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-                [
-                    'BearerToken' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CacheTtlMin',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '30',
-                        'maximum' => '86400',
-                    ],
-                ],
-                [
-                    'name' => 'CacheTtlMax',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '30',
-                        'maximum' => '86400',
-                    ],
-                ],
-                [
-                    'name' => 'SourceProtocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SourceEdns',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SourceDnsServer',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Host' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Port' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateDnsCacheDomainRemark' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-                [
-                    'BearerToken' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteDnsCacheDomain' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-                [
-                    'BearerToken' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsCacheDomains' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-                [
-                    'BearerToken' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-            ],
-        ],
-        'CreateCloudGtmInstanceConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ScheduleZoneMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ScheduleZoneName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ScheduleHostname',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ScheduleRrType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Ttl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmInstanceName' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCloudGtmInstanceConfigFullInfo' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListCloudGtmInstanceConfigs' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ScheduleZoneName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ScheduleDomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteCloudGtmInstanceConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmInstanceConfigBasic' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ScheduleZoneName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ScheduleHostname',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Ttl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmInstanceConfigLbStrategy' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolLbStrategy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SequenceLbStrategyMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmInstanceConfigEnableStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmInstanceConfigRemark' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListCloudGtmInstances' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'SearchCloudGtmInstances' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'SearchCloudGtmInstanceConfigs' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ScheduleZoneName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ScheduleDomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HealthStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AvailableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCloudGtmSummary' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateCloudGtmAddress' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Address',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'AttributeInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'AvailableMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ManualAvailableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HealthJudgement',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'HealthTasks',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Port' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'TemplateId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmAddress' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Address',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AttributeInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HealthJudgement',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HealthTasks',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'deprecated' => false,
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Port' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'TemplateId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'minItems' => 0,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCloudGtmAddress' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteCloudGtmAddress' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmAddressRemark' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListCloudGtmAddresses' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5053,201 +12979,25 @@
                     ],
                 ],
                 [
-                    'name' => 'Address',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HealthStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorTemplateId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
                     'name' => 'PageSize',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'AddressId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'SearchCloudGtmAddresses' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
+                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'Names',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'NameSearchCondition',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AvailableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Address',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorTemplateName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HealthStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remarks',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'RemarkSearchCondition',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
+                    'name' => 'CurrentPage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
+                        'format' => 'int64',
+                        'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'AddressId',
+                    'name' => 'RegId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5256,7 +13006,7 @@
                 ],
             ],
         ],
-        'DescribeCloudGtmAddressReference' => [
+        'DescribeTagList' => [
             'methods' => [
                 'post',
                 'get',
@@ -5270,10 +13020,9 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'AcceptLanguage',
+                    'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5281,7 +13030,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ClientToken',
+                    'name' => 'RegId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5289,115 +13038,7 @@
                     ],
                 ],
                 [
-                    'name' => 'AddressId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmAddressEnableStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmAddressManualAvailableStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'AvailableMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ManualAvailableStatus',
+                    'name' => 'Id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5406,1322 +13047,7 @@
                 ],
             ],
         ],
-        'CreateCloudGtmAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HealthJudgement',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListCloudGtmAddressPools' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCloudGtmAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteCloudGtmAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'SearchCloudGtmAddressPools' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HealthStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AvailableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ReplaceCloudGtmInstanceConfigAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPools',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'AddressPoolId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'WeightValue' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'SerialNumber' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'RequestSource' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'maxItems' => 100,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'ConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmAddressPoolEnableStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EnableStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmAddressPoolRemark' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmAddressPoolLbStrategy' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressLbStrategy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SequenceLbStrategyMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmAddressPoolBasicConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'HealthJudgement',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ReplaceCloudGtmAddressPoolAddress' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Addresses',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'AddressId' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'WeightValue' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'SerialNumber' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'RequestSource' => [
-                                    'type' => 'array',
-                                    'required' => false,
-                                    'items' => [
-                                        'type' => 'string',
-                                        'required' => false,
-                                    ],
-                                    'maxItems' => 100,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCloudGtmAddressPoolReference' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddressPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'SearchCloudGtmMonitorTemplates' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IpVersion',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Protocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreateCloudGtmMonitorTemplate' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'IpVersion',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Protocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Interval',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Timeout',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EvaluationCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'FailureRate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ExtendInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IspCityNodes',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'CityCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IspCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DeleteCloudGtmMonitorTemplate' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TemplateId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmMonitorTemplate' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TemplateId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Interval',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Timeout',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EvaluationCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FailureRate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ExtendInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IspCityNodes',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'CityCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IspCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListCloudGtmMonitorTemplates' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IpVersion',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Protocol',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCloudGtmMonitorTemplate' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TemplateId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmMonitorTemplateRemark' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TemplateId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ListCloudGtmMonitorNodes' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCloudGtmSystemLines' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
-        'ListCloudGtmAlertLogs' => [
+        'FileUpload' => [
             'methods' => [
                 'post',
                 'get',
@@ -6746,7 +13072,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ActionType',
+                    'name' => 'Tab',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -6754,7 +13080,7 @@
                     ],
                 ],
                 [
-                    'name' => 'EntityType',
+                    'name' => 'FileName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -6762,7 +13088,32 @@
                     ],
                 ],
                 [
-                    'name' => 'Keyword',
+                    'name' => 'FileUrl',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'PermissionCheck' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -6770,7 +13121,205 @@
                     ],
                 ],
                 [
-                    'name' => 'StartTimestamp',
+                    'name' => 'RegId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SampleFileDownload' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tab',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'TaskNameByUserId' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TaskName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeNameListVariablePageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'nameListType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'value',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeNameListPageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'variableId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -6779,7 +13328,117 @@
                     ],
                 ],
                 [
-                    'name' => 'EndTimestamp',
+                    'name' => 'value',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'updateBeginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'updateEndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeNameListTypeList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeNameListDownloadUrl' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'variableId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -6787,44 +13446,474 @@
                         'required' => true,
                     ],
                 ],
+            ],
+        ],
+        'DescribePrivateStack' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
                 [
-                    'name' => 'PageNumber',
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSceneEventPageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'nameOrCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSceneAllEventNameCodeList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSceneRulePageList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'currentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ruleAuthType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSampleApi' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SampleBatchType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DataType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServiceList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DataValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeOperatorListByScene' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'scene',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeEventVariableTemplateList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'templateCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'inputs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeInputFeildCountByEventCode' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'createType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'eventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeTaskList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CurrentPage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [
                     'name' => 'PageSize',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
-            ],
-        ],
-        'DescribeCloudGtmInstanceConfigAlert' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
                 [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -6832,445 +13921,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmGlobalAlert' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AlertGroup',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'AlertConfig',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'NoticeType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'SmsNotice' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'EmailNotice' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'DingtalkNotice' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'DescribeCloudGtmGlobalAlert' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateCloudGtmInstanceConfigAlert' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AlertMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AlertGroup',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'AlertConfig',
-                    'in' => 'query',
-                    'style' => 'json',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'NoticeType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'SmsNotice' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'EmailNotice' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'DingtalkNotice' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'ListCloudGtmAvailableAlertGroups' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AcceptLanguage',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'SetGtmAccessMode' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'AccessMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateDnsGtmInstanceGlobalConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Ttl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '9999999',
-                    ],
-                ],
-                [
-                    'name' => 'PublicCnameMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PublicUserDomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PublicZoneName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AlertGroup',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CnameType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AlertConfig',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'SmsNotice' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'NoticeType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'EmailNotice' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                                'DingtalkNotice' => [
-                                    'type' => 'boolean',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'PublicRr',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ForceUpdate',
+                    'name' => 'IsPage',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
@@ -7279,7 +13930,7 @@
                 ],
             ],
         ],
-        'UpdateGtmInstanceGlobalConfig' => [
+        'DescribePocOssToken' => [
             'methods' => [
                 'post',
                 'get',
@@ -7303,40 +13954,31 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
                     ],
                 ],
+            ],
+        ],
+        'DescribeTagsList' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
                 [
-                    'name' => 'InstanceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
+                    'AK' => [],
                 ],
+            ],
+            'parameters' => [
                 [
-                    'name' => 'Ttl',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'UserDomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'LbaStrategy',
+                    'name' => 'Lang',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7344,23 +13986,7 @@
                     ],
                 ],
                 [
-                    'name' => 'AlertGroup',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CnameMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'CnameCustomDomainName',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7369,7 +13995,7 @@
                 ],
             ],
         ],
-        'UpdateDnsGtmAccessStrategy' => [
+        'DescribeTemplateCount' => [
             'methods' => [
                 'post',
                 'get',
@@ -7383,7 +14009,6 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
             'parameters' => [
                 [
                     'name' => 'Lang',
@@ -7394,173 +14019,7 @@
                     ],
                 ],
                 [
-                    'name' => 'StrategyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Lines',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DefaultAddrPoolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DefaultLbaStrategy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DefaultMinAvailableAddrNum',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                        'minimum' => '1',
-                        'maximum' => '400',
-                    ],
-                ],
-                [
-                    'name' => 'DefaultMaxReturnAddrNum',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '8',
-                    ],
-                ],
-                [
-                    'name' => 'DefaultLatencyOptimization',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FailoverAddrPoolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FailoverLbaStrategy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FailoverMinAvailableAddrNum',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '400',
-                    ],
-                ],
-                [
-                    'name' => 'FailoverMaxReturnAddrNum',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '8',
-                    ],
-                ],
-                [
-                    'name' => 'FailoverLatencyOptimization',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DefaultAddrPool',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'LbaWeight' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'Id' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'FailoverAddrPool',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'LbaWeight' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'Id' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'AccessMode',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7569,7 +14028,7 @@
                 ],
             ],
         ],
-        'DescribeDnsGtmAddrAttributeInfo' => [
+        'CreateModel' => [
             'methods' => [
                 'post',
                 'get',
@@ -7583,10 +14042,165 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ModelName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ModelScene',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FilePath',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Counts',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ParameterNum',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'FileMD5',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'BucId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'UserLocalFileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeRiskTagsLineChart' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
             'parameters' => [
                 [
                     'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EventCodes',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BeginTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeInitDig' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7601,77 +14215,9 @@
                         'required' => true,
                     ],
                 ],
-                [
-                    'name' => 'Addrs',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
             ],
         ],
-        'DescribeDnsGtmAvailableAlertGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmInstance' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmInstance' => [
+        'CompareCopyRuleVariable' => [
             'methods' => [
                 'post',
                 'get',
@@ -7695,41 +14241,7 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NeedDetailAttributes',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmInstances' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'SourceRuleId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7737,29 +14249,7 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '9999999',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'Keyword',
+                    'name' => 'SourceRuleIds',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7767,7 +14257,23 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceGroupId',
+                    'name' => 'TargetEventCode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RegId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CreateType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7776,7 +14282,7 @@
                 ],
             ],
         ],
-        'DescribeGtmInstances' => [
+        'DeepCopyRule' => [
             'methods' => [
                 'post',
                 'get',
@@ -7800,25 +14306,7 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Keyword',
+                    'name' => 'SourceRuleId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7826,7 +14314,7 @@
                     ],
                 ],
                 [
-                    'name' => 'ResourceGroupId',
+                    'name' => 'SourceRuleIds',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7834,33 +14322,7 @@
                     ],
                 ],
                 [
-                    'name' => 'NeedDetailAttributes',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'boolean',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmInstanceStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'TargetEventCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7868,33 +14330,7 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmInstanceStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'TargetEventName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7902,33 +14338,7 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmLogs' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'ExpressionVariableInfo',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7936,15 +14346,7 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Keyword',
+                    'name' => 'QueryExpressionVariableInfo',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7952,68 +14354,31 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
+                    'name' => 'CustWriteInfo',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
+                        'type' => 'string',
                         'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '9999999',
                     ],
                 ],
                 [
-                    'name' => 'PageSize',
+                    'name' => 'CustInsertInfo',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
+                        'type' => 'string',
                         'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
                     ],
                 ],
                 [
-                    'name' => 'StartTimestamp',
+                    'name' => 'CreateType',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                        'type' => 'string',
                         'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '999999999999999',
                     ],
                 ],
                 [
-                    'name' => 'EndTimestamp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '999999999999999',
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmAvailableAlertGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
+                    'name' => 'RegId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -8022,7 +14387,7 @@
                 ],
             ],
         ],
-        'DescribeGtmLogs' => [
+        'CheckCopyRuleVariable' => [
             'methods' => [
                 'post',
                 'get',
@@ -8046,7 +14411,7 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'SourceRuleId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -8054,7 +14419,7 @@
                     ],
                 ],
                 [
-                    'name' => 'Keyword',
+                    'name' => 'SourceRuleIds',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -8062,47 +14427,32 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
+                    'name' => 'TargetEventCode',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'StartTimestamp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'EndTimestamp',
+                    'name' => 'RegId',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CreateType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
             ],
         ],
-        'DescribeGtmInstanceSystemCname' => [
+        'AddSampleDataByCsv' => [
             'methods' => [
                 'post',
                 'get',
@@ -8126,22 +14476,258 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sampleBatchUuid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ossFileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
         ],
-        'DescribeDnsGtmInstanceSystemCname' => [
+        'BatchDeleteSampleData' => [
             'methods' => [
                 'post',
                 'get',
             ],
             'schemes' => [
                 'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'uuids',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AddSampleDataByText' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sampleBatchUuid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dataValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DescribeSampleBatchOssPolicy' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'batchName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateSampleBatch' => [
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'Lang',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'regId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'batchName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'sampleBatchType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dataType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'serviceList',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ossFileName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'dataValue',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'description',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteSelfBindVariable' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
                 'https',
             ],
             'security' => [
@@ -8160,3233 +14746,15 @@
                     ],
                 ],
                 [
-                    'name' => 'InstanceId',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CopyGtmConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SourceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'TargetId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CopyType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'MoveGtmResourceGroup' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'NewResourceGroupId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'AddGtmAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MinAvailableAddrNum',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ProtocolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Interval',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EvaluationCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Timeout',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorExtendInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Addr',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'LbaWeight' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'Mode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 50,
-                    ],
-                ],
-                [
-                    'name' => 'IspCityNode',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'CityCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IspCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 20,
-                    ],
-                ],
-            ],
-        ],
-        'AddDnsGtmAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'LbaStrategy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ProtocolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Interval',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '9999999',
-                    ],
-                ],
-                [
-                    'name' => 'EvaluationCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '9999999',
-                    ],
-                ],
-                [
-                    'name' => 'Timeout',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '9999999',
-                    ],
-                ],
-                [
-                    'name' => 'MonitorExtendInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Addr',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'AttributeInfo' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'Remark' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'LbaWeight' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'Addr' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'Mode' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 50,
-                    ],
-                ],
-                [
-                    'name' => 'IspCityNode',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'CityCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IspCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 20,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteDnsGtmAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteGtmAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateDnsGtmAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'LbaStrategy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Addr',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'AttributeInfo' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'Remark' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'LbaWeight' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'Addr' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                                'Mode' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 50,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateGtmAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MinAvailableAddrNum',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Addr',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'Value' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'LbaWeight' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'Mode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 50,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmInstanceAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmInstanceAddressPools' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '9999999',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmAddressPoolAvailableConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmInstanceAddressPool' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmInstanceAddressPools' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-            ],
-        ],
-        'AddDnsGtmMonitor' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ProtocolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Interval',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                        'minimum' => '15',
-                        'maximum' => '60',
-                    ],
-                ],
-                [
-                    'name' => 'EvaluationCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                        'minimum' => '1',
-                        'maximum' => '3',
-                    ],
-                ],
-                [
-                    'name' => 'Timeout',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                        'minimum' => '1000',
-                        'maximum' => '10000',
-                    ],
-                ],
-                [
-                    'name' => 'MonitorExtendInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'IspCityNode',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'CityCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IspCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 50,
-                    ],
-                ],
-            ],
-        ],
-        'AddGtmMonitor' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ProtocolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Interval',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EvaluationCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Timeout',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorExtendInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'IspCityNode',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'CityCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IspCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 20,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateDnsGtmMonitor' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ProtocolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Interval',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '15',
-                        'maximum' => '60',
-                    ],
-                ],
-                [
-                    'name' => 'EvaluationCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '3',
-                    ],
-                ],
-                [
-                    'name' => 'Timeout',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1000',
-                        'maximum' => '10000',
-                    ],
-                ],
-                [
-                    'name' => 'MonitorExtendInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'IspCityNode',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'CityCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IspCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 50,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateGtmMonitor' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'ProtocolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Interval',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EvaluationCount',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Timeout',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorExtendInfo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'IspCityNode',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'CityCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'IspCode' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 20,
-                    ],
-                ],
-            ],
-        ],
-        'SetDnsGtmMonitorStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'SetGtmMonitorStatus' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Status',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmMonitorAvailableConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmMonitorConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmMonitorAvailableConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmMonitorConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'MonitorConfigId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'AddDnsGtmAccessStrategy' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Lines',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DefaultAddrPoolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DefaultLbaStrategy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DefaultMinAvailableAddrNum',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => true,
-                        'minimum' => '1',
-                        'maximum' => '400',
-                    ],
-                ],
-                [
-                    'name' => 'DefaultMaxReturnAddrNum',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '8',
-                    ],
-                ],
-                [
-                    'name' => 'DefaultLatencyOptimization',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FailoverAddrPoolType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FailoverLbaStrategy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FailoverMinAvailableAddrNum',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '400',
-                    ],
-                ],
-                [
-                    'name' => 'FailoverMaxReturnAddrNum',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '8',
-                    ],
-                ],
-                [
-                    'name' => 'FailoverLatencyOptimization',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DefaultAddrPool',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'LbaWeight' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'Id' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-                [
-                    'name' => 'FailoverAddrPool',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => false,
-                        'items' => [
-                            'type' => 'object',
-                            'required' => false,
-                            'properties' => [
-                                'LbaWeight' => [
-                                    'type' => 'integer',
-                                    'format' => 'int32',
-                                    'required' => false,
-                                ],
-                                'Id' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                        ],
-                        'maxItems' => 100,
-                    ],
-                ],
-            ],
-        ],
-        'AddGtmAccessStrategy' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DefaultAddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'FailoverAddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'AccessLines',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteDnsGtmAccessStrategy' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteGtmAccessStrategy' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateGtmAccessStrategy' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DefaultAddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FailoverAddrPoolId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AccessLines',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'SetDnsGtmAccessMode' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'AccessMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmAccessStrategies' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'StrategyMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmAccessStrategy' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDnsGtmAccessStrategyAvailableConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmAccessStrategies' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmAccessStrategy' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmAccessStrategyAvailableConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'SwitchDnsGtmInstanceStrategyMode' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StrategyMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'AddGtmRecoveryPlan' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FaultAddrPool',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DeleteGtmRecoveryPlan' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecoveryPlanId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'UpdateGtmRecoveryPlan' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecoveryPlanId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'FaultAddrPool',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmRecoveryPlan' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecoveryPlanId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmRecoveryPlanAvailableConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeGtmRecoveryPlans' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ExecuteGtmRecoveryPlan' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecoveryPlanId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'PreviewGtmRecoveryPlan' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecoveryPlanId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'RollbackGtmRecoveryPlan' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'RecoveryPlanId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDohAccountStatistics' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDohDomainStatistics' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDohDomainStatisticsSummary' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDohSubDomainStatistics' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SubDomain',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDohSubDomainStatisticsSummary' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SubDomain',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDohUserInfo' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'CreatePdnsAppKey' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Remark',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'RemovePdnsAppKey' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AppKeyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'DescribePdnsAppKey' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'AppKeyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AuthCode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'DescribePdnsAppKeys' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ValidateDnsGtmCnameRrCanUse' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CnameRr',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CnameType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CnameMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'CnameZone',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'CreatePdnsUdpIpSegment' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Ip',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Name',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IpToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'DescribePdnsUdpIpSegments' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'PageSize',
+                    'name' => 'id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'integer',
@@ -11396,46 +14764,13 @@
                 ],
             ],
         ],
-        'RemovePdnsUdpIpSegment' => [
+        'DeleteEventField' => [
+            'path' => '',
             'methods' => [
                 'get',
                 'post',
             ],
             'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Ip',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribePdnsThreatStatistics' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
                 'https',
             ],
             'security' => [
@@ -11454,1295 +14789,23 @@
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
+                    'name' => 'eventCode',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'SubDomain',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'ThreatType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'ThreatLevel',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'OrderBy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Direction',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'ThreatSourceIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribePdnsUserInfo' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribePdnsRequestStatistic' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SubDomain',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'ValidatePdnsUdpIpSegment' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Ip',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'IpToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'DescribePdnsThreatLogs' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ThreatType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'ThreatLevel',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'ThreatSourceIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribePdnsRequestStatistics' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SubDomain',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribePdnsOperateLogs' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ActionType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ResourceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'ResumePdnsService' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ServiceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'DescribePdnsAccountSummary' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'PausePdnsService' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ServiceType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'DescribePdnsThreatStatistic' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'ThreatSourceIp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'UpdateAppKeyState' => [
-            'methods' => [
-                'get',
-                'post',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AppKeyId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'State',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'UpdateIspFlushCacheInstanceConfig' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'InstanceName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'SubmitIspFlushCacheTask' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'Isp',
-                    'in' => 'query',
-                    'style' => 'repeatList',
-                    'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => true,
-                        ],
-                        'maxItems' => 11,
-                    ],
-                ],
-                [
-                    'name' => 'ClientToken',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeIspFlushCacheRemainQuota' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeIspFlushCacheInstances' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '9999999',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'Keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Isp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Type',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'OrderBy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Direction',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'DescribeIspFlushCacheTask' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'TaskId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                        'pattern' => '^\\d+$',
-                    ],
-                ],
-            ],
-        ],
-        'DescribeIspFlushCacheTasks' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '9999999',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                        'maximum' => '100',
-                    ],
-                ],
-                [
-                    'name' => 'Isp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'OrderBy',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'Direction',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                [
-                    'name' => 'InstanceId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-            ],
-        ],
-        'DescribeRecordResolveStatisticsSummary' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'DomainName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DomainType',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SearchMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Direction',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Threshold',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeDomainResolveStatisticsSummary' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'Keyword',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SearchMode',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Direction',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Threshold',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StartDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EndDate',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                        'minimum' => '1',
-                    ],
-                ],
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-            ],
-        ],
-        'DescribeInternetDnsLogs' => [
-            'methods' => [
-                'post',
-                'get',
-            ],
-            'schemes' => [
-                'http',
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'parameters' => [
-                [
-                    'name' => 'Lang',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'StartTimestamp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'EndTimestamp',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'Module',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'QueryCondition',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'DomainName',
+                    'name' => 'fieldName',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'AccountId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
                         'required' => false,
                     ],
                 ],
                 [
-                    'name' => 'RecursionProtocolType',
+                    'name' => 'regId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -12754,220 +14817,24 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'riskcontrol-share.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hangzhou',
-            'endpoint' => 'alidns.cn-hangzhou.aliyuncs.com',
+            'endpoint' => 'riskcontrol-share.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',
-            'endpoint' => 'alidns.ap-southeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'alidns.ap-northeast-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-northeast-2-pop',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'alidns.ap-south-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-2',
-            'endpoint' => 'alidns.ap-southeast-2.aliyuncs.com',
+            'endpoint' => 'riskcontrol-share.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',
-            'endpoint' => 'alidns.ap-southeast-3.aliyuncs.com',
+            'endpoint' => 'riskcontrol-share.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-5',
-            'endpoint' => 'alidns.ap-southeast-5.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'alidns.cn-beijing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-finance-pop',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-gov-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-nu16-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'alidns.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-edge-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-fujian',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-haidian-cm12-c01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-bj-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-prod-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-2',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-3',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-test-306',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'alidns.cn-hongkong.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong-finance-pop',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'alidns.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote-nebula-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-north-2-gov-1',
-            'endpoint' => 'alidns.cn-north-2-gov-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao-nebula',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'alidns.cn-shanghai.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-et15-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-et2-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-inner',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-internal-test-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'alidns.cn-shenzhen.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-inner',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-st4-d01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-su18-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wuhan',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-yushanfang',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangbei',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangbei-na61-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'alidns.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou-na62-a01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhengzhou-nebula-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'alidns.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'alidns.eu-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1-oxs',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'me-east-1',
-            'endpoint' => 'alidns.me-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'rus-west-1-pop',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-east-1',
-            'endpoint' => 'alidns.us-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'alidns.us-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'public',
-            'endpoint' => 'alidns.aliyuncs.com',
+            'endpoint' => 'riskcontrol-share.ap-southeast-1.aliyuncs.com',
         ],
     ],
 ];

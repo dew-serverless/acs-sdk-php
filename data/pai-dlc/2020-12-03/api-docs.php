@@ -1847,6 +1847,10 @@
                                             'type' => 'string',
                                             'required' => false,
                                         ],
+                                        'EnableCache' => [
+                                            'type' => 'boolean',
+                                            'required' => false,
+                                        ],
                                     ],
                                 ],
                             ],

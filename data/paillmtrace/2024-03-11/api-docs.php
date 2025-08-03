@@ -480,6 +480,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SortBy',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SortOrder',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'StopOnlineEvalTask' => [

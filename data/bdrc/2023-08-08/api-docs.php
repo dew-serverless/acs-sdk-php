@@ -931,6 +931,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ResourceRegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeCheckDetails' => [

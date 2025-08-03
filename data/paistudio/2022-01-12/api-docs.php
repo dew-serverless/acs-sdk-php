@@ -2599,6 +2599,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'HasResource',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetResourceGroupRequest' => [
@@ -5204,6 +5212,14 @@
                 ],
                 [
                     'name' => 'WorkspaceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'HasResource',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

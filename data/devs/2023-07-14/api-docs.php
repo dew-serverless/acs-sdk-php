@@ -394,99 +394,117 @@
             'DeployCustomContainerInput' => [
                 'type' => 'object',
                 'properties' => [
-                    'role' => [
+                    'memorySize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'description' => [
                         'type' => 'string',
-                        'required' => true,
                     ],
-                    'modelConfig' => [
+                    'accountID' => [
+                        'type' => 'string',
+                    ],
+                    'vpcConfig' => [
                         'type' => 'object',
                         'properties' => [
-                            'srcModelScopeModelID' => [
+                            'securityGroupId' => [
                                 'type' => 'string',
                             ],
-                            'prefix' => [
-                                'type' => 'string',
-                            ],
-                            'workingDir' => [
-                                'type' => 'string',
-                            ],
-                            'srcOssBucket' => [
-                                'type' => 'string',
-                            ],
-                            'withPPU' => [
-                                'type' => 'boolean',
-                            ],
-                            'skipDownload' => [
-                                'type' => 'boolean',
-                            ],
-                            'srcModelScopeModelRevision' => [
-                                'type' => 'string',
-                            ],
-                            'framework' => [
-                                'type' => 'string',
-                            ],
-                            'sourceType' => [
-                                'type' => 'string',
-                            ],
-                            'srcOssRegion' => [
-                                'type' => 'string',
-                            ],
-                            'srcModelScopeToken' => [
-                                'type' => 'string',
-                            ],
-                            'multiModelConfig' => [
-                                'type' => 'array',
-                                'items' => [
-                                    '$ref' => '#/components/schemas/ModelConfig',
-                                ],
-                            ],
-                            'syncStrategy' => [
-                                'type' => 'string',
-                            ],
-                            'srcOssPath' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                    'nasConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'groupId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                            ],
-                            'mountPoints' => [
+                            'vSwitchIds' => [
                                 'type' => 'array',
                                 'items' => [
                                     'type' => 'string',
                                 ],
                             ],
-                            'userId' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
+                            'vpcId' => [
+                                'type' => 'string',
                             ],
                         ],
                     ],
-                    'description' => [
+                    'projectName' => [
                         'type' => 'string',
-                    ],
-                    'concurrencyConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'reservedConcurrency' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                        ],
                     ],
                     'timeout' => [
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
+                    'reportStatusURL' => [
+                        'type' => 'string',
+                    ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
+                    ],
                     'originalName' => [
                         'type' => 'string',
                     ],
-                    'accountID' => [
+                    'provisionConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'scheduledActions' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'scheduleExpression' => [
+                                            'type' => 'string',
+                                        ],
+                                        'name' => [
+                                            'type' => 'string',
+                                        ],
+                                        'timeZone' => [
+                                            'type' => 'string',
+                                        ],
+                                        'startTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endTime' => [
+                                            'type' => 'string',
+                                        ],
+                                        'target' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'alwaysAllocateGPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'target' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'role' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                    'gpuConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'gpuMemorySize' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                            'gpuType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'traceId' => [
+                        'type' => 'string',
+                    ],
+                    'region' => [
                         'type' => 'string',
                     ],
                     'httpTrigger' => [
@@ -520,39 +538,26 @@
                             ],
                         ],
                     ],
-                    'diskSize' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'ossMountConfig' => [
+                    'nasConfig' => [
                         'type' => 'object',
                         'properties' => [
+                            'groupId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
                             'mountPoints' => [
                                 'type' => 'array',
                                 'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'bucketName' => [
-                                            'type' => 'string',
-                                        ],
-                                        'endpoint' => [
-                                            'type' => 'string',
-                                        ],
-                                        'bucketPath' => [
-                                            'type' => 'string',
-                                        ],
-                                        'mountDir' => [
-                                            'type' => 'string',
-                                        ],
-                                        'readOnly' => [
-                                            'type' => 'boolean',
-                                        ],
-                                    ],
+                                    'type' => 'string',
                                 ],
+                            ],
+                            'userId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
                             ],
                         ],
                     ],
-                    'traceId' => [
+                    'envName' => [
                         'type' => 'string',
                     ],
                     'logConfig' => [
@@ -575,21 +580,8 @@
                             ],
                         ],
                     ],
-                    'gpuConfig' => [
+                    'environmentVariables' => [
                         'type' => 'object',
-                        'properties' => [
-                            'gpuMemorySize' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
-                            ],
-                            'gpuType' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                    'cpu' => [
-                        'type' => 'number',
-                        'format' => 'float',
                     ],
                     'customContainerConfig' => [
                         'type' => 'object',
@@ -679,6 +671,93 @@
                             ],
                         ],
                     ],
+                    'modelConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'srcModelScopeModelID' => [
+                                'type' => 'string',
+                            ],
+                            'prefix' => [
+                                'type' => 'string',
+                            ],
+                            'workingDir' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssBucket' => [
+                                'type' => 'string',
+                            ],
+                            'withPPU' => [
+                                'type' => 'boolean',
+                            ],
+                            'skipDownload' => [
+                                'type' => 'boolean',
+                            ],
+                            'srcModelScopeModelRevision' => [
+                                'type' => 'string',
+                            ],
+                            'framework' => [
+                                'type' => 'string',
+                            ],
+                            'sourceType' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssRegion' => [
+                                'type' => 'string',
+                            ],
+                            'srcModelScopeToken' => [
+                                'type' => 'string',
+                            ],
+                            'multiModelConfig' => [
+                                'type' => 'array',
+                                'items' => [
+                                    '$ref' => '#/components/schemas/ModelConfig',
+                                ],
+                            ],
+                            'syncStrategy' => [
+                                'type' => 'string',
+                            ],
+                            'srcOssPath' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'concurrencyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'reservedConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'ossMountConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'bucketName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endpoint' => [
+                                            'type' => 'string',
+                                        ],
+                                        'bucketPath' => [
+                                            'type' => 'string',
+                                        ],
+                                        'mountDir' => [
+                                            'type' => 'string',
+                                        ],
+                                        'readOnly' => [
+                                            'type' => 'boolean',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                     'asyncInvokeConfig' => [
                         'type' => 'object',
                         'properties' => [
@@ -716,84 +795,16 @@
                             ],
                         ],
                     ],
-                    'reportStatusURL' => [
-                        'type' => 'string',
-                    ],
-                    'provisionConfig' => [
+                    'featureGates' => [
                         'type' => 'object',
                         'properties' => [
-                            'scheduledActions' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'scheduleExpression' => [
-                                            'type' => 'string',
-                                        ],
-                                        'name' => [
-                                            'type' => 'string',
-                                        ],
-                                        'timeZone' => [
-                                            'type' => 'string',
-                                        ],
-                                        'startTime' => [
-                                            'type' => 'string',
-                                        ],
-                                        'endTime' => [
-                                            'type' => 'string',
-                                        ],
-                                        'target' => [
-                                            'type' => 'integer',
-                                            'format' => 'int32',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'alwaysAllocateGPU' => [
+                            'asyncProvisionCheck' => [
                                 'type' => 'boolean',
                             ],
-                            'target' => [
-                                'type' => 'integer',
-                                'format' => 'int64',
+                            'disableRollbackOnProvisionFailure' => [
+                                'type' => 'boolean',
                             ],
                         ],
-                    ],
-                    'memorySize' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'envName' => [
-                        'type' => 'string',
-                    ],
-                    'environmentVariables' => [
-                        'type' => 'object',
-                    ],
-                    'vpcConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'securityGroupId' => [
-                                'type' => 'string',
-                            ],
-                            'vSwitchIds' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                            'vpcId' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                    'name' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                    'projectName' => [
-                        'type' => 'string',
-                    ],
-                    'region' => [
-                        'type' => 'string',
                     ],
                 ],
             ],
@@ -882,9 +893,35 @@
             'DeployHuggingFaceModelInput' => [
                 'type' => 'object',
                 'properties' => [
+                    'traceId' => [
+                        'type' => 'string',
+                    ],
+                    'logConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'enableRequestMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'enableInstanceMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'logBeginRule' => [
+                                'type' => 'string',
+                            ],
+                            'project' => [
+                                'type' => 'string',
+                            ],
+                            'logstore' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
                     'role' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                    'imageName' => [
+                        'type' => 'string',
                     ],
                     'modelConfig' => [
                         'type' => 'object',
@@ -947,6 +984,18 @@
                             ],
                         ],
                     ],
+                    'gpuConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'gpuMemorySize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'gpuType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
                     'nasConfig' => [
                         'type' => 'object',
                         'properties' => [
@@ -969,14 +1018,9 @@
                     'description' => [
                         'type' => 'string',
                     ],
-                    'concurrencyConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'reservedConcurrency' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                        ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
                     ],
                     'timeout' => [
                         'type' => 'integer',
@@ -1018,56 +1062,6 @@
                                 'type' => 'string',
                             ],
                         ],
-                    ],
-                    'diskSize' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'traceId' => [
-                        'type' => 'string',
-                    ],
-                    'logConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'enableRequestMetrics' => [
-                                'type' => 'boolean',
-                            ],
-                            'enableInstanceMetrics' => [
-                                'type' => 'boolean',
-                            ],
-                            'logBeginRule' => [
-                                'type' => 'string',
-                            ],
-                            'project' => [
-                                'type' => 'string',
-                            ],
-                            'logstore' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                    'imageName' => [
-                        'type' => 'string',
-                    ],
-                    'gpuConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'gpuMemorySize' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'gpuType' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                    'cpu' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                    ],
-                    'instanceConcurrency' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
                     ],
                     'reportStatusURL' => [
                         'type' => 'string',
@@ -1111,15 +1105,16 @@
                             ],
                         ],
                     ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
                     'memorySize' => [
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
                     'envName' => [
                         'type' => 'string',
-                    ],
-                    'environmentVariables' => [
-                        'type' => 'object',
                     ],
                     'vpcConfig' => [
                         'type' => 'object',
@@ -1147,6 +1142,33 @@
                     ],
                     'region' => [
                         'type' => 'string',
+                    ],
+                    'concurrencyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'reservedConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                    ],
+                    'featureGates' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'asyncProvisionCheck' => [
+                                'type' => 'boolean',
+                            ],
+                            'disableRollbackOnProvisionFailure' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -1540,9 +1562,35 @@
             'DeployOllamaModelInput' => [
                 'type' => 'object',
                 'properties' => [
+                    'traceId' => [
+                        'type' => 'string',
+                    ],
+                    'logConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'enableRequestMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'enableInstanceMetrics' => [
+                                'type' => 'boolean',
+                            ],
+                            'logBeginRule' => [
+                                'type' => 'string',
+                            ],
+                            'project' => [
+                                'type' => 'string',
+                            ],
+                            'logstore' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
                     'role' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                    'imageName' => [
+                        'type' => 'string',
                     ],
                     'modelConfig' => [
                         'type' => 'object',
@@ -1687,6 +1735,18 @@
                             ],
                         ],
                     ],
+                    'gpuConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'gpuMemorySize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'gpuType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
                     'nasConfig' => [
                         'type' => 'object',
                         'properties' => [
@@ -1709,14 +1769,9 @@
                     'description' => [
                         'type' => 'string',
                     ],
-                    'concurrencyConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'reservedConcurrency' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                        ],
+                    'cpu' => [
+                        'type' => 'number',
+                        'format' => 'float',
                     ],
                     'timeout' => [
                         'type' => 'integer',
@@ -1758,56 +1813,6 @@
                                 'type' => 'string',
                             ],
                         ],
-                    ],
-                    'diskSize' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'traceId' => [
-                        'type' => 'string',
-                    ],
-                    'logConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'enableRequestMetrics' => [
-                                'type' => 'boolean',
-                            ],
-                            'enableInstanceMetrics' => [
-                                'type' => 'boolean',
-                            ],
-                            'logBeginRule' => [
-                                'type' => 'string',
-                            ],
-                            'project' => [
-                                'type' => 'string',
-                            ],
-                            'logstore' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                    'imageName' => [
-                        'type' => 'string',
-                    ],
-                    'gpuConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'gpuMemorySize' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                            ],
-                            'gpuType' => [
-                                'type' => 'string',
-                            ],
-                        ],
-                    ],
-                    'cpu' => [
-                        'type' => 'number',
-                        'format' => 'float',
-                    ],
-                    'instanceConcurrency' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
                     ],
                     'reportStatusURL' => [
                         'type' => 'string',
@@ -1851,15 +1856,16 @@
                             ],
                         ],
                     ],
+                    'diskSize' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
                     'memorySize' => [
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
                     'envName' => [
                         'type' => 'string',
-                    ],
-                    'environmentVariables' => [
-                        'type' => 'object',
                     ],
                     'vpcConfig' => [
                         'type' => 'object',
@@ -1887,6 +1893,33 @@
                     ],
                     'region' => [
                         'type' => 'string',
+                    ],
+                    'concurrencyConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'reservedConcurrency' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'instanceConcurrency' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'environmentVariables' => [
+                        'type' => 'object',
+                    ],
+                    'featureGates' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'asyncProvisionCheck' => [
+                                'type' => 'boolean',
+                            ],
+                            'disableRollbackOnProvisionFailure' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -2140,34 +2173,6 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
-                    'ossMountConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'mountPoints' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'bucketName' => [
-                                            'type' => 'string',
-                                        ],
-                                        'endpoint' => [
-                                            'type' => 'string',
-                                        ],
-                                        'bucketPath' => [
-                                            'type' => 'string',
-                                        ],
-                                        'mountDir' => [
-                                            'type' => 'string',
-                                        ],
-                                        'readOnly' => [
-                                            'type' => 'boolean',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
                     'traceId' => [
                         'type' => 'string',
                     ],
@@ -2209,14 +2214,6 @@
                     'cpu' => [
                         'type' => 'number',
                         'format' => 'float',
-                    ],
-                    'customContainerConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'role' => [
-                                'type' => 'string',
-                            ],
-                        ],
                     ],
                     'instanceConcurrency' => [
                         'type' => 'integer',
@@ -2300,6 +2297,53 @@
                     ],
                     'region' => [
                         'type' => 'string',
+                    ],
+                    'customContainerConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'role' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'ossMountConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'bucketName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endpoint' => [
+                                            'type' => 'string',
+                                        ],
+                                        'bucketPath' => [
+                                            'type' => 'string',
+                                        ],
+                                        'mountDir' => [
+                                            'type' => 'string',
+                                        ],
+                                        'readOnly' => [
+                                            'type' => 'boolean',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'featureGates' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'asyncProvisionCheck' => [
+                                'type' => 'boolean',
+                            ],
+                            'disableRollbackOnProvisionFailure' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -2888,34 +2932,6 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
-                    'ossMountConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'mountPoints' => [
-                                'type' => 'array',
-                                'items' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'bucketName' => [
-                                            'type' => 'string',
-                                        ],
-                                        'endpoint' => [
-                                            'type' => 'string',
-                                        ],
-                                        'bucketPath' => [
-                                            'type' => 'string',
-                                        ],
-                                        'mountDir' => [
-                                            'type' => 'string',
-                                        ],
-                                        'readOnly' => [
-                                            'type' => 'boolean',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
                     'traceId' => [
                         'type' => 'string',
                     ],
@@ -2957,14 +2973,6 @@
                     'cpu' => [
                         'type' => 'number',
                         'format' => 'float',
-                    ],
-                    'customContainerConfig' => [
-                        'type' => 'object',
-                        'properties' => [
-                            'role' => [
-                                'type' => 'string',
-                            ],
-                        ],
                     ],
                     'instanceConcurrency' => [
                         'type' => 'integer',
@@ -3048,6 +3056,53 @@
                     ],
                     'region' => [
                         'type' => 'string',
+                    ],
+                    'customContainerConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'role' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'ossMountConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'mountPoints' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'bucketName' => [
+                                            'type' => 'string',
+                                        ],
+                                        'endpoint' => [
+                                            'type' => 'string',
+                                        ],
+                                        'bucketPath' => [
+                                            'type' => 'string',
+                                        ],
+                                        'mountDir' => [
+                                            'type' => 'string',
+                                        ],
+                                        'readOnly' => [
+                                            'type' => 'boolean',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'featureGates' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'asyncProvisionCheck' => [
+                                'type' => 'boolean',
+                            ],
+                            'disableRollbackOnProvisionFailure' => [
+                                'type' => 'boolean',
+                            ],
+                        ],
                     ],
                 ],
             ],

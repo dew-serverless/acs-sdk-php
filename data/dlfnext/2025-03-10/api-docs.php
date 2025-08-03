@@ -1171,6 +1171,37 @@
                 ],
             ],
         ],
+        'GetCatalogById' => [
+            'path' => '/dlf/v1/catalogs/id/{id}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'id',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
         'AlterCatalog' => [
             'path' => '/dlf/v1/catalogs/{catalog}',
             'methods' => [
@@ -1536,6 +1567,62 @@
         ],
         'ListDatabases' => [
             'path' => '/dlf/v1/{catalogId}/databases',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'databaseNamePattern',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListDatabaseDetails' => [
+            'path' => '/dlf/v1/{catalogId}/database-details',
             'methods' => [
                 'get',
             ],
@@ -2884,6 +2971,276 @@
                 [
                     'name' => 'partitionNamePattern',
                     'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListIcebergTableDetails' => [
+            'path' => '/iceberg/dlf/v1/{catalogId}/namespaces/{namespace}/table-details',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'tableNamePattern',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListIcebergSnapshots' => [
+            'path' => '/iceberg/dlf/v1/{catalogId}/namespaces/{namespace}/tables/{table}/snapshots',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'table',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListIcebergNamespaceDetails' => [
+            'path' => '/iceberg/dlf/v1/{catalogId}/namespace-details',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'namespaceNamePattern',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetIcebergTable' => [
+            'path' => '/iceberg/dlf/v1/{catalogId}/namespaces/{namespace}/tables/{table}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'table',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetIcebergNamespace' => [
+            'path' => '/iceberg/dlf/v1/{catalogId}/namespaces/{namespace}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'namespace',
+                    'in' => 'path',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

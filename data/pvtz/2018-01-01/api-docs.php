@@ -2696,6 +2696,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'DnsCategory',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeCustomLines' => [

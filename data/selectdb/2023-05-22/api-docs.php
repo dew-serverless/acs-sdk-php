@@ -410,6 +410,42 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'ClusterNodeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterNodeCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'ScaleMax',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ScaleMin',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDBInstances' => [
@@ -1172,6 +1208,42 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'ClusterNodeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterNodeCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'ScaleMax',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ScaleMin',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetCreateBEClusterInquiry' => [
@@ -1452,6 +1524,42 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterNodeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterNodeCount',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'ScaleMax',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'double',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ScaleMin',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'number',
+                        'format' => 'double',
                         'required' => false,
                     ],
                 ],

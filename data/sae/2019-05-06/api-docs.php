@@ -6898,6 +6898,22 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'HeadlessPvtzDiscoverySvc',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Html',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteApplication' => [
@@ -7899,6 +7915,14 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Html',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

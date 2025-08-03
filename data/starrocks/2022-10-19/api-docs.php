@@ -57,6 +57,317 @@
         ],
     ],
     'apis' => [
+        'CreateInstanceV1' => [
+            'path' => '/webapi/cluster/createV1',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'InstanceName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'AdminPassword' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'Version' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'AutoRenew' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'RunMode' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'lakehouse',
+                                    'shared_nothing',
+                                    'shared_data',
+                                ],
+                            ],
+                            'RegionId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'PackageType' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'official',
+                                    'trial',
+                                ],
+                            ],
+                            'PayType' => [
+                                'type' => 'string',
+                                'required' => true,
+                                'enum' => [
+                                    'prePaid',
+                                    'postPaid',
+                                ],
+                            ],
+                            'VpcId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'PricingCycle' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'Month',
+                                    'Year',
+                                ],
+                            ],
+                            'VSwitches' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'VswId' => [
+                                            'type' => 'string',
+                                            'required' => true,
+                                        ],
+                                        'ZoneId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'ZoneId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'OssAccessingRoleName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Duration' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Tags' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'Key' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'ResourceGroupId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ClientToken' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'ObserverNodeGroups' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'cu' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'storageSize' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'storagePerformanceLevel' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'diskNumber' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'residentNodeNumber' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'specType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'localStorageInstanceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'zoneId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'BackendNodeGroups' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'cu' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'storageSize' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'storagePerformanceLevel' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'pl0',
+                                                'pl1',
+                                                'pl2',
+                                                'pl3',
+                                            ],
+                                        ],
+                                        'diskNumber' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                            'minimum' => '0',
+                                        ],
+                                        'residentNodeNumber' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'specType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'standard',
+                                                'ramEnhanced',
+                                                'networkEnhanced',
+                                                'bigData',
+                                                'localSSD',
+                                                'cpuEnhanced',
+                                            ],
+                                        ],
+                                        'localStorageInstanceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'zoneId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'FrontendNodeGroups' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'cu' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'storageSize' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'storagePerformanceLevel' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'diskNumber' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'residentNodeNumber' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'specType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                            'enum' => [
+                                                'standard',
+                                                'ramEnhanced',
+                                            ],
+                                        ],
+                                        'localStorageInstanceType' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'zoneId' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'PromotionOptionNo' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Encrypted' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'KmsKeyId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'RestartInstance' => [
             'path' => '/webapi/starrocks/restartCluster',
             'methods' => [
@@ -151,6 +462,108 @@
                 ],
             ],
         ],
+        'DescribeInstances' => [
+            'path' => '/webapi/starrocks/describeInstances',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '10000',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100000',
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Tag',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'Value' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'TagResources' => [
             'path' => '/webapi/tags',
             'methods' => [
@@ -210,6 +623,123 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+            ],
+        ],
+        'UnTagResources' => [
+            'path' => '/webapi/tags',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceId',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TagKey',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'All',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ChangeResourceGroup' => [
+            'path' => '/webapi/resourceGroup/change',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NewResourceGroupId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ResourceType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
                     ],
                 ],
             ],
@@ -735,6 +1265,23 @@
                     ],
                 ],
             ],
+        ],
+        'CreateServiceLinkedRole' => [
+            'path' => '/webapi/user/create_default_role',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
         ],
     ],
     'endpoints' => [

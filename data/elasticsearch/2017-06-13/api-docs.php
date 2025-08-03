@@ -11290,6 +11290,84 @@
                 ],
             ],
         ],
+        'TurnOnZone' => [
+            'path' => '/openapi/instances/{instanceId}/actions/turnOn-zone',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'zone',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'TurnOffZone' => [
+            'path' => '/openapi/instances/{instanceId}/actions/turnOff-zone',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'instanceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'zone',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [

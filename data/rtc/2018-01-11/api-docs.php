@@ -6876,16 +6876,15 @@
                                         'Word' => [
                                             'type' => 'string',
                                             'required' => true,
-                                            'minLength' => 1,
+                                        ],
+                                        'Lang' => [
+                                            'type' => 'string',
+                                            'required' => false,
                                         ],
                                         'Weight' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
                                             'required' => true,
-                                        ],
-                                        'Lang' => [
-                                            'type' => 'string',
-                                            'required' => false,
                                         ],
                                     ],
                                 ],
@@ -6894,6 +6893,19 @@
                                 'type' => 'integer',
                                 'format' => 'int32',
                                 'required' => false,
+                            ],
+                            'VadConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'InterruptSpeechDuration' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                        'minimum' => '0',
+                                        'maximum' => '3000',
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -6954,8 +6966,11 @@
                             'Prompt' => [
                                 'type' => 'string',
                                 'required' => false,
-                                'minLength' => 1,
-                                'maxLength' => 5000,
+                            ],
+                            'AgentAppId' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 500,
                             ],
                         ],
                     ],
@@ -6990,28 +7005,6 @@
                             'Voice' => [
                                 'type' => 'string',
                                 'required' => false,
-                                'enum' => [
-                                    'longwan',
-                                    'longcheng',
-                                    'longhua',
-                                    'longxiaochun',
-                                    'longxiaoxia',
-                                    'longxiaocheng',
-                                    'longxiaobai',
-                                    'longlaotie',
-                                    'longshu',
-                                    'longshuo',
-                                    'longjing',
-                                    'longmiao',
-                                    'longyue',
-                                    'longyuan',
-                                    'longfei',
-                                    'longjielidou',
-                                    'longtong',
-                                    'longxiang',
-                                    'loongstella',
-                                    'loongbella',
-                                ],
                             ],
                             'Volume' => [
                                 'type' => 'integer',
@@ -7043,6 +7036,39 @@
                                         '5',
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AgentSilenceConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AlertTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'WebhookTriggerTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Strategy' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '1',
+                                'maximum' => '2',
+                            ],
+                            'Content' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 2500,
                             ],
                         ],
                     ],
@@ -7253,15 +7279,28 @@
                                             'type' => 'string',
                                             'required' => true,
                                         ],
+                                        'Lang' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
                                         'Weight' => [
                                             'type' => 'integer',
                                             'format' => 'int32',
                                             'required' => true,
                                         ],
-                                        'Lang' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
+                                    ],
+                                ],
+                            ],
+                            'VadConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'InterruptSpeechDuration' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                        'minimum' => '0',
+                                        'maximum' => '3000',
                                     ],
                                 ],
                             ],
@@ -7324,8 +7363,11 @@
                             'Prompt' => [
                                 'type' => 'string',
                                 'required' => false,
-                                'minLength' => 1,
-                                'maxLength' => 5000,
+                            ],
+                            'AgentAppId' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 500,
                             ],
                         ],
                     ],
@@ -7360,28 +7402,6 @@
                             'Voice' => [
                                 'type' => 'string',
                                 'required' => false,
-                                'enum' => [
-                                    'longcheng',
-                                    'longhua',
-                                    'longxiaochun',
-                                    'longxiaoxia',
-                                    'longxiaocheng',
-                                    'longxiaobai',
-                                    'longlaotie',
-                                    'longshu',
-                                    'longshuo',
-                                    'longjing',
-                                    'longmiao',
-                                    'longyue',
-                                    'longyuan',
-                                    'longfei',
-                                    'longjielidou',
-                                    'longtong',
-                                    'longxiang',
-                                    'loongstella',
-                                    'loongbella',
-                                    'longwan',
-                                ],
                             ],
                             'Volume' => [
                                 'type' => 'integer',
@@ -7413,6 +7433,39 @@
                                         '5',
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'AgentSilenceConfig',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'AlertTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'WebhookTriggerTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'Strategy' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                                'minimum' => '1',
+                                'maximum' => '2',
+                            ],
+                            'Content' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'maxLength' => 2500,
                             ],
                         ],
                     ],
@@ -7485,6 +7538,11 @@
                                     'required' => false,
                                 ],
                             ],
+                            'UserInactivityTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -7539,6 +7597,17 @@
                                             'required' => false,
                                         ],
                                     ],
+                                    'VadConfig' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'InterruptSpeechDuration' => [
+                                                'type' => 'integer',
+                                                'format' => 'int32',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
                                 ],
                             ],
                             'LLMConfig' => [
@@ -7582,6 +7651,14 @@
                                         'required' => false,
                                     ],
                                     'Url' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Params' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                    ],
+                                    'AppId' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],
@@ -7630,6 +7707,35 @@
                                             'format' => 'int32',
                                             'required' => false,
                                         ],
+                                    ],
+                                ],
+                            ],
+                            'AgentSilenceConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'Enable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'AlertTimeout' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'Strategy' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'Content' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'WebhookTriggerTimeout' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
                                     ],
                                 ],
                             ],

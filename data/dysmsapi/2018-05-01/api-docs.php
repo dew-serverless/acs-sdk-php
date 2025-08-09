@@ -201,6 +201,14 @@
                     ],
                 ],
                 [
+                    'name' => 'Type',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'TaskId',
                     'in' => 'query',
                     'schema' => [

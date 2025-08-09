@@ -21362,6 +21362,7 @@
                                 'format' => 'int32',
                                 'required' => true,
                                 'enum' => [
+                                    '0',
                                     '1',
                                 ],
                             ],
@@ -21389,6 +21390,14 @@
                                             'type' => 'string',
                                             'required' => false,
                                         ],
+                                        'FilePathPrefix' => [
+                                            'type' => 'array',
+                                            'required' => false,
+                                            'items' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
+                                        ],
                                     ],
                                 ],
                             ],
@@ -21403,6 +21412,33 @@
                                     'OSSBucket' => [
                                         'type' => 'string',
                                         'required' => true,
+                                    ],
+                                ],
+                            ],
+                            'VodParams' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'StorageLocation' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'VodTranscodeGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'AutoCompose' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                        'enum' => [
+                                            '0',
+                                            '1',
+                                        ],
+                                    ],
+                                    'ComposeVodTranscodeGroupId' => [
+                                        'type' => 'string',
+                                        'required' => false,
                                     ],
                                 ],
                             ],
@@ -21600,6 +21636,25 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NotifyAuthKey',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'MaxIdleTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '10',
+                        'maximum' => '86400',
                     ],
                 ],
             ],

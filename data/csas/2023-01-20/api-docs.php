@@ -91,28 +91,12 @@
             'DisposalContent' => [
                 'type' => 'object',
                 'properties' => [
-                    'NoticeContent' => [
-                        'type' => 'string',
-                    ],
-                    'NacDemotionPolicyIds' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'string',
-                        ],
-                    ],
                     'ProhibitActions' => [
                         'type' => 'array',
                         'required' => false,
                         'items' => [
                             'type' => 'string',
                         ],
-                    ],
-                    'NoticeContentEn' => [
-                        'type' => 'string',
-                    ],
-                    'AlertTitle' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                     'NotifyActions' => [
                         'type' => 'array',
@@ -121,15 +105,41 @@
                             'type' => 'string',
                         ],
                     ],
-                    'AlertTitleEn' => [
+                    'AlertTitle' => [
                         'type' => 'string',
+                        'required' => false,
                     ],
                     'AlertContent' => [
                         'type' => 'string',
                         'required' => false,
                     ],
+                    'NoticeContent' => [
+                        'type' => 'string',
+                    ],
+                    'NoticeContentEn' => [
+                        'type' => 'string',
+                    ],
+                    'AlertTitleEn' => [
+                        'type' => 'string',
+                    ],
                     'AlertContentEn' => [
                         'type' => 'string',
+                    ],
+                    'NacDemotionPolicyIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'AlertIntervalSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'ProhibitSoftwareIds' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -7570,12 +7580,42 @@
                                         'type' => 'boolean',
                                         'required' => false,
                                     ],
+                                    'Margin' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Top' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Right' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Bottom' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Left' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
                                 ],
                             ],
                             'LogoVisibleControl' => [
                                 'type' => 'object',
                                 'required' => false,
                                 'properties' => [
+                                    'Enhance' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
                                     'LogoBase64' => [
                                         'type' => 'string',
                                         'required' => false,
@@ -7628,9 +7668,43 @@
                                         'type' => 'boolean',
                                         'required' => false,
                                     ],
+                                    'Margin' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Top' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Right' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Bottom' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Left' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'comment',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -7719,6 +7793,7 @@
                             'AigcAudio',
                             'AigcVideo',
                             'PureDocument',
+                            'VisibleEnhance',
                         ],
                     ],
                 ],
@@ -7826,6 +7901,21 @@
                                 'maximum' => '4',
                             ],
                             'TimeFormat' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ImageExtractParamsOpenApi',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'SrcLogoBase64' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

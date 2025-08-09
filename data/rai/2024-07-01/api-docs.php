@@ -555,6 +555,24 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EnableSensitiveInputCheck',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableSensitiveOutputCheck',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UpdatePolicy' => [
@@ -761,6 +779,24 @@
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'EnableSensitiveInputCheck',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EnableSensitiveOutputCheck',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
                     ],
                 ],
             ],

@@ -3223,6 +3223,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'EndpointIpVersion' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],
@@ -4388,6 +4392,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'EndpointIpVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeEndpointGroup' => [
@@ -4761,6 +4773,14 @@
                 ],
                 [
                     'name' => 'HealthCheckHost',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndpointIpVersion',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -5312,6 +5332,10 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'EndpointIpVersion' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 200,
@@ -5501,6 +5525,10 @@
                                     'required' => true,
                                 ],
                                 'HealthCheckHost' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'EndpointIpVersion' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],

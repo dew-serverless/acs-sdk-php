@@ -2005,6 +2005,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetInstance' => [
@@ -2051,6 +2059,14 @@
                 ],
                 [
                     'name' => 'Sid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RealLoginUserUid',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2657,6 +2673,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -6173,6 +6197,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SearchTable' => [
@@ -6391,6 +6423,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListTableColumns' => [
@@ -6588,6 +6628,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetPhysicalDatabase' => [
@@ -6700,6 +6748,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -11955,6 +12011,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SetOwners' => [
@@ -15102,6 +15166,14 @@
                     'schema' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'RealLoginUserUid',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],

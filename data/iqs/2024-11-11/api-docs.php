@@ -406,6 +406,10 @@
                         'type' => 'integer',
                         'format' => 'int32',
                     ],
+                    'liteAdvancedTextSearch' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
                 ],
             ],
             'SearchInformation' => [
@@ -446,13 +450,22 @@
             'UnifiedPageItem' => [
                 'type' => 'object',
                 'properties' => [
+                    'title' => [
+                        'type' => 'string',
+                    ],
+                    'link' => [
+                        'type' => 'string',
+                    ],
                     'snippet' => [
                         'type' => 'string',
                     ],
-                    'summary' => [
+                    'publishedTime' => [
                         'type' => 'string',
                     ],
-                    'hostLogo' => [
+                    'mainText' => [
+                        'type' => 'string',
+                    ],
+                    'markdownText' => [
                         'type' => 'string',
                     ],
                     'images' => [
@@ -464,24 +477,19 @@
                     'hostname' => [
                         'type' => 'string',
                     ],
+                    'hostLogo' => [
+                        'type' => 'string',
+                    ],
+                    'summary' => [
+                        'type' => 'string',
+                    ],
                     'rerankScore' => [
                         'type' => 'number',
                         'format' => 'double',
                     ],
-                    'publishedTime' => [
-                        'type' => 'string',
-                    ],
-                    'markdownText' => [
-                        'type' => 'string',
-                    ],
-                    'link' => [
-                        'type' => 'string',
-                    ],
-                    'mainText' => [
-                        'type' => 'string',
-                    ],
-                    'title' => [
-                        'type' => 'string',
+                    'hostAuthorityScore' => [
+                        'type' => 'number',
+                        'format' => 'double',
                     ],
                 ],
             ],
@@ -544,10 +552,8 @@
                         'enum' => [
                             'Generic',
                             'GenericAdvanced',
+                            'LiteAdvanced',
                         ],
-                    ],
-                    'location' => [
-                        'type' => 'string',
                     ],
                     'category' => [
                         'type' => 'string',
@@ -561,6 +567,12 @@
                             'OneYear',
                             'NoLimit',
                         ],
+                    ],
+                    'location' => [
+                        'type' => 'string',
+                    ],
+                    'advancedParams' => [
+                        'type' => 'object',
                     ],
                 ],
             ],

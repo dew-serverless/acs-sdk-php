@@ -2710,6 +2710,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'NetworkAccessEndpointId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'SetApplicationProvisioningScope' => [

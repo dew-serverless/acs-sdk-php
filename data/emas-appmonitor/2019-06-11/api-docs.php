@@ -852,6 +852,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'DigestHash',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
     ],

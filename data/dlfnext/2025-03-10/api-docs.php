@@ -26,12 +26,6 @@
                     'name' => [
                         'type' => 'string',
                     ],
-                    'options' => [
-                        'type' => 'object',
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
-                    ],
                     'id' => [
                         'type' => 'string',
                     ],
@@ -45,40 +39,68 @@
                     'status' => [
                         'type' => 'string',
                     ],
+                    'shareId' => [
+                        'type' => 'string',
+                    ],
+                    'options' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'isShared' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'CatalogSummary' => [
                 'type' => 'object',
                 'properties' => [
-                    'partitionCount' => [
-                        '$ref' => '#/components/schemas/MoMValues',
-                    ],
-                    'fileAccessCountMonthly' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
                     'databaseCount' => [
                         '$ref' => '#/components/schemas/MoMValues',
                     ],
                     'tableCount' => [
                         '$ref' => '#/components/schemas/MoMValues',
                     ],
-                    'generatedDate' => [
-                        'type' => 'string',
+                    'partitionCount' => [
+                        '$ref' => '#/components/schemas/MoMValues',
+                    ],
+                    'totalFileSizeInBytes' => [
+                        '$ref' => '#/components/schemas/MoMValues',
+                    ],
+                    'totalFileCount' => [
+                        '$ref' => '#/components/schemas/MoMValues',
                     ],
                     'apiVisitCountMonthly' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'totalFileCount' => [
-                        '$ref' => '#/components/schemas/MoMValues',
+                    'fileAccessCountMonthly' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                     'throughputMonthly' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'totalFileSizeInBytes' => [
-                        '$ref' => '#/components/schemas/MoMValues',
+                    'generatedDate' => [
+                        'type' => 'string',
+                    ],
+                    'objTypeStandardSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'objTypeIaSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'objTypeArchiveSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'objTypeColdArchiveSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -181,7 +203,17 @@
             'DatabaseSummary' => [
                 'type' => 'object',
                 'properties' => [
+                    'databaseName' => [
+                        'type' => 'string',
+                    ],
                     'createdAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'location' => [
+                        'type' => 'string',
+                    ],
+                    'tableCount' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
@@ -189,24 +221,30 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'databaseName' => [
-                        'type' => 'string',
+                    'totalFileSizeInBytes' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
-                    'tableCount' => [
+                    'totalFileCount' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
                     'generatedDate' => [
                         'type' => 'string',
                     ],
-                    'location' => [
-                        'type' => 'string',
-                    ],
-                    'totalFileCount' => [
+                    'objTypeStandardSize' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'totalFileSizeInBytes' => [
+                    'objTypeIaSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'objTypeArchiveSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'objTypeColdArchiveSize' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
@@ -584,16 +622,6 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'createdAt' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'updatedBy' => [
-                        'type' => 'string',
-                    ],
-                    'createdBy' => [
-                        'type' => 'string',
-                    ],
                     'recordCount' => [
                         'type' => 'integer',
                         'format' => 'int64',
@@ -612,7 +640,27 @@
                     'spec' => [
                         'type' => 'object',
                     ],
+                    'createdAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'createdBy' => [
+                        'type' => 'string',
+                    ],
                     'updatedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updatedBy' => [
+                        'type' => 'string',
+                    ],
+                    'storageClass' => [
+                        'type' => 'string',
+                    ],
+                    'storageAction' => [
+                        'type' => 'string',
+                    ],
+                    'storageActionTimestamp' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
@@ -635,34 +683,47 @@
             'PartitionSummary' => [
                 'type' => 'object',
                 'properties' => [
-                    'createdAt' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                    'databaseName' => [
+                        'type' => 'string',
+                    ],
+                    'tableName' => [
+                        'type' => 'string',
                     ],
                     'partitionName' => [
                         'type' => 'string',
                     ],
-                    'lastAccessTime' => [
+                    'createdAt' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'databaseName' => [
-                        'type' => 'string',
+                    'totalFileSizeInBytes' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                     'totalFileCount' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'tableName' => [
-                        'type' => 'string',
-                    ],
-                    'totalFileSizeInBytes' => [
+                    'lastAccessTime' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
                     'updatedAt' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'storageClass' => [
+                        'type' => 'string',
+                    ],
+                    'storageActionTimestamp' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'storageActionParams' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -706,6 +767,73 @@
                     ],
                     'resourceType' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'ReceivedShare' => [
+                'type' => 'object',
+                'properties' => [
+                    'providerTenantId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'shareId' => [
+                        'type' => 'string',
+                    ],
+                    'shareName' => [
+                        'type' => 'string',
+                    ],
+                    'owner' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'createdBy' => [
+                        'type' => 'string',
+                    ],
+                    'updatedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updatedBy' => [
+                        'type' => 'string',
+                    ],
+                    'catalogName' => [
+                        'type' => 'string',
+                    ],
+                    'comment' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'Receiver' => [
+                'type' => 'object',
+                'properties' => [
+                    'receiverName' => [
+                        'type' => 'string',
+                    ],
+                    'receiverTenantId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'comment' => [
+                        'type' => 'string',
+                    ],
+                    'createdBy' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updatedBy' => [
+                        'type' => 'string',
+                    ],
+                    'updatedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -778,6 +906,74 @@
                         'items' => [
                             '$ref' => '#/components/schemas/DataField',
                         ],
+                    ],
+                ],
+            ],
+            'Share' => [
+                'type' => 'object',
+                'properties' => [
+                    'providerTenantId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'shareId' => [
+                        'type' => 'string',
+                    ],
+                    'shareName' => [
+                        'type' => 'string',
+                    ],
+                    'comment' => [
+                        'type' => 'string',
+                    ],
+                    'owner' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'createdBy' => [
+                        'type' => 'string',
+                    ],
+                    'updatedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updatedBy' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
+            'ShareResource' => [
+                'type' => 'object',
+                'properties' => [
+                    'shareType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'CATALOG_ALL',
+                            'DATABASE_ALL',
+                            'TABLE',
+                        ],
+                    ],
+                    'databaseName' => [
+                        'type' => 'string',
+                    ],
+                    'tableName' => [
+                        'type' => 'string',
+                    ],
+                    'createdBy' => [
+                        'type' => 'string',
+                    ],
+                    'updatedBy' => [
+                        'type' => 'string',
+                    ],
+                    'createdAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updatedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                 ],
             ],
@@ -859,39 +1055,49 @@
             'Table' => [
                 'type' => 'object',
                 'properties' => [
+                    'id' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                    'path' => [
+                        'type' => 'string',
+                    ],
+                    'isExternal' => [
+                        'type' => 'boolean',
+                    ],
+                    'schemaId' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
                     'schema' => [
                         '$ref' => '#/components/schemas/Schema',
                     ],
                     'owner' => [
                         'type' => 'string',
                     ],
-                    'path' => [
+                    'createdAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'createdBy' => [
                         'type' => 'string',
                     ],
-                    'createdAt' => [
+                    'updatedAt' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
                     'updatedBy' => [
                         'type' => 'string',
                     ],
-                    'isExternal' => [
-                        'type' => 'boolean',
-                    ],
-                    'createdBy' => [
+                    'storageClass' => [
                         'type' => 'string',
                     ],
-                    'schemaId' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'name' => [
+                    'storageAction' => [
                         'type' => 'string',
                     ],
-                    'id' => [
-                        'type' => 'string',
-                    ],
-                    'updatedAt' => [
+                    'storageActionTimestamp' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
@@ -946,6 +1152,12 @@
             'TableSummary' => [
                 'type' => 'object',
                 'properties' => [
+                    'databaseName' => [
+                        'type' => 'string',
+                    ],
+                    'tableName' => [
+                        'type' => 'string',
+                    ],
                     'createdAt' => [
                         'type' => 'integer',
                         'format' => 'int64',
@@ -954,29 +1166,56 @@
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'path' => [
-                        'type' => 'string',
-                    ],
-                    'lastAccessTime' => [
+                    'totalFileSizeInBytes' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                    ],
-                    'databaseName' => [
-                        'type' => 'string',
-                    ],
-                    'generatedDate' => [
-                        'type' => 'string',
                     ],
                     'totalFileCount' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'tableName' => [
-                        'type' => 'string',
-                    ],
-                    'totalFileSizeInBytes' => [
+                    'lastAccessTime' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'generatedDate' => [
+                        'type' => 'string',
+                    ],
+                    'path' => [
+                        'type' => 'string',
+                    ],
+                    'storageClass' => [
+                        'type' => 'string',
+                    ],
+                    'storageActionTimestamp' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'objTypeStandardSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'objTypeIaSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'objTypeArchiveSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'objTypeColdArchiveSize' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'updatedAt' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'storageActionParams' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
             ],
@@ -1134,6 +1373,14 @@
                                     'PAIMON',
                                     'ICEBERG',
                                 ],
+                            ],
+                            'isShared' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'shareId' => [
+                                'type' => 'string',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -1895,6 +2142,68 @@
                 ],
             ],
         ],
+        'RollbackTable' => [
+            'path' => '/dlf/v1/{catalogId}/databases/{database}/tables/{table}/rollback',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'database',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'table',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'instant' => [
+                                '$ref' => '#/components/schemas/FullInstant',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ListTables' => [
             'path' => '/dlf/v1/{catalogId}/databases/{database}/tables',
             'methods' => [
@@ -2018,6 +2327,766 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetTableSnapshot' => [
+            'path' => '/dlf/v1/{catalogId}/databases/{database}/tables/{table}/snapshot',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'database',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'table',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListSnapshots' => [
+            'path' => '/dlf/v1/{catalogId}/databases/{database}/tables/{table}/snapshots',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'catalogId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'database',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'table',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateShare' => [
+            'path' => '/dlf/v1/share/shares',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'shareName' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetShare' => [
+            'path' => '/dlf/v1/share/shares/{share}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'share',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AlterShare' => [
+            'path' => '/dlf/v1/share/shares/{share}',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'share',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'shareName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DropShare' => [
+            'path' => '/dlf/v1/share/shares/{share}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'share',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListProvidedShares' => [
+            'path' => '/dlf/v1/share/shares/list/provided',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'pageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListReceivedShares' => [
+            'path' => '/dlf/v1/share/shares/list/received',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'pageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateReceiver' => [
+            'path' => '/dlf/v1/share/receivers',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'receiverName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'receiverTenantId' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                                'required' => false,
+                            ],
+                            'comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'GetReceiver' => [
+            'path' => '/dlf/v1/share/receivers/{receiver}',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'receiver',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AlterReceiver' => [
+            'path' => '/dlf/v1/share/receivers/{receiver}',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'receiver',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'receiverName' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'comment' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'DropReceiver' => [
+            'path' => '/dlf/v1/share/receivers/{receiver}',
+            'methods' => [
+                'delete',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'receiver',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListReceivers' => [
+            'path' => '/dlf/v1/share/receivers',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'receiverName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListShareReceivers' => [
+            'path' => '/dlf/v1/share/shares/{share}/receivers',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'share',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'AlterShareReceivers' => [
+            'path' => '/dlf/v1/share/shares/{share}/receivers',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'share',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'addedReceivers' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'removedReceivers' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'AlterShareResources' => [
+            'path' => '/dlf/v1/share/shares/{share}/resources',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'body',
+                    'in' => 'body',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'catalogId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'shareResourceList' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/ShareResource',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'share',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListShareResources' => [
+            'path' => '/dlf/v1/share/shares/{share}/resources',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'share',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'pageToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                         'required' => false,
                     ],
                 ],
@@ -2771,6 +3840,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetCatalogSummaryTrend' => [
@@ -2857,6 +3934,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetTableSummary' => [
@@ -2902,6 +3987,14 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'date',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

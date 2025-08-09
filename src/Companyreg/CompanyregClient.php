@@ -75,6 +75,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise transferProduceOwnerAsync($arguments = [])
  * @method \Dew\Acs\Result submitIntentionForPartner(array $arguments = [])
  * @method \Http\Promise\Promise submitIntentionForPartnerAsync($arguments = [])
+ * @method \Dew\Acs\Result queryCallRecordList(array $arguments = [])
+ * @method \Http\Promise\Promise queryCallRecordListAsync($arguments = [])
  */
 final class CompanyregClient extends AcsClient
 {

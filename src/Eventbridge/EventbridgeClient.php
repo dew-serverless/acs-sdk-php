@@ -101,6 +101,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise testEventSourceConfigAsync($arguments = [])
  * @method \Dew\Acs\Result discoverEventSource(array $arguments = [])
  * @method \Http\Promise\Promise discoverEventSourceAsync($arguments = [])
+ * @method \Dew\Acs\Result updateEventStreamingBusinessOption(array $arguments = [])
+ * @method \Http\Promise\Promise updateEventStreamingBusinessOptionAsync($arguments = [])
  */
 final class EventbridgeClient extends AcsClient
 {

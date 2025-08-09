@@ -17,6 +17,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise testMergeProcessAsync($arguments = [])
  * @method \Dew\Acs\Result updateInstance(array $arguments = [])
  * @method \Http\Promise\Promise updateInstanceAsync($arguments = [])
+ * @method \Dew\Acs\Result createInstance(array $arguments = [])
+ * @method \Http\Promise\Promise createInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteInstance(array $arguments = [])
  * @method \Http\Promise\Promise deleteInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result testModify(array $arguments = [])

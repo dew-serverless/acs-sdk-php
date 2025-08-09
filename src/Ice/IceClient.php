@@ -397,6 +397,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise startAIAgentOutboundCallAsync($arguments = [])
  * @method \Dew\Acs\Result listAIAgentPhoneNumber(array $arguments = [])
  * @method \Http\Promise\Promise listAIAgentPhoneNumberAsync($arguments = [])
+ * @method \Dew\Acs\Result forwardAIAgentCall(array $arguments = [])
+ * @method \Http\Promise\Promise forwardAIAgentCallAsync($arguments = [])
+ * @method \Dew\Acs\Result setAIAgentVoiceprint(array $arguments = [])
+ * @method \Http\Promise\Promise setAIAgentVoiceprintAsync($arguments = [])
+ * @method \Dew\Acs\Result clearAIAgentVoiceprint(array $arguments = [])
+ * @method \Http\Promise\Promise clearAIAgentVoiceprintAsync($arguments = [])
+ * @method \Dew\Acs\Result listAIAgentVoiceprints(array $arguments = [])
+ * @method \Http\Promise\Promise listAIAgentVoiceprintsAsync($arguments = [])
  * @method \Dew\Acs\Result submitAIAgentVideoAuditTask(array $arguments = [])
  * @method \Http\Promise\Promise submitAIAgentVideoAuditTaskAsync($arguments = [])
  * @method \Dew\Acs\Result querySmarttagJob(array $arguments = [])
@@ -709,6 +717,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise setNotifyConfigAsync($arguments = [])
  * @method \Dew\Acs\Result describeNotifyConfig(array $arguments = [])
  * @method \Http\Promise\Promise describeNotifyConfigAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelIProductionJob(array $arguments = [])
+ * @method \Http\Promise\Promise cancelIProductionJobAsync($arguments = [])
  */
 final class IceClient extends AcsClient
 {

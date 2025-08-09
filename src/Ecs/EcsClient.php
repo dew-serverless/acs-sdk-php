@@ -57,6 +57,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceAttribute(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInstanceClockOptions(array $arguments = [])
+ * @method \Http\Promise\Promise modifyInstanceClockOptionsAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceChargeType(array $arguments = [])
  * @method \Http\Promise\Promise modifyInstanceChargeTypeAsync($arguments = [])
  * @method \Dew\Acs\Result modifyInstanceSpec(array $arguments = [])

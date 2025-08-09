@@ -126,6 +126,20 @@
                     'LlmConfig' => [
                         'type' => 'object',
                         'properties' => [
+                            'FunctionMap' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Function' => [
+                                            'type' => 'string',
+                                        ],
+                                        'MatchFunction' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
                             'LlmHistoryLimit' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
@@ -308,6 +322,20 @@
                     'LlmConfig' => [
                         'type' => 'object',
                         'properties' => [
+                            'FunctionMap' => [
+                                'type' => 'array',
+                                'items' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'Function' => [
+                                            'type' => 'string',
+                                        ],
+                                        'MatchFunction' => [
+                                            'type' => 'string',
+                                        ],
+                                    ],
+                                ],
+                            ],
                             'LlmHistoryLimit' => [
                                 'type' => 'integer',
                                 'format' => 'int32',
@@ -10877,6 +10905,24 @@
             'deprecated' => false,
             'parameters' => [
                 [
+                    'name' => 'PageNo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'Type',
                     'in' => 'query',
                     'schema' => [
@@ -13543,6 +13589,152 @@
                 ],
             ],
         ],
+        'ForwardAIAgentCall' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'CalledNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'SetAIAgentVoiceprint' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'VoiceprintId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Input',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Data' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Format' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ClearAIAgentVoiceprint' => [
+            'path' => '',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'VoiceprintId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'ListAIAgentVoiceprints' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'VoiceprintId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'SubmitAIAgentVideoAuditTask' => [
             'methods' => [
                 'post',
@@ -16082,6 +16274,25 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                                'SrtMaxBitrate' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'SrtLatency' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'SrtPassphrase' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SrtPbKeyLen' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                     ],
@@ -16142,7 +16353,7 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'StreamName' => [
+                                'FlowId' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -16150,12 +16361,31 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'FlowId' => [
+                                'StreamName' => [
                                     'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SrtPassphrase' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SrtMaxBitrate' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                     'required' => false,
                                 ],
                                 'FlowOutputName' => [
                                     'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SrtLatency' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                ],
+                                'SrtPbKeyLen' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
                                     'required' => false,
                                 ],
                             ],
@@ -22059,6 +22289,40 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'CancelIProductionJob' => [
+            'path' => '',
+            'methods' => [
+                'post',
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClientToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

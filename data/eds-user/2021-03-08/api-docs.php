@@ -408,7 +408,7 @@
                             'type' => 'string',
                             'required' => true,
                         ],
-                        'maxItems' => 100,
+                        'maxItems' => 500,
                     ],
                 ],
                 [
@@ -448,7 +448,7 @@
                             'type' => 'string',
                             'required' => true,
                         ],
-                        'maxItems' => 100,
+                        'maxItems' => 500,
                     ],
                 ],
                 [
@@ -542,6 +542,22 @@
                 ],
                 [
                     'name' => 'GroupId',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'BizType',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SolutionId',
                     'in' => 'formData',
                     'schema' => [
                         'type' => 'string',
@@ -858,7 +874,7 @@
                             'type' => 'string',
                             'required' => true,
                         ],
-                        'maxItems' => 100,
+                        'maxItems' => 500,
                     ],
                 ],
                 [

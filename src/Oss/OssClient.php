@@ -128,6 +128,8 @@ use Override;
  * @method \Http\Promise\Promise getBucketTagsAsync($arguments = [])
  * @method \Dew\Acs\Result deleteBucketTags(array $arguments = [])
  * @method \Http\Promise\Promise deleteBucketTagsAsync($arguments = [])
+ * @method \Dew\Acs\Result listUserDataRedundancyTransition(array $arguments = [])
+ * @method \Http\Promise\Promise listUserDataRedundancyTransitionAsync($arguments = [])
  * @method \Dew\Acs\Result listBucketDataRedundancyTransition(array $arguments = [])
  * @method \Http\Promise\Promise listBucketDataRedundancyTransitionAsync($arguments = [])
  * @method \Dew\Acs\Result getBucketDataRedundancyTransition(array $arguments = [])

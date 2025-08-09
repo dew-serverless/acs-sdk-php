@@ -65,6 +65,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeFailedNotificationsAsync($arguments = [])
  * @method \Dew\Acs\Result confirmNotification(array $arguments = [])
  * @method \Http\Promise\Promise confirmNotificationAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInvoiceForIsv(array $arguments = [])
+ * @method \Http\Promise\Promise describeInvoiceForIsvAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInvoiceForIsv(array $arguments = [])
+ * @method \Http\Promise\Promise modifyInvoiceForIsvAsync($arguments = [])
  */
 final class MarketClient extends AcsClient
 {

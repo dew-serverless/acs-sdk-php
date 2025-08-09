@@ -7946,6 +7946,72 @@
                 '5XX' => [],
             ],
         ],
+        'ListUserDataRedundancyTransition' => [
+            'path' => '/?redundancyTransition',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/xml',
+            ],
+            'produces' => [
+                'application/xml',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'continuation-token',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'max-keys',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+            ],
+            'responses' => [
+                200 => [
+                    'schema' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'ListBucketDataRedundancyTransition' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'IsTruncated' => [
+                                        'type' => 'boolean',
+                                    ],
+                                    'NextContinuationToken' => [
+                                        'type' => 'string',
+                                    ],
+                                    'BucketDataRedundancyTransition' => [
+                                        'type' => 'array',
+                                        'items' => [
+                                            '$ref' => '#/components/schemas/BucketDataRedundancyTransition',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'ListBucketDataRedundancyTransition' => [
             'path' => '/?redundancyTransition',
             'methods' => [

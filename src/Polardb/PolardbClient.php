@@ -301,10 +301,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDBClusterConnectivityAsync($arguments = [])
  * @method \Dew\Acs\Result createColdStorageInstance(array $arguments = [])
  * @method \Http\Promise\Promise createColdStorageInstanceAsync($arguments = [])
- * @method \Dew\Acs\Result createServiceLinkedRole(array $arguments = [])
- * @method \Http\Promise\Promise createServiceLinkedRoleAsync($arguments = [])
- * @method \Dew\Acs\Result checkServiceLinkedRole(array $arguments = [])
- * @method \Http\Promise\Promise checkServiceLinkedRoleAsync($arguments = [])
  * @method \Dew\Acs\Result describeActivationCodes(array $arguments = [])
  * @method \Http\Promise\Promise describeActivationCodesAsync($arguments = [])
  * @method \Dew\Acs\Result describeLicenseOrderDetails(array $arguments = [])
@@ -329,6 +325,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeHALogsAsync($arguments = [])
  * @method \Dew\Acs\Result describeAIDBClusterPerformance(array $arguments = [])
  * @method \Http\Promise\Promise describeAIDBClusterPerformanceAsync($arguments = [])
+ * @method \Dew\Acs\Result createServiceLinkedRole(array $arguments = [])
+ * @method \Http\Promise\Promise createServiceLinkedRoleAsync($arguments = [])
+ * @method \Dew\Acs\Result checkServiceLinkedRole(array $arguments = [])
+ * @method \Http\Promise\Promise checkServiceLinkedRoleAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteApplication(array $arguments = [])
+ * @method \Http\Promise\Promise deleteApplicationAsync($arguments = [])
  */
 final class PolardbClient extends AcsClient
 {

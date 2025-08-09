@@ -79,6 +79,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createElasticRuleAsync($arguments = [])
  * @method \Dew\Acs\Result describeRegions(array $arguments = [])
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeDBClusterStorageLimitation(array $arguments = [])
+ * @method \Http\Promise\Promise describeDBClusterStorageLimitationAsync($arguments = [])
  */
 final class SelectdbClient extends AcsClient
 {

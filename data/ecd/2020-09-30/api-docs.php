@@ -3013,6 +3013,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'NeedExtraInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDesktops' => [
@@ -7404,7 +7412,7 @@
                         'format' => 'int32',
                         'required' => true,
                         'minimum' => '2',
-                        'maximum' => '1000',
+                        'maximum' => '20000',
                     ],
                 ],
                 [
@@ -11511,6 +11519,32 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DataDiskList',
+                    'in' => 'formData',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'Size' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'minimum' => '0',
+                                    'maximum' => '2040',
+                                ],
+                                'PerformanceLevel' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 [

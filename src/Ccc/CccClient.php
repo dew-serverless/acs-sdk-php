@@ -485,6 +485,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createChatMediaUrlAsync($arguments = [])
  * @method \Dew\Acs\Result processCustomIMCallback(array $arguments = [])
  * @method \Http\Promise\Promise processCustomIMCallbackAsync($arguments = [])
+ * @method \Dew\Acs\Result importRamUsers(array $arguments = [])
+ * @method \Http\Promise\Promise importRamUsersAsync($arguments = [])
  */
 final class CccClient extends AcsClient
 {

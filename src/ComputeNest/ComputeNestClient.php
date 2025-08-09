@@ -89,6 +89,18 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listServiceInstanceBillAsync($arguments = [])
  * @method \Dew\Acs\Result checkServiceDeployable(array $arguments = [])
  * @method \Http\Promise\Promise checkServiceDeployableAsync($arguments = [])
+ * @method \Dew\Acs\Result createRestoreTask(array $arguments = [])
+ * @method \Http\Promise\Promise createRestoreTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getBackup(array $arguments = [])
+ * @method \Http\Promise\Promise getBackupAsync($arguments = [])
+ * @method \Dew\Acs\Result listRestoreTasks(array $arguments = [])
+ * @method \Http\Promise\Promise listRestoreTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result listBackups(array $arguments = [])
+ * @method \Http\Promise\Promise listBackupsAsync($arguments = [])
+ * @method \Dew\Acs\Result createBackup(array $arguments = [])
+ * @method \Http\Promise\Promise createBackupAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteBackup(array $arguments = [])
+ * @method \Http\Promise\Promise deleteBackupAsync($arguments = [])
  */
 final class ComputeNestClient extends AcsClient
 {

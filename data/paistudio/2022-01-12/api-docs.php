@@ -237,6 +237,75 @@
                     ],
                 ],
             ],
+            'CapacityLock' => [
+                'type' => 'object',
+                'properties' => [
+                    'id' => [
+                        'type' => 'string',
+                    ],
+                    'gmtCreated' => [
+                        'type' => 'string',
+                    ],
+                    'gmtModified' => [
+                        'type' => 'string',
+                    ],
+                    'lockProvider' => [
+                        'type' => 'string',
+                    ],
+                    'privatePoolId' => [
+                        'type' => 'string',
+                    ],
+                    'tenantId' => [
+                        'type' => 'string',
+                    ],
+                    'instanceType' => [
+                        'type' => 'string',
+                    ],
+                    'zoneId' => [
+                        'type' => 'string',
+                    ],
+                    'paymentType' => [
+                        'type' => 'string',
+                    ],
+                    'status' => [
+                        'type' => 'string',
+                    ],
+                    'lastSyncTime' => [
+                        'type' => 'string',
+                    ],
+                    'lastReconcileAttemptTime' => [
+                        'type' => 'string',
+                    ],
+                    'crsReservationId' => [
+                        'type' => 'string',
+                    ],
+                    'expireTime' => [
+                        'type' => 'string',
+                    ],
+                    'operator' => [
+                        'type' => 'string',
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                    ],
+                    'requestedCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'lockedCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'usedCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'availableCount' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                ],
+            ],
             'Channel' => [
                 'type' => 'object',
                 'properties' => [
@@ -1328,17 +1397,14 @@
             'QuotaConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'DefaultGPUDriver' => [
-                        'type' => 'string',
-                    ],
-                    'EnablePreemptSubquotaWorkloads' => [
+                    'SupportRDMA' => [
                         'type' => 'boolean',
                     ],
                     'ClusterId' => [
                         'type' => 'string',
                     ],
-                    'EnableSubQuotaPreemption' => [
-                        'type' => 'boolean',
+                    'UserVpc' => [
+                        '$ref' => '#/components/schemas/UserVpc',
                     ],
                     'SupportGPUDrivers' => [
                         'type' => 'array',
@@ -1346,26 +1412,11 @@
                             'type' => 'string',
                         ],
                     ],
-                    'SelfQuotaPreemptionConfig' => [
-                        '$ref' => '#/components/schemas/SelfQuotaPreemptionConfig',
-                    ],
-                    'UserVpc' => [
-                        '$ref' => '#/components/schemas/UserVpc',
-                    ],
-                    'EniCacheConfig' => [
-                        '$ref' => '#/components/schemas/EniCacheConfig',
+                    'DefaultGPUDriver' => [
+                        'type' => 'string',
                     ],
                     'ACS' => [
                         '$ref' => '#/components/schemas/ACS',
-                    ],
-                    'EnableGPUShare' => [
-                        'type' => 'boolean',
-                    ],
-                    'SupportRDMA' => [
-                        'type' => 'boolean',
-                    ],
-                    'OversoldUsageInfo' => [
-                        '$ref' => '#/components/schemas/OversoldUsageConfig',
                     ],
                     'ResourceSpecs' => [
                         'type' => 'array',
@@ -1373,11 +1424,32 @@
                             '$ref' => '#/components/schemas/WorkspaceSpecs',
                         ],
                     ],
+                    'EnablePreemptSubquotaWorkloads' => [
+                        'type' => 'boolean',
+                    ],
                     'SubQuotaPreemptionConfig' => [
                         '$ref' => '#/components/schemas/SubQuotaPreemptionConfig',
                     ],
+                    'EnableSubQuotaPreemption' => [
+                        'type' => 'boolean',
+                    ],
+                    'EnableGPUShare' => [
+                        'type' => 'boolean',
+                    ],
+                    'OversoldUsageInfo' => [
+                        '$ref' => '#/components/schemas/OversoldUsageConfig',
+                    ],
+                    'SelfQuotaPreemptionConfig' => [
+                        '$ref' => '#/components/schemas/SelfQuotaPreemptionConfig',
+                    ],
+                    'EniCacheConfig' => [
+                        '$ref' => '#/components/schemas/EniCacheConfig',
+                    ],
                     'SandboxCacheConfig' => [
                         '$ref' => '#/components/schemas/SandboxCacheConfig',
+                    ],
+                    'UseCase' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -5785,6 +5857,14 @@
                 ],
                 [
                     'name' => 'AvailabilityZone',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PaymentType',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

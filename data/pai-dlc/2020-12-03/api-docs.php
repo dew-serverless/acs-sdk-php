@@ -955,17 +955,54 @@
             'JobSettings' => [
                 'type' => 'object',
                 'properties' => [
+                    'BusinessUserId' => [
+                        'type' => 'string',
+                    ],
+                    'Caller' => [
+                        'type' => 'string',
+                    ],
+                    'Tags' => [
+                        'type' => 'object',
+                        'additionalProperties' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                    'PipelineId' => [
+                        'type' => 'string',
+                    ],
+                    'EnableTideResource' => [
+                        'type' => 'boolean',
+                    ],
+                    'EnableErrorMonitoringInAIMaster' => [
+                        'type' => 'boolean',
+                    ],
+                    'ErrorMonitoringArgs' => [
+                        'type' => 'string',
+                    ],
                     'EnableRDMA' => [
                         'type' => 'boolean',
                     ],
                     'EnableOssAppend' => [
                         'type' => 'boolean',
                     ],
-                    'AllocateAllRDMADevices' => [
+                    'OversoldType' => [
+                        'type' => 'string',
+                    ],
+                    'AdvancedSettings' => [
+                        'type' => 'object',
+                    ],
+                    'Driver' => [
+                        'type' => 'string',
+                    ],
+                    'EnableSanityCheck' => [
                         'type' => 'boolean',
                     ],
-                    'EnableTideResource' => [
-                        'type' => 'boolean',
+                    'SanityCheckArgs' => [
+                        'type' => 'string',
+                    ],
+                    'JobReservedMinutes' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
                     ],
                     'JobReservedPolicy' => [
                         'type' => 'string',
@@ -975,50 +1012,16 @@
                             'OnSucceed',
                         ],
                     ],
-                    'ErrorMonitoringArgs' => [
-                        'type' => 'string',
-                    ],
-                    'JobReservedMinutes' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                    ],
-                    'Driver' => [
-                        'type' => 'string',
-                    ],
-                    'SanityCheckArgs' => [
-                        'type' => 'string',
-                    ],
-                    'EnableErrorMonitoringInAIMaster' => [
-                        'type' => 'boolean',
-                    ],
-                    'AdvancedSettings' => [
-                        'type' => 'object',
-                    ],
-                    'Caller' => [
-                        'type' => 'string',
-                    ],
-                    'PipelineId' => [
-                        'type' => 'string',
-                    ],
-                    'BusinessUserId' => [
-                        'type' => 'string',
-                    ],
                     'EnableCPUAffinity' => [
                         'type' => 'boolean',
-                    ],
-                    'OversoldType' => [
-                        'type' => 'string',
-                    ],
-                    'Tags' => [
-                        'type' => 'object',
-                        'additionalProperties' => [
-                            'type' => 'string',
-                        ],
                     ],
                     'DisableEcsStockCheck' => [
                         'type' => 'boolean',
                     ],
-                    'EnableSanityCheck' => [
+                    'AllocateAllRDMADevices' => [
+                        'type' => 'boolean',
+                    ],
+                    'EnableDSWDev' => [
                         'type' => 'boolean',
                     ],
                 ],
@@ -1456,6 +1459,36 @@
                         'items' => [
                             'type' => 'string',
                         ],
+                    ],
+                ],
+            ],
+            'ServiceExposure' => [
+                'type' => 'object',
+                'properties' => [
+                    'ServiceId' => [
+                        'type' => 'string',
+                    ],
+                    'DisplayName' => [
+                        'type' => 'string',
+                    ],
+                    'JobId' => [
+                        'type' => 'string',
+                    ],
+                    'PodId' => [
+                        'type' => 'string',
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'Port' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                    ],
+                    'Status' => [
+                        'type' => 'string',
+                    ],
+                    'Message' => [
+                        'type' => 'string',
                     ],
                 ],
             ],

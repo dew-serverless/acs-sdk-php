@@ -2571,6 +2571,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'SplitterModel',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetUploadDocumentJob' => [

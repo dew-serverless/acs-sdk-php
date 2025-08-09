@@ -367,6 +367,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise setVodDomainSSLCertificateAsync($arguments = [])
  * @method \Dew\Acs\Result describeVodEditingUsageData(array $arguments = [])
  * @method \Http\Promise\Promise describeVodEditingUsageDataAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVodPlayerCollectData(array $arguments = [])
+ * @method \Http\Promise\Promise describeVodPlayerCollectDataAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVodPlayerDimensionData(array $arguments = [])
+ * @method \Http\Promise\Promise describeVodPlayerDimensionDataAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVodPlayerMetricData(array $arguments = [])
+ * @method \Http\Promise\Promise describeVodPlayerMetricDataAsync($arguments = [])
  */
 final class VodClient extends AcsClient
 {

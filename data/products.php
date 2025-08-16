@@ -2443,14 +2443,6 @@
         'defaultVersion' => '2024-11-11',
     ],
     [
-        'code' => 'SpecTest15',
-        'style' => 'RPC',
-        'versions' => [
-            '2024-07-31',
-        ],
-        'defaultVersion' => '2024-07-31',
-    ],
-    [
         'code' => 'TrafficFxOpen',
         'style' => 'RPC',
         'versions' => [
@@ -2481,5 +2473,13 @@
             '2025-05-27',
         ],
         'defaultVersion' => '2025-05-27',
+    ],
+    [
+        'code' => 'EduTutor',
+        'style' => 'RPC',
+        'versions' => [
+            '2025-07-07',
+        ],
+        'defaultVersion' => '2025-07-07',
     ],
 ];

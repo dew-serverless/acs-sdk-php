@@ -15,6 +15,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result valuateTemplate(array $arguments = [])
  * @method \Http\Promise\Promise valuateTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result getLinkageAttributesTemplate(array $arguments = [])
+ * @method \Http\Promise\Promise getLinkageAttributesTemplateAsync($arguments = [])
  * @method \Dew\Acs\Result getApplicationVariables(array $arguments = [])
  * @method \Http\Promise\Promise getApplicationVariablesAsync($arguments = [])
  * @method \Dew\Acs\Result reConfigApplication(array $arguments = [])

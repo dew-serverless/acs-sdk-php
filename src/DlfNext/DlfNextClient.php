@@ -117,6 +117,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise grantRoleToUsersAsync($arguments = [])
  * @method \Dew\Acs\Result revokeRoleFromUsers(array $arguments = [])
  * @method \Http\Promise\Promise revokeRoleFromUsersAsync($arguments = [])
+ * @method \Dew\Acs\Result refreshUserSync(array $arguments = [])
+ * @method \Http\Promise\Promise refreshUserSyncAsync($arguments = [])
  * @method \Dew\Acs\Result getCatalogSummary(array $arguments = [])
  * @method \Http\Promise\Promise getCatalogSummaryAsync($arguments = [])
  * @method \Dew\Acs\Result getCatalogSummaryTrend(array $arguments = [])

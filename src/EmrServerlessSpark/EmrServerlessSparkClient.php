@@ -31,6 +31,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createSqlStatementAsync($arguments = [])
  * @method \Dew\Acs\Result getSqlStatement(array $arguments = [])
  * @method \Http\Promise\Promise getSqlStatementAsync($arguments = [])
+ * @method \Dew\Acs\Result listSqlStatementContents(array $arguments = [])
+ * @method \Http\Promise\Promise listSqlStatementContentsAsync($arguments = [])
  * @method \Dew\Acs\Result createWorkspace(array $arguments = [])
  * @method \Http\Promise\Promise createWorkspaceAsync($arguments = [])
  * @method \Dew\Acs\Result listWorkspaces(array $arguments = [])

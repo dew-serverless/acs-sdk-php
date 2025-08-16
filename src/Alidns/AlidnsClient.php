@@ -427,6 +427,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDomainResolveStatisticsSummaryAsync($arguments = [])
  * @method \Dew\Acs\Result describeInternetDnsLogs(array $arguments = [])
  * @method \Http\Promise\Promise describeInternetDnsLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result addRecursionRecord(array $arguments = [])
+ * @method \Http\Promise\Promise addRecursionRecordAsync($arguments = [])
+ * @method \Dew\Acs\Result addRecursionZone(array $arguments = [])
+ * @method \Http\Promise\Promise addRecursionZoneAsync($arguments = [])
  */
 final class AlidnsClient extends AcsClient
 {

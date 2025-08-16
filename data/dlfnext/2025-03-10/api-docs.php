@@ -3811,6 +3811,28 @@
                 ],
             ],
         ],
+        'RefreshUserSync' => [
+            'path' => '/dlf/v1/auth/usersync',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [],
+        ],
         'GetCatalogSummary' => [
             'path' => '/dlf/v1/{catalogId}/storage-summary',
             'methods' => [

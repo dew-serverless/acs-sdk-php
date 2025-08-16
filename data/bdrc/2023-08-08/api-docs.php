@@ -1231,28 +1231,6 @@
                 ],
             ],
         ],
-        'DescribeRegions' => [
-            'path' => '/api/v1/regions',
-            'methods' => [
-                'get',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'multipart/form-data',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [],
-        ],
         'DescribeTasks' => [
             'path' => '/api/v1/tasks',
             'methods' => [

@@ -1492,8 +1492,89 @@
                 ],
             ],
         ],
-        'ListChunks' => [
-            'path' => '/{WorkspaceId}/index/list_chunks',
+        'ListIndexFileDetails' => [
+            'path' => '/{WorkspaceId}/index/list_index_file_detail',
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'IndexId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DocumentStatus',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DocumentName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'WorkspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'EnableNameLike',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteIndexDocument' => [
+            'path' => '/{WorkspaceId}/index/delete_index_document',
             'methods' => [
                 'post',
             ],
@@ -1522,43 +1603,23 @@
                     ],
                 ],
                 [
-                    'name' => 'body',
-                    'in' => 'body',
+                    'name' => 'IndexId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DocumentIds',
+                    'in' => 'query',
                     'style' => 'json',
                     'schema' => [
-                        'type' => 'object',
-                        'required' => false,
-                        'properties' => [
-                            'Fields' => [
-                                'type' => 'array',
-                                'required' => false,
-                                'items' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                            ],
-                            'Filed' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'FileId' => [
-                                'type' => 'string',
-                                'required' => false,
-                            ],
-                            'IndexId' => [
-                                'type' => 'string',
-                                'required' => true,
-                            ],
-                            'PageNum' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
-                            'PageSize' => [
-                                'type' => 'integer',
-                                'format' => 'int32',
-                                'required' => false,
-                            ],
+                        'type' => 'array',
+                        'required' => true,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
                         ],
                     ],
                 ],
@@ -1658,8 +1719,8 @@
                 ],
             ],
         ],
-        'DeleteIndexDocument' => [
-            'path' => '/{WorkspaceId}/index/delete_index_document',
+        'ListChunks' => [
+            'path' => '/{WorkspaceId}/index/list_chunks',
             'methods' => [
                 'post',
             ],
@@ -1688,105 +1749,44 @@
                     ],
                 ],
                 [
-                    'name' => 'IndexId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'DocumentIds',
-                    'in' => 'query',
+                    'name' => 'body',
+                    'in' => 'body',
                     'style' => 'json',
                     'schema' => [
-                        'type' => 'array',
-                        'required' => true,
-                        'items' => [
-                            'type' => 'string',
-                            'required' => false,
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Fields' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                            'Filed' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'FileId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'IndexId' => [
+                                'type' => 'string',
+                                'required' => true,
+                            ],
+                            'PageNum' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
+                            'PageSize' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
                         ],
-                    ],
-                ],
-            ],
-        ],
-        'ListIndexFileDetails' => [
-            'path' => '/{WorkspaceId}/index/list_index_file_detail',
-            'methods' => [
-                'post',
-            ],
-            'schemes' => [
-                'https',
-            ],
-            'security' => [
-                [
-                    'AK' => [],
-                ],
-            ],
-            'consumes' => [
-                'application/json',
-            ],
-            'produces' => [
-                'application/json',
-            ],
-            'deprecated' => false,
-            'parameters' => [
-                [
-                    'name' => 'IndexId',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DocumentStatus',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'DocumentName',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageNumber',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int32',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'WorkspaceId',
-                    'in' => 'path',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => true,
-                    ],
-                ],
-                [
-                    'name' => 'EnableNameLike',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -2624,6 +2624,85 @@
                 ],
                 [
                     'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetAlipayTransferStatus' => [
+            'path' => '/openapi/alipay/transfer/status',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'code',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetAlipayUrl' => [
+            'path' => '/openapi/alipay/transfer/url',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'workspace_id',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'app_id',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

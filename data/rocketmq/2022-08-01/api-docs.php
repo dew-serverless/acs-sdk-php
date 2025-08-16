@@ -471,8 +471,8 @@
                 'post',
             ],
             'schemes' => [
-                'https',
                 'http',
+                'https',
             ],
             'security' => [
                 [
@@ -507,7 +507,7 @@
                         'properties' => [
                             'messageType' => [
                                 'type' => 'string',
-                                'required' => false,
+                                'required' => true,
                                 'enum' => [
                                     'NORMAL',
                                     'FIFO',
@@ -1766,6 +1766,22 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'startTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'endTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -3749,6 +3765,10 @@
             'endpoint' => 'rocketmq.eu-central-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'rocketmq.ap-south-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'me-east-1',
             'endpoint' => 'rocketmq.me-east-1.aliyuncs.com',
         ],
@@ -3775,6 +3795,10 @@
         [
             'regionId' => 'me-central-1',
             'endpoint' => 'rocketmq.me-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'rocketmq.na-south-1.aliyuncs.com',
         ],
     ],
 ];

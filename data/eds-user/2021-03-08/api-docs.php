@@ -1304,6 +1304,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ShowExtras',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'additionalProperties' => [
+                            'type' => 'any',
+                        ],
+                    ],
+                ],
             ],
         ],
         'DescribeOrgByLayer' => [

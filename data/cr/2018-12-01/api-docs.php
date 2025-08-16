@@ -5944,6 +5944,10 @@
             'endpoint' => 'cr.cn-chengdu.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'cr.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hongkong',
             'endpoint' => 'cr.cn-hongkong.aliyuncs.com',
         ],
@@ -5958,6 +5962,10 @@
         [
             'regionId' => 'ap-southeast-1',
             'endpoint' => 'cr.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-2',
+            'endpoint' => 'cr.ap-southeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-3',
@@ -5988,6 +5996,10 @@
             'endpoint' => 'cr.eu-central-1.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'cr.ap-south-1.aliyuncs.com',
+        ],
+        [
             'regionId' => 'me-east-1',
             'endpoint' => 'cr.me-east-1.aliyuncs.com',
         ],
@@ -6016,8 +6028,16 @@
             'endpoint' => 'cr.me-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'cr.cn-wuhan-lr.aliyuncs.com',
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'cr.cn-heyuan-acdr-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'cr.na-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-southeast-1',
+            'endpoint' => 'cr.us-southeast-1.aliyuncs.com',
         ],
     ],
 ];

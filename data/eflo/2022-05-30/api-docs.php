@@ -5171,16 +5171,20 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'eflo.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'eflo.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-wulanchabu',
             'endpoint' => 'eflo.cn-wulanchabu.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'eflo.cn-heyuan.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'eflo.ap-southeast-1.aliyuncs.com',
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'eflo.cn-hangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
@@ -5189,6 +5193,34 @@
         [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'eflo.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'eflo.cn-heyuan.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'eflo.cn-guangzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'eflo.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'eflo.ap-southeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'eflo.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'eflo-controller-share.cn-shanghai-finance-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'eflo-controller.ap-southeast-7.aliyuncs.com',
         ],
     ],
 ];

@@ -236,25 +236,25 @@
             'Binding' => [
                 'type' => 'object',
                 'properties' => [
-                    'Phase' => [
-                        'type' => 'string',
-                    ],
                     'ProjectName' => [
                         'type' => 'string',
                     ],
                     'DatasetName' => [
                         'type' => 'string',
                     ],
+                    'URI' => [
+                        'type' => 'string',
+                    ],
                     'State' => [
+                        'type' => 'string',
+                    ],
+                    'Phase' => [
                         'type' => 'string',
                     ],
                     'CreateTime' => [
                         'type' => 'string',
                     ],
                     'UpdateTime' => [
-                        'type' => 'string',
-                    ],
-                    'URI' => [
                         'type' => 'string',
                     ],
                     'Reason' => [
@@ -634,6 +634,12 @@
                     'TotalFileSize' => [
                         'type' => 'integer',
                         'format' => 'int64',
+                    ],
+                    'WorkflowParameters' => [
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/WorkflowParameter',
+                        ],
                     ],
                 ],
             ],
@@ -1342,10 +1348,10 @@
             'ImageInsight' => [
                 'type' => 'object',
                 'properties' => [
-                    'Description' => [
+                    'Caption' => [
                         'type' => 'string',
                     ],
-                    'Caption' => [
+                    'Description' => [
                         'type' => 'string',
                     ],
                 ],

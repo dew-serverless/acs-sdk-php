@@ -3832,6 +3832,7 @@
                             'eu-west-1',
                             'cn-north-2-gov-1',
                             'cn-wulanchabu-acdr-1',
+                            'cn-shanghai-cloudspe',
                         ],
                     ],
                 ],
@@ -8342,6 +8343,72 @@
                         'items' => [
                             'type' => 'string',
                             'required' => false,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ExportApplicationConfigs' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'parameters' => [
+                [
+                    'name' => 'RegionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ClusterId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'ApplicationConfigFiles',
+                    'in' => 'query',
+                    'style' => 'flat',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            '$ref' => '#/components/schemas/ApplicationConfigFile',
+                            'required' => false,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'FileFormat',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExportMode',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'MODIFICATION',
+                            'ALL',
                         ],
                     ],
                 ],

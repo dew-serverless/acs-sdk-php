@@ -1590,6 +1590,10 @@
                                     ],
                                     'maxItems' => 100,
                                 ],
+                                'ExistingStatus' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
                             ],
                         ],
                         'maxItems' => 100,
@@ -1653,6 +1657,14 @@
                 ],
                 [
                     'name' => 'Status',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExistingStatus',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

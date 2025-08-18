@@ -46,8 +46,42 @@ function buildProduct(string $product): void
     buildClient($product);
 }
 
+/**
+ * Delete the generated client and exception files.
+ */
+function cleanProducts(): void
+{
+    $iterator = new \FilesystemIterator(__DIR__.'/../src');
+
+    foreach ($iterator as $file) {
+        if (! $file->isDir()) {
+            continue;
+        }
+
+        if ($file->isLink()) {
+            continue;
+        }
+
+        $clientPathname = implode(DIRECTORY_SEPARATOR, [
+            $file->getPathname(),
+            $file->getFilename().'Client.php',
+        ]);
+
+        $exceptionPathname = implode(DIRECTORY_SEPARATOR, [
+            $file->getPathname(),
+            $file->getFilename().'Exception.php',
+        ]);
+
+        if (file_exists($clientPathname) && file_exists($exceptionPathname)) {
+            unlink($clientPathname);
+            unlink($exceptionPathname);
+        }
+    }
+}
+
 function main(): void
 {
+    cleanProducts();
     buildFromProducts(__DIR__.'/../data/products.php');
     buildProduct('Tablestore');
     buildProduct('Ots');

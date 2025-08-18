@@ -7,7 +7,13 @@ require_once __DIR__.'/ProductBuilder.php';
 
 use Dew\Acs\ApiDocsResolver;
 
-function buildClient(string $product): void
+/**
+ * Build the product client and exception.
+ *
+ * @param  class-string  $traits  The traits for the client.
+ * @param  class-string  $exceptionTraits  The traits for the exception.
+ */
+function buildClient(string $product, array $traits = [], array $exceptionTraits = []): void
 {
     $builder = new ProductBuilder(
         basePath: __DIR__.'/../src',
@@ -15,11 +21,14 @@ function buildClient(string $product): void
         product: ApiDocsResolver::getNormalizedProductName($product)
     );
 
-    $builder->buildClient();
-    $builder->buildException();
+    $builder->buildClient($traits);
+    $builder->buildException($exceptionTraits);
 }
 
-function buildFromProducts(string $filename): void
+/**
+ * @param  array<string, class-string>  $traits
+ */
+function buildFromProducts(string $filename, array $traits = []): void
 {
     if (! file_exists($filename)) {
         throw new InvalidArgumentException('The file does not exist.');
@@ -36,14 +45,24 @@ function buildFromProducts(string $filename): void
             throw new RuntimeException('Missing product code.');
         }
 
-        buildProduct($product['code']);
+        buildProduct(
+            $product['code'],
+            $traits[$product['code']] ?? [],
+            $traits[$product['code'].'Exception'] ?? [],
+        );
     }
 }
 
-function buildProduct(string $product): void
+/**
+ * Build the product.
+ *
+ * @param  class-string  $traits  The traits for the client.
+ * @param  class-string  $exceptionTraits  The traits for the exception.
+ */
+function buildProduct(string $product, array $traits = [], array $exceptionTraits = []): void
 {
     printf('=> Build %s'.PHP_EOL, strtolower($product));
-    buildClient($product);
+    buildClient($product, $traits, $exceptionTraits);
 }
 
 /**
@@ -82,9 +101,25 @@ function cleanProducts(): void
 function main(): void
 {
     cleanProducts();
-    buildFromProducts(__DIR__.'/../data/products.php');
+
+    buildFromProducts(__DIR__.'/../data/products.php', [
+        'Oss' => [
+            'Dew\\Acs\\Oss\\DeletesMultipleObjects',
+            'Dew\\Acs\\Oss\\OssStack',
+            'Dew\\Acs\\Oss\\SignsUrl',
+        ],
+        'Sls' => [
+            'Dew\\Acs\\Sls\\ManagesLogs',
+        ],
+        'SlsException' => [
+            'Dew\\Acs\\Sls\\CustomErrorCode',
+        ],
+    ]);
+
     buildProduct('Tablestore');
-    buildProduct('Ots');
+
+    buildProduct('Ots', ['Dew\\Acs\\Ots\\ResolvesOtsEndpoint']);
+
     print '== Build completed.'.PHP_EOL;
 }
 

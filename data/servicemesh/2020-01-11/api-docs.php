@@ -5460,6 +5460,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ServiceLevelFallbackTarget',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetSwimLaneDetail' => [

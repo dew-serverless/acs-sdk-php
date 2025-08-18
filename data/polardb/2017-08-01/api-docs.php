@@ -6929,6 +6929,93 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'BackupPolicyLevel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AdvancedDataPolicies',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'object',
+                            'required' => false,
+                            'properties' => [
+                                'ActionType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OnlyPreserveOneEachHour' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'RetentionValue' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'BakType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FilterKey' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FilterValue' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DestType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'FilterType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'SrcRegion' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'AutoCreated' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'SrcType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'OnlyPreserveOneEachDay' => [
+                                    'type' => 'boolean',
+                                    'required' => false,
+                                ],
+                                'DumpAction' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'PolicyId' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'DestRegion' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                                'RetentionType' => [
+                                    'type' => 'string',
+                                    'required' => false,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'ModifyLogBackupPolicy' => [

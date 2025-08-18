@@ -785,6 +785,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise moveResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result describeVpcGrantRulesToEcr(array $arguments = [])
+ * @method \Http\Promise\Promise describeVpcGrantRulesToEcrAsync($arguments = [])
  */
 final class VpcClient extends AcsClient
 {

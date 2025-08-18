@@ -19521,75 +19521,329 @@
                 ],
             ],
         ],
+        'ListNacosMcpServers' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NamespaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Search',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Name',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNum',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'GetNacosMcpServer' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NamespaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'McpServerId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'McpServerVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'CreateNacosMcpServer' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'NamespaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServerSpecification',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ToolSpecification',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndpointSpecification',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ServerName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'YamlConfig',
+                    'in' => 'formData',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'DeleteNacosMcpServer' => [
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'NamespaceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'McpServerId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'AcceptLanguage',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
     ],
     'endpoints' => [
         [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'mse.cn-wuhan-lr.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'mse.cn-qingdao.aliyuncs.com',
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'mse.cn-wulanchabu.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-beijing',
             'endpoint' => 'mse.cn-beijing.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'mse.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-zhengzhou-jva',
             'endpoint' => 'mse.cn-zhengzhou-jva.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'mse.cn-huhehaote.aliyuncs.com',
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'mse.cn-qingdao.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'mse.cn-wulanchabu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou',
-            'endpoint' => 'mse.cn-hangzhou.aliyuncs.com',
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'mse.cn-wuhan-lr.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shanghai',
             'endpoint' => 'mse.cn-shanghai.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-fuzhou',
-            'endpoint' => 'mse.cn-fuzhou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'mse.cn-shenzhen.aliyuncs.com',
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'mse.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-heyuan',
             'endpoint' => 'mse.cn-heyuan.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'mse.cn-guangzhou.aliyuncs.com',
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'mse.cn-zhangjiakou.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'mse.cn-chengdu.aliyuncs.com',
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'mse.cn-shenzhen.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'mse.cn-hongkong.aliyuncs.com',
+            'regionId' => 'ap-northeast-2',
+            'endpoint' => 'mse.ap-northeast-2.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'mse.ap-northeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-2',
-            'endpoint' => 'mse.ap-northeast-2.aliyuncs.com',
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'mse.cn-fuzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'mse.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'mse.cn-guangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',
@@ -19600,6 +19854,10 @@
             'endpoint' => 'mse.ap-southeast-3.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'mse.cn-huhehaote.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-5',
             'endpoint' => 'mse.ap-southeast-5.aliyuncs.com',
         ],
@@ -19608,16 +19866,24 @@
             'endpoint' => 'mse.ap-southeast-6.aliyuncs.com',
         ],
         [
+            'regionId' => 'ap-southeast-7',
+            'endpoint' => 'mse.ap-southeast-7.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hangzhou',
+            'endpoint' => 'mse.cn-hangzhou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'us-east-1',
             'endpoint' => 'mse.us-east-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'mse.us-west-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'eu-west-1',
             'endpoint' => 'mse.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'mse.us-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-central-1',
@@ -19628,28 +19894,24 @@
             'endpoint' => 'mse.me-east-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-hangzhou-finance',
-            'endpoint' => 'mse.cn-hangzhou-finance.aliyuncs.com',
+            'regionId' => 'me-central-1',
+            'endpoint' => 'mse.me-central-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'mse.cn-shanghai-finance-1.aliyuncs.com',
+            'regionId' => 'cn-hangzhou-finance',
+            'endpoint' => 'mse.cn-hangzhou-finance.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-shenzhen-finance-1',
             'endpoint' => 'mse.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-7',
-            'endpoint' => 'mse.ap-southeast-7.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'mse.cn-beijing-finance-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'me-central-1',
-            'endpoint' => 'mse.me-central-1.aliyuncs.com',
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'mse.cn-shanghai-finance-1.aliyuncs.com',
         ],
     ],
 ];

@@ -1047,52 +1047,19 @@
                     'FirstRefreshTime' => [
                         'type' => 'string',
                     ],
-                    'BaseTableInfos' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'object',
-                            'properties' => [
-                                'TableName' => [
-                                    'type' => 'string',
-                                ],
-                                'BaseTableIsMv' => [
-                                    'type' => 'boolean',
-                                ],
-                                'SchemaName' => [
-                                    'type' => 'string',
-                                ],
-                            ],
-                        ],
+                    'QueryRewriteEnabled' => [
+                        'type' => 'boolean',
                     ],
                     'ExplicitHit' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'BaseTableNames' => [
-                        'type' => 'array',
-                        'items' => [
-                            'type' => 'array',
-                            'items' => [
-                                'type' => 'string',
-                            ],
-                        ],
+                    'IsInactive' => [
+                        'type' => 'boolean',
                     ],
                     'RemoteSize' => [
                         'type' => 'integer',
                         'format' => 'int64',
-                    ],
-                    'ImplicitHit' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                    ],
-                    'UpdatedAt' => [
-                        'type' => 'string',
-                    ],
-                    'QueryRewriteEnabled' => [
-                        'type' => 'boolean',
-                    ],
-                    'IsInactive' => [
-                        'type' => 'boolean',
                     ],
                     'LocalSize' => [
                         'type' => 'integer',
@@ -1104,7 +1071,46 @@
                     'RefreshInterval' => [
                         'type' => 'string',
                     ],
+                    'ImplicitHit' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'UpdatedAt' => [
+                        'type' => 'string',
+                    ],
                     'ResourceGroup' => [
+                        'type' => 'string',
+                    ],
+                    'BaseTableInfos' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'TableName' => [
+                                    'type' => 'string',
+                                ],
+                                'TableEngine' => [
+                                    'type' => 'string',
+                                ],
+                                'BaseTableIsMv' => [
+                                    'type' => 'boolean',
+                                ],
+                                'SchemaName' => [
+                                    'type' => 'string',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'BaseTableNames' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'array',
+                            'items' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'TableEngine' => [
                         'type' => 'string',
                     ],
                 ],

@@ -7,14 +7,14 @@ namespace Dew\Acs\Selectdb;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result createDBInstance(array $arguments = [])
+ * @method \Http\Promise\Promise createDBInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result createServiceLinkedRoleForSelectDB(array $arguments = [])
  * @method \Http\Promise\Promise createServiceLinkedRoleForSelectDBAsync($arguments = [])
  * @method \Dew\Acs\Result checkServiceLinkedRole(array $arguments = [])
  * @method \Http\Promise\Promise checkServiceLinkedRoleAsync($arguments = [])
  * @method \Dew\Acs\Result checkCreateDBInstance(array $arguments = [])
  * @method \Http\Promise\Promise checkCreateDBInstanceAsync($arguments = [])
- * @method \Dew\Acs\Result createDBInstance(array $arguments = [])
- * @method \Http\Promise\Promise createDBInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result describeDBInstances(array $arguments = [])
  * @method \Http\Promise\Promise describeDBInstancesAsync($arguments = [])
  * @method \Dew\Acs\Result describeDBInstanceAttribute(array $arguments = [])
@@ -27,6 +27,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSecurityIPListAsync($arguments = [])
  * @method \Dew\Acs\Result modifySecurityIPList(array $arguments = [])
  * @method \Http\Promise\Promise modifySecurityIPListAsync($arguments = [])
+ * @method \Dew\Acs\Result checkIpExistsInSecurityIpList(array $arguments = [])
+ * @method \Http\Promise\Promise checkIpExistsInSecurityIpListAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBInstanceAttribute(array $arguments = [])
  * @method \Http\Promise\Promise modifyDBInstanceAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result upgradeDBInstanceEngineVersion(array $arguments = [])
@@ -79,8 +81,14 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createElasticRuleAsync($arguments = [])
  * @method \Dew\Acs\Result describeRegions(array $arguments = [])
  * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
+ * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
+ * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
  * @method \Dew\Acs\Result describeDBClusterStorageLimitation(array $arguments = [])
  * @method \Http\Promise\Promise describeDBClusterStorageLimitationAsync($arguments = [])
+ * @method \Dew\Acs\Result tagResources(array $arguments = [])
+ * @method \Http\Promise\Promise tagResourcesAsync($arguments = [])
+ * @method \Dew\Acs\Result untagResources(array $arguments = [])
+ * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
  */
 final class SelectdbClient extends AcsClient
 {

@@ -63,6 +63,22 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeUserLogCountAsync($arguments = [])
  * @method \Dew\Acs\Result getAdvancedQueryTemplate(array $arguments = [])
  * @method \Http\Promise\Promise getAdvancedQueryTemplateAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteAdvancedQueryHistory(array $arguments = [])
+ * @method \Http\Promise\Promise deleteAdvancedQueryHistoryAsync($arguments = [])
+ * @method \Dew\Acs\Result createAdvancedQueryHistory(array $arguments = [])
+ * @method \Http\Promise\Promise createAdvancedQueryHistoryAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAdvancedQueryHistory(array $arguments = [])
+ * @method \Http\Promise\Promise describeAdvancedQueryHistoryAsync($arguments = [])
+ * @method \Dew\Acs\Result describeResourceLifeCycleEvents(array $arguments = [])
+ * @method \Http\Promise\Promise describeResourceLifeCycleEventsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeScenes(array $arguments = [])
+ * @method \Http\Promise\Promise describeScenesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSearchTemplates(array $arguments = [])
+ * @method \Http\Promise\Promise describeSearchTemplatesAsync($arguments = [])
+ * @method \Dew\Acs\Result listDataEventServices(array $arguments = [])
+ * @method \Http\Promise\Promise listDataEventServicesAsync($arguments = [])
+ * @method \Dew\Acs\Result getGovernanceMetrics(array $arguments = [])
+ * @method \Http\Promise\Promise getGovernanceMetricsAsync($arguments = [])
  */
 final class ActiontrailClient extends AcsClient
 {

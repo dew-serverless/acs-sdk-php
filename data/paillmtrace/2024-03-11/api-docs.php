@@ -797,6 +797,14 @@
                     ],
                 ],
                 [
+                    'name' => 'SessionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'MinTime',
                     'in' => 'query',
                     'schema' => [

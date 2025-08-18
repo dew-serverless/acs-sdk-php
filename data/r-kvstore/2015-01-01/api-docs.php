@@ -2520,17 +2520,31 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
                             ],
                         ],
                         'maxItems' => 21,
+                    ],
+                ],
+                [
+                    'name' => 'NodeType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'STAND_ALONE',
+                            'MASTER_SLAVE',
+                            'double',
+                            'single',
+                        ],
                     ],
                 ],
             ],
@@ -3821,6 +3835,14 @@
                 ],
                 [
                     'name' => 'ZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'SecondaryZoneId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

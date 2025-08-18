@@ -7,6 +7,14 @@ namespace Dew\Acs\Market;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result describeFailedNotifications(array $arguments = [])
+ * @method \Http\Promise\Promise describeFailedNotificationsAsync($arguments = [])
+ * @method \Dew\Acs\Result confirmNotification(array $arguments = [])
+ * @method \Http\Promise\Promise confirmNotificationAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInvoiceForIsv(array $arguments = [])
+ * @method \Http\Promise\Promise modifyInvoiceForIsvAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInvoiceForIsv(array $arguments = [])
+ * @method \Http\Promise\Promise describeInvoiceForIsvAsync($arguments = [])
  * @method \Dew\Acs\Result describePrice(array $arguments = [])
  * @method \Http\Promise\Promise describePriceAsync($arguments = [])
  * @method \Dew\Acs\Result describeProduct(array $arguments = [])
@@ -61,14 +69,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeDistributionProductsAsync($arguments = [])
  * @method \Dew\Acs\Result describeApiMetering(array $arguments = [])
  * @method \Http\Promise\Promise describeApiMeteringAsync($arguments = [])
- * @method \Dew\Acs\Result describeFailedNotifications(array $arguments = [])
- * @method \Http\Promise\Promise describeFailedNotificationsAsync($arguments = [])
- * @method \Dew\Acs\Result confirmNotification(array $arguments = [])
- * @method \Http\Promise\Promise confirmNotificationAsync($arguments = [])
- * @method \Dew\Acs\Result describeInvoiceForIsv(array $arguments = [])
- * @method \Http\Promise\Promise describeInvoiceForIsvAsync($arguments = [])
- * @method \Dew\Acs\Result modifyInvoiceForIsv(array $arguments = [])
- * @method \Http\Promise\Promise modifyInvoiceForIsvAsync($arguments = [])
  */
 final class MarketClient extends AcsClient
 {

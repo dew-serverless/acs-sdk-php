@@ -151,6 +151,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateUserAttributeAsync($arguments = [])
  * @method \Dew\Acs\Result listUsers(array $arguments = [])
  * @method \Http\Promise\Promise listUsersAsync($arguments = [])
+ * @method \Dew\Acs\Result exportApplicationConfigs(array $arguments = [])
+ * @method \Http\Promise\Promise exportApplicationConfigsAsync($arguments = [])
  */
 final class EmrClient extends AcsClient
 {

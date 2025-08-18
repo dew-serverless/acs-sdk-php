@@ -107,6 +107,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listApplicationClientSecretsAsync($arguments = [])
  * @method \Dew\Acs\Result obtainApplicationClientSecret(array $arguments = [])
  * @method \Http\Promise\Promise obtainApplicationClientSecretAsync($arguments = [])
+ * @method \Dew\Acs\Result updateApplicationClientSecretExpirationTime(array $arguments = [])
+ * @method \Http\Promise\Promise updateApplicationClientSecretExpirationTimeAsync($arguments = [])
  * @method \Dew\Acs\Result enableApplicationApiInvoke(array $arguments = [])
  * @method \Http\Promise\Promise enableApplicationApiInvokeAsync($arguments = [])
  * @method \Dew\Acs\Result disableApplicationApiInvoke(array $arguments = [])

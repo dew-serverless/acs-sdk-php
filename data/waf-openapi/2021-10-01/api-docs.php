@@ -1632,6 +1632,30 @@
                                     'required' => false,
                                 ],
                             ],
+                            'BackendPorts' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'BackendPort' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'Protocol' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ListenPort' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -1931,6 +1955,30 @@
                                 'items' => [
                                     'type' => 'string',
                                     'required' => false,
+                                ],
+                            ],
+                            'BackendPorts' => [
+                                'type' => 'array',
+                                'required' => false,
+                                'items' => [
+                                    'type' => 'object',
+                                    'required' => false,
+                                    'properties' => [
+                                        'BackendPort' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                        'Protocol' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'ListenPort' => [
+                                            'type' => 'integer',
+                                            'format' => 'int32',
+                                            'required' => false,
+                                        ],
+                                    ],
                                 ],
                             ],
                         ],

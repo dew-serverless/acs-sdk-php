@@ -167,8 +167,16 @@
                             'OpenAIExtraQuery' => [
                                 'type' => 'string',
                             ],
+                            'OutputMaxDelay' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
                             'BailianAppParams' => [
                                 'type' => 'string',
+                            ],
+                            'OutputMinLength' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                             ],
                         ],
                     ],
@@ -363,8 +371,15 @@
                             'OpenAIExtraQuery' => [
                                 'type' => 'string',
                             ],
+                            'OutputMaxDelay' => [
+                                'type' => 'string',
+                            ],
                             'BailianAppParams' => [
                                 'type' => 'string',
+                            ],
+                            'OutputMinLength' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                             ],
                         ],
                     ],
@@ -10905,24 +10920,6 @@
             'deprecated' => false,
             'parameters' => [
                 [
-                    'name' => 'PageNo',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'Type',
                     'in' => 'query',
                     'schema' => [
@@ -13842,6 +13839,128 @@
                                     'type' => 'string',
                                     'required' => false,
                                 ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'SubmitVideoCognitionJob' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'Title',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Params',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'UserData',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Input',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'Type' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Media' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'TemplateId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
+        'QueryVideoCognitionJob' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Params',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'IncludeResults',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'NeedAsr' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'NeedOcr' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'NeedProcess' => [
+                                'type' => 'boolean',
+                                'required' => false,
                             ],
                         ],
                     ],
@@ -17539,6 +17658,21 @@
                     ],
                 ],
             ],
+        ],
+        'GetMediaConnectAvailableRegion' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [],
         ],
         'ForbidMediaConnectFlowOutput' => [
             'path' => '',

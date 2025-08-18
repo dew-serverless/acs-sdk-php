@@ -245,6 +245,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listReportDefinitionsAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result deleteReportDefinition(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise deleteReportDefinitionAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result saveCostCenterShareRule(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise saveCostCenterShareRuleAsync($arguments = []) {@since 2023-09-30}
+ * @method \Dew\Acs\Result queryCostCenterShareRule(array $arguments = []) {@since 2023-09-30}
+ * @method \Http\Promise\Promise queryCostCenterShareRuleAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result createCostCenter(array $arguments = []) {@since 2023-09-30}
  * @method \Http\Promise\Promise createCostCenterAsync($arguments = []) {@since 2023-09-30}
  * @method \Dew\Acs\Result modifyCostCenter(array $arguments = []) {@since 2023-09-30}

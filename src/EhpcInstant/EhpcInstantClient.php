@@ -7,6 +7,18 @@ namespace Dew\Acs\EhpcInstant;
 use Dew\Acs\AcsClient;
 
 /**
+ * @method \Dew\Acs\Result createActionPlan(array $arguments = [])
+ * @method \Http\Promise\Promise createActionPlanAsync($arguments = [])
+ * @method \Dew\Acs\Result updateActionPlan(array $arguments = [])
+ * @method \Http\Promise\Promise updateActionPlanAsync($arguments = [])
+ * @method \Dew\Acs\Result listActionPlans(array $arguments = [])
+ * @method \Http\Promise\Promise listActionPlansAsync($arguments = [])
+ * @method \Dew\Acs\Result listActionPlanActivities(array $arguments = [])
+ * @method \Http\Promise\Promise listActionPlanActivitiesAsync($arguments = [])
+ * @method \Dew\Acs\Result getActionPlan(array $arguments = [])
+ * @method \Http\Promise\Promise getActionPlanAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteActionPlan(array $arguments = [])
+ * @method \Http\Promise\Promise deleteActionPlanAsync($arguments = [])
  * @method \Dew\Acs\Result addImage(array $arguments = [])
  * @method \Http\Promise\Promise addImageAsync($arguments = [])
  * @method \Dew\Acs\Result getImage(array $arguments = [])
@@ -15,6 +27,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listImagesAsync($arguments = [])
  * @method \Dew\Acs\Result removeImage(array $arguments = [])
  * @method \Http\Promise\Promise removeImageAsync($arguments = [])
+ * @method \Dew\Acs\Result getAppVersions(array $arguments = [])
+ * @method \Http\Promise\Promise getAppVersionsAsync($arguments = [])
+ * @method \Dew\Acs\Result synchronizeApp(array $arguments = [])
+ * @method \Http\Promise\Promise synchronizeAppAsync($arguments = [])
  * @method \Dew\Acs\Result createJob(array $arguments = [])
  * @method \Http\Promise\Promise createJobAsync($arguments = [])
  * @method \Dew\Acs\Result getJob(array $arguments = [])
@@ -47,8 +63,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listPoolsAsync($arguments = [])
  * @method \Dew\Acs\Result deletePool(array $arguments = [])
  * @method \Http\Promise\Promise deletePoolAsync($arguments = [])
- * @method \Dew\Acs\Result getAppVersions(array $arguments = [])
- * @method \Http\Promise\Promise getAppVersionsAsync($arguments = [])
  */
 final class EhpcInstantClient extends AcsClient
 {

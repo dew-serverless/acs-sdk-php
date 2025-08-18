@@ -1372,6 +1372,10 @@
                                 'required' => false,
                                 'maxLength' => 128,
                             ],
+                            'AllowedPublicClient' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2132,6 +2136,15 @@
                         'maxLength' => 64,
                     ],
                 ],
+                [
+                    'name' => 'ExpirationTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteApplicationClientSecret' => [
@@ -2337,6 +2350,59 @@
                         'type' => 'string',
                         'required' => true,
                         'maxLength' => 64,
+                    ],
+                ],
+            ],
+        ],
+        'UpdateApplicationClientSecretExpirationTime' => [
+            'methods' => [
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'InstanceId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'ApplicationId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'SecretId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                        'maxLength' => 64,
+                    ],
+                ],
+                [
+                    'name' => 'ExpirationTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => true,
+                        'maxLength' => 128,
                     ],
                 ],
             ],

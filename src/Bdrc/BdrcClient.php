@@ -57,8 +57,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeTopRiskyResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result describeProductDataRedundancyTypeStat(array $arguments = [])
  * @method \Http\Promise\Promise describeProductDataRedundancyTypeStatAsync($arguments = [])
- * @method \Dew\Acs\Result describeRegions(array $arguments = [])
- * @method \Http\Promise\Promise describeRegionsAsync($arguments = [])
  * @method \Dew\Acs\Result describeTasks(array $arguments = [])
  * @method \Http\Promise\Promise describeTasksAsync($arguments = [])
  * @method \Dew\Acs\Result describeTask(array $arguments = [])

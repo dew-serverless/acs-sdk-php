@@ -84,6 +84,37 @@
                     'enableHealthCheck' => [
                         'type' => 'boolean',
                     ],
+                    'paiEASServiceConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'workspaceId' => [
+                                'type' => 'string',
+                            ],
+                            'serviceId' => [
+                                'type' => 'string',
+                            ],
+                            'serviceName' => [
+                                'type' => 'string',
+                            ],
+                            'endpointType' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                    'bedrockServiceConfig' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'awsRegion' => [
+                                'type' => 'string',
+                            ],
+                            'awsAccessKey' => [
+                                'type' => 'string',
+                            ],
+                            'awsSecretKey' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'AkSkIdentityConfig' => [
@@ -755,10 +786,18 @@
                                 'aiFallbackConfig' => [
                                     'type' => 'object',
                                     'properties' => [
-                                        'serviceIds' => [
+                                        'serviceConfigs' => [
                                             'type' => 'array',
                                             'items' => [
-                                                'type' => 'string',
+                                                'type' => 'object',
+                                                'properties' => [
+                                                    'serviceId' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                    'targetModelName' => [
+                                                        'type' => 'string',
+                                                    ],
+                                                ],
                                             ],
                                         ],
                                     ],
@@ -1875,6 +1914,12 @@
                             'type' => 'string',
                         ],
                     ],
+                    'outlierEndpoints' => [
+                        'type' => 'array',
+                        'items' => [
+                            'type' => 'string',
+                        ],
+                    ],
                     'healthCheck' => [
                         '$ref' => '#/components/schemas/ServiceHealthCheck',
                     ],
@@ -1908,7 +1953,10 @@
                         '$ref' => '#/components/schemas/AiServiceConfig',
                     ],
                     'labelDetails' => [
-                        '$ref' => '#/components/schemas/LabelDetail',
+                        'type' => 'array',
+                        'items' => [
+                            '$ref' => '#/components/schemas/LabelDetail',
+                        ],
                     ],
                     'agentServiceConfig' => [
                         '$ref' => '#/components/schemas/AgentServiceConfig',
@@ -2210,10 +2258,18 @@
                                 ],
                             ],
                             'deployConfigs' => [
-                                '$ref' => '#/components/schemas/HttpApiDeployConfig',
+                                'type' => 'array',
                                 'required' => false,
+                                'items' => [
+                                    '$ref' => '#/components/schemas/HttpApiDeployConfig',
+                                    'required' => false,
+                                ],
                             ],
                             'mcpRouteId' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'gatewayId' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

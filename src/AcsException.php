@@ -41,12 +41,28 @@ class AcsException extends Exception
     public static function makeFromResult(Result $result): static
     {
         /** @var string */
-        $message = $result->get(static::ERROR_MESSAGE, 'Could not communicate with Alibaba Cloud.');
+        $message = $result->get(static::errorMessage(), 'Could not communicate with Alibaba Cloud.');
 
         /** @var string|int */
-        $code = $result->get(static::ERROR_CODE, 0);
+        $code = $result->get(static::errorCode(), 0);
 
         return (new static($message, $code))->setResult($result);
+    }
+
+    /**
+     * The message field in the error response.
+     */
+    public static function errorMessage(): string
+    {
+        return static::ERROR_MESSAGE;
+    }
+
+    /**
+     * The code field in the error response.
+     */
+    public static function errorCode(): string
+    {
+        return static::ERROR_CODE;
     }
 
     /**

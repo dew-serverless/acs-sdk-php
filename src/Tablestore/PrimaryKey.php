@@ -9,7 +9,6 @@ use Dew\Acs\Tablestore\Cells\Cell;
 use Dew\Acs\Tablestore\Cells\IntegerPrimaryKey;
 use Dew\Acs\Tablestore\Cells\StringPrimaryKey;
 use Dew\Acs\Tablestore\Cells\ValueType;
-use InvalidArgumentException;
 
 final class PrimaryKey
 {
@@ -45,7 +44,7 @@ final class PrimaryKey
         return match (gettype($value)) {
             'integer' => static::integer($name, $value),
             'string' => static::string($name, $value),
-            default => throw new InvalidArgumentException(sprintf(
+            default => throw new \InvalidArgumentException(sprintf(
                 'Could not build a primary key from the [%s] type.', gettype($value)
             )),
         };
@@ -64,7 +63,7 @@ final class PrimaryKey
             ValueType::INTEGER => IntegerPrimaryKey::class,
             ValueType::STRING => StringPrimaryKey::class,
             ValueType::BLOB => BinaryPrimaryKey::class,
-            default => throw new InvalidArgumentException(sprintf(
+            default => throw new \InvalidArgumentException(sprintf(
                 'Unexpected primary key type [%s] given.',
                 $type->value
             )),

@@ -7,7 +7,6 @@ namespace Dew\Acs\Tests\Tablestore;
 use Dew\Acs\Tablestore\Attribute;
 use Dew\Acs\Tablestore\Condition;
 use Dew\Acs\Tablestore\ConditionGroup;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
@@ -137,7 +136,7 @@ final class ConditionGroupTest extends TestCase
 
     public function test_filter_generation_with_empty_group(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Could not build a filter with an empty group.');
         $group = new ConditionGroup('and', []);
         $group->toFilter();
@@ -153,7 +152,7 @@ final class ConditionGroupTest extends TestCase
 
     public function test_invalid_logical_operator(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The condition group accepts only logical operator "and" or "or".');
         new ConditionGroup('not', []);
     }

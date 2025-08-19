@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Dew\Acs\Tests\Tablestore;
 
 use Dew\Acs\Tablestore\Crc8;
-use Generator;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -95,7 +94,7 @@ final class Crc8Test extends TestCase
     /**
      * @return \Generator<string, array{0: int, 1: int}>
      */
-    public static function provide_crc8_ccitt(): Generator
+    public static function provide_crc8_ccitt(): \Generator
     {
         for ($i = 0; $i < 256; $i++) {
             yield 'x = '.$i => [$i, static::crc8($i)];

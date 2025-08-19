@@ -7,9 +7,6 @@ namespace Dew\Acs\OpenApi;
 use Dew\Acs\JsonEncoder;
 use Dew\Acs\Str;
 use GuzzleHttp\Psr7\Query;
-use InvalidArgumentException;
-use Override;
-use RuntimeException;
 
 /**
  * @phpstan-import-type TSchema from \Dew\Acs\OpenApi\Schema
@@ -43,11 +40,11 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
             $schema = $this->refFinder->find($path);
 
             if ($schema === null) {
-                throw new RuntimeException("Could not find the schema for $path.");
+                throw new \RuntimeException("Could not find the schema for $path.");
             }
 
             if (! is_array($schema)) {
-                throw new RuntimeException("Could not find a valid schema for $path.");
+                throw new \RuntimeException("Could not find a valid schema for $path.");
             }
 
             /** @var TSchema $schema */
@@ -80,7 +77,7 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
     /**
      * @param  array<string, mixed>  $arguments
      */
-    #[Override]
+    #[\Override]
     public function build(array $arguments): ApiData
     {
         [$path, $query] = $this->extractPathAndQuery($this->api->path ?? '/');
@@ -126,7 +123,7 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
                     }
                     break;
                 default:
-                    throw new InvalidArgumentException(
+                    throw new \InvalidArgumentException(
                         "Unsupported parameter location {$parameter->in->value}."
                     );
             }
@@ -163,14 +160,14 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
     private function ensureParameterIsRequired(Parameter $parameter, mixed $value): void
     {
         if ($parameter->schema->required === true && $value === null) {
-            throw new InvalidArgumentException("The {$parameter->name} is required.");
+            throw new \InvalidArgumentException("The {$parameter->name} is required.");
         }
     }
 
     private function ensureParameterAllowsEmpty(Parameter $parameter): void
     {
         if ($parameter->allowEmptyValue === false) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 "The {$parameter->name} must not be empty."
             );
         }
@@ -231,8 +228,8 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
 
             try {
                 $result[$normalized] = $this->toHeaderValue($parameter, $value);
-            } catch (InvalidArgumentException) {
-                throw new InvalidArgumentException(sprintf(
+            } catch (\InvalidArgumentException) {
+                throw new \InvalidArgumentException(sprintf(
                     'The header value "%s" must be a string.', $normalized
                 ));
             }
@@ -265,7 +262,7 @@ final readonly class ROAStyleBuilder implements ApiDataBuilder
         };
 
         if (! is_string($value)) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 "The {$parameter->name} must be a string."
             );
         }

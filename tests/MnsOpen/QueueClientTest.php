@@ -6,7 +6,6 @@ namespace Dew\Acs\Tests\MnsOpen;
 
 use Dew\Acs\MnsOpen\QueueClient;
 use Dew\Acs\MnsOpen\QueueException;
-use DOMDocument;
 use GuzzleHttp\Psr7\Response;
 use Http\Mock\Client;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -231,7 +230,7 @@ final class QueueClientTest extends TestCase
      */
     private function xml(string $document): string
     {
-        $xml = new DOMDocument();
+        $xml = new \DOMDocument();
 
         $xml->loadXML(<<<XML
         <?xml version="1.0" encoding="UTF-8"?>

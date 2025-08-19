@@ -18,7 +18,6 @@ use Nyholm\Psr7\Response;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
-use RuntimeException;
 
 #[CoversClass(DecodeCompressed::class)]
 final class DecodeCompressedTest extends TestCase
@@ -43,7 +42,7 @@ final class DecodeCompressedTest extends TestCase
 
     public function test_unsupported_compression(): void
     {
-        $this->expectException(RuntimeException::class);
+        $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage('Missing runtime support for stub data compression.');
         $mockedFactory = m::mock(CompressionFactory::class);
         $mockedFactory->shouldReceive('make')->with('foo')->once()->andReturn(new StubUnsupportedCompression());

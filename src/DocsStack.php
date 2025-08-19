@@ -9,7 +9,6 @@ use Dew\Acs\OpenApi\ApiDocs;
 use Dew\Acs\Plugins\SignRequest;
 use Http\Client\Common\Plugin;
 use Http\Client\Common\Plugin\HeaderSetPlugin;
-use Override;
 use Psr\Http\Message\StreamFactoryInterface;
 
 /**
@@ -72,7 +71,7 @@ final class DocsStack implements HandlerStack
      *
      * @return \Http\Client\Common\Plugin[]
      */
-    #[Override]
+    #[\Override]
     public function get(): array
     {
         return [

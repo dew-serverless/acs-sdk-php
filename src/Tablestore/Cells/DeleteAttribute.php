@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tablestore\Cells;
 
-use DateTimeInterface;
-
 final class DeleteAttribute extends Cell implements Attribute
 {
     use IsAttribute;
@@ -33,7 +31,7 @@ final class DeleteAttribute extends Cell implements Attribute
     /**
      * Delete the specified version.
      */
-    public function version(DateTimeInterface|int $timestamp): self
+    public function version(\DateTimeInterface|int $timestamp): self
     {
         $this->operation = Operation::DELETE_ONE_VERSION;
         $this->setTimestamp($timestamp);

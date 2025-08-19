@@ -4,15 +4,11 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Signatures;
 
-use DateTimeImmutable;
-use DateTimeZone;
 use Dew\Acs\ConfigChecker;
 use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
 use GuzzleHttp\Psr7\Query;
-use Override;
 use Psr\Http\Message\RequestInterface;
-use RuntimeException;
 
 /**
  * @see https://www.alibabacloud.com/help/en/sdk/product-overview/v3-request-structure-and-signature
@@ -33,17 +29,17 @@ final class V3Signature implements SignsRequest, NeedsApiContext
     /**
      * @param  array<string, mixed>  $config
      */
-    #[Override]
+    #[\Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
         $this->configChecker->ensureCredentialsExist($config);
 
-        $datetime = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+        $datetime = new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
 
         $nonce = bin2hex(random_bytes(16));
 
         $request = $request
-            ->withHeader('x-acs-action', $this->api->getName() ?? throw new RuntimeException('Missing API name.'))
+            ->withHeader('x-acs-action', $this->api->getName() ?? throw new \RuntimeException('Missing API name.'))
             ->withHeader('x-acs-version', $this->docs->info->version)
             ->withHeader('x-acs-signature-nonce', $nonce)
             ->withHeader('x-acs-date', $datetime->format('Y-m-d\TH:i:s\Z'))
@@ -58,7 +54,7 @@ final class V3Signature implements SignsRequest, NeedsApiContext
         return $request->withHeader('Authorization', $this->getAuthorization($request, $config['credentials']));
     }
 
-    #[Override]
+    #[\Override]
     public function setApiContext(ApiDocs $docs, Api $api): void
     {
         $this->docs = $docs;

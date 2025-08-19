@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tablestore;
 
-use InvalidArgumentException;
-
 /**
  * @phpstan-import-type TConfig from \Dew\Acs\Tablestore\TablestoreInstance
  * @phpstan-import-type TNormalizedConfig from \Dew\Acs\Tablestore\TablestoreInstance
@@ -48,7 +46,7 @@ final class Config
                 $host = parse_url($endpoint, PHP_URL_HOST);
 
                 if (! is_string($host)) {
-                    throw new InvalidArgumentException('The endpoint is not a valid URL.');
+                    throw new \InvalidArgumentException('The endpoint is not a valid URL.');
                 }
 
                 $components = explode('.', $host);
@@ -57,7 +55,7 @@ final class Config
                 // should include at least instance name, region ID,
                 // product code, domain, and TLD.
                 if (count($components) < 5) {
-                    throw new InvalidArgumentException('The endpoint is not conventional.');
+                    throw new \InvalidArgumentException('The endpoint is not conventional.');
                 }
 
                 $config['instance'] = $instance ?? $components[0];
@@ -67,7 +65,7 @@ final class Config
                 $config['endpoint'] = static::dualStackEndpoint($instance, $region);
                 break;
             default:
-                throw new InvalidArgumentException(
+                throw new \InvalidArgumentException(
                     'Specify at least the endpoint or region and instance in the config.'
                 );
         }

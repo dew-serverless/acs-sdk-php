@@ -8,8 +8,6 @@ use Dew\Acs\Tablestore\Attribute;
 use Dew\Acs\Tablestore\Condition;
 use Dew\Acs\Tablestore\Messages\ComparatorType;
 use Dew\Acs\Tablestore\PlainBufferWriter;
-use Generator;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -69,7 +67,7 @@ final class ConditionTest extends TestCase
 
     public function test_filter_generation_attribute_without_value(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The column [value] does not contain value.');
         $attribute = Attribute::delete('value');
         $condition = new Condition([
@@ -83,7 +81,7 @@ final class ConditionTest extends TestCase
     /**
      * @return \Generator<string, array{0: string, 1: int}>
      */
-    public static function provide_comparisons(): Generator
+    public static function provide_comparisons(): \Generator
     {
         yield 'equals operator' => ['=', ComparatorType::CT_EQUAL];
         yield 'not equals operator !=' => ['!=', ComparatorType::CT_NOT_EQUAL];

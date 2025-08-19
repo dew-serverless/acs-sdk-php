@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace Dew\Acs\MnsOpen;
 
-use DateTimeInterface;
 use Dew\Acs\ConfigChecker;
 use Dew\Acs\Signatures\SignsRequest;
-use Override;
 use Psr\Http\Message\RequestInterface;
-use SensitiveParameter;
 
 final readonly class MnsSignature implements SignsRequest
 {
@@ -26,13 +23,13 @@ final readonly class MnsSignature implements SignsRequest
         $this->configChecker = new ConfigChecker();
     }
 
-    #[Override]
+    #[\Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
         $this->configChecker->ensureCredentialsExist($config);
 
         $request = $request
-            ->withHeader('date', gmdate(DateTimeInterface::RFC7231))
+            ->withHeader('date', gmdate(\DateTimeInterface::RFC7231))
             ->withHeader('x-mns-version', '2015-06-06');
 
         return $request->withHeader('Authorization', sprintf('MNS %s:%s',
@@ -44,7 +41,7 @@ final readonly class MnsSignature implements SignsRequest
     /**
      * Calculate the signature for the request.
      */
-    public function signature(RequestInterface $request, #[SensitiveParameter] string $key): string
+    public function signature(RequestInterface $request, #[\SensitiveParameter] string $key): string
     {
         return base64_encode(hash_hmac(
             'sha1', $this->stringToSign($request), $key, binary: true

@@ -6,7 +6,6 @@ namespace Dew\Acs\Tests\Tablestore;
 
 use Dew\Acs\Tablestore\Attribute;
 use Dew\Acs\Tablestore\ConditionFilter;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
@@ -17,7 +16,7 @@ final class ConditionFilterTest extends TestCase
 
     public function test_empty_condition(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Could not build a filter with an empty group.');
         $filter = new ConditionFilter([]);
         $filter->toFilter();

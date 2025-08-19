@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Dew\Acs;
 
-use Exception;
 use Psr\Http\Message\ResponseInterface;
 
-class AcsException extends Exception
+class AcsException extends \Exception
 {
     /**
      * The message field in the error response.

@@ -16,7 +16,6 @@ use Dew\Acs\Tablestore\PlainBufferReader;
 use Dew\Acs\Tablestore\PlainBufferWriter;
 use Dew\Acs\Tablestore\PrimaryKey;
 use Dew\Acs\Tests\Tablestore\Fixtures\StubCrc;
-use Generator;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -109,7 +108,7 @@ final class PlainBufferEncoderDecoderTest extends TestCase
     /**
      * @return \Generator<string, \Dew\Acs\Tablestore\Cells\Cell[]>
      */
-    public static function provide_primary_keys(): Generator
+    public static function provide_primary_keys(): \Generator
     {
         yield 'integer' => [PrimaryKey::integer('key', 10)];
         yield 'string' => [PrimaryKey::string('key', 'foo')];
@@ -119,7 +118,7 @@ final class PlainBufferEncoderDecoderTest extends TestCase
     /**
      * @return \Generator<string, \Dew\Acs\Tablestore\Cells\Cell[]>
      */
-    public static function provide_attributes(): Generator
+    public static function provide_attributes(): \Generator
     {
         yield 'integer' => [Attribute::integer('value', 10)];
         yield 'double' => [Attribute::double('value', 3.14)];

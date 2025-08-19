@@ -4,7 +4,6 @@ namespace Dew\Acs\Oss;
 
 use Dew\Acs\Signatures\NeedsArguments;
 use Dew\Acs\Signatures\SignsRequest;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 final readonly class AKSignature implements SignsRequest, NeedsArguments
@@ -18,7 +17,7 @@ final readonly class AKSignature implements SignsRequest, NeedsArguments
     /**
      * @param  array<string, mixed>  $config
      */
-    #[Override]
+    #[\Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
         return $this->signer->signRequest($request, $config);
@@ -27,7 +26,7 @@ final readonly class AKSignature implements SignsRequest, NeedsArguments
     /**
      * @param  array<string, mixed>  $arguments
      */
-    #[Override]
+    #[\Override]
     public function setArguments(array $arguments): void
     {
         $this->signer->setArguments($arguments);

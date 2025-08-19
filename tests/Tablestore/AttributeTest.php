@@ -11,7 +11,6 @@ use Dew\Acs\Tablestore\Cells\DoubleAttribute;
 use Dew\Acs\Tablestore\Cells\IntegerAttribute;
 use Dew\Acs\Tablestore\Cells\Operation;
 use Dew\Acs\Tablestore\Cells\StringAttribute;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
@@ -68,7 +67,7 @@ final class AttributeTest extends TestCase
 
     public function test_create_from_value_unsupported(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Could not build an attribute from the [NULL] type.');
         Attribute::createFromValue('value', null);
     }

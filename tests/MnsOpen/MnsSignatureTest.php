@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tests\MnsOpen;
 
-use DateTimeInterface;
 use Dew\Acs\MnsOpen\MnsSignature;
 use GuzzleHttp\Psr7\Request;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -18,7 +17,7 @@ final class MnsSignatureTest extends TestCase
         $signature = new MnsSignature();
         $request = new Request('GET', 'https://example.com');
         $request = $signature->signRequest($request, ['credentials' => ['key' => 'foo', 'secret' => 'bar']]);
-        $this->assertSame(gmdate(DateTimeInterface::RFC7231), $request->getHeaderLine('date'));
+        $this->assertSame(gmdate(\DateTimeInterface::RFC7231), $request->getHeaderLine('date'));
         $this->assertSame('2015-06-06', $request->getHeaderLine('x-mns-version'));
         $this->assertStringStartsWith('MNS foo:', $request->getHeaderLine('Authorization'));
     }

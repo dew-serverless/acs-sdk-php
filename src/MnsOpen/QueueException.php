@@ -7,7 +7,6 @@ namespace Dew\Acs\MnsOpen;
 use Dew\Acs\AcsException;
 use Dew\Acs\MnsOpen\Results\MnsResult;
 use Dew\Acs\Result;
-use Override;
 
 /**
  * @phpstan-type TErrorsError array{ErrorCode: string, ErrorMessage: string}
@@ -24,7 +23,7 @@ final class QueueException extends AcsException
      */
     public const ERROR_CODE = 'Error.Code';
 
-    #[Override]
+    #[\Override]
     public static function makeFromResult(Result $result): static
     {
         if (! $result->has('Errors.Error')) {
@@ -73,7 +72,7 @@ final class QueueException extends AcsException
      *
      * @return \Dew\Acs\MnsOpen\Results\MnsResult|null
      */
-    #[Override]
+    #[\Override]
     public function getResult()
     {
         return $this->result ? new MnsResult($this->result) : null;

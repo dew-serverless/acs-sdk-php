@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tablestore;
 
-use DateTimeInterface;
 use Dew\Acs\Tablestore\Cells\BinaryAttribute;
 use Dew\Acs\Tablestore\Cells\BooleanAttribute;
 use Dew\Acs\Tablestore\Cells\Cell;
@@ -13,7 +12,6 @@ use Dew\Acs\Tablestore\Cells\DoubleAttribute;
 use Dew\Acs\Tablestore\Cells\IntegerAttribute;
 use Dew\Acs\Tablestore\Cells\StringAttribute;
 use Dew\Acs\Tablestore\Cells\ValueType;
-use InvalidArgumentException;
 
 final class Attribute
 {
@@ -76,7 +74,7 @@ final class Attribute
     /**
      * Delete an attribute.
      */
-    public static function delete(string $name, DateTimeInterface|int|null $timestamp = null): DeleteAttribute
+    public static function delete(string $name, \DateTimeInterface|int|null $timestamp = null): DeleteAttribute
     {
         $attribute = new DeleteAttribute($name);
 
@@ -95,7 +93,7 @@ final class Attribute
             'double' => static::double($name, $value),
             'integer' => static::integer($name, $value),
             'string' => static::string($name, $value),
-            default => throw new InvalidArgumentException(sprintf(
+            default => throw new \InvalidArgumentException(sprintf(
                 'Could not build an attribute from the [%s] type.', gettype($value)
             )),
         };
@@ -116,7 +114,7 @@ final class Attribute
             ValueType::BOOLEAN => BooleanAttribute::class,
             ValueType::STRING => StringAttribute::class,
             ValueType::BLOB => BinaryAttribute::class,
-            default => throw new InvalidArgumentException(sprintf(
+            default => throw new \InvalidArgumentException(sprintf(
                 'Unexpected attribute type [%s] given.', $type->value
             )),
         };

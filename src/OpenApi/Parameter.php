@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\OpenApi;
 
-use InvalidArgumentException;
-
 /**
  * @see https://api.aliyun.com/openmeta/struct/Parameter
  */
@@ -32,17 +30,17 @@ final readonly class Parameter
         $name = $parameter['name'] ?? null;
 
         if ($name === null) {
-            throw new InvalidArgumentException('Missing parameter name.');
+            throw new \InvalidArgumentException('Missing parameter name.');
         }
 
         if (! is_string($name)) {
-            throw new InvalidArgumentException('The parameter name must be a string.');
+            throw new \InvalidArgumentException('The parameter name must be a string.');
         }
 
         $location = $parameter['in'] ?? null;
 
         if ($location === null) {
-            throw new InvalidArgumentException('Missing parameter location.');
+            throw new \InvalidArgumentException('Missing parameter location.');
         }
 
         return new static(

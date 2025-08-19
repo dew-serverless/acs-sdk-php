@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Sls;
 
-use Override;
-
 final class Raw implements Compression
 {
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public static function supports(): bool
     {
         return true;
@@ -20,7 +18,7 @@ final class Raw implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public static function threshold(): int
     {
         return 0;
@@ -29,7 +27,7 @@ final class Raw implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function encode(string $data, ?int $level = null): string
     {
         return $data;
@@ -38,7 +36,7 @@ final class Raw implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function decode(string $data, ?int $maxLength = null): string
     {
         return $data;
@@ -47,7 +45,7 @@ final class Raw implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public static function format(): string
     {
         return '';

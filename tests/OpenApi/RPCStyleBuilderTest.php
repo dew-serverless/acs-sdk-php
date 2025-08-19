@@ -7,7 +7,6 @@ namespace Dew\Acs\Tests\OpenApi;
 use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
 use Dew\Acs\OpenApi\RPCStyleBuilder;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
@@ -220,7 +219,7 @@ final class RPCStyleBuilderTest extends TestCase
                 ],
             ]],
         ]);
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The page is required.');
         $builder = new RPCStyleBuilder($docs, $api);
         $builder->build([]);

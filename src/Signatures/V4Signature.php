@@ -2,14 +2,9 @@
 
 namespace Dew\Acs\Signatures;
 
-use Closure;
-use DateTimeImmutable;
-use DateTimeInterface;
-use DateTimeZone;
 use Dew\Acs\ConfigChecker;
 use Dew\Acs\Str;
 use GuzzleHttp\Psr7\Query;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 final class V4Signature implements SignsRequest
@@ -31,12 +26,12 @@ final class V4Signature implements SignsRequest
     /**
      * @var \Closure(\Psr\Http\Message\RequestInterface): string
      */
-    private ?Closure $payloadHasher = null;
+    private ?\Closure $payloadHasher = null;
 
     /**
      * @var \Closure(\Psr\Http\Message\RequestInterface, \Dew\Acs\Signatures\V4Signature): string
      */
-    private ?Closure $resourcePathBuilder = null;
+    private ?\Closure $resourcePathBuilder = null;
 
     private bool $includeAdditionalHeaders = false;
 
@@ -50,13 +45,13 @@ final class V4Signature implements SignsRequest
     /**
      * @param  array<string, mixed>  $config
      */
-    #[Override]
+    #[\Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
         $this->configChecker->ensureCredentialsExist($config);
         $this->configChecker->ensureRegionExists($config);
 
-        $datetime = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+        $datetime = new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
 
         $stringToSign = $this->buildStringToSign(
             $this->buildCanonicalRequest($request),
@@ -95,7 +90,7 @@ final class V4Signature implements SignsRequest
         ]);
     }
 
-    public function buildStringToSign(string $canonicalRequest, DateTimeInterface $datetime, string $scope): string
+    public function buildStringToSign(string $canonicalRequest, \DateTimeInterface $datetime, string $scope): string
     {
         return implode("\n", [
             $this->version,
@@ -117,7 +112,7 @@ final class V4Signature implements SignsRequest
     /**
      * @param  \Closure(\Psr\Http\Message\RequestInterface): string  $callback
      */
-    public function resourcePathUsing(Closure $callback): void
+    public function resourcePathUsing(\Closure $callback): void
     {
         $this->resourcePathBuilder = $callback;
     }
@@ -228,12 +223,12 @@ final class V4Signature implements SignsRequest
     /**
      * @param  \Closure(\Psr\Http\Message\RequestInterface): string  $callback
      */
-    public function hashPayloadUsing(Closure $callback): void
+    public function hashPayloadUsing(\Closure $callback): void
     {
         $this->payloadHasher = $callback;
     }
 
-    public function buildScope(DateTimeInterface $datetime, string $region): string
+    public function buildScope(\DateTimeInterface $datetime, string $region): string
     {
         return sprintf('%s/%s/%s/aliyun_v4_request',
             $datetime->format('Ymd'), $region, $this->product

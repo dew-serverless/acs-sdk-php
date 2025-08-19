@@ -6,7 +6,6 @@ namespace Dew\Acs\Signatures;
 
 use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 final readonly class AKSignature implements SignsRequest, NeedsApiContext
@@ -20,13 +19,13 @@ final readonly class AKSignature implements SignsRequest, NeedsApiContext
     /**
      * @param  array<string, mixed>  $config
      */
-    #[Override]
+    #[\Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
         return $this->signer->signRequest($request, $config);
     }
 
-    #[Override]
+    #[\Override]
     public function setApiContext(ApiDocs $docs, Api $api): void
     {
         $this->signer->setApiContext($docs, $api);

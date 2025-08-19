@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Sls;
 
-use DateTimeImmutable;
-use DateTimeZone;
 use Dew\Acs\Signatures\SignsRequest;
 use Dew\Acs\Signatures\V4Signature as BaseV4Signature;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -32,10 +29,10 @@ final readonly class V4Signature implements SignsRequest
     /**
      * @param  array<string, mixed>  $config
      */
-    #[Override]
+    #[\Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
-        $datetime = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+        $datetime = new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
         $body = (string) $request->getBody();
 
         $request = $request

@@ -8,7 +8,6 @@ use Dew\Acs\Sls\Messages\Log;
 use Dew\Acs\Sls\Messages\LogContent;
 use Dew\Acs\Sls\Messages\LogGroup;
 use Dew\Acs\Sls\Messages\LogTag;
-use InvalidArgumentException;
 
 /**
  * @phpstan-type TLogTag array{
@@ -110,13 +109,13 @@ final class Protobuf
     public static function toLogContent(array $content): LogContent
     {
         if (! isset($content['Key'])) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'The log content should have a "Key" field.'
             );
         }
 
         if (! isset($content['Value'])) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'The log content should have a "Value" field.'
             );
         }
@@ -132,13 +131,13 @@ final class Protobuf
     public static function toLogTag(array $tag): LogTag
     {
         if (! isset($tag['Key'])) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'The log tag should have a "Key" field.'
             );
         }
 
         if (! isset($tag['Value'])) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'The log tag should have a "Value" field.'
             );
         }

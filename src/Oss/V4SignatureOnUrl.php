@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Oss;
 
-use DateTimeImmutable;
-use DateTimeZone;
 use Dew\Acs\ConfigChecker;
 use Dew\Acs\Signatures\NeedsArguments;
 use Dew\Acs\Signatures\SignsRequest;
 use GuzzleHttp\Psr7\Query;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -41,13 +38,13 @@ final class V4SignatureOnUrl implements SignsRequest, NeedsArguments
     /**
      * @param  array<string, mixed>  $config
      */
-    #[Override]
+    #[\Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
         $this->configChecker->ensureCredentialsExist($config);
         $this->configChecker->ensureRegionExists($config);
 
-        $now = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+        $now = new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
 
         $query = Query::parse($request->getUri()->getQuery());
         $query['x-oss-signature-version'] = $this->signer::VERSION;
@@ -83,7 +80,7 @@ final class V4SignatureOnUrl implements SignsRequest, NeedsArguments
     /**
      * @param  TArguments  $arguments
      */
-    #[Override]
+    #[\Override]
     public function setArguments(array $arguments): void
     {
         $this->arguments = $arguments;

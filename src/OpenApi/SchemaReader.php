@@ -4,18 +4,12 @@ declare(strict_types=1);
 
 namespace Dew\Acs\OpenApi;
 
-use BackedEnum;
-use Closure;
-use InvalidArgumentException;
-use RuntimeException;
-use Stringable;
-
 final class SchemaReader
 {
     /**
      * @var \Closure(string): \Dew\Acs\OpenApi\Schema
      */
-    private ?Closure $finder = null;
+    private ?\Closure $finder = null;
 
     public function getProperty(Schema $schema, mixed $value, string $attribute): mixed
     {
@@ -23,15 +17,15 @@ final class SchemaReader
             return $this->getPropertyByRef($schema->ref, $value, $attribute);
         }
 
-        $type = $schema->type ?? throw new RuntimeException('Missing schema type.');
+        $type = $schema->type ?? throw new \RuntimeException('Missing schema type.');
 
         $method = 'get'.ucfirst($schema->type).'Property';
 
         if (! method_exists($this, $method)) {
-            throw new RuntimeException("Unsupported data type {$schema->type}.");
+            throw new \RuntimeException("Unsupported data type {$schema->type}.");
         }
 
-        if ($value instanceof BackedEnum) {
+        if ($value instanceof \BackedEnum) {
             $value = $value->value;
         }
 
@@ -57,7 +51,7 @@ final class SchemaReader
         };
 
         if (is_string($message)) {
-            throw new InvalidArgumentException($message);
+            throw new \InvalidArgumentException($message);
         }
     }
 
@@ -73,13 +67,13 @@ final class SchemaReader
         $this->checkIfDeprecated($schema, $attribute);
 
         if ($schema->minLength !== null && strlen($value) < $schema->minLength) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 "The $attribute must be at least {$schema->minLength} characters."
             );
         }
 
         if ($schema->maxLength !== null && strlen($value) > $schema->maxLength) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 "The $attribute must be a maximum of {$schema->maxLength} characters."
             );
         }
@@ -87,13 +81,13 @@ final class SchemaReader
         if ($schema->enum !== null &&
             $schema->enum !== [] &&
             ! in_array($value, $schema->enum, strict: true)) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 $this->buildEnumErrorMessage($schema->enum, $attribute)
             );
         }
 
         if ($schema->pattern && ! preg_match("/{$schema->pattern}/", $value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new \InvalidArgumentException(sprintf(
                 'The value must match the pattern "%s"', $schema->pattern
             ));
         }
@@ -107,11 +101,11 @@ final class SchemaReader
     private function buildEnumErrorMessage(array $enum, string $attribute): string
     {
         $wrapped = array_map(function (mixed $value): string {
-            if (is_scalar($value) || $value instanceof Stringable) {
+            if (is_scalar($value) || $value instanceof \Stringable) {
                 return sprintf('"%s"', (string) $value);
             }
 
-            throw new InvalidArgumentException('Could not cast enum to string.');
+            throw new \InvalidArgumentException('Could not cast enum to string.');
         }, $enum);
 
         $message = match ($count = count($enum)) {
@@ -131,13 +125,13 @@ final class SchemaReader
         $this->checkIfDeprecated($schema, $attribute);
 
         if ($schema->minimum !== null && $value < (int) $schema->minimum) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 "The $attribute must be at least {$schema->minimum}."
             );
         }
 
         if ($schema->maximum !== null && $value > (int) $schema->maximum) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 "The $attribute must not exceed {$schema->maximum}."
             );
         }
@@ -218,7 +212,7 @@ final class SchemaReader
             $value = $values[$property] ?? null;
 
             if ($propSchema->required === true && $value === null) {
-                throw new InvalidArgumentException("The {$attribute}.{$property} is required.");
+                throw new \InvalidArgumentException("The {$attribute}.{$property} is required.");
             }
 
             if ($value === null) {
@@ -240,19 +234,19 @@ final class SchemaReader
         $this->checkIfDeprecated($schema, $attribute);
 
         if ($schema->minItems !== null && count($values) < $schema->minItems) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 "The $attribute must have at least {$schema->minItems} elements."
             );
         }
 
         if ($schema->maxItems !== null && count($values) > $schema->maxItems) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 "The $attribute must have a maximum of {$schema->maxItems} elements."
             );
         }
 
         if ($schema->items === null) {
-            throw new InvalidArgumentException('Missing items in the schema.');
+            throw new \InvalidArgumentException('Missing items in the schema.');
         }
 
         $schema = $schema->items->ref !== null
@@ -260,7 +254,7 @@ final class SchemaReader
             : $schema->items;
 
         if ($schema->required === true && $values === []) {
-            throw new InvalidArgumentException("The $attribute is required.");
+            throw new \InvalidArgumentException("The $attribute is required.");
         }
 
         return $this->getArrayItems($schema, $values, $attribute);
@@ -296,7 +290,7 @@ final class SchemaReader
     private function findSchema(string $path): Schema
     {
         if ($this->finder === null) {
-            throw new RuntimeException('Missing schema finder.');
+            throw new \RuntimeException('Missing schema finder.');
         }
 
         return call_user_func($this->finder, $path);

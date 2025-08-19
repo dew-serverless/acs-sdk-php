@@ -6,12 +6,10 @@ namespace Dew\Acs\Tests\OpenApi;
 
 use Dew\Acs\OpenApi\Schema;
 use Dew\Acs\OpenApi\SchemaReader;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\IgnoreDeprecations;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
-use RuntimeException;
 
 /**
  * @phpstan-import-type TSchema from \Dew\Acs\OpenApi\Schema
@@ -28,7 +26,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_string_property_min_length(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must be at least 3 characters.');
         $reader = new SchemaReader();
         $reader->getStringProperty(Schema::make(['minLength' => 3]), 'ab', 'value');
@@ -36,7 +34,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_string_property_max_length(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must be a maximum of 3 characters.');
         $reader = new SchemaReader();
         $reader->getStringProperty(Schema::make(['maxLength' => 3]), 'abcd', 'value');
@@ -59,7 +57,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_string_property_enum_one_value(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must be "foo".');
         $schema = Schema::make(['enum' => ['foo']]);
         $reader = new SchemaReader();
@@ -68,7 +66,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_string_property_enum_two_values(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must be either "foo" or "bar".');
         $schema = Schema::make(['enum' => ['foo', 'bar']]);
         $reader = new SchemaReader();
@@ -77,7 +75,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_string_property_enum_many_values(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must be either "foo", "bar", or "baz".');
         $schema = Schema::make(['enum' => ['foo', 'bar', 'baz']]);
         $reader = new SchemaReader();
@@ -89,7 +87,7 @@ final class SchemaReaderTest extends TestCase
         $schema = Schema::make(['pattern' => '^\\d{4}$']);
         $reader = new SchemaReader();
         $this->assertSame('2024', $reader->getStringProperty($schema, '2024', 'value'));
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must match the pattern "^\\d{4}$"');
         $reader->getStringProperty($schema, '202412', 'value');
     }
@@ -112,7 +110,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_integer_property_minimum(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must be at least 10.');
         $schema = Schema::make(['format' => 'int32', 'minimum' => '10']);
         $reader = new SchemaReader();
@@ -121,7 +119,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_integer_property_maximum(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must not exceed 10.');
         $schema = Schema::make(['format' => 'int32', 'maximum' => '10']);
         $reader = new SchemaReader();
@@ -203,7 +201,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_object_property_required(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value.name is required.');
         $reader = new SchemaReader();
         $schema = Schema::make([
@@ -219,7 +217,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_object_property_required_nested_message(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The person.name is required.');
         $schema = Schema::make([
             'type' => 'object',
@@ -277,7 +275,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_array_property_required(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value is required.');
         $reader = new SchemaReader();
         $schema = Schema::make([
@@ -291,7 +289,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_array_property_min_items(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must have at least 3 elements.');
         $reader = new SchemaReader();
         $schema = Schema::make([
@@ -305,7 +303,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_array_property_max_items(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must have a maximum of 2 elements.');
         $reader = new SchemaReader();
         $schema = Schema::make([
@@ -364,7 +362,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_missing_schema_finder(): void
     {
-        $this->expectException(RuntimeException::class);
+        $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage('Missing schema finder.');
         $reader = new SchemaReader();
         $schema = Schema::make(['items' => ['$ref' => '#/components/schemas/foo']]);
@@ -404,7 +402,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_property_enum(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must be a string.');
         $reader = new SchemaReader();
         $schema = Schema::make(['type' => 'string']);
@@ -432,7 +430,7 @@ final class SchemaReaderTest extends TestCase
     #[TestWith([['type' => 'array'], '', 'The value must be a list array.'], 'array')]
     public function test_get_property_type_validation(array $schema, mixed $value, string $message): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage($message);
         $reader = new SchemaReader();
         $reader->getProperty(Schema::make($schema), $value, 'value');
@@ -440,7 +438,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_property_type_validation_object_nested_message(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The person.name must be a string.');
         $schema = Schema::make([
             'type' => 'object',
@@ -456,7 +454,7 @@ final class SchemaReaderTest extends TestCase
 
     public function test_get_property_required_nested_message(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The person.name is required.');
         $schema = Schema::make([
             'type' => 'object',
@@ -487,7 +485,7 @@ final class SchemaReaderTest extends TestCase
     ])]
     public function test_get_property_type_validation_array_nested_message(array $schema, array $value, string $message): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage($message);
         $schema = Schema::make($schema);
         $reader = new SchemaReader();

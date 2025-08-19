@@ -7,7 +7,6 @@ namespace Dew\Acs\Tests\OpenApi;
 use Dew\Acs\OpenApi\Api;
 use Dew\Acs\OpenApi\ApiDocs;
 use Dew\Acs\OpenApi\ROAStyleBuilder;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
@@ -410,7 +409,7 @@ final class ROAStyleBuilderTest extends TestCase
 
     public function test_parameter_required(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The path is required.');
         $docs = $this->makeApiDocs();
         $api = $this->makeApi([
@@ -478,7 +477,7 @@ final class ROAStyleBuilderTest extends TestCase
     #[TestWith([['type' => 'object'], []])]
     public function test_parameter_allow_empty_value_false_empty_value(array $schema, mixed $value): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The value must not be empty.');
         $docs = $this->makeApiDocs();
         $api = $this->makeApi([

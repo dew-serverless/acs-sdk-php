@@ -4,16 +4,14 @@ declare(strict_types=1);
 
 namespace Dew\Acs;
 
-use Closure;
 use Dew\Acs\OpenApi\Schema;
-use RuntimeException;
 
 final class XmlFormatter
 {
     /**
      * @var (\Closure(string): ?\Dew\Acs\OpenApi\Schema)|null
      */
-    private ?Closure $schemaFinder = null;
+    private ?\Closure $schemaFinder = null;
 
     /**
      * @template T
@@ -47,7 +45,7 @@ final class XmlFormatter
     public function formatPropertyByRef(string $path, mixed $data): mixed
     {
         if ($this->schemaFinder === null) {
-            throw new RuntimeException('Missing schema finder.');
+            throw new \RuntimeException('Missing schema finder.');
         }
 
         $schema = call_user_func($this->schemaFinder, $path);
@@ -141,7 +139,7 @@ final class XmlFormatter
     /**
      * @param  \Closure(string): ?\Dew\Acs\OpenApi\Schema  $callback
      */
-    public function findSchemaUsing(Closure $callback): void
+    public function findSchemaUsing(\Closure $callback): void
     {
         $this->schemaFinder = $callback;
     }

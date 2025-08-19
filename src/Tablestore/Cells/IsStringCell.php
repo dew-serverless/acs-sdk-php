@@ -7,7 +7,6 @@ namespace Dew\Acs\Tablestore\Cells;
 use Dew\Acs\Tablestore\Crc;
 use Dew\Acs\Tablestore\PlainBufferReader;
 use Dew\Acs\Tablestore\PlainBufferWriter;
-use Override;
 
 trait IsStringCell
 {
@@ -24,7 +23,7 @@ trait IsStringCell
     /**
      * The value of the cell.
      */
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         return $this->value;
@@ -33,7 +32,7 @@ trait IsStringCell
     /**
      * The cell type.
      */
-    #[Override]
+    #[\Override]
     public function type(): ValueType
     {
         return ValueType::STRING;
@@ -46,7 +45,7 @@ trait IsStringCell
      * value_type = int8
      * value_len = int32
      */
-    #[Override]
+    #[\Override]
     public function valueSize(): int
     {
         [$typeSize, $lenSize, $dataSize] = [1, 4, strlen($this->value)];
@@ -57,7 +56,7 @@ trait IsStringCell
     /**
      * Get value from the formatted value in buffer.
      */
-    #[Override]
+    #[\Override]
     public static function fromFormattedValue(PlainBufferReader $buffer): string
     {
         return $buffer->read(              // 2: read value by the size
@@ -72,7 +71,7 @@ trait IsStringCell
      * value_type = int8
      * value_len = int32
      */
-    #[Override]
+    #[\Override]
     public function toFormattedValue(PlainBufferWriter $buffer): void
     {
         // value_type: 1 byte
@@ -88,7 +87,7 @@ trait IsStringCell
     /**
      * Calculate the checksum of the value.
      */
-    #[Override]
+    #[\Override]
     public function getValueChecksumBy(Crc $crc, int $checksum): int
     {
         $checksum = $crc->int32(strlen($this->value), $checksum);

@@ -23,6 +23,9 @@ return (new PhpCsFixer\Config())
         'method_argument_space' => [
             'on_multiline' => 'ignore',
         ],
+        'global_namespace_import' => [
+            'import_classes' => false,
+        ],
         'ordered_imports' => [
             'imports_order' => ['class', 'function', 'const'],
             'sort_algorithm' => 'alpha',

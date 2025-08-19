@@ -17,25 +17,37 @@ $finder = (new PhpCsFixer\Finder())
 return (new PhpCsFixer\Config())
     ->setRules([
         '@PSR12' => true,
-        'no_unused_imports' => true,
+
+        // Array Notation
         'array_syntax' => ['syntax' => 'short'],
+
+        // Casing
         'integer_literal_case' => true,
+
+        // Function Notation
         'method_argument_space' => [
             'on_multiline' => 'ignore',
         ],
+        'nullable_type_declaration_for_default_null_value' => true,
+
+        // Import
         'global_namespace_import' => [
             'import_classes' => false,
         ],
+        'no_unused_imports' => true,
         'ordered_imports' => [
             'imports_order' => ['class', 'function', 'const'],
             'sort_algorithm' => 'alpha',
         ],
-        'phpdoc_separation' => [
-            'skip_unlisted_annotations' => true,
-        ],
+
+        // Language Construct
         'nullable_type_declaration' => [
             'syntax' => 'question_mark',
         ],
-        'nullable_type_declaration_for_default_null_value' => true,
+
+        // PHPDoc
+        'phpdoc_separation' => [
+            'skip_unlisted_annotations' => true,
+        ],
     ])
     ->setFinder($finder);

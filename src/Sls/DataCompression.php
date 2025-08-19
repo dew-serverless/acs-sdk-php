@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Sls;
 
-use RuntimeException;
-
 enum DataCompression: string
 {
     case LZ4 = 'lz4';
@@ -34,7 +32,7 @@ enum DataCompression: string
         $classString = static::from($compression)->toFqcn();
 
         if (! $classString::supports()) {
-            throw new RuntimeException(sprintf(
+            throw new \RuntimeException(sprintf(
                 'The runtime does not support "%s" compression.',
                 $compression
             ));

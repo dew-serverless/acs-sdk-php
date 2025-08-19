@@ -8,7 +8,6 @@ use Dew\Acs\Tablestore\Cells\Cell;
 use Dew\Acs\Tablestore\Cells\HasValue;
 use Dew\Acs\Tablestore\Messages\Filter;
 use Dew\Acs\Tablestore\Messages\SingleColumnValueFilter;
-use InvalidArgumentException;
 
 /**
  * @phpstan-type TCondition array{
@@ -54,7 +53,7 @@ final class Condition
     public function getCellValue(Cell $cell): string
     {
         if (! $cell instanceof HasValue) {
-            throw new InvalidArgumentException(sprintf(
+            throw new \InvalidArgumentException(sprintf(
                 'The column [%s] does not contain value.', $cell->name()
             ));
         }

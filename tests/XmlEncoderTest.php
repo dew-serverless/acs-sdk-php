@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Dew\Acs\Tests;
 
 use Dew\Acs\XmlEncoder;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
@@ -65,7 +64,7 @@ final class XmlEncoderTest extends TestCase
 
     public function test_encode_empty(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The data is empty.');
         $encoder = new XmlEncoder();
         $encoder->encode([]);
@@ -73,7 +72,7 @@ final class XmlEncoderTest extends TestCase
 
     public function test_encode_without_outmost_element(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The data should have an outermost element.');
         $encoder = new XmlEncoder();
         $encoder->encode(['foo', 'bar']);
@@ -81,7 +80,7 @@ final class XmlEncoderTest extends TestCase
 
     public function test_encode_outmost_element_list_array(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The outermost element should be a string.');
         $encoder = new XmlEncoder();
         $encoder->encode([[]]);

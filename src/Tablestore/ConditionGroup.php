@@ -6,7 +6,6 @@ namespace Dew\Acs\Tablestore;
 
 use Dew\Acs\Tablestore\Messages\CompositeColumnValueFilter;
 use Dew\Acs\Tablestore\Messages\Filter;
-use InvalidArgumentException;
 
 /**
  * @phpstan-type TItem \Dew\Acs\Tablestore\ConditionGroup|\Dew\Acs\Tablestore\Condition
@@ -36,7 +35,7 @@ final class ConditionGroup
         private array $items
     ) {
         if (! in_array($this->logicalOperator, self::SUPPORTED, strict: true)) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'The condition group accepts only logical operator "and" or "or".'
             );
         }
@@ -48,7 +47,7 @@ final class ConditionGroup
     public function toFilter(): Filter
     {
         if ($this->size() === 0) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'Could not build a filter with an empty group.'
             );
         }

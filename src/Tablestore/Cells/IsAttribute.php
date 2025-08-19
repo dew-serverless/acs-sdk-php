@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tablestore\Cells;
 
-use DateTimeInterface;
 use Dew\Acs\Tablestore\Crc;
-use Override;
 
 trait IsAttribute
 {
@@ -23,12 +21,12 @@ trait IsAttribute
     /**
      * {@inheritDoc}
      */
-    #[Override]
-    public function setTimestamp(DateTimeInterface|int $timestamp): self
+    #[\Override]
+    public function setTimestamp(\DateTimeInterface|int $timestamp): self
     {
         // U: seconds since the Unix Epoch
         // v: milliseconds
-        $this->timestamp = $timestamp instanceof DateTimeInterface
+        $this->timestamp = $timestamp instanceof \DateTimeInterface
             ? (int) $timestamp->format('Uv')
             : $timestamp;
 
@@ -38,7 +36,7 @@ trait IsAttribute
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function getTimestamp(): ?int
     {
         return $this->timestamp;
@@ -57,7 +55,7 @@ trait IsAttribute
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function getOperation(): ?Operation
     {
         return $this->operation;
@@ -66,7 +64,7 @@ trait IsAttribute
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function getChecksumBy(Crc $crc): int
     {
         $checksum = parent::getChecksumBy($crc);

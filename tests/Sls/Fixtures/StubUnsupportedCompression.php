@@ -5,35 +5,34 @@ declare(strict_types=1);
 namespace Dew\Acs\Tests\Sls\Fixtures;
 
 use Dew\Acs\Sls\Compression;
-use Override;
 
 final class StubUnsupportedCompression implements Compression
 {
-    #[Override]
+    #[\Override]
     public static function supports(): bool
     {
         return false;
     }
 
-    #[Override]
+    #[\Override]
     public static function threshold(): int
     {
         return 0;
     }
 
-    #[Override]
+    #[\Override]
     public function encode(string $data, ?int $level = null): string
     {
         return $data;
     }
 
-    #[Override]
+    #[\Override]
     public function decode(string $data, ?int $maxLength = null): string
     {
         return $data;
     }
 
-    #[Override]
+    #[\Override]
     public static function format(): string
     {
         return 'stub';

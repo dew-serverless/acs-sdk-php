@@ -6,7 +6,6 @@ namespace Dew\Acs;
 
 use Dew\Acs\Plugins\ConfigureUserAgent;
 use Http\Client\Common\Plugin;
-use Override;
 
 final class GeneralStack implements HandlerStack
 {
@@ -25,7 +24,7 @@ final class GeneralStack implements HandlerStack
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function get(): array
     {
         return [

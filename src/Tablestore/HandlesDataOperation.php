@@ -7,7 +7,6 @@ namespace Dew\Acs\Tablestore;
 use Dew\Acs\Tablestore\Messages\Condition;
 use Dew\Acs\Tablestore\Messages\Filter;
 use Dew\Acs\Tablestore\Messages\ReturnContent;
-use RuntimeException;
 
 trait HandlesDataOperation
 {
@@ -71,6 +70,6 @@ trait HandlesDataOperation
             return (new PaginationFilter($builder->offset, $builder->limit))->toFilter();
         }
 
-        throw new RuntimeException('Missing filter data to build with.');
+        throw new \RuntimeException('Missing filter data to build with.');
     }
 }

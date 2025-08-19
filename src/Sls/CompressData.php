@@ -6,7 +6,6 @@ namespace Dew\Acs\Sls;
 
 use Http\Client\Common\Plugin;
 use Http\Promise\Promise;
-use Override;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
@@ -23,7 +22,7 @@ final readonly class CompressData implements Plugin
      * @param  callable(\Psr\Http\Message\RequestInterface): \Http\Promise\Promise  $next
      * @param  callable(\Psr\Http\Message\RequestInterface): \Http\Promise\Promise  $first
      */
-    #[Override]
+    #[\Override]
     public function handleRequest(RequestInterface $request, callable $next, callable $first): Promise
     {
         $size = $request->getBody()->getSize() ?? 0;

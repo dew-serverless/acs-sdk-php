@@ -18,7 +18,6 @@ use Dew\Acs\Tablestore\Messages\ReturnType;
 use Dew\Acs\Tablestore\Messages\RowExistenceExpectation;
 use Dew\Acs\Tablestore\Messages\UpdateRowRequest;
 use Dew\Acs\Tablestore\PrimaryKey;
-use Generator;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use Mockery as m;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -425,7 +424,7 @@ final class BasicHandlerTest extends TestCase
     /**
      * @return \Generator<string, array{0: \Dew\Acs\Tablestore\BatchBag, 1?: string}>
      */
-    public static function provide_incomplete_batch_bags(): Generator
+    public static function provide_incomplete_batch_bags(): \Generator
     {
         yield 'empty bag' => [
             new BatchBag(), 'Requires something in a batch.',

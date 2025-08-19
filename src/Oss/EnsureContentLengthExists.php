@@ -6,7 +6,6 @@ namespace Dew\Acs\Oss;
 
 use Http\Client\Common\Plugin;
 use Http\Promise\Promise;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 final class EnsureContentLengthExists implements Plugin
@@ -15,7 +14,7 @@ final class EnsureContentLengthExists implements Plugin
      * @param  callable(\Psr\Http\Message\RequestInterface): \Http\Promise\Promise  $next
      * @param  callable(\Psr\Http\Message\RequestInterface): \Http\Promise\Promise  $first
      */
-    #[Override]
+    #[\Override]
     public function handleRequest(RequestInterface $request, callable $next, callable $first): Promise
     {
         if (! $request->hasHeader('Content-Length')

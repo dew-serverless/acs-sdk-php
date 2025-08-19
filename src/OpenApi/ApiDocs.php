@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\OpenApi;
 
-use InvalidArgumentException;
-
 /**
  * @phpstan-import-type TApi from \Dew\Acs\OpenApi\Api
  * @phpstan-import-type TInfo from \Dew\Acs\OpenApi\Info
@@ -59,7 +57,7 @@ final readonly class ApiDocs
     public function getApi(string $name): Api
     {
         $definition = $this->apis[$name]
-            ?? throw new InvalidArgumentException("Could not find $name API.");
+            ?? throw new \InvalidArgumentException("Could not find $name API.");
 
         return Api::make($definition)->setName($name);
     }
@@ -72,6 +70,6 @@ final readonly class ApiDocs
             }
         }
 
-        throw new InvalidArgumentException("Could not find the endpoint for region $regionId.");
+        throw new \InvalidArgumentException("Could not find the endpoint for region $regionId.");
     }
 }

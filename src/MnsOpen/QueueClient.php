@@ -19,7 +19,6 @@ use Http\Promise\Promise;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
-use RuntimeException;
 
 /**
  * @phpstan-type TConfig array{
@@ -374,6 +373,6 @@ final readonly class QueueClient
             return $this->execute($method, $arguments);
         }
 
-        throw new RuntimeException(sprintf('Call to undefined method %s::%s()', self::class, $method));
+        throw new \RuntimeException(sprintf('Call to undefined method %s::%s()', self::class, $method));
     }
 }

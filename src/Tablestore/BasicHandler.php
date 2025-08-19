@@ -22,7 +22,6 @@ use Dew\Acs\Tablestore\Messages\TimeRange;
 use Dew\Acs\Tablestore\Messages\UpdateRowRequest;
 use Dew\Acs\Tablestore\Messages\UpdateRowResponse;
 use Google\Protobuf\Internal\Message;
-use Override;
 
 /**
  * @phpstan-type TMergedBuilder array{
@@ -51,7 +50,7 @@ final class BasicHandler implements DataHandler
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function getRow(Builder $builder): GetRowResponse
     {
         $request = new GetRowRequest();
@@ -88,7 +87,7 @@ final class BasicHandler implements DataHandler
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function putRow(Builder $builder): PutRowResponse
     {
         $request = new PutRowRequest();
@@ -106,7 +105,7 @@ final class BasicHandler implements DataHandler
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function updateRow(Builder $builder): UpdateRowResponse
     {
         $request = new UpdateRowRequest();
@@ -124,7 +123,7 @@ final class BasicHandler implements DataHandler
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function deleteRow(Builder $builder): DeleteRowResponse
     {
         $request = new DeleteRowRequest();
@@ -142,7 +141,7 @@ final class BasicHandler implements DataHandler
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function batchGetRow(BatchBag $bag): BatchGetRowResponse
     {
         $request = new BatchGetRowRequest();
@@ -157,7 +156,7 @@ final class BasicHandler implements DataHandler
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function batchWriteRow(BatchBag $bag): BatchWriteRowResponse
     {
         $request = new BatchWriteRowRequest();

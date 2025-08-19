@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tablestore\Cells;
 
-use Override;
-
 trait IsBinaryCell
 {
     use IsStringCell;
@@ -13,7 +11,7 @@ trait IsBinaryCell
     /**
      * The cell type.
      */
-    #[Override]
+    #[\Override]
     public function type(): ValueType
     {
         return ValueType::BLOB;

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Dew\Acs\Tablestore;
 
 use Dew\Acs\ConfigChecker as BaseChecker;
-use InvalidArgumentException;
 
 class ConfigChecker extends BaseChecker
 {
@@ -17,11 +16,11 @@ class ConfigChecker extends BaseChecker
     public function ensureInstanceNameExists(array $config): void
     {
         if (! isset($config['instance'])) {
-            throw new InvalidArgumentException('Missing instance name.');
+            throw new \InvalidArgumentException('Missing instance name.');
         }
 
         if (! is_string($config['instance'])) {
-            throw new InvalidArgumentException('The instance name must be a string.');
+            throw new \InvalidArgumentException('The instance name must be a string.');
         }
     }
 }

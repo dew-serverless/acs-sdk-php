@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Sls;
 
-use DateTimeImmutable;
-use DateTimeZone;
 use Dew\Acs\ConfigChecker;
 use Dew\Acs\Signatures\SignsRequest;
 use GuzzleHttp\Psr7\Query;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -27,12 +24,12 @@ final readonly class V1Signature implements SignsRequest
     /**
      * @param  array<string, mixed>  $config
      */
-    #[Override]
+    #[\Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
         $this->configChecker->ensureCredentialsExist($config);
 
-        $datetime = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+        $datetime = new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
 
         $body = (string) $request->getBody();
 
@@ -40,7 +37,7 @@ final readonly class V1Signature implements SignsRequest
             ->withHeader('x-log-signaturemethod', 'hmac-sha1')
             ->withHeader('x-log-apiversion', '0.6.0')
             ->withHeader('x-log-bodyrawsize', (string) strlen($body))
-            ->withHeader('Date', $datetime->format(DateTimeImmutable::RFC7231));
+            ->withHeader('Date', $datetime->format(\DateTimeImmutable::RFC7231));
 
         $body = (string) $request->getBody();
 

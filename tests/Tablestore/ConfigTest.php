@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Dew\Acs\Tests\Tablestore;
 
 use Dew\Acs\Tablestore\Config;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
@@ -42,7 +41,7 @@ final class ConfigTest extends TestCase
 
     public function test_endpoint_normalization_instance_region_empty(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The endpoint is not a valid URL.');
         Config::normalizeEndpoint([
             'credentials' => ['key' => 'mykey', 'secret' => 'mysecret'],
@@ -56,7 +55,7 @@ final class ConfigTest extends TestCase
     #[TestWith(['cn-somewhere.tablestore.aliyuncs.com'], 'region endpoint')]
     public function test_endpoint_normalization_instance_region_invalid_endpoint(string $endpoint): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The endpoint is not conventional.');
         Config::normalizeEndpoint([
             'credentials' => ['key' => 'mykey', 'secret' => 'mysecret'],
@@ -120,7 +119,7 @@ final class ConfigTest extends TestCase
 
     public function test_endpoint_normalization_empty(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Specify at least the endpoint or region and instance in the config.');
         Config::normalize([
             'credentials' => ['key' => 'mykey', 'secret' => 'mysecret'],

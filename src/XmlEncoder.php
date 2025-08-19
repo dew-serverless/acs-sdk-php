@@ -4,23 +4,16 @@ declare(strict_types=1);
 
 namespace Dew\Acs;
 
-use DOMDocument;
-use DOMNode;
-use InvalidArgumentException;
-use Override;
-use RuntimeException;
-use Stringable;
-
 final class XmlEncoder implements DataEncoder
 {
     /**
      * @param  mixed[]  $data
      */
-    #[Override]
+    #[\Override]
     public function encode(array $data): string
     {
         if (count($data) > 1) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'The data should have an outermost element.'
             );
         }
@@ -28,14 +21,14 @@ final class XmlEncoder implements DataEncoder
         $rootElement = array_key_first($data);
 
         if ($rootElement === null) {
-            throw new InvalidArgumentException('The data is empty.');
+            throw new \InvalidArgumentException('The data is empty.');
         }
 
         if (is_int($rootElement)) {
-            throw new InvalidArgumentException('The outermost element should be a string.');
+            throw new \InvalidArgumentException('The outermost element should be a string.');
         }
 
-        $dom = new DOMDocument('1.0', 'UTF-8');
+        $dom = new \DOMDocument('1.0', 'UTF-8');
 
         if (is_scalar($data[$rootElement])) {
             $element = $dom->createElement($rootElement, $this->encodeValue($data[$rootElement]));
@@ -49,13 +42,13 @@ final class XmlEncoder implements DataEncoder
         $xml = $dom->saveXML();
 
         if ($xml === false) {
-            throw new RuntimeException('Failed to encode XML.');
+            throw new \RuntimeException('Failed to encode XML.');
         }
 
         return $xml;
     }
 
-    private function encodeNode(DOMNode $node, mixed $data): void
+    private function encodeNode(\DOMNode $node, mixed $data): void
     {
         if (is_scalar($data)) {
             $this->encodeTextNode($node, $data);
@@ -64,7 +57,7 @@ final class XmlEncoder implements DataEncoder
         }
     }
 
-    private function encodeTextNode(DOMNode $node, int|float|string|bool $data): void
+    private function encodeTextNode(\DOMNode $node, int|float|string|bool $data): void
     {
         $document = $this->ownerDocument($node);
         $textNode = $document->createTextNode($this->encodeValue($data));
@@ -74,7 +67,7 @@ final class XmlEncoder implements DataEncoder
     /**
      * @param  mixed[]  $data
      */
-    private function encodeArray(DOMNode $node, array $data): void
+    private function encodeArray(\DOMNode $node, array $data): void
     {
         $document = $this->ownerDocument($node);
 
@@ -105,24 +98,24 @@ final class XmlEncoder implements DataEncoder
             return (string) $value;
         }
 
-        if ($value instanceof Stringable) {
+        if ($value instanceof \Stringable) {
             return $value->__toString();
         }
 
-        throw new InvalidArgumentException('Could not encode value.');
+        throw new \InvalidArgumentException('Could not encode value.');
     }
 
     /**
      * @return mixed[]
      */
-    #[Override]
+    #[\Override]
     public function decode(string $data): array
     {
         if ($data === '') {
             return [];
         }
 
-        $xml = new DOMDocument();
+        $xml = new \DOMDocument();
         $xml->loadXML($data, LIBXML_NOBLANKS);
 
         $document = $xml->documentElement;
@@ -137,13 +130,13 @@ final class XmlEncoder implements DataEncoder
         ]);
     }
 
-    private function decodeNode(DOMNode $node): mixed
+    private function decodeNode(\DOMNode $node): mixed
     {
         return match ($node->nodeType) {
             XML_ELEMENT_NODE => $this->decodeElementNode($node),
             XML_TEXT_NODE,
             XML_CDATA_SECTION_NODE => $this->decodeTextNode($node),
-            default => throw new RuntimeException(
+            default => throw new \RuntimeException(
                 "Unsupported decode node type {$node->nodeType}."
             ),
         };
@@ -152,7 +145,7 @@ final class XmlEncoder implements DataEncoder
     /**
      * @return array<string, mixed>
      */
-    private function decodeElementNode(DOMNode $node): array
+    private function decodeElementNode(\DOMNode $node): array
     {
         $result = [];
 
@@ -164,7 +157,7 @@ final class XmlEncoder implements DataEncoder
         return $result;
     }
 
-    private function decodeTextNode(DOMNode $node): string
+    private function decodeTextNode(\DOMNode $node): string
     {
         return $node->textContent;
     }
@@ -196,7 +189,7 @@ final class XmlEncoder implements DataEncoder
         return $result;
     }
 
-    private function ownerDocument(DOMNode $node): DOMDocument
+    private function ownerDocument(\DOMNode $node): \DOMDocument
     {
         /** @var \DOMDocument */
         return $node->ownerDocument ?? $node;

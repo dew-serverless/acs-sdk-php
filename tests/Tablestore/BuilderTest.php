@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tests\Tablestore;
 
-use DateTimeImmutable;
-use DateTimeInterface;
 use Dew\Acs\Tablestore\Attribute;
 use Dew\Acs\Tablestore\Builder;
 use Dew\Acs\Tablestore\Cells\StringAttribute;
@@ -16,8 +14,6 @@ use Dew\Acs\Tablestore\Messages\ReturnType;
 use Dew\Acs\Tablestore\Messages\TimeRange;
 use Dew\Acs\Tablestore\PrimaryKey;
 use Dew\Acs\Tests\DataProviderHelper;
-use Generator;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -163,7 +159,7 @@ final class BuilderTest extends TestCase
 
     public function test_where_invalid_comparison_operator(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Comparison operator accepts =, !=, <>, >, >=, <, or <=.');
         $builder = new Builder();
         $builder->where('name', null, 'Zhineng');
@@ -171,7 +167,7 @@ final class BuilderTest extends TestCase
 
     public function test_where_column_could_not_build_with_unsupported_value_type(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Could not build an attribute from the [NULL] type.');
         $builder = new Builder();
         $builder->whereColumn('name', null);
@@ -444,7 +440,7 @@ final class BuilderTest extends TestCase
     }
 
     #[DataProvider('provide_versions')]
-    public function test_where_version_specifies_time_range_specific_time(DateTimeInterface|TimeRange|int $version, int $timestamp): void
+    public function test_where_version_specifies_time_range_specific_time(\DateTimeInterface|TimeRange|int $version, int $timestamp): void
     {
         $builder = new Builder();
         $builder->whereVersion($version);
@@ -456,7 +452,7 @@ final class BuilderTest extends TestCase
     }
 
     #[DataProvider('provide_versions')]
-    public function test_where_version_from_specifies_time_range_start_time(DateTimeInterface|TimeRange|int $version, int $timestamp): void
+    public function test_where_version_from_specifies_time_range_start_time(\DateTimeInterface|TimeRange|int $version, int $timestamp): void
     {
         $builder = new Builder();
         $builder->whereVersionFrom($version);
@@ -468,7 +464,7 @@ final class BuilderTest extends TestCase
     }
 
     #[DataProvider('provide_versions')]
-    public function test_where_version_before_specifies_time_range_end_time(DateTimeInterface|TimeRange|int $version, int $timestamp): void
+    public function test_where_version_before_specifies_time_range_end_time(\DateTimeInterface|TimeRange|int $version, int $timestamp): void
     {
         $builder = new Builder();
         $builder->whereVersionBefore($version);
@@ -506,7 +502,7 @@ final class BuilderTest extends TestCase
     /**
      * @return \Generator<string, TColumnName[]>
      */
-    public static function provide_multiple_attributes(): Generator
+    public static function provide_multiple_attributes(): \Generator
     {
         yield 'name and values' => [[
             ['attr1', 'foo'],
@@ -527,7 +523,7 @@ final class BuilderTest extends TestCase
     /**
      * @return \Generator<string, array{0: string}>
      */
-    public static function provide_super_wheres(): Generator
+    public static function provide_super_wheres(): \Generator
     {
         yield 'where' => ['where'];
         yield 'or where' => ['orWhere'];
@@ -549,12 +545,12 @@ final class BuilderTest extends TestCase
     /**
      * @return \Generator<string, mixed[]>
      */
-    public static function provide_versions(): Generator
+    public static function provide_versions(): \Generator
     {
         yield 'timestamp' => [1234567891011, 1234567891011];
 
         yield 'datetime' => [
-            $now = new DateTimeImmutable(),
+            $now = new \DateTimeImmutable(),
             (int) $now->format('Uv'),
         ];
 

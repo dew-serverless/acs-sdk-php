@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tests\Tablestore;
 
-use DateTimeImmutable;
-use DateTimeZone;
 use Dew\Acs\Tablestore\V4Signature;
 use Nyholm\Psr7\Request;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -31,7 +29,7 @@ final class V4SignatureTest extends TestCase
 
     public function test_sign_request_sign_date_header(): void
     {
-        $now = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+        $now = new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
         $request = new Request('POST', '/Test');
         $signer = new V4Signature();
         $request = $signer->signRequest($request, [
@@ -60,7 +58,7 @@ final class V4SignatureTest extends TestCase
 
     public function test_get_signing_key(): void
     {
-        $datetime = new DateTimeImmutable('2024-01-01', new DateTimeZone('UTC'));
+        $datetime = new \DateTimeImmutable('2024-01-01', new \DateTimeZone('UTC'));
         $signer = new V4Signature();
         $key = $signer->getSigngingKey([
             'credentials' => [

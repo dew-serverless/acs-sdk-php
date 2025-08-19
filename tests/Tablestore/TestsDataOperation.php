@@ -11,7 +11,6 @@ use Dew\Acs\Tablestore\Messages\Filter;
 use Dew\Acs\Tablestore\Messages\FilterType;
 use Dew\Acs\Tablestore\Messages\LogicalOperator;
 use Dew\Acs\Tablestore\Messages\SingleColumnValueFilter;
-use InvalidArgumentException;
 use PHPUnit\Framework\Assert;
 
 trait TestsDataOperation
@@ -37,7 +36,7 @@ trait TestsDataOperation
     final public function unwrapFilter(mixed $filter): SingleColumnValueFilter|CompositeColumnValueFilter|ColumnPaginationFilter
     {
         if (! $filter instanceof Filter) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'The filter must be an instance of Filter message.'
             );
         }

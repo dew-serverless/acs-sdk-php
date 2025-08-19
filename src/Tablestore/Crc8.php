@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tablestore;
 
-use Override;
-
 /**
  * CRC-8-CCITT
  */
@@ -44,7 +42,7 @@ final class Crc8 implements Crc
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function string(string $value, int $checksum): int
     {
         $length = strlen($value);
@@ -59,7 +57,7 @@ final class Crc8 implements Crc
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function char(int $value, int $checksum): int
     {
         return self::TABLE[($checksum ^ $value) & 0xFF];
@@ -68,7 +66,7 @@ final class Crc8 implements Crc
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function int32(int $value, int $checksum): int
     {
         for ($i = 0; $i < 4; $i++) {
@@ -81,7 +79,7 @@ final class Crc8 implements Crc
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function int64(int $value, int $checksum): int
     {
         $low = $value & 0xFFFFFFFF;
@@ -95,7 +93,7 @@ final class Crc8 implements Crc
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function double(float $double, int $checksum): int
     {
         // d: double (machine dependent size and representation)

@@ -12,7 +12,6 @@ use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
 use Http\Promise\FulfilledPromise;
 use Http\Promise\Promise;
-use InvalidArgumentException;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
@@ -207,7 +206,7 @@ abstract class AcsClient
         $argument = $arguments[0] ?? [];
 
         if (! is_array($argument)) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 "The $method API expects an array argument."
             );
         }

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Dew\Acs\Sls;
 
 use Dew\Acs\Signatures\SignsRequest;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 final readonly class AKSignature implements SignsRequest
@@ -19,7 +18,7 @@ final readonly class AKSignature implements SignsRequest
     /**
      * @param  array<string, mixed>  $config
      */
-    #[Override]
+    #[\Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
         return $this->signer->signRequest($request, $config);

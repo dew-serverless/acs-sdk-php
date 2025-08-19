@@ -2,12 +2,9 @@
 
 namespace Dew\Acs\Oss;
 
-use DateTimeImmutable;
-use DateTimeZone;
 use Dew\Acs\Signatures\NeedsArguments;
 use Dew\Acs\Signatures\SignsRequest;
 use Dew\Acs\Signatures\V4Signature as BaseV4Signature;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -59,10 +56,10 @@ final class V4Signature implements SignsRequest, NeedsArguments
     /**
      * @param  array<string, mixed>  $config
      */
-    #[Override]
+    #[\Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
-        $datetime = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+        $datetime = new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
 
         $request = $request
             ->withHeader('X-Oss-Date', $datetime->format('Ymd\THis\Z'))
@@ -74,7 +71,7 @@ final class V4Signature implements SignsRequest, NeedsArguments
     /**
      * @param  array<string, mixed>  $arguments
      */
-    #[Override]
+    #[\Override]
     public function setArguments(array $arguments): void
     {
         $this->arguments = $arguments;

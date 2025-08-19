@@ -4,11 +4,7 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tablestore;
 
-use DateTimeImmutable;
-use DateTimeInterface;
-use DateTimeZone;
 use Dew\Acs\Signatures\SignsRequest;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 final readonly class V4Signature implements SignsRequest
@@ -23,12 +19,12 @@ final readonly class V4Signature implements SignsRequest
     /**
      * @param  array<string, mixed>  $config
      */
-    #[Override]
+    #[\Override]
     public function signRequest(RequestInterface $request, array $config): RequestInterface
     {
         $this->configChecker->ensureRegionExists($config);
 
-        $now = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+        $now = new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
 
         $request = $request
             ->withHeader('x-ots-signregion', $config['region'])
@@ -54,7 +50,7 @@ final readonly class V4Signature implements SignsRequest
     /**
      * @param  array<string, mixed>  $config
      */
-    public function getSigngingKey(array $config, DateTimeInterface $datetime): string
+    public function getSigngingKey(array $config, \DateTimeInterface $datetime): string
     {
         $this->configChecker->ensureCredentialsExist($config);
 
@@ -69,7 +65,7 @@ final readonly class V4Signature implements SignsRequest
      * @param  array<string, mixed>  $config
      * @return string[]
      */
-    public function getScope(array $config, DateTimeInterface $datetime): array
+    public function getScope(array $config, \DateTimeInterface $datetime): array
     {
         $this->configChecker->ensureRegionExists($config);
 

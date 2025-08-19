@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Dew\Acs\Tests\OpenApi;
 
 use Dew\Acs\OpenApi\ApiDocs;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
@@ -77,7 +76,7 @@ final class ApiDocsTest extends TestCase
 
     public function test_get_endpoint_endpoint_does_not_exist(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Could not find the endpoint for region cn-somewhere.');
         ApiDocs::make([
             'info' => [

@@ -11,7 +11,6 @@ use Dew\Acs\Tablestore\Messages\Filter;
 use Dew\Acs\Tablestore\Messages\FilterType;
 use Dew\Acs\Tablestore\Messages\LogicalOperator;
 use Dew\Acs\Tablestore\Messages\SingleColumnValueFilter;
-use InvalidArgumentException;
 
 trait InteractsWithFilter
 {
@@ -27,7 +26,7 @@ trait InteractsWithFilter
             '>=' => ComparatorType::CT_GREATER_EQUAL,
             '<' => ComparatorType::CT_LESS_THAN,
             '<=' => ComparatorType::CT_LESS_EQUAL,
-            default => throw new InvalidArgumentException(sprintf(
+            default => throw new \InvalidArgumentException(sprintf(
                 'Comparison operator accepts =, !=, <>, >, >=, <, or <=, but [%s] is given.',
                 $operator
             )),
@@ -43,7 +42,7 @@ trait InteractsWithFilter
             'not' => LogicalOperator::LO_NOT,
             'and' => LogicalOperator::LO_AND,
             'or' => LogicalOperator::LO_OR,
-            default => throw new InvalidArgumentException(sprintf(
+            default => throw new \InvalidArgumentException(sprintf(
                 'Logical operator accepts "and", "or", or "not", but [%s] is given.',
                 $operator
             )),
@@ -81,7 +80,7 @@ trait InteractsWithFilter
             SingleColumnValueFilter::class => FilterType::FT_SINGLE_COLUMN_VALUE,
             CompositeColumnValueFilter::class => FilterType::FT_COMPOSITE_COLUMN_VALUE,
             ColumnPaginationFilter::class => FilterType::FT_COLUMN_PAGINATION,
-            default => throw new InvalidArgumentException(sprintf(
+            default => throw new \InvalidArgumentException(sprintf(
                 'Unsupported filter type [%s] is given.', $filter::class
             )),
         };

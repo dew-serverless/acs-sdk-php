@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Sls;
 
-use Override;
-
 final class Deflate implements Compression
 {
     /**
@@ -16,7 +14,7 @@ final class Deflate implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public static function supports(): bool
     {
         return extension_loaded('zlib');
@@ -25,7 +23,7 @@ final class Deflate implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public static function threshold(): int
     {
         return 256;
@@ -34,7 +32,7 @@ final class Deflate implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function encode(string $data, ?int $level = null): string
     {
         $level = is_int($level) ? $level : self::DEFAULT_COMPRESSION_LEVEL;
@@ -50,7 +48,7 @@ final class Deflate implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function decode(string $data, ?int $maxLength = null): string
     {
         $decoded = gzuncompress($data, $maxLength ?? 0);
@@ -65,7 +63,7 @@ final class Deflate implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public static function format(): string
     {
         return 'deflate';

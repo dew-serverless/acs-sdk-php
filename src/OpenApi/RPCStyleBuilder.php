@@ -5,10 +5,6 @@ declare(strict_types=1);
 namespace Dew\Acs\OpenApi;
 
 use GuzzleHttp\Psr7\Query;
-use InvalidArgumentException;
-use Override;
-use RuntimeException;
-use Stringable;
 
 final readonly class RPCStyleBuilder implements ApiDataBuilder
 {
@@ -36,7 +32,7 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
     /**
      * @param  mixed[]  $arguments
      */
-    #[Override]
+    #[\Override]
     public function build(array $arguments): ApiData
     {
         $method = strtoupper($this->api->methods[0]);
@@ -49,7 +45,7 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
             $value = $arguments[$parameter->name] ?? null;
 
             if ($parameter->schema->required === true && $value === null) {
-                throw new InvalidArgumentException("The {$parameter->name} is required.");
+                throw new \InvalidArgumentException("The {$parameter->name} is required.");
             }
 
             if ($value === null) {
@@ -70,7 +66,7 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
                     $formData[$parameter->name] = $this->getParameterValue($parameter, $value);
                     break;
                 default:
-                    throw new RuntimeException("Unsupported parameter location {$parameter->in->value}.");
+                    throw new \RuntimeException("Unsupported parameter location {$parameter->in->value}.");
             }
         }
 
@@ -114,10 +110,10 @@ final readonly class RPCStyleBuilder implements ApiDataBuilder
             return $value ? 'true' : 'false';
         }
 
-        if (is_scalar($value) || $value instanceof Stringable) {
+        if (is_scalar($value) || $value instanceof \Stringable) {
             return (string) $value;
         }
 
-        throw new InvalidArgumentException('Could not encode the query.');
+        throw new \InvalidArgumentException('Could not encode the query.');
     }
 }

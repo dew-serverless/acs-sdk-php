@@ -12,7 +12,6 @@ use Dew\Acs\Signatures\NullSignature;
 use Dew\Acs\Signatures\SignsRequest;
 use Http\Client\Common\Plugin;
 use Http\Promise\Promise;
-use InvalidArgumentException;
 use Psr\Http\Message\RequestInterface;
 
 final readonly class SignRequest implements Plugin
@@ -84,6 +83,6 @@ final readonly class SignRequest implements Plugin
             }
         }
 
-        throw new InvalidArgumentException("Unsupported signature $auth.");
+        throw new \InvalidArgumentException("Unsupported signature $auth.");
     }
 }

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\OpenApi;
 
-use InvalidArgumentException;
-
 /**
  * @phpstan-type TSecurityRequirement string[]
  * @phpstan-type TErrorCode array{errorCode: string, errorMessage: string}
@@ -86,7 +84,7 @@ final class Api
         $parameter = $this->parameters[$name] ?? null;
 
         if ($parameter === null) {
-            throw new InvalidArgumentException("The API does not have $name parameter.");
+            throw new \InvalidArgumentException("The API does not have $name parameter.");
         }
 
         return $parameter;

@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tablestore;
 
-use DateTimeInterface;
 use Dew\Acs\Tablestore\Cells\Cell;
 use Dew\Acs\Tablestore\Cells\PrimaryKey as PrimaryKeyContract;
 use Dew\Acs\Tablestore\Messages\Filter;
 use Dew\Acs\Tablestore\Messages\ReturnType;
 use Dew\Acs\Tablestore\Messages\RowExistenceExpectation;
 use Dew\Acs\Tablestore\Messages\TimeRange;
-use InvalidArgumentException;
 
 /**
  * @phpstan-import-type TCondition from \Dew\Acs\Tablestore\ConditionFilter
@@ -321,7 +319,7 @@ trait HasConditions
         }
 
         if (! is_string($operator)) {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'Comparison operator accepts =, !=, <>, >, >=, <, or <=.'
             );
         }
@@ -363,7 +361,7 @@ trait HasConditions
         $callback = [$this, $handler];
 
         if (! is_callable($callback)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new \InvalidArgumentException(sprintf(
                 'The handler [%s] does not exists.', $handler
             ));
         }
@@ -392,7 +390,7 @@ trait HasConditions
     /**
      * Include only columns where the version is the same as the given version.
      */
-    public function whereVersion(TimeRange|DateTimeInterface|int $timestamp): self
+    public function whereVersion(TimeRange|\DateTimeInterface|int $timestamp): self
     {
         $timestamp = $timestamp instanceof TimeRange
             ? $timestamp->getSpecificTime()
@@ -406,7 +404,7 @@ trait HasConditions
     /**
      * Include only columns where the version is greater than or equal to.
      */
-    public function whereVersionFrom(TimeRange|DateTimeInterface|int $timestamp): self
+    public function whereVersionFrom(TimeRange|\DateTimeInterface|int $timestamp): self
     {
         $timestamp = $timestamp instanceof TimeRange
             ? $timestamp->getStartTime()
@@ -424,7 +422,7 @@ trait HasConditions
     /**
      * Include only columns where the version is earlier than.
      */
-    public function whereVersionBefore(TimeRange|DateTimeInterface|int $timestamp): self
+    public function whereVersionBefore(TimeRange|\DateTimeInterface|int $timestamp): self
     {
         $timestamp = $timestamp instanceof TimeRange
             ? $timestamp->getEndTime()
@@ -442,7 +440,7 @@ trait HasConditions
     /**
      * Include only columns where the version is in the given range.
      */
-    public function whereVersionBetween(DateTimeInterface|int $from, DateTimeInterface|int $before): self
+    public function whereVersionBetween(\DateTimeInterface|int $from, \DateTimeInterface|int $before): self
     {
         return $this->whereVersionFrom($from)->whereVersionBefore($before);
     }
@@ -450,9 +448,9 @@ trait HasConditions
     /**
      * Normalize column version.
      */
-    protected function normalizeVersion(DateTimeInterface|int $timestamp): int
+    protected function normalizeVersion(\DateTimeInterface|int $timestamp): int
     {
-        return $timestamp instanceof DateTimeInterface
+        return $timestamp instanceof \DateTimeInterface
             ? (int) $timestamp->format('Uv')
             : $timestamp;
     }

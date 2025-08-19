@@ -7,7 +7,6 @@ namespace Dew\Acs\Plugins;
 use Dew\Acs\AcsClient;
 use Http\Client\Common\Plugin;
 use Http\Promise\Promise;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 final class ConfigureUserAgent implements Plugin
@@ -16,7 +15,7 @@ final class ConfigureUserAgent implements Plugin
      * @param  callable(\Psr\Http\Message\RequestInterface): \Http\Promise\Promise  $next
      * @param  callable(\Psr\Http\Message\RequestInterface): \Http\Promise\Promise  $first
      */
-    #[Override]
+    #[\Override]
     public function handleRequest(RequestInterface $request, callable $next, callable $first): Promise
     {
         $existing = $request->getHeaderLine('User-Agent');

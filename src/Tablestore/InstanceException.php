@@ -8,7 +8,7 @@ use Dew\Acs\Tablestore\Messages\Error;
 use Exception;
 use Psr\Http\Message\ResponseInterface;
 
-final class InstanceException extends Exception
+final class InstanceException extends \Exception
 {
     /**
      * The error code

@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tablestore;
 
-use DateTimeImmutable;
-use DateTimeZone;
 use Dew\Acs\Signatures\SignsRequest;
 use Http\Client\Common\Plugin;
 use Http\Promise\Promise;
-use Override;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -31,10 +28,10 @@ final class SignRequest implements Plugin
      * @param  callable(\Psr\Http\Message\RequestInterface): \Http\Promise\Promise  $next
      * @param  callable(\Psr\Http\Message\RequestInterface): \Http\Promise\Promise  $first
      */
-    #[Override]
+    #[\Override]
     public function handleRequest(RequestInterface $request, callable $next, callable $first): Promise
     {
-        $now = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+        $now = new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
 
         $request = $request
             ->withHeader('x-ots-accesskeyid', $this->config['credentials']['key'])

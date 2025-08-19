@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Dew\Acs;
 
 use Dew\Acs\OpenApi\ApiDocs;
-use InvalidArgumentException;
-use RuntimeException;
 
 /**
  * @phpstan-import-type TApiDocs from \Dew\Acs\OpenApi\ApiDocs
@@ -41,7 +39,7 @@ final class ApiDocsResolver
     public function resolve(string $clientClass, array $config): ApiDocs
     {
         if (! str_ends_with($clientClass, 'Client')) {
-            throw new RuntimeException('The client class name is invalid.');
+            throw new \RuntimeException('The client class name is invalid.');
         }
 
         $name = substr($clientClass, 0, -6);
@@ -49,11 +47,11 @@ final class ApiDocsResolver
         $version = $config['version'] ?? $product['defaultVersion'];
 
         if (! is_string($version)) {
-            throw new InvalidArgumentException('The version should be a string.');
+            throw new \InvalidArgumentException('The version should be a string.');
         }
 
         if (! in_array($version, $product['versions'])) {
-            throw new InvalidArgumentException(sprintf(
+            throw new \InvalidArgumentException(sprintf(
                 'Could not find version %s on product %s.',
                 $version, $product['code']
             ));
@@ -82,18 +80,18 @@ final class ApiDocsResolver
             $filename = __DIR__.'/../data/products.php';
 
             if (! file_exists($filename)) {
-                throw new RuntimeException('Missing product data.');
+                throw new \RuntimeException('Missing product data.');
             }
 
             $products = require $filename;
 
             if (! is_array($products)) {
-                throw new RuntimeException('The product data is invalid.');
+                throw new \RuntimeException('The product data is invalid.');
             }
 
             foreach ($products as $product) {
                 if (! isset($product['code']) || ! is_string($product['code'])) {
-                    throw new RuntimeException('Missing product code.');
+                    throw new \RuntimeException('Missing product code.');
                 }
 
                 $key = static::getNormalizedProductName($product['code']);
@@ -103,7 +101,7 @@ final class ApiDocsResolver
         }
 
         if (! isset(static::$products[$name])) {
-            throw new InvalidArgumentException("Could not find product $name.");
+            throw new \InvalidArgumentException("Could not find product $name.");
         }
 
         return static::$products[$name];
@@ -119,7 +117,7 @@ final class ApiDocsResolver
         );
 
         if (! file_exists($filename)) {
-            throw new RuntimeException(sprintf(
+            throw new \RuntimeException(sprintf(
                 'Could not find APIs for product %s with version %s.',
                 $product, $version
             ));

@@ -21,7 +21,6 @@ use Dew\Acs\Tablestore\Messages\TableMeta;
 use Dew\Acs\Tablestore\Messages\TableOptions;
 use Dew\Acs\Tablestore\Messages\UpdateTableRequest;
 use Dew\Acs\Tablestore\Messages\UpdateTableResponse;
-use InvalidArgumentException;
 
 /**
  * @see https://help.aliyun.com/zh/tablestore/developer-reference/data-table-operations-api/
@@ -141,7 +140,7 @@ final readonly class SchemaHandler
             match ($schema::class) {
                 PrimaryKeySchema::class => $pks[] = $schema,
                 DefinedColumnSchema::class => $cols[] = $schema,
-                default => throw new InvalidArgumentException(sprintf(
+                default => throw new \InvalidArgumentException(sprintf(
                     'Unexpected schema type [%s] is given.', $schema::class
                 )),
             };

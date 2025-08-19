@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Sls;
 
-use Override;
-
 use function Zstd\compress;
 use function Zstd\uncompress;
 
@@ -19,7 +17,7 @@ final class Zstd implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public static function supports(): bool
     {
         return extension_loaded('zstd');
@@ -28,7 +26,7 @@ final class Zstd implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public static function threshold(): int
     {
         return 256;
@@ -37,7 +35,7 @@ final class Zstd implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function encode(string $data, ?int $level = null): string
     {
         $level = is_int($level) ? $level : self::DEFAULT_COMPRESSION_LEVEL;
@@ -53,7 +51,7 @@ final class Zstd implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function decode(string $data, ?int $maxLength = null): string
     {
         $decoded = uncompress($data);
@@ -68,7 +66,7 @@ final class Zstd implements Compression
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public static function format(): string
     {
         return 'zstd';

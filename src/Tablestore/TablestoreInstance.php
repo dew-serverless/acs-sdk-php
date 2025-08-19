@@ -11,12 +11,10 @@ use Google\Protobuf\Internal\Message;
 use Http\Client\Common\PluginClient;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
-use Override;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
-use RuntimeException;
 
 /**
  * @phpstan-import-type TCredentials from \Dew\Acs\AcsClient
@@ -65,7 +63,7 @@ final class TablestoreInstance implements InteractsWithTablestore
     /**
      * @throws \Dew\Acs\Tablestore\InstanceException
      */
-    #[Override]
+    #[\Override]
     public function send(string $uri, Message $message): string
     {
         $request = $this->requestFactory
@@ -77,7 +75,7 @@ final class TablestoreInstance implements InteractsWithTablestore
             ->wait();
 
         if (! $response instanceof ResponseInterface) {
-            throw new RuntimeException('Could not retrieve the HTTP response.');
+            throw new \RuntimeException('Could not retrieve the HTTP response.');
         }
 
         return $this->handleResponse($response);

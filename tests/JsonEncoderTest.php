@@ -3,7 +3,6 @@
 namespace Dew\Acs\Tests;
 
 use Dew\Acs\JsonEncoder;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
@@ -29,7 +28,7 @@ final class JsonEncoderTest extends TestCase
 
     public function test_decode_array_expectation(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Could not decode the data.');
         $encoder = new JsonEncoder();
         $encoder->decode('"value"');

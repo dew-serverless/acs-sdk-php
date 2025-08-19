@@ -8,7 +8,6 @@ use Dew\Acs\OpenApi\Schema;
 use Dew\Acs\XmlFormatter;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use RuntimeException;
 
 #[CoversClass(XmlFormatter::class)]
 final class XmlFormatterTest extends TestCase
@@ -149,7 +148,7 @@ final class XmlFormatterTest extends TestCase
 
     public function test_format_property_ref_missing(): void
     {
-        $this->expectException(RuntimeException::class);
+        $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage('Missing schema finder.');
         $formatter = new XmlFormatter();
         $schema = Schema::make([

@@ -8,7 +8,6 @@ use Dew\Acs\Sls\Messages\Log;
 use Dew\Acs\Sls\Messages\LogContent;
 use Dew\Acs\Sls\Messages\LogGroup;
 use Dew\Acs\Sls\Protobuf;
-use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
@@ -25,14 +24,14 @@ final class ProtobufTest extends TestCase
 
     public function test_to_log_content_missing_key(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The log content should have a "Key" field.');
         Protobuf::toLogContent(['Value' => 'foo']);
     }
 
     public function test_to_log_content_missing_value(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The log content should have a "Value" field.');
         Protobuf::toLogContent(['Key' => 'foo']);
     }
@@ -138,14 +137,14 @@ final class ProtobufTest extends TestCase
 
     public function test_to_log_tag_missing_key(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The log tag should have a "Key" field.');
         Protobuf::toLogTag(['Value' => 'foo']);
     }
 
     public function test_to_log_tag_missing_value(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The log tag should have a "Value" field.');
         Protobuf::toLogTag(['Key' => 'foo']);
     }

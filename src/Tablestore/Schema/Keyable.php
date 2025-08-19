@@ -6,7 +6,6 @@ namespace Dew\Acs\Tablestore\Schema;
 
 use Dew\Acs\Tablestore\Messages\DefinedColumnSchema;
 use Dew\Acs\Tablestore\Messages\PrimaryKeySchema;
-use Override;
 
 final class Keyable implements Schema
 {
@@ -38,7 +37,7 @@ final class Keyable implements Schema
     /**
      * {@inheritDoc}
      */
-    #[Override]
+    #[\Override]
     public function toSchema(): PrimaryKeySchema|DefinedColumnSchema
     {
         if ($this->isPrimary) {

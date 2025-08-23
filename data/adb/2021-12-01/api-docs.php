@@ -2282,7 +2282,27 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
+                            'EnableUserEni' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'HeadSpecType' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'CPU',
+                                    'GPU',
+                                ],
+                            ],
                             'HeadSpec' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'HeadAllocateUnit' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'HeadDiskCapacity' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],
@@ -2592,7 +2612,27 @@
                         'type' => 'object',
                         'required' => false,
                         'properties' => [
+                            'EnableUserEni' => [
+                                'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'HeadSpecType' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'enum' => [
+                                    'CPU',
+                                    'GPU',
+                                ],
+                            ],
                             'HeadSpec' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'HeadAllocateUnit' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'HeadDiskCapacity' => [
                                 'type' => 'string',
                                 'required' => false,
                             ],

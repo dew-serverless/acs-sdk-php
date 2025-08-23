@@ -1889,6 +1889,335 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'MatchSchemaConfigs',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'DomainWhitelistSchemaConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SchemaId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExternalProcessId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'FieldMap' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'DisplayField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'DomainBlacklistSchemaConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SchemaId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExternalProcessId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'FieldMap' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'DisplayField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SoftwareBlockSchemaConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SchemaId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExternalProcessId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'FieldMap' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'DisplayField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'DeviceRegistrationSchemaConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SchemaId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExternalProcessId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'FieldMap' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'DisplayField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'AppUninstallSchemaConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SchemaId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExternalProcessId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'FieldMap' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'DisplayField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'DlpSendSchemaConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SchemaId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExternalProcessId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'FieldMap' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'DisplayField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'PeripheralBlockSchemaConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SchemaId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExternalProcessId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'FieldMap' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'DisplayField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'EndpointHardeningSchemaConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SchemaId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExternalProcessId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'FieldMap' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'DisplayField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'SoftwareHardeningSchemaConfig' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'SchemaId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'ExternalProcessId' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'FieldMap' => [
+                                        'type' => 'array',
+                                        'required' => false,
+                                        'items' => [
+                                            'type' => 'object',
+                                            'required' => false,
+                                            'properties' => [
+                                                'DisplayField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                                'SystemField' => [
+                                                    'type' => 'string',
+                                                    'required' => false,
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ApprovalType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                            '2',
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'EventLabel',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'ExternalConfig',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListApprovals' => [
@@ -8198,6 +8527,208 @@
                             'EmbedDensity' => [
                                 'type' => 'string',
                                 'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'ImageControl',
+                    'in' => 'formData',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'TextVisibleControl' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'VisibleText' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Mode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Opacity' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'FontSize' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'FontColor' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Angle' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosAx' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'PosAy' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'Visible' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'Margin' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Top' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Right' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Bottom' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Left' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'LogoVisibleControl' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'LogoBase64' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Mode' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Opacity' => [
+                                        'type' => 'integer',
+                                        'format' => 'int32',
+                                        'required' => false,
+                                    ],
+                                    'Angle' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceX' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'SpaceY' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                        'required' => false,
+                                    ],
+                                    'PosAx' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'PosAy' => [
+                                        'type' => 'number',
+                                        'format' => 'float',
+                                        'required' => false,
+                                    ],
+                                    'Visible' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                    'Margin' => [
+                                        'type' => 'object',
+                                        'required' => false,
+                                        'properties' => [
+                                            'Top' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Right' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Bottom' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                            'Left' => [
+                                                'type' => 'number',
+                                                'format' => 'float',
+                                                'required' => false,
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'MetadataControl' => [
+                                'type' => 'object',
+                                'required' => false,
+                                'properties' => [
+                                    'XmpKvBase64' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'Enable' => [
+                                        'type' => 'boolean',
+                                        'required' => false,
+                                    ],
+                                ],
                             ],
                         ],
                     ],

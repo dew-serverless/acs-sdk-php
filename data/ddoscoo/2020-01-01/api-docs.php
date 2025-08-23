@@ -5180,6 +5180,13 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Ip',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
             ],
         ],
         'DescribeDDosEventArea' => [
@@ -5483,6 +5490,14 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'Ip',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeDDoSEvents' => [
@@ -5759,6 +5774,14 @@
                         'type' => 'integer',
                         'format' => 'int64',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'Ip',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

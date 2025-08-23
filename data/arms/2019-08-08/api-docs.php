@@ -17985,14 +17985,6 @@
             'endpoint' => 'arms.cn-shanghai.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-nanjing',
-            'endpoint' => 'arms.cn-nanjing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-fuzhou',
-            'endpoint' => 'arms.cn-fuzhou.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-shenzhen',
             'endpoint' => 'arms.cn-shenzhen.aliyuncs.com',
         ],

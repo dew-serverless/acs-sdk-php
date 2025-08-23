@@ -21440,7 +21440,7 @@
         ],
         [
             'regionId' => 'cn-guangzhou',
-            'endpoint' => 'rds.aliyuncs.com',
+            'endpoint' => 'rds.cn-guangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-chengdu',
@@ -21501,6 +21501,10 @@
         [
             'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'rds.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'na-south-1',
+            'endpoint' => 'rds.na-south-1.aliyuncs.com',
         ],
     ],
 ];

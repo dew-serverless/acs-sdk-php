@@ -2703,6 +2703,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'ProtocolVersion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetApplication' => [

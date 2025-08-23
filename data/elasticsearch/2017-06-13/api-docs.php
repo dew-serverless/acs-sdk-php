@@ -4373,10 +4373,9 @@
                 ],
                 [
                     'name' => 'body',
-                    'in' => 'body',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => false,
                     ],
                 ],
             ],
@@ -7006,7 +7005,7 @@
                 ],
                 [
                     'name' => 'body',
-                    'in' => 'body',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -7072,7 +7071,7 @@
                 ],
                 [
                     'name' => 'body',
-                    'in' => 'body',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -7106,7 +7105,7 @@
                 ],
                 [
                     'name' => 'body',
-                    'in' => 'body',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,
@@ -7154,7 +7153,7 @@
                 ],
                 [
                     'name' => 'body',
-                    'in' => 'body',
+                    'in' => 'query',
                     'schema' => [
                         'type' => 'string',
                         'required' => false,

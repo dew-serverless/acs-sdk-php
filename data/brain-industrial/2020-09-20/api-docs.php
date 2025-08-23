@@ -56,6 +56,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'JobId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListUserResources' => [

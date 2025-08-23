@@ -300,14 +300,15 @@
             'CookieSessionAffinityConfig' => [
                 'type' => 'object',
                 'properties' => [
-                    'sessionConcurrencyPerInstance' => [
-                        'type' => 'string',
-                    ],
                     'sessionIdleTimeoutInSeconds' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
                     'sessionTTLInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'sessionConcurrencyPerInstance' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
@@ -1828,6 +1829,23 @@
                 'properties' => [
                     'sseEndpointPath' => [
                         'type' => 'string',
+                    ],
+                    'sessionConcurrencyPerInstance' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                ],
+            ],
+            'MCPStreamableSessionAffinityConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'sessionTTLInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                    ],
+                    'sessionIdleTimeoutInSeconds' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
                     ],
                     'sessionConcurrencyPerInstance' => [
                         'type' => 'integer',

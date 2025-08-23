@@ -1665,6 +1665,14 @@
                         'maxItems' => 100,
                     ],
                 ],
+                [
+                    'name' => 'UsePreviousParameters',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListStackResources' => [

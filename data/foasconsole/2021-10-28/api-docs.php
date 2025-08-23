@@ -390,10 +390,6 @@
                             'type' => 'object',
                             'required' => true,
                             'properties' => [
-                                'Namespace' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
                                 'ResourceSpec' => [
                                     'type' => 'object',
                                     'required' => true,
@@ -409,6 +405,10 @@
                                             'required' => true,
                                         ],
                                     ],
+                                ],
+                                'Namespace' => [
+                                    'type' => 'string',
+                                    'required' => true,
                                 ],
                             ],
                         ],
@@ -1075,11 +1075,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -1217,11 +1217,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -1347,10 +1347,6 @@
                             'type' => 'object',
                             'required' => true,
                             'properties' => [
-                                'Namespace' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
                                 'ResourceSpec' => [
                                     'type' => 'object',
                                     'required' => true,
@@ -1366,6 +1362,10 @@
                                             'required' => true,
                                         ],
                                     ],
+                                ],
+                                'Namespace' => [
+                                    'type' => 'string',
+                                    'required' => true,
                                 ],
                             ],
                         ],
@@ -1513,11 +1513,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -1791,11 +1791,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -1862,11 +1862,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -1991,7 +1991,7 @@
                     'AK' => [],
                 ],
             ],
-            'deprecated' => false,
+            'deprecated' => true,
             'parameters' => [
                 [
                     'name' => 'InstanceId',

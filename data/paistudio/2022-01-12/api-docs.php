@@ -6026,5 +6026,9 @@
             'regionId' => 'ap-northeast-2',
             'endpoint' => 'pai.ap-northeast-2.aliyuncs.com',
         ],
+        [
+            'regionId' => 'cn-shanghai-finance-1',
+            'endpoint' => 'pai.cn-shanghai-finance-1.aliyuncs.com',
+        ],
     ],
 ];

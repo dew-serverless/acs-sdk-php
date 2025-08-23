@@ -11247,6 +11247,7 @@
                         'properties' => [
                             'Content' => [
                                 'type' => 'string',
+                                'deprecated' => true,
                                 'required' => false,
                             ],
                             'Parameters' => [
@@ -11349,10 +11350,6 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'Name' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
                                         'Type' => [
                                             'type' => 'string',
                                             'required' => true,
@@ -11364,6 +11361,10 @@
                                             ],
                                         ],
                                         'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Name' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
@@ -11402,10 +11403,6 @@
                                     'type' => 'object',
                                     'required' => false,
                                     'properties' => [
-                                        'Name' => [
-                                            'type' => 'string',
-                                            'required' => false,
-                                        ],
                                         'Type' => [
                                             'type' => 'string',
                                             'required' => true,
@@ -11417,6 +11414,10 @@
                                             ],
                                         ],
                                         'Value' => [
+                                            'type' => 'string',
+                                            'required' => false,
+                                        ],
+                                        'Name' => [
                                             'type' => 'string',
                                             'required' => false,
                                         ],
@@ -11471,13 +11472,13 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
-                                    'type' => 'string',
-                                    'required' => true,
-                                ],
                                 'Value' => [
                                     'type' => 'string',
                                     'required' => false,
+                                ],
+                                'Key' => [
+                                    'type' => 'string',
+                                    'required' => true,
                                 ],
                             ],
                         ],
@@ -13744,6 +13745,7 @@
                             'SupplementData',
                             'Manual',
                             'SmokeTest',
+                            'TriggerWorkflow',
                         ],
                     ],
                 ],

@@ -469,14 +469,14 @@
                     'ClientIpIdentifier' => [
                         'type' => 'object',
                         'properties' => [
-                            'Mode' => [
-                                'type' => 'string',
-                            ],
                             'Headers' => [
                                 'type' => 'array',
                                 'items' => [
                                     'type' => 'string',
                                 ],
+                            ],
+                            'Mode' => [
+                                'type' => 'string',
                             ],
                         ],
                     ],
@@ -510,36 +510,24 @@
                             'DefiniteBots' => [
                                 'type' => 'object',
                                 'properties' => [
+                                    'Action' => [
+                                        'type' => 'string',
+                                    ],
                                     'Id' => [
                                         'type' => 'integer',
                                         'format' => 'int64',
-                                    ],
-                                    'Action' => [
-                                        'type' => 'string',
                                     ],
                                 ],
                             ],
                             'LikelyBots' => [
                                 'type' => 'object',
                                 'properties' => [
-                                    'Id' => [
-                                        'type' => 'integer',
-                                        'format' => 'int64',
-                                    ],
                                     'Action' => [
                                         'type' => 'string',
                                     ],
-                                ],
-                            ],
-                            'VerifiedBots' => [
-                                'type' => 'object',
-                                'properties' => [
                                     'Id' => [
                                         'type' => 'integer',
                                         'format' => 'int64',
-                                    ],
-                                    'Action' => [
-                                        'type' => 'string',
                                     ],
                                 ],
                             ],
@@ -551,6 +539,18 @@
                                     ],
                                 ],
                             ],
+                            'VerifiedBots' => [
+                                'type' => 'object',
+                                'properties' => [
+                                    'Action' => [
+                                        'type' => 'string',
+                                    ],
+                                    'Id' => [
+                                        'type' => 'integer',
+                                        'format' => 'int64',
+                                    ],
+                                ],
+                            ],
                             'EffectOnStatic' => [
                                 'type' => 'object',
                                 'properties' => [
@@ -558,6 +558,29 @@
                                         'type' => 'boolean',
                                     ],
                                 ],
+                            ],
+                        ],
+                    ],
+                    'BandwidthAbuseProtection' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Status' => [
+                                'type' => 'string',
+                            ],
+                            'Action' => [
+                                'type' => 'string',
+                            ],
+                            'Id' => [
+                                'type' => 'integer',
+                                'format' => 'int64',
+                            ],
+                        ],
+                    ],
+                    'DisableSecurityModule' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'Status' => [
+                                'type' => 'string',
                             ],
                         ],
                     ],
@@ -1113,6 +1136,10 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                        'enum' => [
+                            'site',
+                            'record',
+                        ],
                     ],
                 ],
             ],

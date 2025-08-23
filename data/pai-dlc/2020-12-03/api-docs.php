@@ -216,6 +216,26 @@
                     ],
                 ],
             ],
+            'DataJuicerConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'ExecutionMode' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'standalone',
+                            'distributed',
+                        ],
+                    ],
+                    'CommandType' => [
+                        'type' => 'string',
+                        'enum' => [
+                            'shell',
+                            'config',
+                        ],
+                    ],
+                ],
+            ],
             'DataSourceItem' => [
                 'type' => 'object',
                 'properties' => [
@@ -1024,52 +1044,45 @@
                     'EnableDSWDev' => [
                         'type' => 'boolean',
                     ],
+                    'DataJuicerConfig' => [
+                        '$ref' => '#/components/schemas/DataJuicerConfig',
+                    ],
                 ],
             ],
             'JobSpec' => [
                 'type' => 'object',
                 'properties' => [
-                    'ImageConfig' => [
-                        '$ref' => '#/components/schemas/ImageConfig',
-                    ],
-                    'UseSpotInstance' => [
-                        'type' => 'boolean',
-                        'deprecated' => true,
-                    ],
-                    'ServiceSpec' => [
-                        '$ref' => '#/components/schemas/ServiceSpec',
-                    ],
-                    'EcsSpec' => [
-                        'type' => 'string',
-                    ],
-                    'AssignNodeSpec' => [
-                        '$ref' => '#/components/schemas/AssignNodeSpec',
-                    ],
-                    'RestartPolicy' => [
+                    'Type' => [
                         'type' => 'string',
                     ],
                     'Image' => [
                         'type' => 'string',
                     ],
+                    'ImageConfig' => [
+                        '$ref' => '#/components/schemas/ImageConfig',
+                    ],
                     'PodCount' => [
                         'type' => 'integer',
                         'format' => 'int64',
                     ],
-                    'Type' => [
+                    'EcsSpec' => [
                         'type' => 'string',
                     ],
-                    'SpotSpec' => [
-                        '$ref' => '#/components/schemas/SpotSpec',
-                    ],
-                    'IsCheif' => [
-                        'type' => 'boolean',
-                        'deprecated' => true,
+                    'ExtraPodSpec' => [
+                        '$ref' => '#/components/schemas/ExtraPodSpec',
                     ],
                     'ResourceConfig' => [
                         '$ref' => '#/components/schemas/ResourceConfig',
                     ],
-                    'AutoScalingSpec' => [
-                        '$ref' => '#/components/schemas/AutoScalingSpec',
+                    'UseSpotInstance' => [
+                        'type' => 'boolean',
+                        'deprecated' => true,
+                    ],
+                    'SpotSpec' => [
+                        '$ref' => '#/components/schemas/SpotSpec',
+                    ],
+                    'AssignNodeSpec' => [
+                        '$ref' => '#/components/schemas/AssignNodeSpec',
                     ],
                     'LocalMountSpecs' => [
                         'type' => 'array',
@@ -1077,11 +1090,24 @@
                             '$ref' => '#/components/schemas/LocalMountSpec',
                         ],
                     ],
-                    'ExtraPodSpec' => [
-                        '$ref' => '#/components/schemas/ExtraPodSpec',
+                    'AutoScalingSpec' => [
+                        '$ref' => '#/components/schemas/AutoScalingSpec',
+                    ],
+                    'ServiceSpec' => [
+                        '$ref' => '#/components/schemas/ServiceSpec',
+                    ],
+                    'IsCheif' => [
+                        'type' => 'boolean',
+                        'deprecated' => true,
                     ],
                     'IsChief' => [
                         'type' => 'boolean',
+                    ],
+                    'RestartPolicy' => [
+                        'type' => 'string',
+                    ],
+                    'SystemDisk' => [
+                        '$ref' => '#/components/schemas/SystemDisk',
                     ],
                 ],
             ],
@@ -1599,6 +1625,24 @@
                     ],
                     'ReasonMessage' => [
                         'type' => 'string',
+                    ],
+                ],
+            ],
+            'SystemDisk' => [
+                'type' => 'object',
+                'properties' => [
+                    'Size' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                    ],
+                    'Category' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                    'PerformanceLevel' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],

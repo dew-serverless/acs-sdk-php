@@ -14962,6 +14962,14 @@
                         'maximum' => '1000',
                     ],
                 ],
+                [
+                    'name' => 'Attribute',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifySecurityGroupPolicy' => [
@@ -20505,11 +20513,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
@@ -20642,27 +20650,23 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'RecurrenceType' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
-                                'RecurrenceValue' => [
-                                    'type' => 'string',
-                                    'required' => false,
-                                ],
                                 'StartHour' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
                                     'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '24',
+                                ],
+                                'RecurrenceType' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                                 'EndHour' => [
                                     'type' => 'integer',
                                     'format' => 'int32',
                                     'required' => false,
-                                    'minimum' => '0',
-                                    'maximum' => '24',
+                                ],
+                                'RecurrenceValue' => [
+                                    'type' => 'string',
+                                    'required' => false,
                                 ],
                             ],
                         ],
@@ -24027,11 +24031,11 @@
                             'type' => 'object',
                             'required' => false,
                             'properties' => [
-                                'Key' => [
+                                'Value' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],
-                                'Value' => [
+                                'Key' => [
                                     'type' => 'string',
                                     'required' => false,
                                 ],

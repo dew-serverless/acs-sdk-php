@@ -2475,6 +2475,14 @@
         'defaultVersion' => '2025-05-27',
     ],
     [
+        'code' => 'RdsAi',
+        'style' => 'RPC',
+        'versions' => [
+            '2025-05-07',
+        ],
+        'defaultVersion' => '2025-05-07',
+    ],
+    [
         'code' => 'EduTutor',
         'style' => 'RPC',
         'versions' => [

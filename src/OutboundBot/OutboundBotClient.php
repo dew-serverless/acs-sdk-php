@@ -321,16 +321,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getVersionAsync($arguments = [])
  * @method \Dew\Acs\Result modifyEmptyNumberNoMoreCallsInfo(array $arguments = [])
  * @method \Http\Promise\Promise modifyEmptyNumberNoMoreCallsInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result getAssignJobsAsyncResult(array $arguments = [])
+ * @method \Http\Promise\Promise getAssignJobsAsyncResultAsync($arguments = [])
+ * @method \Dew\Acs\Result assignJobsAsync(array $arguments = [])
+ * @method \Http\Promise\Promise assignJobsAsyncAsync($arguments = [])
  * @method \Dew\Acs\Result queryScriptWaveforms(array $arguments = [])
  * @method \Http\Promise\Promise queryScriptWaveformsAsync($arguments = [])
  * @method \Dew\Acs\Result deleteScriptWaveform(array $arguments = [])
  * @method \Http\Promise\Promise deleteScriptWaveformAsync($arguments = [])
  * @method \Dew\Acs\Result createScriptWaveform(array $arguments = [])
  * @method \Http\Promise\Promise createScriptWaveformAsync($arguments = [])
- * @method \Dew\Acs\Result getAssignJobsAsyncResult(array $arguments = [])
- * @method \Http\Promise\Promise getAssignJobsAsyncResultAsync($arguments = [])
- * @method \Dew\Acs\Result assignJobsAsync(array $arguments = [])
- * @method \Http\Promise\Promise assignJobsAsyncAsync($arguments = [])
  */
 final class OutboundBotClient extends AcsClient
 {

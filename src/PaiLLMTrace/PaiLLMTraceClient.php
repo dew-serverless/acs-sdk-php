@@ -7,8 +7,6 @@ namespace Dew\Acs\PaiLLMTrace;
 use Dew\Acs\AcsClient;
 
 /**
- * @method \Dew\Acs\Result listEvalResults(array $arguments = [])
- * @method \Http\Promise\Promise listEvalResultsAsync($arguments = [])
  * @method \Dew\Acs\Result evaluateTrace(array $arguments = [])
  * @method \Http\Promise\Promise evaluateTraceAsync($arguments = [])
  * @method \Dew\Acs\Result deleteOnlineEvalTask(array $arguments = [])
@@ -35,6 +33,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getServiceIdentityRoleAsync($arguments = [])
  * @method \Dew\Acs\Result getXtraceToken(array $arguments = [])
  * @method \Http\Promise\Promise getXtraceTokenAsync($arguments = [])
+ * @method \Dew\Acs\Result listEvalResults(array $arguments = [])
+ * @method \Http\Promise\Promise listEvalResultsAsync($arguments = [])
  */
 final class PaiLLMTraceClient extends AcsClient
 {

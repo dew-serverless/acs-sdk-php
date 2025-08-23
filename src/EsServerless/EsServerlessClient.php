@@ -55,6 +55,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getSpecReviewTaskAsync($arguments = [])
  * @method \Dew\Acs\Result cancelSpecReviewTask(array $arguments = [])
  * @method \Http\Promise\Promise cancelSpecReviewTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result updateNetwork(array $arguments = [])
+ * @method \Http\Promise\Promise updateNetworkAsync($arguments = [])
  */
 final class EsServerlessClient extends AcsClient
 {

@@ -19,6 +19,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createTaskAsync($arguments = [])
  * @method \Dew\Acs\Result analyzeImage(array $arguments = [])
  * @method \Http\Promise\Promise analyzeImageAsync($arguments = [])
+ * @method \Dew\Acs\Result generalAnalyzeImage(array $arguments = [])
+ * @method \Http\Promise\Promise generalAnalyzeImageAsync($arguments = [])
  * @method \Dew\Acs\Result createVocab(array $arguments = [])
  * @method \Http\Promise\Promise createVocabAsync($arguments = [])
  * @method \Dew\Acs\Result updateVocab(array $arguments = [])

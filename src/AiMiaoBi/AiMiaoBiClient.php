@@ -353,6 +353,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise submitAuditTaskAsync($arguments = [])
  * @method \Dew\Acs\Result queryAuditTask(array $arguments = [])
  * @method \Http\Promise\Promise queryAuditTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result runVideoScriptGenerate(array $arguments = [])
+ * @method \Http\Promise\Promise runVideoScriptGenerateAsync($arguments = [])
  */
 final class AiMiaoBiClient extends AcsClient
 {

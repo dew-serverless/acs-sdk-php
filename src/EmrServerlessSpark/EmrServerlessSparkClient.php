@@ -9,6 +9,8 @@ use Dew\Acs\AcsClient;
 /**
  * @method \Dew\Acs\Result addMembers(array $arguments = [])
  * @method \Http\Promise\Promise addMembersAsync($arguments = [])
+ * @method \Dew\Acs\Result listMembers(array $arguments = [])
+ * @method \Http\Promise\Promise listMembersAsync($arguments = [])
  * @method \Dew\Acs\Result grantRoleToUsers(array $arguments = [])
  * @method \Http\Promise\Promise grantRoleToUsersAsync($arguments = [])
  * @method \Dew\Acs\Result listKyuubiSparkApplications(array $arguments = [])

@@ -297,6 +297,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listConfigRuleOperatorsAsync($arguments = [])
  * @method \Dew\Acs\Result listRecommendManagedRules(array $arguments = [])
  * @method \Http\Promise\Promise listRecommendManagedRulesAsync($arguments = [])
+ * @method \Dew\Acs\Result startConfigRuleEvaluationByResource(array $arguments = [])
+ * @method \Http\Promise\Promise startConfigRuleEvaluationByResourceAsync($arguments = [])
  */
 final class ConfigClient extends AcsClient
 {

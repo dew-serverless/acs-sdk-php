@@ -363,6 +363,17 @@
                     ],
                 ],
             ],
+            'ConsumerConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'consumerId' => [
+                        'type' => 'string',
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'ConsumerInfo' => [
                 'type' => 'object',
                 'properties' => [
@@ -1650,6 +1661,17 @@
                     ],
                 ],
             ],
+            'KMSConfig' => [
+                'type' => 'object',
+                'properties' => [
+                    'kmsInstanceId' => [
+                        'type' => 'string',
+                    ],
+                    'kmsKeyId' => [
+                        'type' => 'string',
+                    ],
+                ],
+            ],
             'LabelDetail' => [
                 'type' => 'object',
                 'properties' => [
@@ -1663,6 +1685,10 @@
                         ],
                     ],
                 ],
+            ],
+            'McpServerConfig' => [
+                'type' => 'object',
+                'properties' => [],
             ],
             'ParentResourceInfo' => [
                 'type' => 'object',
@@ -2562,6 +2588,11 @@
                                 'type' => 'boolean',
                                 'required' => false,
                             ],
+                            'firstByteTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],
@@ -2692,6 +2723,11 @@
                             ],
                             'removeBasePathOnForward' => [
                                 'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'firstByteTimeout' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
                                 'required' => false,
                             ],
                         ],

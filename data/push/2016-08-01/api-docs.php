@@ -1001,6 +1001,19 @@
                         'maxLength' => 36,
                     ],
                 ],
+                [
+                    'name' => 'AndroidMeizuNoticeMsgType',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                        'enum' => [
+                            '0',
+                            '1',
+                        ],
+                    ],
+                ],
             ],
         ],
         'MassPush' => [
@@ -1509,6 +1522,15 @@
                                     'type' => 'string',
                                     'deprecated' => true,
                                     'required' => false,
+                                ],
+                                'AndroidMeizuNoticeMsgType' => [
+                                    'type' => 'integer',
+                                    'format' => 'int32',
+                                    'required' => false,
+                                    'enum' => [
+                                        '0',
+                                        '1',
+                                    ],
                                 ],
                             ],
                         ],

@@ -281,6 +281,10 @@
                                 'type' => 'string',
                                 'required' => false,
                             ],
+                            'PayType' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
                         ],
                     ],
                 ],

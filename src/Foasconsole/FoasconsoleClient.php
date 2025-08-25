@@ -55,8 +55,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise untagResourcesAsync($arguments = [])
  * @method \Dew\Acs\Result convertPrepayInstance(array $arguments = [])
  * @method \Http\Promise\Promise convertPrepayInstanceAsync($arguments = [])
- * @method \Dew\Acs\Result modifyInstanceVswitch(array $arguments = [])
- * @method \Http\Promise\Promise modifyInstanceVswitchAsync($arguments = [])
+ * @method \Dew\Acs\Result modifyInstanceVswitch(array $arguments = []) {@deprecated 2021-10-28}
+ * @method \Http\Promise\Promise modifyInstanceVswitchAsync($arguments = []) {@deprecated 2021-10-28}
  */
 final class FoasconsoleClient extends AcsClient
 {

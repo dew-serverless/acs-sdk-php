@@ -7,6 +7,39 @@
     ],
     'components' => [
         'schemas' => [
+            'ArtifactLifecyclePolicy' => [
+                'type' => 'object',
+                'properties' => [
+                    'Condition' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'LatestTagCount' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'LastPullOlderThanDays' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                            'LastPushOlderThanDays' => [
+                                'type' => 'integer',
+                                'format' => 'int32',
+                            ],
+                        ],
+                    ],
+                    'Type' => [
+                        'type' => 'string',
+                    ],
+                    'Filter' => [
+                        'type' => 'object',
+                        'properties' => [
+                            'TagWildcard' => [
+                                'type' => 'string',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'RepoConfiguration' => [
                 'type' => 'object',
                 'properties' => [

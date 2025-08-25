@@ -9800,6 +9800,10 @@
             'endpoint' => 'polardb.cn-zhangjiakou.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'polardb.cn-guangzhou.aliyuncs.com',
+        ],
+        [
             'regionId' => 'us-west-1',
             'endpoint' => 'polardb.us-west-1.aliyuncs.com',
         ],
@@ -9833,10 +9837,6 @@
         ],
         [
             'regionId' => 'cn-beijing-finance-1',
-            'endpoint' => 'polardb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-guangzhou',
             'endpoint' => 'polardb.aliyuncs.com',
         ],
     ],

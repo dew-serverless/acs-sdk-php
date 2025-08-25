@@ -49,6 +49,14 @@
                     ],
                 ],
                 [
+                    'name' => 'PrologScript',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
                     'name' => 'ResourceType',
                     'in' => 'query',
                     'schema' => [
@@ -124,6 +132,14 @@
                                 'RegionId' => [
                                     'type' => 'string',
                                     'required' => false,
+                                ],
+                                'SecurityGroupIds' => [
+                                    'type' => 'array',
+                                    'required' => false,
+                                    'items' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
                                 ],
                             ],
                         ],
@@ -1056,6 +1072,14 @@
                                 'required' => false,
                             ],
                         ],
+                    ],
+                ],
+                [
+                    'name' => 'JobScheduler',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
                 [

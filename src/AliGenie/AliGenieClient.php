@@ -39,6 +39,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise checkThirdRightSendPlanAsync($arguments = []) {@since iap_1.0}
  * @method \Dew\Acs\Result callBackThirdRightSendPlan(array $arguments = []) {@since iap_1.0}
  * @method \Http\Promise\Promise callBackThirdRightSendPlanAsync($arguments = []) {@since iap_1.0}
+ * @method \Dew\Acs\Result thirdImmediateMsgPush(array $arguments = []) {@since iap_1.0}
+ * @method \Http\Promise\Promise thirdImmediateMsgPushAsync($arguments = []) {@since iap_1.0}
  * @method \Dew\Acs\Result authLoginWithThirdUserInfo(array $arguments = []) {@since ssp_1.0}
  * @method \Http\Promise\Promise authLoginWithThirdUserInfoAsync($arguments = []) {@since ssp_1.0}
  * @method \Dew\Acs\Result ecologyOpennessSendVerificationCode(array $arguments = []) {@since ssp_1.0}
@@ -187,6 +189,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise getWeatherAsync($arguments = []) {@since ssp_1.0}
  * @method \Dew\Acs\Result createPlayingListOAuth2(array $arguments = []) {@since ssp_1.0}
  * @method \Http\Promise\Promise createPlayingListOAuth2Async($arguments = []) {@since ssp_1.0}
+ * @method \Dew\Acs\Result thirdImmediateMsgPush(array $arguments = []) {@since ssp_1.0}
+ * @method \Http\Promise\Promise thirdImmediateMsgPushAsync($arguments = []) {@since ssp_1.0}
  * @method \Dew\Acs\Result getRelationProductList(array $arguments = []) {@since ip_1.0}
  * @method \Http\Promise\Promise getRelationProductListAsync($arguments = []) {@since ip_1.0}
  * @method \Dew\Acs\Result createHotel(array $arguments = []) {@since ip_1.0}

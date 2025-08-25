@@ -403,6 +403,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise removeInstanceSDGAsync($arguments = [])
  * @method \Dew\Acs\Result saveSDG(array $arguments = [])
  * @method \Http\Promise\Promise saveSDGAsync($arguments = [])
+ * @method \Dew\Acs\Result removeSDGs(array $arguments = [])
+ * @method \Http\Promise\Promise removeSDGsAsync($arguments = [])
  * @method \Dew\Acs\Result resetAICInstance(array $arguments = [])
  * @method \Http\Promise\Promise resetAICInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result upgradeAICInstanceImage(array $arguments = [])
@@ -549,8 +551,6 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeInstanceBootConfigurationAsync($arguments = [])
  * @method \Dew\Acs\Result importImage(array $arguments = [])
  * @method \Http\Promise\Promise importImageAsync($arguments = [])
- * @method \Dew\Acs\Result removeSDGs(array $arguments = [])
- * @method \Http\Promise\Promise removeSDGsAsync($arguments = [])
  */
 final class EnsClient extends AcsClient
 {

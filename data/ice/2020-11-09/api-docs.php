@@ -2585,6 +2585,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'StreamTags',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'GetUrlUploadInfos' => [

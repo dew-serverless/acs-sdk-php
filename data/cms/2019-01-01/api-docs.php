@@ -5302,6 +5302,18 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'AgentGroup',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                        'enum' => [
+                            'PC',
+                            'MOBILE',
+                        ],
+                    ],
+                ],
             ],
         ],
         'BatchCreateInstantSiteMonitor' => [

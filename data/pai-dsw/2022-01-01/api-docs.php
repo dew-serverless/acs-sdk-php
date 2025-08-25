@@ -2307,20 +2307,10 @@
                     ],
                 ],
                 [
-                    'name' => 'PageNumber',
+                    'name' => 'Offset',
                     'in' => 'query',
                     'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'PageSize',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'integer',
-                        'format' => 'int64',
+                        'type' => 'string',
                         'required' => false,
                     ],
                 ],
@@ -2341,7 +2331,7 @@
                     ],
                 ],
                 [
-                    'name' => 'SourceType',
+                    'name' => 'LogRepository',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -2376,6 +2366,14 @@
                 ],
                 [
                     'name' => 'ProblemCategory',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'LifecycleId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

@@ -4805,6 +4805,8 @@
                             'demandMining',
                             'sopMining',
                             'satisfactionAnalysisReport',
+                            'dissatisfactionAnalysis',
+                            'vocAnalysis',
                         ],
                     ],
                 ],

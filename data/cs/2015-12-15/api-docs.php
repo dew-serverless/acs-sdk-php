@@ -331,6 +331,9 @@
                     'containerLogMonitorInterval' => [
                         'type' => 'string',
                     ],
+                    'serverTLSBootstrap' => [
+                        'type' => 'boolean',
+                    ],
                 ],
             ],
             'maintenance_window' => [
@@ -3016,6 +3019,10 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'exclude_packages' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
                                     'auto_upgrade' => [
@@ -3818,6 +3825,10 @@
                                                 'type' => 'string',
                                                 'required' => false,
                                             ],
+                                            'exclude_packages' => [
+                                                'type' => 'string',
+                                                'required' => false,
+                                            ],
                                         ],
                                     ],
                                     'auto_upgrade' => [
@@ -4151,6 +4162,10 @@
                                         'required' => false,
                                     ],
                                     'pre_user_data' => [
+                                        'type' => 'string',
+                                        'required' => false,
+                                    ],
+                                    'node_name_mode' => [
                                         'type' => 'string',
                                         'required' => false,
                                     ],

@@ -759,6 +759,62 @@
                 ],
             ],
         ],
+        'ListMembers' => [
+            'path' => '/api/v1/auth/{workspaceId}/members',
+            'methods' => [
+                'get',
+            ],
+            'schemes' => [
+                'http',
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'consumes' => [
+                'application/json',
+            ],
+            'produces' => [
+                'application/json',
+            ],
+            'parameters' => [
+                [
+                    'name' => 'nextToken',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'maxResults',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int32',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'workspaceId',
+                    'in' => 'path',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'regionId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+            ],
+        ],
         'GrantRoleToUsers' => [
             'path' => '/api/v1/auth/roles/grant',
             'methods' => [
@@ -1096,6 +1152,10 @@
                             ],
                             'publicEndpointEnabled' => [
                                 'type' => 'boolean',
+                                'required' => false,
+                            ],
+                            'clientToken' => [
+                                'type' => 'string',
                                 'required' => false,
                             ],
                         ],
@@ -2408,6 +2468,22 @@
                 ],
                 [
                     'name' => 'isWorkflow',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'runtimeConfigs',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'applicationConfigs',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

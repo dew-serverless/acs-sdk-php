@@ -1091,8 +1091,8 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
-                        'minLength' => 8,
-                        'maxLength' => 255,
+                        'minLength' => 4,
+                        'maxLength' => 50,
                     ],
                 ],
                 [
@@ -1102,7 +1102,7 @@
                         'type' => 'string',
                         'required' => true,
                         'minLength' => 1,
-                        'maxLength' => 255,
+                        'maxLength' => 50,
                     ],
                 ],
                 [
@@ -1277,8 +1277,120 @@
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
-                        'required' => true,
+                        'required' => false,
                         'maxLength' => 255,
+                    ],
+                ],
+                [
+                    'name' => 'StablePatchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Patch',
+                    'in' => 'query',
+                    'style' => 'json',
+                    'schema' => [
+                        'type' => 'object',
+                        'required' => false,
+                        'properties' => [
+                            'PatchName' => [
+                                'type' => 'string',
+                                'required' => false,
+                                'minLength' => 1,
+                                'maxLength' => 50,
+                            ],
+                            'DownloadURL' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                            'Md5' => [
+                                'type' => 'string',
+                                'required' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'ListCloudAppPatches' => [
+            'path' => '',
+            'methods' => [
+                'get',
+                'post',
+            ],
+            'schemes' => [
+                'https',
+            ],
+            'security' => [
+                [
+                    'AK' => [],
+                ],
+            ],
+            'deprecated' => false,
+            'parameters' => [
+                [
+                    'name' => 'AppId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'PatchName',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PatchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PageNumber',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PageSize',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'integer',
+                        'format' => 'int64',
+                        'required' => false,
+                        'minimum' => '1',
+                        'maximum' => '100',
+                    ],
+                ],
+                [
+                    'name' => 'StartTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1355,6 +1467,14 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PatchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -1451,6 +1571,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'PatchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'UninstallCloudApp' => [
@@ -1525,6 +1653,14 @@
                         'format' => 'int32',
                         'required' => false,
                         'minimum' => '1',
+                    ],
+                ],
+                [
+                    'name' => 'PatchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
                     ],
                 ],
             ],
@@ -2726,6 +2862,14 @@
                         ],
                     ],
                 ],
+                [
+                    'name' => 'PatchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ListRenderingSessions' => [
@@ -2832,6 +2976,14 @@
                 ],
                 [
                     'name' => 'EndTime',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'PatchId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

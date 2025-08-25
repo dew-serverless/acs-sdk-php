@@ -358,6 +358,7 @@
                             '1',
                             '2',
                             '3',
+                            '4',
                         ],
                     ],
                 ],
@@ -756,6 +757,7 @@
                             '1',
                             '2',
                             '3',
+                            '4',
                         ],
                     ],
                 ],
@@ -1151,6 +1153,38 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TargetZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetSecondaryZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetHiddenZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetVswitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyNodeSpec' => [
@@ -1289,6 +1323,38 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'TargetZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetSecondaryZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetHiddenZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetVswitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'ModifyNodeSpecBatch' => [
@@ -1376,6 +1442,38 @@
                 ],
                 [
                     'name' => 'BusinessInfo',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetVswitchId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetHiddenZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetZoneId',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'TargetSecondaryZoneId',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',
@@ -7616,6 +7714,22 @@
                         'required' => true,
                     ],
                 ],
+                [
+                    'name' => 'SrcRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'DestRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DescribeBackupStorage' => [
@@ -7712,6 +7826,20 @@
                     'schema' => [
                         'type' => 'string',
                         'required' => true,
+                    ],
+                ],
+                [
+                    'name' => 'DestRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ],
+                [
+                    'name' => 'SrcRegion',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
                     ],
                 ],
             ],
@@ -7933,12 +8061,68 @@
     ],
     'endpoints' => [
         [
-            'regionId' => 'ap-northeast-1',
-            'endpoint' => 'mongodb.ap-northeast-1.aliyuncs.com',
+            'regionId' => 'cn-heyuan',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhengzhou-jva',
+            'endpoint' => 'mongodb.cn-zhengzhou-jva.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wuhan-lr',
+            'endpoint' => 'mongodb.cn-wuhan-lr.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'mongodb.cn-hongkong.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'mongodb.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-nanjing',
+            'endpoint' => 'mongodb.cn-nanjing.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-2',
             'endpoint' => 'mongodb.ap-northeast-2.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-northeast-1',
+            'endpoint' => 'mongodb.ap-northeast-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-fuzhou',
+            'endpoint' => 'mongodb.cn-fuzhou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'mongodb.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-guangzhou',
+            'endpoint' => 'mongodb.cn-guangzhou.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-1',
@@ -7953,6 +8137,10 @@
             'endpoint' => 'mongodb.ap-southeast-3.aliyuncs.com',
         ],
         [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'mongodb.cn-huhehaote.aliyuncs.com',
+        ],
+        [
             'regionId' => 'ap-southeast-5',
             'endpoint' => 'mongodb.ap-southeast-5.aliyuncs.com',
         ],
@@ -7965,68 +8153,16 @@
             'endpoint' => 'mongodb.ap-southeast-7.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'mongodb.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-fuzhou',
-            'endpoint' => 'mongodb.cn-fuzhou.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'mongodb.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-heyuan',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'mongodb.cn-hongkong.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'mongodb.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-nanjing',
-            'endpoint' => 'mongodb.cn-nanjing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wuhan-lr',
-            'endpoint' => 'mongodb.cn-wuhan-lr.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'mongodb.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhengzhou-jva',
-            'endpoint' => 'mongodb.cn-zhengzhou-jva.aliyuncs.com',
-        ],
-        [
             'regionId' => 'eu-central-1',
             'endpoint' => 'mongodb.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-west-1',
+            'endpoint' => 'mongodb.us-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'eu-west-1',
@@ -8035,10 +8171,6 @@
         [
             'regionId' => 'us-east-1',
             'endpoint' => 'mongodb.us-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'us-west-1',
-            'endpoint' => 'mongodb.us-west-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-south-1',
@@ -8053,12 +8185,12 @@
             'endpoint' => 'mongodb.me-east-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'mongodb.cn-shenzhen-finance-1.aliyuncs.com',
-        ],
-        [
             'regionId' => 'cn-beijing-finance-1',
             'endpoint' => 'mongodb.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'mongodb.cn-shenzhen-finance-1.aliyuncs.com',
         ],
         [
             'regionId' => 'cn-hangzhou-finance',
@@ -8066,11 +8198,7 @@
         ],
         [
             'regionId' => 'cn-shanghai-finance-1',
-            'endpoint' => 'mongodb.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-guangzhou',
-            'endpoint' => 'mongodb.cn-guangzhou.aliyuncs.com',
+            'endpoint' => 'mongodb.cn-shanghai-finance-1.aliyuncs.com',
         ],
     ],
 ];

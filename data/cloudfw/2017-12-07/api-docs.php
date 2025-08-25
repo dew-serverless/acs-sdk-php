@@ -1057,14 +1057,6 @@
                         'required' => true,
                     ],
                 ],
-                [
-                    'name' => 'trimSql',
-                    'in' => 'query',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
             ],
         ],
         'DescribeVpcFirewallList' => [

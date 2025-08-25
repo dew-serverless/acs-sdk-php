@@ -55,6 +55,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listCloudAppsAsync($arguments = [])
  * @method \Dew\Acs\Result updateCloudAppInfo(array $arguments = [])
  * @method \Http\Promise\Promise updateCloudAppInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result listCloudAppPatches(array $arguments = [])
+ * @method \Http\Promise\Promise listCloudAppPatchesAsync($arguments = [])
  * @method \Dew\Acs\Result installCloudApp(array $arguments = [])
  * @method \Http\Promise\Promise installCloudAppAsync($arguments = [])
  * @method \Dew\Acs\Result listCloudAppInstallations(array $arguments = [])

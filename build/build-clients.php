@@ -108,6 +108,9 @@ function main(): void
             'Dew\\Acs\\Oss\\OssStack',
             'Dew\\Acs\\Oss\\SignsUrl',
         ],
+        'OssException' => [
+            'Dew\\Acs\\Oss\\CustomErrorCode',
+        ],
         'Sls' => [
             'Dew\\Acs\\Sls\\ManagesLogs',
         ],

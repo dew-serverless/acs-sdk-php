@@ -8,5 +8,5 @@ use Dew\Acs\AcsException;
 
 final class OssException extends AcsException
 {
-    //
+    use CustomErrorCode;
 }

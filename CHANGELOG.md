@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   by @lizhineng in https://github.com/dew-serverless/acs-sdk-php/pull/127
 - Update code style rules: do not import global classes
   by @lizhineng in https://github.com/dew-serverless/acs-sdk-php/pull/128
+- OSS: Align the error code and message
+  by @lizhineng in https://github.com/dew-serverless/acs-sdk-php/pull/130
 
 ## [0.9.0] - 2024-12-28
 

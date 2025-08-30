@@ -479,6 +479,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateGatewayIsolationRuleAsync($arguments = [])
  * @method \Dew\Acs\Result listGatewayIsolationRule(array $arguments = [])
  * @method \Http\Promise\Promise listGatewayIsolationRuleAsync($arguments = [])
+ * @method \Dew\Acs\Result createNacosMcpServer(array $arguments = [])
+ * @method \Http\Promise\Promise createNacosMcpServerAsync($arguments = [])
  * @method \Dew\Acs\Result initializeServiceLinkRole(array $arguments = [])
  * @method \Http\Promise\Promise initializeServiceLinkRoleAsync($arguments = [])
  * @method \Dew\Acs\Result cloneSentinelRuleFromAhas(array $arguments = [])
@@ -491,14 +493,12 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise updateGatewayConfigAsync($arguments = [])
  * @method \Dew\Acs\Result createSentinelBlockFallbackDefinition(array $arguments = [])
  * @method \Http\Promise\Promise createSentinelBlockFallbackDefinitionAsync($arguments = [])
- * @method \Dew\Acs\Result listNacosMcpServers(array $arguments = [])
- * @method \Http\Promise\Promise listNacosMcpServersAsync($arguments = [])
- * @method \Dew\Acs\Result getNacosMcpServer(array $arguments = [])
- * @method \Http\Promise\Promise getNacosMcpServerAsync($arguments = [])
- * @method \Dew\Acs\Result createNacosMcpServer(array $arguments = [])
- * @method \Http\Promise\Promise createNacosMcpServerAsync($arguments = [])
  * @method \Dew\Acs\Result deleteNacosMcpServer(array $arguments = [])
  * @method \Http\Promise\Promise deleteNacosMcpServerAsync($arguments = [])
+ * @method \Dew\Acs\Result getNacosMcpServer(array $arguments = [])
+ * @method \Http\Promise\Promise getNacosMcpServerAsync($arguments = [])
+ * @method \Dew\Acs\Result listNacosMcpServers(array $arguments = [])
+ * @method \Http\Promise\Promise listNacosMcpServersAsync($arguments = [])
  */
 final class MseClient extends AcsClient
 {

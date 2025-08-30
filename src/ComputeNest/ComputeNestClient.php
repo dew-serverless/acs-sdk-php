@@ -51,6 +51,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise rollbackServiceInstanceAsync($arguments = [])
  * @method \Dew\Acs\Result updateServiceInstanceAttributes(array $arguments = [])
  * @method \Http\Promise\Promise updateServiceInstanceAttributesAsync($arguments = [])
+ * @method \Dew\Acs\Result validateServiceInstanceName(array $arguments = [])
+ * @method \Http\Promise\Promise validateServiceInstanceNameAsync($arguments = [])
  * @method \Dew\Acs\Result listTagKeys(array $arguments = [])
  * @method \Http\Promise\Promise listTagKeysAsync($arguments = [])
  * @method \Dew\Acs\Result unTagResources(array $arguments = [])

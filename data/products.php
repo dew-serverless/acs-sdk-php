@@ -2371,6 +2371,14 @@
         'defaultVersion' => '2023-08-28',
     ],
     [
+        'code' => 'acc',
+        'style' => 'RPC',
+        'versions' => [
+            '2024-04-02',
+        ],
+        'defaultVersion' => '2024-04-02',
+    ],
+    [
         'code' => 'appflow',
         'style' => 'RPC',
         'versions' => [

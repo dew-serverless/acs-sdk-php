@@ -233,6 +233,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise acceptDataworksEventAsync($arguments = [])
  * @method \Dew\Acs\Result changeResourceGroup(array $arguments = [])
  * @method \Http\Promise\Promise changeResourceGroupAsync($arguments = [])
+ * @method \Dew\Acs\Result listFeatures(array $arguments = [])
+ * @method \Http\Promise\Promise listFeaturesAsync($arguments = [])
  */
 final class AIWorkSpaceClient extends AcsClient
 {

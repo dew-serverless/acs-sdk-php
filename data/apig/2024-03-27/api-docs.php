@@ -3286,6 +3286,14 @@
                         'required' => false,
                     ],
                 ],
+                [
+                    'name' => 'enableAuth',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'boolean',
+                        'required' => false,
+                    ],
+                ],
             ],
         ],
         'DeleteHttpApiOperation' => [

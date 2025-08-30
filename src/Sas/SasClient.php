@@ -797,8 +797,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeSuspEventExportInfoAsync($arguments = [])
  * @method \Dew\Acs\Result describeNsasSuspEventType(array $arguments = [])
  * @method \Http\Promise\Promise describeNsasSuspEventTypeAsync($arguments = [])
- * @method \Dew\Acs\Result describeAlarmEventStackInfo(array $arguments = [])
- * @method \Http\Promise\Promise describeAlarmEventStackInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAlarmEventStackInfo(array $arguments = []) {@deprecated 2018-12-03}
+ * @method \Http\Promise\Promise describeAlarmEventStackInfoAsync($arguments = []) {@deprecated 2018-12-03}
  * @method \Dew\Acs\Result handleMaliciousFiles(array $arguments = [])
  * @method \Http\Promise\Promise handleMaliciousFilesAsync($arguments = [])
  * @method \Dew\Acs\Result describeStrictEventName(array $arguments = [])
@@ -1807,6 +1807,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeAIAssetSummaryAsync($arguments = [])
  * @method \Dew\Acs\Result describePluginSummary(array $arguments = [])
  * @method \Http\Promise\Promise describePluginSummaryAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteCheckPolicy(array $arguments = [])
+ * @method \Http\Promise\Promise deleteCheckPolicyAsync($arguments = [])
  */
 final class SasClient extends AcsClient
 {

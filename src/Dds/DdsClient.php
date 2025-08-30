@@ -245,6 +245,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise modifyDBInstanceConfigAsync($arguments = [])
  * @method \Dew\Acs\Result modifyDBInstanceAttribute(array $arguments = [])
  * @method \Http\Promise\Promise modifyDBInstanceAttributeAsync($arguments = [])
+ * @method \Dew\Acs\Result allocateDBInstanceSrvNetworkAddress(array $arguments = [])
+ * @method \Http\Promise\Promise allocateDBInstanceSrvNetworkAddressAsync($arguments = [])
+ * @method \Dew\Acs\Result modifySrvNetworkAddress(array $arguments = [])
+ * @method \Http\Promise\Promise modifySrvNetworkAddressAsync($arguments = [])
  */
 final class DdsClient extends AcsClient
 {

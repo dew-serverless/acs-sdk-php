@@ -4344,6 +4344,20 @@
                         'maxLength' => 50,
                     ],
                 ],
+                [
+                    'name' => 'AdditionalAttributes',
+                    'in' => 'query',
+                    'style' => 'repeatList',
+                    'schema' => [
+                        'type' => 'array',
+                        'required' => false,
+                        'items' => [
+                            'type' => 'string',
+                            'required' => false,
+                        ],
+                        'maxItems' => 100,
+                    ],
+                ],
             ],
         ],
         'DescribeInstanceAttribute' => [

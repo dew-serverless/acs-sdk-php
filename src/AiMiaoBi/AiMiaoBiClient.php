@@ -355,6 +355,16 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise queryAuditTaskAsync($arguments = [])
  * @method \Dew\Acs\Result runVideoScriptGenerate(array $arguments = [])
  * @method \Http\Promise\Promise runVideoScriptGenerateAsync($arguments = [])
+ * @method \Dew\Acs\Result submitDeepWriteTask(array $arguments = [])
+ * @method \Http\Promise\Promise submitDeepWriteTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getDeepWriteTask(array $arguments = [])
+ * @method \Http\Promise\Promise getDeepWriteTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result getDeepWriteTaskResult(array $arguments = [])
+ * @method \Http\Promise\Promise getDeepWriteTaskResultAsync($arguments = [])
+ * @method \Dew\Acs\Result cancelDeepWriteTask(array $arguments = [])
+ * @method \Http\Promise\Promise cancelDeepWriteTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result runDeepWriting(array $arguments = [])
+ * @method \Http\Promise\Promise runDeepWritingAsync($arguments = [])
  */
 final class AiMiaoBiClient extends AcsClient
 {

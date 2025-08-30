@@ -13901,24 +13901,52 @@
     ],
     'endpoints' => [
         [
+            'regionId' => 'cn-qingdao',
+            'endpoint' => 'dns.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-beijing',
+            'endpoint' => 'alidns.cn-beijing.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-zhangjiakou',
+            'endpoint' => 'alidns.cn-zhangjiakou.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-huhehaote',
+            'endpoint' => 'alidns.cn-huhehaote.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-wulanchabu',
+            'endpoint' => 'dns.aliyuncs.com',
+        ],
+        [
             'regionId' => 'cn-hangzhou',
             'endpoint' => 'alidns.cn-hangzhou.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-southeast-1',
-            'endpoint' => 'alidns.ap-southeast-1.aliyuncs.com',
+            'regionId' => 'cn-shanghai',
+            'endpoint' => 'alidns.cn-shanghai.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen',
+            'endpoint' => 'alidns.cn-shenzhen.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-chengdu',
+            'endpoint' => 'alidns.cn-chengdu.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-hongkong',
+            'endpoint' => 'alidns.cn-hongkong.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-northeast-1',
             'endpoint' => 'alidns.ap-northeast-1.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-northeast-2-pop',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'alidns.ap-south-1.aliyuncs.com',
+            'regionId' => 'ap-southeast-1',
+            'endpoint' => 'alidns.ap-southeast-1.aliyuncs.com',
         ],
         [
             'regionId' => 'ap-southeast-2',
@@ -13933,184 +13961,28 @@
             'endpoint' => 'alidns.ap-southeast-5.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-beijing',
-            'endpoint' => 'alidns.cn-beijing.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-finance-pop',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-gov-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-beijing-nu16-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-chengdu',
-            'endpoint' => 'alidns.cn-chengdu.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-edge-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-fujian',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-haidian-cm12-c01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-bj-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-prod-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-2',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-internal-test-3',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hangzhou-test-306',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong',
-            'endpoint' => 'alidns.cn-hongkong.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-hongkong-finance-pop',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote',
-            'endpoint' => 'alidns.cn-huhehaote.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-huhehaote-nebula-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-north-2-gov-1',
-            'endpoint' => 'alidns.cn-north-2-gov-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-qingdao-nebula',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai',
-            'endpoint' => 'alidns.cn-shanghai.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-et15-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-et2-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-inner',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shanghai-internal-test-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen',
-            'endpoint' => 'alidns.cn-shenzhen.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-inner',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-st4-d01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-shenzhen-su18-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wuhan',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-wulanchabu',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-yushanfang',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangbei',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangbei-na61-b01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou',
-            'endpoint' => 'alidns.cn-zhangjiakou.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhangjiakou-na62-a01',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'cn-zhengzhou-nebula-1',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-central-1',
-            'endpoint' => 'alidns.eu-central-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1',
-            'endpoint' => 'alidns.eu-west-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'eu-west-1-oxs',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'me-east-1',
-            'endpoint' => 'alidns.me-east-1.aliyuncs.com',
-        ],
-        [
-            'regionId' => 'rus-west-1-pop',
-            'endpoint' => 'dns.aliyuncs.com',
-        ],
-        [
             'regionId' => 'us-east-1',
             'endpoint' => 'alidns.us-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'us-west-1',
             'endpoint' => 'alidns.us-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-west-1',
+            'endpoint' => 'alidns.eu-west-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'eu-central-1',
+            'endpoint' => 'alidns.eu-central-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'ap-south-1',
+            'endpoint' => 'alidns.ap-south-1.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'me-east-1',
+            'endpoint' => 'alidns.me-east-1.aliyuncs.com',
         ],
         [
             'regionId' => 'public',

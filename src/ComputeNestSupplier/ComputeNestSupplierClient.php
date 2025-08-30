@@ -75,6 +75,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise listServiceInstanceBillAsync($arguments = [])
  * @method \Dew\Acs\Result listServiceInstanceLogs(array $arguments = [])
  * @method \Http\Promise\Promise listServiceInstanceLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteAcrImageRepositories(array $arguments = [])
+ * @method \Http\Promise\Promise deleteAcrImageRepositoriesAsync($arguments = [])
  * @method \Dew\Acs\Result listArtifactRisks(array $arguments = [])
  * @method \Http\Promise\Promise listArtifactRisksAsync($arguments = [])
  * @method \Dew\Acs\Result createArtifact(array $arguments = [])
@@ -83,6 +85,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise deleteArtifactAsync($arguments = [])
  * @method \Dew\Acs\Result updateArtifact(array $arguments = [])
  * @method \Http\Promise\Promise updateArtifactAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteAcrImageTags(array $arguments = [])
+ * @method \Http\Promise\Promise deleteAcrImageTagsAsync($arguments = [])
  * @method \Dew\Acs\Result getArtifact(array $arguments = [])
  * @method \Http\Promise\Promise getArtifactAsync($arguments = [])
  * @method \Dew\Acs\Result listArtifacts(array $arguments = [])
@@ -159,6 +163,10 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise createServiceTestCaseAsync($arguments = [])
  * @method \Dew\Acs\Result getServiceTemplateCriterionIssues(array $arguments = [])
  * @method \Http\Promise\Promise getServiceTemplateCriterionIssuesAsync($arguments = [])
+ * @method \Dew\Acs\Result listArtifactBuildLogs(array $arguments = [])
+ * @method \Http\Promise\Promise listArtifactBuildLogsAsync($arguments = [])
+ * @method \Dew\Acs\Result listServiceBuildLogs(array $arguments = [])
+ * @method \Http\Promise\Promise listServiceBuildLogsAsync($arguments = [])
  */
 final class ComputeNestSupplierClient extends AcsClient
 {

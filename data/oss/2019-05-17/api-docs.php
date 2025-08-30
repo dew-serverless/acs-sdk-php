@@ -2744,6 +2744,9 @@
                     'TargetPrefix' => [
                         'type' => 'string',
                     ],
+                    'LoggingRole' => [
+                        'type' => 'string',
+                    ],
                 ],
             ],
             'MetaQuery' => [

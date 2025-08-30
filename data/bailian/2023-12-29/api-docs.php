@@ -415,7 +415,7 @@
                                     'type' => 'string',
                                     'required' => true,
                                     'minLength' => 1,
-                                    'maxLength' => 123,
+                                    'maxLength' => 500,
                                 ],
                                 'OssKey' => [
                                     'type' => 'string',

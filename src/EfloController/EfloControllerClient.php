@@ -97,6 +97,8 @@ use Dew\Acs\AcsClient;
  * @method \Http\Promise\Promise describeNetTestResultAsync($arguments = [])
  * @method \Dew\Acs\Result listMachineNetworkInfo(array $arguments = [])
  * @method \Http\Promise\Promise listMachineNetworkInfoAsync($arguments = [])
+ * @method \Dew\Acs\Result describeNodeType(array $arguments = [])
+ * @method \Http\Promise\Promise describeNodeTypeAsync($arguments = [])
  */
 final class EfloControllerClient extends AcsClient
 {

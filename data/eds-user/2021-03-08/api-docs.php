@@ -549,22 +549,6 @@
                     ],
                 ],
                 [
-                    'name' => 'BizType',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
-                    'name' => 'SolutionId',
-                    'in' => 'formData',
-                    'schema' => [
-                        'type' => 'string',
-                        'required' => false,
-                    ],
-                ],
-                [
                     'name' => 'ShowExtras',
                     'in' => 'formData',
                     'style' => 'json',
@@ -2018,6 +2002,14 @@
                 ],
                 [
                     'name' => 'AdDomain',
+                    'in' => 'query',
+                    'schema' => [
+                        'type' => 'string',
+                        'required' => false,
+                    ],
+                ],
+                [
+                    'name' => 'Filter',
                     'in' => 'query',
                     'schema' => [
                         'type' => 'string',

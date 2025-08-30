@@ -12193,10 +12193,6 @@
             'endpoint' => 'eu-central-1.log.aliyuncs.com',
         ],
         [
-            'regionId' => 'ap-south-1',
-            'endpoint' => 'ap-south-1.log.aliyuncs.com',
-        ],
-        [
             'regionId' => 'me-east-1',
             'endpoint' => 'me-east-1.log.aliyuncs.com',
         ],
@@ -12209,16 +12205,24 @@
             'endpoint' => 'cn-shanghai-finance-1.log.aliyuncs.com',
         ],
         [
-            'regionId' => 'cn-shenzhen-finance-1',
-            'endpoint' => 'cn-shenzhen-finance.log.aliyuncs.com',
-        ],
-        [
             'regionId' => 'ap-southeast-7',
             'endpoint' => 'ap-southeast-7.log.aliyuncs.com',
         ],
         [
             'regionId' => 'me-central-1',
             'endpoint' => 'me-central-1.log.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-heyuan-acdr-1',
+            'endpoint' => 'cn-heyuan-acdr-1-intranet.log.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'cn-shenzhen-finance-1',
+            'endpoint' => 'cn-shenzhen-finance-1.log.aliyuncs.com',
+        ],
+        [
+            'regionId' => 'us-southeast-1',
+            'endpoint' => 'us-southeast-1.log.aliyuncs.com',
         ],
     ],
 ];
